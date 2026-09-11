@@ -1,0 +1,403 @@
+[
+  {
+    "id": "prep-passionfruit-syrup",
+    "name": "Passionfruit syrup",
+    "venueID": "rockwater-hove",
+    "category": "Syrups",
+    "currentAmount": 0.8,
+    "targetAmount": 3,
+    "unit": "litre",
+    "recipe": [
+      {
+        "name": "Passionfruit purée",
+        "amount": 400,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-passionfruit-syrup-ingredient-1"
+      },
+      {
+        "name": "Caster sugar",
+        "amount": 400,
+        "unit": "gram",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-passionfruit-syrup-ingredient-2"
+      },
+      {
+        "name": "Water",
+        "amount": 400,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-passionfruit-syrup-ingredient-3"
+      }
+    ],
+    "method": [
+      "Combine ingredients in a clean pan and warm gently until sugar dissolves.",
+      "Cool promptly under the venue procedure.",
+      "Measure the finished yield; this example targets approximately 1 L. Bottle, label and chill."
+    ],
+    "storageInstructions": "Clean sealed container, refrigerated and dated.",
+    "shelfLife": "Example target: 3 days; venue must validate.",
+    "completed": false,
+    "notes": "SAMPLE recipe and planning quantities. Validate the recipe, final yield, allergens and holding policy before service. The displayed recipe is a nominal 1 L formulation; confirm yield before scaling.",
+    "isSample": true,
+    "recipeYieldAmount": 1
+  },
+  {
+    "id": "prep-ginger-syrup",
+    "name": "Ginger syrup",
+    "venueID": "rockwater-hove",
+    "category": "Syrups",
+    "currentAmount": 0.35,
+    "targetAmount": 1.5,
+    "unit": "litre",
+    "recipe": [
+      {
+        "name": "Fresh ginger, washed and sliced",
+        "amount": 150,
+        "unit": "gram",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-ginger-syrup-ingredient-1"
+      },
+      {
+        "name": "Caster sugar",
+        "amount": 500,
+        "unit": "gram",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-ginger-syrup-ingredient-2"
+      },
+      {
+        "name": "Water",
+        "amount": 600,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-ginger-syrup-ingredient-3"
+      }
+    ],
+    "method": [
+      "Simmer ginger and water briefly to extract flavour.",
+      "Strain, dissolve the sugar in the strained liquid, then cool promptly.",
+      "Measure final yield and bottle under the venue procedure. Nominal yield: 1 L."
+    ],
+    "storageInstructions": "Sealed, labelled container in the refrigerator.",
+    "shelfLife": "Example target: 3 days; venue must validate.",
+    "completed": false,
+    "notes": "SAMPLE recipe and planning quantities. Validate the recipe, final yield, allergens and holding policy before service. ",
+    "isSample": true,
+    "recipeYieldAmount": 1
+  },
+  {
+    "id": "prep-citrus-cordial",
+    "name": "Citrus cordial",
+    "venueID": "rockwater-hove",
+    "category": "Cordials",
+    "currentAmount": 0.4,
+    "targetAmount": 1.5,
+    "unit": "litre",
+    "recipe": [
+      {
+        "name": "Lemon juice",
+        "amount": 350,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-citrus-cordial-ingredient-1"
+      },
+      {
+        "name": "Lime juice",
+        "amount": 150,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-citrus-cordial-ingredient-2"
+      },
+      {
+        "name": "Caster sugar",
+        "amount": 450,
+        "unit": "gram",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-citrus-cordial-ingredient-3"
+      },
+      {
+        "name": "Water",
+        "amount": 200,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-citrus-cordial-ingredient-4"
+      }
+    ],
+    "method": [
+      "Mix measured citrus juices and water.",
+      "Stir in sugar until fully dissolved.",
+      "Fine strain, measure final yield and bottle. Nominal yield: 1 L."
+    ],
+    "storageInstructions": "Refrigerate in a clean labelled bottle.",
+    "shelfLife": "Example target: 2 days; venue must validate.",
+    "completed": false,
+    "notes": "SAMPLE recipe and planning quantities. Validate the recipe, final yield, allergens and holding policy before service. ",
+    "isSample": true,
+    "recipeYieldAmount": 1
+  },
+  {
+    "id": "prep-lime-juice",
+    "name": "Fresh lime juice",
+    "venueID": "rockwater-hove",
+    "category": "Juices",
+    "currentAmount": 0.3,
+    "targetAmount": 2,
+    "unit": "litre",
+    "recipe": [
+      {
+        "name": "Limes",
+        "amount": 30,
+        "unit": "piece",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Fruit yield varies; quantity is a purchasing estimate for 1 L.",
+        "id": "prep-lime-juice-ingredient-1"
+      }
+    ],
+    "method": [
+      "Wash and prepare fruit with clean equipment.",
+      "Juice and fine strain.",
+      "Measure the actual yield, bottle and date. Nominal recipe target: 1 L."
+    ],
+    "storageInstructions": "Refrigerate immediately in a clean sealed bottle; rotate small bottles during service.",
+    "shelfLife": "Same service day; follow venue policy.",
+    "completed": false,
+    "notes": "SAMPLE recipe and planning quantities. Validate the recipe, final yield, allergens and holding policy before service. ",
+    "isSample": true,
+    "recipeYieldAmount": 1
+  },
+  {
+    "id": "prep-pineapple-foam",
+    "name": "Pineapple foam",
+    "venueID": "rockwater-hove",
+    "category": "Foams",
+    "currentAmount": 0.15,
+    "targetAmount": 0.75,
+    "unit": "litre",
+    "recipe": [
+      {
+        "name": "Pineapple juice",
+        "amount": 350,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-pineapple-foam-ingredient-1"
+      },
+      {
+        "name": "Aquafaba from cooked chickpeas",
+        "amount": 100,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-pineapple-foam-ingredient-2"
+      },
+      {
+        "name": "Sugar syrup",
+        "amount": 50,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "1:1 sugar to water by weight unless the product label specifies otherwise.",
+        "bottleSize": 1000,
+        "id": "prep-pineapple-foam-ingredient-3"
+      }
+    ],
+    "method": [
+      "Combine ingredients and strain finely.",
+      "Whisk or use an approved foaming method immediately before service.",
+      "Test foam texture and portion size; nominal liquid base yield is 500 ml."
+    ],
+    "storageInstructions": "Keep the base refrigerated in a clean labelled container; foam small amounts at service.",
+    "shelfLife": "Same service day; follow venue policy.",
+    "completed": false,
+    "notes": "SAMPLE recipe and planning quantities. Validate the recipe, final yield, allergens and holding policy before service. Illustrative aquafaba foam only. This is not the Rockwater foam recipe. Check supplier allergens; do not assume a shared bar is allergen-free.",
+    "isSample": true,
+    "recipeYieldAmount": 0.5
+  },
+  {
+    "id": "prep-tea-infusion",
+    "name": "Earl Grey gin infusion",
+    "venueID": "rockwater-hove",
+    "category": "Infusions",
+    "currentAmount": 0.2,
+    "targetAmount": 0.7,
+    "unit": "litre",
+    "recipe": [
+      {
+        "name": "Gin",
+        "amount": 700,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "prep-tea-infusion-ingredient-1"
+      },
+      {
+        "name": "Earl Grey tea",
+        "amount": 4,
+        "unit": "gram",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-tea-infusion-ingredient-2"
+      }
+    ],
+    "method": [
+      "Combine the gin and tea in a clean covered container.",
+      "Taste at short intervals; strain when the desired aroma is reached, before tannins become harsh.",
+      "Fine filter and record actual yield. Nominal starting batch: 700 ml."
+    ],
+    "storageInstructions": "Sealed, labelled container; follow approved spirit-infusion storage procedure.",
+    "shelfLife": "Example quality target: 7 days; venue must validate.",
+    "completed": false,
+    "notes": "SAMPLE recipe and planning quantities. Validate the recipe, final yield, allergens and holding policy before service. Pilot formula for training, not a scheduled Rockwater preparation.",
+    "isSample": true,
+    "recipeYieldAmount": 0.7
+  },
+  {
+    "id": "prep-citrus-garnishes",
+    "name": "Fresh citrus garnish set",
+    "venueID": "rockwater-hove",
+    "category": "Garnishes",
+    "currentAmount": 12,
+    "targetAmount": 60,
+    "unit": "piece",
+    "recipe": [
+      {
+        "name": "Lemons",
+        "amount": 5,
+        "unit": "piece",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-citrus-garnishes-ingredient-1"
+      },
+      {
+        "name": "Limes",
+        "amount": 5,
+        "unit": "piece",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-citrus-garnishes-ingredient-2"
+      }
+    ],
+    "method": [
+      "Wash fruit and sanitise preparation surfaces.",
+      "Cut approximately 30 service pieces; exact yield depends on fruit size and cut.",
+      "Keep fruit types separate and record the actual count."
+    ],
+    "storageInstructions": "Covered, food-safe containers under refrigeration.",
+    "shelfLife": "Same service day; follow venue policy.",
+    "completed": false,
+    "notes": "SAMPLE recipe and planning quantities. Validate the recipe, final yield, allergens and holding policy before service. ",
+    "isSample": true,
+    "recipeYieldAmount": 30
+  },
+  {
+    "id": "prep-dried-pineapple",
+    "name": "Dried pineapple fans",
+    "venueID": "rockwater-hove",
+    "category": "Dehydrated Fruit",
+    "currentAmount": 8,
+    "targetAmount": 40,
+    "unit": "piece",
+    "recipe": [
+      {
+        "name": "Pineapple, peeled and trimmed",
+        "amount": 1,
+        "unit": "piece",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "prep-dried-pineapple-ingredient-1"
+      }
+    ],
+    "method": [
+      "Slice pineapple evenly into approximately 20 garnish pieces.",
+      "Use the venue’s approved dehydrator settings and validated drying process.",
+      "Cool fully before packing and check that no moisture is trapped."
+    ],
+    "storageInstructions": "Airtight dry container only after validated drying; label with prep date.",
+    "shelfLife": "Set by validated drying and storage procedure.",
+    "completed": false,
+    "notes": "SAMPLE recipe and planning quantities. Validate the recipe, final yield, allergens and holding policy before service. No fixed shelf life is claimed because thickness, drying and storage determine stability.",
+    "isSample": true,
+    "recipeYieldAmount": 20
+  },
+  {
+    "id": "prep-negroni-batch",
+    "name": "Negroni spirit batch",
+    "venueID": "rockwater-hove",
+    "category": "Cocktail Batches",
+    "currentAmount": 0.45,
+    "targetAmount": 2.7,
+    "unit": "litre",
+    "recipe": [
+      {
+        "name": "Gin",
+        "amount": 300,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "prep-negroni-batch-ingredient-1"
+      },
+      {
+        "name": "Campari",
+        "amount": 300,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "prep-negroni-batch-ingredient-2"
+      },
+      {
+        "name": "Sweet red vermouth",
+        "amount": 300,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 750,
+        "id": "prep-negroni-batch-ingredient-3"
+      }
+    ],
+    "method": [
+      "Measure all ingredients into a clean batching container.",
+      "Mix, bottle and label as 10 serves of 90 ml before service dilution.",
+      "At service, measure 90 ml over ice, stir and garnish. Nominal batch yield: 900 ml."
+    ],
+    "storageInstructions": "Refrigerate the sealed batch because it contains opened vermouth.",
+    "shelfLife": "Example quality target: 7 days; venue must validate.",
+    "completed": false,
+    "notes": "SAMPLE recipe and planning quantities. Validate the recipe, final yield, allergens and holding policy before service. Contains sulphites from vermouth; verify product labels. No service dilution is included in this batch.",
+    "isSample": true,
+    "recipeYieldAmount": 0.9
+  }
+]

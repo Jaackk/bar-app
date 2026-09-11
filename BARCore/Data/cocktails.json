@@ -1,0 +1,381 @@
+[
+  {
+    "id": "sample-sea-glass",
+    "name": "Sea Glass",
+    "venueID": "rockwater-hove",
+    "subtitle": "Sample venue recipe",
+    "description": "Rum, apricot, blue curaçao, lemon and ginger, finished with pineapple foam.",
+    "venueSpecific": true,
+    "category": "Signature",
+    "baseSpirit": "Rum",
+    "flavourTags": [
+      "Tropical",
+      "Citrus",
+      "Zesty"
+    ],
+    "ingredients": [
+      {
+        "name": "Havana 3 rum",
+        "amount": 40,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "sample-sea-glass-ingredient-1"
+      },
+      {
+        "name": "Apricot liqueur",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "sample-sea-glass-ingredient-2"
+      },
+      {
+        "name": "Blue curaçao",
+        "amount": 10,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "sample-sea-glass-ingredient-3"
+      },
+      {
+        "name": "Lemon juice",
+        "amount": 20,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "sample-sea-glass-ingredient-4"
+      },
+      {
+        "name": "Ginger syrup",
+        "amount": 10,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 1000,
+        "prepComponent": "prep-ginger-syrup",
+        "id": "sample-sea-glass-ingredient-5"
+      },
+      {
+        "name": "Pineapple foam",
+        "amount": 0,
+        "unit": "top",
+        "batchable": true,
+        "batchBehaviour": "prepareSeparately",
+        "notes": "Top at service. Make the separate sample foam recipe; no fixed liquid yield is assumed.",
+        "prepComponent": "prep-pineapple-foam",
+        "id": "sample-sea-glass-ingredient-6"
+      },
+      {
+        "name": "Dried pineapple",
+        "amount": 1,
+        "unit": "piece",
+        "batchable": true,
+        "batchBehaviour": "garnishCount",
+        "notes": "",
+        "id": "sample-sea-glass-ingredient-7"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Highball",
+    "ice": "Cubed",
+    "garnish": "Dried pineapple",
+    "prepInstructions": [
+      "Shake the rum, liqueurs, lemon and ginger syrup with ice.",
+      "Fine strain into a highball over fresh cubed ice.",
+      "Top with separately prepared pineapple foam and garnish."
+    ],
+    "serviceNotes": "SAMPLE specification based on the supplied mockup, with illustrative ginger syrup and foam choices. Unverified for Rockwater. Batch spirits together, keep fresh citrus chilled and separate, and add foam at service.",
+    "allergens": [],
+    "imageName": "sea-glass",
+    "isPopular": true,
+    "isActive": true,
+    "isSample": true,
+    "variations": []
+  },
+  {
+    "id": "sample-peach-bloom",
+    "name": "Peach & Bloom",
+    "venueID": "rockwater-hove",
+    "subtitle": "Sample venue recipe",
+    "description": "Gin, peach and elderflower with a delicate rose finish.",
+    "venueSpecific": true,
+    "category": "Signature",
+    "baseSpirit": "Gin",
+    "flavourTags": [
+      "Fruity",
+      "Floral",
+      "Fresh"
+    ],
+    "ingredients": [
+      {
+        "name": "Gin",
+        "amount": 40,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "sample-peach-bloom-ingredient-1"
+      },
+      {
+        "name": "Peach liqueur",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "sample-peach-bloom-ingredient-2"
+      },
+      {
+        "name": "Elderflower liqueur",
+        "amount": 10,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "sample-peach-bloom-ingredient-3"
+      },
+      {
+        "name": "Lemon juice",
+        "amount": 20,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "sample-peach-bloom-ingredient-4"
+      },
+      {
+        "name": "Peach purée",
+        "amount": 20,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "sample-peach-bloom-ingredient-5"
+      },
+      {
+        "name": "Rose water",
+        "amount": 2,
+        "unit": "dash",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Use food-grade rose water; brand intensity varies.",
+        "id": "sample-peach-bloom-ingredient-6"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Coupe",
+    "ice": "Straight up",
+    "garnish": "Food-grade dried rose petals",
+    "prepInstructions": [
+      "Shake gin, liqueurs, lemon and peach purée with ice.",
+      "Fine strain into a chilled coupe.",
+      "Finish with the rose water and a small pinch of edible rose petals."
+    ],
+    "serviceNotes": "SAMPLE invented demonstration recipe inspired by the mockup name and colour. Not a verified Rockwater specification. Use food-grade garnishes.",
+    "allergens": [],
+    "imageName": "peach-bloom",
+    "isPopular": true,
+    "isActive": true,
+    "isSample": true,
+    "variations": []
+  },
+  {
+    "id": "sample-coral-tide",
+    "name": "Coral Tide",
+    "venueID": "rockwater-hove",
+    "subtitle": "Sample venue recipe",
+    "description": "Tequila, pink grapefruit and lime, lifted with a splash of soda.",
+    "venueSpecific": true,
+    "category": "Signature",
+    "baseSpirit": "Tequila",
+    "flavourTags": [
+      "Refreshing",
+      "Bright",
+      "Grapefruit"
+    ],
+    "ingredients": [
+      {
+        "name": "Blanco tequila",
+        "amount": 40,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "sample-coral-tide-ingredient-1"
+      },
+      {
+        "name": "Aperol",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "sample-coral-tide-ingredient-2"
+      },
+      {
+        "name": "Pink grapefruit juice",
+        "amount": 40,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "sample-coral-tide-ingredient-3"
+      },
+      {
+        "name": "Lime juice",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "sample-coral-tide-ingredient-4"
+      },
+      {
+        "name": "Agave nectar",
+        "amount": 10,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "sample-coral-tide-ingredient-5"
+      },
+      {
+        "name": "Soda water",
+        "amount": 40,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Add chilled at service; never shake carbonation.",
+        "id": "sample-coral-tide-ingredient-6"
+      },
+      {
+        "name": "Dried grapefruit wheel",
+        "amount": 1,
+        "unit": "piece",
+        "batchable": true,
+        "batchBehaviour": "garnishCount",
+        "notes": "",
+        "id": "sample-coral-tide-ingredient-7"
+      }
+    ],
+    "method": "Shake & top",
+    "glass": "Highball",
+    "ice": "Cubed",
+    "garnish": "Dried grapefruit wheel",
+    "prepInstructions": [
+      "Shake all ingredients except soda with ice.",
+      "Strain into a highball over fresh ice.",
+      "Top with chilled soda and garnish."
+    ],
+    "serviceNotes": "SAMPLE invented demonstration recipe inspired by the mockup name and appearance. Not a verified Rockwater specification. Add soda at service.",
+    "allergens": [],
+    "imageName": "coral-tide",
+    "isPopular": true,
+    "isActive": true,
+    "isSample": true,
+    "variations": []
+  },
+  {
+    "id": "sample-garden-hour",
+    "name": "Garden Hour",
+    "venueID": "rockwater-hove",
+    "subtitle": "Sample venue recipe",
+    "description": "Gin, elderflower, crisp apple and cucumber with fresh mint.",
+    "venueSpecific": true,
+    "category": "Signature",
+    "baseSpirit": "Gin",
+    "flavourTags": [
+      "Green",
+      "Floral",
+      "Citrus"
+    ],
+    "ingredients": [
+      {
+        "name": "Gin",
+        "amount": 40,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "sample-garden-hour-ingredient-1"
+      },
+      {
+        "name": "Elderflower liqueur",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "sample-garden-hour-ingredient-2"
+      },
+      {
+        "name": "Cloudy apple juice",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "sample-garden-hour-ingredient-3"
+      },
+      {
+        "name": "Lime juice",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "sample-garden-hour-ingredient-4"
+      },
+      {
+        "name": "Cucumber slices",
+        "amount": 3,
+        "unit": "piece",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "",
+        "id": "sample-garden-hour-ingredient-5"
+      },
+      {
+        "name": "Mint sprig",
+        "amount": 1,
+        "unit": "sprig",
+        "batchable": true,
+        "batchBehaviour": "garnishCount",
+        "notes": "",
+        "id": "sample-garden-hour-ingredient-6"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Rocks",
+    "ice": "Cubed",
+    "garnish": "Cucumber ribbon and mint",
+    "prepInstructions": [
+      "Gently press cucumber in the shaker.",
+      "Add measured liquids and ice, then shake.",
+      "Fine strain over fresh cubed ice and garnish."
+    ],
+    "serviceNotes": "SAMPLE invented demonstration recipe. Not a verified Rockwater menu item. Add cucumber and garnish at service for freshness.",
+    "allergens": [],
+    "imageName": "garden-hour",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": true,
+    "variations": []
+  }
+]

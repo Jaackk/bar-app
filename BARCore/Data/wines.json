@@ -1,0 +1,703 @@
+[
+  {
+    "id": "sample-wine-coastal-assyrtiko",
+    "name": "Coastal Assyrtiko",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Santorini",
+    "country": "Greece",
+    "grape": "Assyrtiko",
+    "colour": "white",
+    "style": "Dry · Crisp · Mineral",
+    "body": 3,
+    "sweetness": 1,
+    "acidity": 5,
+    "tannin": 1,
+    "flavourNotes": [
+      "Dry",
+      "Crisp",
+      "Mineral",
+      "Citrus",
+      "Saline"
+    ],
+    "description": "Dry, lemony and mineral, with a little more texture than a typical Sauvignon Blanc.",
+    "foodPairings": [
+      "Seafood",
+      "Sea bass",
+      "Grilled fish",
+      "Shellfish",
+      "Salad"
+    ],
+    "similarTo": [
+      "Sauvignon Blanc",
+      "Albariño",
+      "Chablis"
+    ],
+    "servingNotes": "Serve chilled, around 8–12°C; allow richer styles to warm slightly.",
+    "guestDescription": "Dry, lemony and mineral, with a little more texture than a typical Sauvignon Blanc.",
+    "imageName": "wine-white",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-marlborough-sauvignon-blanc",
+    "name": "Marlborough Sauvignon Blanc",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Marlborough",
+    "country": "New Zealand",
+    "grape": "Sauvignon Blanc",
+    "colour": "white",
+    "style": "Dry · Crisp · Aromatic",
+    "body": 2,
+    "sweetness": 1,
+    "acidity": 5,
+    "tannin": 1,
+    "flavourNotes": [
+      "Dry",
+      "Crisp",
+      "Aromatic",
+      "Passionfruit",
+      "Gooseberry",
+      "Citrus"
+    ],
+    "description": "Bright and dry, with lively citrus, tropical fruit and a fresh herbal edge.",
+    "foodPairings": [
+      "Seafood",
+      "Shellfish",
+      "Goat cheese",
+      "Salad",
+      "Sea bass"
+    ],
+    "similarTo": [
+      "Sancerre",
+      "Albariño",
+      "Assyrtiko"
+    ],
+    "servingNotes": "Serve chilled, around 8–12°C; allow richer styles to warm slightly.",
+    "guestDescription": "Bright and dry, with lively citrus, tropical fruit and a fresh herbal edge.",
+    "imageName": "wine-white",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-picpoul-de-pinet",
+    "name": "Picpoul de Pinet",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Languedoc",
+    "country": "France",
+    "grape": "Picpoul",
+    "colour": "white",
+    "style": "Dry · Light · Crisp",
+    "body": 2,
+    "sweetness": 1,
+    "acidity": 5,
+    "tannin": 1,
+    "flavourNotes": [
+      "Dry",
+      "Light",
+      "Crisp",
+      "Green apple",
+      "Citrus",
+      "Fresh"
+    ],
+    "description": "A light, dry white with clean apple and lemon flavours, especially easy with seafood.",
+    "foodPairings": [
+      "Oysters",
+      "Shellfish",
+      "Seafood",
+      "Sea bass",
+      "Salad"
+    ],
+    "similarTo": [
+      "Sauvignon Blanc",
+      "Muscadet",
+      "Albariño"
+    ],
+    "servingNotes": "Serve chilled, around 8–12°C; allow richer styles to warm slightly.",
+    "guestDescription": "A light, dry white with clean apple and lemon flavours, especially easy with seafood.",
+    "imageName": "wine-white",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-rias-baixas-albarino",
+    "name": "Rías Baixas Albariño",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Rías Baixas",
+    "country": "Spain",
+    "grape": "Albariño",
+    "colour": "white",
+    "style": "Dry · Crisp · Mineral",
+    "body": 3,
+    "sweetness": 1,
+    "acidity": 4,
+    "tannin": 1,
+    "flavourNotes": [
+      "Dry",
+      "Crisp",
+      "Mineral",
+      "Peach",
+      "Citrus"
+    ],
+    "description": "Fresh and dry with peach and citrus, plus a gentle salty finish.",
+    "foodPairings": [
+      "Seafood",
+      "Prawns",
+      "Shellfish",
+      "Sea bass",
+      "Chicken"
+    ],
+    "similarTo": [
+      "Sauvignon Blanc",
+      "Assyrtiko",
+      "Picpoul"
+    ],
+    "servingNotes": "Serve chilled, around 8–12°C; allow richer styles to warm slightly.",
+    "guestDescription": "Fresh and dry with peach and citrus, plus a gentle salty finish.",
+    "imageName": "wine-white",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-macon-chardonnay",
+    "name": "Mâcon Chardonnay",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Mâconnais, Burgundy",
+    "country": "France",
+    "grape": "Chardonnay",
+    "colour": "white",
+    "style": "Dry · Round · Apple",
+    "body": 3,
+    "sweetness": 1,
+    "acidity": 4,
+    "tannin": 1,
+    "flavourNotes": [
+      "Dry",
+      "Round",
+      "Apple",
+      "Citrus",
+      "Unoaked"
+    ],
+    "description": "A rounded, dry Chardonnay with apple and citrus, made here as an unoaked sample style.",
+    "foodPairings": [
+      "Chicken",
+      "Seafood",
+      "Creamy pasta",
+      "Soft cheese",
+      "Sea bass"
+    ],
+    "similarTo": [
+      "Chablis",
+      "Pinot Blanc",
+      "Chenin Blanc"
+    ],
+    "servingNotes": "Serve chilled, around 8–12°C; allow richer styles to warm slightly.",
+    "guestDescription": "A rounded, dry Chardonnay with apple and citrus, made here as an unoaked sample style.",
+    "imageName": "wine-white",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-barrel-chardonnay",
+    "name": "Barrel Chardonnay",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Margaret River",
+    "country": "Australia",
+    "grape": "Chardonnay",
+    "colour": "white",
+    "style": "Dry · Rich · Full",
+    "body": 4,
+    "sweetness": 1,
+    "acidity": 3,
+    "tannin": 1,
+    "flavourNotes": [
+      "Dry",
+      "Rich",
+      "Full",
+      "Oaky",
+      "Vanilla",
+      "Peach"
+    ],
+    "description": "A richer, fuller white with ripe fruit, a creamy feel and a touch of oak.",
+    "foodPairings": [
+      "Roast chicken",
+      "Lobster",
+      "Creamy pasta",
+      "Cheese",
+      "Grilled fish"
+    ],
+    "similarTo": [
+      "White Burgundy",
+      "Viognier"
+    ],
+    "servingNotes": "Serve chilled, around 8–12°C; allow richer styles to warm slightly.",
+    "guestDescription": "A richer, fuller white with ripe fruit, a creamy feel and a touch of oak.",
+    "imageName": "wine-white",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-mosel-riesling-kabinett",
+    "name": "Mosel Riesling Kabinett",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Mosel",
+    "country": "Germany",
+    "grape": "Riesling",
+    "colour": "white",
+    "style": "Off-dry · Light · Floral",
+    "body": 2,
+    "sweetness": 3,
+    "acidity": 5,
+    "tannin": 1,
+    "flavourNotes": [
+      "Off-dry",
+      "Light",
+      "Floral",
+      "Lime",
+      "Peach",
+      "Crisp"
+    ],
+    "description": "Light and fragrant with lime and peach, plus a little sweetness balanced by fresh acidity.",
+    "foodPairings": [
+      "Spicy chicken",
+      "Thai food",
+      "Pork",
+      "Salad",
+      "Asian seafood"
+    ],
+    "similarTo": [
+      "Off-dry Chenin Blanc",
+      "Pinot Gris",
+      "Gewürztraminer"
+    ],
+    "servingNotes": "Serve chilled, around 8–12°C; allow richer styles to warm slightly.",
+    "guestDescription": "Light and fragrant with lime and peach, plus a little sweetness balanced by fresh acidity.",
+    "imageName": "wine-white",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-provence-rose",
+    "name": "Provence Rosé",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Provence",
+    "country": "France",
+    "grape": "Grenache, Cinsault, Syrah",
+    "colour": "rose",
+    "style": "Dry · Light · Fresh",
+    "body": 2,
+    "sweetness": 1,
+    "acidity": 3,
+    "tannin": 1,
+    "flavourNotes": [
+      "Dry",
+      "Light",
+      "Fresh",
+      "Strawberry",
+      "Citrus"
+    ],
+    "description": "Pale, dry and refreshing with delicate red berries and a clean finish.",
+    "foodPairings": [
+      "Salad",
+      "Seafood",
+      "Chicken",
+      "Pasta",
+      "Mediterranean vegetables"
+    ],
+    "similarTo": [
+      "Dry Pinot Grigio",
+      "Dry Grenache rosé"
+    ],
+    "servingNotes": "Serve chilled, around 8–10°C.",
+    "guestDescription": "Pale, dry and refreshing with delicate red berries and a clean finish.",
+    "imageName": "wine-rose",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-pinot-noir-rose",
+    "name": "Pinot Noir Rosé",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Sussex",
+    "country": "England",
+    "grape": "Pinot Noir",
+    "colour": "rose",
+    "style": "Dry · Crisp · Fruity",
+    "body": 2,
+    "sweetness": 1,
+    "acidity": 4,
+    "tannin": 1,
+    "flavourNotes": [
+      "Dry",
+      "Crisp",
+      "Fruity",
+      "Redcurrant",
+      "Strawberry"
+    ],
+    "description": "A fresh, dry rosé with red berries and a little extra tang.",
+    "foodPairings": [
+      "Salmon",
+      "Chicken",
+      "Salad",
+      "Soft cheese",
+      "Seafood"
+    ],
+    "similarTo": [
+      "Provence rosé",
+      "Light Pinot Noir"
+    ],
+    "servingNotes": "Serve chilled, around 8–10°C.",
+    "guestDescription": "A fresh, dry rosé with red berries and a little extra tang.",
+    "imageName": "wine-rose",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-central-otago-pinot-noir",
+    "name": "Central Otago Pinot Noir",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Central Otago",
+    "country": "New Zealand",
+    "grape": "Pinot Noir",
+    "colour": "red",
+    "style": "Dry · Light · Silky",
+    "body": 2,
+    "sweetness": 1,
+    "acidity": 4,
+    "tannin": 2,
+    "flavourNotes": [
+      "Dry",
+      "Light",
+      "Silky",
+      "Cherry",
+      "Red berries",
+      "Earthy"
+    ],
+    "description": "A lighter red with juicy cherry fruit, gentle tannins and a smooth finish.",
+    "foodPairings": [
+      "Duck",
+      "Chicken",
+      "Mushroom pasta",
+      "Salmon",
+      "Soft cheese"
+    ],
+    "similarTo": [
+      "Gamay",
+      "Beaujolais",
+      "Red Burgundy"
+    ],
+    "servingNotes": "Serve lightly cool, around 15–18°C; adjust to the specific bottle.",
+    "guestDescription": "A lighter red with juicy cherry fruit, gentle tannins and a smooth finish.",
+    "imageName": "wine-red",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-mendoza-malbec",
+    "name": "Mendoza Malbec",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Mendoza",
+    "country": "Argentina",
+    "grape": "Malbec",
+    "colour": "red",
+    "style": "Dry · Full · Rich",
+    "body": 5,
+    "sweetness": 1,
+    "acidity": 3,
+    "tannin": 4,
+    "flavourNotes": [
+      "Dry",
+      "Full",
+      "Rich",
+      "Fruity",
+      "Blackberry",
+      "Plum"
+    ],
+    "description": "Full-bodied and fruity, with dark plum and blackberry flavours; a confident match for steak.",
+    "foodPairings": [
+      "Steak",
+      "Beef",
+      "Burger",
+      "Barbecue",
+      "Hard cheese"
+    ],
+    "similarTo": [
+      "Shiraz",
+      "Cabernet Sauvignon",
+      "Tempranillo"
+    ],
+    "servingNotes": "Serve lightly cool, around 15–18°C; adjust to the specific bottle.",
+    "guestDescription": "Full-bodied and fruity, with dark plum and blackberry flavours; a confident match for steak.",
+    "imageName": "wine-red",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-coonawarra-cabernet-sauvignon",
+    "name": "Coonawarra Cabernet Sauvignon",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Coonawarra",
+    "country": "Australia",
+    "grape": "Cabernet Sauvignon",
+    "colour": "red",
+    "style": "Dry · Full · Structured",
+    "body": 5,
+    "sweetness": 1,
+    "acidity": 4,
+    "tannin": 5,
+    "flavourNotes": [
+      "Dry",
+      "Full",
+      "Structured",
+      "Blackcurrant",
+      "Cedar",
+      "Oaky"
+    ],
+    "description": "A full, structured red with blackcurrant fruit and firm tannins, best with a rich savoury dish.",
+    "foodPairings": [
+      "Steak",
+      "Roast beef",
+      "Lamb",
+      "Hard cheese",
+      "Burger"
+    ],
+    "similarTo": [
+      "Malbec",
+      "Bordeaux",
+      "Shiraz"
+    ],
+    "servingNotes": "Serve lightly cool, around 15–18°C; adjust to the specific bottle.",
+    "guestDescription": "A full, structured red with blackcurrant fruit and firm tannins, best with a rich savoury dish.",
+    "imageName": "wine-red",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-barossa-shiraz",
+    "name": "Barossa Shiraz",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Barossa Valley",
+    "country": "Australia",
+    "grape": "Shiraz / Syrah",
+    "colour": "red",
+    "style": "Dry · Full · Rich",
+    "body": 5,
+    "sweetness": 1,
+    "acidity": 3,
+    "tannin": 4,
+    "flavourNotes": [
+      "Dry",
+      "Full",
+      "Rich",
+      "Blackberry",
+      "Pepper",
+      "Spice"
+    ],
+    "description": "Bold dark fruit with a warm peppery note and enough richness for grilled meat.",
+    "foodPairings": [
+      "Steak",
+      "Barbecue",
+      "Lamb",
+      "Burger",
+      "Hard cheese"
+    ],
+    "similarTo": [
+      "Malbec",
+      "Cabernet Sauvignon",
+      "Syrah"
+    ],
+    "servingNotes": "Serve lightly cool, around 15–18°C; adjust to the specific bottle.",
+    "guestDescription": "Bold dark fruit with a warm peppery note and enough richness for grilled meat.",
+    "imageName": "wine-red",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-chianti-classico",
+    "name": "Chianti Classico",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Tuscany",
+    "country": "Italy",
+    "grape": "Sangiovese",
+    "colour": "red",
+    "style": "Dry · Savoury · Cherry",
+    "body": 3,
+    "sweetness": 1,
+    "acidity": 5,
+    "tannin": 4,
+    "flavourNotes": [
+      "Dry",
+      "Savoury",
+      "Cherry",
+      "Herbal",
+      "Fresh"
+    ],
+    "description": "A dry, savoury red with tart cherry fruit and bright freshness that works well with tomato dishes.",
+    "foodPairings": [
+      "Tomato pasta",
+      "Pizza",
+      "Steak",
+      "Lamb",
+      "Hard cheese"
+    ],
+    "similarTo": [
+      "Tempranillo",
+      "Barbera",
+      "Nebbiolo"
+    ],
+    "servingNotes": "Serve lightly cool, around 15–18°C; adjust to the specific bottle.",
+    "guestDescription": "A dry, savoury red with tart cherry fruit and bright freshness that works well with tomato dishes.",
+    "imageName": "wine-red",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-prosecco-brut",
+    "name": "Prosecco Brut",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Veneto",
+    "country": "Italy",
+    "grape": "Glera",
+    "colour": "sparkling",
+    "style": "Dry · Light · Fruity",
+    "body": 2,
+    "sweetness": 1,
+    "acidity": 3,
+    "tannin": 1,
+    "flavourNotes": [
+      "Dry",
+      "Light",
+      "Fruity",
+      "Pear",
+      "Apple",
+      "Floral"
+    ],
+    "description": "Light, dry bubbles with pear and apple flavours; an easy aperitif.",
+    "foodPairings": [
+      "Aperitif",
+      "Fried seafood",
+      "Canapés",
+      "Salad",
+      "Soft cheese"
+    ],
+    "similarTo": [
+      "Cava",
+      "Dry sparkling wine"
+    ],
+    "servingNotes": "Serve well chilled, around 6–8°C; open carefully.",
+    "guestDescription": "Light, dry bubbles with pear and apple flavours; an easy aperitif.",
+    "imageName": "wine-sparkling",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-sussex-traditional-method-brut",
+    "name": "Sussex Traditional Method Brut",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Sussex",
+    "country": "England",
+    "grape": "Chardonnay, Pinot Noir, Pinot Meunier",
+    "colour": "sparkling",
+    "style": "Dry · Crisp · Mineral",
+    "body": 3,
+    "sweetness": 1,
+    "acidity": 5,
+    "tannin": 1,
+    "flavourNotes": [
+      "Dry",
+      "Crisp",
+      "Mineral",
+      "Apple",
+      "Toast",
+      "Citrus"
+    ],
+    "description": "Dry, lively bubbles with crisp apple, citrus and a subtle toasted note.",
+    "foodPairings": [
+      "Oysters",
+      "Shellfish",
+      "Fish and chips",
+      "Seafood",
+      "Canapés"
+    ],
+    "similarTo": [
+      "Champagne",
+      "Cava"
+    ],
+    "servingNotes": "Serve well chilled, around 6–8°C; open carefully.",
+    "guestDescription": "Dry, lively bubbles with crisp apple, citrus and a subtle toasted note.",
+    "imageName": "wine-sparkling",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  },
+  {
+    "id": "sample-wine-sauternes-dessert-wine",
+    "name": "Sauternes Dessert Wine",
+    "venueID": "rockwater-hove",
+    "producer": "Sample cellar selection",
+    "region": "Bordeaux",
+    "country": "France",
+    "grape": "Sémillon, Sauvignon Blanc",
+    "colour": "dessert",
+    "style": "Sweet · Rich · Honey",
+    "body": 5,
+    "sweetness": 5,
+    "acidity": 4,
+    "tannin": 1,
+    "flavourNotes": [
+      "Sweet",
+      "Rich",
+      "Honey",
+      "Apricot",
+      "Citrus"
+    ],
+    "description": "Luscious and sweet, with honey and apricot flavours balanced by a fresh finish.",
+    "foodPairings": [
+      "Dessert",
+      "Fruit tart",
+      "Blue cheese",
+      "Cheese",
+      "Crème brûlée"
+    ],
+    "similarTo": [
+      "Sweet Tokaji",
+      "Late harvest Riesling"
+    ],
+    "servingNotes": "Serve chilled, around 8–12°C, in a smaller wine glass.",
+    "guestDescription": "Luscious and sweet, with honey and apricot flavours balanced by a fresh finish.",
+    "imageName": "wine-dessert",
+    "venueSpecific": true,
+    "isActive": true,
+    "isSample": true
+  }
+]

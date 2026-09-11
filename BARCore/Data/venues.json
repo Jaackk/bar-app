@@ -1,0 +1,12 @@
+[
+  {
+    "id": "rockwater-hove",
+    "name": "Rockwater Hove",
+    "location": "Hove, England",
+    "venueCode": "RWH",
+    "branding": {
+      "displayName": "ROCKWATER",
+      "subtitle": "Bar"
+    }
+  }
+]

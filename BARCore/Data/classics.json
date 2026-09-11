@@ -1,0 +1,2242 @@
+[
+  {
+    "id": "classic-old-fashioned",
+    "name": "Old Fashioned",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Rich • Aromatic • Spirit forward",
+    "venueSpecific": false,
+    "category": "Spirit Forward",
+    "baseSpirit": "Whisky",
+    "flavourTags": [
+      "Rich",
+      "Aromatic",
+      "Spirit forward"
+    ],
+    "ingredients": [
+      {
+        "name": "Bourbon or rye whiskey",
+        "amount": 45,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-old-fashioned-ingredient-1"
+      },
+      {
+        "name": "Sugar cube",
+        "amount": 1,
+        "unit": "piece",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Dissolve fully before adding ice.",
+        "id": "classic-old-fashioned-ingredient-2"
+      },
+      {
+        "name": "Angostura bitters",
+        "amount": 3,
+        "unit": "dash",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Seed fixes the IBA “few dashes” at three; calibrate the dasher.",
+        "id": "classic-old-fashioned-ingredient-3"
+      },
+      {
+        "name": "Water",
+        "amount": 3,
+        "unit": "dash",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "classic-old-fashioned-ingredient-4"
+      }
+    ],
+    "method": "Stir",
+    "glass": "Rocks",
+    "ice": "Large cube",
+    "garnish": "Orange zest and cocktail cherry",
+    "prepInstructions": [
+      "Dissolve the sugar with bitters and water in the glass.",
+      "Add whiskey and ice, then stir until cold with balanced dilution.",
+      "Express the orange zest and garnish."
+    ],
+    "serviceNotes": "Three dashes are a measured seed convention. For a syrup version, validate sweetness and dilution before replacing the sugar cube.",
+    "allergens": [],
+    "imageName": "classic-spirit-forward",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": [
+      "Rye gives a drier, spicier style; bourbon a rounder one."
+    ]
+  },
+  {
+    "id": "classic-negroni",
+    "name": "Negroni",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Bitter • Herbal • Orange",
+    "venueSpecific": false,
+    "category": "Spirit Forward",
+    "baseSpirit": "Gin",
+    "flavourTags": [
+      "Bitter",
+      "Herbal",
+      "Orange"
+    ],
+    "ingredients": [
+      {
+        "name": "Gin",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-negroni-ingredient-1"
+      },
+      {
+        "name": "Campari",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-negroni-ingredient-2"
+      },
+      {
+        "name": "Sweet red vermouth",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 750,
+        "id": "classic-negroni-ingredient-3"
+      }
+    ],
+    "method": "Build & stir",
+    "glass": "Rocks",
+    "ice": "Large cube",
+    "garnish": "Half orange slice",
+    "prepInstructions": [
+      "Add all three measured ingredients to an ice-filled rocks glass.",
+      "Stir to chill and dilute, then garnish."
+    ],
+    "serviceNotes": "Equal parts is the reference; a venue override may choose another ratio. Refrigerate opened vermouth.",
+    "allergens": [
+      "Sulphites (vermouth; verify product label)"
+    ],
+    "imageName": "classic-spirit-forward",
+    "isPopular": true,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-margarita",
+    "name": "Margarita",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Citrus • Bright • Dry",
+    "venueSpecific": false,
+    "category": "Sours",
+    "baseSpirit": "Tequila",
+    "flavourTags": [
+      "Citrus",
+      "Bright",
+      "Dry"
+    ],
+    "ingredients": [
+      {
+        "name": "Blanco tequila",
+        "amount": 50,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-margarita-ingredient-1"
+      },
+      {
+        "name": "Triple sec",
+        "amount": 20,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-margarita-ingredient-2"
+      },
+      {
+        "name": "Lime juice",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-margarita-ingredient-3"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Coupe",
+    "ice": "Straight up",
+    "garnish": "Optional half salt rim",
+    "prepInstructions": [
+      "If requested, salt half the rim before building the drink.",
+      "Shake the measured liquids with ice.",
+      "Fine strain into a chilled coupe."
+    ],
+    "serviceNotes": "IBA proportions are the selected reference. Lime acidity and liqueur sweetness vary; follow the approved venue balance.",
+    "allergens": [],
+    "imageName": "classic-sours",
+    "isPopular": true,
+    "isActive": true,
+    "isSample": false,
+    "variations": [
+      "A rocks serve is common.",
+      "Tommy’s Margarita replaces orange liqueur with agave nectar."
+    ]
+  },
+  {
+    "id": "classic-tommy-s-margarita",
+    "name": "Tommy's Margarita",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Agave • Citrus • Fresh",
+    "venueSpecific": false,
+    "category": "Sours",
+    "baseSpirit": "Tequila",
+    "flavourTags": [
+      "Agave",
+      "Citrus",
+      "Fresh"
+    ],
+    "ingredients": [
+      {
+        "name": "100% agave tequila",
+        "amount": 60,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-tommy-s-margarita-ingredient-1"
+      },
+      {
+        "name": "Lime juice",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-tommy-s-margarita-ingredient-2"
+      },
+      {
+        "name": "Agave nectar",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "IBA reference amount; agave nectar concentration varies by brand.",
+        "bottleSize": 1000,
+        "id": "classic-tommy-s-margarita-ingredient-3"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Rocks",
+    "ice": "Cubed",
+    "garnish": "Lime slice",
+    "prepInstructions": [
+      "Shake the tequila, lime and agave nectar with ice.",
+      "Strain over fresh cubed ice and garnish."
+    ],
+    "serviceNotes": "Agave concentration materially changes sweetness. This seed follows the IBA amount; many bars use less nectar, so confirm the venue standard.",
+    "allergens": [],
+    "imageName": "classic-sours",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-daiquiri",
+    "name": "Daiquiri",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Citrus • Clean • Zesty",
+    "venueSpecific": false,
+    "category": "Sours",
+    "baseSpirit": "Rum",
+    "flavourTags": [
+      "Citrus",
+      "Clean",
+      "Zesty"
+    ],
+    "ingredients": [
+      {
+        "name": "White Cuban rum",
+        "amount": 60,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-daiquiri-ingredient-1"
+      },
+      {
+        "name": "Lime juice",
+        "amount": 20,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-daiquiri-ingredient-2"
+      },
+      {
+        "name": "Superfine sugar",
+        "amount": 2,
+        "unit": "barspoon",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Dry sugar; barspoon volume is not treated as a liquid measurement.",
+        "id": "classic-daiquiri-ingredient-3"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Coupe",
+    "ice": "Straight up",
+    "garnish": "None",
+    "prepInstructions": [
+      "Stir rum, lime and sugar in a shaker until the sugar dissolves.",
+      "Add ice and shake until chilled.",
+      "Fine strain into a chilled coupe."
+    ],
+    "serviceNotes": "This reference uses the IBA dry-sugar formulation. Do not swap sugar for the same volume of syrup without validating the spec.",
+    "allergens": [],
+    "imageName": "classic-sours",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": [
+      "Adjust the approved recipe for the juice and sweetener used."
+    ]
+  },
+  {
+    "id": "classic-mojito",
+    "name": "Mojito",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Mint • Citrus • Refreshing",
+    "venueSpecific": false,
+    "category": "Highballs",
+    "baseSpirit": "Rum",
+    "flavourTags": [
+      "Mint",
+      "Citrus",
+      "Refreshing"
+    ],
+    "ingredients": [
+      {
+        "name": "White Cuban rum",
+        "amount": 45,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-mojito-ingredient-1"
+      },
+      {
+        "name": "Lime juice",
+        "amount": 20,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-mojito-ingredient-2"
+      },
+      {
+        "name": "Mint leaves",
+        "amount": 6,
+        "unit": "piece",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Use tender leaves; muddle gently, without shredding.",
+        "id": "classic-mojito-ingredient-3"
+      },
+      {
+        "name": "White cane sugar",
+        "amount": 2,
+        "unit": "barspoon",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Seed treats one level barspoon as the stated teaspoon for dry sugar.",
+        "id": "classic-mojito-ingredient-4"
+      },
+      {
+        "name": "Soda water",
+        "amount": 0,
+        "unit": "top",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Add chilled at service; never shake carbonation.",
+        "id": "classic-mojito-ingredient-5"
+      },
+      {
+        "name": "Mint sprig",
+        "amount": 1,
+        "unit": "sprig",
+        "batchable": true,
+        "batchBehaviour": "garnishCount",
+        "notes": "",
+        "id": "classic-mojito-ingredient-6"
+      }
+    ],
+    "method": "Build",
+    "glass": "Highball",
+    "ice": "Cubed",
+    "garnish": "Mint sprig and lime slice",
+    "prepInstructions": [
+      "Gently press mint with sugar and lime in the glass.",
+      "Add a little soda to dissolve the sugar.",
+      "Fill with ice, add rum and top with chilled soda.",
+      "Lift gently with a spoon, then garnish."
+    ],
+    "serviceNotes": "Mint leaf count is a practical seed adaptation of the IBA mint instruction. Add mint and soda at service; do not hold muddled mint in a bulk batch.",
+    "allergens": [],
+    "imageName": "classic-highballs",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-cosmopolitan",
+    "name": "Cosmopolitan",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Citrus • Tart • Cranberry",
+    "venueSpecific": false,
+    "category": "Martinis",
+    "baseSpirit": "Vodka",
+    "flavourTags": [
+      "Citrus",
+      "Tart",
+      "Cranberry"
+    ],
+    "ingredients": [
+      {
+        "name": "Citron vodka",
+        "amount": 40,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-cosmopolitan-ingredient-1"
+      },
+      {
+        "name": "Cointreau",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-cosmopolitan-ingredient-2"
+      },
+      {
+        "name": "Lime juice",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-cosmopolitan-ingredient-3"
+      },
+      {
+        "name": "Cranberry juice",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "classic-cosmopolitan-ingredient-4"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Coupe",
+    "ice": "Straight up",
+    "garnish": "Lemon twist",
+    "prepInstructions": [
+      "Shake all liquids with ice until very cold.",
+      "Fine strain into a chilled coupe and express the twist."
+    ],
+    "serviceNotes": "Use the approved cranberry product consistently; juice drinks vary in sugar.",
+    "allergens": [],
+    "imageName": "classic-martinis",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-espresso-martini",
+    "name": "Espresso Martini",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Coffee • Rich • Bittersweet",
+    "venueSpecific": false,
+    "category": "After Dinner",
+    "baseSpirit": "Vodka",
+    "flavourTags": [
+      "Coffee",
+      "Rich",
+      "Bittersweet"
+    ],
+    "ingredients": [
+      {
+        "name": "Vodka",
+        "amount": 50,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-espresso-martini-ingredient-1"
+      },
+      {
+        "name": "Coffee liqueur",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-espresso-martini-ingredient-2"
+      },
+      {
+        "name": "Sugar syrup",
+        "amount": 10,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "1:1 sugar to water by weight unless the product label specifies otherwise.",
+        "bottleSize": 1000,
+        "id": "classic-espresso-martini-ingredient-3"
+      },
+      {
+        "name": "Fresh espresso",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "One espresso is represented as 30 ml; calibrate extraction to the venue coffee recipe.",
+        "id": "classic-espresso-martini-ingredient-4"
+      },
+      {
+        "name": "Coffee beans",
+        "amount": 3,
+        "unit": "piece",
+        "batchable": true,
+        "batchBehaviour": "garnishCount",
+        "notes": "",
+        "id": "classic-espresso-martini-ingredient-5"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Coupe",
+    "ice": "Straight up",
+    "garnish": "Three coffee beans",
+    "prepInstructions": [
+      "Prepare a fresh espresso and measure it.",
+      "Shake all liquids firmly with ice to create a fine crema.",
+      "Fine strain into a chilled coupe and place three beans on top."
+    ],
+    "serviceNotes": "Espresso is made at service. Taste with the chosen coffee liqueur; sweetness and caffeine depend on the products used.",
+    "allergens": [],
+    "imageName": "classic-after-dinner",
+    "isPopular": true,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-pornstar-martini",
+    "name": "Pornstar Martini",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Passionfruit • Vanilla • Tropical",
+    "venueSpecific": false,
+    "category": "Martinis",
+    "baseSpirit": "Vodka",
+    "flavourTags": [
+      "Passionfruit",
+      "Vanilla",
+      "Tropical"
+    ],
+    "ingredients": [
+      {
+        "name": "Vanilla vodka",
+        "amount": 50,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-pornstar-martini-ingredient-1"
+      },
+      {
+        "name": "Passionfruit liqueur",
+        "amount": 20,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-pornstar-martini-ingredient-2"
+      },
+      {
+        "name": "Passionfruit purée",
+        "amount": 50,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "classic-pornstar-martini-ingredient-3"
+      },
+      {
+        "name": "Vanilla sugar",
+        "amount": 2,
+        "unit": "barspoon",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "classic-pornstar-martini-ingredient-4"
+      },
+      {
+        "name": "Champagne",
+        "amount": 50,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Serve separately in a small chilled glass.",
+        "bottleSize": 750,
+        "id": "classic-pornstar-martini-ingredient-5"
+      },
+      {
+        "name": "Passionfruit half",
+        "amount": 1,
+        "unit": "piece",
+        "batchable": true,
+        "batchBehaviour": "garnishCount",
+        "notes": "",
+        "id": "classic-pornstar-martini-ingredient-6"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Coupe",
+    "ice": "Straight up",
+    "garnish": "Passionfruit half",
+    "prepInstructions": [
+      "Dissolve the vanilla sugar into the non-sparkling ingredients.",
+      "Shake those ingredients with ice and fine strain into a chilled coupe.",
+      "Garnish and serve Champagne alongside."
+    ],
+    "serviceNotes": "IBA-style reference uses purée and vanilla sugar. Lime/syrup/Prosecco versions are common variations, not silently interchangeable.",
+    "allergens": [
+      "Sulphites (Champagne; verify product label)"
+    ],
+    "imageName": "classic-martinis",
+    "isPopular": true,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-whiskey-sour",
+    "name": "Whiskey Sour",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Citrus • Silky • Balanced",
+    "venueSpecific": false,
+    "category": "Sours",
+    "baseSpirit": "Whisky",
+    "flavourTags": [
+      "Citrus",
+      "Silky",
+      "Balanced"
+    ],
+    "ingredients": [
+      {
+        "name": "Bourbon whiskey",
+        "amount": 45,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-whiskey-sour-ingredient-1"
+      },
+      {
+        "name": "Lemon juice",
+        "amount": 25,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-whiskey-sour-ingredient-2"
+      },
+      {
+        "name": "Sugar syrup",
+        "amount": 20,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "1:1 sugar to water by weight unless the product label specifies otherwise.",
+        "bottleSize": 1000,
+        "id": "classic-whiskey-sour-ingredient-3"
+      },
+      {
+        "name": "Pasteurised egg white (optional)",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Optional seed measure for foam; IBA describes only a few drops. Confirm allergies and the venue egg procedure.",
+        "id": "classic-whiskey-sour-ingredient-4"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Rocks",
+    "ice": "Cubed",
+    "garnish": "Orange zest and cocktail cherry",
+    "prepInstructions": [
+      "If using egg white, combine ingredients and shake without ice.",
+      "Add ice and shake until well chilled.",
+      "Fine strain over fresh ice and garnish."
+    ],
+    "serviceNotes": "Egg is optional and this version includes it in the displayed spec. For an egg-free order, omit it and use clean equipment under the venue allergen procedure.",
+    "allergens": [
+      "Egg (optional ingredient)"
+    ],
+    "imageName": "classic-sours",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": [
+      "The egg-free version is also a standard Whiskey Sour."
+    ]
+  },
+  {
+    "id": "classic-amaretto-sour",
+    "name": "Amaretto Sour",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Almond • Citrus • Silky",
+    "venueSpecific": false,
+    "category": "Sours",
+    "baseSpirit": "Liqueur",
+    "flavourTags": [
+      "Almond",
+      "Citrus",
+      "Silky"
+    ],
+    "ingredients": [
+      {
+        "name": "Amaretto",
+        "amount": 45,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-amaretto-sour-ingredient-1"
+      },
+      {
+        "name": "Cask-proof bourbon",
+        "amount": 22.5,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-amaretto-sour-ingredient-2"
+      },
+      {
+        "name": "Lemon juice",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-amaretto-sour-ingredient-3"
+      },
+      {
+        "name": "Rich sugar syrup",
+        "amount": 5,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "2:1 sugar to water by weight.",
+        "bottleSize": 1000,
+        "id": "classic-amaretto-sour-ingredient-4"
+      },
+      {
+        "name": "Pasteurised egg white",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "",
+        "id": "classic-amaretto-sour-ingredient-5"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Rocks",
+    "ice": "Cubed",
+    "garnish": "Lemon zest and brandied cherry",
+    "prepInstructions": [
+      "Combine the liquids and shake without ice to emulsify.",
+      "Shake again with ice.",
+      "Fine strain over fresh ice and garnish."
+    ],
+    "serviceNotes": "Morgenthaler-style modern variation with bourbon. Amaretto formulations vary: verify nut/allergen statements on the actual bottle.",
+    "allergens": [
+      "Egg",
+      "Possible nuts (amaretto brand dependent)"
+    ],
+    "imageName": "classic-sours",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": [
+      "A liqueur-only sour is another established version."
+    ]
+  },
+  {
+    "id": "classic-mai-tai",
+    "name": "Mai Tai",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Nutty • Citrus • Complex",
+    "venueSpecific": false,
+    "category": "Tiki",
+    "baseSpirit": "Rum",
+    "flavourTags": [
+      "Nutty",
+      "Citrus",
+      "Complex"
+    ],
+    "ingredients": [
+      {
+        "name": "Amber Jamaican rum",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-mai-tai-ingredient-1"
+      },
+      {
+        "name": "Martinique molasses rum",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-mai-tai-ingredient-2"
+      },
+      {
+        "name": "Orange curaçao",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-mai-tai-ingredient-3"
+      },
+      {
+        "name": "Orgeat syrup",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Contains almond in this reference; verify supplier allergen information.",
+        "bottleSize": 1000,
+        "id": "classic-mai-tai-ingredient-4"
+      },
+      {
+        "name": "Lime juice",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-mai-tai-ingredient-5"
+      },
+      {
+        "name": "Sugar syrup",
+        "amount": 7.5,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "1:1 sugar to water by weight unless the product label specifies otherwise.",
+        "bottleSize": 1000,
+        "id": "classic-mai-tai-ingredient-6"
+      },
+      {
+        "name": "Mint sprig",
+        "amount": 1,
+        "unit": "sprig",
+        "batchable": true,
+        "batchBehaviour": "garnishCount",
+        "notes": "",
+        "id": "classic-mai-tai-ingredient-7"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Double rocks",
+    "ice": "Crushed",
+    "garnish": "Mint, pineapple spear and lime peel",
+    "prepInstructions": [
+      "Shake the liquids with ice.",
+      "Pour into a double rocks glass and add fresh crushed ice as needed.",
+      "Set the mint, pineapple and lime garnish."
+    ],
+    "serviceNotes": "The IBA reference specifies a molasses-based Martinique rum, not automatically rhum agricole. Rum blend and orgeat vary between bars.",
+    "allergens": [
+      "Nuts (almond orgeat)"
+    ],
+    "imageName": "classic-tiki",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-martini",
+    "name": "Martini",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Dry • Herbal • Elegant",
+    "venueSpecific": false,
+    "category": "Martinis",
+    "baseSpirit": "Gin",
+    "flavourTags": [
+      "Dry",
+      "Herbal",
+      "Elegant"
+    ],
+    "ingredients": [
+      {
+        "name": "Gin",
+        "amount": 40,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-martini-ingredient-1"
+      },
+      {
+        "name": "Dry vermouth",
+        "amount": 20,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 750,
+        "id": "classic-martini-ingredient-2"
+      }
+    ],
+    "method": "Stir",
+    "glass": "Martini",
+    "ice": "Straight up",
+    "garnish": "Lemon and orange twists",
+    "prepInstructions": [
+      "Stir gin and vermouth with ice until cold and diluted.",
+      "Strain into a chilled Martini glass.",
+      "Express citrus oils over the surface."
+    ],
+    "serviceNotes": "A 2:1 gin-to-vermouth reference inspired by the Plymouth Douglas Martini. Ask for the guest’s spirit, dryness and garnish preference.",
+    "allergens": [
+      "Sulphites (vermouth; verify product label)"
+    ],
+    "imageName": "classic-martinis",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": [
+      "Dry Martini uses a 6:1 ratio in this library.",
+      "Vodka may replace gin by guest request."
+    ]
+  },
+  {
+    "id": "classic-dry-martini",
+    "name": "Dry Martini",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Dry • Crisp • Spirit forward",
+    "venueSpecific": false,
+    "category": "Martinis",
+    "baseSpirit": "Gin",
+    "flavourTags": [
+      "Dry",
+      "Crisp",
+      "Spirit forward"
+    ],
+    "ingredients": [
+      {
+        "name": "Gin",
+        "amount": 60,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-dry-martini-ingredient-1"
+      },
+      {
+        "name": "Dry vermouth",
+        "amount": 10,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 750,
+        "id": "classic-dry-martini-ingredient-2"
+      }
+    ],
+    "method": "Stir",
+    "glass": "Martini",
+    "ice": "Straight up",
+    "garnish": "Lemon twist or olive",
+    "prepInstructions": [
+      "Stir gin and vermouth with plenty of ice until cold.",
+      "Strain into a deeply chilled Martini glass.",
+      "Express lemon oils or add the requested olive."
+    ],
+    "serviceNotes": "The selected IBA reference is 6:1. Extra dry, wet and vodka variations should use the venue’s approved recipe.",
+    "allergens": [
+      "Sulphites (vermouth; verify product label)"
+    ],
+    "imageName": "classic-martinis",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-dirty-martini",
+    "name": "Dirty Martini",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Savoury • Saline • Dry",
+    "venueSpecific": false,
+    "category": "Martinis",
+    "baseSpirit": "Vodka",
+    "flavourTags": [
+      "Savoury",
+      "Saline",
+      "Dry"
+    ],
+    "ingredients": [
+      {
+        "name": "Vodka",
+        "amount": 60,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-dirty-martini-ingredient-1"
+      },
+      {
+        "name": "Dry vermouth",
+        "amount": 12,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 750,
+        "id": "classic-dirty-martini-ingredient-2"
+      },
+      {
+        "name": "Olive brine",
+        "amount": 12,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "prepareSeparately",
+        "notes": "Strain the brine and keep refrigerated under the supplier instructions.",
+        "id": "classic-dirty-martini-ingredient-3"
+      },
+      {
+        "name": "Green olives",
+        "amount": 3,
+        "unit": "piece",
+        "batchable": true,
+        "batchBehaviour": "garnishCount",
+        "notes": "",
+        "id": "classic-dirty-martini-ingredient-4"
+      }
+    ],
+    "method": "Stir",
+    "glass": "Martini",
+    "ice": "Straight up",
+    "garnish": "Three green olives",
+    "prepInstructions": [
+      "Measure vodka, vermouth and strained olive brine.",
+      "Stir with ice until chilled and diluted.",
+      "Strain into a chilled glass and add an olive pick."
+    ],
+    "serviceNotes": "A 5:1:1 vodka/vermouth/brine reference, scaled from the producer recipe. Brine salinity varies; confirm the guest’s preferred dirtiness.",
+    "allergens": [
+      "Sulphites (vermouth; verify product label)"
+    ],
+    "imageName": "classic-martinis",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": [
+      "Use gin if requested."
+    ]
+  },
+  {
+    "id": "classic-french-martini",
+    "name": "French Martini",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Raspberry • Pineapple • Soft",
+    "venueSpecific": false,
+    "category": "Martinis",
+    "baseSpirit": "Vodka",
+    "flavourTags": [
+      "Raspberry",
+      "Pineapple",
+      "Soft"
+    ],
+    "ingredients": [
+      {
+        "name": "Vodka",
+        "amount": 45,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-french-martini-ingredient-1"
+      },
+      {
+        "name": "Raspberry liqueur",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-french-martini-ingredient-2"
+      },
+      {
+        "name": "Pineapple juice",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "classic-french-martini-ingredient-3"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Coupe",
+    "ice": "Straight up",
+    "garnish": "Lemon oils",
+    "prepInstructions": [
+      "Shake all liquids with ice until a fine pineapple foam forms.",
+      "Fine strain into a chilled coupe.",
+      "Express lemon oils over the surface."
+    ],
+    "serviceNotes": "The IBA reference uses 15 ml pineapple. Many modern bars use more; publish a venue override if the approved recipe differs.",
+    "allergens": [],
+    "imageName": "classic-martinis",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-manhattan",
+    "name": "Manhattan",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Rich • Spiced • Aromatic",
+    "venueSpecific": false,
+    "category": "Spirit Forward",
+    "baseSpirit": "Whisky",
+    "flavourTags": [
+      "Rich",
+      "Spiced",
+      "Aromatic"
+    ],
+    "ingredients": [
+      {
+        "name": "Rye whiskey",
+        "amount": 50,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-manhattan-ingredient-1"
+      },
+      {
+        "name": "Sweet red vermouth",
+        "amount": 20,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 750,
+        "id": "classic-manhattan-ingredient-2"
+      },
+      {
+        "name": "Angostura bitters",
+        "amount": 1,
+        "unit": "dash",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "classic-manhattan-ingredient-3"
+      }
+    ],
+    "method": "Stir",
+    "glass": "Coupe",
+    "ice": "Straight up",
+    "garnish": "Cocktail cherry",
+    "prepInstructions": [
+      "Stir all liquids with ice to chill and dilute.",
+      "Strain into a chilled coupe and garnish with a cherry."
+    ],
+    "serviceNotes": "Refrigerate opened vermouth. Bourbon is a common guest preference and creates a rounder variation.",
+    "allergens": [
+      "Sulphites (vermouth; verify product label)"
+    ],
+    "imageName": "classic-spirit-forward",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-boulevardier",
+    "name": "Boulevardier",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Bitter • Rich • Orange",
+    "venueSpecific": false,
+    "category": "Spirit Forward",
+    "baseSpirit": "Whisky",
+    "flavourTags": [
+      "Bitter",
+      "Rich",
+      "Orange"
+    ],
+    "ingredients": [
+      {
+        "name": "Bourbon or rye whiskey",
+        "amount": 45,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-boulevardier-ingredient-1"
+      },
+      {
+        "name": "Campari",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-boulevardier-ingredient-2"
+      },
+      {
+        "name": "Sweet red vermouth",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 750,
+        "id": "classic-boulevardier-ingredient-3"
+      }
+    ],
+    "method": "Stir",
+    "glass": "Coupe",
+    "ice": "Straight up",
+    "garnish": "Orange zest",
+    "prepInstructions": [
+      "Stir the measured liquids with ice.",
+      "Strain into a chilled coupe and express the orange zest."
+    ],
+    "serviceNotes": "The selected reference is 45:30:30. Rocks service is a common alternative.",
+    "allergens": [
+      "Sulphites (vermouth; verify product label)"
+    ],
+    "imageName": "classic-spirit-forward",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-paloma",
+    "name": "Paloma",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Grapefruit • Citrus • Refreshing",
+    "venueSpecific": false,
+    "category": "Highballs",
+    "baseSpirit": "Tequila",
+    "flavourTags": [
+      "Grapefruit",
+      "Citrus",
+      "Refreshing"
+    ],
+    "ingredients": [
+      {
+        "name": "Blanco tequila",
+        "amount": 50,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-paloma-ingredient-1"
+      },
+      {
+        "name": "Lime juice",
+        "amount": 5,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-paloma-ingredient-2"
+      },
+      {
+        "name": "Fine salt",
+        "amount": 0,
+        "unit": "top",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "One small pinch per serve; top is used as an unmeasured seasoning unit.",
+        "id": "classic-paloma-ingredient-3"
+      },
+      {
+        "name": "Pink grapefruit soda",
+        "amount": 100,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Add chilled at service; never shake carbonation.",
+        "id": "classic-paloma-ingredient-4"
+      }
+    ],
+    "method": "Build",
+    "glass": "Highball",
+    "ice": "Cubed",
+    "garnish": "Lime slice",
+    "prepInstructions": [
+      "Add tequila, lime and a small pinch of salt to an ice-filled highball.",
+      "Add chilled grapefruit soda.",
+      "Stir gently and garnish."
+    ],
+    "serviceNotes": "Use a carbonated grapefruit soda for this reference. Fresh grapefruit juice versions need a separate sweetness and carbonation spec.",
+    "allergens": [],
+    "imageName": "classic-highballs",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-sidecar",
+    "name": "Sidecar",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Citrus • Orange • Elegant",
+    "venueSpecific": false,
+    "category": "Sours",
+    "baseSpirit": "Brandy",
+    "flavourTags": [
+      "Citrus",
+      "Orange",
+      "Elegant"
+    ],
+    "ingredients": [
+      {
+        "name": "Cognac",
+        "amount": 50,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-sidecar-ingredient-1"
+      },
+      {
+        "name": "Triple sec",
+        "amount": 20,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-sidecar-ingredient-2"
+      },
+      {
+        "name": "Lemon juice",
+        "amount": 20,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-sidecar-ingredient-3"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Coupe",
+    "ice": "Straight up",
+    "garnish": "None; optional sugar half rim",
+    "prepInstructions": [
+      "If requested, prepare a sugar half rim.",
+      "Shake all measured liquids with ice.",
+      "Fine strain into a chilled coupe."
+    ],
+    "serviceNotes": "No garnish is required by the IBA reference; a sugar rim is a venue/guest variation.",
+    "allergens": [],
+    "imageName": "classic-sours",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-aviation",
+    "name": "Aviation",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Floral • Citrus • Cherry",
+    "venueSpecific": false,
+    "category": "Sours",
+    "baseSpirit": "Gin",
+    "flavourTags": [
+      "Floral",
+      "Citrus",
+      "Cherry"
+    ],
+    "ingredients": [
+      {
+        "name": "Gin",
+        "amount": 45,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-aviation-ingredient-1"
+      },
+      {
+        "name": "Maraschino liqueur",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-aviation-ingredient-2"
+      },
+      {
+        "name": "Lemon juice",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-aviation-ingredient-3"
+      },
+      {
+        "name": "Crème de violette",
+        "amount": 1,
+        "unit": "barspoon",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Calibrate barspoon capacity locally; this unit is not converted into litres.",
+        "id": "classic-aviation-ingredient-4"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Coupe",
+    "ice": "Straight up",
+    "garnish": "Optional cocktail cherry",
+    "prepInstructions": [
+      "Shake all measured ingredients with ice.",
+      "Fine strain into a chilled coupe.",
+      "Add a cherry if desired."
+    ],
+    "serviceNotes": "Violet liqueur strength and sweetness vary. The selected IBA reference includes it; omission is a historical variation.",
+    "allergens": [],
+    "imageName": "classic-sours",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-bramble",
+    "name": "Bramble",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Blackberry • Citrus • Fresh",
+    "venueSpecific": false,
+    "category": "Sours",
+    "baseSpirit": "Gin",
+    "flavourTags": [
+      "Blackberry",
+      "Citrus",
+      "Fresh"
+    ],
+    "ingredients": [
+      {
+        "name": "Gin",
+        "amount": 50,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-bramble-ingredient-1"
+      },
+      {
+        "name": "Lemon juice",
+        "amount": 25,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-bramble-ingredient-2"
+      },
+      {
+        "name": "Sugar syrup",
+        "amount": 12.5,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "1:1 sugar to water by weight unless the product label specifies otherwise.",
+        "bottleSize": 1000,
+        "id": "classic-bramble-ingredient-3"
+      },
+      {
+        "name": "Crème de mûre",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Drizzle over the finished drink, not into the batch.",
+        "bottleSize": 700,
+        "id": "classic-bramble-ingredient-4"
+      }
+    ],
+    "method": "Shake",
+    "glass": "Rocks",
+    "ice": "Crushed",
+    "garnish": "Lemon slice and blackberries",
+    "prepInstructions": [
+      "Shake gin, lemon and syrup with ice.",
+      "Strain over fresh crushed ice.",
+      "Drizzle the blackberry liqueur over the top and garnish."
+    ],
+    "serviceNotes": "Keep crème de mûre separate so the service finish remains visible.",
+    "allergens": [],
+    "imageName": "classic-sours",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-tom-collins",
+    "name": "Tom Collins",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Citrus • Light • Refreshing",
+    "venueSpecific": false,
+    "category": "Highballs",
+    "baseSpirit": "Gin",
+    "flavourTags": [
+      "Citrus",
+      "Light",
+      "Refreshing"
+    ],
+    "ingredients": [
+      {
+        "name": "Old Tom gin",
+        "amount": 45,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-tom-collins-ingredient-1"
+      },
+      {
+        "name": "Lemon juice",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-tom-collins-ingredient-2"
+      },
+      {
+        "name": "Sugar syrup",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "1:1 sugar to water by weight unless the product label specifies otherwise.",
+        "bottleSize": 1000,
+        "id": "classic-tom-collins-ingredient-3"
+      },
+      {
+        "name": "Soda water",
+        "amount": 60,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Add chilled at service; never shake carbonation.",
+        "id": "classic-tom-collins-ingredient-4"
+      }
+    ],
+    "method": "Build",
+    "glass": "Highball",
+    "ice": "Cubed",
+    "garnish": "Lemon slice and cocktail cherry",
+    "prepInstructions": [
+      "Build gin, lemon and syrup in an ice-filled highball.",
+      "Add chilled soda and stir gently.",
+      "Garnish with lemon and a cherry."
+    ],
+    "serviceNotes": "IBA’s John Collins reference specifies Old Tom gin for a Tom Collins. A London dry version is widely used but should be labelled in venue content.",
+    "allergens": [],
+    "imageName": "classic-highballs",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-french-75",
+    "name": "French 75",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Citrus • Dry • Sparkling",
+    "venueSpecific": false,
+    "category": "Spritzes",
+    "baseSpirit": "Gin",
+    "flavourTags": [
+      "Citrus",
+      "Dry",
+      "Sparkling"
+    ],
+    "ingredients": [
+      {
+        "name": "Gin",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-french-75-ingredient-1"
+      },
+      {
+        "name": "Lemon juice",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-french-75-ingredient-2"
+      },
+      {
+        "name": "Sugar syrup",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "1:1 sugar to water by weight unless the product label specifies otherwise.",
+        "bottleSize": 1000,
+        "id": "classic-french-75-ingredient-3"
+      },
+      {
+        "name": "Champagne",
+        "amount": 60,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "",
+        "bottleSize": 750,
+        "id": "classic-french-75-ingredient-4"
+      }
+    ],
+    "method": "Shake & top",
+    "glass": "Flute",
+    "ice": "Straight up",
+    "garnish": "None",
+    "prepInstructions": [
+      "Shake gin, lemon and syrup with ice.",
+      "Fine strain into a chilled flute.",
+      "Add chilled Champagne and gently combine."
+    ],
+    "serviceNotes": "Keep sparkling wine out of the shaker and batch. Prepare the shaken portion at service for correct dilution.",
+    "allergens": [
+      "Sulphites (Champagne; verify product label)"
+    ],
+    "imageName": "classic-spritzes",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-caipirinha",
+    "name": "Caipirinha",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Lime • Fresh • Sugarcane",
+    "venueSpecific": false,
+    "category": "Sours",
+    "baseSpirit": "Cachaça",
+    "flavourTags": [
+      "Lime",
+      "Fresh",
+      "Sugarcane"
+    ],
+    "ingredients": [
+      {
+        "name": "Cachaça",
+        "amount": 60,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-caipirinha-ingredient-1"
+      },
+      {
+        "name": "Lime, cut into wedges",
+        "amount": 1,
+        "unit": "piece",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "",
+        "id": "classic-caipirinha-ingredient-2"
+      },
+      {
+        "name": "White cane sugar",
+        "amount": 4,
+        "unit": "barspoon",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Seed uses level barspoons for the IBA teaspoons; calibrate the actual spoon.",
+        "id": "classic-caipirinha-ingredient-3"
+      }
+    ],
+    "method": "Muddle & build",
+    "glass": "Double rocks",
+    "ice": "Cracked",
+    "garnish": "Lime wedges in drink",
+    "prepInstructions": [
+      "Gently muddle the lime wedges and sugar in the glass.",
+      "Add cracked ice and cachaça.",
+      "Stir until chilled and combined."
+    ],
+    "serviceNotes": "Build individually to preserve the fresh lime aroma. Do not blend cachaça with generic rum in inventory or recipe data.",
+    "allergens": [],
+    "imageName": "classic-sours",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": [
+      "Caipiroska uses vodka in place of cachaça."
+    ]
+  },
+  {
+    "id": "classic-pina-colada",
+    "name": "Piña Colada",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Pineapple • Coconut • Creamy",
+    "venueSpecific": false,
+    "category": "Tiki",
+    "baseSpirit": "Rum",
+    "flavourTags": [
+      "Pineapple",
+      "Coconut",
+      "Creamy"
+    ],
+    "ingredients": [
+      {
+        "name": "White rum",
+        "amount": 50,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-pina-colada-ingredient-1"
+      },
+      {
+        "name": "Coconut cream",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "prepareSeparately",
+        "notes": "Check whether the approved product is sweetened; recipes must be balanced for that product.",
+        "id": "classic-pina-colada-ingredient-2"
+      },
+      {
+        "name": "Pineapple juice",
+        "amount": 50,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "classic-pina-colada-ingredient-3"
+      },
+      {
+        "name": "Ice",
+        "amount": 150,
+        "unit": "gram",
+        "batchable": false,
+        "batchBehaviour": "nonBatchable",
+        "notes": "Illustrative blender load; tune to the blender and ice type.",
+        "id": "classic-pina-colada-ingredient-4"
+      }
+    ],
+    "method": "Blend",
+    "glass": "Hurricane",
+    "ice": "Blended",
+    "garnish": "Pineapple slice and cocktail cherry",
+    "prepInstructions": [
+      "Measure rum, coconut cream and pineapple juice into the blender.",
+      "Add the approved ice load and blend until smooth.",
+      "Pour into a chilled hurricane glass and garnish."
+    ],
+    "serviceNotes": "The IBA liquid ratio is used. Ice weight is a seed starting point and is never counted in liquid batch volume. Coconut cream is not dairy cream; check actual product allergens.",
+    "allergens": [],
+    "imageName": "classic-tiki",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-dark-n-stormy",
+    "name": "Dark 'n' Stormy",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Ginger • Spiced • Refreshing",
+    "venueSpecific": false,
+    "category": "Highballs",
+    "baseSpirit": "Rum",
+    "flavourTags": [
+      "Ginger",
+      "Spiced",
+      "Refreshing"
+    ],
+    "ingredients": [
+      {
+        "name": "Goslings Black Seal rum",
+        "amount": 60,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-dark-n-stormy-ingredient-1"
+      },
+      {
+        "name": "Ginger beer",
+        "amount": 100,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Add chilled at service; never shake carbonation.",
+        "id": "classic-dark-n-stormy-ingredient-2"
+      }
+    ],
+    "method": "Build",
+    "glass": "Highball",
+    "ice": "Cubed",
+    "garnish": "Lime wedge",
+    "prepInstructions": [
+      "Add chilled ginger beer to an ice-filled highball.",
+      "Float the rum over the ginger beer.",
+      "Garnish with lime."
+    ],
+    "serviceNotes": "The IBA reference specifies Goslings rum. Add carbonated ginger beer only at service.",
+    "allergens": [],
+    "imageName": "classic-highballs",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-moscow-mule",
+    "name": "Moscow Mule",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Ginger • Citrus • Refreshing",
+    "venueSpecific": false,
+    "category": "Highballs",
+    "baseSpirit": "Vodka",
+    "flavourTags": [
+      "Ginger",
+      "Citrus",
+      "Refreshing"
+    ],
+    "ingredients": [
+      {
+        "name": "Vodka",
+        "amount": 45,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-moscow-mule-ingredient-1"
+      },
+      {
+        "name": "Ginger beer",
+        "amount": 120,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Add chilled at service; never shake carbonation.",
+        "id": "classic-moscow-mule-ingredient-2"
+      },
+      {
+        "name": "Lime juice",
+        "amount": 10,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-moscow-mule-ingredient-3"
+      }
+    ],
+    "method": "Build",
+    "glass": "Mule mug",
+    "ice": "Cubed",
+    "garnish": "Lime slice",
+    "prepInstructions": [
+      "Fill a food-safe lined mule mug or highball with ice.",
+      "Add vodka, lime and chilled ginger beer.",
+      "Stir gently and garnish."
+    ],
+    "serviceNotes": "Use a suitable food-contact vessel. Keep ginger beer sealed and chilled until service.",
+    "allergens": [],
+    "imageName": "classic-highballs",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-bloody-mary",
+    "name": "Bloody Mary",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Savoury • Spicy • Tomato",
+    "venueSpecific": false,
+    "category": "Highballs",
+    "baseSpirit": "Vodka",
+    "flavourTags": [
+      "Savoury",
+      "Spicy",
+      "Tomato"
+    ],
+    "ingredients": [
+      {
+        "name": "Vodka",
+        "amount": 45,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-bloody-mary-ingredient-1"
+      },
+      {
+        "name": "Tomato juice",
+        "amount": 90,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "classic-bloody-mary-ingredient-2"
+      },
+      {
+        "name": "Lemon juice",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-bloody-mary-ingredient-3"
+      },
+      {
+        "name": "Worcestershire sauce",
+        "amount": 2,
+        "unit": "dash",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "id": "classic-bloody-mary-ingredient-4"
+      },
+      {
+        "name": "Hot sauce",
+        "amount": 2,
+        "unit": "dash",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Seed starting point; adjust to guest preference.",
+        "id": "classic-bloody-mary-ingredient-5"
+      },
+      {
+        "name": "Celery salt and black pepper",
+        "amount": 0,
+        "unit": "top",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Season to taste.",
+        "id": "classic-bloody-mary-ingredient-6"
+      },
+      {
+        "name": "Celery stick",
+        "amount": 1,
+        "unit": "piece",
+        "batchable": true,
+        "batchBehaviour": "garnishCount",
+        "notes": "",
+        "id": "classic-bloody-mary-ingredient-7"
+      }
+    ],
+    "method": "Roll or stir",
+    "glass": "Highball",
+    "ice": "Cubed",
+    "garnish": "Celery and lemon wedge",
+    "prepInstructions": [
+      "Combine vodka, tomato, lemon and Worcestershire sauce with ice.",
+      "Roll gently between tins or stir; avoid aerating heavily.",
+      "Season to the guest’s taste and serve over fresh ice."
+    ],
+    "serviceNotes": "Standard Worcestershire sauce can contain fish and barley. Confirm exact bottle allergens; do not claim this reference is vegetarian or gluten-free.",
+    "allergens": [
+      "Celery",
+      "Fish (Worcestershire sauce)",
+      "Barley / gluten (brand dependent)"
+    ],
+    "imageName": "classic-highballs",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-long-island-iced-tea",
+    "name": "Long Island Iced Tea",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Citrus • Cola • Refreshing",
+    "venueSpecific": false,
+    "category": "Highballs",
+    "baseSpirit": "Mixed",
+    "flavourTags": [
+      "Citrus",
+      "Cola",
+      "Refreshing"
+    ],
+    "ingredients": [
+      {
+        "name": "Vodka",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-long-island-iced-tea-ingredient-1"
+      },
+      {
+        "name": "Blanco tequila",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-long-island-iced-tea-ingredient-2"
+      },
+      {
+        "name": "White rum",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-long-island-iced-tea-ingredient-3"
+      },
+      {
+        "name": "Gin",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-long-island-iced-tea-ingredient-4"
+      },
+      {
+        "name": "Cointreau",
+        "amount": 15,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-long-island-iced-tea-ingredient-5"
+      },
+      {
+        "name": "Lemon juice",
+        "amount": 25,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "Use fresh juice; keep chilled and follow the venue date-label policy.",
+        "id": "classic-long-island-iced-tea-ingredient-6"
+      },
+      {
+        "name": "Sugar syrup",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "1:1 sugar to water by weight unless the product label specifies otherwise.",
+        "bottleSize": 1000,
+        "id": "classic-long-island-iced-tea-ingredient-7"
+      },
+      {
+        "name": "Cola",
+        "amount": 0,
+        "unit": "top",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Add chilled at service; never shake carbonation.",
+        "id": "classic-long-island-iced-tea-ingredient-8"
+      }
+    ],
+    "method": "Build",
+    "glass": "Highball",
+    "ice": "Cubed",
+    "garnish": "Optional lemon slice",
+    "prepInstructions": [
+      "Measure the spirits, lemon and syrup into an ice-filled highball.",
+      "Top with chilled cola.",
+      "Stir gently and garnish."
+    ],
+    "serviceNotes": "This IBA-style recipe contains five measured spirits/liqueurs. Keep portions exact; cola is added only at service.",
+    "allergens": [],
+    "imageName": "classic-highballs",
+    "isPopular": false,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  },
+  {
+    "id": "classic-aperol-spritz",
+    "name": "Aperol Spritz",
+    "venueID": null,
+    "subtitle": "Classic reference",
+    "description": "Bitter orange • Light • Sparkling",
+    "venueSpecific": false,
+    "category": "Spritzes",
+    "baseSpirit": "Aperitif",
+    "flavourTags": [
+      "Bitter orange",
+      "Light",
+      "Sparkling"
+    ],
+    "ingredients": [
+      {
+        "name": "Prosecco",
+        "amount": 90,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "",
+        "bottleSize": 750,
+        "id": "classic-aperol-spritz-ingredient-1"
+      },
+      {
+        "name": "Aperol",
+        "amount": 60,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "normal",
+        "notes": "",
+        "bottleSize": 700,
+        "id": "classic-aperol-spritz-ingredient-2"
+      },
+      {
+        "name": "Soda water",
+        "amount": 30,
+        "unit": "ml",
+        "batchable": true,
+        "batchBehaviour": "serviceOnly",
+        "notes": "Add chilled at service; never shake carbonation.",
+        "id": "classic-aperol-spritz-ingredient-3"
+      }
+    ],
+    "method": "Build",
+    "glass": "Wine glass",
+    "ice": "Cubed",
+    "garnish": "Orange slice",
+    "prepInstructions": [
+      "Fill a wine glass with plenty of cubed ice.",
+      "Add chilled Prosecco, Aperol and soda.",
+      "Lift gently with a spoon and garnish."
+    ],
+    "serviceNotes": "The 90:60:30 seed makes the IBA soda splash explicit using the common 3:2:1 convention.",
+    "allergens": [
+      "Sulphites (Prosecco; verify product label)"
+    ],
+    "imageName": "classic-spritzes",
+    "isPopular": true,
+    "isActive": true,
+    "isSample": false,
+    "variations": []
+  }
+]
