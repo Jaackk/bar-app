@@ -30,7 +30,12 @@ public final class LocalAppRepository: AppRepository {
     }
     public func load() throws -> AppSnapshot {
         lock.lock(); defer { lock.unlock() }
-        if FileManager.default.fileExists(atPath: stateURL.path) { return try readExisting() }
+        if FileManager.default.fileExists(atPath: stateURL.path) {
+            let previous = try readExisting()
+            let migrated = try MenuMigration.apply(to: previous)
+            if migrated != previous { try write(migrated) }
+            return migrated
+        }
         let snapshot = try seed()
         try write(snapshot)
         return snapshot

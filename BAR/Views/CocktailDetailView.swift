@@ -19,20 +19,22 @@ struct CocktailDetailView: View {
                                 ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 7) { ForEach(drink.flavourTags, id: \.self) { TagChip(title: $0) } } }
                             }
                             VStack(alignment: .leading, spacing: 6) {
-                                SectionHeader(title: "Ingredients", subtitle: "Per serve")
-                                VStack(spacing: 0) { ForEach(drink.ingredients) { ingredient in IngredientRow(ingredient: ingredient, units: store.preferences.units); if ingredient.id != drink.ingredients.last?.id { Divider().overlay(BarTheme.stone.opacity(0.4)) } } }.padding(.horizontal, 12).background(BarTheme.card, in: RoundedRectangle(cornerRadius: 12))
+                                SectionHeader(title: "Ingredients", subtitle: drink.recipeVerified ? "Per serve" : "As listed on the menu")
+                                VStack(spacing: 0) { ForEach(drink.ingredients) { ingredient in if drink.recipeVerified { IngredientRow(ingredient: ingredient, units: store.preferences.units) } else { Text(ingredient.name).font(.subheadline).frame(maxWidth: .infinity, alignment: .leading).padding(.vertical, 10) }; if ingredient.id != drink.ingredients.last?.id { Divider().overlay(BarTheme.stone.opacity(0.4)) } } }.padding(.horizontal, 12).background(BarTheme.card, in: RoundedRectangle(cornerRadius: 12))
                             }
-                            ViewThatFits(in: .horizontal) {
+                            if drink.recipeVerified { ViewThatFits(in: .horizontal) {
                                 HStack(alignment: .top, spacing: 7) { specCards(drink) }
                                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) { specCards(drink) }
                             }
+                            } else { Label("House measures not published. Ask the manager for the approved recipe before preparing or batching.", systemImage: "info.circle").font(.subheadline).foregroundStyle(BarTheme.olive).barCard() }
+                            if let source = drink.sourceURL, let url = URL(string: source) { Link("Official Hove drinks menu", destination: url).font(.subheadline) }
                             if !drink.prepInstructions.isEmpty { VStack(alignment: .leading, spacing: 12) { SectionHeader(title: "Preparation"); ForEach(Array(drink.prepInstructions.enumerated()), id: \.offset) { index, step in HStack(alignment: .top, spacing: 12) { Text(String(index + 1)).font(.caption.weight(.semibold)).frame(width: 24, height: 24).background(BarTheme.sage.opacity(0.5), in: Circle()); Text(step).font(.subheadline).foregroundStyle(BarTheme.muted) } } } }
                             if !drink.serviceNotes.isEmpty { VStack(alignment: .leading, spacing: 10) { SectionHeader(title: "Service notes"); Text(drink.serviceNotes).font(.subheadline).foregroundStyle(BarTheme.muted) } }
                             VStack(alignment: .leading, spacing: 8) { SectionHeader(title: "Allergens"); Text(drink.allergens.isEmpty ? "No allergens listed. Check product labels and your venue’s verified allergen information." : drink.allergens.joined(separator: " · ")).font(.subheadline).foregroundStyle(BarTheme.muted) }
-                            HStack(spacing: 12) {
+                            if drink.recipeVerified { HStack(spacing: 12) {
                                 NavigationLink { BatchCalculatorView(cocktailID: drink.id) } label: { Label("Batch", systemImage: "flask").font(.headline).frame(maxWidth: .infinity, minHeight: 54).background(BarTheme.olive, in: RoundedRectangle(cornerRadius: 13)).foregroundStyle(.white) }.accessibilityIdentifier("batch-button")
                                 Button { store.startPrep(cocktailID: drink.id, serves: 1, wastage: 0); prepAdded = true } label: { Label(prepAdded ? "Added to prep" : "Prep", systemImage: prepAdded ? "checkmark" : "leaf").font(.headline).frame(maxWidth: .infinity, minHeight: 54).background(BarTheme.coral, in: RoundedRectangle(cornerRadius: 13)).foregroundStyle(BarTheme.ink) }.disabled(prepAdded)
-                            }.buttonStyle(.plain)
+                            }.buttonStyle(.plain) }
                         }.padding(20).background(BarTheme.cream, in: UnevenRoundedRectangle(topLeadingRadius: 24, topTrailingRadius: 24)).padding(.top, -24)
                     }
                 }.barScreen().navigationBarTitleDisplayMode(.inline).toolbar {

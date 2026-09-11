@@ -17,6 +17,7 @@
 		A0F53C610D27E613B2D1DA7D /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8155184343F7C95617DB5D /* CocktailDetailView.swift */; };
 		B44AECE17AD1E04800E039A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FFB53B89FEA8F9C19086B1 /* Foundation.framework */; };
 		B96734AE48BCFCD43D5329E0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DEEF0F9A5C6C0EDB1AA62B /* SearchView.swift */; };
+		BB7BD19C87554F7FEDC36B35 /* StockListViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADE6C0D237950348A153C1C /* StockListViews.swift */; };
 		DA75A613106A0F79E1CFB1EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FFB53B89FEA8F9C19086B1 /* Foundation.framework */; };
 		E5D993871874E66558DD74C1 /* PrepViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217ED8CF2DE3FB54D325225 /* PrepViews.swift */; };
 		E63FDE8227E14ED77D578200 /* StockViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED15C93616C1CC9A08849C2 /* StockViews.swift */; };
@@ -56,6 +57,7 @@
 		D217ED8CF2DE3FB54D325225 /* PrepViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrepViews.swift; path = Views/Operations/PrepViews.swift; sourceTree = "<group>"; };
 		D21D0EB325FF51D3BA3C9A9B /* DesignSystem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignSystem.swift; path = Components/DesignSystem.swift; sourceTree = "<group>"; };
 		D3DEEF0F9A5C6C0EDB1AA62B /* SearchView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchView.swift; path = Views/SearchView.swift; sourceTree = "<group>"; };
+		EADE6C0D237950348A153C1C /* StockListViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StockListViews.swift; path = BAR/Views/Operations/StockListViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				446645B2BCDBE74AB5FA255F /* Frameworks */,
 				D370F6FCFD36F0C79071B017 /* BAR */,
 				B75CB48C79E7EE714D2EF344 /* BARUITests */,
+				EADE6C0D237950348A153C1C /* StockListViews.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -263,6 +266,7 @@
 				E63FDE8227E14ED77D578200 /* StockViews.swift in Sources */,
 				B96734AE48BCFCD43D5329E0 /* SearchView.swift in Sources */,
 				08769A0A0BE349ED91713617 /* WineViews.swift in Sources */,
+				BB7BD19C87554F7FEDC36B35 /* StockListViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

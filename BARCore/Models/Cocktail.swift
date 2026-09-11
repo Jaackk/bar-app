@@ -1,6 +1,8 @@
 import Foundation
 
 public struct Cocktail: Codable, Hashable, Sendable, Identifiable {
+    public var recipeVerified: Bool = true
+    public var sourceURL: String? = nil
     public var id: String
     public var name: String
     public var venueID: String?
@@ -55,9 +57,11 @@ public struct Cocktail: Codable, Hashable, Sendable, Identifiable {
         self.updatedAt = updatedAt
     }
 
-    enum CodingKeys: String, CodingKey { case id, name, venueID, subtitle, description, venueSpecific, category, baseSpirit, flavourTags, ingredients, method, glass, ice, garnish, prepInstructions, serviceNotes, allergens, imageName, isPopular, isActive, isSample, variations, overridesCocktailID, createdAt, updatedAt }
+    enum CodingKeys: String, CodingKey { case recipeVerified, sourceURL, id, name, venueID, subtitle, description, venueSpecific, category, baseSpirit, flavourTags, ingredients, method, glass, ice, garnish, prepInstructions, serviceNotes, allergens, imageName, isPopular, isActive, isSample, variations, overridesCocktailID, createdAt, updatedAt }
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
+        recipeVerified = try c.value(Bool.self, for: .recipeVerified, default: true)
+        sourceURL = try c.decodeIfPresent(String.self, forKey: .sourceURL)
         id = try c.decode(String.self, forKey: .id)
         name = try c.decode(String.self, forKey: .name)
         venueID = try c.decodeIfPresent(String.self, forKey: .venueID)

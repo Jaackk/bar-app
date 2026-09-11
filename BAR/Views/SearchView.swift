@@ -39,7 +39,7 @@ struct CocktailLibraryView: View {
     }
     var styles: [String] { ["All"] + Set(store.cocktails.filter { venueOnly ? $0.venueSpecific : !$0.venueSpecific }.map(\.category)).sorted() }
     var body: some View { ScrollView { LazyVStack(alignment: .leading, spacing: 16) {
-        SectionHeader(title: venueOnly ? "Made for the coast." : "Know the classics.", subtitle: venueOnly ? "Sample menu · ready for your verified specs" : "The foundations of a great service.")
+        SectionHeader(title: venueOnly ? "Made for the coast." : "Know the classics.", subtitle: venueOnly ? "Official Hove menu · house measures pending" : "The foundations of a great service.")
         SearchBar(text: $query, placeholder: "Search this collection…")
         ScrollView(.horizontal, showsIndicators: false) { HStack { ForEach(["All", "Gin", "Rum", "Vodka", "Tequila", "Whisky", "Brandy"], id: \.self) { value in Button { spirit = value } label: { TagChip(title: value, selected: spirit == value) }.frame(minHeight: 44) } } }
         ScrollView(.horizontal, showsIndicators: false) { HStack { ForEach(styles, id: \.self) { value in Button { style = value } label: { TagChip(title: value, selected: style == value) }.frame(minHeight: 44) } } }

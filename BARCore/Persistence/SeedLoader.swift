@@ -48,8 +48,9 @@ public enum SeedLoader {
         let wines = try records("wines", as: Wine.self, validate: validateWine)
         let prep = try records("prep", as: PrepItem.self, validate: validatePrep)
         let stock = try records("stock", as: StockItem.self, validate: validateStock)
-        let snapshot = AppSnapshot(venues: venues, cocktails: cocktails, wines: wines, prep: prep, stock: stock,
+        var snapshot = AppSnapshot(venues: venues, cocktails: cocktails, wines: wines, prep: prep, stock: stock,
                                    preferences: UserPreferences(venueID: venue.id), user: User(venueID: venue.id))
+        if directory == nil { snapshot = try MenuMigration.apply(to: snapshot) }
         try validate(snapshot: snapshot)
         return SeedLoadReport(snapshot: snapshot, warnings: warnings)
     }
@@ -97,6 +98,13 @@ public enum SeedLoader {
         }
         for item in snapshot.prep { try validatePrep(item); try venue(item.venueID) }
         for item in snapshot.stock { try validateStock(item); try venue(item.venueID) }
+        try unique(snapshot.products.map(\.id), label: "product")
+        try unique(snapshot.stockLists.map(\.id), label: "list item")
+        for product in snapshot.products { try identity(product.id, product.name); try venue(product.venueID) }
+        for item in snapshot.stockLists {
+            try identity(item.id, item.name); try venue(item.venueID)
+            guard (1...100_000).contains(item.quantity) else { throw DataValidationError.invalid("List quantity must be between 1 and 100,000.") }
+        }
         try venue(snapshot.preferences.venueID)
         try venue(snapshot.user.venueID)
         try number(snapshot.preferences.defaultWastage, label: "Wastage", upper: 100)

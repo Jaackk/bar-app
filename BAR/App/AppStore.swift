@@ -77,6 +77,32 @@ import BARCore
         guard let i = snapshot.prep.firstIndex(where: { $0.id == id && $0.venueID == preferences.venueID }) else { return }
         snapshot.prep[i].completed = false; snapshot.prep[i].currentAmount = 0; save()
     }
+    var products: [Product] { snapshot.products.filter { $0.venueID == preferences.venueID && $0.isActive } }
+    func listItems(_ kind: StockListKind) -> [StockListItem] { snapshot.stockLists.filter { $0.kind == kind && $0.venueID == preferences.venueID } }
+    func listText(_ kind: StockListKind) -> String { StockListService.text(snapshot.stockLists, kind: kind, venueID: preferences.venueID) }
+    func addProduct(_ product: Product, to kind: StockListKind) {
+        guard products.contains(where: { $0.id == product.id }) else { return }
+        StockListService.add(product, kind: kind, to: &snapshot.stockLists); save(); Haptics.selection()
+    }
+    func setListQuantity(id: String, quantity: Int) {
+        StockListService.setQuantity(quantity, id: id, venueID: preferences.venueID, in: &snapshot.stockLists); save()
+    }
+    func clearList(_ kind: StockListKind) { StockListService.clear(kind, venueID: preferences.venueID, in: &snapshot.stockLists); save() }
+    func addCustomItem(name: String, quantity: Int, kind: StockListKind) {
+        let clean = name.components(separatedBy: .newlines).joined(separator: " ").trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !clean.isEmpty, clean.count <= 200, (1...100_000).contains(quantity) else { return }
+        snapshot.stockLists.append(StockListItem(venueID: preferences.venueID, kind: kind, name: clean, quantity: quantity)); save()
+    }
+    func saveProduct(_ product: Product) {
+        guard role.canEditContent, product.venueID == preferences.venueID, !product.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        if let i = snapshot.products.firstIndex(where: { $0.id == product.id && $0.venueID == preferences.venueID }) { snapshot.products[i] = product }
+        else { snapshot.products.append(product) }
+        save()
+    }
+    func deleteProduct(_ product: Product) {
+        guard role.canEditContent, let i = snapshot.products.firstIndex(where: { $0.id == product.id && $0.venueID == preferences.venueID }) else { return }
+        snapshot.products[i].isActive = false; save()
+    }
     func updateStock(id: String, count: Double) {
         guard count.isFinite, count >= 0, let i = snapshot.stock.firstIndex(where: { $0.id == id && $0.venueID == preferences.venueID }) else { return }
         snapshot.stock[i].currentStock = min(count, 100_000); save(); Haptics.selection()
@@ -91,12 +117,12 @@ import BARCore
         catch { errorMessage = "Reset failed: \(error.localizedDescription)" }
     }
     func saveBatch(cocktailID: String, serves: Int, wastage: Double) {
-        guard serves > 0, let drink = cocktail(cocktailID) else { return }
+        guard serves > 0, let drink = cocktail(cocktailID), drink.recipeVerified else { return }
         snapshot.batches.insert(SavedBatch(id: UUID().uuidString, cocktailID: cocktailID, name: drink.name, serves: serves, wastagePercent: wastage), at: 0)
         snapshot.batches = Array(snapshot.batches.prefix(30)); save(); Haptics.success()
     }
     func startPrep(cocktailID: String, serves: Int, wastage: Double) {
-        guard let drink = cocktail(cocktailID), serves > 0 else { return }
+        guard let drink = cocktail(cocktailID), drink.recipeVerified, serves > 0 else { return }
         let result = BatchCalculator.calculate(cocktail: drink, serves: serves, wastagePercent: wastage)
         let recipe = result.lines.map { line in Ingredient(name: line.ingredient.name, amount: line.quantity, unit: line.unit, batchBehaviour: line.behaviour, notes: line.ingredient.notes, prepComponent: line.ingredient.prepComponent) }
         var item = PrepItem(id: UUID().uuidString, name: "\(drink.name) · \(serves) serves")

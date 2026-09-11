@@ -23,6 +23,7 @@ public struct BatchResult: Hashable, Sendable {
 public enum BatchCalculator {
     /// Wastage is a percentage (3 means 3%). Garnishes and service additions are not wasted in the batch.
     public static func calculate(cocktail: Cocktail, serves: Int, wastagePercent: Double = 3) -> BatchResult {
+        guard cocktail.recipeVerified else { return BatchResult(serves: 0, wastagePercent: 0, lines: [], totalVolumeML: 0, notes: ["House measures are not published. Add a verified venue specification before batching."]) }
         let safeServes = min(max(serves, 0), 100_000)
         let wastage = wastagePercent.isFinite ? min(max(wastagePercent, 0), 100) : 0
         var notes = ["Combine the measured batch ingredients in a clean, labelled container. Keep chilled and follow the approved venue storage procedure."]

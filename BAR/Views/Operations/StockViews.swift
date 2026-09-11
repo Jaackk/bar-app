@@ -2,7 +2,7 @@ import SwiftUI
 import UIKit
 import BARCore
 
-struct StockView: View {
+struct StocktakeView: View {
     @Environment(AppStore.self) private var store
     @State private var category = "All"
     @State private var query = ""

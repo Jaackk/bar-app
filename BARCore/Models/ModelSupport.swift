@@ -18,7 +18,7 @@ public enum BatchBehaviour: String, Codable, CaseIterable, Hashable, Sendable {
     }
 }
 public enum WineColour: String, Codable, CaseIterable, Hashable, Sendable {
-    case red, white, rose, sparkling, dessert
+    case red, white, rose, orange, sparkling, dessert
     public var label: String { self == .rose ? "Rosé" : rawValue.capitalized }
 }
 public enum UserRole: String, Codable, CaseIterable, Hashable, Sendable {

@@ -70,7 +70,9 @@ struct ProfileView: View {
                 #endif
                 if store.role.canEditContent {
                     VStack(alignment: .leading, spacing: 16) {
-                        SectionHeader(title: "Venue content", subtitle: "Local manager tools")
+                        SectionHeader(title: "Manager tools")
+                        NavigationLink { ProductCatalogueView() } label: { profileRow("Product catalogue", subtitle: "Add, edit and remove products", symbol: "square.grid.2x2") }.buttonStyle(.plain)
+                        NavigationLink { StocktakeView() } label: { profileRow("Stocktake", subtitle: "Counts, par levels and suggested orders", symbol: "shippingbox") }.buttonStyle(.plain)
                         Text("Import a validated BAR content snapshot to replace the loaded venue records, prep and stock. Your profile, favourites and learning progress are preserved.")
                             .font(.subheadline).foregroundStyle(.secondary).lineSpacing(3)
                         PrimaryButton(title: "Import venue JSON", systemImage: "square.and.arrow.down") { importing = true }
@@ -93,7 +95,7 @@ struct ProfileView: View {
                 Button("Reset local data", role: .destructive) { store.resetLocalData() }
                 Button("Cancel", role: .cancel) { }
             } message: {
-                Text("This removes your name, preferences, favourites, history, training progress, saved batches, prep and stock changes, then restores the bundled sample content.")
+                Text("This removes your name, preferences, favourites, history, training progress, saved batches, prep and stock changes, restock and order lists, then restores the bundled menu and reference content.")
             }
             .fileImporter(isPresented: $importing, allowedContentTypes: [.json]) { result in
                 switch result {
@@ -139,7 +141,7 @@ private struct AboutBARView: View {
                 Text("Your operating companion for a great service: cocktail specifications, thoughtful wine recommendations, accurate batches, fresh prep and clear stock counts.").font(.body).lineSpacing(5)
                 VStack(alignment: .leading, spacing: 14) {
                     SectionHeader(title: "About the recipes")
-                    Text("Venue drinks and wines are clearly labelled sample content until replaced with verified venue records. Classic recipes are common modern starting points; house specifications can override them.").font(.subheadline).lineSpacing(4)
+                    Text("Venue drinks and wines come from Rockwater Hove’s official drinks menu, checked 11 September 2026. Public menu ingredients are available offline; house measures must be approved before batching. Wine matching uses approximate style guidance. Classic recipes are common modern starting points; house specifications can override them.").font(.subheadline).lineSpacing(4)
                     Text("Always follow your venue’s verified allergen, storage and service procedures.").font(.subheadline).lineSpacing(4)
                 }.barCard()
                 VStack(alignment: .leading, spacing: 12) {

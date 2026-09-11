@@ -4,13 +4,13 @@ import BARCore
 struct LearnView: View {
     @Environment(AppStore.self) private var store
     @State private var learningSet = "Classics"
-    private var classics: [Cocktail] { store.cocktails.filter { !$0.venueSpecific } }
+    private var classics: [Cocktail] { store.cocktails.filter { $0.recipeVerified }.filter { !$0.venueSpecific } }
     private var masteredCount: Int { classics.filter { store.training.masteredCocktailIDs.contains($0.id) }.count }
     private var mastery: Double { classics.isEmpty ? 0 : Double(masteredCount) / Double(classics.count) }
     private var studyCocktails: [Cocktail] {
         switch learningSet {
-        case "Venue": return store.cocktails.filter(\.venueSpecific)
-        case "All drinks": return store.cocktails
+        case "Venue": return store.cocktails.filter { $0.recipeVerified }.filter(\.venueSpecific)
+        case "All drinks": return store.cocktails.filter { $0.recipeVerified }
         default: return classics
         }
     }

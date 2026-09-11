@@ -1,0 +1,824 @@
+[
+  {
+    "id": "sample-sea-glass",
+    "name": "Sea Glass",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Coastal Cocktails",
+    "baseSpirit": "Rum",
+    "subtitle": "Coastal Cocktails",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "sea-glass-0",
+        "name": "Havana 3",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "sea-glass-1",
+        "name": "Apricot",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "sea-glass-2",
+        "name": "Blue Curaçao",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "sea-glass-3",
+        "name": "Lemon",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "sea-glass-4",
+        "name": "Ginger",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "sea-glass-5",
+        "name": "Pineapple Foam",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": true,
+    "imageName": "sea-glass"
+  },
+  {
+    "id": "hove-sun-ember",
+    "name": "Sun Ember",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Coastal Cocktails",
+    "baseSpirit": "Cachaça",
+    "subtitle": "Coastal Cocktails",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "sun-ember-0",
+        "name": "Cachaça",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "sun-ember-1",
+        "name": "Lime",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "sun-ember-2",
+        "name": "Guava",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "sun-ember-3",
+        "name": "Spice",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": false,
+    "imageName": ""
+  },
+  {
+    "id": "hove-italian-bitter",
+    "name": "Italian Bitter",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Coastal Cocktails",
+    "baseSpirit": "Vermouth",
+    "subtitle": "Coastal Cocktails",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "italian-bitter-0",
+        "name": "Sweet Vermouth",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "italian-bitter-1",
+        "name": "Campari",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "italian-bitter-2",
+        "name": "Peroni Foam",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "italian-bitter-3",
+        "name": "Orange",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": false,
+    "imageName": ""
+  },
+  {
+    "id": "sample-peach-bloom",
+    "name": "Peach & Bloom",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Coastal Cocktails",
+    "baseSpirit": "Vodka",
+    "subtitle": "Coastal Cocktails",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "peach-bloom-0",
+        "name": "Belvedere",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "peach-bloom-1",
+        "name": "Peach",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "peach-bloom-2",
+        "name": "St-Germain",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "peach-bloom-3",
+        "name": "Lime",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "peach-bloom-4",
+        "name": "Cranberry",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": true,
+    "imageName": "peach-bloom"
+  },
+  {
+    "id": "hove-lychee-lagoon",
+    "name": "Lychee Lagoon",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Coastal Cocktails",
+    "baseSpirit": "Rum",
+    "subtitle": "Coastal Cocktails",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "lychee-lagoon-0",
+        "name": "Coconut Rum",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "lychee-lagoon-1",
+        "name": "Coconut Water",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "lychee-lagoon-2",
+        "name": "Lychee",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "lychee-lagoon-3",
+        "name": "Lime",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "lychee-lagoon-4",
+        "name": "Jasmine",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": false,
+    "imageName": ""
+  },
+  {
+    "id": "hove-island-smash",
+    "name": "Island Smash",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Coastal Cocktails",
+    "baseSpirit": "Gin",
+    "subtitle": "Coastal Cocktails",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "island-smash-0",
+        "name": "Salcombe Gin",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "island-smash-1",
+        "name": "Passionfruit",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "island-smash-2",
+        "name": "Pineapple",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "island-smash-3",
+        "name": "Lemon",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "island-smash-4",
+        "name": "Orgeat",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "island-smash-5",
+        "name": "Basil",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": false,
+    "imageName": ""
+  },
+  {
+    "id": "hove-pink-horizon",
+    "name": "Pink Horizon",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Coastal Cocktails",
+    "baseSpirit": "Gin",
+    "subtitle": "Coastal Cocktails",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "pink-horizon-0",
+        "name": "Tanqueray Sevilla",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "pink-horizon-1",
+        "name": "Campari",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "pink-horizon-2",
+        "name": "Blood Orange",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "pink-horizon-3",
+        "name": "Orange Bitters",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "pink-horizon-4",
+        "name": "Rosé Prosecco",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": false,
+    "imageName": ""
+  },
+  {
+    "id": "sample-coral-tide",
+    "name": "Coral Tide",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Coastal Cocktails",
+    "baseSpirit": "Tequila",
+    "subtitle": "Coastal Cocktails",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "coral-tide-0",
+        "name": "Casamigos",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "coral-tide-1",
+        "name": "Watermelon",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "coral-tide-2",
+        "name": "Lime",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "coral-tide-3",
+        "name": "Grapefruit Soda",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": true,
+    "imageName": "coral-tide"
+  },
+  {
+    "id": "hove-golden-sangria",
+    "name": "Golden Sangria",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Coastal Cocktails",
+    "baseSpirit": "Wine",
+    "subtitle": "Coastal Cocktails",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "golden-sangria-0",
+        "name": "White Wine",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "golden-sangria-1",
+        "name": "Pisco",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "golden-sangria-2",
+        "name": "Peach",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "golden-sangria-3",
+        "name": "Prosecco",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "golden-sangria-4",
+        "name": "Fruit",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": false,
+    "imageName": ""
+  },
+  {
+    "id": "hove-frozen-daiquiri",
+    "name": "Frozen Daiquiri",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Frozen Coastals",
+    "baseSpirit": "Rum",
+    "subtitle": "Frozen Coastals",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "frozen-daiquiri-0",
+        "name": "Havana Club 3 Años",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "frozen-daiquiri-1",
+        "name": "Lime",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "frozen-daiquiri-2",
+        "name": "Seasonal Fruit",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": false,
+    "imageName": ""
+  },
+  {
+    "id": "hove-frozen-margarita",
+    "name": "Frozen Margarita",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Frozen Coastals",
+    "baseSpirit": "Tequila",
+    "subtitle": "Frozen Coastals",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "frozen-margarita-0",
+        "name": "Casamigos",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "frozen-margarita-1",
+        "name": "Lime",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "frozen-margarita-2",
+        "name": "Seasonal Fruit",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": false,
+    "imageName": ""
+  },
+  {
+    "id": "hove-frozen-pina-colada",
+    "name": "Frozen Piña Colada",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Frozen Coastals",
+    "baseSpirit": "Rum",
+    "subtitle": "Frozen Coastals",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "frozen-pina-colada-0",
+        "name": "Bacardi Coconut",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "frozen-pina-colada-1",
+        "name": "Coconut",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "frozen-pina-colada-2",
+        "name": "Pineapple",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "frozen-pina-colada-3",
+        "name": "Lime",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": false,
+    "imageName": ""
+  },
+  {
+    "id": "hove-first-light",
+    "name": "First Light",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Zero Proof Coastals",
+    "baseSpirit": "Alcohol-free",
+    "subtitle": "Zero Proof Coastals",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "first-light-0",
+        "name": "NLL First Light",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "first-light-1",
+        "name": "Apple",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "first-light-2",
+        "name": "Lemon",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "first-light-3",
+        "name": "Elderflower",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "first-light-4",
+        "name": "Cucumber",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "first-light-5",
+        "name": "Soda",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": false,
+    "imageName": ""
+  },
+  {
+    "id": "hove-midnight-sun",
+    "name": "Midnight Sun",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Zero Proof Coastals",
+    "baseSpirit": "Alcohol-free",
+    "subtitle": "Zero Proof Coastals",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "midnight-sun-0",
+        "name": "NLL Midnight Sun",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "midnight-sun-1",
+        "name": "Strawberry",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "midnight-sun-2",
+        "name": "Apple",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "midnight-sun-3",
+        "name": "Lemon",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "midnight-sun-4",
+        "name": "Basil",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": false,
+    "imageName": ""
+  },
+  {
+    "id": "hove-cherry-soda",
+    "name": "Cherry Soda",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Zero Proof Coastals",
+    "baseSpirit": "Alcohol-free",
+    "subtitle": "Zero Proof Coastals",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "cherry-soda-0",
+        "name": "Cherry",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "cherry-soda-1",
+        "name": "Pineapple",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "cherry-soda-2",
+        "name": "Lime",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "cherry-soda-3",
+        "name": "Soda",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": false,
+    "imageName": ""
+  },
+  {
+    "id": "hove-guava-soda",
+    "name": "Guava Soda",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "category": "Zero Proof Coastals",
+    "baseSpirit": "Alcohol-free",
+    "subtitle": "Zero Proof Coastals",
+    "description": "Listed on Rockwater Hove’s drinks menu.",
+    "ingredients": [
+      {
+        "id": "guava-soda-0",
+        "name": "Guava",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "guava-soda-1",
+        "name": "Lychee",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "guava-soda-2",
+        "name": "Lemon",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "guava-soda-3",
+        "name": "Soda",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      },
+      {
+        "id": "guava-soda-4",
+        "name": "Mint",
+        "amount": 0,
+        "batchable": false,
+        "batchBehaviour": "nonBatchable"
+      }
+    ],
+    "recipeVerified": false,
+    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "isSample": false,
+    "isActive": true,
+    "isPopular": false,
+    "imageName": ""
+  }
+]
