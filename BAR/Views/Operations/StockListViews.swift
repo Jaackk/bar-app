@@ -96,8 +96,19 @@ struct StockListView: View {
                             Spacer(minLength: 0)
                             QuantityControl(name: item.name, quantity: item.quantity, decrement: { store.setListQuantity(id: item.id, quantity: item.quantity - 1) }, increment: { store.setListQuantity(id: item.id, quantity: item.quantity + 1) }, edit: { editing = item })
                         }.padding(.vertical, 5)
-                        .swipeActions { Button("Remove", role: .destructive) { store.setListQuantity(id: item.id, quantity: 0) } }
-                        .contextMenu { Button("Edit quantity") { editing = item }; Button("Remove", role: .destructive) { store.setListQuantity(id: item.id, quantity: 0) } }
+                        .swipeActions {
+                            Button("Remove", role: .destructive) {
+                                let id = item.id
+                                Task { @MainActor in store.setListQuantity(id: id, quantity: 0) }
+                            }
+                        }
+                        .contextMenu {
+                            Button("Edit quantity") { editing = item }
+                            Button("Remove", role: .destructive) {
+                                let id = item.id
+                                Task { @MainActor in store.setListQuantity(id: id, quantity: 0) }
+                            }
+                        }
                     }
                 }.listRowBackground(BarTheme.card)
             }
@@ -114,7 +125,9 @@ struct StockListView: View {
             PrimaryButton(title: "Add products", systemImage: "plus") { adding = true }.padding(.horizontal, 20).padding(.vertical, 10).background(BarTheme.cream)
         }
         .confirmationDialog("Clear this list?", isPresented: $clear, titleVisibility: .visible) {
-            Button(kind == .restock ? "Clear Restock List" : "Clear Order", role: .destructive) { store.clearList(kind) }
+            Button(kind == .restock ? "Clear Restock List" : "Clear Order", role: .destructive) {
+                Task { @MainActor in store.clearList(kind) }
+            }
         }
         .sheet(isPresented: $adding) { ProductPicker(kind: kind) { adding = false } }
         .sheet(isPresented: $custom) { ListItemEditor { name, quantity in store.addCustomItem(name: name, quantity: quantity, kind: kind) } }
@@ -242,7 +255,12 @@ struct ProductCatalogueView: View {
             ForEach(products) { product in
                 NavigationLink { ProductDetailView(productID: product.id) } label: {
                     HStack(spacing: 14) { ProductThumbnail(product: product).frame(width: 44, height: 58); VStack(alignment: .leading, spacing: 5) { Text(product.name); Text(product.category).font(.caption).foregroundStyle(.secondary) } }
-                }.listRowBackground(BarTheme.card).swipeActions { Button("Delete", role: .destructive) { store.deleteProduct(product) } }
+                }.listRowBackground(BarTheme.card).swipeActions {
+                    Button("Delete", role: .destructive) {
+                        let product = product
+                        Task { @MainActor in store.deleteProduct(product) }
+                    }
+                }
             }
         }.scrollContentBackground(.hidden).barScreen().searchable(text: $query, prompt: "Search products…").navigationTitle("Products & photos").navigationBarTitleDisplayMode(.inline)
         .toolbar { ToolbarItem(placement: .topBarTrailing) { Button { creating = true } label: { Label("Add Product", systemImage: "plus") } } }
@@ -309,7 +327,12 @@ struct ProductEditor: View {
                 }
                 Section("List units") { TextField("Restock unit", text: $product.unit); TextField("Order unit", text: $product.defaultOrderUnit) }
                 if !product.menuDetails.isEmpty { Section("Reference") { Text(product.menuDetails).font(.caption) } }
-                if store.products.contains(where: { $0.id == product.id }) { Button("Delete Product", role: .destructive) { store.deleteProduct(product); dismiss() } }
+                if store.products.contains(where: { $0.id == product.id }) {
+                    Button("Delete Product", role: .destructive) {
+                        dismiss()
+                        Task { @MainActor in store.deleteProduct(product) }
+                    }
+                }
             }.scrollContentBackground(.hidden).barScreen().navigationTitle(product.name.isEmpty ? "New product" : "Edit product").navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }

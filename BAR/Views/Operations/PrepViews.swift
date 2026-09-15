@@ -57,7 +57,10 @@ struct PrepView: View {
                         NavigationLink { PrepDetailView(prepID: item.id) } label: { PrepProgressCard(item: item) }
                             .buttonStyle(.plain)
                             .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                Button("Delete", role: .destructive) { store.deletePrep(id: item.id) }
+                                Button("Delete", role: .destructive) {
+                                    let id = item.id
+                                    Task { @MainActor in store.deletePrep(id: id) }
+                                }
                             }
                             .accessibilityIdentifier("prep-row-\(item.id)")
                             .listRowBackground(Color.clear)
@@ -85,7 +88,9 @@ struct PrepView: View {
             }
         }
         .confirmationDialog("Clear example prep?", isPresented: $removeExamples, titleVisibility: .visible) {
-            Button("Clear examples", role: .destructive) { store.removeExamplePrep() }
+            Button("Clear examples", role: .destructive) {
+                Task { @MainActor in store.removeExamplePrep() }
+            }
         } message: { Text("Your own prep items stay in place.") }
         .sheet(isPresented: $adding) { PrepEditor(item: PrepItem(id: UUID().uuidString, name: "", venueID: store.preferences.venueID)) }
     }
@@ -125,6 +130,7 @@ private struct PrepProgressCard: View {
 struct PrepDetailView: View {
     let prepID: String
     @Environment(AppStore.self) private var store
+    @Environment(\.dismiss) private var dismiss
     @State private var scale = 1.0
     @State private var editingCurrent = false
     @State private var initializedScale = false
@@ -230,7 +236,11 @@ struct PrepDetailView: View {
                 }
                 .toolbar { ToolbarItem(placement: .topBarTrailing) { Menu {
                     if item.completed { Button("Reopen") { store.reopenPrep(id: item.id) } }
-                    Button("Delete prep", role: .destructive) { store.deletePrep(id: item.id) }
+                    Button("Delete prep", role: .destructive) {
+                        let id = item.id
+                        dismiss()
+                        Task { @MainActor in store.deletePrep(id: id) }
+                    }
                 } label: { Image(systemName: "ellipsis.circle") } } }
             } else {
                 EmptyStateView(title: "Recipe unavailable", message: "This recipe may have been removed from the venue’s prep list.", systemImage: "leaf")

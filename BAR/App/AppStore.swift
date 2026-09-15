@@ -49,6 +49,24 @@ import BARCore
         do { try repository.save(snapshot); lastSavedSnapshot = snapshot }
         catch { if let lastSavedSnapshot { snapshot = lastSavedSnapshot }; errorMessage = "This change could not be saved: \(error.localizedDescription)" }
     }
+    /// Writes a complete candidate first, then publishes it.  Deletion is invoked from
+    /// List swipe actions, where changing the observed source collection before a write
+    /// succeeds can otherwise leave UIKit holding a stale row identity.
+    private func commit(_ candidate: AppSnapshot) -> Bool {
+        guard !persistenceBlocked else {
+            errorMessage = "Saved data needs recovery. Reset local data in Profile before making changes."
+            return false
+        }
+        do {
+            try repository.save(candidate)
+            snapshot = candidate
+            lastSavedSnapshot = candidate
+            return true
+        } catch {
+            errorMessage = "This change could not be saved: \(error.localizedDescription)"
+            return false
+        }
+    }
     func toggleCocktailFavourite(_ id: String) {
         if snapshot.preferences.favouriteCocktailIDs.contains(id) { snapshot.preferences.favouriteCocktailIDs.remove(id) }
         else { snapshot.preferences.favouriteCocktailIDs.insert(id) }
@@ -95,12 +113,18 @@ import BARCore
         save()
     }
     func deletePrep(id: String) {
-        snapshot.prep.removeAll { $0.id == id && $0.venueID == preferences.venueID }
-        save()
+        let venueID = preferences.venueID
+        guard snapshot.prep.contains(where: { $0.id == id && $0.venueID == venueID }) else { return }
+        var candidate = snapshot
+        candidate.prep.removeAll { $0.id == id && $0.venueID == venueID }
+        if commit(candidate) { Haptics.selection() }
     }
     func removeExamplePrep() {
-        snapshot.prep.removeAll { $0.venueID == preferences.venueID && $0.isSample }
-        save()
+        let venueID = preferences.venueID
+        guard snapshot.prep.contains(where: { $0.venueID == venueID && $0.isSample }) else { return }
+        var candidate = snapshot
+        candidate.prep.removeAll { $0.venueID == venueID && $0.isSample }
+        if commit(candidate) { Haptics.selection() }
     }
     var products: [Product] { snapshot.products.filter { $0.venueID == preferences.venueID && $0.isActive } }
     func listItems(_ kind: StockListKind) -> [StockListItem] { snapshot.stockLists.filter { $0.kind == kind && $0.venueID == preferences.venueID } }
@@ -110,9 +134,15 @@ import BARCore
         StockListService.add(product, kind: kind, to: &snapshot.stockLists); save(); Haptics.selection()
     }
     func setListQuantity(id: String, quantity: Int) {
-        StockListService.setQuantity(quantity, id: id, venueID: preferences.venueID, in: &snapshot.stockLists); save()
+        var candidate = snapshot
+        StockListService.setQuantity(quantity, id: id, venueID: preferences.venueID, in: &candidate.stockLists)
+        _ = commit(candidate)
     }
-    func clearList(_ kind: StockListKind) { StockListService.clear(kind, venueID: preferences.venueID, in: &snapshot.stockLists); save() }
+    func clearList(_ kind: StockListKind) {
+        var candidate = snapshot
+        StockListService.clear(kind, venueID: preferences.venueID, in: &candidate.stockLists)
+        _ = commit(candidate)
+    }
     func addCustomItem(name: String, quantity: Int, kind: StockListKind) {
         let clean = name.components(separatedBy: .newlines).joined(separator: " ").trimmingCharacters(in: .whitespacesAndNewlines)
         guard !clean.isEmpty, clean.count <= 200, (1...100_000).contains(quantity) else { return }
@@ -133,7 +163,9 @@ import BARCore
     }
     func deleteProduct(_ product: Product) {
         guard let i = snapshot.products.firstIndex(where: { $0.id == product.id && $0.venueID == preferences.venueID }) else { return }
-        snapshot.products[i].isActive = false; save()
+        var candidate = snapshot
+        candidate.products[i].isActive = false
+        if commit(candidate) { Haptics.selection() }
     }
     private func storedStockIndex(_ id: String) -> Int? {
         guard let product = products.first(where: { $0.id == id }) else { return nil }

@@ -104,17 +104,17 @@ final class BARUITests: XCTestCase {
         let row = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "prep-row-")).firstMatch
         XCTAssertTrue(row.waitForExistence(timeout: 5))
         let rowIdentifier = row.identifier
-        let deletedLabel = row.label
         row.swipeLeft()
         let delete = app.buttons["Delete"]
         XCTAssertTrue(delete.waitForExistence(timeout: 3))
         delete.tap()
-        XCTAssertFalse(app.buttons[rowIdentifier].exists)
+        let removed = expectation(for: NSPredicate(format: "exists == false"), evaluatedWith: app.buttons[rowIdentifier])
+        wait(for: [removed], timeout: 5)
         app.terminate()
         app.launchArguments = ["--uitesting", "--keep-state"]
         app.launch()
         tab("Prep")
-        XCTAssertFalse(app.staticTexts[deletedLabel].exists)
+        XCTAssertFalse(app.buttons[rowIdentifier].exists)
     }
     func testLearnFlashcardsAndQuiz() throws {
         tapText("Learn"); capture("15 Learn")
