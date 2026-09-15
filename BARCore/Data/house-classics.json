@@ -353,6 +353,7 @@
   {
     "id": "house-white-russian",
     "name": "White Russian",
+    "imageName": "cocktail-white-russian",
     "venueID": "rockwater-hove",
     "venueSpecific": true,
     "isHouseClassic": true,
@@ -1197,6 +1198,7 @@
   {
     "id": "house-spicy-margarita",
     "name": "Spicy Margarita",
+    "imageName": "cocktail-spicy-margarita",
     "venueID": "rockwater-hove",
     "venueSpecific": true,
     "isHouseClassic": true,
@@ -1551,7 +1553,8 @@
     "sourceReference": "TEQUILA · H21:I41",
     "serviceNotes": "House spec from the supplied spreadsheet, TEQUILA!H21:I41. Imported 15 September 2026.",
     "isActive": true,
-    "isSample": false
+    "isSample": false,
+    "imageName": "cocktail-mezcal-margarita"
   },
   {
     "id": "house-daiquiri",
@@ -2025,6 +2028,7 @@
   {
     "id": "house-whisky-sour",
     "name": "Whisky Sour",
+    "imageName": "cocktail-whisky-sour",
     "venueID": "rockwater-hove",
     "venueSpecific": true,
     "isHouseClassic": true,
@@ -2148,6 +2152,7 @@
   {
     "id": "house-mimosa",
     "name": "Mimosa",
+    "imageName": "cocktail-mimosa",
     "venueID": "rockwater-hove",
     "venueSpecific": true,
     "isHouseClassic": true,
@@ -2436,11 +2441,13 @@
     "sourceReference": "MISC · E31:F42",
     "serviceNotes": "House spec from the supplied spreadsheet, MISC!E31:F42. Imported 15 September 2026. Source check: sheet specifies 125ml soda and Crémant to top; retained exactly.",
     "isActive": true,
-    "isSample": false
+    "isSample": false,
+    "imageName": "cocktail-limoncello-spritz"
   },
   {
     "id": "house-pimms",
     "name": "Pimm’s",
+    "imageName": "cocktail-pimms",
     "venueID": "rockwater-hove",
     "venueSpecific": true,
     "isHouseClassic": true,
