@@ -99,6 +99,23 @@ final class BARUITests: XCTestCase {
         tab("Profile"); capture("14 Profile")
         XCTAssertTrue(app.navigationBars["Profile"].exists)
     }
+    func testPrepSwipeDeletePersists() throws {
+        tab("Prep")
+        let row = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "prep-row-")).firstMatch
+        XCTAssertTrue(row.waitForExistence(timeout: 5))
+        let rowIdentifier = row.identifier
+        let deletedLabel = row.label
+        row.swipeLeft()
+        let delete = app.buttons["Delete"]
+        XCTAssertTrue(delete.waitForExistence(timeout: 3))
+        delete.tap()
+        XCTAssertFalse(app.buttons[rowIdentifier].exists)
+        app.terminate()
+        app.launchArguments = ["--uitesting", "--keep-state"]
+        app.launch()
+        tab("Prep")
+        XCTAssertFalse(app.staticTexts[deletedLabel].exists)
+    }
     func testLearnFlashcardsAndQuiz() throws {
         tapText("Learn"); capture("15 Learn")
         tapText("Cocktail flashcards")

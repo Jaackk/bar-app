@@ -2,6 +2,26 @@ import XCTest
 @testable import BARCore
 
 final class HouseUpdateTests: XCTestCase {
+    func testPrepDeletionPersistsForExampleAndUserPrep() throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        defer { try? FileManager.default.removeItem(at: directory) }
+        let repository = LocalAppRepository(directory: directory)
+        var state = try repository.load()
+        let example = try XCTUnwrap(state.prep.first)
+        let userPrep = PrepItem(id: "user-prep", name: "Fresh lime juice", venueID: "rockwater-hove", targetAmount: 1, recipeYieldAmount: 1, isSample: false)
+        state.prep.append(userPrep)
+        try repository.save(state)
+
+        state.prep.removeAll { $0.id == example.id }
+        try repository.save(state)
+        var reopened = try LocalAppRepository(directory: directory).load()
+        XCTAssertFalse(reopened.prep.contains { $0.id == example.id })
+        XCTAssertTrue(reopened.prep.contains { $0.id == userPrep.id })
+
+        reopened.prep.removeAll { $0.id == userPrep.id }
+        try repository.save(reopened)
+        XCTAssertFalse(try LocalAppRepository(directory: directory).load().prep.contains { $0.id == userPrep.id })
+    }
     func testEverySuppliedSpecAndServiceOnlyFoam() throws {
         let state = try SeedLoader.load()
         XCTAssertEqual(state.cocktails.filter { $0.sourceReference?.hasPrefix("cocktail_specs") == true }.count, 16)

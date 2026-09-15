@@ -40,6 +40,18 @@ struct StockListView: View {
     @State private var clear = false
     @State private var copied = false
     private var items: [StockListItem] { store.listItems(kind) }
+    private var quickPicks: [Product] {
+        let selectedIDs = store.listItems(.restock).map(\.productID) + store.listItems(.order).map(\.productID)
+        let usage = Dictionary(selectedIDs.compactMap { $0 }.map { ($0, 1) }, uniquingKeysWith: +)
+        let nightEssentials = ["Ice Cubes", "Limes", "Lemons", "Soda Water", "Tonic Water", "Coca-Cola", "Pineapple Juice", "Mint", "Basil", "Cocktail Cherries"]
+        return store.products.sorted {
+            let left = usage[$0.id, default: 0], right = usage[$1.id, default: 0]
+            if left != right { return left > right }
+            let lEssential = nightEssentials.contains($0.name), rEssential = nightEssentials.contains($1.name)
+            if lEssential != rEssential { return lEssential }
+            return $0.name.localizedStandardCompare($1.name) == .orderedAscending
+        }.prefix(10).map { $0 }
+    }
     var body: some View {
         List {
             Section {
@@ -50,6 +62,21 @@ struct StockListView: View {
                 Button { adding = true } label: {
                     HStack { Image(systemName: "magnifyingglass"); Text("Search products…"); Spacer(); Image(systemName: "plus.circle.fill") }.foregroundStyle(BarTheme.olive).padding(.vertical, 10)
                 }.accessibilityIdentifier("add-products")
+            }.listRowBackground(BarTheme.card)
+            Section("Quick add") {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        ForEach(quickPicks) { product in
+                            Button { store.addProduct(product, to: kind) } label: {
+                                VStack(alignment: .leading, spacing: 7) {
+                                    ProductThumbnail(product: product).frame(width: 62, height: 62)
+                                    Text(product.name).font(.caption.weight(.medium)).lineLimit(2).frame(width: 82, alignment: .leading)
+                                    Text("Add").font(.caption2.weight(.semibold)).foregroundStyle(BarTheme.olive)
+                                }.frame(width: 82, alignment: .leading)
+                            }.buttonStyle(.plain)
+                        }
+                    }.padding(.vertical, 5)
+                }
             }.listRowBackground(BarTheme.card)
             if items.isEmpty {
                 Section {
@@ -169,10 +196,20 @@ struct ProductThumbnail: View {
     private var monogram: String {
         String(product?.name.trimmingCharacters(in: .whitespacesAndNewlines).prefix(1) ?? "P").uppercased()
     }
+    private var bundledFallbackName: String? {
+        guard (product?.brand.isEmpty ?? true) else { return nil }
+        switch product?.category {
+        case "Fresh Fruit": return "fresh-fruit"
+        case "Fresh Herbs", "Garnishes": return "fresh-herbs"
+        case "Juices", "Syrups / Cordials", "Purees", "Mixers", "Prep": return "bar-staples"
+        default: return nil
+        }
+    }
     var body: some View {
         Group {
             if let data = product?.imageData, let image = UIImage(data: data) { Image(uiImage: image).resizable().scaledToFill() }
             else if let name = product?.imageName, !name.isEmpty, let image = UIImage(named: name) { Image(uiImage: image).resizable().scaledToFit() }
+            else if let name = bundledFallbackName, let image = UIImage(named: name) { Image(uiImage: image).resizable().scaledToFill() }
             else {
                 ZStack {
                     LinearGradient(colors: [BarTheme.sage.opacity(0.7), BarTheme.cream], startPoint: .topLeading, endPoint: .bottomTrailing)

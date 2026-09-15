@@ -16,8 +16,9 @@ struct PrepView: View {
     private var completedCount: Int { store.prep.filter(\.completed).count }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 22) {
+        List {
+            Section {
+                VStack(alignment: .leading, spacing: 22) {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Ready for a great service.").font(BarTheme.title())
                     Text("Fresh prep, clear recipes, everything in its place.").font(.subheadline).foregroundStyle(.secondary)
@@ -42,28 +43,47 @@ struct PrepView: View {
                     }
                 }
                 Toggle("Show completed", isOn: $showCompleted).font(.subheadline).tint(BarTheme.olive)
-                // Examples are only useful until a bartender has begun their own prep.
-                if store.prep.contains(where: \.isSample) && !store.prep.contains(where: { !$0.isSample }) {
-                    Button("Clear example prep", role: .destructive) { removeExamples = true }
-                        .font(.footnote).frame(minHeight: 36)
                 }
-                if items.isEmpty {
+            }
+            .padding(.vertical, 12)
+            .listRowBackground(Color.clear)
+            if items.isEmpty {
+                Section {
                     EmptyStateView(title: "Prep is in good shape", message: "No outstanding recipes here. Show completed items to review quantities or start another batch.", systemImage: "checkmark.seal")
-                } else {
-                    LazyVStack(spacing: 12) {
-                        ForEach(items) { item in
-                            NavigationLink { PrepDetailView(prepID: item.id) } label: { PrepProgressCard(item: item) }
-                                .buttonStyle(.plain)
-                        }
+                }.listRowBackground(Color.clear)
+            } else {
+                Section {
+                    ForEach(items) { item in
+                        NavigationLink { PrepDetailView(prepID: item.id) } label: { PrepProgressCard(item: item) }
+                            .buttonStyle(.plain)
+                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                Button("Delete", role: .destructive) { store.deletePrep(id: item.id) }
+                            }
+                            .accessibilityIdentifier("prep-row-\(item.id)")
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
                     }
                 }
+            }
+            Section {
                 Text("Prep status is saved on this device.").font(.caption).foregroundStyle(.secondary)
-            }.padding(20)
+            }.listRowBackground(Color.clear)
         }
+        .listStyle(.plain)
+        .scrollContentBackground(.hidden)
         .barScreen()
         .navigationTitle("Today’s prep")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar { ToolbarItem(placement: .topBarTrailing) { Button { adding = true } label: { Label("Add prep", systemImage: "plus") } } }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    Button("Add prep", systemImage: "plus") { adding = true }
+                    if store.prep.contains(where: \.isSample) {
+                        Button("Remove example data", systemImage: "trash", role: .destructive) { removeExamples = true }
+                    }
+                } label: { Image(systemName: "ellipsis.circle") }
+            }
+        }
         .confirmationDialog("Clear example prep?", isPresented: $removeExamples, titleVisibility: .visible) {
             Button("Clear examples", role: .destructive) { store.removeExamplePrep() }
         } message: { Text("Your own prep items stay in place.") }
