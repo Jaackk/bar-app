@@ -2,6 +2,9 @@ import Foundation
 
 public struct Wine: Codable, Hashable, Sendable, Identifiable {
     public var id: String
+    /// The canonical stock-catalogue record for this wine.  This gives every wine surface
+    /// one offline image source, including manager-selected product photos.
+    public var productID: String?
     public var name: String
     public var venueID: String?
     public var producer: String
@@ -25,8 +28,9 @@ public struct Wine: Codable, Hashable, Sendable, Identifiable {
     public var isActive: Bool
     public var isSample: Bool
 
-    public init(id: String, name: String, venueID: String? = nil, producer: String = "", region: String = "", country: String = "", grape: String = "", style: String = "", colour: WineColour = .white, body: Int = 3, sweetness: Int = 1, acidity: Int = 3, tannin: Int = 1, flavourNotes: [String] = [], description: String = "", foodPairings: [String] = [], similarTo: [String] = [], servingNotes: String = "", guestDescription: String = "", imageName: String = "", venueSpecific: Bool = false, isActive: Bool = true, isSample: Bool = false) {
+    public init(id: String, productID: String? = nil, name: String, venueID: String? = nil, producer: String = "", region: String = "", country: String = "", grape: String = "", style: String = "", colour: WineColour = .white, body: Int = 3, sweetness: Int = 1, acidity: Int = 3, tannin: Int = 1, flavourNotes: [String] = [], description: String = "", foodPairings: [String] = [], similarTo: [String] = [], servingNotes: String = "", guestDescription: String = "", imageName: String = "", venueSpecific: Bool = false, isActive: Bool = true, isSample: Bool = false) {
         self.id = id
+        self.productID = productID
         self.name = name
         self.venueID = venueID
         self.producer = producer
@@ -51,10 +55,11 @@ public struct Wine: Codable, Hashable, Sendable, Identifiable {
         self.isSample = isSample
     }
 
-    enum CodingKeys: String, CodingKey { case id, name, venueID, producer, region, country, grape, style, colour, body, sweetness, acidity, tannin, flavourNotes, description, foodPairings, similarTo, servingNotes, guestDescription, imageName, venueSpecific, isActive, isSample }
+    enum CodingKeys: String, CodingKey { case id, productID, name, venueID, producer, region, country, grape, style, colour, body, sweetness, acidity, tannin, flavourNotes, description, foodPairings, similarTo, servingNotes, guestDescription, imageName, venueSpecific, isActive, isSample }
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         id = try c.decode(String.self, forKey: .id)
+        productID = try c.decodeIfPresent(String.self, forKey: .productID)
         name = try c.decode(String.self, forKey: .name)
         venueID = try c.decodeIfPresent(String.self, forKey: .venueID)
         producer = try c.value(String.self, for: .producer, default: "")

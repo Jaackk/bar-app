@@ -144,6 +144,7 @@
   {
     "id": "house-vodka-martini",
     "name": "Vodka Martini",
+    "imageName": "cocktail-vodka-martini",
     "venueID": "rockwater-hove",
     "venueSpecific": true,
     "isHouseClassic": true,
@@ -810,6 +811,7 @@
   {
     "id": "house-gin-martini",
     "name": "Gin Martini",
+    "imageName": "cocktail-vodka-martini",
     "venueID": "rockwater-hove",
     "venueSpecific": true,
     "isHouseClassic": true,
@@ -1190,7 +1192,7 @@
     "serviceNotes": "House spec from the supplied spreadsheet, TEQUILA!B19:C30. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "imageName": "cocktail-tommys-margarita"
+    "imageName": "cocktail-margarita"
   },
   {
     "id": "house-spicy-margarita",
@@ -1328,7 +1330,8 @@
     "sourceReference": "TEQUILA · E6:F20",
     "serviceNotes": "House spec from the supplied spreadsheet, TEQUILA!E6:F20. Imported 15 September 2026.",
     "isActive": true,
-    "isSample": false
+    "isSample": false,
+    "imageName": "cocktail-blood-orange-margarita"
   },
   {
     "id": "house-paloma",
@@ -1478,7 +1481,8 @@
     "sourceReference": "TEQUILA · H6:I20",
     "serviceNotes": "House spec from the supplied spreadsheet, TEQUILA!H6:I20. Imported 15 September 2026.",
     "isActive": true,
-    "isSample": false
+    "isSample": false,
+    "imageName": "cocktail-chilli-pineapple-margarita"
   },
   {
     "id": "house-mezcal-margarita",
@@ -1697,6 +1701,7 @@
   {
     "id": "house-dark-stormy",
     "name": "Dark & Stormy",
+    "imageName": "cocktail-dark-stormy",
     "venueID": "rockwater-hove",
     "venueSpecific": true,
     "isHouseClassic": true,
@@ -2318,7 +2323,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, MISC!E6:F17. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-aperol-spritz"
+    "overridesCocktailID": "classic-aperol-spritz",
+    "imageName": "cocktail-aperol-spritz"
   },
   {
     "id": "house-hugo-spritz",
@@ -2378,7 +2384,8 @@
     "sourceReference": "MISC · E18:F30",
     "serviceNotes": "House spec from the supplied spreadsheet, MISC!E18:F30. Imported 15 September 2026.",
     "isActive": true,
-    "isSample": false
+    "isSample": false,
+    "imageName": "cocktail-hugo-spritz"
   },
   {
     "id": "house-limoncello-spritz",
@@ -2809,11 +2816,13 @@
     "sourceReference": "MISC · K22:L51",
     "serviceNotes": "House spec from the supplied spreadsheet, MISC!K22:L51. Imported 15 September 2026.",
     "isActive": true,
-    "isSample": false
+    "isSample": false,
+    "imageName": "cocktail-pisco-sour"
   },
   {
     "id": "house-vodka-martini-wet",
     "name": "Vodka Martini (Wet)",
+    "imageName": "cocktail-vodka-martini",
     "venueID": "rockwater-hove",
     "venueSpecific": true,
     "isHouseClassic": true,
@@ -2868,6 +2877,7 @@
   {
     "id": "house-gin-martini-wet",
     "name": "Gin Martini (Wet)",
+    "imageName": "cocktail-vodka-martini",
     "venueID": "rockwater-hove",
     "venueSpecific": true,
     "isHouseClassic": true,

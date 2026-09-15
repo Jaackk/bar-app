@@ -13,6 +13,8 @@ The generic assets are explicitly associated only with generic stock and service
 ## Product assets
 
 | Product ID | Product | Local asset | Source URL | Retrieved |
+| `menu-real-dry-sparkling` | REAL Dry Sparkling | `real-dry-sparkling` | https://www.majestic.co.uk/sparkling-wines/dry-dragon-sparkling-tea-23499 | 2026-09-15 |
+| `menu-glenmorangie-12yr-lasanta` | Glenmorangie 12YR Lasanta | `glenmorangie-lasanta-12` | https://www.masterofmalt.com/whiskies/glenmorangie/glenmorangie-lasanta-12-year-old-46-whisky/ | 2026-09-15 |
 | --- | --- | --- | --- | --- |
 | `spec-absolut-vodka` | Absolut Vodka | `absolut-vodka` | https://commons.wikimedia.org/wiki/File:Absolut_Vodka_01.jpg | 2026-09-15 |
 | `menu-aperol` | Aperol | `aperol` | https://commons.wikimedia.org/wiki/File:Aperol_001_2025_06_08.jpg | 2026-09-15 |

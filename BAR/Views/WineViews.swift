@@ -44,11 +44,18 @@ struct WineCard: View {
 }
 private func wineTags(_ wine: Wine) -> [String] { [wine.sweetness <= 2 ? "Dry" : "Sweet", wine.body <= 2 ? "Light" : wine.body >= 4 ? "Full" : "Medium", wine.acidity >= 4 ? "Crisp" : "Soft"] }
 struct WineBottleArt: View {
+    @Environment(AppStore.self) private var store
     let wine: Wine
     private var colour: Color { switch wine.colour { case .red: Color(red: 0.29, green: 0.13, blue: 0.19); case .rose: BarTheme.coral; case .white: Color(red: 0.62, green: 0.66, blue: 0.33); case .sparkling: BarTheme.olive; case .orange: Color.orange; case .dessert: Color(red: 0.65, green: 0.43, blue: 0.18) } }
     var body: some View { GeometryReader { proxy in
-        if !wine.imageName.isEmpty, UIImage(named: wine.imageName) != nil { Image(wine.imageName).resizable().scaledToFit() }
-        else { VStack(spacing: 0) { RoundedRectangle(cornerRadius: 3).fill(colour.opacity(0.95)).frame(width: proxy.size.width * 0.27, height: proxy.size.height * 0.3); ZStack { UnevenRoundedRectangle(topLeadingRadius: 12, bottomLeadingRadius: 5, bottomTrailingRadius: 5, topTrailingRadius: 12).fill(colour); RoundedRectangle(cornerRadius: 2).fill(BarTheme.cream).frame(width: proxy.size.width * 0.64, height: proxy.size.height * 0.27).overlay(Text(wine.grape.prefix(1)).font(BarTheme.title(15)).foregroundStyle(BarTheme.ink)) }.frame(height: proxy.size.height * 0.65) }.frame(maxWidth: .infinity).shadow(color: BarTheme.ink.opacity(0.08), radius: 3, y: 4) }
+        switch WineProductResolver.imageSource(for: wine, products: store.products) {
+        case .customProductImage(let product), .bundledProductImage(let product):
+            ProductThumbnail(product: product)
+        case .wineImage(let imageName) where UIImage(named: imageName) != nil:
+            Image(imageName).resizable().scaledToFit()
+        case .wineImage, .fallback:
+            VStack(spacing: 0) { RoundedRectangle(cornerRadius: 3).fill(colour.opacity(0.95)).frame(width: proxy.size.width * 0.27, height: proxy.size.height * 0.3); ZStack { UnevenRoundedRectangle(topLeadingRadius: 12, bottomLeadingRadius: 5, bottomTrailingRadius: 5, topTrailingRadius: 12).fill(colour); RoundedRectangle(cornerRadius: 2).fill(BarTheme.cream).frame(width: proxy.size.width * 0.64, height: proxy.size.height * 0.27).overlay(Text(wine.grape.prefix(1)).font(BarTheme.title(15)).foregroundStyle(BarTheme.ink)) }.frame(height: proxy.size.height * 0.65) }.frame(maxWidth: .infinity).shadow(color: BarTheme.ink.opacity(0.08), radius: 3, y: 4)
+        }
     }.accessibilityHidden(true) }
 }
 struct WineDetailView: View {

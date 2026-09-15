@@ -80,6 +80,26 @@ final class HouseUpdateTests: XCTestCase {
             XCTAssertFalse(try XCTUnwrap(classics.first { $0.id == id }).imageName.isEmpty, id)
         }
     }
+    func testWineFinderUsesCanonicalProductImageWithoutCrossResolvingCuvées() throws {
+        let state = try SeedLoader.load()
+        let hoveWines = state.wines.filter { $0.id.hasPrefix("hove-wine-") }
+        XCTAssertFalse(hoveWines.isEmpty)
+        XCTAssertTrue(hoveWines.allSatisfy { $0.productID != nil }, "Every bundled Hove wine must have a stable stock-catalogue image relationship.")
+        let wine = try XCTUnwrap(state.wines.first { $0.id == "hove-wine-assyrtiko-terre-grec-theopetra-estate" })
+        let product = try XCTUnwrap(state.products.first { $0.id == "menu-assyrtiko-terre-grec-theopetra-estate" })
+        XCTAssertEqual(wine.productID, product.id)
+        XCTAssertEqual(WineProductResolver.imageSource(for: wine, products: state.products), .bundledProductImage(product))
+
+        var custom = product
+        custom.imageData = Data([1, 2, 3])
+        XCTAssertEqual(WineProductResolver.imageSource(for: wine, products: [custom]), .customProductImage(custom))
+
+        let unknown = Wine(id: "unknown", name: "Unlisted Cuvée", imageName: "")
+        XCTAssertEqual(WineProductResolver.imageSource(for: unknown, products: [product]), .fallback)
+
+        let differentCuvée = Wine(id: "other", name: "Assyrtiko Terre Grec Reserve", imageName: "")
+        XCTAssertNil(WineProductResolver.product(for: differentCuvée, in: [product]))
+    }
     func testDuplicateProductMigrationRepointsListsAndPreservesAliases() throws {
         var state = try SeedLoader.load()
         state.catalogueVersion = 15
@@ -129,7 +149,7 @@ final class HouseUpdateTests: XCTestCase {
         XCTAssertEqual(reopened.stockLists, state.stockLists)
         XCTAssertEqual(reopened.products.first { $0.id == product.id }?.imageData, product.imageData)
         XCTAssertEqual(reopened.products.first { $0.id == deletedID }?.isActive, false)
-        XCTAssertEqual(reopened.catalogueVersion, 18)
+        XCTAssertEqual(reopened.catalogueVersion, 19)
         var list = reopened.stockLists
         StockListService.setQuantity(-1, id: list[0].id, venueID: product.venueID, in: &list)
         XCTAssertEqual(list.count, 2)
