@@ -32,7 +32,9 @@ struct WineCard: View {
     var wine: Wine
     var reason: String? = nil
     var body: some View { HStack(alignment: .top, spacing: 12) {
-        WineBottleArt(wine: wine).frame(width: 48, height: 122)
+        WineBottleArt(wine: wine)
+            .frame(width: 74, height: 148)
+            .padding(.vertical, 2)
         VStack(alignment: .leading, spacing: 7) {
             Text(wine.name).font(BarTheme.title(20)).foregroundStyle(BarTheme.ink)
             Text(wine.description).font(.caption).foregroundStyle(BarTheme.muted).lineLimit(3)
@@ -62,7 +64,7 @@ struct WineDetailView: View {
     @Environment(AppStore.self) var store
     var wineID: String
     var body: some View { Group { if let wine = store.wine(wineID) { ScrollView { VStack(alignment: .leading, spacing: 22) {
-        HStack { Spacer(); WineBottleArt(wine: wine).frame(width: 75, height: 215); Spacer() }.padding(20).frame(maxWidth: .infinity).background(BarTheme.stone.opacity(0.6), in: RoundedRectangle(cornerRadius: 20))
+        HStack { Spacer(); WineBottleArt(wine: wine).frame(width: 112, height: 270); Spacer() }.padding(20).frame(maxWidth: .infinity).background(BarTheme.stone.opacity(0.6), in: RoundedRectangle(cornerRadius: 20))
         VStack(alignment: .leading, spacing: 10) { if wine.isSample { SampleLabel() }; Text(wine.name).font(BarTheme.title(32)); Text([wine.producer, wine.region, wine.country].filter { !$0.isEmpty }.joined(separator: " · ")).font(.subheadline).foregroundStyle(BarTheme.muted); Text(wine.description).font(.body); HStack { ForEach(wineTags(wine), id: \.self) { TagChip(title: $0) } } }
         VStack(alignment: .leading, spacing: 12) { Label("How to describe it to a guest", systemImage: "quote.opening").font(.headline); Text("“\(wine.guestDescription)”").font(BarTheme.title(23)) }.barCard()
         VStack(alignment: .leading, spacing: 10) { SectionHeader(title: "At a glance", subtitle: wine.id.hasPrefix("hove-wine-") ? "Taste scales are approximate style guidance" : nil); LabeledContent("Grape", value: wine.grape.isEmpty ? "Not listed on menu" : wine.grape); LabeledContent("Style", value: wine.style); LabeledContent("Body", value: "\(wine.body) / 5"); LabeledContent("Acidity", value: "\(wine.acidity) / 5"); LabeledContent("Tannin", value: "\(wine.tannin) / 5") }.font(.subheadline).barCard()
