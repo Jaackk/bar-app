@@ -84,6 +84,31 @@ final class BARUITests: XCTestCase {
         app.buttons["Favourite wine"].tap()
         capture("09b Wine detail")
     }
+    func testHomeSearchAutofocusAndCanonicalProductAliases() throws {
+        app.buttons["home-search"].tap()
+        let field = app.textFields["universal-search"]
+        XCTAssertTrue(field.waitForExistence(timeout: 5))
+        XCTAssertTrue(app.keyboards.firstMatch.waitForExistence(timeout: 5), "The Home search route should focus the field without a second tap")
+
+        field.typeText("vodka")
+        XCTAssertTrue(app.staticTexts["Absolut Vodka"].waitForExistence(timeout: 5))
+        capture("Search product imagery")
+
+        app.buttons["Clear search"].tap()
+        field.typeText("Jamesons")
+        XCTAssertTrue(app.staticTexts["Jameson Irish Whiskey"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.staticTexts["Jamesons"].exists)
+
+        app.buttons["Clear search"].tap()
+        field.typeText("Casamigos Blanca")
+        XCTAssertTrue(app.staticTexts["Casamigos Blanco"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.staticTexts["Casamigos Blanca"].exists)
+
+        app.buttons["Clear search"].tap()
+        field.typeText("Tanquary N10")
+        XCTAssertTrue(app.staticTexts["Tanqueray No. Ten"].waitForExistence(timeout: 5))
+        XCTAssertFalse(app.staticTexts["Tanquary N10"].exists)
+    }
     func testPrepStockAndProfile() throws {
         tab("Prep"); capture("10 Prep")
         let firstPrep = app.scrollViews.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", "Citrus")).firstMatch
