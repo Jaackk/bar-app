@@ -2,7 +2,7 @@ import Foundation
 
 /// One-time content update: personal state, old stocktake and saved lists are preserved.
 public enum MenuMigration {
-    public static let version = 12
+    public static let version = 13
     public static let sourceURL = "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf"
     public static func apply(to old: AppSnapshot) throws -> AppSnapshot {
         guard old.catalogueVersion < version, old.venues.contains(where: { $0.id == "rockwater-hove" }) else { return old }
