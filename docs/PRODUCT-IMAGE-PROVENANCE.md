@@ -8,6 +8,8 @@ The product catalogue remains offline-first. User-supplied photographs are resiz
 | `fresh-herbs` | Generic fresh herb and garnish entries with no product-specific photograph | Original AI-generated stock illustration created for this app on 15 September 2026. It contains unbranded mint, basil, rosemary, thyme, olives and cocktail cherries. |
 | `bar-staples` | Generic juices, syrups, purees, mixers and prep entries with no brand | Original AI-generated stock illustration created for this app on 15 September 2026. It contains unbranded soda, tonic, citrus and pineapple juice, syrup and ice. |
 
+The generic assets are explicitly associated only with generic stock and service ingredients. Product records for wines, ciders, canned drinks and branded items remain unresolved until their own product image is sourced.
+
 Brand-specific catalogue records deliberately retain the local product fallback until a licensed manufacturer or supplier image has been approved and bundled. The app does not hotlink third-party images or copy search thumbnails, so it stays usable offline and avoids distributing unverified imagery.
 
 ## Product assets
