@@ -63,6 +63,23 @@ final class HouseUpdateTests: XCTestCase {
         let passion = StockListService.search(state.products, venueID: "rockwater-hove", query: "passionfruit")
         XCTAssertTrue(passion.contains { $0.name.localizedCaseInsensitiveContains("Passion Fruit") })
     }
+    func testBundledWineAndClassicCocktailImageryIsAssociated() throws {
+        let state = try SeedLoader.load()
+        for id in [
+            "menu-prosecco-collezione-96-brut-masottina",
+            "menu-assyrtiko-terre-grec-theopetra-estate",
+            "menu-sauvignon-blanc-romans-bay-lomond-wines",
+            "menu-pecorino-offida-belato-carminucci",
+            "menu-sancerre-magie-des-caillottes-renaissance-fleuriet-freres",
+            "menu-godello-finca-os-cobatos"
+        ] {
+            XCTAssertFalse(try XCTUnwrap(state.products.first { $0.id == id }).imageName.isEmpty, id)
+        }
+        let classics = VenueResolver.cocktails(state.cocktails, venueID: "rockwater-hove")
+        for id in ["house-espresso-martini", "house-negroni", "house-margarita", "house-pina-colada", "house-old-fashioned", "house-caipirinha"] {
+            XCTAssertFalse(try XCTUnwrap(classics.first { $0.id == id }).imageName.isEmpty, id)
+        }
+    }
     func testDuplicateProductMigrationRepointsListsAndPreservesAliases() throws {
         var state = try SeedLoader.load()
         state.catalogueVersion = 15
@@ -112,7 +129,7 @@ final class HouseUpdateTests: XCTestCase {
         XCTAssertEqual(reopened.stockLists, state.stockLists)
         XCTAssertEqual(reopened.products.first { $0.id == product.id }?.imageData, product.imageData)
         XCTAssertEqual(reopened.products.first { $0.id == deletedID }?.isActive, false)
-        XCTAssertEqual(reopened.catalogueVersion, 16)
+        XCTAssertEqual(reopened.catalogueVersion, 17)
         var list = reopened.stockLists
         StockListService.setQuantity(-1, id: list[0].id, venueID: product.venueID, in: &list)
         XCTAssertEqual(list.count, 2)

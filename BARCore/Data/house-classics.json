@@ -58,7 +58,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, VODKA!B6:C18. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-espresso-martini"
+    "overridesCocktailID": "classic-espresso-martini",
+    "imageName": "cocktail-espresso-martini"
   },
   {
     "id": "house-pornstar-martini",
@@ -137,7 +138,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, VODKA!B19:C33. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-pornstar-martini"
+    "overridesCocktailID": "classic-pornstar-martini",
+    "imageName": "cocktail-pornstar-martini"
   },
   {
     "id": "house-vodka-martini",
@@ -252,7 +254,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, VODKA!E6:F18. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-cosmopolitan"
+    "overridesCocktailID": "classic-cosmopolitan",
+    "imageName": "cocktail-cosmopolitan"
   },
   {
     "id": "house-bloody-mary",
@@ -343,7 +346,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, VODKA!E19:F33. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-bloody-mary"
+    "overridesCocktailID": "classic-bloody-mary",
+    "imageName": "cocktail-bloody-mary"
   },
   {
     "id": "house-white-russian",
@@ -474,7 +478,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, VODKA!H6:I18. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-moscow-mule"
+    "overridesCocktailID": "classic-moscow-mule",
+    "imageName": "cocktail-moscow-mule"
   },
   {
     "id": "house-french-martini",
@@ -535,7 +540,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, VODKA!H19:I31. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-french-martini"
+    "overridesCocktailID": "classic-french-martini",
+    "imageName": "cocktail-french-martini"
   },
   {
     "id": "house-sex-on-the-beach",
@@ -595,7 +601,8 @@
     "sourceReference": "VODKA · H32:I50",
     "serviceNotes": "House spec from the supplied spreadsheet, VODKA!H32:I50. Imported 15 September 2026.",
     "isActive": true,
-    "isSample": false
+    "isSample": false,
+    "imageName": "cocktail-sex-on-the-beach"
   },
   {
     "id": "house-tom-collins",
@@ -656,7 +663,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, GIN!B6:C18. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-tom-collins"
+    "overridesCocktailID": "classic-tom-collins",
+    "imageName": "cocktail-tom-collins"
   },
   {
     "id": "house-bramble",
@@ -726,7 +734,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, GIN!B19:C32. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-bramble"
+    "overridesCocktailID": "classic-bramble",
+    "imageName": "cocktail-bramble"
   },
   {
     "id": "house-white-lady",
@@ -795,7 +804,8 @@
     "sourceReference": "GIN · B33:C50",
     "serviceNotes": "House spec from the supplied spreadsheet, GIN!B33:C50. Imported 15 September 2026.",
     "isActive": true,
-    "isSample": false
+    "isSample": false,
+    "imageName": "cocktail-white-lady"
   },
   {
     "id": "house-gin-martini",
@@ -906,7 +916,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, GIN!E18:F50. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-negroni"
+    "overridesCocktailID": "classic-negroni",
+    "imageName": "cocktail-negroni"
   },
   {
     "id": "house-singapore-sling",
@@ -1002,7 +1013,8 @@
     "sourceReference": "GIN · H6:I22",
     "serviceNotes": "House spec from the supplied spreadsheet, GIN!H6:I22. Imported 15 September 2026.",
     "isActive": true,
-    "isSample": false
+    "isSample": false,
+    "imageName": "cocktail-singapore-sling"
   },
   {
     "id": "house-french-75",
@@ -1063,7 +1075,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, GIN!H23:I50. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-french-75"
+    "overridesCocktailID": "classic-french-75",
+    "imageName": "cocktail-french-75"
   },
   {
     "id": "house-margarita",
@@ -1124,7 +1137,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, TEQUILA!B6:C18. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-margarita"
+    "overridesCocktailID": "classic-margarita",
+    "imageName": "cocktail-margarita"
   },
   {
     "id": "house-tommys-margarita",
@@ -1175,7 +1189,8 @@
     "sourceReference": "TEQUILA · B19:C30",
     "serviceNotes": "House spec from the supplied spreadsheet, TEQUILA!B19:C30. Imported 15 September 2026.",
     "isActive": true,
-    "isSample": false
+    "isSample": false,
+    "imageName": "cocktail-tommys-margarita"
   },
   {
     "id": "house-spicy-margarita",
@@ -1375,7 +1390,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, TEQUILA!E21:F41. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-paloma"
+    "overridesCocktailID": "classic-paloma",
+    "imageName": "cocktail-paloma"
   },
   {
     "id": "house-chilli-pineapple-margarita",
@@ -1595,7 +1611,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, RUM!B6:C21. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-daiquiri"
+    "overridesCocktailID": "classic-daiquiri",
+    "imageName": "cocktail-daiquiri"
   },
   {
     "id": "house-mai-tai",
@@ -1674,7 +1691,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, RUM!B22:C37. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-mai-tai"
+    "overridesCocktailID": "classic-mai-tai",
+    "imageName": "cocktail-mai-tai"
   },
   {
     "id": "house-dark-stormy",
@@ -1808,7 +1826,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, RUM!E19:F37. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-mojito"
+    "overridesCocktailID": "classic-mojito",
+    "imageName": "cocktail-mojito"
   },
   {
     "id": "house-pina-colada",
@@ -1878,7 +1897,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, RUM!H6:I37. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-pina-colada"
+    "overridesCocktailID": "classic-pina-colada",
+    "imageName": "cocktail-pina-colada"
   },
   {
     "id": "house-old-fashioned",
@@ -1931,7 +1951,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, WHISKEY!B6:C23. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-old-fashioned"
+    "overridesCocktailID": "classic-old-fashioned",
+    "imageName": "cocktail-old-fashioned"
   },
   {
     "id": "house-irish-coffee",
@@ -1993,7 +2014,8 @@
     "sourceReference": "WHISKEY · B24:C34",
     "serviceNotes": "House spec from the supplied spreadsheet, WHISKEY!B24:C34. Imported 15 September 2026.",
     "isActive": true,
-    "isSample": false
+    "isSample": false,
+    "imageName": "cocktail-irish-coffee"
   },
   {
     "id": "house-whisky-sour",
@@ -2115,7 +2137,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, WHISKEY!H6:I34. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-manhattan"
+    "overridesCocktailID": "classic-manhattan",
+    "imageName": "cocktail-manhattan"
   },
   {
     "id": "house-mimosa",
@@ -2199,7 +2222,8 @@
     "sourceReference": "MISC · B17:C27",
     "serviceNotes": "House spec from the supplied spreadsheet, MISC!B17:C27. Imported 15 September 2026.",
     "isActive": true,
-    "isSample": false
+    "isSample": false,
+    "imageName": "cocktail-bellini"
   },
   {
     "id": "house-kir-royale",
@@ -2241,7 +2265,8 @@
     "sourceReference": "MISC · B28:C51",
     "serviceNotes": "House spec from the supplied spreadsheet, MISC!B28:C51. Imported 15 September 2026.",
     "isActive": true,
-    "isSample": false
+    "isSample": false,
+    "imageName": "cocktail-kir-royale"
   },
   {
     "id": "house-aperol-spritz",
@@ -2500,7 +2525,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, MISC!H6:I17. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-caipirinha"
+    "overridesCocktailID": "classic-caipirinha",
+    "imageName": "cocktail-caipirinha"
   },
   {
     "id": "house-sidecar",
@@ -2552,7 +2578,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, MISC!H18:I29. Imported 15 September 2026. Source check: method mentions limes and sugar, absent from its ingredient list. Confirm with the manager.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-sidecar"
+    "overridesCocktailID": "classic-sidecar",
+    "imageName": "cocktail-sidecar"
   },
   {
     "id": "house-amaretto-sour",
@@ -2622,7 +2649,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, MISC!H30:I51. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-amaretto-sour"
+    "overridesCocktailID": "classic-amaretto-sour",
+    "imageName": "cocktail-amaretto-sour"
   },
   {
     "id": "house-long-island-iced-tea",
@@ -2711,7 +2739,8 @@
     "serviceNotes": "House spec from the supplied spreadsheet, MISC!K6:L21. Imported 15 September 2026.",
     "isActive": true,
     "isSample": false,
-    "overridesCocktailID": "classic-long-island-iced-tea"
+    "overridesCocktailID": "classic-long-island-iced-tea",
+    "imageName": "cocktail-long-island-iced-tea"
   },
   {
     "id": "house-pisco-sour",
