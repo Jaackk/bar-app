@@ -154,11 +154,33 @@ private struct ProductPicker: View {
 
 struct ProductThumbnail: View {
     var product: Product?
+    private var symbol: String {
+        switch product?.category {
+        case "Wine", "Sparkling / Champagne": "wineglass"
+        case "Beer / Cider": "mug"
+        case "Fresh Fruit": "apple.logo"
+        case "Fresh Herbs", "Garnishes": "leaf"
+        case "Juices", "Syrups / Cordials", "Purees", "Bitters": "drop"
+        case "Mixers", "Soft Drinks": "bubbles.and.sparkles"
+        case "Prep": "flask"
+        default: "waterbottle"
+        }
+    }
+    private var monogram: String {
+        String(product?.name.trimmingCharacters(in: .whitespacesAndNewlines).prefix(1) ?? "P").uppercased()
+    }
     var body: some View {
         Group {
             if let data = product?.imageData, let image = UIImage(data: data) { Image(uiImage: image).resizable().scaledToFill() }
             else if let name = product?.imageName, !name.isEmpty, let image = UIImage(named: name) { Image(uiImage: image).resizable().scaledToFit() }
-            else { Image(systemName: "waterbottle").font(.system(size: 25, weight: .ultraLight)).foregroundStyle(BarTheme.olive).frame(maxWidth: .infinity, maxHeight: .infinity).background(BarTheme.sage.opacity(0.25)) }
+            else {
+                ZStack {
+                    LinearGradient(colors: [BarTheme.sage.opacity(0.7), BarTheme.cream], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    Circle().fill(.white.opacity(0.52)).frame(width: 52, height: 52)
+                    Image(systemName: symbol).font(.system(size: 23, weight: .medium)).foregroundStyle(BarTheme.olive)
+                    Text(monogram).font(.caption2.bold()).foregroundStyle(BarTheme.olive.opacity(0.6)).offset(x: 18, y: 22)
+                }
+            }
         }.clipShape(RoundedRectangle(cornerRadius: 10)).accessibilityHidden(true)
     }
 }

@@ -42,9 +42,10 @@ struct PrepView: View {
                     }
                 }
                 Toggle("Show completed", isOn: $showCompleted).font(.subheadline).tint(BarTheme.olive)
-                if store.prep.contains(where: \.isSample) {
-                    Button("Remove example data", role: .destructive) { removeExamples = true }
-                        .font(.subheadline).frame(minHeight: 44)
+                // Examples are only useful until a bartender has begun their own prep.
+                if store.prep.contains(where: \.isSample) && !store.prep.contains(where: { !$0.isSample }) {
+                    Button("Clear example prep", role: .destructive) { removeExamples = true }
+                        .font(.footnote).frame(minHeight: 36)
                 }
                 if items.isEmpty {
                     EmptyStateView(title: "Prep is in good shape", message: "No outstanding recipes here. Show completed items to review quantities or start another batch.", systemImage: "checkmark.seal")
@@ -63,9 +64,9 @@ struct PrepView: View {
         .navigationTitle("Today’s prep")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar { ToolbarItem(placement: .topBarTrailing) { Button { adding = true } label: { Label("Add prep", systemImage: "plus") } } }
-        .confirmationDialog("Remove example prep?", isPresented: $removeExamples, titleVisibility: .visible) {
-            Button("Remove example data", role: .destructive) { store.removeExamplePrep() }
-        } message: { Text("This keeps your own and verified Rockwater prep items.") }
+        .confirmationDialog("Clear example prep?", isPresented: $removeExamples, titleVisibility: .visible) {
+            Button("Clear examples", role: .destructive) { store.removeExamplePrep() }
+        } message: { Text("Your own prep items stay in place.") }
         .sheet(isPresented: $adding) { PrepEditor(item: PrepItem(id: UUID().uuidString, name: "", venueID: store.preferences.venueID)) }
     }
 }

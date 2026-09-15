@@ -2,7 +2,7 @@ import Foundation
 
 /// One-time content update: personal state, old stocktake and saved lists are preserved.
 public enum MenuMigration {
-    public static let version = 3
+    public static let version = 4
     public static let sourceURL = "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf"
     public static func apply(to old: AppSnapshot) throws -> AppSnapshot {
         guard old.catalogueVersion < version, old.venues.contains(where: { $0.id == "rockwater-hove" }) else { return old }
@@ -17,6 +17,14 @@ public enum MenuMigration {
         // Replace only bundled sample venue content; manager-approved custom records remain.
         updated.cocktails.removeAll { $0.venueID == "rockwater-hove" && $0.isSample }
         updated.wines.removeAll { $0.venueID == "rockwater-hove" && $0.isSample }
+        // Early catalogue versions included recipe drinks and duplicate ingredient labels as
+        // products.  Products are for stock and ordering only; recipes remain cocktails.
+        let bundledProductIDs = Set(products.map(\.id))
+        let retiredDrinkTypes: Set<String> = ["Coastal Cocktails", "Frozen Coastals", "Zero Proof Coastals", "Classic cocktail"]
+        updated.products.removeAll {
+            $0.venueID == "rockwater-hove" &&
+            (retiredDrinkTypes.contains($0.productType) || ($0.id.hasPrefix("spec-") && !bundledProductIDs.contains($0.id)))
+        }
         for drink in cocktails {
             if let i = updated.cocktails.firstIndex(where: { $0.id == drink.id }) { updated.cocktails[i] = drink }
             else { updated.cocktails.append(drink) }
