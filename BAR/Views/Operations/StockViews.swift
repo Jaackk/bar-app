@@ -83,8 +83,7 @@ private struct StockRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .top, spacing: 10) {
-                Image(systemName: "waterbottle").font(.system(size: 25, weight: .light)).foregroundStyle(BarTheme.olive)
-                    .frame(width: 38, height: 46).background(BarTheme.sage.opacity(0.25), in: RoundedRectangle(cornerRadius: 10))
+                ProductThumbnail(product: store.products.first { $0.id == item.id }).frame(width: 38, height: 46)
                 VStack(alignment: .leading, spacing: 4) {
                     Text(item.name).font(BarTheme.title(21))
                     Text(item.category + (item.bottleSize.map { " · \(MeasurementFormatter.number($0 / 10))cl" } ?? ""))

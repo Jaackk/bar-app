@@ -10,55 +10,76 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "sea-glass-0",
+        "id": "apricot-liq",
+        "name": "Apricot Liq",
+        "amount": 25,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "blue-curacao",
+        "name": "Blue Curacao",
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "havana-3",
         "name": "Havana 3",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 35,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "sea-glass-1",
-        "name": "Apricot",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
-      },
-      {
-        "id": "sea-glass-2",
-        "name": "Blue Curaçao",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
-      },
-      {
-        "id": "sea-glass-3",
+        "id": "lemon",
         "name": "Lemon",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "sea-glass-4",
-        "name": "Ginger",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "ginger-syrup",
+        "name": "Ginger Syrup",
+        "amount": 10,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "sea-glass-5",
-        "name": "Pineapple Foam",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "pineapple-foam-top",
+        "name": "Pineapple Foam Top",
+        "amount": 100,
+        "unit": "ml",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. Ingredients and quantities follow the supplied specification. Check product labels for allergens.",
     "isSample": false,
     "isActive": true,
     "isPopular": true,
-    "imageName": "sea-glass"
+    "imageName": "sea-glass",
+    "glass": "Tall Clear Collins",
+    "ice": "Cubed",
+    "garnish": "Not specified",
+    "method": "Shaken. Pineapple foam on top.",
+    "prepInstructions": [
+      "Shaken. Pineapple foam on top."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 1",
+    "isHouseClassic": false
   },
   {
     "id": "hove-sun-ember",
@@ -71,41 +92,67 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "sun-ember-0",
-        "name": "Cachaça",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "cachaca",
+        "name": "Cachaca",
+        "amount": 50,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "sun-ember-1",
+        "id": "lime",
         "name": "Lime",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 0.5,
+        "unit": "piece",
+        "batchBehaviour": "prepareSeparately",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "sun-ember-2",
-        "name": "Guava",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "spicy-tincture",
+        "name": "Spicy Tincture",
+        "amount": 3,
+        "unit": "dash",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "sun-ember-3",
-        "name": "Spice",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "guava-puree",
+        "name": "Guava Puree",
+        "amount": 25,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "gomme",
+        "name": "Gomme",
+        "amount": 25,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. Ingredients and quantities follow the supplied specification. Check product labels for allergens.",
     "isSample": false,
     "isActive": true,
     "isPopular": false,
-    "imageName": ""
+    "imageName": "",
+    "glass": "Rocks",
+    "ice": "Crushed",
+    "garnish": "Dehydrated Lime",
+    "method": "Build in glass. Muddle half a lime.",
+    "prepInstructions": [
+      "Build in glass. Muddle half a lime."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 1",
+    "isHouseClassic": false
   },
   {
     "id": "hove-italian-bitter",
@@ -118,41 +165,58 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "italian-bitter-0",
+        "id": "peroni",
+        "name": "Peroni",
+        "amount": 150,
+        "unit": "ml",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "sweet-vermouth",
         "name": "Sweet Vermouth",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 25,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "italian-bitter-1",
+        "id": "campari",
         "name": "Campari",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 25,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "italian-bitter-2",
-        "name": "Peroni Foam",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
-      },
-      {
-        "id": "italian-bitter-3",
-        "name": "Orange",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "orange-slice",
+        "name": "Orange Slice",
+        "amount": 1,
+        "unit": "piece",
+        "batchBehaviour": "garnishCount",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. Ingredients and quantities follow the supplied specification. Check product labels for allergens.",
     "isSample": false,
     "isActive": true,
     "isPopular": false,
-    "imageName": ""
+    "imageName": "",
+    "glass": "Clear Rocks",
+    "ice": "Cubed",
+    "garnish": "Orange Slice",
+    "method": "Stir and then top with Peroni.",
+    "prepInstructions": [
+      "Stir and then top with Peroni."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 1",
+    "isHouseClassic": false
   },
   {
     "id": "sample-peach-bloom",
@@ -165,48 +229,67 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "peach-bloom-0",
+        "id": "belvedere",
         "name": "Belvedere",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 25,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "peach-bloom-1",
-        "name": "Peach",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "teichene-peach",
+        "name": "Teichene Peach",
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "peach-bloom-2",
-        "name": "St-Germain",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "st-germain",
+        "name": "St Germain",
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "peach-bloom-3",
-        "name": "Lime",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "lime-juice",
+        "name": "Lime Juice",
+        "amount": 20,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "peach-bloom-4",
-        "name": "Cranberry",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "cranberry-juice",
+        "name": "Cranberry Juice",
+        "amount": 25,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. Ingredients and quantities follow the supplied specification. Check product labels for allergens.",
     "isSample": false,
     "isActive": true,
     "isPopular": true,
-    "imageName": "peach-bloom"
+    "imageName": "peach-bloom",
+    "glass": "Nick n Nora",
+    "ice": "Not specified",
+    "garnish": "Thyme Sprig",
+    "method": "Shake, double strain.",
+    "prepInstructions": [
+      "Shake, double strain."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 1",
+    "isHouseClassic": false
   },
   {
     "id": "hove-lychee-lagoon",
@@ -219,48 +302,76 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "lychee-lagoon-0",
-        "name": "Coconut Rum",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "bacardi-coconut",
+        "name": "Bacardi Coconut",
+        "amount": 40,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "lychee-lagoon-1",
+        "id": "coconut-water",
         "name": "Coconut Water",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 30,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "lychee-lagoon-2",
+        "id": "lychee",
         "name": "Lychee",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 30,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "lychee-lagoon-3",
-        "name": "Lime",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "lime-juice",
+        "name": "Lime Juice",
+        "amount": 20,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "lychee-lagoon-4",
-        "name": "Jasmine",
+        "id": "jasmine-syrup",
+        "name": "Jasmine Syrup",
+        "amount": 20,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "soda-top",
+        "name": "Soda Top",
         "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. Ingredients and quantities follow the supplied specification. Check product labels for allergens.",
     "isSample": false,
     "isActive": true,
     "isPopular": false,
-    "imageName": ""
+    "imageName": "",
+    "glass": "Clear Collins",
+    "ice": "Cubed",
+    "garnish": "Coconut Flakes",
+    "method": "Shaken. Soda top.",
+    "prepInstructions": [
+      "Shaken. Soda top."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 1",
+    "isHouseClassic": false
   },
   {
     "id": "hove-island-smash",
@@ -273,55 +384,76 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "island-smash-0",
+        "id": "salcombe-gin",
         "name": "Salcombe Gin",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 40,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "island-smash-1",
-        "name": "Passionfruit",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "lemon-juice",
+        "name": "Lemon Juice",
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "island-smash-2",
-        "name": "Pineapple",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "passion-fruit-puree",
+        "name": "Passion Fruit Puree",
+        "amount": 20,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "island-smash-3",
-        "name": "Lemon",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "pineapple-juice",
+        "name": "Pineapple Juice",
+        "amount": 30,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "island-smash-4",
-        "name": "Orgeat",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "orgeat-syrup",
+        "name": "Orgeat Syrup",
+        "amount": 20,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "island-smash-5",
-        "name": "Basil",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "basil-leaf",
+        "name": "Basil Leaf",
+        "amount": 6,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. Ingredients and quantities follow the supplied specification. Check product labels for allergens.",
     "isSample": false,
     "isActive": true,
     "isPopular": false,
-    "imageName": ""
+    "imageName": "",
+    "glass": "Tumbler",
+    "ice": "Crushed",
+    "garnish": "Basil Sprig",
+    "method": "Shaken with crushed ice.",
+    "prepInstructions": [
+      "Shaken with crushed ice."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 1",
+    "isHouseClassic": false
   },
   {
     "id": "hove-pink-horizon",
@@ -334,48 +466,67 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "pink-horizon-0",
-        "name": "Tanqueray Sevilla",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "tanqueray-seville",
+        "name": "Tanqueray Seville",
+        "amount": 20,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "pink-horizon-1",
+        "id": "campari",
         "name": "Campari",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "pink-horizon-2",
-        "name": "Blood Orange",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "blood-orange-syrup",
+        "name": "Blood Orange Syrup",
+        "amount": 10,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "pink-horizon-3",
+        "id": "orange-bitters",
         "name": "Orange Bitters",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 1,
+        "unit": "dash",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "pink-horizon-4",
-        "name": "Rosé Prosecco",
+        "id": "rose-prosecco",
+        "name": "Rose Prosecco",
         "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. Ingredients and quantities follow the supplied specification. Check product labels for allergens.",
     "isSample": false,
     "isActive": true,
     "isPopular": false,
-    "imageName": ""
+    "imageName": "",
+    "glass": "Flute",
+    "ice": "None",
+    "garnish": "Orange Twist",
+    "method": "Shake, double strain. Top prosecco.",
+    "prepInstructions": [
+      "Shake, double strain. Top prosecco."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 1",
+    "isHouseClassic": false
   },
   {
     "id": "sample-coral-tide",
@@ -388,41 +539,67 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "coral-tide-0",
+        "id": "watermelon-liq",
+        "name": "Watermelon Liq",
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "watermelon-syrup",
+        "name": "Watermelon Syrup",
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "casamigos",
         "name": "Casamigos",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 40,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "coral-tide-1",
-        "name": "Watermelon",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
-      },
-      {
-        "id": "coral-tide-2",
+        "id": "lime",
         "name": "Lime",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 20,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "coral-tide-3",
+        "id": "grapefruit-soda",
         "name": "Grapefruit Soda",
         "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. Ingredients and quantities follow the supplied specification. Check product labels for allergens.",
     "isSample": false,
     "isActive": true,
     "isPopular": true,
-    "imageName": "coral-tide"
+    "imageName": "coral-tide",
+    "glass": "Clear Collins",
+    "ice": "Cubed",
+    "garnish": "Grapefruit Slice",
+    "method": "Shake, strain and top soda.",
+    "prepInstructions": [
+      "Shake, strain and top soda."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 1",
+    "isHouseClassic": false
   },
   {
     "id": "hove-golden-sangria",
@@ -435,48 +612,76 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "golden-sangria-0",
+        "id": "white-wine",
         "name": "White Wine",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 100,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "golden-sangria-1",
+        "id": "pisco",
         "name": "Pisco",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "golden-sangria-2",
-        "name": "Peach",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "peach-liq",
+        "name": "Peach Liq",
+        "amount": 25,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "golden-sangria-3",
+        "id": "prosecco",
         "name": "Prosecco",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 45,
+        "unit": "ml",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "golden-sangria-4",
+        "id": "fresh-squeeze-lime-wedge",
+        "name": "Fresh Squeeze Lime Wedge",
+        "amount": 1,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "fruit",
         "name": "Fruit",
         "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. Ingredients and quantities follow the supplied specification. Check product labels for allergens.",
     "isSample": false,
     "isActive": true,
     "isPopular": false,
-    "imageName": ""
+    "imageName": "",
+    "glass": "Wine Glass",
+    "ice": "Cubed",
+    "garnish": "Peach, Lemon & Orange Slice",
+    "method": "Build in glass. Add fruit.",
+    "prepInstructions": [
+      "Build in glass. Add fruit."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 1",
+    "isHouseClassic": false
   },
   {
     "id": "hove-frozen-daiquiri",
@@ -489,34 +694,67 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "frozen-daiquiri-0",
-        "name": "Havana Club 3 Años",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "havana-3",
+        "name": "Havana 3",
+        "amount": 50,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "frozen-daiquiri-1",
-        "name": "Lime",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "desired-syrup",
+        "name": "Desired Syrup",
+        "amount": 40,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "frozen-daiquiri-2",
-        "name": "Seasonal Fruit",
+        "id": "lime-juice",
+        "name": "Lime Juice",
+        "amount": 25,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "desired-fruits",
+        "name": "Desired Fruits",
+        "amount": 20,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "fruit",
+        "name": "Fruit",
         "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. Ingredients and quantities follow the supplied specification. Check product labels for allergens. Blend each serve with ice; batch calculator scales the liquid base only. Confirm the selected fruit and syrup before preparing.",
     "isSample": false,
     "isActive": true,
     "isPopular": false,
-    "imageName": ""
+    "imageName": "",
+    "glass": "Hurricane",
+    "ice": "Blended",
+    "garnish": "Not specified",
+    "method": "Add to blender, just over a scoop of ice. Blend around 30 seconds. Add fruit.",
+    "prepInstructions": [
+      "Add to blender, just over a scoop of ice. Blend around 30 seconds. Add fruit."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 2",
+    "isHouseClassic": false
   },
   {
     "id": "hove-frozen-margarita",
@@ -529,34 +767,67 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "frozen-margarita-0",
+        "id": "casamigos",
         "name": "Casamigos",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 50,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "frozen-margarita-1",
-        "name": "Lime",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "desired-puree",
+        "name": "Desired Puree",
+        "amount": 50,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "frozen-margarita-2",
-        "name": "Seasonal Fruit",
+        "id": "lime-juice",
+        "name": "Lime Juice",
+        "amount": 20,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "sugar-syrup",
+        "name": "Sugar Syrup",
+        "amount": 35,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "fruit",
+        "name": "Fruit",
         "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. Ingredients and quantities follow the supplied specification. Check product labels for allergens. Blend each serve with ice; batch calculator scales the liquid base only. Confirm the selected fruit and syrup before preparing.",
     "isSample": false,
     "isActive": true,
     "isPopular": false,
-    "imageName": ""
+    "imageName": "",
+    "glass": "Hurricane",
+    "ice": "Blended",
+    "garnish": "Not specified",
+    "method": "Add to blender, just over a scoop of ice. Blend around 30 seconds. Add fruit.",
+    "prepInstructions": [
+      "Add to blender, just over a scoop of ice. Blend around 30 seconds. Add fruit."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 2",
+    "isHouseClassic": false
   },
   {
     "id": "hove-frozen-pina-colada",
@@ -569,41 +840,70 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "frozen-pina-colada-0",
-        "name": "Bacardi Coconut",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "havana-3",
+        "name": "Havana 3",
+        "amount": 50,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "frozen-pina-colada-1",
-        "name": "Coconut",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "coconut-milk",
+        "name": "Coconut Milk",
+        "amount": 30,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "frozen-pina-colada-2",
-        "name": "Pineapple",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "pineapple-juice",
+        "name": "Pineapple Juice",
+        "amount": 40,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "frozen-pina-colada-3",
-        "name": "Lime",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "lime-juice",
+        "name": "Lime Juice",
+        "amount": 20,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "sugar-syrup",
+        "name": "Sugar Syrup",
+        "amount": 20,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. PDF name: Pinacolada. Ingredients and quantities follow the supplied specification. Check product labels for allergens. Blend each serve with ice; batch calculator scales the liquid base only. Confirm the selected fruit and syrup before preparing.",
     "isSample": false,
     "isActive": true,
     "isPopular": false,
-    "imageName": ""
+    "imageName": "",
+    "glass": "Hurricane",
+    "ice": "Blended",
+    "garnish": "Not specified",
+    "method": "Add to blender, just over a scoop of ice. Blend around 30 seconds.",
+    "prepInstructions": [
+      "Add to blender, just over a scoop of ice. Blend around 30 seconds."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 2",
+    "isHouseClassic": false,
+    "variations": [
+      "Pinacolada"
+    ]
   },
   {
     "id": "hove-first-light",
@@ -616,55 +916,76 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "first-light-0",
-        "name": "NLL First Light",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "nll-fl",
+        "name": "NLL FL",
+        "amount": 25,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "first-light-1",
+        "id": "apple",
         "name": "Apple",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 35,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "first-light-2",
+        "id": "lemon",
         "name": "Lemon",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "first-light-3",
-        "name": "Elderflower",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "elderflower-cordial",
+        "name": "Elderflower Cordial",
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "first-light-4",
-        "name": "Cucumber",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "cucumber-slices-muddled",
+        "name": "Cucumber Slices (muddled)",
+        "amount": 2,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "first-light-5",
-        "name": "Soda",
+        "id": "soda-top",
+        "name": "Soda Top",
         "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. Ingredients and quantities follow the supplied specification. Check product labels for allergens.",
     "isSample": false,
     "isActive": true,
     "isPopular": false,
-    "imageName": ""
+    "imageName": "",
+    "glass": "Crystal Collins",
+    "ice": "Cubed",
+    "garnish": "Cucumber Ribbon",
+    "method": "Shake double strain. Muddle cucumber. Soda top.",
+    "prepInstructions": [
+      "Shake double strain. Muddle cucumber. Soda top."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 2",
+    "isHouseClassic": false
   },
   {
     "id": "hove-midnight-sun",
@@ -677,48 +998,76 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "midnight-sun-0",
-        "name": "NLL Midnight Sun",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "nll-ms",
+        "name": "NLL MS",
+        "amount": 25,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "midnight-sun-1",
-        "name": "Strawberry",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "strawberry-syrup",
+        "name": "Strawberry Syrup",
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "midnight-sun-2",
-        "name": "Apple",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
-      },
-      {
-        "id": "midnight-sun-3",
+        "id": "lemon",
         "name": "Lemon",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 10,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "midnight-sun-4",
-        "name": "Basil",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "apple",
+        "name": "Apple",
+        "amount": 35,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "basil-leaf",
+        "name": "Basil Leaf",
+        "amount": 6,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "oggs",
+        "name": "Oggs",
+        "amount": 25,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. Ingredients and quantities follow the supplied specification. Check product labels for allergens.",
     "isSample": false,
     "isActive": true,
     "isPopular": false,
-    "imageName": ""
+    "imageName": "",
+    "glass": "Nick n Nora",
+    "ice": "None",
+    "garnish": "Basil Oil",
+    "method": "Shake double strain.",
+    "prepInstructions": [
+      "Shake double strain."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 2",
+    "isHouseClassic": false
   },
   {
     "id": "hove-cherry-soda",
@@ -731,41 +1080,61 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "cherry-soda-0",
-        "name": "Cherry",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "cherry-syrup",
+        "name": "Cherry Syrup",
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "cherry-soda-1",
-        "name": "Pineapple",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
-      },
-      {
-        "id": "cherry-soda-2",
+        "id": "lime",
         "name": "Lime",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 5,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "cherry-soda-3",
-        "name": "Soda",
+        "id": "pineapple",
+        "name": "Pineapple",
+        "amount": 30,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "soda-top",
+        "name": "Soda Top",
         "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. PDF name: Cherry And Pineapple. Ingredients and quantities follow the supplied specification. Check product labels for allergens.",
     "isSample": false,
     "isActive": true,
     "isPopular": false,
-    "imageName": ""
+    "imageName": "",
+    "glass": "Clear Collins",
+    "ice": "Cubed",
+    "garnish": "1 Pineapple Leaf; 1 Luxardo Cherry",
+    "method": "Build in glass.",
+    "prepInstructions": [
+      "Build in glass."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 2",
+    "isHouseClassic": false,
+    "variations": [
+      "Cherry And Pineapple"
+    ]
   },
   {
     "id": "hove-guava-soda",
@@ -778,47 +1147,69 @@
     "description": "Listed on Rockwater Hove’s drinks menu.",
     "ingredients": [
       {
-        "id": "guava-soda-0",
-        "name": "Guava",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "guava-puree",
+        "name": "Guava Puree",
+        "amount": 50,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "guava-soda-1",
-        "name": "Lychee",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "lychee-juice",
+        "name": "Lychee Juice",
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "guava-soda-2",
+        "id": "lemon",
         "name": "Lemon",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "amount": 15,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "guava-soda-3",
-        "name": "Soda",
-        "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "id": "simple-syrup",
+        "name": "Simple Syrup",
+        "amount": 10,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": ""
       },
       {
-        "id": "guava-soda-4",
-        "name": "Mint",
+        "id": "soda-top",
+        "name": "Soda Top",
         "amount": 0,
-        "batchable": false,
-        "batchBehaviour": "nonBatchable"
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
       }
     ],
-    "recipeVerified": false,
-    "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
-    "serviceNotes": "Menu ingredients confirmed from the official Hove drinks menu, checked 11 September 2026. House measures, preparation, garnish and allergen specifications are not published; ask the bar manager for the approved spec.",
+    "recipeVerified": true,
+    "sourceURL": null,
+    "serviceNotes": "House specification supplied 15 September 2026. PDF name: Guava and Lychee. Ingredients and quantities follow the supplied specification. Check product labels for allergens.",
     "isSample": false,
     "isActive": true,
     "isPopular": false,
-    "imageName": ""
+    "imageName": "",
+    "glass": "Clear Collins",
+    "ice": "Cubed",
+    "garnish": "Fresh Lemon and Mint",
+    "method": "Build in glass.",
+    "prepInstructions": [
+      "Build in glass."
+    ],
+    "sourceReference": "cocktail_specs (2).pdf · page 2",
+    "isHouseClassic": false,
+    "variations": [
+      "Guava and Lychee"
+    ]
   }
 ]

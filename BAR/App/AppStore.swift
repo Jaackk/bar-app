@@ -24,7 +24,13 @@ import BARCore
     var cocktails: [Cocktail] { VenueResolver.cocktails(snapshot.cocktails, venueID: preferences.venueID) }
     var wines: [Wine] { snapshot.wines.filter { $0.isActive && ($0.venueID == nil || $0.venueID == preferences.venueID) } }
     var prep: [PrepItem] { snapshot.prep.filter { $0.venueID == preferences.venueID } }
-    var stock: [StockItem] { snapshot.stock.filter { $0.venueID == preferences.venueID } }
+    var stock: [StockItem] {
+        products.map { product in
+            var item = snapshot.stock.first { $0.venueID == preferences.venueID && ($0.id == product.id || SearchNormalizer.normalize($0.name) == SearchNormalizer.normalize(product.name)) } ?? StockItem(id: product.id, name: product.name, venueID: preferences.venueID)
+            item.id = product.id; item.name = product.name; item.category = product.category; item.unit = product.unit
+            return item
+        }
+    }
     var preferences: UserPreferences { snapshot.preferences }
     var training: TrainingProgress { snapshot.training }
     var user: User { snapshot.user }
@@ -94,21 +100,36 @@ import BARCore
         snapshot.stockLists.append(StockListItem(venueID: preferences.venueID, kind: kind, name: clean, quantity: quantity)); save()
     }
     func saveProduct(_ product: Product) {
-        guard role.canEditContent, product.venueID == preferences.venueID, !product.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        guard product.venueID == preferences.venueID, !product.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        if let previous = products.first(where: { $0.id == product.id }), let i = snapshot.stock.firstIndex(where: { $0.venueID == product.venueID && ($0.id == product.id || SearchNormalizer.normalize($0.name) == SearchNormalizer.normalize(previous.name)) }) {
+            snapshot.stock[i].id = product.id; snapshot.stock[i].name = product.name; snapshot.stock[i].category = product.category; snapshot.stock[i].unit = product.unit
+        }
         if let i = snapshot.products.firstIndex(where: { $0.id == product.id && $0.venueID == preferences.venueID }) { snapshot.products[i] = product }
         else { snapshot.products.append(product) }
+        for i in snapshot.stockLists.indices where snapshot.stockLists[i].productID == product.id {
+            snapshot.stockLists[i].name = product.name
+            snapshot.stockLists[i].unit = snapshot.stockLists[i].kind == .order ? product.defaultOrderUnit : product.unit
+        }
         save()
     }
     func deleteProduct(_ product: Product) {
-        guard role.canEditContent, let i = snapshot.products.firstIndex(where: { $0.id == product.id && $0.venueID == preferences.venueID }) else { return }
+        guard let i = snapshot.products.firstIndex(where: { $0.id == product.id && $0.venueID == preferences.venueID }) else { return }
         snapshot.products[i].isActive = false; save()
     }
+    private func storedStockIndex(_ id: String) -> Int? {
+        guard let product = products.first(where: { $0.id == id }) else { return nil }
+        if let i = snapshot.stock.firstIndex(where: { $0.venueID == preferences.venueID && ($0.id == id || SearchNormalizer.normalize($0.name) == SearchNormalizer.normalize(product.name)) }) {
+            snapshot.stock[i].id = id; return i
+        }
+        snapshot.stock.append(StockItem(id: id, name: product.name, venueID: preferences.venueID))
+        return snapshot.stock.count - 1
+    }
     func updateStock(id: String, count: Double) {
-        guard count.isFinite, count >= 0, let i = snapshot.stock.firstIndex(where: { $0.id == id && $0.venueID == preferences.venueID }) else { return }
+        guard count.isFinite, count >= 0, let i = storedStockIndex(id) else { return }
         snapshot.stock[i].currentStock = min(count, 100_000); save(); Haptics.selection()
     }
     func updatePar(id: String, par: Double) {
-        guard role.canEditContent, par.isFinite, par >= 0, let i = snapshot.stock.firstIndex(where: { $0.id == id && $0.venueID == preferences.venueID }) else { return }
+        guard role.canEditContent, par.isFinite, par >= 0, let i = storedStockIndex(id) else { return }
         snapshot.stock[i].parLevel = min(par, 100_000); save()
     }
     func recordTraining(cocktailID: String, correct: Bool) { snapshot.training.record(correct: correct, cocktailID: cocktailID); save() }

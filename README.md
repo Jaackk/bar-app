@@ -17,7 +17,7 @@ Actual iPhone Simulator captures are included in [docs/screenshots](docs/screens
 - Saved batches and creation of preparation tasks from calculations.
 - Wine Finder with taste/colour controls, grape/style matching, ranked food pairings, guest descriptions and wine favourites.
 - Prep recipes with yield-aware scaling, current/target amounts, progress, completion and storage notes.
-- Stock counts with whole/fractional bottles, exact numeric entry, below-par filters, rounded suggested orders, clipboard and native sharing.
+- Separate persistent Restock and Stock Order lists, compact rows, swipe removal, a searchable product picker, native copy/share and editable product photos. The shared catalogue feeds universal Search and manager Stocktake.
 - Flashcards, recipe and ingredient quizzes generated from the actual database, with persistent local progress.
 - Employee name, ml/cl recipe preference, default wastage, local reset and development-only role preview.
 - Validated local content import in development manager mode; manager par editing through the repository-backed app model.
@@ -94,23 +94,19 @@ Package.swift          BARCore library and macOS-testable test target
 
 ## Data and branding
 
-**Venue data is sample data, not an approved Rockwater menu.** Sea Glass uses the amounts visible in the supplied mockup with illustrative ingredient choices. Other venue recipes, all wine listings, prep recipes, pars and counts are samples. Classics are common reference specifications, with source notes and acknowledged variations.
+The venue catalogue comes from [Rockwater Hove’s official drinks menu](https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf). The 16 Coastal recipes now use the supplied **cocktail_specs (2).pdf**, and 44 house classic recipes use the [supplied spreadsheet](https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit), imported 15 September 2026. Two additional wet Martini variants make batch quantities explicit. House specifications override matching generic classics. Unspecified garnish/ice/fruit choices remain unspecified; optional additions are not silently added to a batch.
 
-Replace the records in:
+- `BARCore/Data/hove-cocktails.json`: the 16 PDF specifications, retaining menu names and recording PDF aliases.
+- `BARCore/Data/house-classics.json`: all spreadsheet recipes with source sheet/cell references and original quantity notes.
+- `BARCore/Data/hove-wines.json`: all 59 menu wines. Numerical taste profiles and food pairings are editorial style guidance, not published venue tasting scores.
+- `BARCore/Data/hove-products.json`: the menu catalogue and recipe ingredients; edit preferred units through Products & photos.
+- `BARCore/Data/prep.json` and `stock.json`: original sample prep, counts and pars retained for continuity; these are not verified operational stock.
 
-- `BARCore/Data/cocktails.json` — verified venue cocktails.
-- `BARCore/Data/wines.json` — verified wine list and pairing metadata.
-- `BARCore/Data/prep.json` — approved prep recipes, nominal yields and storage instructions.
-- `BARCore/Data/stock.json` — actual products, bottle sizes, counts and pars.
-- `BARCore/Data/venues.json` — venue name, location, code and display branding.
+`MenuMigration` revision 2 updates supplied recipes on existing installs without resetting lists, photos, custom products, counts or personal settings. Deleted menu products stay deleted. Imported house overrides preserve saved favourite and batch references. Product photos are resized to at most 800 pixels and stored locally in the product record. No photo upload or search API is used.
 
-Keep IDs stable. Set `isSample: false` only after venue approval. Read [DATA.md](docs/DATA.md) for schemas, required fields, units, recipe yields, provenance, import instructions and exact examples.
+Stock → Products & photos is available to staff for catalogue maintenance. A new product appears in both list pickers, universal Search and Stocktake; editing updates linked list labels. Deleting a product preserves existing list entries. Custom list items remain temporary list-only entries. Counts and pars remain under Profile → Manager tools → Stocktake (development role preview).
 
-Venue cocktails belong to a `venueID`; classics have no venue ID. A venue recipe can specify `overridesCocktailID`, or match a global recipe’s normalised name. `VenueResolver` returns that venue’s version ahead of the generic specification and excludes other venues. Branding comes from `Venue.branding`; business logic does not depend on the Rockwater name.
-
-Seed files load only on first launch. Updating a bundle does not silently erase local state. To preview a new bundle dataset in development, use Profile → Reset local data or a fresh Simulator installation. The reset is explicit and keeps one pre-reset recovery snapshot in the app’s private directory.
-
-For a local content update without reinstalling, a Debug manager can import a complete validated snapshot through Profile → Venue content. It replaces content, prep and stock while preserving the active local user’s preferences, training and saved batches. Read the import schema in DATA.md and back up operational state before intentional replacement. Shared over-the-air updates require the real future sync adapter.
+See [HOUSE-UPDATE.md](docs/HOUSE-UPDATE.md) for source exceptions and validation. Source exceptions are displayed in the affected recipe, not silently corrected.
 
 ## Images and icon
 

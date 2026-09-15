@@ -3,7 +3,7 @@ import Foundation
 public enum VenueResolver {
     public static func cocktails(_ cocktails: [Cocktail], venueID: String) -> [Cocktail] {
         let local = cocktails.filter { $0.isActive && $0.venueID == venueID }
-        let overriddenIDs = Set(local.compactMap(\.overridesCocktailID))
+        let overriddenIDs = Set(local.compactMap(\.overridesCocktailID) + local.flatMap(\.supersededCocktailIDs))
         let overriddenNames = Set(local.map { SearchNormalizer.normalize($0.name) })
         let global = cocktails.filter {
             $0.isActive && $0.venueID == nil && !$0.venueSpecific &&

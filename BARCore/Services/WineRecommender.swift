@@ -27,7 +27,7 @@ public enum WineRecommender {
             let name = SearchService.canonical(wine.name)
             let grapes = SearchService.canonical(wine.grape)
             let style = SearchService.canonical(([wine.colour.label, wine.style] + attributes(wine)).joined(separator: " "))
-            let pairings = SearchService.canonical(wine.foodPairings.joined(separator: " "))
+            let pairings = SearchService.canonical(WinePairingGuide.expand(WinePairingGuide.pairings(wine).joined(separator: " ")))
             let similar = SearchService.canonical(wine.similarTo.joined(separator: " "))
             let metadata = SearchService.canonical([wine.region, wine.country, wine.producer, wine.description, wine.guestDescription].joined(separator: " "))
             let combined = [name, grapes, style, pairings, similar, metadata].joined(separator: " ")
@@ -40,7 +40,7 @@ public enum WineRecommender {
             for token in parsed.positive {
                 if pairings.contains(token) {
                     score += 65; matched += 1
-                    if let pairing = wine.foodPairings.first(where: { SearchService.canonical($0).contains(token) }) { reasons.append("Pairs with \(pairing.lowercased())") }
+                    if let pairing = WinePairingGuide.pairings(wine).first(where: { WinePairingGuide.expand($0).contains(token) }) { reasons.append("\(wine.foodPairings.isEmpty ? "Style pairing:" : "Pairs with") \(pairing.lowercased())") }
                 } else if name.contains(token) || grapes.contains(token) {
                     score += 60; matched += 1; reasons.append("\(wine.grape) grape profile")
                 } else if similar.contains(token) {
@@ -48,6 +48,7 @@ public enum WineRecommender {
                 } else if style.contains(token) {
                     score += 40; matched += 1; reasons.append("\(token.capitalized) profile")
                 } else if metadata.contains(token) { score += 12; matched += 1 }
+                else if SearchService.matches(token, in: combined) { score += 8; matched += 1; reasons.append("Close spelling match") }
             }
             guard parsed.positive.isEmpty || matched > 0 else { return nil }
             if !parsed.positive.isEmpty { score += 50 * Double(matched) / Double(parsed.positive.count) }

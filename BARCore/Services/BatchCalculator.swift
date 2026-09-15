@@ -58,6 +58,8 @@ public enum BatchCalculator {
             }
             return BatchLine(ingredient: ingredient, quantity: quantity, unit: ingredient.unit, volumeML: volume, bottles: bottles)
         }
+        notes += cocktail.ingredients.filter { $0.batchBehaviour == .nonBatchable }.map { "\($0.name): \($0.measurement). \($0.notes)" }
+        if cocktail.serviceNotes.contains("Source check:") { notes.append(cocktail.serviceNotes) }
         var seen = Set<String>()
         notes = notes.filter { seen.insert($0).inserted }
         return BatchResult(serves: safeServes, wastagePercent: wastage, lines: lines,

@@ -1,6 +1,9 @@
 import Foundation
 
 public struct Cocktail: Codable, Hashable, Sendable, Identifiable {
+    public var supersededCocktailIDs: [String] = []
+    public var sourceReference: String? = nil
+    public var isHouseClassic: Bool = false
     public var recipeVerified: Bool = true
     public var sourceURL: String? = nil
     public var id: String
@@ -57,9 +60,12 @@ public struct Cocktail: Codable, Hashable, Sendable, Identifiable {
         self.updatedAt = updatedAt
     }
 
-    enum CodingKeys: String, CodingKey { case recipeVerified, sourceURL, id, name, venueID, subtitle, description, venueSpecific, category, baseSpirit, flavourTags, ingredients, method, glass, ice, garnish, prepInstructions, serviceNotes, allergens, imageName, isPopular, isActive, isSample, variations, overridesCocktailID, createdAt, updatedAt }
+    enum CodingKeys: String, CodingKey { case supersededCocktailIDs, sourceReference, isHouseClassic, recipeVerified, sourceURL, id, name, venueID, subtitle, description, venueSpecific, category, baseSpirit, flavourTags, ingredients, method, glass, ice, garnish, prepInstructions, serviceNotes, allergens, imageName, isPopular, isActive, isSample, variations, overridesCocktailID, createdAt, updatedAt }
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
+        supersededCocktailIDs = try c.value([String].self, for: .supersededCocktailIDs, default: [])
+        sourceReference = try c.decodeIfPresent(String.self, forKey: .sourceReference)
+        isHouseClassic = try c.value(Bool.self, for: .isHouseClassic, default: false)
         recipeVerified = try c.value(Bool.self, for: .recipeVerified, default: true)
         sourceURL = try c.decodeIfPresent(String.self, forKey: .sourceURL)
         id = try c.decode(String.self, forKey: .id)

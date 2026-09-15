@@ -4,13 +4,13 @@ import BARCore
 struct SearchView: View {
     @Environment(AppStore.self) var store
     @State private var selectedKind = "All"
-    private var results: [SearchResult] { SearchService.search(query: store.searchQuery, cocktails: store.cocktails, wines: store.wines, prep: store.prep, venueID: store.preferences.venueID).filter { selectedKind == "All" || $0.kind.rawValue.lowercased() == selectedKind.lowercased() } }
+    private var results: [SearchResult] { SearchService.search(query: store.searchQuery, cocktails: store.cocktails, wines: store.wines, prep: store.prep, products: store.products, venueID: store.preferences.venueID).filter { selectedKind == "All" || $0.kind.rawValue.lowercased() == selectedKind.lowercased() } }
     var body: some View {
         @Bindable var store = store
         ScrollView { LazyVStack(alignment: .leading, spacing: 18) {
             SectionHeader(title: "Find it. Make it.", subtitle: "Every spec, ingredient and pairing.")
             SearchBar(text: $store.searchQuery)
-            HStack(spacing: 8) { ForEach(["All", "Cocktail", "Wine", "Prep"], id: \.self) { kind in Button { selectedKind = kind } label: { TagChip(title: kind, selected: selectedKind == kind) }.frame(minHeight: 44) } }
+            ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 8) { ForEach(["All", "Cocktail", "Wine", "Prep", "Product"], id: \.self) { kind in Button { selectedKind = kind } label: { TagChip(title: kind, selected: selectedKind == kind) }.frame(minHeight: 44) } } }
             if store.searchQuery.isEmpty {
                 Text("QUICK SEARCH").font(.caption.weight(.semibold)).tracking(2).foregroundStyle(BarTheme.muted)
                 ForEach(["gin citrus", "passionfruit", "no egg", "dry white", "steak"], id: \.self) { query in Button { store.searchQuery = query } label: { HStack { Image(systemName: "magnifyingglass"); Text(query); Spacer(); Image(systemName: "arrow.up.left").font(.caption) }.padding(.vertical, 10) }.buttonStyle(.plain) }
@@ -21,6 +21,7 @@ struct SearchView: View {
                 switch result.kind {
                 case .cocktail: if let cocktail = store.cocktail(result.id) { NavigationLink { CocktailDetailView(cocktailID: cocktail.id) } label: { CocktailListRow(cocktail: cocktail) } }
                 case .wine: if let wine = store.wine(result.id) { NavigationLink { WineDetailView(wineID: wine.id) } label: { WineCard(wine: wine) } }
+                case .product: NavigationLink { ProductDetailView(productID: result.id) } label: { Label(result.title, systemImage: "shippingbox").frame(maxWidth: .infinity, alignment: .leading).barCard() }
                 case .prep: NavigationLink { PrepDetailView(prepID: result.id) } label: { HStack { Image(systemName: "leaf").font(.title); VStack(alignment: .leading) { Text(result.title).font(BarTheme.title(19)); Text(result.subtitle).font(.caption) }; Spacer(); Image(systemName: "chevron.right").font(.caption) }.barCard() }
                 }
             }.buttonStyle(.plain) }
@@ -34,12 +35,12 @@ struct CocktailLibraryView: View {
     @State private var spirit = "All"
     @State private var style = "All"
     var list: [Cocktail] {
-        let base = store.cocktails.filter { venueOnly ? $0.venueSpecific : !$0.venueSpecific }
+        let base = store.cocktails.filter { venueOnly ? ($0.venueSpecific && !$0.isHouseClassic) : (!$0.venueSpecific || $0.isHouseClassic) }
         return base.filter { (spirit == "All" || $0.baseSpirit.localizedCaseInsensitiveContains(spirit)) && (style == "All" || $0.category == style) && (query.isEmpty || ($0.name + " " + $0.ingredients.map(\.name).joined(separator: " ")).localizedCaseInsensitiveContains(query)) }.sorted { $0.isPopular == $1.isPopular ? $0.name < $1.name : $0.isPopular }
     }
-    var styles: [String] { ["All"] + Set(store.cocktails.filter { venueOnly ? $0.venueSpecific : !$0.venueSpecific }.map(\.category)).sorted() }
+    var styles: [String] { ["All"] + Set(store.cocktails.filter { venueOnly ? ($0.venueSpecific && !$0.isHouseClassic) : (!$0.venueSpecific || $0.isHouseClassic) }.map(\.category)).sorted() }
     var body: some View { ScrollView { LazyVStack(alignment: .leading, spacing: 16) {
-        SectionHeader(title: venueOnly ? "Made for the coast." : "Know the classics.", subtitle: venueOnly ? "Official Hove menu · house measures pending" : "The foundations of a great service.")
+        SectionHeader(title: venueOnly ? "Made for the coast." : "Know the classics.", subtitle: venueOnly ? "Your supplied house specifications" : "The foundations of a great service.")
         SearchBar(text: $query, placeholder: "Search this collection…")
         ScrollView(.horizontal, showsIndicators: false) { HStack { ForEach(["All", "Gin", "Rum", "Vodka", "Tequila", "Whisky", "Brandy"], id: \.self) { value in Button { spirit = value } label: { TagChip(title: value, selected: spirit == value) }.frame(minHeight: 44) } } }
         ScrollView(.horizontal, showsIndicators: false) { HStack { ForEach(styles, id: \.self) { value in Button { style = value } label: { TagChip(title: value, selected: style == value) }.frame(minHeight: 44) } } }

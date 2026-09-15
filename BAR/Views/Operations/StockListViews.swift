@@ -1,4 +1,5 @@
 import SwiftUI
+import PhotosUI
 import BARCore
 
 struct StockView: View {
@@ -6,25 +7,24 @@ struct StockView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                Text("Keep service flowing.").font(BarTheme.title(32))
-                Text("Two simple lists. Everything the bar needs.").font(.subheadline).foregroundStyle(.secondary)
+                Text("Ready for service.").font(BarTheme.title(32))
+                Text("A place for everything the bar needs.").foregroundStyle(.secondary)
                 ForEach(StockListKind.allCases, id: \.self) { kind in
                     NavigationLink { StockListView(kind: kind) } label: {
                         VStack(alignment: .leading, spacing: 18) {
-                            HStack {
-                                Image(systemName: kind == .restock ? "arrow.down.to.line.compact" : "cart").font(.system(size: 34, weight: .light))
-                                Spacer()
-                                Image(systemName: "arrow.up.right").font(.title3)
-                            }
-                            Text(kind.title).font(BarTheme.title(29))
+                            HStack { Image(systemName: kind == .restock ? "tray.and.arrow.down" : "cart").font(.system(size: 32, weight: .light)); Spacer(); Image(systemName: "arrow.up.right") }
+                            Text(kind.title).font(BarTheme.title(30))
                             Text(kind == .restock ? "Make a quick list of what the bar needs." : "Build a list of products to order.").font(.subheadline)
-                            Text(store.listItems(kind).isEmpty ? "Ready when you are" : "\(store.listItems(kind).count) items saved").font(.caption.weight(.medium))
-                        }.frame(maxWidth: .infinity, alignment: .leading).padding(24)
+                            Text(store.listItems(kind).isEmpty ? "Start a list" : "\(store.listItems(kind).count) items saved").font(.caption.weight(.semibold))
+                        }.padding(24).frame(maxWidth: .infinity, alignment: .leading)
                             .foregroundStyle(kind == .restock ? Color.white : BarTheme.ink)
-                            .background(kind == .restock ? BarTheme.olive : BarTheme.coral.opacity(0.65), in: RoundedRectangle(cornerRadius: 20))
+                            .background(kind == .restock ? BarTheme.olive : BarTheme.coral.opacity(0.65), in: RoundedRectangle(cornerRadius: 22))
                     }.buttonStyle(.plain).accessibilityIdentifier("open-\(kind.rawValue)")
                 }
-                Label("Lists save automatically on this iPhone.", systemImage: "checkmark.icloud").font(.caption).foregroundStyle(.secondary)
+                NavigationLink { ProductCatalogueView() } label: {
+                    Label("Products & photos", systemImage: "square.grid.2x2").font(.headline).frame(maxWidth: .infinity, minHeight: 54).barCard()
+                }.buttonStyle(.plain)
+                Text("Changes are saved automatically on this iPhone.").font(.caption).foregroundStyle(.secondary)
             }.padding(20)
         }.barScreen().navigationTitle("Stock").navigationBarTitleDisplayMode(.inline)
     }
@@ -34,90 +34,224 @@ struct StockListView: View {
     @Environment(AppStore.self) private var store
     @Environment(\.dismiss) private var dismiss
     let kind: StockListKind
-    @State private var query = ""
-    @State private var category: String? = nil
+    @State private var adding = false
     @State private var custom = false
     @State private var editing: StockListItem?
     @State private var clear = false
     @State private var copied = false
     private var items: [StockListItem] { store.listItems(kind) }
+    var body: some View {
+        List {
+            Section {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(kind == .restock ? "What does the bar need?" : "Build the order list.").font(BarTheme.title(29))
+                    Text(items.isEmpty ? "Add products as you go." : "\(items.count) products · \(items.reduce(0) { $0 + $1.quantity }) units").font(.subheadline).foregroundStyle(.secondary)
+                }.padding(.vertical, 10)
+                Button { adding = true } label: {
+                    HStack { Image(systemName: "magnifyingglass"); Text("Search products…"); Spacer(); Image(systemName: "plus.circle.fill") }.foregroundStyle(BarTheme.olive).padding(.vertical, 10)
+                }.accessibilityIdentifier("add-products")
+            }.listRowBackground(BarTheme.card)
+            if items.isEmpty {
+                Section {
+                    EmptyStateView(title: kind == .restock ? "Nothing needed yet." : "No products added.", message: kind == .restock ? "Search for a product to start a restock list." : "Search or add an item to build the order.", systemImage: kind == .restock ? "tray" : "cart")
+                }.listRowBackground(Color.clear)
+            } else {
+                Section(kind.heading) {
+                    ForEach(items) { item in
+                        let product = store.products.first { $0.id == item.productID }
+                        HStack(spacing: 12) {
+                            ProductThumbnail(product: product).frame(width: 44, height: 58)
+                            VStack(alignment: .leading, spacing: 3) {
+                                Text(item.name).font(.subheadline.weight(.medium)).fixedSize(horizontal: false, vertical: true)
+                                Text(item.productID == nil ? "Custom item" : item.unit.capitalized).font(.caption).foregroundStyle(.secondary)
+                            }
+                            Spacer(minLength: 0)
+                            QuantityControl(name: item.name, quantity: item.quantity, decrement: { store.setListQuantity(id: item.id, quantity: item.quantity - 1) }, increment: { store.setListQuantity(id: item.id, quantity: item.quantity + 1) }, edit: { editing = item })
+                        }.padding(.vertical, 5)
+                        .swipeActions { Button("Remove", role: .destructive) { store.setListQuantity(id: item.id, quantity: 0) } }
+                        .contextMenu { Button("Edit quantity") { editing = item }; Button("Remove", role: .destructive) { store.setListQuantity(id: item.id, quantity: 0) } }
+                    }
+                }.listRowBackground(BarTheme.card)
+            }
+            Section { Button { custom = true } label: { Label("Add custom item", systemImage: "pencil.line").frame(minHeight: 40) } }.listRowBackground(BarTheme.card)
+        }.listStyle(.insetGrouped).scrollContentBackground(.hidden).barScreen().navigationTitle(kind.title).navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) { Menu {
+                Button(copied ? "Copied" : "Copy List", systemImage: "doc.on.doc") { UIPasteboard.general.string = store.listText(kind); copied = true }
+                ShareLink(item: store.listText(kind)) { Label("Share List", systemImage: "square.and.arrow.up") }
+                Button(kind == .restock ? "Clear Restock List" : "Clear Order", systemImage: "trash", role: .destructive) { clear = true }
+            } label: { Image(systemName: "ellipsis.circle") }.accessibilityLabel("List actions").disabled(items.isEmpty) }
+        }
+        .safeAreaInset(edge: .bottom) {
+            PrimaryButton(title: "Add products", systemImage: "plus") { adding = true }.padding(.horizontal, 20).padding(.vertical, 10).background(BarTheme.cream)
+        }
+        .confirmationDialog("Clear this list?", isPresented: $clear, titleVisibility: .visible) {
+            Button(kind == .restock ? "Clear Restock List" : "Clear Order", role: .destructive) { store.clearList(kind) }
+        }
+        .sheet(isPresented: $adding) { ProductPicker(kind: kind) { adding = false } }
+        .sheet(isPresented: $custom) { ListItemEditor { name, quantity in store.addCustomItem(name: name, quantity: quantity, kind: kind) } }
+        .sheet(item: $editing) { item in ListItemEditor(item: item) { _, quantity in store.setListQuantity(id: item.id, quantity: quantity) } }
+        .onChange(of: items) { _, _ in copied = false }
+    }
+}
+
+private struct QuantityControl: View {
+    var name: String
+    var quantity: Int
+    var decrement: () -> Void
+    var increment: () -> Void
+    var edit: (() -> Void)? = nil
+    var body: some View {
+        HStack(spacing: 0) {
+            Button(action: decrement) { Image(systemName: "minus").frame(width: 38, height: 44) }.accessibilityLabel("Decrease \(name)")
+            Button { edit?() } label: { Text("\(quantity)").font(.subheadline.weight(.semibold).monospacedDigit()).frame(minWidth: 28, minHeight: 44) }.disabled(edit == nil).accessibilityLabel("Edit \(name) quantity").accessibilityValue("\(quantity)")
+            Button(action: increment) { Image(systemName: "plus").frame(width: 38, height: 44) }.accessibilityLabel("Increase \(name)")
+        }.buttonStyle(.borderless).foregroundStyle(BarTheme.olive).background(BarTheme.sage.opacity(0.3), in: RoundedRectangle(cornerRadius: 12))
+    }
+}
+
+private struct ProductPicker: View {
+    @Environment(AppStore.self) private var store
+    let kind: StockListKind
+    let done: () -> Void
+    @State private var query = ""
+    @State private var category: String? = nil
+    @State private var creating = false
     private var matches: [Product] { StockListService.search(store.products, venueID: store.preferences.venueID, query: query, category: category) }
     var body: some View {
-        ScrollView {
-            LazyVStack(alignment: .leading, spacing: 18) {
-                Text(kind == .restock ? "What does the bar need?" : "Build the order list.").font(BarTheme.title(29))
-                SearchBar(text: $query, placeholder: "Search products…").accessibilityIdentifier("product-search")
+        NavigationStack {
+            VStack(spacing: 0) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
                         Button { category = nil } label: { TagChip(title: "All", selected: category == nil) }
                         ForEach(StockListService.categories, id: \.self) { c in Button { category = c } label: { TagChip(title: c, selected: category == c) } }
-                    }.frame(minHeight: 44)
+                    }.padding(.horizontal, 20).padding(.vertical, 10)
                 }.buttonStyle(.plain)
-                Button { custom = true } label: { Label("Add custom item", systemImage: "plus.circle").frame(minHeight: 44) }
-                if !query.isEmpty || category != nil { catalogue }
-                SectionHeader(title: kind.heading, subtitle: "\(items.count) items · saved automatically")
-                if items.isEmpty {
-                    EmptyStateView(title: kind == .restock ? "Nothing needed yet." : "No products added.", message: kind == .restock ? "Search for a product to start a restock list." : "Search or add an item to build the order.", systemImage: kind == .restock ? "shippingbox" : "cart")
-                }
-                ForEach(items) { item in
-                    VStack(alignment: .leading, spacing: 10) {
-                        HStack(alignment: .top) {
-                            VStack(alignment: .leading, spacing: 5) {
-                                Text(item.name).font(BarTheme.title(21))
-                                Text(item.productID == nil ? "Custom item" : item.unit.capitalized).font(.caption).foregroundStyle(.secondary)
+                List {
+                    ForEach(matches) { product in
+                        let item = store.listItems(kind).first { $0.productID == product.id }
+                        HStack(spacing: 12) {
+                            ProductThumbnail(product: product).frame(width: 42, height: 54)
+                            VStack(alignment: .leading, spacing: 4) { Text(product.name).font(.subheadline.weight(.medium)); Text(product.category).font(.caption).foregroundStyle(.secondary) }
+                            Spacer(minLength: 0)
+                            if let item {
+                                QuantityControl(name: product.name, quantity: item.quantity, decrement: { store.setListQuantity(id: item.id, quantity: item.quantity - 1) }, increment: { store.addProduct(product, to: kind) })
+                            } else {
+                                Button { store.addProduct(product, to: kind) } label: { Image(systemName: "plus").font(.headline).frame(width: 44, height: 44).foregroundStyle(.white).background(BarTheme.olive, in: Circle()) }.buttonStyle(.borderless).accessibilityLabel("Add \(product.name)")
                             }
-                            Spacer()
-                            Button(role: .destructive) { store.setListQuantity(id: item.id, quantity: 0) } label: { Image(systemName: "trash").frame(width: 44, height: 44) }.accessibilityLabel("Remove \(item.name)")
-                        }
-                        HStack {
-                            Text("Quantity").font(.subheadline)
-                            Spacer()
-                            Button { store.setListQuantity(id: item.id, quantity: item.quantity - 1) } label: { Image(systemName: "minus").frame(width: 44, height: 44).background(BarTheme.stone, in: RoundedRectangle(cornerRadius: 10)) }.accessibilityLabel("Decrease \(item.name)")
-                            Button { editing = item } label: { Text("\(item.quantity)").font(.title3.monospacedDigit()).frame(minWidth: 44, minHeight: 44) }.accessibilityLabel("Edit \(item.name) quantity").accessibilityValue("\(item.quantity)")
-                            Button { store.setListQuantity(id: item.id, quantity: item.quantity + 1) } label: { Image(systemName: "plus").frame(width: 44, height: 44).background(BarTheme.sage, in: RoundedRectangle(cornerRadius: 10)) }.accessibilityLabel("Increase \(item.name)")
-                        }
-                    }.barCard().buttonStyle(.plain)
-                }
-                if query.isEmpty && category == nil { catalogue }
-            }.padding(20)
-        }.barScreen().navigationTitle(kind.title).navigationBarTitleDisplayMode(.inline).scrollDismissesKeyboard(.interactively)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) { Button("Done") { dismiss() } }
-        }
-        .safeAreaInset(edge: .bottom) {
-            HStack(spacing: 20) {
-                Button { UIPasteboard.general.string = store.listText(kind); copied = true } label: { Label(copied ? "Copied" : (kind == .restock ? "Copy List" : "Copy Order"), systemImage: copied ? "checkmark" : "doc.on.doc") }
-                ShareLink(item: store.listText(kind)) { Label(kind == .restock ? "Share List" : "Share Order", systemImage: "square.and.arrow.up") }
-                Spacer(minLength: 0)
-                Button(role: .destructive) { clear = true } label: { Image(systemName: "trash").frame(width: 44, height: 44) }.accessibilityLabel(kind == .restock ? "Clear Restock List" : "Clear Order")
-            }.font(.caption.weight(.semibold)).padding(.horizontal, 20).padding(.vertical, 8).background(BarTheme.cream).disabled(items.isEmpty)
-        }
-        .onChange(of: items) { _, _ in copied = false }
-        .confirmationDialog(kind == .restock ? "Clear Restock List?" : "Clear Order?", isPresented: $clear, titleVisibility: .visible) {
-            Button(kind == .restock ? "Clear Restock List" : "Clear Order", role: .destructive) { store.clearList(kind) }
-        }
-        .sheet(isPresented: $custom) { ListItemEditor { name, quantity in store.addCustomItem(name: name, quantity: quantity, kind: kind) } }
-        .sheet(item: $editing) { item in ListItemEditor(item: item) { _, quantity in store.setListQuantity(id: item.id, quantity: quantity) } }
-    }
-    private var catalogue: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            SectionHeader(title: "Products", subtitle: "\(matches.count) matches · tap + to add")
-            if matches.isEmpty { Text("No products found. Try another search or add a custom item.").font(.subheadline).foregroundStyle(.secondary) }
-            ForEach(query.isEmpty && category == nil ? Array(matches.prefix(8)) : matches) { product in
-                HStack(spacing: 12) {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(product.name).font(.body.weight(.medium))
-                        Text(product.category + " · " + (kind == .order ? product.defaultOrderUnit : product.unit)).font(.caption).foregroundStyle(.secondary)
+                        }.padding(.vertical, 4).listRowBackground(BarTheme.card)
                     }
-                    Spacer(minLength: 4)
-                    Button { store.addProduct(product, to: kind) } label: { Image(systemName: "plus").font(.headline).frame(width: 48, height: 48).foregroundStyle(.white).background(BarTheme.olive, in: RoundedRectangle(cornerRadius: 12)) }.accessibilityLabel("Add \(product.name)")
-                }.barCard()
-            }
-            if query.isEmpty && category == nil { Text("Search or choose a category to see the full catalogue.").font(.caption).foregroundStyle(.secondary) }
+                    Section { Button { creating = true } label: { Label("Create new product", systemImage: "plus.square").frame(minHeight: 44) } }.listRowBackground(BarTheme.card)
+                }.listStyle(.plain).scrollContentBackground(.hidden)
+                Button(action: done) { Text("Done · \(store.listItems(kind).count) items in list").font(.headline).frame(maxWidth: .infinity, minHeight: 52).foregroundStyle(.white).background(BarTheme.olive, in: RoundedRectangle(cornerRadius: 14)) }.padding(16).accessibilityIdentifier("picker-done")
+            }.barScreen().navigationTitle("Add to \(kind.title)").navigationBarTitleDisplayMode(.inline)
+            .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search products…")
+            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button { creating = true } label: { Label("New product", systemImage: "plus") } } }
+            .sheet(isPresented: $creating) { ProductEditor(product: Product(venueID: store.preferences.venueID, name: query)) }
         }
     }
 }
 
+struct ProductThumbnail: View {
+    var product: Product?
+    var body: some View {
+        Group {
+            if let data = product?.imageData, let image = UIImage(data: data) { Image(uiImage: image).resizable().scaledToFill() }
+            else if let name = product?.imageName, !name.isEmpty, let image = UIImage(named: name) { Image(uiImage: image).resizable().scaledToFit() }
+            else { Image(systemName: "waterbottle").font(.system(size: 25, weight: .ultraLight)).foregroundStyle(BarTheme.olive).frame(maxWidth: .infinity, maxHeight: .infinity).background(BarTheme.sage.opacity(0.25)) }
+        }.clipShape(RoundedRectangle(cornerRadius: 10)).accessibilityHidden(true)
+    }
+}
+
+struct ProductCatalogueView: View {
+    @Environment(AppStore.self) private var store
+    @State private var query = ""
+    @State private var creating = false
+    var body: some View {
+        List {
+            Section { Text("One catalogue for Restock, Stock Order, Search and Stocktake. Tap a product to edit its details or photo.").font(.caption).foregroundStyle(.secondary) }
+            ForEach(StockListService.search(store.products, venueID: store.preferences.venueID, query: query)) { product in
+                NavigationLink { ProductDetailView(productID: product.id) } label: {
+                    HStack(spacing: 14) { ProductThumbnail(product: product).frame(width: 44, height: 58); VStack(alignment: .leading, spacing: 5) { Text(product.name); Text(product.category).font(.caption).foregroundStyle(.secondary) } }
+                }.listRowBackground(BarTheme.card).swipeActions { Button("Delete", role: .destructive) { store.deleteProduct(product) } }
+            }
+        }.scrollContentBackground(.hidden).barScreen().searchable(text: $query, prompt: "Search products…").navigationTitle("Products & photos").navigationBarTitleDisplayMode(.inline)
+        .toolbar { ToolbarItem(placement: .topBarTrailing) { Button { creating = true } label: { Label("Add Product", systemImage: "plus") } } }
+        .sheet(isPresented: $creating) { ProductEditor(product: Product(venueID: store.preferences.venueID, name: "")) }
+    }
+}
+struct ProductDetailView: View {
+    @Environment(AppStore.self) private var store
+    let productID: String
+    @State private var editing = false
+    @State private var added: StockListKind?
+    var body: some View {
+        Group {
+            if let product = store.products.first(where: { $0.id == productID }) {
+                ScrollView { VStack(alignment: .leading, spacing: 22) {
+                    ProductThumbnail(product: product).frame(height: 220).frame(maxWidth: .infinity)
+                    Text(product.name).font(BarTheme.title(30))
+                    Text([product.brand, product.category, product.productType].filter { !$0.isEmpty }.joined(separator: " · ")).font(.subheadline).foregroundStyle(.secondary)
+                    if !product.menuDetails.isEmpty { Text(product.menuDetails).font(.subheadline) }
+                    ForEach(StockListKind.allCases, id: \.self) { kind in PrimaryButton(title: added == kind ? "Added to \(kind.title)" : "Add to \(kind.title)", systemImage: added == kind ? "checkmark" : "plus") { store.addProduct(product, to: kind); added = kind } }
+                    Button("Edit details & photo") { editing = true }.frame(minHeight: 44)
+                }.padding(20) }
+                .sheet(isPresented: $editing) { ProductEditor(product: product) }
+            } else { EmptyStateView(title: "Product removed", message: "Saved list entries are still available.", systemImage: "shippingbox") }
+        }.barScreen().navigationTitle("Product").navigationBarTitleDisplayMode(.inline)
+    }
+}
+struct ProductEditor: View {
+    @Environment(AppStore.self) private var store
+    @Environment(\.dismiss) private var dismiss
+    @State var product: Product
+    @State private var photo: PhotosPickerItem?
+    @State private var loading = false
+    @State private var photoError: String?
+    private var valid: Bool { !product.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !product.unit.isEmpty && !product.defaultOrderUnit.isEmpty && !loading }
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section("Photo") {
+                    HStack(spacing: 20) {
+                        ProductThumbnail(product: product).frame(width: 70, height: 90)
+                        VStack(alignment: .leading, spacing: 12) {
+                            PhotosPicker(selection: $photo, matching: .images) { Label(loading ? "Loading photo…" : "Choose photo", systemImage: "photo") }.disabled(loading)
+                            if product.imageData != nil || !product.imageName.isEmpty { Button("Remove photo", role: .destructive) { photo = nil; product.imageData = nil; product.imageName = "" } }
+                        }
+                    }
+                    if let photoError { Text(photoError).font(.caption).foregroundStyle(.red) }
+                }
+                Section("Product") {
+                    TextField("Name", text: $product.name).accessibilityIdentifier("product-name")
+                    TextField("Brand", text: $product.brand)
+                    Picker("Category", selection: $product.category) { ForEach(StockListService.categories, id: \.self) { Text($0).tag($0) } }
+                    TextField("Product type", text: $product.productType)
+                }
+                Section("List units") { TextField("Restock unit", text: $product.unit); TextField("Order unit", text: $product.defaultOrderUnit) }
+                if !product.menuDetails.isEmpty { Section("Reference") { Text(product.menuDetails).font(.caption) } }
+                if store.products.contains(where: { $0.id == product.id }) { Button("Delete Product", role: .destructive) { store.deleteProduct(product); dismiss() } }
+            }.scrollContentBackground(.hidden).barScreen().navigationTitle(product.name.isEmpty ? "New product" : "Edit product").navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
+                ToolbarItem(placement: .confirmationAction) { Button("Save") { product.name = product.name.trimmingCharacters(in: .whitespacesAndNewlines); store.saveProduct(product); dismiss() }.disabled(!valid) }
+            }
+            .task(id: photo) {
+                guard let photo else { return }; loading = true; photoError = nil
+                defer { loading = false }
+                do {
+                    guard let data = try await photo.loadTransferable(type: Data.self), let image = UIImage(data: data) else { photoError = "This image could not be opened. Try another photo."; return }
+                    try Task.checkCancellation()
+                    let scale = min(1, 800 / max(image.size.width, image.size.height))
+                    let size = CGSize(width: image.size.width * scale, height: image.size.height * scale)
+                    let format = UIGraphicsImageRendererFormat(); format.scale = 1
+                    product.imageData = UIGraphicsImageRenderer(size: size, format: format).image { _ in image.draw(in: CGRect(origin: .zero, size: size)) }.jpegData(compressionQuality: 0.75)
+                    product.imageName = ""
+                } catch is CancellationError { } catch { photoError = "Photo could not be loaded. Please try again." }
+            }
+        }
+    }
+}
 private struct ListItemEditor: View {
     @Environment(\.dismiss) private var dismiss
     let item: StockListItem?
@@ -139,48 +273,6 @@ private struct ListItemEditor: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
                 ToolbarItem(placement: .confirmationAction) { Button("Save") { guard valid, let value = Int(quantity) else { return }; save(name, value); dismiss() }.disabled(!valid) }
-            }
-        }
-    }
-}
-
-struct ProductCatalogueView: View {
-    @Environment(AppStore.self) private var store
-    @State private var query = ""
-    @State private var editing: Product?
-    var body: some View {
-        List {
-            Section { Text("Catalogue changes appear immediately in both lists. Saved list names and quantities are kept when a product is removed.").font(.caption).foregroundStyle(.secondary) }
-            ForEach(StockListService.search(store.products, venueID: store.preferences.venueID, query: query)) { product in
-                Button { editing = product } label: { VStack(alignment: .leading, spacing: 5) { Text(product.name); Text(product.category).font(.caption).foregroundStyle(.secondary) } }.tint(BarTheme.ink)
-                    .swipeActions { Button("Delete", role: .destructive) { store.deleteProduct(product) } }
-            }
-        }.scrollContentBackground(.hidden).barScreen().searchable(text: $query, prompt: "Search products…").navigationTitle("Product catalogue").navigationBarTitleDisplayMode(.inline)
-        .toolbar { ToolbarItem(placement: .topBarTrailing) { Button { editing = Product(venueID: store.preferences.venueID, name: "") } label: { Label("Add Product", systemImage: "plus") } } }
-        .sheet(item: $editing) { ProductEditor(product: $0) }
-    }
-}
-private struct ProductEditor: View {
-    @Environment(AppStore.self) private var store
-    @Environment(\.dismiss) private var dismiss
-    @State var product: Product
-    private var valid: Bool { !product.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !product.unit.isEmpty && !product.defaultOrderUnit.isEmpty }
-    var body: some View {
-        NavigationStack {
-            Form {
-                Section("Product") {
-                    TextField("Name", text: $product.name)
-                    TextField("Brand", text: $product.brand)
-                    Picker("Category", selection: $product.category) { ForEach(StockListService.categories, id: \.self) { Text($0).tag($0) } }
-                    TextField("Product type", text: $product.productType)
-                }
-                Section("List units") { TextField("Restock unit", text: $product.unit); TextField("Order unit", text: $product.defaultOrderUnit) }
-                if !product.menuDetails.isEmpty { Section("Menu reference") { Text(product.menuDetails).font(.subheadline); if let source = product.sourceURL, let url = URL(string: source) { Link("Official menu · page \(product.sourcePage ?? 1)", destination: url) } } }
-                if store.products.contains(where: { $0.id == product.id }) { Button("Delete Product", role: .destructive) { store.deleteProduct(product); dismiss() } }
-            }.scrollContentBackground(.hidden).barScreen().navigationTitle("Product").navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
-                ToolbarItem(placement: .confirmationAction) { Button("Save") { product.name = product.name.trimmingCharacters(in: .whitespacesAndNewlines); store.saveProduct(product); dismiss() }.disabled(!valid) }
             }
         }
     }

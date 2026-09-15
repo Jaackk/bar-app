@@ -77,7 +77,7 @@ struct IngredientRow: View {
     var ingredient: Ingredient
     var units = "ml"
     var measurement: String {
-        if units == "cl", let ml = ingredient.volumeML { return MeasurementFormatter.string(ml / 10, unit: .cl) }
+        if let source = ingredient.quantityDisplay { return source }; if units == "cl", let ml = ingredient.volumeML { return MeasurementFormatter.string(ml / 10, unit: .cl) }
         return ingredient.measurement
     }
     var body: some View { HStack(alignment: .firstTextBaseline) { Text(ingredient.name).font(.subheadline); Spacer(minLength: 8); Text(measurement).font(.system(.body, design: .rounded).weight(.semibold)).monospacedDigit() }.padding(.vertical, 10).accessibilityElement(children: .combine) }

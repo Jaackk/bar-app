@@ -1,6 +1,7 @@
 import Foundation
 
 public struct Product: Codable, Hashable, Sendable, Identifiable {
+    public var imageData: Data? = nil
     public var id: String
     public var venueID: String
     public var name: String
@@ -44,7 +45,7 @@ public enum StockListService {
         let terms = normalized(query).split(separator: " ")
         return products.filter { p in
             let haystack = normalized([p.name, p.brand, p.category, p.productType].joined(separator: " "))
-            return p.isActive && p.venueID == venueID && (category == nil || category == p.category) && terms.allSatisfy { haystack.contains($0) }
+            return p.isActive && p.venueID == venueID && (category == nil || category == p.category) && terms.allSatisfy { SearchService.matches(String($0), in: haystack) }
         }.sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
     }
     private static func normalized(_ text: String) -> String { text.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: Locale(identifier: "en_GB")) }

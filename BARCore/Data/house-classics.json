@@ -1,0 +1,2893 @@
+[
+  {
+    "id": "house-espresso-martini",
+    "name": "Espresso Martini",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Vodka",
+    "glass": "Coup",
+    "ice": "N/A",
+    "garnish": "3 Coffee Beans + Chocolate Powder",
+    "method": "Shake + double strain",
+    "prepInstructions": [
+      "Shake + double strain"
+    ],
+    "ingredients": [
+      {
+        "id": "absolut-vodka",
+        "name": "Absolut Vodka",
+        "amount": 35.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 35ML"
+      },
+      {
+        "id": "blend-coffee",
+        "name": "Blend Coffee",
+        "amount": 35.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 35ML"
+      },
+      {
+        "id": "espresso",
+        "name": "Espresso",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "vanilla",
+        "name": "Vanilla",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "VODKA · B6:C18",
+    "serviceNotes": "House spec from the supplied spreadsheet, VODKA!B6:C18. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-espresso-martini"
+  },
+  {
+    "id": "house-pornstar-martini",
+    "name": "Pornstar Martini",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Vodka",
+    "glass": "Coup",
+    "ice": "N/A",
+    "garnish": "Cremant Shot + Dehydrated Lime Wheel",
+    "method": "Shake + double strain",
+    "prepInstructions": [
+      "Shake + double strain"
+    ],
+    "ingredients": [
+      {
+        "id": "absolut-vanilla",
+        "name": "Absolut Vanilla",
+        "amount": 35.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 35ML"
+      },
+      {
+        "id": "blend-passionfruit",
+        "name": "Blend Passionfruit",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "passionfruit-puree",
+        "name": "Passionfruit Purée",
+        "amount": 35.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 35ML"
+      },
+      {
+        "id": "dd-lime",
+        "name": "Dd Lime",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "pineapple-juice",
+        "name": "Pineapple Juice",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "vanilla",
+        "name": "Vanilla",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "VODKA · B19:C33",
+    "serviceNotes": "House spec from the supplied spreadsheet, VODKA!B19:C33. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-pornstar-martini"
+  },
+  {
+    "id": "house-vodka-martini",
+    "name": "Vodka Martini",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Vodka",
+    "glass": "Nick & Nora",
+    "ice": "N/A",
+    "garnish": "Lemon Peel / Olives",
+    "method": "Stir + strain",
+    "prepInstructions": [
+      "Stir + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "belvedere",
+        "name": "Belvedere",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "martini-extra-dry",
+        "name": "Martini Extra Dry",
+        "amount": 10,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Dry: 10ml. Wet: 20ml. Select the wet variation for batching.",
+        "quantityDisplay": "10ml dry / 20ml wet"
+      },
+      {
+        "id": "olive-brine-if-dirty",
+        "name": "Olive Brine (If Dirty)",
+        "amount": 10,
+        "unit": "ml",
+        "batchBehaviour": "nonBatchable",
+        "batchable": false,
+        "notes": "Optional: 10ml only if dirty. Add separately per chosen serve.",
+        "quantityDisplay": "10ml if dirty"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "VODKA · B34:C50",
+    "serviceNotes": "House spec from the supplied spreadsheet, VODKA!B34:C50. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "subtitle": "Dry spec · wet and dirty options in notes"
+  },
+  {
+    "id": "house-cosmopolitan",
+    "name": "Cosmopolitan",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Vodka",
+    "glass": "Coup",
+    "ice": "N/A",
+    "garnish": "Orange Peel",
+    "method": "Shake + double strain",
+    "prepInstructions": [
+      "Shake + double strain"
+    ],
+    "ingredients": [
+      {
+        "id": "absolut-vodka",
+        "name": "Absolut Vodka",
+        "amount": 35.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 35ML"
+      },
+      {
+        "id": "blend-triple-sec",
+        "name": "Blend Triple Sec",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "dd-lime-juice",
+        "name": "Dd Lime Juice",
+        "amount": 20.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 20ML"
+      },
+      {
+        "id": "cranberry-juice",
+        "name": "Cranberry Juice",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "VODKA · E6:F18",
+    "serviceNotes": "House spec from the supplied spreadsheet, VODKA!E6:F18. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-cosmopolitan"
+  },
+  {
+    "id": "house-bloody-mary",
+    "name": "Bloody Mary",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Vodka",
+    "glass": "Clear Highball",
+    "ice": "Cubed",
+    "garnish": "Lemon Slice + Rosemary Sprig",
+    "method": "Throw + strain",
+    "prepInstructions": [
+      "Throw + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "absolut-vodka",
+        "name": "Absolut Vodka",
+        "amount": 35.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 35ML"
+      },
+      {
+        "id": "dd-lemon-juice",
+        "name": "Dd Lemon Juice",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "tomato",
+        "name": "Tomato",
+        "amount": 100.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 100ML"
+      },
+      {
+        "id": "worchester",
+        "name": "Worchester",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "tabasco-3-standard",
+        "name": "Tabasco (3 Standard)",
+        "amount": 3,
+        "unit": "dash",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: DASHES - ADJUST TO TASTE",
+        "quantityDisplay": "3 dashes, adjust to taste"
+      },
+      {
+        "id": "salt",
+        "name": "Salt",
+        "amount": 3,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 3 GRINDS OF EACH",
+        "quantityDisplay": "3 grinds"
+      },
+      {
+        "id": "pepper",
+        "name": "Pepper",
+        "amount": 3,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 3 GRINDS OF EACH",
+        "quantityDisplay": "3 grinds"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "VODKA · E19:F33",
+    "serviceNotes": "House spec from the supplied spreadsheet, VODKA!E19:F33. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-bloody-mary"
+  },
+  {
+    "id": "house-white-russian",
+    "name": "White Russian",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Vodka",
+    "glass": "Clear Rocks",
+    "ice": "Cubed",
+    "garnish": "N/A",
+    "method": "Stir the two parts separate then float cream",
+    "prepInstructions": [
+      "Stir the two parts separate then float cream"
+    ],
+    "ingredients": [
+      {
+        "id": "absolut",
+        "name": "Absolut",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "blend-coffee",
+        "name": "Blend Coffee",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "whole-milk",
+        "name": "Whole Milk",
+        "amount": 25,
+        "unit": "ml",
+        "batchBehaviour": "prepareSeparately",
+        "batchable": true,
+        "notes": ""
+      },
+      {
+        "id": "double-cream",
+        "name": "Double Cream",
+        "amount": 35,
+        "unit": "ml",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": ""
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "VODKA · E34:F50",
+    "serviceNotes": "House spec from the supplied spreadsheet, VODKA!E34:F50. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-moscow-mule",
+    "name": "Moscow Mule",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Vodka",
+    "glass": "Copper Mug",
+    "ice": "Cubed + Crushed Cap",
+    "garnish": "Mint Sprig + Lime Slice",
+    "method": "Muddle lime + build",
+    "prepInstructions": [
+      "Muddle lime + build"
+    ],
+    "ingredients": [
+      {
+        "id": "absolut-vodka",
+        "name": "Absolut Vodka",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "dd-lime",
+        "name": "Dd Lime",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      },
+      {
+        "id": "ginger-syrup",
+        "name": "Ginger Syrup",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "ginger-beer",
+        "name": "Ginger Beer",
+        "amount": 0,
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: TOP"
+      },
+      {
+        "id": "lime-wedges",
+        "name": "Lime Wedges",
+        "amount": 4.0,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 4.0",
+        "quantityDisplay": "4.0"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "VODKA · H6:I18",
+    "serviceNotes": "House spec from the supplied spreadsheet, VODKA!H6:I18. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-moscow-mule"
+  },
+  {
+    "id": "house-french-martini",
+    "name": "French Martini",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Vodka",
+    "glass": "Coup",
+    "ice": "N/A",
+    "garnish": "Dehydrated Lemon Wheel",
+    "method": "Shake + double strain",
+    "prepInstructions": [
+      "Shake + double strain"
+    ],
+    "ingredients": [
+      {
+        "id": "absolut-vanilla",
+        "name": "Absolut Vanilla",
+        "amount": 35.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 35ML"
+      },
+      {
+        "id": "chambord",
+        "name": "Chambord",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "pineapple-juice",
+        "name": "Pineapple Juice",
+        "amount": 75.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 75ML"
+      },
+      {
+        "id": "gomme",
+        "name": "Gomme",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "VODKA · H19:I31",
+    "serviceNotes": "House spec from the supplied spreadsheet, VODKA!H19:I31. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-french-martini"
+  },
+  {
+    "id": "house-sex-on-the-beach",
+    "name": "Sex On The Beach",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Vodka",
+    "glass": "Clear Highball",
+    "ice": "Cubed",
+    "garnish": "Dehydrated Orange",
+    "method": "Shake + strain + layer cranberry",
+    "prepInstructions": [
+      "Shake + strain + layer cranberry"
+    ],
+    "ingredients": [
+      {
+        "id": "absolut-vodka",
+        "name": "Absolut Vodka",
+        "amount": 35.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 35ML"
+      },
+      {
+        "id": "peach-liqueur",
+        "name": "Peach Liqueur",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "orange-jucie",
+        "name": "Orange Jucie",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "cranberry-juice",
+        "name": "Cranberry Juice",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "VODKA · H32:I50",
+    "serviceNotes": "House spec from the supplied spreadsheet, VODKA!H32:I50. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-tom-collins",
+    "name": "Tom Collins",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Gin",
+    "glass": "Clear Highball",
+    "ice": "Cubed",
+    "garnish": "Lemon Slice",
+    "method": "Build + stir",
+    "prepInstructions": [
+      "Build + stir"
+    ],
+    "ingredients": [
+      {
+        "id": "tanqueray",
+        "name": "Tanqueray",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "dd-lemon-juice",
+        "name": "Dd Lemon Juice",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "gomme",
+        "name": "Gomme",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "soda",
+        "name": "Soda",
+        "amount": 0,
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: TOP"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "GIN · B6:C18",
+    "serviceNotes": "House spec from the supplied spreadsheet, GIN!B6:C18. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-tom-collins"
+  },
+  {
+    "id": "house-bramble",
+    "name": "Bramble",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Gin",
+    "glass": "Clear Rocks",
+    "ice": "Crushed",
+    "garnish": "Lemon Slice",
+    "method": "Shake + strain",
+    "prepInstructions": [
+      "Shake + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "tanqueray",
+        "name": "Tanqueray",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "dd-lemon",
+        "name": "Dd Lemon",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "vanilla",
+        "name": "Vanilla",
+        "amount": 5.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 5ML"
+      },
+      {
+        "id": "blackberry",
+        "name": "Blackberry",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      },
+      {
+        "id": "creme-de-mure",
+        "name": "Crème De Mure",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "GIN · B19:C32",
+    "serviceNotes": "House spec from the supplied spreadsheet, GIN!B19:C32. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-bramble"
+  },
+  {
+    "id": "house-white-lady",
+    "name": "White Lady",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Gin",
+    "glass": "Coupe",
+    "ice": "N/A",
+    "garnish": "Dehydrated Lemon Wheel",
+    "method": "Shake + strain",
+    "prepInstructions": [
+      "Shake + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "tanqueray",
+        "name": "Tanqueray",
+        "amount": 35.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 35ML"
+      },
+      {
+        "id": "belnd-triple-sec",
+        "name": "Belnd Triple Sec",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "dd-lemon-juice",
+        "name": "Dd Lemon Juice",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "gomme",
+        "name": "Gomme",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      },
+      {
+        "id": "ms-betters-bitters",
+        "name": "Ms Betters Bitters",
+        "amount": 3.0,
+        "unit": "drop",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 3 DROPS"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "GIN · B33:C50",
+    "serviceNotes": "House spec from the supplied spreadsheet, GIN!B33:C50. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-gin-martini",
+    "name": "Gin Martini",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Gin",
+    "glass": "Nick & Nora",
+    "ice": "N/A",
+    "garnish": "Lemon Peel / Olives",
+    "method": "Stir + strain",
+    "prepInstructions": [
+      "Stir + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "tanqueray-no10",
+        "name": "Tanqueray No10",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "martini-extra-dry",
+        "name": "Martini Extra Dry",
+        "amount": 10,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Dry: 10ml. Wet: 20ml. Select the wet variation for batching.",
+        "quantityDisplay": "10ml dry / 20ml wet"
+      },
+      {
+        "id": "olive-brine-if-dirty",
+        "name": "Olive Brine (If Dirty)",
+        "amount": 10,
+        "unit": "ml",
+        "batchBehaviour": "nonBatchable",
+        "batchable": false,
+        "notes": "Optional: 10ml only if dirty. Add separately per chosen serve.",
+        "quantityDisplay": "10ml if dirty"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "GIN · E6:F17",
+    "serviceNotes": "House spec from the supplied spreadsheet, GIN!E6:F17. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "subtitle": "Dry spec · wet and dirty options in notes",
+    "overridesCocktailID": "classic-martini",
+    "supersededCocktailIDs": [
+      "classic-dry-martini",
+      "classic-dirty-martini"
+    ]
+  },
+  {
+    "id": "house-negroni",
+    "name": "Negroni",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Gin",
+    "glass": "Clear Rocks",
+    "ice": "Big Block",
+    "garnish": "Orange Peel",
+    "method": "Stir + strain",
+    "prepInstructions": [
+      "Stir + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "salcombe-rose",
+        "name": "Salcombe Rose",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "campari",
+        "name": "Campari",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "martini-rosso",
+        "name": "Martini Rosso",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "GIN · E18:F50",
+    "serviceNotes": "House spec from the supplied spreadsheet, GIN!E18:F50. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-negroni"
+  },
+  {
+    "id": "house-singapore-sling",
+    "name": "Singapore Sling",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Gin",
+    "glass": "Wine",
+    "ice": "Cubed",
+    "garnish": "Orange Peel",
+    "method": "Shake + strain",
+    "prepInstructions": [
+      "Shake + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "tanqueray",
+        "name": "Tanqueray",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "maraschino",
+        "name": "Maraschino",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "benedictine",
+        "name": "Benedictine",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "dd-lime",
+        "name": "Dd Lime",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "pineapple",
+        "name": "Pineapple",
+        "amount": 65.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 65ML"
+      },
+      {
+        "id": "grenadine",
+        "name": "Grenadine",
+        "amount": 5.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 5ML"
+      },
+      {
+        "id": "angostura",
+        "name": "Angostura",
+        "amount": 3.0,
+        "unit": "dash",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 3 Dash"
+      },
+      {
+        "id": "orange",
+        "name": "Orange",
+        "amount": 2.0,
+        "unit": "dash",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 2 Dash"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "GIN · H6:I22",
+    "serviceNotes": "House spec from the supplied spreadsheet, GIN!H6:I22. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-french-75",
+    "name": "French 75",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Gin",
+    "glass": "Flute",
+    "ice": "N/A",
+    "garnish": "Lemon Peel",
+    "method": "Shake stills + top",
+    "prepInstructions": [
+      "Shake stills + top"
+    ],
+    "ingredients": [
+      {
+        "id": "tanqueray",
+        "name": "Tanqueray",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "dd-lemon",
+        "name": "Dd Lemon",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "gomme",
+        "name": "Gomme",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      },
+      {
+        "id": "veuve-cliquot-brut",
+        "name": "Veuve Cliquot Brut",
+        "amount": 0,
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: TOP"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "GIN · H23:I50",
+    "serviceNotes": "House spec from the supplied spreadsheet, GIN!H23:I50. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-french-75"
+  },
+  {
+    "id": "house-margarita",
+    "name": "Margarita",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Tequila",
+    "glass": "Clear Rocks",
+    "ice": "Cubed",
+    "garnish": "Salt Rim",
+    "method": "Shake + double strain",
+    "prepInstructions": [
+      "Shake + double strain"
+    ],
+    "ingredients": [
+      {
+        "id": "el-jimador-blanca",
+        "name": "El Jimador Blanca",
+        "amount": 35.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 35ML"
+      },
+      {
+        "id": "blend-triple-sec",
+        "name": "Blend Triple Sec",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "dd-lime",
+        "name": "Dd Lime",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "agave",
+        "name": "Agave",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "TEQUILA · B6:C18",
+    "serviceNotes": "House spec from the supplied spreadsheet, TEQUILA!B6:C18. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-margarita"
+  },
+  {
+    "id": "house-tommys-margarita",
+    "name": "Tommy’s Margarita",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Tequila",
+    "glass": "Clear Rocks",
+    "ice": "Cubed",
+    "garnish": "Salt Rim",
+    "method": "Shake, double strain",
+    "prepInstructions": [
+      "Shake, double strain"
+    ],
+    "ingredients": [
+      {
+        "id": "casamigos-blanca",
+        "name": "Casamigos Blanca",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "dd-lime",
+        "name": "Dd Lime",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "agave",
+        "name": "Agave",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "TEQUILA · B19:C30",
+    "serviceNotes": "House spec from the supplied spreadsheet, TEQUILA!B19:C30. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-spicy-margarita",
+    "name": "Spicy Margarita",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Tequila",
+    "glass": "Clear Rocks",
+    "ice": "Cubed",
+    "garnish": "Tajin Salt",
+    "method": "Shake, double strain",
+    "prepInstructions": [
+      "Shake, double strain"
+    ],
+    "ingredients": [
+      {
+        "id": "chilli-infused-el-jimador-blanca",
+        "name": "Chilli Infused El Jimador Blanca",
+        "amount": 35.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 35ML"
+      },
+      {
+        "id": "blend-triple-sec",
+        "name": "Blend Triple Sec",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "dd-lime",
+        "name": "Dd Lime",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "agave",
+        "name": "Agave",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "TEQUILA · B31:C41",
+    "serviceNotes": "House spec from the supplied spreadsheet, TEQUILA!B31:C41. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-blood-orange-margarita",
+    "name": "Blood Orange Margarita",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Tequila",
+    "glass": "Clear Rocks",
+    "ice": "Cubed",
+    "garnish": "Pink Sugar Rim",
+    "method": "Shake + double strain",
+    "prepInstructions": [
+      "Shake + double strain"
+    ],
+    "ingredients": [
+      {
+        "id": "el-jimador-blanca",
+        "name": "El Jimador Blanca",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "blend-triple-sec",
+        "name": "Blend Triple Sec",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "taylors-velvet-falernum",
+        "name": "Taylors Velvet Falernum",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "orange-juice",
+        "name": "Orange Juice",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "dd-lime",
+        "name": "Dd Lime",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "blood-orange-syrup",
+        "name": "Blood Orange Syrup",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "TEQUILA · E6:F20",
+    "serviceNotes": "House spec from the supplied spreadsheet, TEQUILA!E6:F20. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-paloma",
+    "name": "Paloma",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Tequila",
+    "glass": "Clear Highball",
+    "ice": "Cubed",
+    "garnish": "Dehydrated Grapefruit",
+    "method": "Shake, double strain",
+    "prepInstructions": [
+      "Shake, double strain",
+      "TEQUILA"
+    ],
+    "ingredients": [
+      {
+        "id": "el-jimador-reposado",
+        "name": "El Jimador Reposado",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "dd-lime",
+        "name": "Dd Lime",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "agave",
+        "name": "Agave",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      },
+      {
+        "id": "dd-pink-grapefruit",
+        "name": "Dd Pink Grapefruit",
+        "amount": 0,
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: TOP"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "TEQUILA · E21:F41",
+    "serviceNotes": "House spec from the supplied spreadsheet, TEQUILA!E21:F41. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-paloma"
+  },
+  {
+    "id": "house-chilli-pineapple-margarita",
+    "name": "Chilli Pineapple Margarita",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Tequila",
+    "glass": "Clear Rocks",
+    "ice": "Cubed",
+    "garnish": "1/2 Tajin Salt",
+    "method": "Shake + strain",
+    "prepInstructions": [
+      "Shake + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "el-jimador-blanco",
+        "name": "El Jimador Blanco",
+        "amount": 35.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 35ML"
+      },
+      {
+        "id": "blend-triple-sec",
+        "name": "Blend Triple Sec",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "maraschino",
+        "name": "Maraschino",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "pineapple-juice",
+        "name": "Pineapple Juice",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "dd-lime",
+        "name": "Dd Lime",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "agave",
+        "name": "Agave",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      },
+      {
+        "id": "tabasco",
+        "name": "Tabasco",
+        "amount": 2.0,
+        "unit": "dash",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 2 DASH"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "TEQUILA · H6:I20",
+    "serviceNotes": "House spec from the supplied spreadsheet, TEQUILA!H6:I20. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-mezcal-margarita",
+    "name": "Mezcal Margarita",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Tequila",
+    "glass": "Clear Rocks",
+    "ice": "Cubed",
+    "garnish": "Salt Rim + Dehydrated Lime Wheel",
+    "method": "Shake + double strain",
+    "prepInstructions": [
+      "Shake + double strain"
+    ],
+    "ingredients": [
+      {
+        "id": "el-jimador-blanca",
+        "name": "El Jimador Blanca",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "del-maguey-puebla",
+        "name": "Del Maguey Puebla",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "blend-triple-sec",
+        "name": "Blend Triple Sec",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "dd-lime",
+        "name": "Dd Lime",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "agave",
+        "name": "Agave",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "TEQUILA · H21:I41",
+    "serviceNotes": "House spec from the supplied spreadsheet, TEQUILA!H21:I41. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-daiquiri",
+    "name": "Daiquiri",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Rum",
+    "glass": "Coup",
+    "ice": "N/A",
+    "garnish": "Dehydrated Lime Wheel",
+    "method": "Shake + double strain",
+    "prepInstructions": [
+      "Shake + double strain",
+      "IF FLAVOURED: SWAP GOMME FOR STRAWB SYRUP",
+      "OR ADD 10ML PASSIONFRUIT"
+    ],
+    "ingredients": [
+      {
+        "id": "havana-3",
+        "name": "Havana 3",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "fresh-lime",
+        "name": "Fresh Lime",
+        "amount": 1.0,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 1 LIME",
+        "quantityDisplay": "1 LIME"
+      },
+      {
+        "id": "gomme",
+        "name": "Gomme",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "saline",
+        "name": "Saline",
+        "amount": 1.0,
+        "unit": "dash",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 1 DASH"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "RUM · B6:C21",
+    "serviceNotes": "House spec from the supplied spreadsheet, RUM!B6:C21. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-daiquiri"
+  },
+  {
+    "id": "house-mai-tai",
+    "name": "Mai Tai",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Rum",
+    "glass": "Clear Rocks",
+    "ice": "Crushed",
+    "garnish": "Lime Wheels + Mint",
+    "method": "Build + garnish",
+    "prepInstructions": [
+      "Build + garnish"
+    ],
+    "ingredients": [
+      {
+        "id": "havana-3-yr",
+        "name": "Havana 3 Yr",
+        "amount": 20.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 20ML"
+      },
+      {
+        "id": "blend-triple-sec",
+        "name": "Blend Triple Sec",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "gomme-syrup",
+        "name": "Gomme Syrup",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      },
+      {
+        "id": "lime-juice",
+        "name": "Lime Juice",
+        "amount": 20.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 20ML"
+      },
+      {
+        "id": "orgeat",
+        "name": "Orgeat",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      },
+      {
+        "id": "havana-7",
+        "name": "Havana 7",
+        "amount": 20.0,
+        "unit": "ml",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 20ML - FLOAT"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "RUM · B22:C37",
+    "serviceNotes": "House spec from the supplied spreadsheet, RUM!B22:C37. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-mai-tai"
+  },
+  {
+    "id": "house-dark-stormy",
+    "name": "Dark & Stormy",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Rum",
+    "glass": "Clear Highball",
+    "ice": "Cubed",
+    "garnish": "Lime Slice",
+    "method": "Muddle lime + build",
+    "prepInstructions": [
+      "Muddle lime + build"
+    ],
+    "ingredients": [
+      {
+        "id": "havana-7",
+        "name": "Havana 7",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "lime-wedges",
+        "name": "Lime Wedges",
+        "amount": 4.0,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 4.0",
+        "quantityDisplay": "4.0"
+      },
+      {
+        "id": "dd-lime",
+        "name": "Dd Lime",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      },
+      {
+        "id": "ginger-beer",
+        "name": "Ginger Beer",
+        "amount": 0,
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: TOP"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "RUM · E6:F18",
+    "serviceNotes": "House spec from the supplied spreadsheet, RUM!E6:F18. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-dark-n-stormy"
+  },
+  {
+    "id": "house-mojito",
+    "name": "Mojito",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Rum",
+    "glass": "Clear Highball",
+    "ice": "Crushed",
+    "garnish": "Lime Wheels + Mint",
+    "method": "Muddle lime + build",
+    "prepInstructions": [
+      "Muddle lime + build"
+    ],
+    "ingredients": [
+      {
+        "id": "havana-3",
+        "name": "Havana 3",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "dd-lime-juice",
+        "name": "Dd Lime Juice",
+        "amount": 20.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 20ML"
+      },
+      {
+        "id": "mint",
+        "name": "Mint",
+        "amount": 8.0,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 8.0",
+        "quantityDisplay": "8.0"
+      },
+      {
+        "id": "lime-wedges",
+        "name": "Lime Wedges",
+        "amount": 3.0,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 3.0",
+        "quantityDisplay": "3.0"
+      },
+      {
+        "id": "gomme",
+        "name": "Gomme",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "RUM · E19:F37",
+    "serviceNotes": "House spec from the supplied spreadsheet, RUM!E19:F37. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-mojito"
+  },
+  {
+    "id": "house-pina-colada",
+    "name": "Piña Colada",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Rum",
+    "glass": "Clear Highball",
+    "ice": "Crushed",
+    "garnish": "Lime Wheels + Ango Bitters",
+    "method": "Shake + strain",
+    "prepInstructions": [
+      "Shake + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "havana-3",
+        "name": "Havana 3",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "havana-spiced",
+        "name": "Havana Spiced",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "dd-lime-juice",
+        "name": "Dd Lime Juice",
+        "amount": 20.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 20ML"
+      },
+      {
+        "id": "pineapple-juice",
+        "name": "Pineapple Juice",
+        "amount": 75.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 75ML"
+      },
+      {
+        "id": "coconut-cream",
+        "name": "Coconut Cream",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "RUM · H6:I37",
+    "serviceNotes": "House spec from the supplied spreadsheet, RUM!H6:I37. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-pina-colada"
+  },
+  {
+    "id": "house-old-fashioned",
+    "name": "Old Fashioned",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Whisky",
+    "glass": "Clear Rocks",
+    "ice": "Big Block",
+    "garnish": "Orange Peel",
+    "method": "Muddle sugar + stir + strain",
+    "prepInstructions": [
+      "Muddle sugar + stir + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "old-forestor",
+        "name": "Old Forestor",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "brown-sugar",
+        "name": "Brown Sugar",
+        "amount": 2.0,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 2 SUGAR CUBES",
+        "quantityDisplay": "2 SUGAR CUBES"
+      },
+      {
+        "id": "angostura-bitters",
+        "name": "Angostura Bitters",
+        "amount": 2.0,
+        "unit": "dash",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 2 DASH"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "WHISKEY · B6:C23",
+    "serviceNotes": "House spec from the supplied spreadsheet, WHISKEY!B6:C23. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-old-fashioned"
+  },
+  {
+    "id": "house-irish-coffee",
+    "name": "Irish Coffee",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Whisky",
+    "glass": "Glass Mug",
+    "ice": "N/A",
+    "garnish": "Couble Cream Float",
+    "method": "Muddle sugar + stir, float double cream",
+    "prepInstructions": [
+      "Muddle sugar + stir, float double cream"
+    ],
+    "ingredients": [
+      {
+        "id": "jameson",
+        "name": "Jameson",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "coffee-espresso-shots",
+        "name": "Coffee (espresso shots)",
+        "amount": 2,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: DOUBLE ESPRESSO",
+        "quantityDisplay": "Double espresso"
+      },
+      {
+        "id": "brown-sugar",
+        "name": "Brown Sugar",
+        "amount": 2.0,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 2 SUGAR CUBES",
+        "quantityDisplay": "2 SUGAR CUBES"
+      },
+      {
+        "id": "hot-water",
+        "name": "Hot Water",
+        "amount": 0,
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: TOP"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "WHISKEY · B24:C34",
+    "serviceNotes": "House spec from the supplied spreadsheet, WHISKEY!B24:C34. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-whisky-sour",
+    "name": "Whisky Sour",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Whisky",
+    "glass": "Clear Rocks",
+    "ice": "Cubed",
+    "garnish": "Angostura Hearts",
+    "method": "Wet/dry shake + strain",
+    "prepInstructions": [
+      "Wet/dry shake + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "old-forestor",
+        "name": "Old Forestor",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "dd-lemon-juice",
+        "name": "Dd Lemon Juice",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "gomme",
+        "name": "Gomme",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "angostura-bitters",
+        "name": "Angostura Bitters",
+        "amount": 2.0,
+        "unit": "dash",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 2 DASH"
+      },
+      {
+        "id": "ms-betters-bitters",
+        "name": "Ms Betters Bitters",
+        "amount": 2.0,
+        "unit": "dash",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 2 DASH"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "WHISKEY · E6:F34",
+    "serviceNotes": "House spec from the supplied spreadsheet, WHISKEY!E6:F34. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-whiskey-sour"
+  },
+  {
+    "id": "house-manhattan",
+    "name": "Manhattan",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Whisky",
+    "glass": "Coup",
+    "ice": "N/A",
+    "garnish": "Orange Peel",
+    "method": "Stir + strain",
+    "prepInstructions": [
+      "Stir + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "old-forestor",
+        "name": "Old Forestor",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "martini-rosso",
+        "name": "Martini Rosso",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "angostura-bitters",
+        "name": "Angostura Bitters",
+        "amount": 2.0,
+        "unit": "dash",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 2 DASH"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "WHISKEY · H6:I34",
+    "serviceNotes": "House spec from the supplied spreadsheet, WHISKEY!H6:I34. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-manhattan"
+  },
+  {
+    "id": "house-mimosa",
+    "name": "Mimosa",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Mixed",
+    "glass": "Flute",
+    "ice": "N/A",
+    "garnish": "N/A",
+    "method": "Build in glass",
+    "prepInstructions": [
+      "Build in glass"
+    ],
+    "ingredients": [
+      {
+        "id": "cremant",
+        "name": "Cremant",
+        "amount": 0,
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: TOP"
+      },
+      {
+        "id": "orange-juice",
+        "name": "Orange Juice",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "MISC · B6:C16",
+    "serviceNotes": "House spec from the supplied spreadsheet, MISC!B6:C16. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-bellini",
+    "name": "Bellini",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Mixed",
+    "glass": "Flute",
+    "ice": "N/A",
+    "garnish": "N/A",
+    "method": "Build in glass",
+    "prepInstructions": [
+      "Build in glass"
+    ],
+    "ingredients": [
+      {
+        "id": "cremant",
+        "name": "Cremant",
+        "amount": 0,
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: TOP"
+      },
+      {
+        "id": "peach-puree",
+        "name": "Peach Puree",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "MISC · B17:C27",
+    "serviceNotes": "House spec from the supplied spreadsheet, MISC!B17:C27. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-kir-royale",
+    "name": "Kir Royale",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Mixed",
+    "glass": "Flute",
+    "ice": "N/A",
+    "garnish": "N/A",
+    "method": "Build in glass",
+    "prepInstructions": [
+      "Build in glass"
+    ],
+    "ingredients": [
+      {
+        "id": "cremant",
+        "name": "Cremant",
+        "amount": 0,
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: TOP"
+      },
+      {
+        "id": "creme-de-cassis",
+        "name": "Crème De Cassis",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "MISC · B28:C51",
+    "serviceNotes": "House spec from the supplied spreadsheet, MISC!B28:C51. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-aperol-spritz",
+    "name": "Aperol Spritz",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Mixed",
+    "glass": "Wine",
+    "ice": "Cubed",
+    "garnish": "Orange Slice",
+    "method": "Build in glass",
+    "prepInstructions": [
+      "Build in glass"
+    ],
+    "ingredients": [
+      {
+        "id": "aperol",
+        "name": "Aperol",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "cremant",
+        "name": "Cremant",
+        "amount": 125.0,
+        "unit": "ml",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 125ML"
+      },
+      {
+        "id": "soda",
+        "name": "Soda",
+        "amount": 0,
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: TOP"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "MISC · E6:F17",
+    "serviceNotes": "House spec from the supplied spreadsheet, MISC!E6:F17. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-aperol-spritz"
+  },
+  {
+    "id": "house-hugo-spritz",
+    "name": "Hugo Spritz",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Mixed",
+    "glass": "Wine",
+    "ice": "Cubed",
+    "garnish": "Mint Sprig + Lime Slice",
+    "method": "Build in glass",
+    "prepInstructions": [
+      "Build in glass"
+    ],
+    "ingredients": [
+      {
+        "id": "st-germain",
+        "name": "St Germain",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "cremant",
+        "name": "Cremant",
+        "amount": 125.0,
+        "unit": "ml",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 125ML"
+      },
+      {
+        "id": "dd-lime",
+        "name": "Dd Lime",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "soda",
+        "name": "Soda",
+        "amount": 0,
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: TOP"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "MISC · E18:F30",
+    "serviceNotes": "House spec from the supplied spreadsheet, MISC!E18:F30. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-limoncello-spritz",
+    "name": "Limoncello Spritz",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Mixed",
+    "glass": "Wine",
+    "ice": "Cubed",
+    "garnish": "Lemon Slice",
+    "method": "Build in glass",
+    "prepInstructions": [
+      "Build in glass"
+    ],
+    "ingredients": [
+      {
+        "id": "limoncello",
+        "name": "Limoncello",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "cremant",
+        "name": "Cremant",
+        "amount": 0,
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: TOP"
+      },
+      {
+        "id": "soda",
+        "name": "Soda",
+        "amount": 125.0,
+        "unit": "ml",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 125ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "MISC · E31:F42",
+    "serviceNotes": "House spec from the supplied spreadsheet, MISC!E31:F42. Imported 15 September 2026. Source check: sheet specifies 125ml soda and Crémant to top; retained exactly.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-pimms",
+    "name": "Pimm’s",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Mixed",
+    "glass": "Ridged Highball",
+    "ice": "Cubed",
+    "garnish": "Strawb + Cucumber + Mint + Orange",
+    "method": "Shake + double strain",
+    "prepInstructions": [
+      "Shake + double strain"
+    ],
+    "ingredients": [
+      {
+        "id": "pimms",
+        "name": "Pimms",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "lemonade",
+        "name": "Lemonade",
+        "amount": 0,
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: TOP"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "MISC · E43:F51",
+    "serviceNotes": "House spec from the supplied spreadsheet, MISC!E43:F51. Imported 15 September 2026. Source check: the sheet says shake and double strain. Keep carbonated lemonade separate and confirm service method.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-caipirinha",
+    "name": "Caipirinha",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Mixed",
+    "glass": "Clear Rocks",
+    "ice": "Crushed",
+    "garnish": "Orange Slice",
+    "method": "Muddle limes/sugar + build",
+    "prepInstructions": [
+      "Muddle limes/sugar + build"
+    ],
+    "ingredients": [
+      {
+        "id": "cachaca",
+        "name": "Cachaca",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "lime",
+        "name": "Lime",
+        "amount": 4.0,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 4 WEDGES",
+        "quantityDisplay": "4 WEDGES"
+      },
+      {
+        "id": "brown-sugar",
+        "name": "Brown Sugar",
+        "amount": 2.0,
+        "unit": "piece",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 2 CUBES",
+        "quantityDisplay": "2 CUBES"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "MISC · H6:I17",
+    "serviceNotes": "House spec from the supplied spreadsheet, MISC!H6:I17. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-caipirinha"
+  },
+  {
+    "id": "house-sidecar",
+    "name": "Sidecar",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Mixed",
+    "glass": "Coup",
+    "ice": "N/A",
+    "garnish": "Orange Peel",
+    "method": "Muddle limes/sugar + build",
+    "prepInstructions": [
+      "Muddle limes/sugar + build"
+    ],
+    "ingredients": [
+      {
+        "id": "hennessy-v-s",
+        "name": "Hennessy V.S",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "blend-triple-sec",
+        "name": "Blend Triple Sec",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "dd-lemon",
+        "name": "Dd Lemon",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "MISC · H18:I29",
+    "serviceNotes": "House spec from the supplied spreadsheet, MISC!H18:I29. Imported 15 September 2026. Source check: method mentions limes and sugar, absent from its ingredient list. Confirm with the manager.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-sidecar"
+  },
+  {
+    "id": "house-amaretto-sour",
+    "name": "Amaretto Sour",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Mixed",
+    "glass": "Clear Rocks",
+    "ice": "Cubed",
+    "garnish": "Angostura Hearts",
+    "method": "Wet/dry shake + strain",
+    "prepInstructions": [
+      "Wet/dry shake + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "disarrono",
+        "name": "Disarrono",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "dd-lemon-juice",
+        "name": "Dd Lemon Juice",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "gomme",
+        "name": "Gomme",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      },
+      {
+        "id": "angostura-bitters",
+        "name": "Angostura Bitters",
+        "amount": 2.0,
+        "unit": "dash",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 2 DASH"
+      },
+      {
+        "id": "ms-betters-bitters",
+        "name": "Ms Betters Bitters",
+        "amount": 2.0,
+        "unit": "dash",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 2 DASH"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "MISC · H30:I51",
+    "serviceNotes": "House spec from the supplied spreadsheet, MISC!H30:I51. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-amaretto-sour"
+  },
+  {
+    "id": "house-long-island-iced-tea",
+    "name": "Long Island Iced Tea",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Mixed",
+    "glass": "Clear Highball",
+    "ice": "Cubed",
+    "garnish": "Lemon Slice",
+    "method": "Shake + layer over coke",
+    "prepInstructions": [
+      "Shake + layer over coke"
+    ],
+    "ingredients": [
+      {
+        "id": "absolut-vodka",
+        "name": "Absolut Vodka",
+        "amount": 12.5,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 12.5ML"
+      },
+      {
+        "id": "tanqueray",
+        "name": "Tanqueray",
+        "amount": 12.5,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 12.5ML"
+      },
+      {
+        "id": "el-jimador-blanco",
+        "name": "El Jimador Blanco",
+        "amount": 12.5,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 12.5ML"
+      },
+      {
+        "id": "havana-3",
+        "name": "Havana 3",
+        "amount": 12.5,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 12.5ML"
+      },
+      {
+        "id": "blend-triple-sec",
+        "name": "Blend Triple Sec",
+        "amount": 12.5,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 12.5ML"
+      },
+      {
+        "id": "dd-lemon",
+        "name": "Dd Lemon",
+        "amount": 15.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 15ML"
+      },
+      {
+        "id": "coca-cola",
+        "name": "Coca-Cola",
+        "amount": 0,
+        "unit": "top",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 1/2 GLASS",
+        "quantityDisplay": "½ glass"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "MISC · K6:L21",
+    "serviceNotes": "House spec from the supplied spreadsheet, MISC!K6:L21. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "overridesCocktailID": "classic-long-island-iced-tea"
+  },
+  {
+    "id": "house-pisco-sour",
+    "name": "Pisco Sour",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Mixed",
+    "glass": "Coup",
+    "ice": "N/A",
+    "garnish": "Angostura Hearts",
+    "method": "Wet/dry shake + strain",
+    "prepInstructions": [
+      "Wet/dry shake + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "pisco",
+        "name": "Pisco",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "dd-lemon-juice",
+        "name": "Dd Lemon Juice",
+        "amount": 25.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 25ML"
+      },
+      {
+        "id": "gomme",
+        "name": "Gomme",
+        "amount": 10.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 10ML"
+      },
+      {
+        "id": "angostura-bitters",
+        "name": "Angostura Bitters",
+        "amount": 2.0,
+        "unit": "dash",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 2 DASH"
+      },
+      {
+        "id": "ms-betters-bitters",
+        "name": "Ms Betters Bitters",
+        "amount": 2.0,
+        "unit": "dash",
+        "batchBehaviour": "serviceOnly",
+        "batchable": true,
+        "notes": "Source: 2 DASH"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "MISC · K22:L51",
+    "serviceNotes": "House spec from the supplied spreadsheet, MISC!K22:L51. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false
+  },
+  {
+    "id": "house-vodka-martini-wet",
+    "name": "Vodka Martini (Wet)",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Vodka",
+    "glass": "Nick & Nora",
+    "ice": "N/A",
+    "garnish": "Lemon Peel / Olives",
+    "method": "Stir + strain",
+    "prepInstructions": [
+      "Stir + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "belvedere",
+        "name": "Belvedere",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "martini-extra-dry",
+        "name": "Martini Extra Dry",
+        "amount": 20,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Wet variation from the sheet.",
+        "quantityDisplay": "20ml wet"
+      },
+      {
+        "id": "olive-brine-if-dirty",
+        "name": "Olive Brine (If Dirty)",
+        "amount": 10,
+        "unit": "ml",
+        "batchBehaviour": "nonBatchable",
+        "batchable": false,
+        "notes": "Optional: 10ml only if dirty. Add separately per chosen serve.",
+        "quantityDisplay": "10ml if dirty"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "VODKA · B34:C50",
+    "serviceNotes": "House spec from the supplied spreadsheet, VODKA!B34:C50. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "subtitle": "Wet spec · optional dirty addition in notes"
+  },
+  {
+    "id": "house-gin-martini-wet",
+    "name": "Gin Martini (Wet)",
+    "venueID": "rockwater-hove",
+    "venueSpecific": true,
+    "isHouseClassic": true,
+    "category": "House classics",
+    "baseSpirit": "Gin",
+    "glass": "Nick & Nora",
+    "ice": "N/A",
+    "garnish": "Lemon Peel / Olives",
+    "method": "Stir + strain",
+    "prepInstructions": [
+      "Stir + strain"
+    ],
+    "ingredients": [
+      {
+        "id": "tanqueray-no10",
+        "name": "Tanqueray No10",
+        "amount": 50.0,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Source: 50ML"
+      },
+      {
+        "id": "martini-extra-dry",
+        "name": "Martini Extra Dry",
+        "amount": 20,
+        "unit": "ml",
+        "batchBehaviour": "normal",
+        "batchable": true,
+        "notes": "Wet variation from the sheet.",
+        "quantityDisplay": "20ml wet"
+      },
+      {
+        "id": "olive-brine-if-dirty",
+        "name": "Olive Brine (If Dirty)",
+        "amount": 10,
+        "unit": "ml",
+        "batchBehaviour": "nonBatchable",
+        "batchable": false,
+        "notes": "Optional: 10ml only if dirty. Add separately per chosen serve.",
+        "quantityDisplay": "10ml if dirty"
+      }
+    ],
+    "recipeVerified": true,
+    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
+    "sourceReference": "GIN · E6:F17",
+    "serviceNotes": "House spec from the supplied spreadsheet, GIN!E6:F17. Imported 15 September 2026.",
+    "isActive": true,
+    "isSample": false,
+    "subtitle": "Wet spec · optional dirty addition in notes"
+  }
+]

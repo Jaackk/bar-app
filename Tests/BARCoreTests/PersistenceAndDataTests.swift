@@ -21,8 +21,8 @@ final class PersistenceAndDataTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(report.snapshot.cocktails.filter { $0.venueID == nil }.count, 31)
         XCTAssertFalse(report.snapshot.venues.isEmpty)
         XCTAssertGreaterThanOrEqual(report.snapshot.wines.count, 10)
-        XCTAssertTrue(report.snapshot.cocktails.filter { $0.venueID != nil }.allSatisfy(\.isSample))
-        XCTAssertTrue(report.snapshot.wines.allSatisfy(\.isSample))
+        XCTAssertTrue(report.snapshot.cocktails.filter { $0.venueID != nil }.allSatisfy { !$0.isSample })
+        XCTAssertTrue(report.snapshot.wines.allSatisfy { !$0.isSample })
     }
     func testMinimalCocktailDecodesUsefulDefaults() throws {
         let drink = try SeedLoader.makeDecoder().decode(Cocktail.self, from: Data(#"{"id":"x","name":"Minimal"}"#.utf8))

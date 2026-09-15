@@ -39,7 +39,7 @@ final class BARUITests: XCTestCase {
         XCTAssertTrue(app.navigationBars["Batch Calculator"].waitForExistence(timeout: 5))
         capture("04 Batch calculator")
         XCTAssertEqual(app.textFields["batch-serves"].value as? String, "25")
-        XCTAssertTrue(app.staticTexts["1,030ml"].exists || app.staticTexts["1030ml"].exists)
+        XCTAssertTrue(app.staticTexts["901.25ml"].exists || app.staticTexts["901.25ml"].exists)
         app.buttons["50 serves"].tap()
         XCTAssertEqual(app.textFields["batch-serves"].value as? String, "50")
         let save = app.buttons["Save batch"]
@@ -79,7 +79,7 @@ final class BARUITests: XCTestCase {
         app.swipeDown(); app.swipeDown()
         app.buttons["Clear search"].tap()
         wineSearch.tap(); wineSearch.typeText("Marlborough\n")
-        tapText("Marlborough Sauvignon Blanc")
+        tapText("Sauvignon Blanc Awatere, Spoke")
         XCTAssertTrue(app.buttons["Favourite wine"].waitForExistence(timeout: 5))
         app.buttons["Favourite wine"].tap()
         capture("09b Wine detail")
@@ -93,10 +93,9 @@ final class BARUITests: XCTestCase {
         reveal(complete); complete.tap()
         XCTAssertTrue(app.staticTexts["Prepared and ready"].exists || app.staticTexts["Ready for service"].exists)
         tab("Stock"); capture("12 Stock")
-        tapText("Suggested order")
+        app.buttons["open-order"].tap()
         capture("13 Suggested order")
-        let copy = app.buttons["Copy order"]; reveal(copy); copy.tap()
-        XCTAssertTrue(app.buttons["Copied to clipboard"].exists)
+        XCTAssertTrue(app.buttons["add-products"].exists)
         tab("Profile"); capture("14 Profile")
         XCTAssertTrue(app.navigationBars["Profile"].exists)
     }
@@ -117,13 +116,13 @@ final class BARUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["QUESTION 2 OF 10"].isHittable)
     }
     func testStockCountAndPreferencesPersist() throws {
-        tab("Stock")
+        openStocktake()
         let search = app.textFields["universal-search"]
         search.tap(); search.typeText("Tanqueray\n")
         app.swipeUp()
         let quarter = app.buttons["Set open bottle to ¼"]
         reveal(quarter); quarter.tap()
-        XCTAssertTrue(app.buttons["Edit Tanqueray current count, 1.25 bottles"].exists)
+        XCTAssertTrue(app.buttons["Edit Tanqueray current count, 1.25 bottle"].exists)
         capture("18 Fractional stock count")
         tab("Profile")
         XCTAssertTrue(app.navigationBars["Profile"].waitForExistence(timeout: 5))
@@ -133,18 +132,18 @@ final class BARUITests: XCTestCase {
         name.typeText("Sam\n")
         app.terminate(); app.launchArguments = ["--uitesting", "--keep-state"]; app.launch()
         XCTAssertTrue(app.staticTexts["Good morning, Sam,"].exists || app.staticTexts["Good afternoon, Sam,"].exists || app.staticTexts["Good evening, Sam,"].exists)
-        tab("Stock")
+        openStocktake()
         app.textFields["universal-search"].tap(); app.textFields["universal-search"].typeText("Tanqueray\n")
         app.swipeUp()
-        XCTAssertTrue(app.buttons["Edit Tanqueray current count, 1.25 bottles"].exists)
-        app.buttons["Edit Tanqueray current count, 1.25 bottles"].tap()
+        XCTAssertTrue(app.buttons["Edit Tanqueray current count, 1.25 bottle"].exists)
+        app.buttons["Edit Tanqueray current count, 1.25 bottle"].tap()
         let amount = app.textFields["Amount"]
         XCTAssertTrue(amount.waitForExistence(timeout: 5))
         amount.tap()
         if let current = amount.value as? String { amount.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: current.count)) }
         amount.typeText("1000.5")
         app.buttons["Save amount"].tap()
-        let largeCount = app.buttons["Edit Tanqueray current count, 1,000.5 bottles"]
+        let largeCount = app.buttons["Edit Tanqueray current count, 1,000.5 bottle"]
         XCTAssertTrue(largeCount.waitForExistence(timeout: 5))
         largeCount.tap()
         XCTAssertTrue(amount.waitForExistence(timeout: 5))
@@ -152,6 +151,67 @@ final class BARUITests: XCTestCase {
         capture("19 Large count editor")
         app.buttons["Save amount"].tap()
         XCTAssertTrue(largeCount.waitForExistence(timeout: 5))
+    }
+
+    private func openStocktake() {
+        tab("Profile")
+        reveal(app.buttons["Manager"]); app.buttons["Manager"].tap()
+        tapText("Stocktake")
+    }
+    func testNewStockListsAndSharedCatalogue() throws {
+        tab("Stock"); capture("Stock landing")
+        app.buttons["open-restock"].tap()
+        XCTAssertTrue(app.staticTexts["Nothing needed yet."].exists)
+        app.buttons["add-products"].tap()
+        let search = app.searchFields.firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 5))
+        search.tap(); search.typeText("Aperol")
+        let add = app.buttons["Add Aperol"]
+        XCTAssertTrue(add.waitForExistence(timeout: 5)); add.tap()
+        try XCTUnwrap(app.buttons.matching(identifier: "Increase Aperol").allElementsBoundByIndex.first { $0.isHittable }).tap()
+        capture("Product picker")
+        app.buttons["picker-done"].tap()
+        XCTAssertTrue(app.buttons["picker-done"].waitForNonExistence(timeout: 5))
+        XCTAssertEqual(app.buttons.matching(identifier: "Edit Aperol quantity").firstMatch.value as? String, "2")
+        capture("Restock working list")
+        app.terminate(); app.launchArguments = ["--uitesting", "--keep-state"]; app.launch()
+        tab("Stock"); app.buttons["open-restock"].tap()
+        XCTAssertEqual(app.buttons.matching(identifier: "Edit Aperol quantity").firstMatch.value as? String, "2")
+        app.navigationBars.buttons.firstMatch.tap()
+        app.buttons["open-order"].tap()
+        XCTAssertTrue(app.staticTexts["No products added."].exists)
+        app.navigationBars.buttons.firstMatch.tap()
+        tapText("Products & photos")
+        app.buttons["Add Product"].tap()
+        let name = app.textFields["product-name"]
+        XCTAssertTrue(name.waitForExistence(timeout: 5)); name.tap(); name.typeText("Service Test Soda")
+        capture("Product editor with photo controls")
+        XCTAssertTrue(app.buttons["Choose photo"].exists)
+        app.buttons["Save"].tap()
+        tab("Search")
+        let field = app.textFields["universal-search"]
+        field.tap(); field.typeText("Service Test Soda\n")
+        XCTAssertTrue(app.staticTexts["Service Test Soda"].waitForExistence(timeout: 5))
+        tapText("Service Test Soda")
+        app.buttons["Add to Stock Order"].tap()
+        XCTAssertTrue(app.buttons["Added to Stock Order"].exists)
+        capture("Shared product detail")
+    }
+    func testHouseSpecsAndFoodSearch() throws {
+        tapText("Cocktails"); tapText("Sea Glass")
+        XCTAssertTrue(app.buttons["favourite-cocktail"].waitForExistence(timeout: 5))
+        capture("Updated Sea Glass recipe")
+        let batch = app.buttons["batch-button"]; reveal(batch); batch.tap()
+        XCTAssertTrue(app.staticTexts["901.25ml"].waitForExistence(timeout: 5))
+        capture("House recipe batch")
+        tab("Search")
+        let field = app.textFields["universal-search"]
+        field.tap(); field.typeText("steak\n")
+        XCTAssertFalse(app.staticTexts["No matches yet"].exists)
+        capture("Steak wine search")
+        app.buttons["Clear search"].tap(); field.tap(); field.typeText("fish\n")
+        XCTAssertFalse(app.staticTexts["No matches yet"].exists)
+        capture("Fish wine search")
     }
 
 }

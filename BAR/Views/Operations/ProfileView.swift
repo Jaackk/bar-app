@@ -141,7 +141,7 @@ private struct AboutBARView: View {
                 Text("Your operating companion for a great service: cocktail specifications, thoughtful wine recommendations, accurate batches, fresh prep and clear stock counts.").font(.body).lineSpacing(5)
                 VStack(alignment: .leading, spacing: 14) {
                     SectionHeader(title: "About the recipes")
-                    Text("Venue drinks and wines come from Rockwater Hove’s official drinks menu, checked 11 September 2026. Public menu ingredients are available offline; house measures must be approved before batching. Wine matching uses approximate style guidance. Classic recipes are common modern starting points; house specifications can override them.").font(.subheadline).lineSpacing(4)
+                    Text("Venue drinks and wines come from Rockwater Hove’s official drinks menu, checked 11 September 2026. House recipes use the supplied PDF and spreadsheet specifications, imported 15 September 2026. Source exceptions are noted in the recipe. Wine matching uses approximate style guidance. Classic recipes are common modern starting points; house specifications can override them.").font(.subheadline).lineSpacing(4)
                     Text("Always follow your venue’s verified allergen, storage and service procedures.").font(.subheadline).lineSpacing(4)
                 }.barCard()
                 VStack(alignment: .leading, spacing: 12) {

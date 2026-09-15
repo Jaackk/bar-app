@@ -1,7 +1,7 @@
 import Foundation
 
 public enum MeasurementUnit: String, Codable, CaseIterable, Hashable, Sendable {
-    case ml, cl, litre, dash, barspoon, top, piece, sprig, gram
+    case ml, cl, litre, drop, dash, barspoon, top, piece, sprig, gram
     public var label: String { self == .litre ? "L" : (self == .gram ? "g" : rawValue) }
     public var isVolume: Bool { [.ml, .cl, .litre].contains(self) }
 }
@@ -27,7 +27,7 @@ public enum UserRole: String, Codable, CaseIterable, Hashable, Sendable {
     public var canManageVenues: Bool { self == .admin }
 }
 public enum RecentKind: String, Codable, Hashable, Sendable { case cocktail, wine }
-public enum SearchKind: String, Codable, Hashable, Sendable { case cocktail, wine, prep }
+public enum SearchKind: String, Codable, Hashable, Sendable { case cocktail, wine, prep, product }
 public enum QuizKind: String, Codable, CaseIterable, Hashable, Sendable { case recipe, ingredient }
 
 extension KeyedDecodingContainer {
