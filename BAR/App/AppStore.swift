@@ -16,7 +16,7 @@ import BARCore
         do { snapshot = try repository.load(); lastSavedSnapshot = snapshot }
         catch {
             snapshot = (try? SeedLoader.load()) ?? AppSnapshot()
-            errorMessage = "Your saved data could not be opened. Sample content is available for reference. Reset local data in Profile to recover. \(error.localizedDescription)"
+            errorMessage = "Your saved data could not be opened. BAR is showing its bundled reference content and your existing data has not been changed. Reset local data in Profile only if recovery is needed."
             persistenceBlocked = true
             lastSavedSnapshot = snapshot
         }
@@ -46,7 +46,7 @@ import BARCore
     func cocktail(_ id: String) -> Cocktail? { cocktails.first { $0.id == id } }
     func wine(_ id: String) -> Wine? { wines.first { $0.id == id } }
     private func save() {
-        guard !persistenceBlocked else { if let lastSavedSnapshot { snapshot = lastSavedSnapshot }; errorMessage = "Saved data needs recovery. Reset local data in Profile before making changes."; return }
+        guard !persistenceBlocked else { if let lastSavedSnapshot { snapshot = lastSavedSnapshot }; errorMessage = "BAR could not save this change because local data needs recovery. Your existing data has not been changed."; return }
         do { try repository.save(snapshot); lastSavedSnapshot = snapshot }
         catch { if let lastSavedSnapshot { snapshot = lastSavedSnapshot }; errorMessage = "This change could not be saved: \(error.localizedDescription)" }
     }
@@ -55,7 +55,7 @@ import BARCore
     /// succeeds can otherwise leave UIKit holding a stale row identity.
     private func commit(_ candidate: AppSnapshot) -> Bool {
         guard !persistenceBlocked else {
-            errorMessage = "Saved data needs recovery. Reset local data in Profile before making changes."
+            errorMessage = "BAR could not save this change because local data needs recovery. Your existing data has not been changed."
             return false
         }
         do {
@@ -132,7 +132,20 @@ import BARCore
     func listText(_ kind: StockListKind) -> String { StockListService.text(snapshot.stockLists, kind: kind, venueID: preferences.venueID) }
     func addProduct(_ product: Product, to kind: StockListKind) {
         guard products.contains(where: { $0.id == product.id }) else { return }
-        StockListService.add(product, kind: kind, to: &snapshot.stockLists); save(); Haptics.selection()
+        StockListService.add(product, kind: kind, to: &snapshot.stockLists)
+        snapshot.preferences.recordProductUse(product.id)
+        save(); Haptics.selection()
+    }
+    func setProductQuantity(_ product: Product, kind: StockListKind, quantity: Int) {
+        guard products.contains(where: { $0.id == product.id }) else { return }
+        var candidate = snapshot
+        if let item = candidate.stockLists.first(where: { $0.venueID == product.venueID && $0.kind == kind && $0.productID == product.id }) {
+            StockListService.setQuantity(quantity, id: item.id, venueID: product.venueID, in: &candidate.stockLists)
+        } else if quantity > 0 {
+            candidate.stockLists.append(StockListItem(venueID: product.venueID, kind: kind, productID: product.id, name: product.name, quantity: min(quantity, 100_000), unit: kind == .order ? product.defaultOrderUnit : product.unit))
+        }
+        if quantity > 0 { candidate.preferences.recordProductUse(product.id) }
+        if commit(candidate) { Haptics.selection() }
     }
     func setListQuantity(id: String, quantity: Int) {
         var candidate = snapshot

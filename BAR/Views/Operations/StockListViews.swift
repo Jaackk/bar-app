@@ -36,22 +36,16 @@ struct StockListView: View {
     @Environment(\.dismiss) private var dismiss
     let kind: StockListKind
     @State private var adding = false
+    @State private var browsing = false
     @State private var custom = false
     @State private var editing: StockListItem?
     @State private var clear = false
     @State private var copied = false
     private var items: [StockListItem] { store.listItems(kind) }
-    private var quickPicks: [Product] {
-        let selectedIDs = store.listItems(.restock).map(\.productID) + store.listItems(.order).map(\.productID)
-        let usage = Dictionary(selectedIDs.compactMap { $0 }.map { ($0, 1) }, uniquingKeysWith: +)
-        let nightEssentials = ["Ice Cubes", "Limes", "Lemons", "Soda Water", "Tonic Water", "Coca-Cola", "Pineapple Juice", "Mint", "Basil", "Cocktail Cherries"]
-        return store.products.sorted {
-            let left = usage[$0.id, default: 0], right = usage[$1.id, default: 0]
-            if left != right { return left > right }
-            let lEssential = nightEssentials.contains($0.name), rEssential = nightEssentials.contains($1.name)
-            if lEssential != rEssential { return lEssential }
-            return $0.name.localizedStandardCompare($1.name) == .orderedAscending
-        }.prefix(10).map { $0 }
+    private var frequentProducts: [Product] { store.products.filter { store.preferences.productUsage[$0.id, default: 0] > 0 }.sorted { store.preferences.productUsage[$0.id, default: 0] == store.preferences.productUsage[$1.id, default: 0] ? ($0.name < $1.name) : (store.preferences.productUsage[$0.id, default: 0] > store.preferences.productUsage[$1.id, default: 0]) }.prefix(10).map { $0 } }
+    private var essentials: [Product] {
+        let names = ["Ice Cubes", "Limes", "Lemons", "Soda Water", "Tonic Water", "Coca-Cola", "Pineapple Juice", "Mint", "Basil", "Cocktail Cherries"]
+        return names.compactMap { name in store.products.first { $0.name.localizedCaseInsensitiveCompare(name) == .orderedSame } }
     }
     var body: some View {
         List {
@@ -60,14 +54,15 @@ struct StockListView: View {
                     Text(kind == .restock ? "What does the bar need?" : "Build the order list.").font(BarTheme.title(29))
                     Text(items.isEmpty ? "Add products as you go." : "\(items.count) products · \(items.reduce(0) { $0 + $1.quantity }) units").font(.subheadline).foregroundStyle(.secondary)
                 }.padding(.vertical, 10)
-                Button { adding = true } label: {
-                    HStack { Image(systemName: "magnifyingglass"); Text("Search products…"); Spacer(); Image(systemName: "plus.circle.fill") }.foregroundStyle(BarTheme.olive).padding(.vertical, 10)
-                }.accessibilityIdentifier("add-products")
+                HStack(spacing: 10) {
+                    Button { browsing = true } label: { Label("Browse products", systemImage: "square.grid.2x2").font(.headline).frame(maxWidth: .infinity, minHeight: 48).foregroundStyle(.white).background(BarTheme.olive, in: RoundedRectangle(cornerRadius: 13)) }.accessibilityIdentifier("browse-products")
+                    Button { adding = true } label: { Image(systemName: "magnifyingglass").frame(width: 48, height: 48).background(BarTheme.stone.opacity(0.65), in: RoundedRectangle(cornerRadius: 13)) }.accessibilityLabel("Search products").accessibilityIdentifier("add-products")
+                }.buttonStyle(.plain)
             }.listRowBackground(BarTheme.card)
-            Section("Quick add") {
+            if !frequentProducts.isEmpty { Section("Frequently added") {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
-                        ForEach(quickPicks) { product in
+                        ForEach(frequentProducts) { product in
                             Button { store.addProduct(product, to: kind) } label: {
                                 VStack(alignment: .leading, spacing: 7) {
                                     ProductThumbnail(product: product).frame(width: 62, height: 62)
@@ -78,6 +73,11 @@ struct StockListView: View {
                         }
                     }.padding(.vertical, 5)
                 }
+            }.listRowBackground(BarTheme.card) }
+            Section("After-service essentials") {
+                ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 10) { ForEach(essentials) { product in
+                    Button { store.addProduct(product, to: kind) } label: { VStack(alignment: .leading, spacing: 7) { ProductThumbnail(product: product).frame(width: 62, height: 62); Text(product.name).font(.caption.weight(.medium)).lineLimit(2).frame(width: 82, alignment: .leading); Text("Add").font(.caption2.weight(.semibold)).foregroundStyle(BarTheme.olive) }.frame(width: 82, alignment: .leading) }.buttonStyle(.plain)
+                } }.padding(.vertical, 5) }
             }.listRowBackground(BarTheme.card)
             if items.isEmpty {
                 Section {
@@ -130,6 +130,7 @@ struct StockListView: View {
             }
         }
         .sheet(isPresented: $adding) { ProductPicker(kind: kind) { adding = false } }
+        .sheet(isPresented: $browsing) { ProductBrowser(kind: kind) }
         .sheet(isPresented: $custom) { ListItemEditor { name, quantity in store.addCustomItem(name: name, quantity: quantity, kind: kind) } }
         .sheet(item: $editing) { item in ListItemEditor(item: item) { _, quantity in store.setListQuantity(id: item.id, quantity: quantity) } }
         .onChange(of: items) { _, _ in copied = false }
@@ -148,6 +149,128 @@ private struct QuantityControl: View {
             Button { edit?() } label: { Text("\(quantity)").font(.subheadline.weight(.semibold).monospacedDigit()).frame(minWidth: 28, minHeight: 44) }.disabled(edit == nil).accessibilityLabel("Edit \(name) quantity").accessibilityValue("\(quantity)")
             Button(action: increment) { Image(systemName: "plus").frame(width: 38, height: 44) }.accessibilityLabel("Increase \(name)")
         }.buttonStyle(.borderless).foregroundStyle(BarTheme.olive).background(BarTheme.sage.opacity(0.3), in: RoundedRectangle(cornerRadius: 12))
+    }
+}
+
+private enum ProductBrowseGroup: String, CaseIterable, Identifiable {
+    case beer = "Beer & Cider", wine = "Wine", sparkling = "Sparkling", spirits = "Spirits", mixers = "Mixers", softDrinks = "Soft Drinks", juices = "Juices", syrups = "Syrups & Cordials", fruit = "Fruit", garnish = "Garnish", herbs = "Herbs", prep = "Prep", other = "Other"
+    var id: String { rawValue }
+    var categories: Set<String> {
+        switch self {
+        case .beer: return ["Beer / Cider"]
+        case .wine: return ["Wine"]
+        case .sparkling: return ["Sparkling / Champagne"]
+        case .spirits: return ["Vodka", "Gin", "Rum", "Tequila / Mezcal", "Whisky / Whiskey", "Brandy / Cognac", "Liqueurs / Aperitifs"]
+        case .mixers: return ["Mixers"]
+        case .softDrinks: return ["Soft Drinks", "Non-Alcoholic"]
+        case .juices: return ["Juices"]
+        case .syrups: return ["Syrups / Cordials", "Purees", "Bitters"]
+        case .fruit: return ["Fresh Fruit"]
+        case .garnish: return ["Garnishes"]
+        case .herbs: return ["Fresh Herbs"]
+        case .prep: return ["Prep"]
+        case .other: return ["Other"]
+        }
+    }
+    var symbol: String {
+        switch self {
+        case .beer: return "mug"
+        case .wine, .sparkling: return "wineglass"
+        case .spirits: return "waterbottle"
+        case .mixers, .softDrinks: return "bubbles.and.sparkles"
+        case .juices, .syrups: return "drop"
+        case .fruit: return "apple.logo"
+        case .garnish, .herbs: return "leaf"
+        case .prep: return "flask"
+        case .other: return "shippingbox"
+        }
+    }
+}
+
+private struct ProductBrowser: View {
+    @Environment(AppStore.self) private var store
+    @Environment(\.dismiss) private var dismiss
+    let kind: StockListKind
+    @State private var group: ProductBrowseGroup?
+    @State private var search = ""
+    private var groups: [ProductBrowseGroup] { ProductBrowseGroup.allCases.filter { value in store.products.contains { value.categories.contains($0.category) } } }
+    private var matches: [Product] {
+        guard let group else { return [] }
+        return StockListService.search(store.products, venueID: store.preferences.venueID, query: search).filter { group.categories.contains($0.category) }
+    }
+    var body: some View {
+        NavigationStack {
+            Group {
+                if let group {
+                    ScrollView {
+                        LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
+                            ForEach(matches) { product in ProductGridCell(product: product, kind: kind) }
+                        }.padding(20)
+                    }
+                    .searchable(text: $search, prompt: "Filter (group.rawValue)…")
+                    .toolbar { ToolbarItem(placement: .topBarLeading) { Button("Categories") { self.group = nil; search = "" } } }
+                    .navigationTitle(group.rawValue)
+                } else {
+                    ScrollView { LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
+                        ForEach(groups) { group in
+                            Button { self.group = group } label: {
+                                VStack(alignment: .leading, spacing: 14) {
+                                    Image(systemName: group.symbol).font(.system(size: 31, weight: .light)).frame(width: 58, height: 58).background(BarTheme.sage.opacity(0.32), in: RoundedRectangle(cornerRadius: 16))
+                                    Text(group.rawValue).font(BarTheme.title(22)).multilineTextAlignment(.leading)
+                                    Text("\(store.products.filter { group.categories.contains($0.category) }.count) products").font(.caption).foregroundStyle(BarTheme.muted)
+                                }.frame(maxWidth: .infinity, minHeight: 150, alignment: .leading).padding(16).background(BarTheme.card, in: RoundedRectangle(cornerRadius: 18))
+                            }.buttonStyle(.plain).accessibilityIdentifier("browse-category-\(group.id)")
+                        }
+                    }.padding(20) }
+                    .navigationTitle("Browse products")
+                }
+            }
+            .barScreen()
+            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("Done") { dismiss() } } }
+        }
+    }
+}
+
+private struct ProductGridCell: View {
+    @Environment(AppStore.self) private var store
+    let product: Product
+    let kind: StockListKind
+    @State private var editing = false
+    private var item: StockListItem? { store.listItems(kind).first { $0.productID == product.id } }
+    private var quantity: Int { item?.quantity ?? 0 }
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            ProductThumbnail(product: product).frame(maxWidth: .infinity).frame(height: 112)
+            Text(product.name).font(.subheadline.weight(.semibold)).lineLimit(2).frame(maxWidth: .infinity, alignment: .leading)
+            HStack(spacing: 2) {
+                Button { store.setProductQuantity(product, kind: kind, quantity: max(0, quantity - 1)) } label: { Image(systemName: "minus").frame(width: 38, height: 42) }.accessibilityLabel("Decrease \(product.name)")
+                Button { editing = true } label: { Text("\(quantity)").font(.headline.monospacedDigit()).frame(maxWidth: .infinity, minHeight: 42).background(BarTheme.stone.opacity(0.55), in: RoundedRectangle(cornerRadius: 10)) }.accessibilityLabel("Set \(product.name) quantity")
+                Button { store.setProductQuantity(product, kind: kind, quantity: quantity + 1) } label: { Image(systemName: "plus").frame(width: 38, height: 42) }.accessibilityLabel("Increase \(product.name)")
+            }.foregroundStyle(BarTheme.olive).buttonStyle(.plain)
+        }.padding(12).background(BarTheme.card, in: RoundedRectangle(cornerRadius: 16))
+        .sheet(isPresented: $editing) { ProductQuantityEditor(product: product, kind: kind, current: quantity) }
+    }
+}
+
+private struct ProductQuantityEditor: View {
+    @Environment(AppStore.self) private var store
+    @Environment(\.dismiss) private var dismiss
+    let product: Product
+    let kind: StockListKind
+    @State private var text: String
+    @FocusState private var focused: Bool
+    init(product: Product, kind: StockListKind, current: Int) { self.product = product; self.kind = kind; _text = State(initialValue: current == 0 ? "" : String(current)) }
+    var body: some View {
+        NavigationStack { VStack(spacing: 22) {
+            ProductThumbnail(product: product).frame(width: 96, height: 124)
+            Text(product.name).font(BarTheme.title(28)).multilineTextAlignment(.center)
+            TextField("Quantity", text: $text).keyboardType(.numberPad).focused($focused).multilineTextAlignment(.center).font(.system(size: 42, weight: .medium, design: .rounded)).frame(maxWidth: .infinity).padding(18).background(BarTheme.card, in: RoundedRectangle(cornerRadius: 16))
+            Text("Enter 0 to remove this item from the \(kind.title.lowercased()) list.").font(.caption).foregroundStyle(BarTheme.muted).multilineTextAlignment(.center)
+            Spacer()
+        }.padding(24).barScreen().navigationTitle("Set quantity").navigationBarTitleDisplayMode(.inline)
+        .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }; ToolbarItem(placement: .confirmationAction) { Button("Done") { store.setProductQuantity(product, kind: kind, quantity: Int(text) ?? 0); dismiss() }.accessibilityIdentifier("quantity-done") }; ToolbarItemGroup(placement: .keyboard) { Spacer(); Button("Done") { focused = false } } }
+        .onAppear { focused = true }
+        }
     }
 }
 

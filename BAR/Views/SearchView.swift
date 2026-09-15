@@ -6,6 +6,7 @@ struct SearchView: View {
     @State private var selectedKind = "All"
     @FocusState private var searchFocused: Bool
     private var results: [SearchResult] { SearchService.search(query: store.searchQuery, cocktails: store.cocktails, wines: store.wines, prep: store.prep, products: store.products, venueID: store.preferences.venueID).filter { selectedKind == "All" || $0.kind.rawValue.lowercased() == selectedKind.lowercased() } }
+    private var resultGroups: [(SearchKind, [SearchResult])] { let kinds: [SearchKind] = [.cocktail, .product, .wine, .prep]; return kinds.compactMap { kind in let matches = results.filter { $0.kind == kind }; return matches.isEmpty ? nil : (kind, matches) } }
     var body: some View {
         @Bindable var store = store
         ScrollView { LazyVStack(alignment: .leading, spacing: 18) {
@@ -18,15 +19,17 @@ struct SearchView: View {
                 SectionHeader(title: "Popular tonight")
                 DrinkShelf(cocktails: store.cocktails.filter(\.isPopular))
             } else if results.isEmpty { EmptyStateView(title: "No matches yet", message: "Try a drink, ingredient, flavour or food pairing. Fewer words can help.", systemImage: "magnifyingglass") }
-            else { Text("\(results.count) RESULTS").font(.caption.weight(.medium)).tracking(2).foregroundStyle(BarTheme.muted); ForEach(results, id: \.self) { result in
-                switch result.kind {
-                case .cocktail: if let cocktail = store.cocktail(result.id) { NavigationLink { CocktailDetailView(cocktailID: cocktail.id) } label: { CocktailListRow(cocktail: cocktail) } }
-                case .wine: if let wine = store.wine(result.id) { NavigationLink { WineDetailView(wineID: wine.id) } label: { WineCard(wine: wine) } }
-                case .product: if let product = store.products.first(where: { $0.id == result.id }) { NavigationLink { ProductDetailView(productID: product.id) } label: { ProductSearchRow(product: product) } }
-                case .prep: NavigationLink { PrepDetailView(prepID: result.id) } label: { HStack { Image(systemName: "leaf").font(.title); VStack(alignment: .leading) { Text(result.title).font(BarTheme.title(19)); Text(result.subtitle).font(.caption) }; Spacer(); Image(systemName: "chevron.right").font(.caption) }.barCard() }
+            else {
+                Text("\(results.count) RESULTS").font(.caption.weight(.medium)).tracking(2).foregroundStyle(BarTheme.muted)
+                ForEach(resultGroups, id: \.0) { group in
+                    Text(group.0.rawValue.uppercased() + "S").font(.caption.weight(.semibold)).tracking(1.5).foregroundStyle(BarTheme.muted).padding(.top, 2)
+                    ForEach(group.1, id: \.self) { result in
+                        resultView(result)
+                    }
                 }
-            }.buttonStyle(.plain) }
-        }.padding(20) }.barScreen().navigationTitle("Search").navigationBarTitleDisplayMode(.inline).scrollDismissesKeyboard(.interactively)
+            }
+        }.padding(20)
+        }.barScreen().navigationTitle("Search").navigationBarTitleDisplayMode(.inline).scrollDismissesKeyboard(.interactively)
         .onAppear { focusFromHomeIfRequested() }
         .onChange(of: store.shouldFocusSearch) { _, requested in if requested { focusFromHomeIfRequested() } }
     }
@@ -38,6 +41,19 @@ struct SearchView: View {
             guard store.shouldFocusSearch else { return }
             searchFocused = true
             store.shouldFocusSearch = false
+        }
+    }
+
+    @ViewBuilder private func resultView(_ result: SearchResult) -> some View {
+        switch result.kind {
+        case .cocktail:
+            if let cocktail = store.cocktail(result.id) { NavigationLink { CocktailDetailView(cocktailID: cocktail.id) } label: { CocktailListRow(cocktail: cocktail) } }
+        case .wine:
+            if let wine = store.wine(result.id) { NavigationLink { WineDetailView(wineID: wine.id) } label: { WineCard(wine: wine) } }
+        case .product:
+            if let product = store.products.first(where: { $0.id == result.id }) { NavigationLink { ProductDetailView(productID: product.id) } label: { ProductSearchRow(product: product) } }
+        case .prep:
+            NavigationLink { PrepDetailView(prepID: result.id) } label: { HStack { Image(systemName: "leaf").font(.title); VStack(alignment: .leading) { Text(result.title).font(BarTheme.title(19)); Text(result.subtitle).font(.caption) }; Spacer(); Image(systemName: "chevron.right").font(.caption) }.barCard() }
         }
     }
 }

@@ -21,6 +21,14 @@ struct WineFinderView: View {
                 Button { moreTastes.toggle() } label: { Label(moreTastes ? "Fewer tastes" : "More tastes", systemImage: moreTastes ? "minus" : "plus").font(.caption).foregroundStyle(.white).frame(minHeight: 30) }
             }.padding(22).background(BarTheme.olive, in: RoundedRectangle(cornerRadius: 20))
             SearchBar(text: $query, placeholder: "e.g. Sauvignon Blanc, steak, seafood…")
+            VStack(alignment: .leading, spacing: 8) {
+                Text("PAIR WITH FOOD").font(.caption.weight(.semibold)).tracking(1.5).foregroundStyle(BarTheme.muted)
+                ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 8) {
+                    ForEach(["Steak", "Fish", "Chicken", "Spicy", "Pasta", "Seafood"], id: \.self) { food in
+                        Button { query = food.lowercased() } label: { TagChip(title: food, selected: query.localizedCaseInsensitiveCompare(food) == .orderedSame) }.frame(minHeight: 44)
+                    }
+                } }
+            }
             ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 8) { Button { colour = nil } label: { TagChip(title: "All wines", selected: colour == nil) }; ForEach(WineColour.allCases, id: \.self) { value in Button { colour = value } label: { TagChip(title: value == .rose ? "Rosé" : value.rawValue.capitalized, selected: colour == value) } } }.frame(minHeight: 44) }
             HStack { SectionHeader(title: "Recommended for you", subtitle: "Hove menu · \(recommendations.count) matches"); if !query.isEmpty || !tastes.isEmpty || colour != nil { Button("Reset") { query = ""; tastes = []; colour = nil }.font(.caption).frame(minHeight: 44) } }
             if recommendations.isEmpty { EmptyStateView(title: "Let’s broaden the choice", message: "Try fewer taste filters or search for a grape, region or food pairing.", systemImage: "wineglass") }

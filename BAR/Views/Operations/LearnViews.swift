@@ -5,8 +5,9 @@ struct LearnView: View {
     @Environment(AppStore.self) private var store
     @State private var learningSet = "Classics"
     private var classics: [Cocktail] { store.cocktails.filter { $0.recipeVerified }.filter { !$0.venueSpecific || $0.isHouseClassic } }
-    private var masteredCount: Int { classics.filter { store.training.masteredCocktailIDs.contains($0.id) }.count }
-    private var mastery: Double { classics.isEmpty ? 0 : Double(masteredCount) / Double(classics.count) }
+    private var masteredCount: Int { studyCocktails.filter { store.training.masteredCocktailIDs.contains($0.id) }.count }
+    private var mastery: Double { studyCocktails.isEmpty ? 0 : Double(masteredCount) / Double(studyCocktails.count) }
+    private var progressTitle: String { learningSet == "Venue" ? "Venue drinks mastered" : (learningSet == "All drinks" ? "Drinks mastered" : "Classics mastered") }
     private var studyCocktails: [Cocktail] {
         switch learningSet {
         case "Venue": return store.cocktails.filter { $0.recipeVerified }.filter { $0.venueSpecific && !$0.isHouseClassic }
@@ -24,12 +25,12 @@ struct LearnView: View {
                 }
                 VStack(alignment: .leading, spacing: 16) {
                     HStack(alignment: .firstTextBaseline) {
-                        Text("Classics mastered").font(BarTheme.title(22))
+                        Text(progressTitle).font(BarTheme.title(22))
                         Spacer()
                         Text(mastery, format: .percent.precision(.fractionLength(0))).font(.title.weight(.medium).monospacedDigit()).foregroundStyle(BarTheme.olive)
                     }
                     ProgressView(value: mastery).tint(BarTheme.olive)
-                    Text("\(masteredCount) of \(classics.count) classics most recently answered correctly.").font(.caption).foregroundStyle(.secondary)
+                    Text("\(masteredCount) of \(studyCocktails.count) in this set most recently answered correctly.").font(.caption).foregroundStyle(.secondary)
                     HStack {
                         Label("\(store.training.answered) answers", systemImage: "checklist")
                         Spacer()

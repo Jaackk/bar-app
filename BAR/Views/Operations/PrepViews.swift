@@ -104,7 +104,7 @@ private struct PrepProgressCard: View {
             HStack(alignment: .top) {
                 VStack(alignment: .leading, spacing: 5) {
                     Text(item.category.uppercased()).font(.caption2.weight(.semibold)).tracking(1.5).foregroundStyle(BarTheme.olive)
-                    Text(item.name).font(BarTheme.title(22)).foregroundStyle(BarTheme.ink)
+                    HStack(spacing: 7) { Text(item.name).font(BarTheme.title(22)).foregroundStyle(BarTheme.ink); if item.isSample { Text("EXAMPLE").font(.caption2.weight(.bold)).tracking(1).foregroundStyle(BarTheme.olive).padding(.horizontal, 7).padding(.vertical, 4).background(BarTheme.sage.opacity(0.35), in: Capsule()) } }
                 }
                 Spacer()
                 Image(systemName: item.completed ? "checkmark.circle.fill" : "chevron.right")

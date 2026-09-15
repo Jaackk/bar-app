@@ -18,6 +18,13 @@ struct HomeView: View {
                 }.padding(.top, 6)
                 VStack(alignment: .leading, spacing: 5) { Text("\(greeting)\(store.preferences.employeeName.isEmpty ? "" : ", \(store.preferences.employeeName)"),").font(.subheadline).foregroundStyle(BarTheme.muted); Text("Let’s make it a great service.").font(.system(.headline, design: .rounded).weight(.medium)) }
                 Button { store.shouldFocusSearch = true; store.selectedTab = 1 } label: { HStack { Image(systemName: "magnifyingglass").font(.title3); Text("Search cocktails, wine, ingredients…").font(.subheadline); Spacer() }.foregroundStyle(BarTheme.muted).padding(16).frame(minHeight: 55).background(BarTheme.card, in: RoundedRectangle(cornerRadius: 16)).shadow(color: .black.opacity(0.04), radius: 6, y: 3) }.buttonStyle(.plain).accessibilityIdentifier("home-search")
+                if store.prep.contains(where: { !$0.completed }) || !store.listItems(.restock).isEmpty || !store.listItems(.order).isEmpty {
+                    HStack(spacing: 10) {
+                        if store.prep.contains(where: { !$0.completed }) { Button { store.selectedTab = 2 } label: { Label("\(store.prep.filter { !$0.completed }.count) prep remaining", systemImage: "leaf").font(.caption.weight(.medium)) }.buttonStyle(.plain) }
+                        if !store.listItems(.restock).isEmpty { Button { store.selectedTab = 3 } label: { Label("\(store.listItems(.restock).count) restock", systemImage: "tray") .font(.caption.weight(.medium)) }.buttonStyle(.plain) }
+                        if !store.listItems(.order).isEmpty { Button { store.selectedTab = 3 } label: { Label("\(store.listItems(.order).count) order", systemImage: "cart") .font(.caption.weight(.medium)) }.buttonStyle(.plain) }
+                    }.foregroundStyle(BarTheme.olive).frame(maxWidth: .infinity, alignment: .leading)
+                }
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
                     NavigationLink { CocktailLibraryView(venueOnly: true) } label: { CategoryCard(title: "Cocktails", subtitle: "Our signature drinks", symbol: "wineglass") }
                     NavigationLink { CocktailLibraryView(venueOnly: false) } label: { CategoryCard(title: "Classics", subtitle: "Timeless favourites", symbol: "wineglass.fill") }

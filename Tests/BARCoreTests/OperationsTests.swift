@@ -53,4 +53,24 @@ final class OperationsTests: XCTestCase {
         XCTAssertEqual(progress.answered, 2)
         XCTAssertTrue(progress.masteredCocktailIDs.isEmpty)
     }
+    func testRestockAndOrderQuantitiesStayIndependent() {
+        let product = Product(id: "peroni", venueID: "rockwater-hove", name: "Peroni Nastro Azzurro 5%", category: "Beer / Cider", unit: "bottle", defaultOrderUnit: "case")
+        var lists: [StockListItem] = []
+        StockListService.add(product, kind: .restock, to: &lists)
+        let restock = try! XCTUnwrap(lists.first)
+        StockListService.setQuantity(73, id: restock.id, venueID: product.venueID, in: &lists)
+        StockListService.add(product, kind: .order, to: &lists)
+        XCTAssertEqual(lists.first { $0.kind == .restock }?.quantity, 73)
+        XCTAssertEqual(lists.first { $0.kind == .order }?.quantity, 1)
+        XCTAssertEqual(lists.first { $0.kind == .order }?.unit, "case")
+    }
+    func testProductUsagePersistsFrequencyAndRecency() {
+        var preferences = UserPreferences()
+        preferences.recordProductUse("peroni")
+        preferences.recordProductUse("gin")
+        preferences.recordProductUse("peroni")
+        XCTAssertEqual(preferences.productUsage["peroni"], 2)
+        XCTAssertEqual(preferences.recentProductIDs.first, "peroni")
+        XCTAssertEqual(try? JSONDecoder().decode(UserPreferences.self, from: JSONEncoder().encode(preferences)).productUsage["peroni"], 2)
+    }
 }
