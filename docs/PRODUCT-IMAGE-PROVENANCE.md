@@ -69,3 +69,15 @@ The generic assets are explicitly associated only with generic stock and service
 | `menu-double-dutch-indian-tonic-water` | Double Dutch Indian Tonic Water | `double-dutch-indian-tonic` | https://www.dropwinkel.eu/media/cache/sylius_shop_product_large_thumbnail/product/4669/double-dutch-indian-tonic-water-24-x-20-cl.jpg | 2026-09-15 |
 | `menu-double-dutch-elderflower-tonic` | Double Dutch Elderflower Tonic | `double-dutch-elderflower-tonic` | https://drinky.ch/cdn/shop/files/drinky_produkte_bilder_dd_elderflower_einzelflasche.jpg?v=1708686812 | 2026-09-15 |
 | `spec-coca-cola` | Coca-Cola | `coca-cola` | https://oldegeneralstore.com/cdn/shop/products/coca-cola-xxxr-xccc8g-main.jpg?v=1680206389 | 2026-09-15 |
+| `menu-malfy-blood-orange` | Malfy Blood Orange | `malfy-blood-orange` | https://catalog.lwc.co.uk/malfy-con-arancia-blood-orange-gin-70cl/ | 2026-09-15 · LWC Drinks; exact Con Arancia blood-orange expression, 70cl. |
+| `menu-brighton-gin` | Brighton Gin | `brighton-gin` | https://catalog.lwc.co.uk/brighton-gin-70cl/ | 2026-09-15 · LWC Drinks; exact product, 70cl. |
+| `menu-salcombe-start-point` | Salcombe Start Point | `salcombe-start-point` | https://catalog.lwc.co.uk/salcombe-start-point-gin-70cl/ | 2026-09-15 · LWC Drinks; exact product, 70cl. |
+| `menu-gin-mare` | Gin Mare | `gin-mare` | https://catalog.lwc.co.uk/gin-mare-premium-gin-70cl/ | 2026-09-15 · LWC Drinks; exact Premium Gin, 70cl. |
+| `menu-el-jimador-reposado` | El Jimador Reposado | `el-jimador-reposado` | https://catalog.lwc.co.uk/el-jimador-reposado-tequila-70cl/ | 2026-09-15 · LWC Drinks; exact Reposado, 70cl. |
+| `menu-hennessy-xo` | Hennessy XO | `hennessy-xo` | https://catalog.lwc.co.uk/hennessy-xo-cognac-70cl/ | 2026-09-15 · LWC Drinks; exact XO, 70cl. |
+| `menu-woodford-reserve-bourbon` | Woodford Reserve Bourbon | `woodford-reserve-bourbon` | https://catalog.lwc.co.uk/woodford-reserve-bourbon-whiskey-70cl/ | 2026-09-15 · LWC Drinks; exact Bourbon, 70cl. |
+| `menu-frangelico` | Frangelico | `frangelico` | https://catalog.lwc.co.uk/frangelico-hazelnut-liqueur-70cl/ | 2026-09-15 · LWC Drinks; exact Hazelnut Liqueur, 70cl. |
+| `menu-cointreau` | Cointreau | `cointreau` | https://catalog.lwc.co.uk/cointreau-70cl/ | 2026-09-15 · LWC Drinks; exact l'Unique, 70cl. |
+| `menu-double-dutch-skinny-tonic` | Double Dutch Skinny Tonic | `double-dutch-skinny-tonic` | https://catalog.lwc.co.uk/double-dutch-skinny-tonic-water-24-x-150ml-cans/ | 2026-09-15 · LWC Drinks; exact Skinny Tonic can format. LWC lists it as vegan, vegetarian, kosher and biodynamic. |
+| `menu-double-dutch-pink-grapefruit-soda` | Double Dutch Pink Grapefruit Soda | `double-dutch-pink-grapefruit` | https://catalog.lwc.co.uk/double-dutch-pink-grapefruit-24-x-200ml-bottle/ | 2026-09-15 · LWC Drinks; exact Pink Grapefruit bottle, 200ml. |
+| `menu-old-forrester-bourbon` | Old Forester Bourbon | `old-forester-bourbon` | https://catalog.lwc.co.uk/old-forester-bourbon-70cl/ | 2026-09-15 · LWC Drinks; exact Bourbon, 70cl. |
