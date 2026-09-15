@@ -2,7 +2,7 @@ import Foundation
 
 /// One-time content update: personal state, old stocktake and saved lists are preserved.
 public enum MenuMigration {
-    public static let version = 2
+    public static let version = 3
     public static let sourceURL = "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf"
     public static func apply(to old: AppSnapshot) throws -> AppSnapshot {
         guard old.catalogueVersion < version, old.venues.contains(where: { $0.id == "rockwater-hove" }) else { return old }
@@ -22,8 +22,18 @@ public enum MenuMigration {
             else { updated.cocktails.append(drink) }
         }
         for wine in wines where !updated.wines.contains(where: { $0.id == wine.id }) { updated.wines.append(wine) }
-        for product in products where !updated.products.contains(where: { $0.id == product.id }) {
-            if old.catalogueVersion == 0 || product.id.hasPrefix("spec-") { updated.products.append(product) }
+        for product in products {
+            if let index = updated.products.firstIndex(where: { $0.id == product.id }) {
+                // Keep a manager's locally chosen image, but refresh verified menu names,
+                // categories, aliases and units.
+                let localImage = updated.products[index].imageData
+                let locallyDeleted = !updated.products[index].isActive
+                updated.products[index] = product
+                updated.products[index].imageData = localImage
+                updated.products[index].isActive = !locallyDeleted
+            } else if old.catalogueVersion == 0 || product.id.hasPrefix("spec-") || product.id.hasPrefix("service-") {
+                updated.products.append(product)
+            }
         }
         // Bring old stocktake-only products into the shared catalogue, preserving counts.
         for item in updated.stock where !updated.products.contains(where: { $0.venueID == item.venueID && SearchNormalizer.normalize($0.name) == SearchNormalizer.normalize(item.name) }) {

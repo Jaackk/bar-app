@@ -227,6 +227,10 @@ struct ProductEditor: View {
                     TextField("Brand", text: $product.brand)
                     Picker("Category", selection: $product.category) { ForEach(StockListService.categories, id: \.self) { Text($0).tag($0) } }
                     TextField("Product type", text: $product.productType)
+                    TextField("Search words, comma separated", text: Binding(
+                        get: { product.aliases.joined(separator: ", ") },
+                        set: { product.aliases = $0.split(separator: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty } }
+                    ))
                 }
                 Section("List units") { TextField("Restock unit", text: $product.unit); TextField("Order unit", text: $product.defaultOrderUnit) }
                 if !product.menuDetails.isEmpty { Section("Reference") { Text(product.menuDetails).font(.caption) } }

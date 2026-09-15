@@ -52,7 +52,7 @@ public enum SearchService {
             return SearchResult(id: item.id, kind: .prep, title: item.name, subtitle: "Prep · \(item.category)", score: score)
         }
         result += products.filter { $0.isActive && $0.venueID == venueID }.compactMap { product in
-            let primary = [product.brand, product.category, product.productType].joined(separator: " ")
+            let primary = ([product.brand, product.category, product.productType] + product.aliases).joined(separator: " ")
             guard let score = rank(name: product.name, primary: primary, secondary: product.menuDetails, exclusions: primary, query: parsed) else { return nil }
             return SearchResult(id: product.id, kind: .product, title: product.name, subtitle: product.category, score: score)
         }

@@ -32,6 +32,17 @@ final class HouseUpdateTests: XCTestCase {
         XCTAssertEqual(SearchService.search(query: "new ginger", cocktails: [], wines: [], products: [new], venueID: new.venueID).first?.id, new.id)
         XCTAssertEqual(StockListService.search([new], venueID: new.venueID, query: "test mixers").count, 1)
     }
+    func testProductCatalogueUsesCategoriesAliasesAndServiceConsumables() throws {
+        let state = try SeedLoader.load()
+        let absolut = try XCTUnwrap(state.products.first { $0.name == "Absolut Vodka" })
+        XCTAssertEqual(absolut.category, "Vodka")
+        XCTAssertTrue(StockListService.search(state.products, venueID: "rockwater-hove", query: "absolut vodka").contains { $0.id == absolut.id })
+        for name in ["Lemons", "Limes", "Mint", "Basil", "Cocktail Cherries", "Ice Cubes", "Pineapple Foam"] {
+            XCTAssertNotNil(state.products.first { $0.name == name }, name)
+        }
+        let passion = StockListService.search(state.products, venueID: "rockwater-hove", query: "passionfruit")
+        XCTAssertTrue(passion.contains { $0.name.localizedCaseInsensitiveContains("Passion Fruit") })
+    }
     func testListsImagesAndMigrationSurviveRelaunch() throws {
         let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         defer { try? FileManager.default.removeItem(at: directory) }
@@ -55,7 +66,7 @@ final class HouseUpdateTests: XCTestCase {
         XCTAssertEqual(reopened.stockLists, state.stockLists)
         XCTAssertEqual(reopened.products.first { $0.id == product.id }?.imageData, product.imageData)
         XCTAssertEqual(reopened.products.first { $0.id == deletedID }?.isActive, false)
-        XCTAssertEqual(reopened.catalogueVersion, 2)
+        XCTAssertEqual(reopened.catalogueVersion, 3)
         var list = reopened.stockLists
         StockListService.setQuantity(-1, id: list[0].id, venueID: product.venueID, in: &list)
         XCTAssertEqual(list.count, 2)

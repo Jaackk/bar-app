@@ -12,13 +12,14 @@ public struct Product: Codable, Hashable, Sendable, Identifiable {
     public var imageName: String
     public var isActive: Bool
     public var productType: String
+    public var aliases: [String] = []
     public var sourceURL: String?
     public var sourcePage: Int?
     public var menuDetails: String
-    public init(id: String = UUID().uuidString, venueID: String, name: String, brand: String = "", category: String = "Other", unit: String = "item", defaultOrderUnit: String = "item", imageName: String = "", isActive: Bool = true, productType: String = "", sourceURL: String? = nil, sourcePage: Int? = nil, menuDetails: String = "") {
+    public init(id: String = UUID().uuidString, venueID: String, name: String, brand: String = "", category: String = "Other", unit: String = "item", defaultOrderUnit: String = "item", imageName: String = "", isActive: Bool = true, productType: String = "", aliases: [String] = [], sourceURL: String? = nil, sourcePage: Int? = nil, menuDetails: String = "") {
         self.id = id; self.venueID = venueID; self.name = name; self.brand = brand; self.category = category
         self.unit = unit; self.defaultOrderUnit = defaultOrderUnit; self.imageName = imageName; self.isActive = isActive
-        self.productType = productType; self.sourceURL = sourceURL; self.sourcePage = sourcePage; self.menuDetails = menuDetails
+        self.productType = productType; self.aliases = aliases; self.sourceURL = sourceURL; self.sourcePage = sourcePage; self.menuDetails = menuDetails
     }
 }
 public enum StockListKind: String, Codable, CaseIterable, Sendable {
@@ -40,11 +41,11 @@ public struct StockListItem: Codable, Hashable, Sendable, Identifiable {
     }
 }
 public enum StockListService {
-    public static let categories = ["Vodka", "Gin", "Rum", "Tequila", "Whisky", "Liqueurs", "Wine", "Sparkling", "Beer", "Soft Drinks", "Mixers", "Juices", "Syrups", "Garnishes", "Other"]
+    public static let categories = ["Vodka", "Gin", "Rum", "Tequila / Mezcal", "Whisky / Whiskey", "Brandy / Cognac", "Liqueurs / Aperitifs", "Wine", "Sparkling / Champagne", "Beer / Cider", "Non-Alcoholic", "Soft Drinks", "Mixers", "Juices", "Syrups / Cordials", "Purees", "Bitters", "Garnishes", "Fresh Fruit", "Fresh Herbs", "Prep", "Other"]
     public static func search(_ products: [Product], venueID: String, query: String, category: String? = nil) -> [Product] {
         let terms = normalized(query).split(separator: " ")
         return products.filter { p in
-            let haystack = normalized([p.name, p.brand, p.category, p.productType].joined(separator: " "))
+            let haystack = normalized(([p.name, p.brand, p.category, p.productType] + p.aliases).joined(separator: " "))
             return p.isActive && p.venueID == venueID && (category == nil || category == p.category) && terms.allSatisfy { SearchService.matches(String($0), in: haystack) }
         }.sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
     }

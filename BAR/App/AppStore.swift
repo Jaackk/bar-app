@@ -83,6 +83,25 @@ import BARCore
         guard let i = snapshot.prep.firstIndex(where: { $0.id == id && $0.venueID == preferences.venueID }) else { return }
         snapshot.prep[i].completed = false; snapshot.prep[i].currentAmount = 0; save()
     }
+    func savePrep(_ item: PrepItem) {
+        guard item.venueID == preferences.venueID,
+              !item.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              item.targetAmount >= 0 else { return }
+        if let index = snapshot.prep.firstIndex(where: { $0.id == item.id }) {
+            snapshot.prep[index] = item
+        } else {
+            snapshot.prep.append(item)
+        }
+        save()
+    }
+    func deletePrep(id: String) {
+        snapshot.prep.removeAll { $0.id == id && $0.venueID == preferences.venueID }
+        save()
+    }
+    func removeExamplePrep() {
+        snapshot.prep.removeAll { $0.venueID == preferences.venueID && $0.isSample }
+        save()
+    }
     var products: [Product] { snapshot.products.filter { $0.venueID == preferences.venueID && $0.isActive } }
     func listItems(_ kind: StockListKind) -> [StockListItem] { snapshot.stockLists.filter { $0.kind == kind && $0.venueID == preferences.venueID } }
     func listText(_ kind: StockListKind) -> String { StockListService.text(snapshot.stockLists, kind: kind, venueID: preferences.venueID) }

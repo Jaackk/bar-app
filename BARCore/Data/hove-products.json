@@ -12,7 +12,12 @@
     "productType": "Coastal Cocktails",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Havana 3, Apricot, Blue Curaçao, Lemon, Ginger, Pineapple Foam"
+    "menuDetails": "Havana 3, Apricot, Blue Curaçao, Lemon, Ginger, Pineapple Foam",
+    "aliases": [
+      "Glass",
+      "Sea",
+      "seaglass"
+    ]
   },
   {
     "id": "menu-sun-ember",
@@ -27,7 +32,12 @@
     "productType": "Coastal Cocktails",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Cachaça, Lime, Guava, Spice"
+    "menuDetails": "Cachaça, Lime, Guava, Spice",
+    "aliases": [
+      "Ember",
+      "Sun",
+      "sunember"
+    ]
   },
   {
     "id": "menu-italian-bitter",
@@ -42,7 +52,12 @@
     "productType": "Coastal Cocktails",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Sweet Vermouth, Campari, Peroni Foam, Orange"
+    "menuDetails": "Sweet Vermouth, Campari, Peroni Foam, Orange",
+    "aliases": [
+      "Bitter",
+      "Italian",
+      "italianbitter"
+    ]
   },
   {
     "id": "menu-peach-bloom",
@@ -57,22 +72,32 @@
     "productType": "Coastal Cocktails",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Belvedere, Peach, St-Germain, Lime, Cranberry"
+    "menuDetails": "Belvedere, Peach, St-Germain, Lime, Cranberry",
+    "aliases": [
+      "Bloom",
+      "Peach",
+      "peach&bloom"
+    ]
   },
   {
     "id": "menu-lychee-lagoon",
     "venueID": "rockwater-hove",
     "name": "Lychee Lagoon",
     "brand": "Rockwater",
-    "category": "Other",
-    "unit": "serve",
-    "defaultOrderUnit": "serve",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Coastal Cocktails",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Coconut Rum, Coconut Water, Lychee, Lime, Jasmine"
+    "menuDetails": "Coconut Rum, Coconut Water, Lychee, Lime, Jasmine",
+    "aliases": [
+      "Lagoon",
+      "Lychee",
+      "lycheelagoon"
+    ]
   },
   {
     "id": "menu-island-smash",
@@ -87,7 +112,12 @@
     "productType": "Coastal Cocktails",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Salcombe Gin, Passionfruit, Pineapple, Lemon, Orgeat, Basil"
+    "menuDetails": "Salcombe Gin, Passionfruit, Pineapple, Lemon, Orgeat, Basil",
+    "aliases": [
+      "Island",
+      "Smash",
+      "islandsmash"
+    ]
   },
   {
     "id": "menu-pink-horizon",
@@ -102,7 +132,12 @@
     "productType": "Coastal Cocktails",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Tanqueray Sevilla, Campari, Blood Orange, Orange Bitters, Rosé Prosecco"
+    "menuDetails": "Tanqueray Sevilla, Campari, Blood Orange, Orange Bitters, Rosé Prosecco",
+    "aliases": [
+      "Horizon",
+      "Pink",
+      "pinkhorizon"
+    ]
   },
   {
     "id": "menu-coral-tide",
@@ -117,7 +152,12 @@
     "productType": "Coastal Cocktails",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Casamigos, Watermelon, Lime, Grapefruit Soda"
+    "menuDetails": "Casamigos, Watermelon, Lime, Grapefruit Soda",
+    "aliases": [
+      "Coral",
+      "Tide",
+      "coraltide"
+    ]
   },
   {
     "id": "menu-golden-sangria",
@@ -132,7 +172,12 @@
     "productType": "Coastal Cocktails",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "White Wine, Pisco, Peach, Prosecco, Fruit"
+    "menuDetails": "White Wine, Pisco, Peach, Prosecco, Fruit",
+    "aliases": [
+      "Golden",
+      "Sangria",
+      "goldensangria"
+    ]
   },
   {
     "id": "menu-frozen-daiquiri",
@@ -147,7 +192,12 @@
     "productType": "Frozen Coastals",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Havana Club 3 Años, Lime, Seasonal Fruit"
+    "menuDetails": "Havana Club 3 Años, Lime, Seasonal Fruit",
+    "aliases": [
+      "Daiquiri",
+      "Frozen",
+      "frozendaiquiri"
+    ]
   },
   {
     "id": "menu-frozen-margarita",
@@ -162,7 +212,12 @@
     "productType": "Frozen Coastals",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Casamigos, Lime, Seasonal Fruit"
+    "menuDetails": "Casamigos, Lime, Seasonal Fruit",
+    "aliases": [
+      "Frozen",
+      "Margarita",
+      "frozenmargarita"
+    ]
   },
   {
     "id": "menu-frozen-pina-colada",
@@ -177,7 +232,13 @@
     "productType": "Frozen Coastals",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Bacardi Coconut, Coconut, Pineapple, Lime"
+    "menuDetails": "Bacardi Coconut, Coconut, Pineapple, Lime",
+    "aliases": [
+      "Colada",
+      "Frozen",
+      "Pi",
+      "frozenpiñacolada"
+    ]
   },
   {
     "id": "menu-first-light",
@@ -192,7 +253,12 @@
     "productType": "Zero Proof Coastals",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "NLL First Light, Apple, Lemon, Elderflower, Cucumber, Soda"
+    "menuDetails": "NLL First Light, Apple, Lemon, Elderflower, Cucumber, Soda",
+    "aliases": [
+      "First",
+      "Light",
+      "firstlight"
+    ]
   },
   {
     "id": "menu-midnight-sun",
@@ -207,37 +273,52 @@
     "productType": "Zero Proof Coastals",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "NLL Midnight Sun, Strawberry, Apple, Lemon, Basil"
+    "menuDetails": "NLL Midnight Sun, Strawberry, Apple, Lemon, Basil",
+    "aliases": [
+      "Midnight",
+      "Sun",
+      "midnightsun"
+    ]
   },
   {
     "id": "menu-cherry-soda",
     "venueID": "rockwater-hove",
     "name": "Cherry Soda",
     "brand": "Rockwater",
-    "category": "Soft Drinks",
-    "unit": "serve",
-    "defaultOrderUnit": "serve",
+    "category": "Garnishes",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
     "imageName": "",
     "isActive": true,
     "productType": "Zero Proof Coastals",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Cherry, Pineapple, Lime, Soda"
+    "menuDetails": "Cherry, Pineapple, Lime, Soda",
+    "aliases": [
+      "Cherry",
+      "Soda",
+      "cherrysoda"
+    ]
   },
   {
     "id": "menu-guava-soda",
     "venueID": "rockwater-hove",
     "name": "Guava Soda",
     "brand": "Rockwater",
-    "category": "Soft Drinks",
-    "unit": "serve",
-    "defaultOrderUnit": "serve",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Zero Proof Coastals",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Guava, Lychee, Lemon, Soda, Mint"
+    "menuDetails": "Guava, Lychee, Lemon, Soda, Mint",
+    "aliases": [
+      "Guava",
+      "Soda",
+      "guavasoda"
+    ]
   },
   {
     "id": "menu-espresso-martini",
@@ -252,7 +333,12 @@
     "productType": "Classic cocktail",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Named on the menu; house specification not published."
+    "menuDetails": "Named on the menu; house specification not published.",
+    "aliases": [
+      "Espresso",
+      "Martini",
+      "espressomartini"
+    ]
   },
   {
     "id": "menu-spicy-marg",
@@ -267,7 +353,12 @@
     "productType": "Classic cocktail",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Named on the menu; house specification not published."
+    "menuDetails": "Named on the menu; house specification not published.",
+    "aliases": [
+      "Marg",
+      "Spicy",
+      "spicymarg"
+    ]
   },
   {
     "id": "menu-old-fashioned",
@@ -282,14 +373,19 @@
     "productType": "Classic cocktail",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 1,
-    "menuDetails": "Named on the menu; house specification not published."
+    "menuDetails": "Named on the menu; house specification not published.",
+    "aliases": [
+      "Fashioned",
+      "Old",
+      "oldfashioned"
+    ]
   },
   {
     "id": "menu-veuve-clicquot-brut-yellow-label",
     "venueID": "rockwater-hove",
     "name": "Veuve Clicquot Brut Yellow Label",
     "brand": "Veuve Clicquot",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -297,14 +393,22 @@
     "productType": "Champagne",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 2,
-    "menuDetails": "Champagne, France · 12.5% ABV. Menu section: Champagne."
+    "menuDetails": "Champagne, France · 12.5% ABV. Menu section: Champagne.",
+    "aliases": [
+      "Brut",
+      "Clicquot",
+      "Label",
+      "Veuve",
+      "Yellow",
+      "veuveclicquotbrutyellowlabel"
+    ]
   },
   {
     "id": "menu-veuve-clicquot-rose",
     "venueID": "rockwater-hove",
     "name": "Veuve Clicquot Rosé",
     "brand": "Veuve Clicquot",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -312,14 +416,20 @@
     "productType": "Champagne",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 2,
-    "menuDetails": "Champagne, France · 12.5% ABV. Menu section: Champagne."
+    "menuDetails": "Champagne, France · 12.5% ABV. Menu section: Champagne.",
+    "aliases": [
+      "Clicquot",
+      "Ros",
+      "Veuve",
+      "veuveclicquotrosé"
+    ]
   },
   {
     "id": "menu-ruinart-blanc-de-blancs",
     "venueID": "rockwater-hove",
     "name": "Ruinart Blanc de Blancs",
     "brand": "Ruinart",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -327,14 +437,21 @@
     "productType": "Champagne",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 2,
-    "menuDetails": "Champagne, France · 12.5% ABV. Menu section: Champagne."
+    "menuDetails": "Champagne, France · 12.5% ABV. Menu section: Champagne.",
+    "aliases": [
+      "Blanc",
+      "Blancs",
+      "Ruinart",
+      "de",
+      "ruinartblancdeblancs"
+    ]
   },
   {
     "id": "menu-veuve-clicquot-la-grande-dame",
     "venueID": "rockwater-hove",
     "name": "Veuve Clicquot La Grande Dame",
     "brand": "Veuve Clicquot",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -342,14 +459,22 @@
     "productType": "Champagne",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 2,
-    "menuDetails": "Champagne, France · 12.5% ABV. Menu section: Champagne."
+    "menuDetails": "Champagne, France · 12.5% ABV. Menu section: Champagne.",
+    "aliases": [
+      "Clicquot",
+      "Dame",
+      "Grande",
+      "La",
+      "Veuve",
+      "veuveclicquotlagrandedame"
+    ]
   },
   {
     "id": "menu-dom-perignon",
     "venueID": "rockwater-hove",
     "name": "Dom Perignon",
     "brand": "Dom Perignon",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -357,14 +482,19 @@
     "productType": "Champagne",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 2,
-    "menuDetails": "Champagne, France · 12.5% ABV. Menu section: Champagne."
+    "menuDetails": "Champagne, France · 12.5% ABV. Menu section: Champagne.",
+    "aliases": [
+      "Dom",
+      "Perignon",
+      "domperignon"
+    ]
   },
   {
     "id": "menu-dom-perignon-rose",
     "venueID": "rockwater-hove",
     "name": "Dom Perignon Rosé",
     "brand": "Dom Perignon",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -372,14 +502,20 @@
     "productType": "Champagne",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 2,
-    "menuDetails": "Champagne, France · 12.5% ABV. Menu section: Champagne."
+    "menuDetails": "Champagne, France · 12.5% ABV. Menu section: Champagne.",
+    "aliases": [
+      "Dom",
+      "Perignon",
+      "Ros",
+      "domperignonrosé"
+    ]
   },
   {
     "id": "menu-wiston-estate-brut",
     "venueID": "rockwater-hove",
     "name": "Wiston Estate Brut",
     "brand": "Wiston Estate",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -387,14 +523,20 @@
     "productType": "Sussex Sparkling",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 2,
-    "menuDetails": "Sussex, England · 12% ABV. Menu section: Sussex Sparkling."
+    "menuDetails": "Sussex, England · 12% ABV. Menu section: Sussex Sparkling.",
+    "aliases": [
+      "Brut",
+      "Estate",
+      "Wiston",
+      "wistonestatebrut"
+    ]
   },
   {
     "id": "menu-wiston-estate-rose",
     "venueID": "rockwater-hove",
     "name": "Wiston Estate Rosé",
     "brand": "Wiston Estate",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -402,14 +544,20 @@
     "productType": "Sussex Sparkling",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 2,
-    "menuDetails": "Sussex, England · 12% ABV. Menu section: Sussex Sparkling."
+    "menuDetails": "Sussex, England · 12% ABV. Menu section: Sussex Sparkling.",
+    "aliases": [
+      "Estate",
+      "Ros",
+      "Wiston",
+      "wistonestaterosé"
+    ]
   },
   {
     "id": "menu-prosecco-collezione-96-brut-masottina",
     "venueID": "rockwater-hove",
     "name": "Prosecco Collezione 96 Brut, Masottina",
     "brand": "Masottina",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -417,14 +565,21 @@
     "productType": "Sparkling",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 2,
-    "menuDetails": "Veneto, Italy · 11% ABV. Menu section: Sparkling."
+    "menuDetails": "Veneto, Italy · 11% ABV. Menu section: Sparkling.",
+    "aliases": [
+      "Brut",
+      "Collezione",
+      "Masottina",
+      "Prosecco",
+      "proseccocollezione96brut,masottina"
+    ]
   },
   {
     "id": "menu-prosecco-collezione-96-rose-masottina",
     "venueID": "rockwater-hove",
     "name": "Prosecco Collezione 96 Rosé, Masottina",
     "brand": "Masottina",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -432,14 +587,21 @@
     "productType": "Sparkling",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 2,
-    "menuDetails": "Veneto, Italy · 11% ABV. Menu section: Sparkling."
+    "menuDetails": "Veneto, Italy · 11% ABV. Menu section: Sparkling.",
+    "aliases": [
+      "Collezione",
+      "Masottina",
+      "Prosecco",
+      "Ros",
+      "proseccocollezione96rosé,masottina"
+    ]
   },
   {
     "id": "menu-chandon-brut",
     "venueID": "rockwater-hove",
     "name": "Chandon Brut",
     "brand": "Chandon",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -447,14 +609,19 @@
     "productType": "Sparkling",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 2,
-    "menuDetails": "Mendoza, Argentina · 12% ABV. Menu section: Sparkling."
+    "menuDetails": "Mendoza, Argentina · 12% ABV. Menu section: Sparkling.",
+    "aliases": [
+      "Brut",
+      "Chandon",
+      "chandonbrut"
+    ]
   },
   {
     "id": "menu-chandon-rose",
     "venueID": "rockwater-hove",
     "name": "Chandon Rosé",
     "brand": "Chandon",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -462,14 +629,19 @@
     "productType": "Sparkling",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 2,
-    "menuDetails": "Mendoza, Argentina · 12% ABV. Menu section: Sparkling."
+    "menuDetails": "Mendoza, Argentina · 12% ABV. Menu section: Sparkling.",
+    "aliases": [
+      "Chandon",
+      "Ros",
+      "chandonrosé"
+    ]
   },
   {
     "id": "menu-real-dry-sparkling",
     "venueID": "rockwater-hove",
     "name": "REAL Dry Sparkling",
     "brand": "REAL",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -477,14 +649,20 @@
     "productType": "Non-Alcoholic Sparkling",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 2,
-    "menuDetails": "Hampshire, England. Menu section: Non-Alcoholic Sparkling."
+    "menuDetails": "Hampshire, England. Menu section: Non-Alcoholic Sparkling.",
+    "aliases": [
+      "Dry",
+      "REAL",
+      "Sparkling",
+      "realdrysparkling"
+    ]
   },
   {
     "id": "menu-real-blush-sparkling",
     "venueID": "rockwater-hove",
     "name": "REAL Blush Sparkling",
     "brand": "REAL",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -492,7 +670,13 @@
     "productType": "Non-Alcoholic Sparkling",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 2,
-    "menuDetails": "Hampshire, England. Menu section: Non-Alcoholic Sparkling."
+    "menuDetails": "Hampshire, England. Menu section: Non-Alcoholic Sparkling.",
+    "aliases": [
+      "Blush",
+      "REAL",
+      "Sparkling",
+      "realblushsparkling"
+    ]
   },
   {
     "id": "menu-chardonnay-les-sardine-domaine-lafage",
@@ -507,7 +691,15 @@
     "productType": "Clean & Crisp",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 3,
-    "menuDetails": "Roussillon, France · 12.5% ABV. Menu section: Clean & Crisp."
+    "menuDetails": "Roussillon, France · 12.5% ABV. Menu section: Clean & Crisp.",
+    "aliases": [
+      "Chardonnay",
+      "Domaine",
+      "Lafage",
+      "Les",
+      "Sardine",
+      "chardonnaylessardine,domainelafage"
+    ]
   },
   {
     "id": "menu-assyrtiko-terre-grec-theopetra-estate",
@@ -522,7 +714,15 @@
     "productType": "Clean & Crisp",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 3,
-    "menuDetails": "Meteora, Greece · 12.5% ABV. Menu section: Clean & Crisp."
+    "menuDetails": "Meteora, Greece · 12.5% ABV. Menu section: Clean & Crisp.",
+    "aliases": [
+      "Assyrtiko",
+      "Estate",
+      "Grec",
+      "Terre",
+      "Theopetra",
+      "assyrtikoterregrec,theopetraestate"
+    ]
   },
   {
     "id": "menu-picpoul-de-pinet-tournee-du-sud",
@@ -537,7 +737,16 @@
     "productType": "Clean & Crisp",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 3,
-    "menuDetails": "Languedoc, France · 12.5% ABV. Menu section: Clean & Crisp."
+    "menuDetails": "Languedoc, France · 12.5% ABV. Menu section: Clean & Crisp.",
+    "aliases": [
+      "Picpoul",
+      "Pinet",
+      "Sud",
+      "Tourn",
+      "de",
+      "du",
+      "picpouldepinettournéedusud"
+    ]
   },
   {
     "id": "menu-sauvignon-blanc-romans-bay-lomond-wines",
@@ -552,7 +761,16 @@
     "productType": "Clean & Crisp",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 3,
-    "menuDetails": "Cape Agulhas, South Africa · 13.5% ABV. Menu section: Clean & Crisp."
+    "menuDetails": "Cape Agulhas, South Africa · 13.5% ABV. Menu section: Clean & Crisp.",
+    "aliases": [
+      "Bay",
+      "Blanc",
+      "Lomond",
+      "Romans",
+      "Sauvignon",
+      "Wines",
+      "sauvignonblancromansbay,lomondwines"
+    ]
   },
   {
     "id": "menu-pecorino-offida-belato-carminucci",
@@ -567,7 +785,14 @@
     "productType": "Clean & Crisp",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 3,
-    "menuDetails": "Marche, Italy · 13% ABV. Menu section: Clean & Crisp."
+    "menuDetails": "Marche, Italy · 13% ABV. Menu section: Clean & Crisp.",
+    "aliases": [
+      "Belato",
+      "Carminucci",
+      "Offida",
+      "Pecorino",
+      "pecorinooffidabelato,carminucci"
+    ]
   },
   {
     "id": "menu-sancerre-magie-des-caillottes-renaissance-fleuriet-freres",
@@ -582,22 +807,42 @@
     "productType": "Clean & Crisp",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 3,
-    "menuDetails": "Loire, France · 13% ABV. Menu section: Clean & Crisp."
+    "menuDetails": "Loire, France · 13% ABV. Menu section: Clean & Crisp.",
+    "aliases": [
+      "Caillottes",
+      "Fleuriet",
+      "Fr",
+      "Magie",
+      "Renaissance",
+      "Sancerre",
+      "des",
+      "res",
+      "sancerremagiedescaillottes,renaissancefleurietfrères"
+    ]
   },
   {
     "id": "menu-macabeo-moscatel-el-renegado-bodegas-nodus",
     "venueID": "rockwater-hove",
     "name": "Macabeo / Moscatel El Renegado, Bodegas Nodus",
     "brand": "Bodegas Nodus",
-    "category": "Wine",
-    "unit": "bottle",
-    "defaultOrderUnit": "bottle",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Aromatic, Fruit & Floral",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 3,
-    "menuDetails": "Valencia, Spain · 12% ABV. Menu section: Aromatic, Fruit & Floral."
+    "menuDetails": "Valencia, Spain · 12% ABV. Menu section: Aromatic, Fruit & Floral.",
+    "aliases": [
+      "Bodegas",
+      "El",
+      "Macabeo",
+      "Moscatel",
+      "Nodus",
+      "Renegado",
+      "macabeo/moscatelelrenegado,bodegasnodus"
+    ]
   },
   {
     "id": "menu-vermentino-timo-san-marzano",
@@ -612,7 +857,14 @@
     "productType": "Aromatic, Fruit & Floral",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 3,
-    "menuDetails": "Puglia, Italy · 12.5% ABV. Menu section: Aromatic, Fruit & Floral."
+    "menuDetails": "Puglia, Italy · 12.5% ABV. Menu section: Aromatic, Fruit & Floral.",
+    "aliases": [
+      "Marzano",
+      "San",
+      "Timo",
+      "Vermentino",
+      "vermentinotimo,sanmarzano"
+    ]
   },
   {
     "id": "menu-godello-finca-os-cobatos",
@@ -627,7 +879,14 @@
     "productType": "Aromatic, Fruit & Floral",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 3,
-    "menuDetails": "Monterrei, Spain · 13% ABV. Menu section: Aromatic, Fruit & Floral."
+    "menuDetails": "Monterrei, Spain · 13% ABV. Menu section: Aromatic, Fruit & Floral.",
+    "aliases": [
+      "Cobatos",
+      "Finca",
+      "Godello",
+      "Os",
+      "godellofincaoscobatos"
+    ]
   },
   {
     "id": "menu-sauvignon-blanc-awatere-spoke",
@@ -642,7 +901,14 @@
     "productType": "Aromatic, Fruit & Floral",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 3,
-    "menuDetails": "Marlborough, New Zealand · 13.2% ABV. Menu section: Aromatic, Fruit & Floral."
+    "menuDetails": "Marlborough, New Zealand · 13.2% ABV. Menu section: Aromatic, Fruit & Floral.",
+    "aliases": [
+      "Awatere",
+      "Blanc",
+      "Sauvignon",
+      "Spoke",
+      "sauvignonblancawatere,spoke"
+    ]
   },
   {
     "id": "menu-malagouzia-a-muse-muses-estate",
@@ -657,7 +923,14 @@
     "productType": "Aromatic, Fruit & Floral",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 3,
-    "menuDetails": "Valley of the Muses, Greece · 12.5% ABV. Menu section: Aromatic, Fruit & Floral."
+    "menuDetails": "Valley of the Muses, Greece · 12.5% ABV. Menu section: Aromatic, Fruit & Floral.",
+    "aliases": [
+      "Estate",
+      "Malagouzia",
+      "Muse",
+      "Muses",
+      "malagouziaa.muse,musesestate"
+    ]
   },
   {
     "id": "menu-chenin-blanc-wild-garden",
@@ -672,7 +945,14 @@
     "productType": "Textured & Expressive",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 4,
-    "menuDetails": "Cape Coast, South Africa · 12.5% ABV. Menu section: Textured & Expressive."
+    "menuDetails": "Cape Coast, South Africa · 12.5% ABV. Menu section: Textured & Expressive.",
+    "aliases": [
+      "Blanc",
+      "Chenin",
+      "Garden",
+      "Wild",
+      "cheninblancwildgarden"
+    ]
   },
   {
     "id": "menu-grenache-chardonnay-cote-est-domaine-lafage",
@@ -687,7 +967,15 @@
     "productType": "Textured & Expressive",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 4,
-    "menuDetails": "Roussillon, France · 12% ABV. Menu section: Textured & Expressive."
+    "menuDetails": "Roussillon, France · 12% ABV. Menu section: Textured & Expressive.",
+    "aliases": [
+      "Chardonnay",
+      "Domaine",
+      "Est",
+      "Grenache",
+      "Lafage",
+      "grenache/chardonnaycôtéest,domainelafage"
+    ]
   },
   {
     "id": "menu-viognier-inmacula-tandem",
@@ -702,7 +990,14 @@
     "productType": "Textured & Expressive",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 4,
-    "menuDetails": "Navarra, Spain · 13% ABV. Menu section: Textured & Expressive."
+    "menuDetails": "Navarra, Spain · 13% ABV. Menu section: Textured & Expressive.",
+    "aliases": [
+      "Inm",
+      "Tandem",
+      "Viognier",
+      "cula",
+      "viognierinmácula,tandem"
+    ]
   },
   {
     "id": "menu-misto-mare-alois-lageder",
@@ -717,7 +1012,14 @@
     "productType": "Textured & Expressive",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 4,
-    "menuDetails": "Trentino, Italy · 12% ABV. Menu section: Textured & Expressive."
+    "menuDetails": "Trentino, Italy · 12% ABV. Menu section: Textured & Expressive.",
+    "aliases": [
+      "Alois",
+      "Lageder",
+      "Mare",
+      "Misto",
+      "mistomare,aloislageder"
+    ]
   },
   {
     "id": "menu-saint-veran-plaisance-thierry-drouin",
@@ -732,22 +1034,38 @@
     "productType": "Textured & Expressive",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 4,
-    "menuDetails": "Burgundy, France · 13% ABV. Menu section: Textured & Expressive."
+    "menuDetails": "Burgundy, France · 13% ABV. Menu section: Textured & Expressive.",
+    "aliases": [
+      "Drouin",
+      "Plaisance",
+      "Saint",
+      "Thierry",
+      "ran",
+      "saint-véranplaisance,thierrydrouin"
+    ]
   },
   {
     "id": "menu-no-es-pituko-vina-echeverria",
     "venueID": "rockwater-hove",
     "name": "No Es Pituko, Viña Echeverría",
     "brand": "Viña Echeverría",
-    "category": "Wine",
-    "unit": "bottle",
-    "defaultOrderUnit": "bottle",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Orange",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 4,
-    "menuDetails": "Curicó Valley, Chile · 12.5% ABV. Menu section: Orange."
+    "menuDetails": "Curicó Valley, Chile · 12.5% ABV. Menu section: Orange.",
+    "aliases": [
+      "Echeverr",
+      "Es",
+      "No",
+      "Pituko",
+      "Vi",
+      "noespituko,viñaecheverría"
+    ]
   },
   {
     "id": "menu-syrah-grenache-rose-chateau-de-campuget",
@@ -762,7 +1080,17 @@
     "productType": "Rosé",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 4,
-    "menuDetails": "Languedoc, France · 12.5% ABV. Menu section: Rosé."
+    "menuDetails": "Languedoc, France · 12.5% ABV. Menu section: Rosé.",
+    "aliases": [
+      "Campuget",
+      "Ch",
+      "Grenache",
+      "Ros",
+      "Syrah",
+      "de",
+      "syrah/grenacherosé,châteaudecampuget",
+      "teau"
+    ]
   },
   {
     "id": "menu-primitivo-rose-tramari-san-marzano",
@@ -777,7 +1105,15 @@
     "productType": "Rosé",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 4,
-    "menuDetails": "Puglia, Italy · 12.5% ABV. Menu section: Rosé."
+    "menuDetails": "Puglia, Italy · 12.5% ABV. Menu section: Rosé.",
+    "aliases": [
+      "Marzano",
+      "Primitivo",
+      "Ros",
+      "San",
+      "Tramari",
+      "primitivorosétramari,sanmarzano"
+    ]
   },
   {
     "id": "menu-cinsault-rose-leeuwenkuil-family-vineyards",
@@ -792,7 +1128,15 @@
     "productType": "Rosé",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 4,
-    "menuDetails": "Swartland, South Africa · 13% ABV. Menu section: Rosé."
+    "menuDetails": "Swartland, South Africa · 13% ABV. Menu section: Rosé.",
+    "aliases": [
+      "Cinsault",
+      "Family",
+      "Leeuwenkuil",
+      "Ros",
+      "Vineyards",
+      "cinsaultrosé,leeuwenkuilfamilyvineyards"
+    ]
   },
   {
     "id": "menu-agiorgitiko-rose-4-6h-gaia-wines",
@@ -807,7 +1151,14 @@
     "productType": "Rosé",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 4,
-    "menuDetails": "Peloponnese, Greece · 12% ABV. Menu section: Rosé."
+    "menuDetails": "Peloponnese, Greece · 12% ABV. Menu section: Rosé.",
+    "aliases": [
+      "Agiorgitiko",
+      "Gaia",
+      "Ros",
+      "Wines",
+      "agiorgitikorosé4-6h,gaiawines"
+    ]
   },
   {
     "id": "menu-cotes-de-provence-maia",
@@ -822,7 +1173,14 @@
     "productType": "Rosé",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 4,
-    "menuDetails": "Provence, France · 13% ABV. Menu section: Rosé."
+    "menuDetails": "Provence, France · 13% ABV. Menu section: Rosé.",
+    "aliases": [
+      "Ma",
+      "Provence",
+      "côtesdeprovencemaïa",
+      "de",
+      "tes"
+    ]
   },
   {
     "id": "menu-apres-provence-chateau-des-bertrands",
@@ -837,7 +1195,16 @@
     "productType": "Rosé",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 4,
-    "menuDetails": "Provence, France · 13% ABV. Menu section: Rosé."
+    "menuDetails": "Provence, France · 13% ABV. Menu section: Rosé.",
+    "aliases": [
+      "Apr",
+      "Bertrands",
+      "Ch",
+      "Provence",
+      "aprèsprovence,châteaudesbertrands",
+      "des",
+      "teau"
+    ]
   },
   {
     "id": "menu-minuty-prestige-chateau-minuty",
@@ -852,7 +1219,14 @@
     "productType": "Rosé",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 4,
-    "menuDetails": "Provence, France · 13% ABV. Menu section: Rosé."
+    "menuDetails": "Provence, France · 13% ABV. Menu section: Rosé.",
+    "aliases": [
+      "Ch",
+      "Minuty",
+      "Prestige",
+      "minutyprestige,châteauminuty",
+      "teau"
+    ]
   },
   {
     "id": "menu-touriga-nacional-santo-isidro-de-pegoes",
@@ -867,7 +1241,17 @@
     "productType": "Herbs & Sunshine",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 5,
-    "menuDetails": "Setubal, Portugal · 14% ABV. Menu section: Herbs & Sunshine."
+    "menuDetails": "Setubal, Portugal · 14% ABV. Menu section: Herbs & Sunshine.",
+    "aliases": [
+      "Isidro",
+      "Nacional",
+      "Peg",
+      "Santo",
+      "Touriga",
+      "de",
+      "es",
+      "touriganacional,santoisidrodepegões"
+    ]
   },
   {
     "id": "menu-syrah-tumbleweed-big-sky-bruce-jack-wines",
@@ -882,7 +1266,17 @@
     "productType": "Herbs & Sunshine",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 5,
-    "menuDetails": "Swartland, South Africa · 13% ABV. Menu section: Herbs & Sunshine."
+    "menuDetails": "Swartland, South Africa · 13% ABV. Menu section: Herbs & Sunshine.",
+    "aliases": [
+      "Big",
+      "Bruce",
+      "Jack",
+      "Sky",
+      "Syrah",
+      "Tumbleweed",
+      "Wines",
+      "syrahtumbleweedbigsky,brucejackwines"
+    ]
   },
   {
     "id": "menu-monastrell-time-waits-for-no-one-finca-bacara",
@@ -897,7 +1291,18 @@
     "productType": "Herbs & Sunshine",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 5,
-    "menuDetails": "Navarra, Spain · 13% ABV. Menu section: Herbs & Sunshine."
+    "menuDetails": "Navarra, Spain · 13% ABV. Menu section: Herbs & Sunshine.",
+    "aliases": [
+      "Bacara",
+      "Finca",
+      "Monastrell",
+      "No",
+      "One",
+      "Time",
+      "Waits",
+      "for",
+      "monastrelltimewaitsfornoone,fincabacara"
+    ]
   },
   {
     "id": "menu-malbec-terroir-unico-zorzal",
@@ -912,7 +1317,14 @@
     "productType": "Herbs & Sunshine",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 5,
-    "menuDetails": "Valle de Uco, Argentina · 13.5% ABV. Menu section: Herbs & Sunshine."
+    "menuDetails": "Valle de Uco, Argentina · 13.5% ABV. Menu section: Herbs & Sunshine.",
+    "aliases": [
+      "Malbec",
+      "Terroir",
+      "Unico",
+      "Zorzal",
+      "malbecterroirunico,zorzal"
+    ]
   },
   {
     "id": "menu-rioja-alavesa-las-parcelas-bideona",
@@ -927,37 +1339,60 @@
     "productType": "Herbs & Sunshine",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 5,
-    "menuDetails": "Rioja, Spain · 14% ABV. Menu section: Herbs & Sunshine."
+    "menuDetails": "Rioja, Spain · 14% ABV. Menu section: Herbs & Sunshine.",
+    "aliases": [
+      "Alavesa",
+      "Bideona",
+      "Las",
+      "Parcelas",
+      "Rioja",
+      "riojaalavesalasparcelas,bideona"
+    ]
   },
   {
     "id": "menu-raboso-il-casone",
     "venueID": "rockwater-hove",
     "name": "Raboso Il Casone",
     "brand": "Il Casone",
-    "category": "Wine",
-    "unit": "bottle",
-    "defaultOrderUnit": "bottle",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Fruit-Driven, Soft & Silky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 5,
-    "menuDetails": "Veneto, Italy · 11.5% ABV. Menu section: Fruit-Driven, Soft & Silky."
+    "menuDetails": "Veneto, Italy · 11.5% ABV. Menu section: Fruit-Driven, Soft & Silky.",
+    "aliases": [
+      "Casone",
+      "Il",
+      "Raboso",
+      "rabosoilcasone"
+    ]
   },
   {
     "id": "menu-montepulciano-blend-anima-osca-tenimenti-grieco",
     "venueID": "rockwater-hove",
     "name": "Montepulciano Blend Anima Osca, Tenimenti Grieco",
     "brand": "Tenimenti Grieco",
-    "category": "Wine",
-    "unit": "bottle",
-    "defaultOrderUnit": "bottle",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Fruit-Driven, Soft & Silky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 5,
-    "menuDetails": "Molise, Italy · 12.5% ABV. Menu section: Fruit-Driven, Soft & Silky."
+    "menuDetails": "Molise, Italy · 12.5% ABV. Menu section: Fruit-Driven, Soft & Silky.",
+    "aliases": [
+      "Anima",
+      "Blend",
+      "Grieco",
+      "Montepulciano",
+      "Osca",
+      "Tenimenti",
+      "montepulcianoblendanimaosca,tenimentigrieco"
+    ]
   },
   {
     "id": "menu-agiorgitiko-mavroudi-voltes-monemvasia-winery",
@@ -972,7 +1407,15 @@
     "productType": "Fruit-Driven, Soft & Silky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 5,
-    "menuDetails": "Laconia, Greece · 13% ABV. Menu section: Fruit-Driven, Soft & Silky."
+    "menuDetails": "Laconia, Greece · 13% ABV. Menu section: Fruit-Driven, Soft & Silky.",
+    "aliases": [
+      "Agiorgitiko",
+      "Mavroudi",
+      "Monemvasia",
+      "Voltes",
+      "Winery",
+      "agiorgitiko/mavroudivoltes,monemvasiawinery"
+    ]
   },
   {
     "id": "menu-pinot-noir-gran-reserva-sibaris-undurraga",
@@ -987,22 +1430,40 @@
     "productType": "Fruit-Driven, Soft & Silky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 5,
-    "menuDetails": "Valle de Leyda, Chile · 13.5% ABV. Menu section: Fruit-Driven, Soft & Silky."
+    "menuDetails": "Valle de Leyda, Chile · 13.5% ABV. Menu section: Fruit-Driven, Soft & Silky.",
+    "aliases": [
+      "Gran",
+      "Noir",
+      "Pinot",
+      "Reserva",
+      "Sibaris",
+      "Undurraga",
+      "pinotnoirgranreservasibaris,undurraga"
+    ]
   },
   {
     "id": "menu-saumur-champigny-vieilles-vignes-domaine-lavigne",
     "venueID": "rockwater-hove",
     "name": "Saumur-Champigny Vieilles Vignes, Domaine Lavigne",
     "brand": "Domaine Lavigne",
-    "category": "Wine",
-    "unit": "bottle",
-    "defaultOrderUnit": "bottle",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Fruit-Driven, Soft & Silky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 5,
-    "menuDetails": "Loire, France · 13% ABV. Menu section: Fruit-Driven, Soft & Silky."
+    "menuDetails": "Loire, France · 13% ABV. Menu section: Fruit-Driven, Soft & Silky.",
+    "aliases": [
+      "Champigny",
+      "Domaine",
+      "Lavigne",
+      "Saumur",
+      "Vieilles",
+      "Vignes",
+      "saumur-champignyvieillesvignes,domainelavigne"
+    ]
   },
   {
     "id": "menu-pinot-noir-yering-station",
@@ -1017,7 +1478,14 @@
     "productType": "Fruit-Driven, Soft & Silky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 5,
-    "menuDetails": "Yarra Valley, Australia · 13% ABV. Menu section: Fruit-Driven, Soft & Silky."
+    "menuDetails": "Yarra Valley, Australia · 13% ABV. Menu section: Fruit-Driven, Soft & Silky.",
+    "aliases": [
+      "Noir",
+      "Pinot",
+      "Station",
+      "Yering",
+      "pinotnoiryeringstation"
+    ]
   },
   {
     "id": "menu-bobal-el-renegado-bodegas-nodus",
@@ -1032,7 +1500,15 @@
     "productType": "Bold & Complex",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 6,
-    "menuDetails": "Valencia, Spain · 13% ABV. Menu section: Bold & Complex."
+    "menuDetails": "Valencia, Spain · 13% ABV. Menu section: Bold & Complex.",
+    "aliases": [
+      "Bobal",
+      "Bodegas",
+      "El",
+      "Nodus",
+      "Renegado",
+      "bobalelrenegado,bodegasnodus"
+    ]
   },
   {
     "id": "menu-primitivo-di-manduria-talo-san-marzano",
@@ -1047,7 +1523,16 @@
     "productType": "Bold & Complex",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 6,
-    "menuDetails": "Puglia, Italy · 14% ABV. Menu section: Bold & Complex."
+    "menuDetails": "Puglia, Italy · 14% ABV. Menu section: Bold & Complex.",
+    "aliases": [
+      "Manduria",
+      "Marzano",
+      "Primitivo",
+      "San",
+      "Tal",
+      "di",
+      "primitivodimanduriatalò,sanmarzano"
+    ]
   },
   {
     "id": "menu-cotes-du-rhone-villages-plan-de-dieu-saint-damien",
@@ -1062,7 +1547,20 @@
     "productType": "Bold & Complex",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 6,
-    "menuDetails": "Rhône, France · 14.5% ABV. Menu section: Bold & Complex."
+    "menuDetails": "Rhône, France · 14.5% ABV. Menu section: Bold & Complex.",
+    "aliases": [
+      "Damien",
+      "Dieu",
+      "Plan",
+      "Rh",
+      "Saint",
+      "Villages",
+      "côtesdurhônevillagesplandedieu,saint-damien",
+      "de",
+      "du",
+      "ne",
+      "tes"
+    ]
   },
   {
     "id": "menu-malbec-terrazas-de-los-andes",
@@ -1077,7 +1575,15 @@
     "productType": "Bold & Complex",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 6,
-    "menuDetails": "Mendoza, Argentina · 13.5% ABV. Menu section: Bold & Complex."
+    "menuDetails": "Mendoza, Argentina · 13.5% ABV. Menu section: Bold & Complex.",
+    "aliases": [
+      "Andes",
+      "Malbec",
+      "Terrazas",
+      "de",
+      "los",
+      "malbecterrazasdelosandes"
+    ]
   },
   {
     "id": "menu-cabernet-sauvignon-paso-doro",
@@ -1092,7 +1598,14 @@
     "productType": "Bold & Complex",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 6,
-    "menuDetails": "California, USA · 14.5% ABV. Menu section: Bold & Complex."
+    "menuDetails": "California, USA · 14.5% ABV. Menu section: Bold & Complex.",
+    "aliases": [
+      "Cabernet",
+      "Oro",
+      "Paso",
+      "Sauvignon",
+      "cabernetsauvignonpasod’oro"
+    ]
   },
   {
     "id": "menu-rivesaltes-tuile-dom-brial",
@@ -1107,7 +1620,14 @@
     "productType": "Dessert",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 6,
-    "menuDetails": "Roussillon, France · 16% ABV. Menu section: Dessert."
+    "menuDetails": "Roussillon, France · 16% ABV. Menu section: Dessert.",
+    "aliases": [
+      "Brial",
+      "Dom",
+      "Rivesaltes",
+      "Tuil",
+      "rivesaltestuilé,dombrial"
+    ]
   },
   {
     "id": "menu-black-muscat-elysium-quady",
@@ -1122,7 +1642,14 @@
     "productType": "Dessert",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 6,
-    "menuDetails": "California, USA · 15% ABV. Menu section: Dessert."
+    "menuDetails": "California, USA · 15% ABV. Menu section: Dessert.",
+    "aliases": [
+      "Black",
+      "Elysium",
+      "Muscat",
+      "Quady",
+      "blackmuscatelysium,quady"
+    ]
   },
   {
     "id": "menu-sauternes-castelnau-de-suduiraut",
@@ -1137,7 +1664,14 @@
     "productType": "Dessert",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 6,
-    "menuDetails": "Bordeaux, France · 14% ABV. Menu section: Dessert."
+    "menuDetails": "Bordeaux, France · 14% ABV. Menu section: Dessert.",
+    "aliases": [
+      "Castelnau",
+      "Sauternes",
+      "Suduiraut",
+      "de",
+      "sauternescastelnaudesuduiraut"
+    ]
   },
   {
     "id": "menu-lbv-quinta-do-vallado",
@@ -1152,7 +1686,14 @@
     "productType": "Port",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 6,
-    "menuDetails": "Douro, Portugal · 19.5% ABV. Menu section: Port."
+    "menuDetails": "Douro, Portugal · 19.5% ABV. Menu section: Port.",
+    "aliases": [
+      "LBV",
+      "Quinta",
+      "Vallado",
+      "do",
+      "lbvquintadovallado"
+    ]
   },
   {
     "id": "menu-tawny-20yr-quinta-do-vallado",
@@ -1167,14 +1708,22 @@
     "productType": "Port",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 6,
-    "menuDetails": "Douro, Portugal · 19.5% ABV. Menu section: Port."
+    "menuDetails": "Douro, Portugal · 19.5% ABV. Menu section: Port.",
+    "aliases": [
+      "Quinta",
+      "Tawny",
+      "Vallado",
+      "YR",
+      "do",
+      "tawny20yrquintadovallado"
+    ]
   },
   {
     "id": "menu-veuve-clicquot-brut-yellow-label-magnum",
     "venueID": "rockwater-hove",
     "name": "Veuve Clicquot Brut Yellow Label — Magnum",
     "brand": "",
-    "category": "Sparkling",
+    "category": "Sparkling / Champagne",
     "unit": "magnum",
     "defaultOrderUnit": "magnum",
     "imageName": "",
@@ -1182,7 +1731,16 @@
     "productType": "Magnum",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 3,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Brut",
+      "Clicquot",
+      "Label",
+      "Magnum",
+      "Veuve",
+      "Yellow",
+      "veuveclicquotbrutyellowlabel—magnum"
+    ]
   },
   {
     "id": "menu-cotes-de-provence-maia-magnum",
@@ -1197,7 +1755,15 @@
     "productType": "Magnum",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 3,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Ma",
+      "Magnum",
+      "Provence",
+      "côtesdeprovencemaïa—magnum",
+      "de",
+      "tes"
+    ]
   },
   {
     "id": "menu-minuty-prestige-chateau-minuty-magnum",
@@ -1212,14 +1778,22 @@
     "productType": "Magnum",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 3,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Ch",
+      "Magnum",
+      "Minuty",
+      "Prestige",
+      "minutyprestige,châteauminuty—magnum",
+      "teau"
+    ]
   },
   {
     "id": "menu-rockwater-lager-3-4",
     "venueID": "rockwater-hove",
     "name": "Rockwater Lager 3.4%",
     "brand": "",
-    "category": "Beer",
+    "category": "Beer / Cider",
     "unit": "keg",
     "defaultOrderUnit": "keg",
     "imageName": "",
@@ -1227,14 +1801,19 @@
     "productType": "Draught beer",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Lager",
+      "Rockwater",
+      "rockwaterlager3.4%"
+    ]
   },
   {
     "id": "menu-rockwater-ipa-4-7",
     "venueID": "rockwater-hove",
     "name": "Rockwater IPA 4.7%",
     "brand": "",
-    "category": "Beer",
+    "category": "Beer / Cider",
     "unit": "keg",
     "defaultOrderUnit": "keg",
     "imageName": "",
@@ -1242,14 +1821,19 @@
     "productType": "Draught beer",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "IPA",
+      "Rockwater",
+      "rockwateripa4.7%"
+    ]
   },
   {
     "id": "menu-asahi-super-dry-5",
     "venueID": "rockwater-hove",
     "name": "Asahi Super Dry 5%",
     "brand": "",
-    "category": "Beer",
+    "category": "Beer / Cider",
     "unit": "keg",
     "defaultOrderUnit": "keg",
     "imageName": "",
@@ -1257,14 +1841,20 @@
     "productType": "Draught beer",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Asahi",
+      "Dry",
+      "Super",
+      "asahisuperdry5%"
+    ]
   },
   {
     "id": "menu-peroni-nastro-azzurro-5",
     "venueID": "rockwater-hove",
     "name": "Peroni Nastro Azzurro 5%",
     "brand": "",
-    "category": "Beer",
+    "category": "Beer / Cider",
     "unit": "keg",
     "defaultOrderUnit": "keg",
     "imageName": "",
@@ -1272,14 +1862,20 @@
     "productType": "Draught beer",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Azzurro",
+      "Nastro",
+      "Peroni",
+      "peroninastroazzurro5%"
+    ]
   },
   {
     "id": "menu-guinness-4-1",
     "venueID": "rockwater-hove",
     "name": "Guinness 4.1%",
     "brand": "",
-    "category": "Beer",
+    "category": "Beer / Cider",
     "unit": "keg",
     "defaultOrderUnit": "keg",
     "imageName": "",
@@ -1287,14 +1883,18 @@
     "productType": "Draught beer",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Guinness",
+      "guinness4.1%"
+    ]
   },
   {
     "id": "menu-cornish-orchards-gold-4-5",
     "venueID": "rockwater-hove",
     "name": "Cornish Orchards Gold 4.5%",
     "brand": "",
-    "category": "Beer",
+    "category": "Beer / Cider",
     "unit": "keg",
     "defaultOrderUnit": "keg",
     "imageName": "",
@@ -1302,14 +1902,20 @@
     "productType": "Draught cider",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Cornish",
+      "Gold",
+      "Orchards",
+      "cornishorchardsgold4.5%"
+    ]
   },
   {
     "id": "menu-cornish-orchards-fruit-cider-4",
     "venueID": "rockwater-hove",
     "name": "Cornish Orchards Fruit Cider 4%",
     "brand": "",
-    "category": "Beer",
+    "category": "Beer / Cider",
     "unit": "keg",
     "defaultOrderUnit": "keg",
     "imageName": "",
@@ -1317,14 +1923,21 @@
     "productType": "Draught cider",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Cider",
+      "Cornish",
+      "Fruit",
+      "Orchards",
+      "cornishorchardsfruitcider4%"
+    ]
   },
   {
     "id": "menu-peroni-nastro-azzurro-gf-5-1",
     "venueID": "rockwater-hove",
     "name": "Peroni Nastro Azzurro GF 5.1%",
     "brand": "",
-    "category": "Beer",
+    "category": "Beer / Cider",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1332,14 +1945,21 @@
     "productType": "Bottles & Cans",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Azzurro",
+      "GF",
+      "Nastro",
+      "Peroni",
+      "peroninastroazzurrogf5.1%"
+    ]
   },
   {
     "id": "menu-peroni-nastro-azzurro-0-0",
     "venueID": "rockwater-hove",
     "name": "Peroni Nastro Azzurro 0.0%",
     "brand": "",
-    "category": "Beer",
+    "category": "Beer / Cider",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1347,14 +1967,20 @@
     "productType": "Bottles & Cans",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Azzurro",
+      "Nastro",
+      "Peroni",
+      "peroninastroazzurro0.0%"
+    ]
   },
   {
     "id": "menu-asahi-0-0",
     "venueID": "rockwater-hove",
     "name": "Asahi 0.0%",
     "brand": "",
-    "category": "Beer",
+    "category": "Beer / Cider",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1362,44 +1988,61 @@
     "productType": "Bottles & Cans",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Asahi",
+      "asahi0.0%"
+    ]
   },
   {
     "id": "menu-cornish-orchards-raspberry-elderflower-4",
     "venueID": "rockwater-hove",
     "name": "Cornish Orchards Raspberry & Elderflower 4%",
     "brand": "",
-    "category": "Beer",
-    "unit": "bottle",
-    "defaultOrderUnit": "bottle",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Bottles & Cans",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Cornish",
+      "Elderflower",
+      "Orchards",
+      "Raspberry",
+      "cornishorchardsraspberry&elderflower4%"
+    ]
   },
   {
     "id": "menu-trip-elderflower-mint",
     "venueID": "rockwater-hove",
     "name": "TRIP Elderflower & Mint",
     "brand": "TRIP",
-    "category": "Soft Drinks",
-    "unit": "can",
-    "defaultOrderUnit": "can",
+    "category": "Fresh Herbs",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
     "imageName": "",
     "isActive": true,
     "productType": "TRIP CBD / magnesium range",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Elderflower",
+      "Mint",
+      "TRIP",
+      "tripelderflower&mint"
+    ]
   },
   {
     "id": "menu-trip-peach-ginger",
     "venueID": "rockwater-hove",
     "name": "TRIP Peach & Ginger",
     "brand": "TRIP",
-    "category": "Soft Drinks",
+    "category": "Gin",
     "unit": "can",
     "defaultOrderUnit": "can",
     "imageName": "",
@@ -1407,29 +2050,41 @@
     "productType": "TRIP CBD / magnesium range",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Ginger",
+      "Peach",
+      "TRIP",
+      "trippeach&ginger"
+    ]
   },
   {
     "id": "menu-trip-lemon-basil",
     "venueID": "rockwater-hove",
     "name": "TRIP Lemon & Basil",
     "brand": "TRIP",
-    "category": "Soft Drinks",
-    "unit": "can",
-    "defaultOrderUnit": "can",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "TRIP CBD / magnesium range",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Basil",
+      "Lemon",
+      "TRIP",
+      "triplemon&basil"
+    ]
   },
   {
     "id": "menu-still-water-75cl",
     "venueID": "rockwater-hove",
     "name": "Still Water 75cl",
     "brand": "",
-    "category": "Soft Drinks",
+    "category": "Non-Alcoholic",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1437,14 +2092,20 @@
     "productType": "Water",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Still",
+      "Water",
+      "cl",
+      "stillwater75cl"
+    ]
   },
   {
     "id": "menu-sparkling-water-75cl",
     "venueID": "rockwater-hove",
     "name": "Sparkling Water 75cl",
     "brand": "",
-    "category": "Soft Drinks",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1452,14 +2113,20 @@
     "productType": "Water",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Sparkling",
+      "Water",
+      "cl",
+      "sparklingwater75cl"
+    ]
   },
   {
     "id": "menu-drip-still-water-500ml",
     "venueID": "rockwater-hove",
     "name": "DRIP Still Water 500ml",
     "brand": "DRIP",
-    "category": "Soft Drinks",
+    "category": "Non-Alcoholic",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1467,14 +2134,21 @@
     "productType": "Water",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "DRIP",
+      "Still",
+      "Water",
+      "dripstillwater500ml",
+      "ml"
+    ]
   },
   {
     "id": "menu-drip-sparkling-water-500ml",
     "venueID": "rockwater-hove",
     "name": "DRIP Sparkling Water 500ml",
     "brand": "DRIP",
-    "category": "Soft Drinks",
+    "category": "Sparkling / Champagne",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1482,7 +2156,14 @@
     "productType": "Water",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "DRIP",
+      "Sparkling",
+      "Water",
+      "dripsparklingwater500ml",
+      "ml"
+    ]
   },
   {
     "id": "menu-apple-juice",
@@ -1497,7 +2178,12 @@
     "productType": "Juices",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Apple",
+      "Juice",
+      "applejuice"
+    ]
   },
   {
     "id": "menu-orange-juice",
@@ -1512,7 +2198,12 @@
     "productType": "Juices",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Juice",
+      "Orange",
+      "orangejuice"
+    ]
   },
   {
     "id": "menu-pineapple-juice",
@@ -1527,7 +2218,12 @@
     "productType": "Juices",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Juice",
+      "Pineapple",
+      "pineapplejuice"
+    ]
   },
   {
     "id": "menu-cranberry-juice",
@@ -1542,7 +2238,12 @@
     "productType": "Juices",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Cranberry",
+      "Juice",
+      "cranberryjuice"
+    ]
   },
   {
     "id": "menu-tomato-juice",
@@ -1557,7 +2258,12 @@
     "productType": "Juices",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Juice",
+      "Tomato",
+      "tomatojuice"
+    ]
   },
   {
     "id": "menu-glorious-greens",
@@ -1572,14 +2278,19 @@
     "productType": "Cold-pressed juice",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": "Cucumber, Apple, Spinach, Kale, Lemon"
+    "menuDetails": "Cucumber, Apple, Spinach, Kale, Lemon",
+    "aliases": [
+      "Glorious",
+      "Greens",
+      "gloriousgreens"
+    ]
   },
   {
     "id": "menu-ginger-zinger",
     "venueID": "rockwater-hove",
     "name": "Ginger Zinger",
     "brand": "",
-    "category": "Juices",
+    "category": "Gin",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1587,7 +2298,12 @@
     "productType": "Cold-pressed juice",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": "Apple, Carrot, Lemon, Ginger, Turmeric"
+    "menuDetails": "Apple, Carrot, Lemon, Ginger, Turmeric",
+    "aliases": [
+      "Ginger",
+      "Zinger",
+      "gingerzinger"
+    ]
   },
   {
     "id": "menu-oj",
@@ -1602,14 +2318,15 @@
     "productType": "Cold-pressed juice",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": "Orange"
+    "menuDetails": "Orange",
+    "aliases": []
   },
   {
     "id": "menu-ginger-x-hot-shot",
     "venueID": "rockwater-hove",
     "name": "Ginger X-Hot Shot",
     "brand": "",
-    "category": "Juices",
+    "category": "Gin",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1617,7 +2334,13 @@
     "productType": "Cold-pressed juice",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 7,
-    "menuDetails": "Ginger, Lemon, Agave, Cayenne Pepper"
+    "menuDetails": "Ginger, Lemon, Agave, Cayenne Pepper",
+    "aliases": [
+      "Ginger",
+      "Hot",
+      "Shot",
+      "gingerx-hotshot"
+    ]
   },
   {
     "id": "menu-tanqueray",
@@ -1632,7 +2355,8 @@
     "productType": "Gin",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": []
   },
   {
     "id": "menu-tanqueray-flor-de-sevilla",
@@ -1647,7 +2371,14 @@
     "productType": "Gin",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Flor",
+      "Sevilla",
+      "Tanqueray",
+      "de",
+      "tanquerayflordesevilla"
+    ]
   },
   {
     "id": "menu-whitley-neill-rhubarb-ginger",
@@ -1662,7 +2393,14 @@
     "productType": "Gin",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Ginger",
+      "Neill",
+      "Rhubarb",
+      "Whitley",
+      "whitleyneillrhubarb&ginger"
+    ]
   },
   {
     "id": "menu-malfy-limone",
@@ -1677,7 +2415,12 @@
     "productType": "Gin",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Limone",
+      "Malfy",
+      "malfylimone"
+    ]
   },
   {
     "id": "menu-malfy-grapefruit",
@@ -1692,7 +2435,12 @@
     "productType": "Gin",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Grapefruit",
+      "Malfy",
+      "malfygrapefruit"
+    ]
   },
   {
     "id": "menu-malfy-blood-orange",
@@ -1707,7 +2455,13 @@
     "productType": "Gin",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Blood",
+      "Malfy",
+      "Orange",
+      "malfybloodorange"
+    ]
   },
   {
     "id": "menu-hendricks",
@@ -1722,7 +2476,8 @@
     "productType": "Gin",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": []
   },
   {
     "id": "menu-tanqueray-n-ten",
@@ -1737,7 +2492,12 @@
     "productType": "Gin",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Tanqueray",
+      "Ten",
+      "tanquerayn°ten"
+    ]
   },
   {
     "id": "menu-brighton-gin",
@@ -1752,7 +2512,12 @@
     "productType": "Gin",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Brighton",
+      "Gin",
+      "brightongin"
+    ]
   },
   {
     "id": "menu-monkey-47",
@@ -1767,7 +2532,11 @@
     "productType": "Gin",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Monkey",
+      "monkey47"
+    ]
   },
   {
     "id": "menu-salcombe-start-point",
@@ -1782,7 +2551,13 @@
     "productType": "Gin",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Point",
+      "Salcombe",
+      "Start",
+      "salcombestartpoint"
+    ]
   },
   {
     "id": "menu-salcombe-rose-sainte-marie",
@@ -1797,7 +2572,14 @@
     "productType": "Gin",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Marie",
+      "Ros",
+      "Sainte",
+      "Salcombe",
+      "salcomberosésaintemarie"
+    ]
   },
   {
     "id": "menu-gin-mare",
@@ -1812,7 +2594,12 @@
     "productType": "Gin",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Gin",
+      "Mare",
+      "ginmare"
+    ]
   },
   {
     "id": "menu-gin-mare-capri",
@@ -1827,7 +2614,13 @@
     "productType": "Gin",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Capri",
+      "Gin",
+      "Mare",
+      "ginmarecapri"
+    ]
   },
   {
     "id": "menu-ketel-one",
@@ -1842,7 +2635,12 @@
     "productType": "Vodka",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Ketel",
+      "One",
+      "ketelone"
+    ]
   },
   {
     "id": "menu-belvedere-pure",
@@ -1857,7 +2655,12 @@
     "productType": "Vodka",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Belvedere",
+      "Pure",
+      "belvederepure"
+    ]
   },
   {
     "id": "menu-grey-goose",
@@ -1872,7 +2675,12 @@
     "productType": "Vodka",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Goose",
+      "Grey",
+      "greygoose"
+    ]
   },
   {
     "id": "menu-grey-goose-essences",
@@ -1887,14 +2695,20 @@
     "productType": "Vodka",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Essences",
+      "Goose",
+      "Grey",
+      "greygooseessences"
+    ]
   },
   {
     "id": "menu-el-jimador-blanco",
     "venueID": "rockwater-hove",
     "name": "El Jimador Blanco",
     "brand": "El",
-    "category": "Tequila",
+    "category": "Tequila / Mezcal",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1902,14 +2716,20 @@
     "productType": "Tequila",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Blanco",
+      "El",
+      "Jimador",
+      "eljimadorblanco"
+    ]
   },
   {
     "id": "menu-el-jimador-reposado",
     "venueID": "rockwater-hove",
     "name": "El Jimador Reposado",
     "brand": "El",
-    "category": "Tequila",
+    "category": "Tequila / Mezcal",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1917,14 +2737,20 @@
     "productType": "Tequila",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "El",
+      "Jimador",
+      "Reposado",
+      "eljimadorreposado"
+    ]
   },
   {
     "id": "menu-casamigos-reposado",
     "venueID": "rockwater-hove",
     "name": "Casamigos Reposado",
     "brand": "Casamigos",
-    "category": "Tequila",
+    "category": "Tequila / Mezcal",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1932,14 +2758,19 @@
     "productType": "Tequila",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Casamigos",
+      "Reposado",
+      "casamigosreposado"
+    ]
   },
   {
     "id": "menu-casamigos-blanco",
     "venueID": "rockwater-hove",
     "name": "Casamigos Blanco",
     "brand": "Casamigos",
-    "category": "Tequila",
+    "category": "Tequila / Mezcal",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1947,14 +2778,19 @@
     "productType": "Tequila",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Blanco",
+      "Casamigos",
+      "casamigosblanco"
+    ]
   },
   {
     "id": "menu-casamigos-mezcal",
     "venueID": "rockwater-hove",
     "name": "Casamigos Mezcal",
     "brand": "Casamigos",
-    "category": "Tequila",
+    "category": "Tequila / Mezcal",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1962,14 +2798,19 @@
     "productType": "Mezcal",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Casamigos",
+      "Mezcal",
+      "casamigosmezcal"
+    ]
   },
   {
     "id": "menu-herradura-reposado",
     "venueID": "rockwater-hove",
     "name": "Herradura Reposado",
     "brand": "Herradura",
-    "category": "Tequila",
+    "category": "Tequila / Mezcal",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1977,14 +2818,19 @@
     "productType": "Tequila",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Herradura",
+      "Reposado",
+      "herradurareposado"
+    ]
   },
   {
     "id": "menu-patron-silver",
     "venueID": "rockwater-hove",
     "name": "Patrón Silver",
     "brand": "Patrón",
-    "category": "Tequila",
+    "category": "Tequila / Mezcal",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -1992,14 +2838,19 @@
     "productType": "Tequila",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Patr",
+      "Silver",
+      "patrónsilver"
+    ]
   },
   {
     "id": "menu-patron-reposado",
     "venueID": "rockwater-hove",
     "name": "Patrón Reposado",
     "brand": "Patrón",
-    "category": "Tequila",
+    "category": "Tequila / Mezcal",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2007,14 +2858,19 @@
     "productType": "Tequila",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Patr",
+      "Reposado",
+      "patrónreposado"
+    ]
   },
   {
     "id": "menu-patron-anejo",
     "venueID": "rockwater-hove",
     "name": "Patrón Añejo",
     "brand": "Patrón",
-    "category": "Tequila",
+    "category": "Tequila / Mezcal",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2022,14 +2878,19 @@
     "productType": "Tequila",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Patr",
+      "ejo",
+      "patrónañejo"
+    ]
   },
   {
     "id": "menu-hennessy-vs",
     "venueID": "rockwater-hove",
     "name": "Hennessy VS",
     "brand": "Hennessy",
-    "category": "Other",
+    "category": "Brandy / Cognac",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2037,14 +2898,19 @@
     "productType": "Cognac",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Hennessy",
+      "VS",
+      "hennessyvs"
+    ]
   },
   {
     "id": "menu-hennessy-vsop",
     "venueID": "rockwater-hove",
     "name": "Hennessy VSOP",
     "brand": "Hennessy",
-    "category": "Other",
+    "category": "Brandy / Cognac",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2052,14 +2918,19 @@
     "productType": "Cognac",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Hennessy",
+      "VSOP",
+      "hennessyvsop"
+    ]
   },
   {
     "id": "menu-hennessy-xo",
     "venueID": "rockwater-hove",
     "name": "Hennessy XO",
     "brand": "Hennessy",
-    "category": "Other",
+    "category": "Brandy / Cognac",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2067,7 +2938,12 @@
     "productType": "Cognac",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Hennessy",
+      "XO",
+      "hennessyxo"
+    ]
   },
   {
     "id": "menu-havana-club-3",
@@ -2082,7 +2958,13 @@
     "productType": "Rum",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Club",
+      "Havana",
+      "havana club",
+      "havanaclub3"
+    ]
   },
   {
     "id": "menu-havana-spiced",
@@ -2097,7 +2979,13 @@
     "productType": "Rum",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Havana",
+      "Spiced",
+      "havana club",
+      "havanaspiced"
+    ]
   },
   {
     "id": "menu-havana-club-7",
@@ -2112,7 +3000,13 @@
     "productType": "Rum",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Club",
+      "Havana",
+      "havana club",
+      "havanaclub7"
+    ]
   },
   {
     "id": "menu-bacardi-coconut",
@@ -2127,7 +3021,12 @@
     "productType": "Rum",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Bacardi",
+      "Coconut",
+      "bacardicoconut"
+    ]
   },
   {
     "id": "menu-kraken",
@@ -2142,7 +3041,8 @@
     "productType": "Rum",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": []
   },
   {
     "id": "menu-diplomatico",
@@ -2157,7 +3057,8 @@
     "productType": "Rum",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": []
   },
   {
     "id": "menu-eminente-reserva",
@@ -2172,14 +3073,19 @@
     "productType": "Rum",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Eminente",
+      "Reserva",
+      "eminentereserva"
+    ]
   },
   {
     "id": "menu-old-forrester-bourbon",
     "venueID": "rockwater-hove",
     "name": "Old Forrester Bourbon",
     "brand": "Old",
-    "category": "Whisky",
+    "category": "Whisky / Whiskey",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2187,14 +3093,20 @@
     "productType": "Whisky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Bourbon",
+      "Forrester",
+      "Old",
+      "oldforresterbourbon"
+    ]
   },
   {
     "id": "menu-jameson-irish-whiskey",
     "venueID": "rockwater-hove",
     "name": "Jameson Irish Whiskey",
     "brand": "Jameson",
-    "category": "Whisky",
+    "category": "Whisky / Whiskey",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2202,14 +3114,20 @@
     "productType": "Whisky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Irish",
+      "Jameson",
+      "Whiskey",
+      "jamesonirishwhiskey"
+    ]
   },
   {
     "id": "menu-johnnie-walker-black-label-12yo-scotch",
     "venueID": "rockwater-hove",
     "name": "Johnnie Walker Black Label 12YO Scotch",
     "brand": "Johnnie",
-    "category": "Whisky",
+    "category": "Whisky / Whiskey",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2217,14 +3135,23 @@
     "productType": "Whisky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Black",
+      "Johnnie",
+      "Label",
+      "Scotch",
+      "Walker",
+      "YO",
+      "johnniewalkerblacklabel12yoscotch"
+    ]
   },
   {
     "id": "menu-woodford-reserve-bourbon",
     "venueID": "rockwater-hove",
     "name": "Woodford Reserve Bourbon",
     "brand": "Woodford",
-    "category": "Whisky",
+    "category": "Whisky / Whiskey",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2232,14 +3159,20 @@
     "productType": "Whisky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Bourbon",
+      "Reserve",
+      "Woodford",
+      "woodfordreservebourbon"
+    ]
   },
   {
     "id": "menu-glenmorangie",
     "venueID": "rockwater-hove",
     "name": "Glenmorangie",
     "brand": "Glenmorangie",
-    "category": "Whisky",
+    "category": "Whisky / Whiskey",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2247,14 +3180,15 @@
     "productType": "Whisky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": []
   },
   {
     "id": "menu-glenmorangie-12yr-lasanta",
     "venueID": "rockwater-hove",
     "name": "Glenmorangie 12YR Lasanta",
     "brand": "Glenmorangie",
-    "category": "Whisky",
+    "category": "Whisky / Whiskey",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2262,14 +3196,20 @@
     "productType": "Whisky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Glenmorangie",
+      "Lasanta",
+      "YR",
+      "glenmorangie12yrlasanta"
+    ]
   },
   {
     "id": "menu-glenmorangie-14yr-quinta-ruban",
     "venueID": "rockwater-hove",
     "name": "Glenmorangie 14YR Quinta Ruban",
     "brand": "Glenmorangie",
-    "category": "Whisky",
+    "category": "Whisky / Whiskey",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2277,14 +3217,21 @@
     "productType": "Whisky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Glenmorangie",
+      "Quinta",
+      "Ruban",
+      "YR",
+      "glenmorangie14yrquintaruban"
+    ]
   },
   {
     "id": "menu-elijah-craig-bourbon",
     "venueID": "rockwater-hove",
     "name": "Elijah Craig Bourbon",
     "brand": "Elijah",
-    "category": "Whisky",
+    "category": "Whisky / Whiskey",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2292,14 +3239,20 @@
     "productType": "Whisky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Bourbon",
+      "Craig",
+      "Elijah",
+      "elijahcraigbourbon"
+    ]
   },
   {
     "id": "menu-woodford-reserve-rye",
     "venueID": "rockwater-hove",
     "name": "Woodford Reserve Rye",
     "brand": "Woodford",
-    "category": "Whisky",
+    "category": "Whisky / Whiskey",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2307,14 +3260,20 @@
     "productType": "Whisky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Reserve",
+      "Rye",
+      "Woodford",
+      "woodfordreserverye"
+    ]
   },
   {
     "id": "menu-woodford-reserve-double-oaked",
     "venueID": "rockwater-hove",
     "name": "Woodford Reserve Double Oaked",
     "brand": "Woodford",
-    "category": "Whisky",
+    "category": "Whisky / Whiskey",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2322,14 +3281,21 @@
     "productType": "Whisky",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 8,
-    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published."
+    "menuDetails": "Menu lists 25ml and 50ml serves. Bottle size not published.",
+    "aliases": [
+      "Double",
+      "Oaked",
+      "Reserve",
+      "Woodford",
+      "woodfordreservedoubleoaked"
+    ]
   },
   {
     "id": "menu-limoncello",
     "venueID": "rockwater-hove",
     "name": "Limoncello",
     "brand": "",
-    "category": "Liqueurs",
+    "category": "Liqueurs / Aperitifs",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2337,14 +3303,15 @@
     "productType": "Liqueurs",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": []
   },
   {
     "id": "menu-chambord",
     "venueID": "rockwater-hove",
     "name": "Chambord",
     "brand": "",
-    "category": "Liqueurs",
+    "category": "Liqueurs / Aperitifs",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2352,14 +3319,15 @@
     "productType": "Liqueurs",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": []
   },
   {
     "id": "menu-frangelico",
     "venueID": "rockwater-hove",
     "name": "Frangelico",
     "brand": "",
-    "category": "Liqueurs",
+    "category": "Liqueurs / Aperitifs",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2367,14 +3335,15 @@
     "productType": "Liqueurs",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": []
   },
   {
     "id": "menu-baileys",
     "venueID": "rockwater-hove",
     "name": "Bailey’s",
     "brand": "",
-    "category": "Liqueurs",
+    "category": "Liqueurs / Aperitifs",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2382,14 +3351,17 @@
     "productType": "Liqueurs",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Bailey"
+    ]
   },
   {
     "id": "menu-cointreau",
     "venueID": "rockwater-hove",
     "name": "Cointreau",
     "brand": "",
-    "category": "Liqueurs",
+    "category": "Liqueurs / Aperitifs",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2397,14 +3369,15 @@
     "productType": "Liqueurs",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": []
   },
   {
     "id": "menu-disaronno",
     "venueID": "rockwater-hove",
     "name": "Disaronno",
     "brand": "",
-    "category": "Liqueurs",
+    "category": "Liqueurs / Aperitifs",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2412,14 +3385,15 @@
     "productType": "Liqueurs",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": []
   },
   {
     "id": "menu-grand-marnier",
     "venueID": "rockwater-hove",
     "name": "Grand Marnier",
     "brand": "",
-    "category": "Liqueurs",
+    "category": "Liqueurs / Aperitifs",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2427,14 +3401,19 @@
     "productType": "Liqueurs",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Grand",
+      "Marnier",
+      "grandmarnier"
+    ]
   },
   {
     "id": "menu-sambuca",
     "venueID": "rockwater-hove",
     "name": "Sambuca",
     "brand": "",
-    "category": "Liqueurs",
+    "category": "Liqueurs / Aperitifs",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2442,14 +3421,15 @@
     "productType": "Liqueurs",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": []
   },
   {
     "id": "menu-lillet-rose",
     "venueID": "rockwater-hove",
     "name": "Lillet Rosé",
     "brand": "",
-    "category": "Other",
+    "category": "Wine",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2457,14 +3437,19 @@
     "productType": "Vermouth",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": "Menu lists 50ml pricing."
+    "menuDetails": "Menu lists 50ml pricing.",
+    "aliases": [
+      "Lillet",
+      "Ros",
+      "lilletrosé"
+    ]
   },
   {
     "id": "menu-antica-rosso",
     "venueID": "rockwater-hove",
     "name": "Antica Rosso",
     "brand": "",
-    "category": "Other",
+    "category": "Wine",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2472,14 +3457,19 @@
     "productType": "Vermouth",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": "Menu lists 50ml pricing."
+    "menuDetails": "Menu lists 50ml pricing.",
+    "aliases": [
+      "Antica",
+      "Rosso",
+      "anticarosso"
+    ]
   },
   {
     "id": "menu-noilly-pratt",
     "venueID": "rockwater-hove",
     "name": "Noilly Pratt",
     "brand": "",
-    "category": "Other",
+    "category": "Liqueurs / Aperitifs",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2487,7 +3477,12 @@
     "productType": "Vermouth",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": "Menu lists 50ml pricing."
+    "menuDetails": "Menu lists 50ml pricing.",
+    "aliases": [
+      "Noilly",
+      "Pratt",
+      "noillypratt"
+    ]
   },
   {
     "id": "menu-double-dutch-indian-tonic-water",
@@ -2502,7 +3497,15 @@
     "productType": "Mixers",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Double",
+      "Dutch",
+      "Indian",
+      "Tonic",
+      "Water",
+      "doubledutchindiantonicwater"
+    ]
   },
   {
     "id": "menu-double-dutch-skinny-tonic",
@@ -2517,7 +3520,14 @@
     "productType": "Mixers",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Double",
+      "Dutch",
+      "Skinny",
+      "Tonic",
+      "doubledutchskinnytonic"
+    ]
   },
   {
     "id": "menu-double-dutch-elderflower-tonic",
@@ -2532,7 +3542,14 @@
     "productType": "Mixers",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Double",
+      "Dutch",
+      "Elderflower",
+      "Tonic",
+      "doubledutchelderflowertonic"
+    ]
   },
   {
     "id": "menu-double-dutch-pink-grapefruit-soda",
@@ -2547,14 +3564,22 @@
     "productType": "Mixers",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Double",
+      "Dutch",
+      "Grapefruit",
+      "Pink",
+      "Soda",
+      "doubledutchpinkgrapefruitsoda"
+    ]
   },
   {
     "id": "menu-double-dutch-ginger-ale",
     "venueID": "rockwater-hove",
     "name": "Double Dutch Ginger Ale",
     "brand": "Double Dutch",
-    "category": "Mixers",
+    "category": "Gin",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2562,14 +3587,21 @@
     "productType": "Mixers",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Ale",
+      "Double",
+      "Dutch",
+      "Ginger",
+      "doubledutchgingerale"
+    ]
   },
   {
     "id": "menu-double-dutch-ginger-beer",
     "venueID": "rockwater-hove",
     "name": "Double Dutch Ginger Beer",
     "brand": "Double Dutch",
-    "category": "Mixers",
+    "category": "Gin",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2577,14 +3609,21 @@
     "productType": "Mixers",
     "sourceURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
     "sourcePage": 9,
-    "menuDetails": ""
+    "menuDetails": "",
+    "aliases": [
+      "Beer",
+      "Double",
+      "Dutch",
+      "Ginger",
+      "doubledutchgingerbeer"
+    ]
   },
   {
     "id": "menu-aperol",
     "venueID": "rockwater-hove",
     "name": "Aperol",
     "brand": "",
-    "category": "Liqueurs",
+    "category": "Liqueurs / Aperitifs",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2592,14 +3631,15 @@
     "productType": "Liqueurs",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Service catalogue starter. Confirm product format with the manager."
+    "menuDetails": "Service catalogue starter. Confirm product format with the manager.",
+    "aliases": []
   },
   {
     "id": "menu-sugar-syrup",
     "venueID": "rockwater-hove",
     "name": "Sugar Syrup",
     "brand": "",
-    "category": "Syrups",
+    "category": "Syrups / Cordials",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2607,14 +3647,19 @@
     "productType": "Syrups",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Service catalogue starter. Confirm product format with the manager."
+    "menuDetails": "Service catalogue starter. Confirm product format with the manager.",
+    "aliases": [
+      "Sugar",
+      "Syrup",
+      "sugarsyrup"
+    ]
   },
   {
     "id": "menu-orgeat",
     "venueID": "rockwater-hove",
     "name": "Orgeat",
     "brand": "",
-    "category": "Syrups",
+    "category": "Syrups / Cordials",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2622,59 +3667,63 @@
     "productType": "Syrups",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Service catalogue starter. Confirm product format with the manager."
+    "menuDetails": "Service catalogue starter. Confirm product format with the manager.",
+    "aliases": []
   },
   {
     "id": "menu-limes",
     "venueID": "rockwater-hove",
     "name": "Limes",
     "brand": "",
-    "category": "Garnishes",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Garnishes",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Service catalogue starter. Confirm product format with the manager."
+    "menuDetails": "Service catalogue starter. Confirm product format with the manager.",
+    "aliases": []
   },
   {
     "id": "menu-lemons",
     "venueID": "rockwater-hove",
     "name": "Lemons",
     "brand": "",
-    "category": "Garnishes",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Garnishes",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Service catalogue starter. Confirm product format with the manager."
+    "menuDetails": "Service catalogue starter. Confirm product format with the manager.",
+    "aliases": []
   },
   {
     "id": "menu-mint",
     "venueID": "rockwater-hove",
     "name": "Mint",
     "brand": "",
-    "category": "Garnishes",
-    "unit": "bunch",
-    "defaultOrderUnit": "bunch",
+    "category": "Fresh Herbs",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
     "imageName": "",
     "isActive": true,
     "productType": "Garnishes",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Service catalogue starter. Confirm product format with the manager."
+    "menuDetails": "Service catalogue starter. Confirm product format with the manager.",
+    "aliases": []
   },
   {
     "id": "menu-campari",
     "venueID": "rockwater-hove",
     "name": "Campari",
     "brand": "",
-    "category": "Liqueurs",
+    "category": "Liqueurs / Aperitifs",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2682,14 +3731,15 @@
     "productType": "Liqueurs",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Service catalogue starter. Confirm product format with the manager."
+    "menuDetails": "Service catalogue starter. Confirm product format with the manager.",
+    "aliases": []
   },
   {
     "id": "menu-st-germain",
     "venueID": "rockwater-hove",
     "name": "St-Germain",
     "brand": "",
-    "category": "Liqueurs",
+    "category": "Liqueurs / Aperitifs",
     "unit": "bottle",
     "defaultOrderUnit": "bottle",
     "imageName": "",
@@ -2697,7 +3747,11 @@
     "productType": "Liqueurs",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Service catalogue starter. Confirm product format with the manager."
+    "menuDetails": "Service catalogue starter. Confirm product format with the manager.",
+    "aliases": [
+      "Germain",
+      "St"
+    ]
   },
   {
     "id": "spec-apricot-liq",
@@ -2712,14 +3766,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Apricot",
+      "Liq",
+      "apricotliq"
+    ]
   },
   {
     "id": "spec-blue-curacao",
     "venueID": "rockwater-hove",
     "name": "Blue Curacao",
     "brand": "",
-    "category": "Other",
+    "category": "Liqueurs / Aperitifs",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -2727,14 +3786,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Blue",
+      "Curacao",
+      "bluecuracao"
+    ]
   },
   {
     "id": "spec-havana-3",
     "venueID": "rockwater-hove",
     "name": "Havana 3",
     "brand": "",
-    "category": "Other",
+    "category": "Rum",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -2742,29 +3806,35 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Havana",
+      "havana club",
+      "havana3"
+    ]
   },
   {
     "id": "spec-lemon",
     "venueID": "rockwater-hove",
     "name": "Lemon",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-ginger-syrup",
     "venueID": "rockwater-hove",
     "name": "Ginger Syrup",
     "brand": "",
-    "category": "Syrups",
+    "category": "Gin",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -2772,14 +3842,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Ginger",
+      "Syrup",
+      "gingersyrup"
+    ]
   },
   {
     "id": "spec-pineapple-foam-top",
     "venueID": "rockwater-hove",
     "name": "Pineapple Foam Top",
     "brand": "",
-    "category": "Other",
+    "category": "Juices",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -2787,7 +3862,13 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Foam",
+      "Pineapple",
+      "Top",
+      "pineapplefoamtop"
+    ]
   },
   {
     "id": "spec-cachaca",
@@ -2802,29 +3883,31 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-lime",
     "venueID": "rockwater-hove",
     "name": "Lime",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-spicy-tincture",
     "venueID": "rockwater-hove",
     "name": "Spicy Tincture",
     "brand": "",
-    "category": "Other",
+    "category": "Bitters",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -2832,14 +3915,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Spicy",
+      "Tincture",
+      "spicytincture"
+    ]
   },
   {
     "id": "spec-guava-puree",
     "venueID": "rockwater-hove",
     "name": "Guava Puree",
     "brand": "",
-    "category": "Other",
+    "category": "Purees",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -2847,14 +3935,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Guava",
+      "Puree",
+      "guavapuree"
+    ]
   },
   {
     "id": "spec-gomme",
     "venueID": "rockwater-hove",
     "name": "Gomme",
     "brand": "",
-    "category": "Syrups",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -2862,7 +3955,8 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-peroni",
@@ -2877,14 +3971,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-sweet-vermouth",
     "venueID": "rockwater-hove",
     "name": "Sweet Vermouth",
     "brand": "",
-    "category": "Other",
+    "category": "Liqueurs / Aperitifs",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -2892,29 +3987,39 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Sweet",
+      "Vermouth",
+      "sweetvermouth"
+    ]
   },
   {
     "id": "spec-orange-slice",
     "venueID": "rockwater-hove",
     "name": "Orange Slice",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Orange",
+      "Slice",
+      "orangeslice"
+    ]
   },
   {
     "id": "spec-belvedere",
     "venueID": "rockwater-hove",
     "name": "Belvedere",
     "brand": "",
-    "category": "Other",
+    "category": "Vodka",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -2922,7 +4027,8 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-teichene-peach",
@@ -2937,7 +4043,13 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Peach",
+      "Teichene",
+      "teichenepeach",
+      "teichenne"
+    ]
   },
   {
     "id": "spec-lime-juice",
@@ -2952,14 +4064,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Juice",
+      "Lime",
+      "limejuice"
+    ]
   },
   {
     "id": "spec-coconut-water",
     "venueID": "rockwater-hove",
     "name": "Coconut Water",
     "brand": "",
-    "category": "Other",
+    "category": "Non-Alcoholic",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -2967,29 +4084,35 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Coconut",
+      "Water",
+      "coconutwater"
+    ]
   },
   {
     "id": "spec-lychee",
     "venueID": "rockwater-hove",
     "name": "Lychee",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-jasmine-syrup",
     "venueID": "rockwater-hove",
     "name": "Jasmine Syrup",
     "brand": "",
-    "category": "Syrups",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -2997,14 +4120,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Jasmine",
+      "Syrup",
+      "jasminesyrup"
+    ]
   },
   {
     "id": "spec-soda-top",
     "venueID": "rockwater-hove",
     "name": "Soda Top",
     "brand": "",
-    "category": "Other",
+    "category": "Mixers",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3012,14 +4140,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Soda",
+      "Top",
+      "sodatop"
+    ]
   },
   {
     "id": "spec-salcombe-gin",
     "venueID": "rockwater-hove",
     "name": "Salcombe Gin",
     "brand": "",
-    "category": "Other",
+    "category": "Gin",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3027,7 +4160,12 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Gin",
+      "Salcombe",
+      "salcombegin"
+    ]
   },
   {
     "id": "spec-lemon-juice",
@@ -3042,14 +4180,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Juice",
+      "Lemon",
+      "lemonjuice"
+    ]
   },
   {
     "id": "spec-passion-fruit-puree",
     "venueID": "rockwater-hove",
     "name": "Passion Fruit Puree",
     "brand": "",
-    "category": "Other",
+    "category": "Purees",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3057,14 +4200,20 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Fruit",
+      "Passion",
+      "Puree",
+      "passionfruitpuree"
+    ]
   },
   {
     "id": "spec-orgeat-syrup",
     "venueID": "rockwater-hove",
     "name": "Orgeat Syrup",
     "brand": "",
-    "category": "Syrups",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3072,29 +4221,39 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Orgeat",
+      "Syrup",
+      "orgeatsyrup"
+    ]
   },
   {
     "id": "spec-basil-leaf",
     "venueID": "rockwater-hove",
     "name": "Basil Leaf",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Herbs",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Basil",
+      "Leaf",
+      "basilleaf"
+    ]
   },
   {
     "id": "spec-tanqueray-seville",
     "venueID": "rockwater-hove",
     "name": "Tanqueray Seville",
     "brand": "",
-    "category": "Other",
+    "category": "Gin",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3102,14 +4261,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Seville",
+      "Tanqueray",
+      "tanquerayseville"
+    ]
   },
   {
     "id": "spec-blood-orange-syrup",
     "venueID": "rockwater-hove",
     "name": "Blood Orange Syrup",
     "brand": "",
-    "category": "Syrups",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3117,14 +4281,20 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Blood",
+      "Orange",
+      "Syrup",
+      "bloodorangesyrup"
+    ]
   },
   {
     "id": "spec-orange-bitters",
     "venueID": "rockwater-hove",
     "name": "Orange Bitters",
     "brand": "",
-    "category": "Other",
+    "category": "Bitters",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3132,14 +4302,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Bitters",
+      "Orange",
+      "orangebitters"
+    ]
   },
   {
     "id": "spec-rose-prosecco",
     "venueID": "rockwater-hove",
     "name": "Rose Prosecco",
     "brand": "",
-    "category": "Other",
+    "category": "Sparkling / Champagne",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3147,29 +4322,39 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Prosecco",
+      "Rose",
+      "roseprosecco"
+    ]
   },
   {
     "id": "spec-watermelon-liq",
     "venueID": "rockwater-hove",
     "name": "Watermelon Liq",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Liq",
+      "Watermelon",
+      "watermelonliq"
+    ]
   },
   {
     "id": "spec-watermelon-syrup",
     "venueID": "rockwater-hove",
     "name": "Watermelon Syrup",
     "brand": "",
-    "category": "Syrups",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3177,14 +4362,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Syrup",
+      "Watermelon",
+      "watermelonsyrup"
+    ]
   },
   {
     "id": "spec-casamigos",
     "venueID": "rockwater-hove",
     "name": "Casamigos",
     "brand": "",
-    "category": "Other",
+    "category": "Tequila / Mezcal",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3192,14 +4382,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-grapefruit-soda",
     "venueID": "rockwater-hove",
     "name": "Grapefruit Soda",
     "brand": "",
-    "category": "Other",
+    "category": "Mixers",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3207,14 +4398,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Grapefruit",
+      "Soda",
+      "grapefruitsoda"
+    ]
   },
   {
     "id": "spec-white-wine",
     "venueID": "rockwater-hove",
     "name": "White Wine",
     "brand": "",
-    "category": "Other",
+    "category": "Wine",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3222,14 +4418,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "White",
+      "Wine",
+      "whitewine"
+    ]
   },
   {
     "id": "spec-pisco",
     "venueID": "rockwater-hove",
     "name": "Pisco",
     "brand": "",
-    "category": "Other",
+    "category": "Brandy / Cognac",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3237,7 +4438,8 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-peach-liq",
@@ -3252,14 +4454,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Liq",
+      "Peach",
+      "peachliq"
+    ]
   },
   {
     "id": "spec-prosecco",
     "venueID": "rockwater-hove",
     "name": "Prosecco",
     "brand": "",
-    "category": "Other",
+    "category": "Sparkling / Champagne",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3267,44 +4474,53 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-fresh-squeeze-lime-wedge",
     "venueID": "rockwater-hove",
     "name": "Fresh Squeeze Lime Wedge",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Fresh",
+      "Lime",
+      "Squeeze",
+      "Wedge",
+      "freshsqueezelimewedge"
+    ]
   },
   {
     "id": "spec-fruit",
     "venueID": "rockwater-hove",
     "name": "Fruit",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-desired-syrup",
     "venueID": "rockwater-hove",
     "name": "Desired Syrup",
     "brand": "",
-    "category": "Syrups",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3312,29 +4528,39 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Desired",
+      "Syrup",
+      "desiredsyrup"
+    ]
   },
   {
     "id": "spec-desired-fruits",
     "venueID": "rockwater-hove",
     "name": "Desired Fruits",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Desired",
+      "Fruits",
+      "desiredfruits"
+    ]
   },
   {
     "id": "spec-desired-puree",
     "venueID": "rockwater-hove",
     "name": "Desired Puree",
     "brand": "",
-    "category": "Other",
+    "category": "Purees",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3342,7 +4568,12 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Desired",
+      "Puree",
+      "desiredpuree"
+    ]
   },
   {
     "id": "spec-coconut-milk",
@@ -3357,14 +4588,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Coconut",
+      "Milk",
+      "coconutmilk"
+    ]
   },
   {
     "id": "spec-nll-fl",
     "venueID": "rockwater-hove",
     "name": "NLL FL",
     "brand": "",
-    "category": "Other",
+    "category": "Non-Alcoholic",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3372,14 +4608,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "FL",
+      "NLL",
+      "nllfl"
+    ]
   },
   {
     "id": "spec-apple",
     "venueID": "rockwater-hove",
     "name": "Apple",
     "brand": "",
-    "category": "Other",
+    "category": "Juices",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3387,14 +4628,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-elderflower-cordial",
     "venueID": "rockwater-hove",
     "name": "Elderflower Cordial",
     "brand": "",
-    "category": "Other",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3402,29 +4644,41 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Cordial",
+      "Elderflower",
+      "elderflowercordial"
+    ]
   },
   {
     "id": "spec-cucumber-slices-muddled",
     "venueID": "rockwater-hove",
     "name": "Cucumber Slices (muddled)",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Cucumber",
+      "Slices",
+      "cucumberslices(muddled)",
+      "double dutch",
+      "muddled"
+    ]
   },
   {
     "id": "spec-nll-ms",
     "venueID": "rockwater-hove",
     "name": "NLL MS",
     "brand": "",
-    "category": "Other",
+    "category": "Non-Alcoholic",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3432,14 +4686,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "MS",
+      "NLL",
+      "nllms"
+    ]
   },
   {
     "id": "spec-strawberry-syrup",
     "venueID": "rockwater-hove",
     "name": "Strawberry Syrup",
     "brand": "",
-    "category": "Syrups",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3447,14 +4706,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Strawberry",
+      "Syrup",
+      "strawberrysyrup"
+    ]
   },
   {
     "id": "spec-oggs",
     "venueID": "rockwater-hove",
     "name": "Oggs",
     "brand": "",
-    "category": "Other",
+    "category": "Non-Alcoholic",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3462,14 +4726,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-cherry-syrup",
     "venueID": "rockwater-hove",
     "name": "Cherry Syrup",
     "brand": "",
-    "category": "Syrups",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3477,14 +4742,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Cherry",
+      "Syrup",
+      "cherrysyrup"
+    ]
   },
   {
     "id": "spec-pineapple",
     "venueID": "rockwater-hove",
     "name": "Pineapple",
     "brand": "",
-    "category": "Other",
+    "category": "Juices",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3492,7 +4762,8 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-lychee-juice",
@@ -3507,14 +4778,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Juice",
+      "Lychee",
+      "lycheejuice"
+    ]
   },
   {
     "id": "spec-simple-syrup",
     "venueID": "rockwater-hove",
     "name": "Simple Syrup",
     "brand": "",
-    "category": "Syrups",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3522,14 +4798,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": null,
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Simple",
+      "Syrup",
+      "simplesyrup"
+    ]
   },
   {
     "id": "spec-absolut-vodka",
     "venueID": "rockwater-hove",
     "name": "Absolut Vodka",
     "brand": "",
-    "category": "Other",
+    "category": "Vodka",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3537,7 +4818,12 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Absolut",
+      "Vodka",
+      "absolutvodka"
+    ]
   },
   {
     "id": "spec-blend-coffee",
@@ -3552,7 +4838,12 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Blend",
+      "Coffee",
+      "blendcoffee"
+    ]
   },
   {
     "id": "spec-espresso",
@@ -3567,14 +4858,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-vanilla",
     "venueID": "rockwater-hove",
     "name": "Vanilla",
     "brand": "",
-    "category": "Other",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3582,14 +4874,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-absolut-vanilla",
     "venueID": "rockwater-hove",
     "name": "Absolut Vanilla",
     "brand": "",
-    "category": "Other",
+    "category": "Vodka",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3597,29 +4890,41 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Absolut",
+      "Vanilla",
+      "absolut vodka",
+      "absolutvanilla"
+    ]
   },
   {
     "id": "spec-blend-passionfruit",
     "venueID": "rockwater-hove",
     "name": "Blend Passionfruit",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Blend",
+      "Passionfruit",
+      "blendpassionfruit",
+      "passion fruit"
+    ]
   },
   {
     "id": "spec-passionfruit-puree",
     "venueID": "rockwater-hove",
     "name": "Passionfruit Purée",
     "brand": "",
-    "category": "Other",
+    "category": "Purees",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3627,22 +4932,34 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Passionfruit",
+      "Pur",
+      "passion fruit",
+      "passionfruitpurée"
+    ]
   },
   {
     "id": "spec-dd-lime",
     "venueID": "rockwater-hove",
     "name": "Dd Lime",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Dd",
+      "Lime",
+      "ddlime",
+      "double dutch"
+    ]
   },
   {
     "id": "spec-martini-extra-dry",
@@ -3657,29 +4974,42 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Dry",
+      "Extra",
+      "Martini",
+      "martiniextradry"
+    ]
   },
   {
     "id": "spec-olive-brine-if-dirty",
     "venueID": "rockwater-hove",
     "name": "Olive Brine (If Dirty)",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Garnishes",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Brine",
+      "Dirty",
+      "If",
+      "Olive",
+      "olivebrine(ifdirty)"
+    ]
   },
   {
     "id": "spec-blend-triple-sec",
     "venueID": "rockwater-hove",
     "name": "Blend Triple Sec",
     "brand": "",
-    "category": "Other",
+    "category": "Non-Alcoholic",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3687,7 +5017,13 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Blend",
+      "Sec",
+      "Triple",
+      "blendtriplesec"
+    ]
   },
   {
     "id": "spec-dd-lime-juice",
@@ -3702,7 +5038,14 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Dd",
+      "Juice",
+      "Lime",
+      "ddlimejuice",
+      "double dutch"
+    ]
   },
   {
     "id": "spec-dd-lemon-juice",
@@ -3717,14 +5060,21 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Dd",
+      "Juice",
+      "Lemon",
+      "ddlemonjuice",
+      "double dutch"
+    ]
   },
   {
     "id": "spec-tomato",
     "venueID": "rockwater-hove",
     "name": "Tomato",
     "brand": "",
-    "category": "Other",
+    "category": "Juices",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3732,7 +5082,8 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-worchester",
@@ -3747,14 +5098,17 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "worcestershire"
+    ]
   },
   {
     "id": "spec-tabasco-3-standard",
     "venueID": "rockwater-hove",
     "name": "Tabasco (3 Standard)",
     "brand": "",
-    "category": "Other",
+    "category": "Bitters",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3762,7 +5116,12 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Standard",
+      "Tabasco",
+      "tabasco(3standard)"
+    ]
   },
   {
     "id": "spec-salt",
@@ -3777,7 +5136,8 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-pepper",
@@ -3792,14 +5152,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-absolut",
     "venueID": "rockwater-hove",
     "name": "Absolut",
     "brand": "",
-    "category": "Other",
+    "category": "Vodka",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3807,7 +5168,10 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "absolut vodka"
+    ]
   },
   {
     "id": "spec-whole-milk",
@@ -3822,7 +5186,12 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Milk",
+      "Whole",
+      "wholemilk"
+    ]
   },
   {
     "id": "spec-double-cream",
@@ -3837,14 +5206,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Cream",
+      "Double",
+      "doublecream"
+    ]
   },
   {
     "id": "spec-ginger-beer",
     "venueID": "rockwater-hove",
     "name": "Ginger Beer",
     "brand": "",
-    "category": "Other",
+    "category": "Gin",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3852,29 +5226,39 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Beer",
+      "Ginger",
+      "gingerbeer"
+    ]
   },
   {
     "id": "spec-lime-wedges",
     "venueID": "rockwater-hove",
     "name": "Lime Wedges",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Lime",
+      "Wedges",
+      "limewedges"
+    ]
   },
   {
     "id": "spec-peach-liqueur",
     "venueID": "rockwater-hove",
     "name": "Peach Liqueur",
     "brand": "",
-    "category": "Other",
+    "category": "Liqueurs / Aperitifs",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3882,14 +5266,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Liqueur",
+      "Peach",
+      "peachliqueur"
+    ]
   },
   {
     "id": "spec-orange-jucie",
     "venueID": "rockwater-hove",
     "name": "Orange Jucie",
     "brand": "",
-    "category": "Other",
+    "category": "Juices",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3897,7 +5286,12 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Jucie",
+      "Orange",
+      "orangejucie"
+    ]
   },
   {
     "id": "spec-soda",
@@ -3912,37 +5306,45 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-dd-lemon",
     "venueID": "rockwater-hove",
     "name": "Dd Lemon",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Dd",
+      "Lemon",
+      "ddlemon",
+      "double dutch"
+    ]
   },
   {
     "id": "spec-blackberry",
     "venueID": "rockwater-hove",
     "name": "Blackberry",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-creme-de-mure",
@@ -3957,14 +5359,21 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Cr",
+      "De",
+      "Mure",
+      "crèmedemure",
+      "me"
+    ]
   },
   {
     "id": "spec-belnd-triple-sec",
     "venueID": "rockwater-hove",
     "name": "Belnd Triple Sec",
     "brand": "",
-    "category": "Other",
+    "category": "Non-Alcoholic",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3972,14 +5381,20 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Belnd",
+      "Sec",
+      "Triple",
+      "belndtriplesec"
+    ]
   },
   {
     "id": "spec-ms-betters-bitters",
     "venueID": "rockwater-hove",
     "name": "Ms Betters Bitters",
     "brand": "",
-    "category": "Other",
+    "category": "Bitters",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -3987,14 +5402,20 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Betters",
+      "Bitters",
+      "Ms",
+      "msbettersbitters"
+    ]
   },
   {
     "id": "spec-tanqueray-no10",
     "venueID": "rockwater-hove",
     "name": "Tanqueray No10",
     "brand": "",
-    "category": "Other",
+    "category": "Gin",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4002,14 +5423,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "No",
+      "Tanqueray",
+      "tanquerayno10"
+    ]
   },
   {
     "id": "spec-salcombe-rose",
     "venueID": "rockwater-hove",
     "name": "Salcombe Rose",
     "brand": "",
-    "category": "Other",
+    "category": "Gin",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4017,14 +5443,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Rose",
+      "Salcombe",
+      "salcomberose"
+    ]
   },
   {
     "id": "spec-martini-rosso",
     "venueID": "rockwater-hove",
     "name": "Martini Rosso",
     "brand": "",
-    "category": "Other",
+    "category": "Wine",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4032,14 +5463,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Martini",
+      "Rosso",
+      "martinirosso"
+    ]
   },
   {
     "id": "spec-maraschino",
     "venueID": "rockwater-hove",
     "name": "Maraschino",
     "brand": "",
-    "category": "Other",
+    "category": "Liqueurs / Aperitifs",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4047,14 +5483,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-benedictine",
     "venueID": "rockwater-hove",
     "name": "Benedictine",
     "brand": "",
-    "category": "Other",
+    "category": "Liqueurs / Aperitifs",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4062,14 +5499,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-grenadine",
     "venueID": "rockwater-hove",
     "name": "Grenadine",
     "brand": "",
-    "category": "Other",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4077,7 +5515,8 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-angostura",
@@ -4092,29 +5531,31 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-orange",
     "venueID": "rockwater-hove",
     "name": "Orange",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-veuve-cliquot-brut",
     "venueID": "rockwater-hove",
     "name": "Veuve Cliquot Brut",
     "brand": "",
-    "category": "Other",
+    "category": "Sparkling / Champagne",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4122,14 +5563,21 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Brut",
+      "Cliquot",
+      "Veuve",
+      "clicquot",
+      "veuvecliquotbrut"
+    ]
   },
   {
     "id": "spec-el-jimador-blanca",
     "venueID": "rockwater-hove",
     "name": "El Jimador Blanca",
     "brand": "",
-    "category": "Other",
+    "category": "Tequila / Mezcal",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4137,14 +5585,20 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Blanca",
+      "El",
+      "Jimador",
+      "eljimadorblanca"
+    ]
   },
   {
     "id": "spec-agave",
     "venueID": "rockwater-hove",
     "name": "Agave",
     "brand": "",
-    "category": "Syrups",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4152,14 +5606,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-casamigos-blanca",
     "venueID": "rockwater-hove",
     "name": "Casamigos Blanca",
     "brand": "",
-    "category": "Other",
+    "category": "Tequila / Mezcal",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4167,14 +5622,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Blanca",
+      "Casamigos",
+      "casamigosblanca"
+    ]
   },
   {
     "id": "spec-chilli-infused-el-jimador-blanca",
     "venueID": "rockwater-hove",
     "name": "Chilli Infused El Jimador Blanca",
     "brand": "",
-    "category": "Other",
+    "category": "Tequila / Mezcal",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4182,14 +5642,22 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Blanca",
+      "Chilli",
+      "El",
+      "Infused",
+      "Jimador",
+      "chilliinfusedeljimadorblanca"
+    ]
   },
   {
     "id": "spec-taylors-velvet-falernum",
     "venueID": "rockwater-hove",
     "name": "Taylors Velvet Falernum",
     "brand": "",
-    "category": "Other",
+    "category": "Liqueurs / Aperitifs",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4197,29 +5665,42 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Falernum",
+      "Taylors",
+      "Velvet",
+      "taylorsvelvetfalernum"
+    ]
   },
   {
     "id": "spec-dd-pink-grapefruit",
     "venueID": "rockwater-hove",
     "name": "Dd Pink Grapefruit",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Dd",
+      "Grapefruit",
+      "Pink",
+      "ddpinkgrapefruit",
+      "double dutch"
+    ]
   },
   {
     "id": "spec-tabasco",
     "venueID": "rockwater-hove",
     "name": "Tabasco",
     "brand": "",
-    "category": "Other",
+    "category": "Bitters",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4227,14 +5708,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-del-maguey-puebla",
     "venueID": "rockwater-hove",
     "name": "Del Maguey Puebla",
     "brand": "",
-    "category": "Other",
+    "category": "Tequila / Mezcal",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4242,29 +5724,40 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Del",
+      "Maguey",
+      "Puebla",
+      "delmagueypuebla"
+    ]
   },
   {
     "id": "spec-fresh-lime",
     "venueID": "rockwater-hove",
     "name": "Fresh Lime",
     "brand": "",
-    "category": "Other",
-    "unit": "item",
-    "defaultOrderUnit": "item",
+    "category": "Fresh Fruit",
+    "unit": "each",
+    "defaultOrderUnit": "each",
     "imageName": "",
     "isActive": true,
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Fresh",
+      "Lime",
+      "freshlime"
+    ]
   },
   {
     "id": "spec-saline",
     "venueID": "rockwater-hove",
     "name": "Saline",
     "brand": "",
-    "category": "Other",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4272,14 +5765,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-havana-3-yr",
     "venueID": "rockwater-hove",
     "name": "Havana 3 Yr",
     "brand": "",
-    "category": "Other",
+    "category": "Rum",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4287,14 +5781,20 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Havana",
+      "Yr",
+      "havana club",
+      "havana3yr"
+    ]
   },
   {
     "id": "spec-gomme-syrup",
     "venueID": "rockwater-hove",
     "name": "Gomme Syrup",
     "brand": "",
-    "category": "Syrups",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4302,14 +5802,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Gomme",
+      "Syrup",
+      "gommesyrup"
+    ]
   },
   {
     "id": "spec-havana-7",
     "venueID": "rockwater-hove",
     "name": "Havana 7",
     "brand": "",
-    "category": "Other",
+    "category": "Rum",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4317,7 +5822,12 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Havana",
+      "havana club",
+      "havana7"
+    ]
   },
   {
     "id": "spec-coconut-cream",
@@ -4332,14 +5842,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Coconut",
+      "Cream",
+      "coconutcream"
+    ]
   },
   {
     "id": "spec-old-forestor",
     "venueID": "rockwater-hove",
     "name": "Old Forestor",
     "brand": "",
-    "category": "Other",
+    "category": "Whisky / Whiskey",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4347,14 +5862,20 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Forestor",
+      "Old",
+      "forester",
+      "oldforestor"
+    ]
   },
   {
     "id": "spec-brown-sugar",
     "venueID": "rockwater-hove",
     "name": "Brown Sugar",
     "brand": "",
-    "category": "Other",
+    "category": "Syrups / Cordials",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4362,14 +5883,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Brown",
+      "Sugar",
+      "brownsugar"
+    ]
   },
   {
     "id": "spec-angostura-bitters",
     "venueID": "rockwater-hove",
     "name": "Angostura Bitters",
     "brand": "",
-    "category": "Other",
+    "category": "Bitters",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4377,14 +5903,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Angostura",
+      "Bitters",
+      "angosturabitters"
+    ]
   },
   {
     "id": "spec-jameson",
     "venueID": "rockwater-hove",
     "name": "Jameson",
     "brand": "",
-    "category": "Other",
+    "category": "Whisky / Whiskey",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4392,7 +5923,8 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-coffee-espresso-shots",
@@ -4407,14 +5939,20 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Coffee",
+      "coffee(espressoshots)",
+      "espresso",
+      "shots"
+    ]
   },
   {
     "id": "spec-hot-water",
     "venueID": "rockwater-hove",
     "name": "Hot Water",
     "brand": "",
-    "category": "Other",
+    "category": "Non-Alcoholic",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4422,14 +5960,19 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Hot",
+      "Water",
+      "hotwater"
+    ]
   },
   {
     "id": "spec-cremant",
     "venueID": "rockwater-hove",
     "name": "Cremant",
     "brand": "",
-    "category": "Other",
+    "category": "Sparkling / Champagne",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4437,14 +5980,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-peach-puree",
     "venueID": "rockwater-hove",
     "name": "Peach Puree",
     "brand": "",
-    "category": "Other",
+    "category": "Purees",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4452,7 +5996,12 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Peach",
+      "Puree",
+      "peachpuree"
+    ]
   },
   {
     "id": "spec-creme-de-cassis",
@@ -4467,14 +6016,21 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Cassis",
+      "Cr",
+      "De",
+      "crèmedecassis",
+      "me"
+    ]
   },
   {
     "id": "spec-pimms",
     "venueID": "rockwater-hove",
     "name": "Pimms",
     "brand": "",
-    "category": "Other",
+    "category": "Liqueurs / Aperitifs",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4482,14 +6038,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-lemonade",
     "venueID": "rockwater-hove",
     "name": "Lemonade",
     "brand": "",
-    "category": "Other",
+    "category": "Mixers",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4497,14 +6054,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-hennessy-v-s",
     "venueID": "rockwater-hove",
     "name": "Hennessy V.S",
     "brand": "",
-    "category": "Other",
+    "category": "Brandy / Cognac",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4512,7 +6070,11 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Hennessy",
+      "hennessyv.s"
+    ]
   },
   {
     "id": "spec-disarrono",
@@ -4527,14 +6089,15 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": []
   },
   {
     "id": "spec-coca-cola",
     "venueID": "rockwater-hove",
     "name": "Coca-Cola",
     "brand": "",
-    "category": "Other",
+    "category": "Mixers",
     "unit": "item",
     "defaultOrderUnit": "item",
     "imageName": "",
@@ -4542,6 +6105,322 @@
     "productType": "Recipe ingredient",
     "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
     "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units."
+    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
+    "aliases": [
+      "Coca",
+      "Cola"
+    ]
+  },
+  {
+    "id": "service-oranges",
+    "venueID": "rockwater-hove",
+    "name": "Oranges",
+    "brand": "",
+    "category": "Fresh Fruit",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "orange"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-grapefruit",
+    "venueID": "rockwater-hove",
+    "name": "Grapefruit",
+    "brand": "",
+    "category": "Fresh Fruit",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "grapefruit"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-strawberries",
+    "venueID": "rockwater-hove",
+    "name": "Strawberries",
+    "brand": "",
+    "category": "Fresh Fruit",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "strawberry"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-raspberries",
+    "venueID": "rockwater-hove",
+    "name": "Raspberries",
+    "brand": "",
+    "category": "Fresh Fruit",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "raspberry"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-blackberries",
+    "venueID": "rockwater-hove",
+    "name": "Blackberries",
+    "brand": "",
+    "category": "Fresh Fruit",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "blackberry"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-passion-fruit",
+    "venueID": "rockwater-hove",
+    "name": "Passion Fruit",
+    "brand": "",
+    "category": "Fresh Fruit",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "passionfruit"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-basil",
+    "venueID": "rockwater-hove",
+    "name": "Basil",
+    "brand": "",
+    "category": "Fresh Herbs",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "basil leaf"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-thyme",
+    "venueID": "rockwater-hove",
+    "name": "Thyme",
+    "brand": "",
+    "category": "Fresh Herbs",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "thyme sprig"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-rosemary",
+    "venueID": "rockwater-hove",
+    "name": "Rosemary",
+    "brand": "",
+    "category": "Fresh Herbs",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "rosemary sprig"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-cocktail-cherries",
+    "venueID": "rockwater-hove",
+    "name": "Cocktail Cherries",
+    "brand": "",
+    "category": "Garnishes",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "luxardo cherry",
+      "cherry"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-olives",
+    "venueID": "rockwater-hove",
+    "name": "Olives",
+    "brand": "",
+    "category": "Garnishes",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "olive"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-dehydrated-citrus",
+    "venueID": "rockwater-hove",
+    "name": "Dehydrated Citrus",
+    "brand": "",
+    "category": "Garnishes",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "dehydrated lime",
+      "dehydrated lemon",
+      "dehydrated orange",
+      "dehydrated grapefruit"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-pineapple-leaves",
+    "venueID": "rockwater-hove",
+    "name": "Pineapple Leaves",
+    "brand": "",
+    "category": "Garnishes",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "pineapple leaf"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-ice-cubes",
+    "venueID": "rockwater-hove",
+    "name": "Ice Cubes",
+    "brand": "",
+    "category": "Prep",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "cubed ice",
+      "ice"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-crushed-ice",
+    "venueID": "rockwater-hove",
+    "name": "Crushed Ice",
+    "brand": "",
+    "category": "Prep",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "crushed ice"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-pineapple-foam",
+    "venueID": "rockwater-hove",
+    "name": "Pineapple Foam",
+    "brand": "",
+    "category": "Prep",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "pineapple foam",
+      "foam"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
+  },
+  {
+    "id": "service-coconut-flakes",
+    "venueID": "rockwater-hove",
+    "name": "Coconut Flakes",
+    "brand": "",
+    "category": "Garnishes",
+    "unit": "pack",
+    "defaultOrderUnit": "pack",
+    "imageName": "",
+    "isActive": true,
+    "productType": "Rockwater service ingredient",
+    "aliases": [
+      "coconut flakes"
+    ],
+    "sourceURL": null,
+    "sourcePage": null,
+    "menuDetails": "Required by supplied Rockwater cocktail specifications."
   }
 ]

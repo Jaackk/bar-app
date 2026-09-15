@@ -5,6 +5,8 @@ struct PrepView: View {
     @Environment(AppStore.self) private var store
     @State private var showCompleted = false
     @State private var category = "All"
+    @State private var adding = false
+    @State private var removeExamples = false
 
     private var categories: [String] { ["All"] + Set(store.prep.map(\.category)).sorted() }
     private var items: [PrepItem] {
@@ -40,6 +42,10 @@ struct PrepView: View {
                     }
                 }
                 Toggle("Show completed", isOn: $showCompleted).font(.subheadline).tint(BarTheme.olive)
+                if store.prep.contains(where: \.isSample) {
+                    Button("Remove example data", role: .destructive) { removeExamples = true }
+                        .font(.subheadline).frame(minHeight: 44)
+                }
                 if items.isEmpty {
                     EmptyStateView(title: "Prep is in good shape", message: "No outstanding recipes here. Show completed items to review quantities or start another batch.", systemImage: "checkmark.seal")
                 } else {
@@ -56,6 +62,11 @@ struct PrepView: View {
         .barScreen()
         .navigationTitle("Today’s prep")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar { ToolbarItem(placement: .topBarTrailing) { Button { adding = true } label: { Label("Add prep", systemImage: "plus") } } }
+        .confirmationDialog("Remove example prep?", isPresented: $removeExamples, titleVisibility: .visible) {
+            Button("Remove example data", role: .destructive) { store.removeExamplePrep() }
+        } message: { Text("This keeps your own and verified Rockwater prep items.") }
+        .sheet(isPresented: $adding) { PrepEditor(item: PrepItem(id: UUID().uuidString, name: "", venueID: store.preferences.venueID)) }
     }
 }
 
@@ -107,7 +118,7 @@ struct PrepDetailView: View {
                         VStack(alignment: .leading, spacing: 8) {
                             Text(item.category.uppercased()).font(.caption.weight(.semibold)).tracking(2).foregroundStyle(BarTheme.olive)
                             Text(item.name).font(BarTheme.title(32))
-                            if item.isSample { Text("Sample prep recipe").font(.caption).foregroundStyle(.secondary) }
+                            if item.isSample { Label("Example — not verified Rockwater prep", systemImage: "info.circle").font(.caption).foregroundStyle(.secondary) }
                         }
                         HStack(spacing: 12) {
                             metric("Current", value: MeasurementFormatter.string(item.currentAmount, unit: item.unit))
@@ -196,6 +207,10 @@ struct PrepDetailView: View {
                         store.updatePrep(id: item.id, current: amount)
                     }
                 }
+                .toolbar { ToolbarItem(placement: .topBarTrailing) { Menu {
+                    if item.completed { Button("Reopen") { store.reopenPrep(id: item.id) } }
+                    Button("Delete prep", role: .destructive) { store.deletePrep(id: item.id) }
+                } label: { Image(systemName: "ellipsis.circle") } } }
             } else {
                 EmptyStateView(title: "Recipe unavailable", message: "This recipe may have been removed from the venue’s prep list.", systemImage: "leaf")
             }
@@ -210,5 +225,38 @@ struct PrepDetailView: View {
             Text(title).font(.caption).foregroundStyle(.secondary)
             Text(value).font(.headline.monospacedDigit()).minimumScaleFactor(0.7).lineLimit(1)
         }.frame(maxWidth: .infinity, alignment: .leading).barCard()
+    }
+}
+
+private struct PrepEditor: View {
+    @Environment(AppStore.self) private var store
+    @Environment(\.dismiss) private var dismiss
+    @State var item: PrepItem
+    @State private var target = ""
+    init(item: PrepItem) { _item = State(initialValue: item); _target = State(initialValue: item.targetAmount == 0 ? "" : MeasurementFormatter.number(item.targetAmount)) }
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section("Quick prep") {
+                    TextField("Name, e.g. Lime juice", text: $item.name)
+                    TextField("Target amount", text: $target).keyboardType(.decimalPad)
+                    Picker("Unit", selection: $item.unit) { ForEach([MeasurementUnit.litre, .ml, .piece], id: \.self) { Text($0.label).tag($0) } }
+                }
+                Section("Optional details") {
+                    TextField("Method", text: Binding(get: { item.method.joined(separator: " ") }, set: { item.method = $0.isEmpty ? [] : [$0] }))
+                    TextField("Storage", text: $item.storageInstructions)
+                    TextField("Shelf life", text: $item.shelfLife)
+                    TextField("Notes", text: $item.notes)
+                }
+            }.navigationTitle("Prep item").toolbar {
+                ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
+                ToolbarItem(placement: .confirmationAction) { Button("Save") {
+                    let value = Double(target.replacingOccurrences(of: ",", with: ".")) ?? 0
+                    item.name = item.name.trimmingCharacters(in: .whitespacesAndNewlines)
+                    item.targetAmount = max(value, 0); item.recipeYieldAmount = max(value, 1)
+                    store.savePrep(item); dismiss()
+                }.disabled(item.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty) }
+            }
+        }
     }
 }
