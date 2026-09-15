@@ -46,3 +46,5 @@ The generic assets are explicitly associated only with generic stock and service
 | `menu-primitivo-di-manduria-talo-san-marzano` | Talò Primitivo di Manduria, San Marzano | `san-marzano-talo` | https://hic.wine/cdn/shop/products/TaloPrimitivoBottle.jpg?v=1591273727 | 2026-09-15 |
 | `menu-macabeo-moscatel-el-renegado-bodegas-nodus` | El Renegado Blanco, Bodegas Nodus | `el-renegado-blanco` | https://highburyvintners.co.uk/cdn/shop/files/Bodegas-Nodus-El-Renegado-Blanco_a7ac3835-4693-465b-a38c-2116da8741e7_600x.png?v=1759423541 | 2026-09-15 |
 | `menu-bobal-el-renegado-bodegas-nodus` | El Renegado Bobal, Bodegas Nodus | `el-renegado-bobal` | https://reservewines.co.uk/cdn/shop/files/El_Renegado_Bobal_1200x.jpg?v=1762850475 | 2026-09-15 |
+| `menu-minuty-prestige-chateau-minuty` | Minuty Prestige, Château Minuty | `minuty-prestige` | https://minuty.com/cdn/shop/files/Prestige-rose-sans-millesime_packshot_full_2022_1445x.png?v=1644331043 | 2026-09-15 |
+| `menu-veuve-clicquot-rose` | Veuve Clicquot Rosé | `veuve-clicquot-rose` | https://jensensliquors.com/cdn/shop/files/veuve-rose-150-new-web_1.png?v=1726860977 | 2026-09-15 |
