@@ -48,3 +48,24 @@ The generic assets are explicitly associated only with generic stock and service
 | `menu-bobal-el-renegado-bodegas-nodus` | El Renegado Bobal, Bodegas Nodus | `el-renegado-bobal` | https://reservewines.co.uk/cdn/shop/files/El_Renegado_Bobal_1200x.jpg?v=1762850475 | 2026-09-15 |
 | `menu-minuty-prestige-chateau-minuty` | Minuty Prestige, Château Minuty | `minuty-prestige` | https://minuty.com/cdn/shop/files/Prestige-rose-sans-millesime_packshot_full_2022_1445x.png?v=1644331043 | 2026-09-15 |
 | `menu-veuve-clicquot-rose` | Veuve Clicquot Rosé | `veuve-clicquot-rose` | https://jensensliquors.com/cdn/shop/files/veuve-rose-150-new-web_1.png?v=1726860977 | 2026-09-15 |
+| `menu-ketel-one` | Ketel One | `ketel-one` | https://blackbookspirits.com/cdn/shop/files/buyketelonevodkaonline.png?v=1764154545 | 2026-09-15 |
+| `menu-whitley-neill-rhubarb-ginger` | Whitley Neill Rhubarb & Ginger | `whitley-neill-rhubarb-ginger` | https://whisky.nl/media/catalog/product/w/h/whitley-neill-rhubarb-ginger-70cl.jpg | 2026-09-15 |
+| `menu-malfy-grapefruit` | Malfy Rosa Pink Grapefruit | `malfy-rosa` | https://www.drinksinc.com/cdn/shop/files/MALFY03.jpg?v=1756733083 | 2026-09-15 |
+| `menu-tanqueray-n-ten` | Tanqueray No. Ten | `tanqueray-no-ten` | https://www.cellier.gr/resources/media/Images/ProductMigration/gin_tanqueray_ten.png | 2026-09-15 |
+| `menu-gin-mare-capri` | Gin Mare Capri | `gin-mare-capri` | https://platform-ps-files.s3.us-east-2.amazonaws.com/images/origin/large_Passion_Spirits_Gin_Mare_Capri_1_a2d9fc8a96.png | 2026-09-15 |
+| `menu-salcombe-rose-sainte-marie` | Salcombe Rosé Sainte Marie | `salcombe-rose-sainte-marie` | https://www.devonhampers.com/image_resize/back/w1500/products/1571/salcome-gin-rose-sainte-marie-70cl-devon-hampers-uk-gift.webp | 2026-09-15 |
+| `menu-casamigos-reposado` | Casamigos Reposado | `casamigos-reposado` | https://images.ctfassets.net/hpoa7h16o9wc/6ciCRmkKRkMMxk3XvuDIwt/6e1f3da19822269c6082c2e184d72de1/reposado_v2.JPG | 2026-09-15 |
+| `menu-casamigos-mezcal` | Casamigos Mezcal | `casamigos-mezcal` | https://www.delmesaliquor.com/cdn/shop/products/Casamigos-Tequila-Mezcal_fa60c16e-9a65-4657-b264-e456edb78b01.jpg?v=1626020141 | 2026-09-15 |
+| `menu-herradura-reposado` | Herradura Reposado | `herradura-reposado` | https://www.binnys.com/globalassets/catalogs/binnys/32/3258/32583/32583.jpg | 2026-09-15 |
+| `menu-patron-anejo` | Patrón Añejo | `patron-anejo` | https://greatwine.co.uk/patron-anejo-tequila | 2026-09-15 |
+| `menu-hennessy-vsop` | Hennessy VSOP | `hennessy-vsop` | https://file03.es.c01.co/upload/7E7C32517D1FC169/201902/5522004041046709511.jpg_700x650.ashx | 2026-09-15 |
+| `menu-havana-club-7` | Havana Club 7 | `havana-club-7` | https://catalog.lwc.co.uk/havana-club-7-year-old-70cl/ | 2026-09-15 |
+| `menu-woodford-reserve-rye` | Woodford Reserve Rye | `woodford-reserve-rye` | https://www.whiskybrother.com/cdn/shop/products/woodford-reserve-rye.jpg?v=1643111440 | 2026-09-15 |
+| `menu-glenmorangie-14yr-quinta-ruban` | Glenmorangie Quinta Ruban 14YR | `glenmorangie-quinta-ruban` | https://whisky.nl/media/catalog/product/g/l/glenmorangie-quinta-ruban-70cl.jpg | 2026-09-15 |
+| `menu-st-germain` | St-Germain | `st-germain` | https://cdn.shopify.com/s/files/1/0069/8141/9069/products/BuySt.GermainElderflowerLiqueurOnline.jpg?v=1586575612 | 2026-09-15 |
+| `menu-peroni-nastro-azzurro-5` | Peroni Nastro Azzurro 5% | `peroni-nastro-azzurro` | https://clickndrink.co.uk/peroni-nastro-azzurro-lager-24-x-330ml | 2026-09-15 |
+| `menu-trip-elderflower-mint` | TRIP Elderflower & Mint | `trip-elderflower-mint` | https://us.drink-trip.com/cdn/shop/files/JN233_US_can_resizing_1440x14406_c0ad4437-d77e-4746-b8dd-6b208d3fe053.png?v=1769132711 | 2026-09-15 |
+| `menu-trip-peach-ginger` | TRIP Peach & Ginger | `trip-peach-ginger` | https://us.drink-trip.com/cdn/shop/files/USA_MB_Packshots_Square_PG.png?v=1732287665 | 2026-09-15 |
+| `menu-double-dutch-indian-tonic-water` | Double Dutch Indian Tonic Water | `double-dutch-indian-tonic` | https://www.dropwinkel.eu/media/cache/sylius_shop_product_large_thumbnail/product/4669/double-dutch-indian-tonic-water-24-x-20-cl.jpg | 2026-09-15 |
+| `menu-double-dutch-elderflower-tonic` | Double Dutch Elderflower Tonic | `double-dutch-elderflower-tonic` | https://drinky.ch/cdn/shop/files/drinky_produkte_bilder_dd_elderflower_einzelflasche.jpg?v=1708686812 | 2026-09-15 |
+| `spec-coca-cola` | Coca-Cola | `coca-cola` | https://oldegeneralstore.com/cdn/shop/products/coca-cola-xxxr-xccc8g-main.jpg?v=1680206389 | 2026-09-15 |
