@@ -2104,7 +2104,7 @@
   {
     "id": "menu-tanqueray-n-ten",
     "venueID": "rockwater-hove",
-    "name": "Tanqueray N° Ten",
+    "name": "Tanqueray No. Ten",
     "brand": "Tanqueray",
     "category": "Gin",
     "unit": "bottle",
@@ -2118,6 +2118,11 @@
     "aliases": [
       "Tanqueray",
       "Ten",
+      "Tanqueray N° Ten",
+      "Tanqueray No10",
+      "Tanqueray N10",
+      "Tanquary No10",
+      "Tanquary N10",
       "tanquerayn°ten"
     ]
   },
@@ -2410,6 +2415,8 @@
     "aliases": [
       "Blanco",
       "Casamigos",
+      "Casamigos Blanca",
+      "casamigosblanca",
       "casamigosblanco"
     ]
   },
@@ -2753,6 +2760,9 @@
     "aliases": [
       "Irish",
       "Jameson",
+      "Jamesons",
+      "Jamesons Irish Whisky",
+      "Jameson Irish Whisky",
       "Whiskey",
       "jamesonirishwhiskey"
     ]
@@ -4831,26 +4841,6 @@
     ]
   },
   {
-    "id": "spec-tanqueray-no10",
-    "venueID": "rockwater-hove",
-    "name": "Tanqueray No10",
-    "brand": "",
-    "category": "Gin",
-    "unit": "item",
-    "defaultOrderUnit": "item",
-    "imageName": "tanqueray-no-ten",
-    "isActive": true,
-    "productType": "Recipe ingredient",
-    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
-    "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
-    "aliases": [
-      "No",
-      "Tanqueray",
-      "tanquerayno10"
-    ]
-  },
-  {
     "id": "spec-salcombe-rose",
     "venueID": "rockwater-hove",
     "name": "Salcombe Rose",
@@ -5007,26 +4997,6 @@
     "sourcePage": null,
     "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
     "aliases": []
-  },
-  {
-    "id": "spec-casamigos-blanca",
-    "venueID": "rockwater-hove",
-    "name": "Casamigos Blanca",
-    "brand": "",
-    "category": "Tequila / Mezcal",
-    "unit": "item",
-    "defaultOrderUnit": "item",
-    "imageName": "casamigos-blanco",
-    "isActive": true,
-    "productType": "Recipe ingredient",
-    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
-    "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
-    "aliases": [
-      "Blanca",
-      "Casamigos",
-      "casamigosblanca"
-    ]
   },
   {
     "id": "spec-chilli-infused-el-jimador-blanca",
@@ -5247,22 +5217,6 @@
       "Bitters",
       "angosturabitters"
     ]
-  },
-  {
-    "id": "spec-jameson",
-    "venueID": "rockwater-hove",
-    "name": "Jameson",
-    "brand": "",
-    "category": "Whisky / Whiskey",
-    "unit": "item",
-    "defaultOrderUnit": "item",
-    "imageName": "jameson",
-    "isActive": true,
-    "productType": "Recipe ingredient",
-    "sourceURL": "https://docs.google.com/spreadsheets/d/12saJcah98vFdTI2IE4YzacAs2XMpdOUadzdmtMPOvfQ/edit",
-    "sourcePage": null,
-    "menuDetails": "Used in supplied house specifications. Set your preferred stock and order units.",
-    "aliases": []
   },
   {
     "id": "spec-coffee-espresso-shots",

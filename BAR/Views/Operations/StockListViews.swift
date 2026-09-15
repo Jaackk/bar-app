@@ -221,7 +221,7 @@ struct ProductThumbnail: View {
     }
     var body: some View {
         Group {
-            if let data = product?.imageData, let image = UIImage(data: data) { Image(uiImage: image).resizable().scaledToFill() }
+            if let data = product?.imageData, let image = UIImage(data: data) { Image(uiImage: image).resizable().scaledToFit() }
             else if let name = product?.imageName, !name.isEmpty, let image = UIImage(named: name) { Image(uiImage: image).resizable().scaledToFit() }
             else if let name = bundledFallbackName, let image = UIImage(named: name) { Image(uiImage: image).resizable().scaledToFill() }
             else {

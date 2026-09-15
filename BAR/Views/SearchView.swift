@@ -4,12 +4,13 @@ import BARCore
 struct SearchView: View {
     @Environment(AppStore.self) var store
     @State private var selectedKind = "All"
+    @FocusState private var searchFocused: Bool
     private var results: [SearchResult] { SearchService.search(query: store.searchQuery, cocktails: store.cocktails, wines: store.wines, prep: store.prep, products: store.products, venueID: store.preferences.venueID).filter { selectedKind == "All" || $0.kind.rawValue.lowercased() == selectedKind.lowercased() } }
     var body: some View {
         @Bindable var store = store
         ScrollView { LazyVStack(alignment: .leading, spacing: 18) {
             SectionHeader(title: "Find it. Make it.", subtitle: "Every spec, ingredient and pairing.")
-            SearchBar(text: $store.searchQuery)
+            SearchBar(text: $store.searchQuery, focus: $searchFocused)
             ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 8) { ForEach(["All", "Cocktail", "Wine", "Prep", "Product"], id: \.self) { kind in Button { selectedKind = kind } label: { TagChip(title: kind, selected: selectedKind == kind) }.frame(minHeight: 44) } } }
             if store.searchQuery.isEmpty {
                 Text("QUICK SEARCH").font(.caption.weight(.semibold)).tracking(2).foregroundStyle(BarTheme.muted)
@@ -21,11 +22,39 @@ struct SearchView: View {
                 switch result.kind {
                 case .cocktail: if let cocktail = store.cocktail(result.id) { NavigationLink { CocktailDetailView(cocktailID: cocktail.id) } label: { CocktailListRow(cocktail: cocktail) } }
                 case .wine: if let wine = store.wine(result.id) { NavigationLink { WineDetailView(wineID: wine.id) } label: { WineCard(wine: wine) } }
-                case .product: NavigationLink { ProductDetailView(productID: result.id) } label: { Label(result.title, systemImage: "shippingbox").frame(maxWidth: .infinity, alignment: .leading).barCard() }
+                case .product: if let product = store.products.first(where: { $0.id == result.id }) { NavigationLink { ProductDetailView(productID: product.id) } label: { ProductSearchRow(product: product) } }
                 case .prep: NavigationLink { PrepDetailView(prepID: result.id) } label: { HStack { Image(systemName: "leaf").font(.title); VStack(alignment: .leading) { Text(result.title).font(BarTheme.title(19)); Text(result.subtitle).font(.caption) }; Spacer(); Image(systemName: "chevron.right").font(.caption) }.barCard() }
                 }
             }.buttonStyle(.plain) }
         }.padding(20) }.barScreen().navigationTitle("Search").navigationBarTitleDisplayMode(.inline).scrollDismissesKeyboard(.interactively)
+        .onAppear { focusFromHomeIfRequested() }
+        .onChange(of: store.shouldFocusSearch) { _, requested in if requested { focusFromHomeIfRequested() } }
+    }
+
+    private func focusFromHomeIfRequested() {
+        guard store.shouldFocusSearch else { return }
+        Task { @MainActor in
+            await Task.yield()
+            guard store.shouldFocusSearch else { return }
+            searchFocused = true
+            store.shouldFocusSearch = false
+        }
+    }
+}
+
+private struct ProductSearchRow: View {
+    let product: Product
+    var body: some View {
+        HStack(spacing: 16) {
+            ProductThumbnail(product: product).frame(width: 82, height: 100)
+            VStack(alignment: .leading, spacing: 6) {
+                Text(product.name).font(BarTheme.title(20))
+                Text([product.brand, product.category].filter { !$0.isEmpty }.joined(separator: " · ")).font(.caption).foregroundStyle(BarTheme.muted)
+                if !product.productType.isEmpty { Text(product.productType).font(.caption2).foregroundStyle(BarTheme.muted) }
+            }
+            Spacer(minLength: 0)
+            Image(systemName: "chevron.right").font(.caption).foregroundStyle(BarTheme.muted)
+        }.barCard().accessibilityElement(children: .combine)
     }
 }
 struct CocktailLibraryView: View {

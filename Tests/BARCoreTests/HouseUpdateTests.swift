@@ -63,6 +63,32 @@ final class HouseUpdateTests: XCTestCase {
         let passion = StockListService.search(state.products, venueID: "rockwater-hove", query: "passionfruit")
         XCTAssertTrue(passion.contains { $0.name.localizedCaseInsensitiveContains("Passion Fruit") })
     }
+    func testDuplicateProductMigrationRepointsListsAndPreservesAliases() throws {
+        var state = try SeedLoader.load()
+        state.catalogueVersion = 15
+        let venueID = "rockwater-hove"
+        var duplicate = Product(id: "spec-jameson", venueID: venueID, name: "Jameson", category: "Whisky / Whiskey", imageName: "jameson")
+        duplicate.imageData = Data([7, 8, 9])
+        state.products.append(duplicate)
+        state.stock.append(StockItem(id: duplicate.id, name: duplicate.name, venueID: venueID, category: duplicate.category, currentStock: 2, parLevel: 4))
+        state.stockLists.append(StockListItem(venueID: venueID, kind: .restock, productID: duplicate.id, name: duplicate.name, quantity: 2))
+        state.stockLists.append(StockListItem(venueID: venueID, kind: .restock, productID: "menu-jameson-irish-whiskey", name: "Jameson Irish Whiskey", quantity: 1))
+
+        let migrated = try MenuMigration.apply(to: state)
+        XCTAssertFalse(migrated.products.contains { $0.id == duplicate.id })
+        XCTAssertEqual(migrated.stock.first { $0.id == "menu-jameson-irish-whiskey" }?.name, "Jameson Irish Whiskey")
+        XCTAssertEqual(migrated.products.first { $0.id == "menu-jameson-irish-whiskey" }?.imageData, Data([7, 8, 9]))
+        let list = try XCTUnwrap(migrated.stockLists.first { $0.kind == .restock && $0.productID == "menu-jameson-irish-whiskey" })
+        XCTAssertEqual(list.quantity, 3)
+        XCTAssertEqual(migrated.stockLists.filter { $0.kind == .restock && $0.productID == "menu-jameson-irish-whiskey" }.count, 1)
+        let results = SearchService.search(query: "Jamesons", cocktails: [], wines: [], products: migrated.products, venueID: venueID)
+        XCTAssertEqual(results.filter { $0.kind == .product && $0.id == "menu-jameson-irish-whiskey" }.count, 1)
+        XCTAssertFalse(results.contains { $0.id == "menu-jameson-irish-whiskey" && $0.title != "Jameson Irish Whiskey" })
+        XCTAssertEqual(SearchService.search(query: "Casamigos Blanca", cocktails: [], wines: [], products: migrated.products, venueID: venueID).filter { $0.id == "menu-casamigos-blanco" }.count, 1)
+        XCTAssertEqual(SearchService.search(query: "Tanquary N10", cocktails: [], wines: [], products: migrated.products, venueID: venueID).filter { $0.id == "menu-tanqueray-n-ten" }.count, 1)
+        XCTAssertNotNil(migrated.products.first { $0.id == "menu-casamigos-reposado" })
+        XCTAssertNotNil(migrated.products.first { $0.id == "menu-tanqueray" })
+    }
     func testListsImagesAndMigrationSurviveRelaunch() throws {
         let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         defer { try? FileManager.default.removeItem(at: directory) }
@@ -86,7 +112,7 @@ final class HouseUpdateTests: XCTestCase {
         XCTAssertEqual(reopened.stockLists, state.stockLists)
         XCTAssertEqual(reopened.products.first { $0.id == product.id }?.imageData, product.imageData)
         XCTAssertEqual(reopened.products.first { $0.id == deletedID }?.isActive, false)
-        XCTAssertEqual(reopened.catalogueVersion, 15)
+        XCTAssertEqual(reopened.catalogueVersion, 16)
         var list = reopened.stockLists
         StockListService.setQuantity(-1, id: list[0].id, venueID: product.venueID, in: &list)
         XCTAssertEqual(list.count, 2)

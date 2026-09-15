@@ -9,6 +9,7 @@ import BARCore
     var persistenceBlocked = false
     var selectedTab = 0
     var searchQuery = ""
+    var shouldFocusSearch = false
 
     init(repository: any AppRepository = LocalAppRepository()) {
         self.repository = repository
