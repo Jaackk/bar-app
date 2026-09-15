@@ -1,5 +1,6 @@
 import SwiftUI
 import PhotosUI
+import Foundation
 import BARCore
 
 struct StockView: View {
@@ -226,10 +227,19 @@ struct ProductCatalogueView: View {
     @Environment(AppStore.self) private var store
     @State private var query = ""
     @State private var creating = false
+    @State private var missingOnly = false
+    private var products: [Product] {
+        StockListService.search(store.products, venueID: store.preferences.venueID, query: query)
+            .filter { !missingOnly || ($0.imageData == nil && $0.imageName.isEmpty) }
+    }
+    private var missingCount: Int { store.products.filter { $0.imageData == nil && $0.imageName.isEmpty }.count }
     var body: some View {
         List {
-            Section { Text("One catalogue for Restock, Stock Order, Search and Stocktake. Tap a product to edit its details or photo.").font(.caption).foregroundStyle(.secondary) }
-            ForEach(StockListService.search(store.products, venueID: store.preferences.venueID, query: query)) { product in
+            Section {
+                Text("One catalogue for Restock, Stock Order, Search and Stocktake. Tap a product to edit its details or photo.").font(.caption).foregroundStyle(.secondary)
+                Toggle("Missing Images · \(missingCount)", isOn: $missingOnly).tint(BarTheme.olive)
+            }
+            ForEach(products) { product in
                 NavigationLink { ProductDetailView(productID: product.id) } label: {
                     HStack(spacing: 14) { ProductThumbnail(product: product).frame(width: 44, height: 58); VStack(alignment: .leading, spacing: 5) { Text(product.name); Text(product.category).font(.caption).foregroundStyle(.secondary) } }
                 }.listRowBackground(BarTheme.card).swipeActions { Button("Delete", role: .destructive) { store.deleteProduct(product) } }
@@ -267,6 +277,7 @@ struct ProductEditor: View {
     @State private var photo: PhotosPickerItem?
     @State private var loading = false
     @State private var photoError: String?
+    @State private var imageURL = ""
     private var valid: Bool { !product.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !product.unit.isEmpty && !product.defaultOrderUnit.isEmpty && !loading }
     var body: some View {
         NavigationStack {
@@ -276,10 +287,15 @@ struct ProductEditor: View {
                         ProductThumbnail(product: product).frame(width: 70, height: 90)
                         VStack(alignment: .leading, spacing: 12) {
                             PhotosPicker(selection: $photo, matching: .images) { Label(loading ? "Loading photo…" : "Choose photo", systemImage: "photo") }.disabled(loading)
-                            if product.imageData != nil || !product.imageName.isEmpty { Button("Remove photo", role: .destructive) { photo = nil; product.imageData = nil; product.imageName = "" } }
+                            if product.imageData != nil { Button("Remove replacement", role: .destructive) { photo = nil; product.imageData = nil } }
                         }
                     }
                     if let photoError { Text(photoError).font(.caption).foregroundStyle(.red) }
+                    HStack {
+                        TextField("Image URL", text: $imageURL).textInputAutocapitalization(.never).keyboardType(.URL).autocorrectionDisabled()
+                        Button("Load") { Task { await loadImageURL() } }.disabled(imageURL.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || loading)
+                    }
+                    Text("Downloads once and stores a local replacement for offline use.").font(.caption).foregroundStyle(.secondary)
                 }
                 Section("Product") {
                     TextField("Name", text: $product.name).accessibilityIdentifier("product-name")
@@ -309,10 +325,23 @@ struct ProductEditor: View {
                     let size = CGSize(width: image.size.width * scale, height: image.size.height * scale)
                     let format = UIGraphicsImageRendererFormat(); format.scale = 1
                     product.imageData = UIGraphicsImageRenderer(size: size, format: format).image { _ in image.draw(in: CGRect(origin: .zero, size: size)) }.jpegData(compressionQuality: 0.75)
-                    product.imageName = ""
                 } catch is CancellationError { } catch { photoError = "Photo could not be loaded. Please try again." }
             }
         }
+    }
+    @MainActor private func loadImageURL() async {
+        let text = imageURL.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let url = URL(string: text), ["https", "http"].contains(url.scheme?.lowercased() ?? "") else { photoError = "Enter a valid image URL."; return }
+        loading = true; photoError = nil
+        defer { loading = false }
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
+            guard let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode), data.count <= 12_000_000, let image = UIImage(data: data) else { photoError = "That URL did not return a usable image."; return }
+            let scale = min(1, 800 / max(image.size.width, image.size.height))
+            let size = CGSize(width: image.size.width * scale, height: image.size.height * scale)
+            let format = UIGraphicsImageRendererFormat(); format.scale = 1
+            product.imageData = UIGraphicsImageRenderer(size: size, format: format).image { _ in image.draw(in: CGRect(origin: .zero, size: size)) }.jpegData(compressionQuality: 0.75)
+        } catch { photoError = "Image download failed. Check the URL and try again." }
     }
 }
 private struct ListItemEditor: View {
