@@ -5,6 +5,8 @@ import BARCore
     private let repository: any AppRepository
     private var snapshot: AppSnapshot
     private var lastSavedSnapshot: AppSnapshot?
+    private var stockSaveTask: Task<Void, Never>?
+    private var stockSaveGeneration = 0
     var errorMessage: String?
     var persistenceBlocked = false
     var selectedTab = 0
@@ -66,6 +68,29 @@ import BARCore
         } catch {
             errorMessage = "This change could not be saved: \(error.localizedDescription)"
             return false
+        }
+    }
+    /// Stock is edited at service speed. Publishing the small in-memory list change
+    /// first avoids blocking the main actor on the repository's defensive full-file
+    /// read/decode/validate/encode cycle. The repository lock serialises the final
+    /// coalesced write and later edits supersede older candidates.
+    private func scheduleStockSave() {
+        guard !persistenceBlocked else { return }
+        stockSaveGeneration += 1
+        let generation = stockSaveGeneration
+        let candidate = snapshot
+        stockSaveTask?.cancel()
+        let repository = repository
+        stockSaveTask = Task { @MainActor [weak self] in
+            try? await Task.sleep(nanoseconds: 180_000_000)
+            guard !Task.isCancelled else { return }
+            let failure = await Task.detached { () -> String? in
+                do { try repository.save(candidate); return nil }
+                catch { return error.localizedDescription }
+            }.value
+            guard let self, generation == self.stockSaveGeneration else { return }
+            if let failure { self.errorMessage = "This change could not be saved: \(failure)" }
+            else { self.lastSavedSnapshot = candidate }
         }
     }
     func toggleCocktailFavourite(_ id: String) {
@@ -145,25 +170,24 @@ import BARCore
             candidate.stockLists.append(StockListItem(venueID: product.venueID, kind: kind, productID: product.id, name: product.name, quantity: min(quantity, 100_000), unit: kind == .order ? product.defaultOrderUnit : product.unit))
         }
         if quantity > 0 { candidate.preferences.recordProductUse(product.id) }
-        if persistImmediately {
-            if commit(candidate), feedback { Haptics.selection() }
-        } else {
-            snapshot = candidate
-            if feedback { Haptics.selection() }
-        }
+        snapshot = candidate
+        scheduleStockSave()
+        if feedback { Haptics.selection() }
     }
     /// Used by accelerated steppers: values render immediately while a single final
     /// save is made when the finger lifts, avoiding disk work on every repeat tick.
-    func flushStockWorkspaceChanges() { save() }
+    func flushStockWorkspaceChanges() { scheduleStockSave() }
     func setListQuantity(id: String, quantity: Int) {
         var candidate = snapshot
         StockListService.setQuantity(quantity, id: id, venueID: preferences.venueID, in: &candidate.stockLists)
-        _ = commit(candidate)
+        snapshot = candidate
+        scheduleStockSave()
     }
     func clearList(_ kind: StockListKind) {
         var candidate = snapshot
         StockListService.clear(kind, venueID: preferences.venueID, in: &candidate.stockLists)
-        _ = commit(candidate)
+        snapshot = candidate
+        scheduleStockSave()
     }
     func addCustomItem(name: String, quantity: Int, kind: StockListKind) {
         let clean = name.components(separatedBy: .newlines).joined(separator: " ").trimmingCharacters(in: .whitespacesAndNewlines)
