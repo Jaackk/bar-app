@@ -136,7 +136,7 @@ import BARCore
         snapshot.preferences.recordProductUse(product.id)
         save(); Haptics.selection()
     }
-    func setProductQuantity(_ product: Product, kind: StockListKind, quantity: Int, feedback: Bool = true) {
+    func setProductQuantity(_ product: Product, kind: StockListKind, quantity: Int, feedback: Bool = true, persistImmediately: Bool = true) {
         guard products.contains(where: { $0.id == product.id }) else { return }
         var candidate = snapshot
         if let item = candidate.stockLists.first(where: { $0.venueID == product.venueID && $0.kind == kind && $0.productID == product.id }) {
@@ -145,8 +145,16 @@ import BARCore
             candidate.stockLists.append(StockListItem(venueID: product.venueID, kind: kind, productID: product.id, name: product.name, quantity: min(quantity, 100_000), unit: kind == .order ? product.defaultOrderUnit : product.unit))
         }
         if quantity > 0 { candidate.preferences.recordProductUse(product.id) }
-        if commit(candidate), feedback { Haptics.selection() }
+        if persistImmediately {
+            if commit(candidate), feedback { Haptics.selection() }
+        } else {
+            snapshot = candidate
+            if feedback { Haptics.selection() }
+        }
     }
+    /// Used by accelerated steppers: values render immediately while a single final
+    /// save is made when the finger lifts, avoiding disk work on every repeat tick.
+    func flushStockWorkspaceChanges() { save() }
     func setListQuantity(id: String, quantity: Int) {
         var candidate = snapshot
         StockListService.setQuantity(quantity, id: id, venueID: preferences.venueID, in: &candidate.stockLists)

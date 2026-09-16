@@ -469,18 +469,18 @@ private struct ProductGridCell: View {
             ProductThumbnail(product: product).frame(maxWidth: .infinity).frame(height: 76)
             Text(product.name).font(.caption.weight(.semibold)).lineLimit(2).frame(maxWidth: .infinity, alignment: .leading).frame(height: 32, alignment: .topLeading)
             HStack(spacing: 2) {
-                RepeatQuantityButton(symbol: "minus", name: product.name) { change(by: -1) }
+                RepeatQuantityButton(symbol: "minus", name: product.name, tap: { change(by: -1) }, repeatChange: { change(by: -1, persistImmediately: false) }, finished: { store.flushStockWorkspaceChanges() })
                     .frame(width: 28, height: 34)
                 Button { editing = true } label: { Text("\(quantity)").font(.subheadline.weight(.semibold).monospacedDigit()).frame(maxWidth: .infinity, minHeight: 34).background(BarTheme.stone.opacity(0.55), in: RoundedRectangle(cornerRadius: 9)) }.accessibilityLabel("Set \(product.name) quantity")
-                RepeatQuantityButton(symbol: "plus", name: product.name) { change(by: 1) }
+                RepeatQuantityButton(symbol: "plus", name: product.name, tap: { change(by: 1) }, repeatChange: { change(by: 1, persistImmediately: false) }, finished: { store.flushStockWorkspaceChanges() })
                     .frame(width: 28, height: 34)
             }.foregroundStyle(BarTheme.olive).buttonStyle(.plain)
         }.padding(9).background(BarTheme.card, in: RoundedRectangle(cornerRadius: 14))
         .sheet(isPresented: $editing) { ProductQuantityEditor(product: product, kind: kind, current: quantity) }
     }
 
-    private func change(by amount: Int, feedback: Bool = true) {
-        store.setProductQuantity(product, kind: kind, quantity: max(0, quantity + amount), feedback: feedback)
+    private func change(by amount: Int, feedback: Bool = true, persistImmediately: Bool = true) {
+        store.setProductQuantity(product, kind: kind, quantity: max(0, quantity + amount), feedback: feedback, persistImmediately: persistImmediately)
     }
 }
 
@@ -490,36 +490,44 @@ private struct ProductGridCell: View {
 private struct RepeatQuantityButton: View {
     let symbol: String
     let name: String
-    let change: () -> Void
+    let tap: () -> Void
+    let repeatChange: () -> Void
+    let finished: () -> Void
+    init(symbol: String, name: String, change: @escaping () -> Void) {
+        self.symbol = symbol; self.name = name; tap = change; repeatChange = change; finished = {}
+    }
+    init(symbol: String, name: String, tap: @escaping () -> Void, repeatChange: @escaping () -> Void, finished: @escaping () -> Void) {
+        self.symbol = symbol; self.name = name; self.tap = tap; self.repeatChange = repeatChange; self.finished = finished
+    }
     @State private var task: Task<Void, Never>?
     @State private var repeated = false
     var body: some View {
         Image(systemName: symbol).frame(maxWidth: .infinity, maxHeight: .infinity)
             .contentShape(Rectangle())
-            .gesture(DragGesture(minimumDistance: 0)
-                .onChanged { _ in begin() }
-                .onEnded { _ in end() })
+            .onTapGesture { tap() }
+            .onLongPressGesture(minimumDuration: 0.3, maximumDistance: 8, pressing: { if !$0 { cancelRepeat() } }, perform: beginRepeat)
+            .simultaneousGesture(DragGesture(minimumDistance: 8)
+                .onChanged { value in if abs(value.translation.height) > abs(value.translation.width) { cancelRepeat() } }
+                .onEnded { _ in cancelRepeat() })
             .accessibilityLabel((symbol == "plus" ? "Increase " : "Decrease ") + name)
             .accessibilityAddTraits(.isButton)
-            .accessibilityAction { change() }
-            .onDisappear { task?.cancel() }
+            .accessibilityAction { tap() }
+            .onDisappear { cancelRepeat() }
     }
-    private func begin() {
+    private func beginRepeat() {
         guard task == nil else { return }
         repeated = false
         task = Task { @MainActor in
-            try? await Task.sleep(nanoseconds: 350_000_000)
-            guard !Task.isCancelled else { return }
             repeated = true
             var step = 0
             while !Task.isCancelled {
-                change(); step += 1
-                let delay: UInt64 = step < 7 ? 105_000_000 : step < 19 ? 52_000_000 : 28_000_000
+                repeatChange(); step += 1
+                let delay: UInt64 = step < 7 ? 85_000_000 : step < 19 ? 45_000_000 : 25_000_000
                 try? await Task.sleep(nanoseconds: delay)
             }
         }
     }
-    private func end() { let wasRepeated = repeated; task?.cancel(); task = nil; if !wasRepeated { change() } }
+    private func cancelRepeat() { guard task != nil else { return }; task?.cancel(); task = nil; finished() }
 }
 
 private struct ProductQuantityEditor: View {
