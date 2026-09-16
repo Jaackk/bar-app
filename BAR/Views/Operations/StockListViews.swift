@@ -37,6 +37,7 @@ struct StockListView: View {
     let kind: StockListKind
     @State private var selectedGroup: ProductBrowseGroup?
     @State private var wineFilter = "All"
+    @State private var sessionOrderIDs: [String] = []
     @State private var productSearch = ""
     @State private var custom = false
     @State private var editing: StockListItem?
@@ -50,11 +51,11 @@ struct StockListView: View {
     }
     private var displayedProducts: [Product] {
         let query = productSearch.trimmingCharacters(in: .whitespacesAndNewlines)
-        let base = query.isEmpty ? store.products : StockListService.search(store.products, venueID: store.preferences.venueID, query: query)
+        let ranked = sessionOrderIDs.isEmpty ? rankedSessionProducts() : sessionOrderIDs.compactMap { id in store.products.first { $0.id == id } }
+        let base = query.isEmpty ? ranked : ranked.filter { product in StockListService.search(store.products, venueID: store.preferences.venueID, query: query).contains(where: { $0.id == product.id }) }
         let filtered = selectedGroup.map { group in base.filter { group.includes($0) } } ?? base
         if query.isEmpty, selectedGroup == nil {
-            var seen = Set<String>()
-            let preferred = (essentials + frequentProducts).filter { seen.insert($0.id).inserted }
+            let preferred = ranked.filter { product in essentials.contains(where: { $0.id == product.id }) || frequentProducts.contains(where: { $0.id == product.id }) }
             let ids = Set(preferred.map(\.id))
             return Array((preferred + filtered.filter { !ids.contains($0.id) }.sorted { lhs, rhs in
                 let left = store.preferences.productUsage[lhs.id, default: 0] + ProductBrowseGroup.servicePriority(lhs, in: .other)
@@ -67,11 +68,17 @@ struct StockListView: View {
             guard let wine = store.wines.first(where: { $0.productID == product.id }) else { return false }
             switch wineFilter { case "White": return wine.colour == .white; case "Red": return wine.colour == .red; case "Rosé": return wine.colour == .rose; default: return true }
         }
-        return wineFiltered.sorted { lhs, rhs in
-            let left = store.preferences.productUsage[lhs.id, default: 0] + ProductBrowseGroup.servicePriority(lhs, in: selectedGroup ?? .other)
-            let right = store.preferences.productUsage[rhs.id, default: 0] + ProductBrowseGroup.servicePriority(rhs, in: selectedGroup ?? .other)
+        return wineFiltered
+    }
+    private func rankedSessionProducts() -> [Product] {
+        var seen = Set<String>()
+        let preferred = (essentials + frequentProducts).filter { seen.insert($0.id).inserted }
+        let remaining = store.products.filter { seen.insert($0.id).inserted }.sorted { lhs, rhs in
+            let left = store.preferences.productUsage[lhs.id, default: 0] + ProductBrowseGroup.servicePriority(lhs, in: .other)
+            let right = store.preferences.productUsage[rhs.id, default: 0] + ProductBrowseGroup.servicePriority(rhs, in: .other)
             return left == right ? lhs.name < rhs.name : left > right
         }
+        return preferred + remaining
     }
     var body: some View {
         List {
@@ -83,12 +90,12 @@ struct StockListView: View {
                 }.padding(.horizontal, 12).frame(minHeight: 44).background(BarTheme.cream, in: RoundedRectangle(cornerRadius: 13))
             }.listRowBackground(Color.clear)
             Section {
-                ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 8) {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 6), count: 5), spacing: 6) {
                     CategoryFilterButton(title: "All", symbol: "square.grid.2x2", selected: selectedGroup == nil) { selectedGroup = nil }
                     ForEach(ProductBrowseGroup.operationalGroups) { group in
                         CategoryFilterButton(title: group.shortTitle, symbol: group.symbol, selected: selectedGroup == group) { selectedGroup = selectedGroup == group ? nil : group; wineFilter = "All" }
                     }
-                }.padding(.vertical, 2) }
+                }.padding(.vertical, 1)
             }.listRowBackground(Color.clear)
             if selectedGroup == .wine {
                 Section { HStack(spacing: 7) { ForEach(["All", "White", "Red", "Rosé", "Sparkling"], id: \.self) { value in
@@ -133,7 +140,7 @@ struct StockListView: View {
                 }.listRowBackground(BarTheme.card)
             }
             Section { Button { custom = true } label: { Label("Add custom item", systemImage: "pencil.line").frame(minHeight: 40) } }.listRowBackground(BarTheme.card)
-        }.listStyle(.insetGrouped).listSectionSpacing(8).contentMargins(.top, 0, for: .scrollContent).scrollContentBackground(.hidden).barScreen().navigationTitle(kind.title).navigationBarTitleDisplayMode(.inline)
+        }.listStyle(.plain).listSectionSpacing(5).contentMargins(.top, 0, for: .scrollContent).scrollContentBackground(.hidden).barScreen().navigationTitle(kind.title).navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) { Menu {
                 Button(copied ? "Copied" : "Copy List", systemImage: "doc.on.doc") { UIPasteboard.general.string = store.listText(kind); copied = true }
@@ -148,6 +155,7 @@ struct StockListView: View {
         }
         .sheet(isPresented: $custom) { ListItemEditor { name, quantity in store.addCustomItem(name: name, quantity: quantity, kind: kind) } }
         .sheet(item: $editing) { item in ListItemEditor(item: item) { _, quantity in store.setListQuantity(id: item.id, quantity: quantity) } }
+        .onAppear { if sessionOrderIDs.isEmpty { sessionOrderIDs = rankedSessionProducts().map(\.id) } }
         .onChange(of: items) { _, _ in copied = false }
     }
 }
@@ -224,7 +232,7 @@ private enum ProductBrowseGroup: String, CaseIterable, Identifiable {
     static let priorityGroups: [ProductBrowseGroup] = [.beer, .wine, .spirits, .mixers, .milk, .juices, .fruit]
     static let operationalGroups: [ProductBrowseGroup] = [.beer, .wine, .spirits, .mixers, .milk, .juices, .fruit, .syrups, .other]
     var shortTitle: String {
-        switch self { case .beer: "Beer"; case .juices: "Juice"; case .fruit: "Fruit"; case .syrups: "Syrups"; default: rawValue }
+        switch self { case .beer: "Beer &\nCider"; case .juices: "Juice"; case .fruit: "Fruit"; case .syrups: "Syrups"; default: rawValue }
     }
     var categories: Set<String> {
         switch self {
@@ -256,11 +264,11 @@ private enum ProductBrowseGroup: String, CaseIterable, Identifiable {
         switch self {
         case .beer: return "mug"
         case .wine, .sparkling: return "wineglass"
-        case .spirits: return "flask"
+        case .spirits: return "waterbottle.fill"
         case .mixers, .softDrinks: return "bubbles.and.sparkles"
         case .milk: return "cup.and.saucer"
         case .juices, .syrups: return "drop"
-        case .fruit: return "carrot"
+        case .fruit: return "circle.lefthalf.filled"
         case .herbs: return "leaf"
         case .prep: return "flask"
         case .other: return "shippingbox"
@@ -325,10 +333,10 @@ private struct CategoryFilterButton: View {
     let action: () -> Void
     var body: some View {
         Button(action: action) {
-            VStack(spacing: 4) {
+            VStack(spacing: 3) {
                 Image(systemName: symbol).font(.system(size: 17, weight: .medium))
-                Text(title).font(.system(size: 10, weight: .semibold)).lineLimit(1)
-            }.frame(width: 62, height: 54)
+                Text(title).font(.system(size: 9, weight: .semibold)).lineLimit(2).multilineTextAlignment(.center)
+            }.frame(maxWidth: .infinity, minHeight: 48)
                 .foregroundStyle(selected ? .white : BarTheme.ink)
                 .background(selected ? BarTheme.olive : BarTheme.cream, in: RoundedRectangle(cornerRadius: 12))
         }.buttonStyle(.plain).accessibilityLabel("Filter \(title)")
