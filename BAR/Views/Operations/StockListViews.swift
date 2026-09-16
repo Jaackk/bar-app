@@ -35,7 +35,7 @@ struct StockListView: View {
     @Environment(AppStore.self) private var store
     @Environment(\.dismiss) private var dismiss
     let kind: StockListKind
-    @State private var workspaceGroup: ProductBrowseGroup?
+    @State private var selectedGroup: ProductBrowseGroup?
     @State private var productSearch = ""
     @State private var custom = false
     @State private var editing: StockListItem?
@@ -47,58 +47,49 @@ struct StockListView: View {
         let ids = ["spec-absolut-vodka", "menu-casamigos-blanco", "menu-chardonnay-les-sardine-domaine-lafage", "menu-chenin-blanc-wild-garden", "menu-double-dutch-indian-tonic-water", "menu-double-dutch-skinny-tonic", "spec-whole-milk", "service-skimmed-milk", "service-oat-milk", "menu-orange-juice", "menu-pineapple-juice", "menu-limes"]
         return ids.compactMap { id in store.products.first { $0.id == id } }
     }
-    private var quickMatches: [Product] {
-        guard !productSearch.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return [] }
-        return StockListService.search(store.products, venueID: store.preferences.venueID, query: productSearch).prefix(8).map { $0 }
+    private var displayedProducts: [Product] {
+        let query = productSearch.trimmingCharacters(in: .whitespacesAndNewlines)
+        let base = query.isEmpty ? store.products : StockListService.search(store.products, venueID: store.preferences.venueID, query: query)
+        let filtered = selectedGroup.map { group in base.filter { group.includes($0) } } ?? base
+        if query.isEmpty, selectedGroup == nil {
+            let preferred = essentials + frequentProducts
+            let ids = Set(preferred.map(\.id))
+            return preferred + filtered.filter { !ids.contains($0.id) }.sorted { lhs, rhs in
+                let left = store.preferences.productUsage[lhs.id, default: 0] + ProductBrowseGroup.servicePriority(lhs, in: .other)
+                let right = store.preferences.productUsage[rhs.id, default: 0] + ProductBrowseGroup.servicePriority(rhs, in: .other)
+                return left == right ? lhs.name < rhs.name : left > right
+            }
+        }
+        return filtered.sorted { lhs, rhs in
+            let left = store.preferences.productUsage[lhs.id, default: 0] + ProductBrowseGroup.servicePriority(lhs, in: selectedGroup ?? .other)
+            let right = store.preferences.productUsage[rhs.id, default: 0] + ProductBrowseGroup.servicePriority(rhs, in: selectedGroup ?? .other)
+            return left == right ? lhs.name < rhs.name : left > right
+        }
     }
     var body: some View {
         List {
             Section {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(kind == .restock ? "What does the bar need right now?" : "What do we need to buy next?").font(BarTheme.title(25))
-                    Text(items.isEmpty ? "Add products as you go." : "\(items.count) products · \(items.reduce(0) { $0 + $1.quantity }) units").font(.subheadline).foregroundStyle(.secondary)
-                }.padding(.vertical, 1)
+                Text(items.isEmpty ? "0 products · 0 units" : "\(items.count) products · \(items.reduce(0) { $0 + $1.quantity }) units").font(.subheadline).foregroundStyle(.secondary)
                 HStack(spacing: 10) {
                     Image(systemName: "magnifyingglass").foregroundStyle(BarTheme.muted)
                     TextField("Search products…", text: $productSearch).textInputAutocapitalization(.never).accessibilityIdentifier("restock-search")
                     if !productSearch.isEmpty { Button { productSearch = "" } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(BarTheme.muted) }.buttonStyle(.plain) }
                 }.padding(.horizontal, 12).frame(minHeight: 44).background(BarTheme.cream, in: RoundedRectangle(cornerRadius: 13))
             }.listRowBackground(Color.clear)
-            if !quickMatches.isEmpty { Section("Search results") {
-                ForEach(quickMatches) { product in QuickAddProductRow(product: product, kind: kind) }
-            }.listRowBackground(BarTheme.card) }
-            Section("Quick categories") {
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 9), count: 3), spacing: 9) {
+            Section {
+                ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 8) {
+                    CategoryFilterButton(title: "All", symbol: "square.grid.2x2", selected: selectedGroup == nil) { selectedGroup = nil }
                     ForEach(ProductBrowseGroup.operationalGroups) { group in
-                        RestockCategoryCard(group: group) { workspaceGroup = group }
+                        CategoryFilterButton(title: group == .fruit ? "Fruit" : group.rawValue, symbol: group.symbol, selected: selectedGroup == group) { selectedGroup = selectedGroup == group ? nil : group }
                     }
-                }.padding(.vertical, 4)
-            }.listRowBackground(BarTheme.card)
-            if !frequentProducts.isEmpty { Section(kind == .restock ? "Frequently added" : "Frequently ordered") {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 10) {
-                        ForEach(frequentProducts) { product in
-                            Button { store.addProduct(product, to: kind) } label: {
-                                VStack(alignment: .leading, spacing: 7) {
-                                    ProductThumbnail(product: product).frame(width: 62, height: 62)
-                                    Text(product.name).font(.caption.weight(.medium)).lineLimit(2).frame(width: 82, alignment: .leading)
-                                    Text("Add").font(.caption2.weight(.semibold)).foregroundStyle(BarTheme.olive)
-                                }.frame(width: 82, alignment: .leading)
-                            }.buttonStyle(.plain)
-                        }
-                    }.padding(.vertical, 5)
-                }
-            }.listRowBackground(BarTheme.card) }
-            Section("House essentials") {
-                ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 10) { ForEach(essentials) { product in
-                    Button { store.addProduct(product, to: kind) } label: { VStack(alignment: .leading, spacing: 7) { ProductThumbnail(product: product).frame(width: 62, height: 62); Text(product.name).font(.caption.weight(.medium)).lineLimit(2).frame(width: 82, alignment: .leading); Text("Add").font(.caption2.weight(.semibold)).foregroundStyle(BarTheme.olive) }.frame(width: 82, alignment: .leading) }.buttonStyle(.plain)
-                } }.padding(.vertical, 5) }
-            }.listRowBackground(BarTheme.card)
-            if items.isEmpty {
-                Section {
-                    EmptyStateView(title: kind == .restock ? "Nothing needed yet." : "No products added.", message: kind == .restock ? "Search for a product to start a restock list." : "Search or add an item to build the order.", systemImage: kind == .restock ? "tray" : "cart")
-                }.listRowBackground(Color.clear)
-            } else {
+                }.padding(.vertical, 2) }
+            }.listRowBackground(Color.clear)
+            Section(productSearch.isEmpty ? (selectedGroup?.rawValue ?? "House & frequent") : "Results") {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 3), spacing: 8) {
+                    ForEach(displayedProducts) { product in ProductGridCell(product: product, kind: kind) }
+                }.padding(.vertical, 2)
+            }.listRowBackground(Color.clear)
+            if !items.isEmpty {
                 Section(kind == .restock ? "Current restock" : "Current order") {
                     ForEach(items) { item in
                         let product = store.products.first { $0.id == item.productID }
@@ -141,7 +132,6 @@ struct StockListView: View {
                 Task { @MainActor in store.clearList(kind) }
             }
         }
-        .navigationDestination(item: $workspaceGroup) { group in ProductWorkspace(kind: kind, initialGroup: group) }
         .sheet(isPresented: $custom) { ListItemEditor { name, quantity in store.addCustomItem(name: name, quantity: quantity, kind: kind) } }
         .sheet(item: $editing) { item in ListItemEditor(item: item) { _, quantity in store.setListQuantity(id: item.id, quantity: quantity) } }
         .onChange(of: items) { _, _ in copied = false }
@@ -279,6 +269,23 @@ private struct RestockCategoryCard: View {
                 .background(BarTheme.cream.opacity(0.78), in: RoundedRectangle(cornerRadius: 14))
                 .contentShape(RoundedRectangle(cornerRadius: 14))
         }.buttonStyle(.plain).accessibilityIdentifier("restock-category-\(group.id)").accessibilityLabel("Browse \(group.rawValue)")
+    }
+}
+
+private struct CategoryFilterButton: View {
+    let title: String
+    let symbol: String
+    let selected: Bool
+    let action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: 4) {
+                Image(systemName: symbol).font(.system(size: 17, weight: .medium))
+                Text(title).font(.system(size: 10, weight: .semibold)).lineLimit(1)
+            }.frame(width: 62, height: 54)
+                .foregroundStyle(selected ? .white : BarTheme.ink)
+                .background(selected ? BarTheme.olive : BarTheme.cream, in: RoundedRectangle(cornerRadius: 12))
+        }.buttonStyle(.plain).accessibilityLabel("Filter \(title)")
     }
 }
 
