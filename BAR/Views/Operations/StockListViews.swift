@@ -64,14 +64,14 @@ struct StockListView: View {
                     TextField("Search products…", text: $productSearch).textInputAutocapitalization(.never).accessibilityIdentifier("restock-search")
                     if !productSearch.isEmpty { Button { productSearch = "" } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(BarTheme.muted) }.buttonStyle(.plain) }
                 }.padding(.horizontal, 14).frame(minHeight: 52).background(BarTheme.cream, in: RoundedRectangle(cornerRadius: 15))
-            }.listRowBackground(BarTheme.card)
+            }.listRowBackground(Color.clear)
             if !quickMatches.isEmpty { Section("Search results") {
                 ForEach(quickMatches) { product in QuickAddProductRow(product: product, kind: kind) }
             }.listRowBackground(BarTheme.card) }
             Section("Quick categories") {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 9), count: 3), spacing: 9) {
                     ForEach(ProductBrowseGroup.operationalGroups) { group in
-                        RestockCategoryCard(group: group) { browseGroup = group; browserPresented = true }
+                        RestockCategoryCard(group: group) { browseGroup = group }
                     }
                 }.padding(.vertical, 4)
                 Button { browseGroup = nil; browserPresented = true } label: {
@@ -146,7 +146,8 @@ struct StockListView: View {
                 Task { @MainActor in store.clearList(kind) }
             }
         }
-        .sheet(isPresented: $browserPresented, onDismiss: { browseGroup = nil }) { ProductBrowser(kind: kind, initialGroup: browseGroup) }
+        .sheet(item: $browseGroup) { group in ProductBrowser(kind: kind, initialGroup: group) }
+        .sheet(isPresented: $browserPresented) { ProductBrowser(kind: kind) }
         .sheet(isPresented: $custom) { ListItemEditor { name, quantity in store.addCustomItem(name: name, quantity: quantity, kind: kind) } }
         .sheet(item: $editing) { item in ListItemEditor(item: item) { _, quantity in store.setListQuantity(id: item.id, quantity: quantity) } }
         .onChange(of: items) { _, _ in copied = false }
@@ -161,9 +162,9 @@ private struct QuantityControl: View {
     var edit: (() -> Void)? = nil
     var body: some View {
         HStack(spacing: 0) {
-            Button(action: decrement) { Image(systemName: "minus").frame(width: 38, height: 44) }.accessibilityLabel("Decrease \(name)")
+            RepeatQuantityButton(symbol: "minus", name: name, change: decrement).frame(width: 38, height: 44)
             Button { edit?() } label: { Text("\(quantity)").font(.subheadline.weight(.semibold).monospacedDigit()).frame(minWidth: 28, minHeight: 44) }.disabled(edit == nil).accessibilityLabel("Edit \(name) quantity").accessibilityValue("\(quantity)")
-            Button(action: increment) { Image(systemName: "plus").frame(width: 38, height: 44) }.accessibilityLabel("Increase \(name)")
+            RepeatQuantityButton(symbol: "plus", name: name, change: increment).frame(width: 38, height: 44)
         }.buttonStyle(.borderless).foregroundStyle(BarTheme.olive).background(BarTheme.sage.opacity(0.3), in: RoundedRectangle(cornerRadius: 12))
     }
 }
@@ -345,7 +346,6 @@ private struct ProductGridCell: View {
     let product: Product
     let kind: StockListKind
     @State private var editing = false
-    @State private var repeatTask: Task<Void, Never>?
     private var item: StockListItem? { store.listItems(kind).first { $0.productID == product.id } }
     private var quantity: Int { item?.quantity ?? 0 }
     var body: some View {
@@ -353,37 +353,57 @@ private struct ProductGridCell: View {
             ProductThumbnail(product: product).frame(maxWidth: .infinity).frame(height: 112)
             Text(product.name).font(.subheadline.weight(.semibold)).lineLimit(2).frame(maxWidth: .infinity, alignment: .leading)
             HStack(spacing: 2) {
-                Button { change(by: -1) } label: { Image(systemName: "minus").frame(width: 38, height: 42) }
-                    .onLongPressGesture(minimumDuration: 0.35, maximumDistance: 20, pressing: { if !$0 { stopRepeating() } }, perform: { startRepeating(-1) })
-                    .accessibilityLabel("Decrease \(product.name)")
+                RepeatQuantityButton(symbol: "minus", name: product.name) { change(by: -1) }
+                    .frame(width: 38, height: 42)
                 Button { editing = true } label: { Text("\(quantity)").font(.headline.monospacedDigit()).frame(maxWidth: .infinity, minHeight: 42).background(BarTheme.stone.opacity(0.55), in: RoundedRectangle(cornerRadius: 10)) }.accessibilityLabel("Set \(product.name) quantity")
-                Button { change(by: 1) } label: { Image(systemName: "plus").frame(width: 38, height: 42) }
-                    .onLongPressGesture(minimumDuration: 0.35, maximumDistance: 20, pressing: { if !$0 { stopRepeating() } }, perform: { startRepeating(1) })
-                    .accessibilityLabel("Increase \(product.name)")
+                RepeatQuantityButton(symbol: "plus", name: product.name) { change(by: 1) }
+                    .frame(width: 38, height: 42)
             }.foregroundStyle(BarTheme.olive).buttonStyle(.plain)
         }.padding(12).background(BarTheme.card, in: RoundedRectangle(cornerRadius: 16))
         .sheet(isPresented: $editing) { ProductQuantityEditor(product: product, kind: kind, current: quantity) }
-        .onDisappear { stopRepeating() }
     }
 
     private func change(by amount: Int, feedback: Bool = true) {
         store.setProductQuantity(product, kind: kind, quantity: max(0, quantity + amount), feedback: feedback)
     }
-    private func startRepeating(_ amount: Int) {
-        guard repeatTask == nil else { return }
-        repeatTask = Task { @MainActor in
-            // Button's normal tap supplies the first unit.  Holding begins a
-            // deliberate stream after the standard long-press threshold.
+}
+
+/// A gesture-first control avoids SwiftUI Button's long-press competition inside
+/// scrolling grids. A touch up before the delay is one tap; holding starts a single
+/// cancellable repeat stream and stops on the same touch-up event.
+private struct RepeatQuantityButton: View {
+    let symbol: String
+    let name: String
+    let change: () -> Void
+    @State private var task: Task<Void, Never>?
+    @State private var repeated = false
+    var body: some View {
+        Image(systemName: symbol).frame(maxWidth: .infinity, maxHeight: .infinity)
+            .contentShape(Rectangle())
+            .gesture(DragGesture(minimumDistance: 0)
+                .onChanged { _ in begin() }
+                .onEnded { _ in end() })
+            .accessibilityLabel((symbol == "plus" ? "Increase " : "Decrease ") + name)
+            .accessibilityAddTraits(.isButton)
+            .accessibilityAction { change() }
+            .onDisappear { task?.cancel() }
+    }
+    private func begin() {
+        guard task == nil else { return }
+        repeated = false
+        task = Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 350_000_000)
+            guard !Task.isCancelled else { return }
+            repeated = true
             var step = 0
             while !Task.isCancelled {
-                change(by: amount, feedback: step == 0)
-                step += 1
-                let delay: UInt64 = step < 6 ? 110_000_000 : step < 18 ? 55_000_000 : 32_000_000
+                change(); step += 1
+                let delay: UInt64 = step < 7 ? 105_000_000 : step < 19 ? 52_000_000 : 28_000_000
                 try? await Task.sleep(nanoseconds: delay)
             }
         }
     }
-    private func stopRepeating() { repeatTask?.cancel(); repeatTask = nil }
+    private func end() { let wasRepeated = repeated; task?.cancel(); task = nil; if !wasRepeated { change() } }
 }
 
 private struct ProductQuantityEditor: View {
