@@ -60,9 +60,9 @@ struct WineBottleArt: View {
     var body: some View { GeometryReader { proxy in
         switch WineProductResolver.imageSource(for: wine, products: store.products) {
         case .customProductImage(let product), .bundledProductImage(let product):
-            ProductThumbnail(product: product)
+            ProductThumbnail(product: product).frame(maxWidth: .infinity, alignment: .center)
         case .wineImage(let imageName) where UIImage(named: imageName) != nil:
-            Image(imageName).resizable().scaledToFit()
+            Image(imageName).resizable().scaledToFit().frame(maxWidth: .infinity, alignment: .center)
         case .wineImage, .fallback:
             VStack(spacing: 0) { RoundedRectangle(cornerRadius: 3).fill(colour.opacity(0.95)).frame(width: proxy.size.width * 0.27, height: proxy.size.height * 0.3); ZStack { UnevenRoundedRectangle(topLeadingRadius: 12, bottomLeadingRadius: 5, bottomTrailingRadius: 5, topTrailingRadius: 12).fill(colour); RoundedRectangle(cornerRadius: 2).fill(BarTheme.cream).frame(width: proxy.size.width * 0.64, height: proxy.size.height * 0.27).overlay(Text(wine.grape.prefix(1)).font(BarTheme.title(15)).foregroundStyle(BarTheme.ink)) }.frame(height: proxy.size.height * 0.65) }.frame(maxWidth: .infinity).shadow(color: BarTheme.ink.opacity(0.08), radius: 3, y: 4)
         }

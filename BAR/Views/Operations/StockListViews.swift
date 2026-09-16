@@ -35,8 +35,7 @@ struct StockListView: View {
     @Environment(AppStore.self) private var store
     @Environment(\.dismiss) private var dismiss
     let kind: StockListKind
-    @State private var browserPresented = false
-    @State private var browseGroup: ProductBrowseGroup?
+    @State private var workspaceGroup: ProductBrowseGroup?
     @State private var productSearch = ""
     @State private var custom = false
     @State private var editing: StockListItem?
@@ -56,14 +55,14 @@ struct StockListView: View {
         List {
             Section {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(kind == .restock ? "What does the bar need right now?" : "What do we need to buy next?").font(BarTheme.title(29))
+                    Text(kind == .restock ? "What does the bar need right now?" : "What do we need to buy next?").font(BarTheme.title(25))
                     Text(items.isEmpty ? "Add products as you go." : "\(items.count) products · \(items.reduce(0) { $0 + $1.quantity }) units").font(.subheadline).foregroundStyle(.secondary)
-                }.padding(.vertical, 10)
+                }.padding(.vertical, 1)
                 HStack(spacing: 10) {
                     Image(systemName: "magnifyingglass").foregroundStyle(BarTheme.muted)
                     TextField("Search products…", text: $productSearch).textInputAutocapitalization(.never).accessibilityIdentifier("restock-search")
                     if !productSearch.isEmpty { Button { productSearch = "" } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(BarTheme.muted) }.buttonStyle(.plain) }
-                }.padding(.horizontal, 14).frame(minHeight: 52).background(BarTheme.cream, in: RoundedRectangle(cornerRadius: 15))
+                }.padding(.horizontal, 12).frame(minHeight: 44).background(BarTheme.cream, in: RoundedRectangle(cornerRadius: 13))
             }.listRowBackground(Color.clear)
             if !quickMatches.isEmpty { Section("Search results") {
                 ForEach(quickMatches) { product in QuickAddProductRow(product: product, kind: kind) }
@@ -71,13 +70,9 @@ struct StockListView: View {
             Section("Quick categories") {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 9), count: 3), spacing: 9) {
                     ForEach(ProductBrowseGroup.operationalGroups) { group in
-                        RestockCategoryCard(group: group) { browseGroup = group }
+                        RestockCategoryCard(group: group) { workspaceGroup = group }
                     }
                 }.padding(.vertical, 4)
-                Button { browseGroup = nil; browserPresented = true } label: {
-                    Label("Browse complete catalogue", systemImage: "square.grid.2x2")
-                        .font(.caption.weight(.semibold)).frame(maxWidth: .infinity, minHeight: 40)
-                }.buttonStyle(.plain)
             }.listRowBackground(BarTheme.card)
             if !frequentProducts.isEmpty { Section(kind == .restock ? "Frequently added" : "Frequently ordered") {
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -133,7 +128,7 @@ struct StockListView: View {
                 }.listRowBackground(BarTheme.card)
             }
             Section { Button { custom = true } label: { Label("Add custom item", systemImage: "pencil.line").frame(minHeight: 40) } }.listRowBackground(BarTheme.card)
-        }.listStyle(.insetGrouped).scrollContentBackground(.hidden).barScreen().navigationTitle(kind.title).navigationBarTitleDisplayMode(.inline)
+        }.listStyle(.insetGrouped).listSectionSpacing(8).scrollContentBackground(.hidden).barScreen().navigationTitle(kind.title).navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) { Menu {
                 Button(copied ? "Copied" : "Copy List", systemImage: "doc.on.doc") { UIPasteboard.general.string = store.listText(kind); copied = true }
@@ -146,8 +141,7 @@ struct StockListView: View {
                 Task { @MainActor in store.clearList(kind) }
             }
         }
-        .sheet(item: $browseGroup) { group in ProductBrowser(kind: kind, initialGroup: group) }
-        .sheet(isPresented: $browserPresented) { ProductBrowser(kind: kind) }
+        .navigationDestination(item: $workspaceGroup) { group in ProductWorkspace(kind: kind, initialGroup: group) }
         .sheet(isPresented: $custom) { ListItemEditor { name, quantity in store.addCustomItem(name: name, quantity: quantity, kind: kind) } }
         .sheet(item: $editing) { item in ListItemEditor(item: item) { _, quantity in store.setListQuantity(id: item.id, quantity: quantity) } }
         .onChange(of: items) { _, _ in copied = false }
@@ -341,6 +335,67 @@ private struct ProductBrowser: View {
     }
 }
 
+private struct ProductWorkspace: View {
+    @Environment(AppStore.self) private var store
+    let kind: StockListKind
+    @State private var group: ProductBrowseGroup
+    init(kind: StockListKind, initialGroup: ProductBrowseGroup) {
+        self.kind = kind
+        _group = State(initialValue: initialGroup)
+    }
+    private var products: [Product] {
+        StockListService.search(store.products, venueID: store.preferences.venueID, query: "")
+            .filter { group.includes($0) }
+            .sorted { lhs, rhs in
+                let left = store.preferences.productUsage[lhs.id, default: 0] + ProductBrowseGroup.servicePriority(lhs, in: group)
+                let right = store.preferences.productUsage[rhs.id, default: 0] + ProductBrowseGroup.servicePriority(rhs, in: group)
+                return left == right ? lhs.name < rhs.name : left > right
+            }
+    }
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 10) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        ForEach(ProductBrowseGroup.priorityGroups) { value in
+                            Button { group = value } label: { WorkspaceCategoryButton(group: value, selected: group == value) }
+                        }
+                    }.padding(.horizontal, 16).padding(.vertical, 4)
+                }
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 3), spacing: 8) {
+                    ForEach(products) { product in ProductGridCell(product: product, kind: kind) }
+                }.padding(.horizontal, 16).padding(.bottom, 12)
+            }
+        }
+        .barScreen()
+        .navigationTitle(group.rawValue)
+        .navigationBarTitleDisplayMode(.inline)
+        .safeAreaInset(edge: .bottom) {
+            NavigationLink { StockListView(kind: kind) } label: {
+                Text("View \(kind == .restock ? "Restock" : "Order") List (\(store.listItems(kind).count))  →")
+                    .font(.subheadline.weight(.semibold)).frame(maxWidth: .infinity, minHeight: 48)
+                    .foregroundStyle(.white).background(BarTheme.olive, in: RoundedRectangle(cornerRadius: 13))
+            }.padding(.horizontal, 16).padding(.vertical, 8).background(BarTheme.stone.opacity(0.94))
+        }
+    }
+}
+
+private struct WorkspaceCategoryButton: View {
+    @Environment(AppStore.self) private var store
+    let group: ProductBrowseGroup
+    let selected: Bool
+    private var product: Product? { store.products.first { group.includes($0) && ProductBrowseGroup.servicePriority($0, in: group) > 0 } ?? store.products.first { group.includes($0) } }
+    var body: some View {
+        VStack(spacing: 4) {
+            ProductThumbnail(product: product).frame(width: 42, height: 50)
+            Text(group == .fruit ? "Fruit" : group.rawValue).font(.system(size: 10, weight: .semibold)).lineLimit(1)
+        }.frame(width: 70, height: 84).padding(5)
+            .foregroundStyle(selected ? .white : BarTheme.ink)
+            .background(selected ? BarTheme.olive : BarTheme.card, in: RoundedRectangle(cornerRadius: 12))
+            .contentShape(RoundedRectangle(cornerRadius: 12))
+    }
+}
+
 private struct ProductGridCell: View {
     @Environment(AppStore.self) private var store
     let product: Product
@@ -350,16 +405,16 @@ private struct ProductGridCell: View {
     private var quantity: Int { item?.quantity ?? 0 }
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            ProductThumbnail(product: product).frame(maxWidth: .infinity).frame(height: 112)
-            Text(product.name).font(.subheadline.weight(.semibold)).lineLimit(2).frame(maxWidth: .infinity, alignment: .leading)
+            ProductThumbnail(product: product).frame(maxWidth: .infinity).frame(height: 76)
+            Text(product.name).font(.caption.weight(.semibold)).lineLimit(2).frame(maxWidth: .infinity, alignment: .leading).frame(height: 32, alignment: .topLeading)
             HStack(spacing: 2) {
                 RepeatQuantityButton(symbol: "minus", name: product.name) { change(by: -1) }
-                    .frame(width: 38, height: 42)
-                Button { editing = true } label: { Text("\(quantity)").font(.headline.monospacedDigit()).frame(maxWidth: .infinity, minHeight: 42).background(BarTheme.stone.opacity(0.55), in: RoundedRectangle(cornerRadius: 10)) }.accessibilityLabel("Set \(product.name) quantity")
+                    .frame(width: 28, height: 34)
+                Button { editing = true } label: { Text("\(quantity)").font(.subheadline.weight(.semibold).monospacedDigit()).frame(maxWidth: .infinity, minHeight: 34).background(BarTheme.stone.opacity(0.55), in: RoundedRectangle(cornerRadius: 9)) }.accessibilityLabel("Set \(product.name) quantity")
                 RepeatQuantityButton(symbol: "plus", name: product.name) { change(by: 1) }
-                    .frame(width: 38, height: 42)
+                    .frame(width: 28, height: 34)
             }.foregroundStyle(BarTheme.olive).buttonStyle(.plain)
-        }.padding(12).background(BarTheme.card, in: RoundedRectangle(cornerRadius: 16))
+        }.padding(9).background(BarTheme.card, in: RoundedRectangle(cornerRadius: 14))
         .sheet(isPresented: $editing) { ProductQuantityEditor(product: product, kind: kind, current: quantity) }
     }
 
