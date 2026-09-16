@@ -36,6 +36,7 @@ struct StockListView: View {
     @Environment(\.dismiss) private var dismiss
     let kind: StockListKind
     @State private var selectedGroup: ProductBrowseGroup?
+    @State private var wineFilter = "All"
     @State private var productSearch = ""
     @State private var custom = false
     @State private var editing: StockListItem?
@@ -54,13 +55,18 @@ struct StockListView: View {
         if query.isEmpty, selectedGroup == nil {
             let preferred = essentials + frequentProducts
             let ids = Set(preferred.map(\.id))
-            return preferred + filtered.filter { !ids.contains($0.id) }.sorted { lhs, rhs in
+            return Array((preferred + filtered.filter { !ids.contains($0.id) }.sorted { lhs, rhs in
                 let left = store.preferences.productUsage[lhs.id, default: 0] + ProductBrowseGroup.servicePriority(lhs, in: .other)
                 let right = store.preferences.productUsage[rhs.id, default: 0] + ProductBrowseGroup.servicePriority(rhs, in: .other)
                 return left == right ? lhs.name < rhs.name : left > right
-            }
+            }).prefix(12))
         }
-        return filtered.sorted { lhs, rhs in
+        let wineFiltered = wineFilter == "All" || selectedGroup != .wine ? filtered : filtered.filter { product in
+            if wineFilter == "Sparkling" { return product.category == "Sparkling / Champagne" }
+            guard let wine = store.wines.first(where: { $0.productID == product.id }) else { return false }
+            switch wineFilter { case "White": return wine.colour == .white; case "Red": return wine.colour == .red; case "Rosé": return wine.colour == .rose; default: return true }
+        }
+        return wineFiltered.sorted { lhs, rhs in
             let left = store.preferences.productUsage[lhs.id, default: 0] + ProductBrowseGroup.servicePriority(lhs, in: selectedGroup ?? .other)
             let right = store.preferences.productUsage[rhs.id, default: 0] + ProductBrowseGroup.servicePriority(rhs, in: selectedGroup ?? .other)
             return left == right ? lhs.name < rhs.name : left > right
@@ -69,10 +75,9 @@ struct StockListView: View {
     var body: some View {
         List {
             Section {
-                Text(items.isEmpty ? "0 products · 0 units" : "\(items.count) products · \(items.reduce(0) { $0 + $1.quantity }) units").font(.subheadline).foregroundStyle(.secondary)
                 HStack(spacing: 10) {
                     Image(systemName: "magnifyingglass").foregroundStyle(BarTheme.muted)
-                    TextField("Search products…", text: $productSearch).textInputAutocapitalization(.never).accessibilityIdentifier("restock-search")
+                    TextField(kind == .restock ? "What does the bar need?" : "What do we need to order?", text: $productSearch).textInputAutocapitalization(.never).accessibilityIdentifier("restock-search")
                     if !productSearch.isEmpty { Button { productSearch = "" } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(BarTheme.muted) }.buttonStyle(.plain) }
                 }.padding(.horizontal, 12).frame(minHeight: 44).background(BarTheme.cream, in: RoundedRectangle(cornerRadius: 13))
             }.listRowBackground(Color.clear)
@@ -80,10 +85,18 @@ struct StockListView: View {
                 ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 8) {
                     CategoryFilterButton(title: "All", symbol: "square.grid.2x2", selected: selectedGroup == nil) { selectedGroup = nil }
                     ForEach(ProductBrowseGroup.operationalGroups) { group in
-                        CategoryFilterButton(title: group == .fruit ? "Fruit" : group.rawValue, symbol: group.symbol, selected: selectedGroup == group) { selectedGroup = selectedGroup == group ? nil : group }
+                        CategoryFilterButton(title: group.shortTitle, symbol: group.symbol, selected: selectedGroup == group) { selectedGroup = selectedGroup == group ? nil : group; wineFilter = "All" }
                     }
                 }.padding(.vertical, 2) }
             }.listRowBackground(Color.clear)
+            if selectedGroup == .wine {
+                Section { HStack(spacing: 7) { ForEach(["All", "White", "Red", "Rosé", "Sparkling"], id: \.self) { value in
+                    Button { wineFilter = wineFilter == value ? "All" : value } label: { TagChip(title: value, selected: wineFilter == value) }.buttonStyle(.plain)
+                } } }.listRowBackground(Color.clear)
+            }
+            Section {
+                NavigationLink { StockListReviewView(kind: kind) } label: { HStack { Image(systemName: kind == .restock ? "tray.full" : "cart"); Text(kind == .restock ? "View Restock List" : "View Order").font(.subheadline.weight(.semibold)); Spacer(); Text("\(items.count) · \(items.reduce(0) { $0 + $1.quantity }) units").font(.caption).foregroundStyle(BarTheme.muted); Image(systemName: "chevron.right").font(.caption) }.frame(minHeight: 40) }.buttonStyle(.plain)
+            }.listRowBackground(BarTheme.card)
             Section(productSearch.isEmpty ? (selectedGroup?.rawValue ?? "House & frequent") : "Results") {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 3), spacing: 8) {
                     ForEach(displayedProducts) { product in ProductGridCell(product: product, kind: kind) }
@@ -138,6 +151,27 @@ struct StockListView: View {
     }
 }
 
+private struct StockListReviewView: View {
+    @Environment(AppStore.self) private var store
+    let kind: StockListKind
+    private var items: [StockListItem] { store.listItems(kind) }
+    var body: some View {
+        List {
+            Section("Your list") {
+                ForEach(items) { item in
+                    let product = store.products.first { $0.id == item.productID }
+                    HStack(spacing: 10) {
+                        ProductThumbnail(product: product).frame(width: 38, height: 50)
+                        VStack(alignment: .leading) { Text(item.name).font(.subheadline.weight(.semibold)); Text(item.unit.capitalized).font(.caption).foregroundStyle(.secondary) }
+                        Spacer()
+                        QuantityControl(name: item.name, quantity: item.quantity, decrement: { store.setListQuantity(id: item.id, quantity: item.quantity - 1) }, increment: { store.setListQuantity(id: item.id, quantity: item.quantity + 1) })
+                    }.swipeActions { Button("Remove", role: .destructive) { store.setListQuantity(id: item.id, quantity: 0) } }
+                }
+            }
+        }.listStyle(.insetGrouped).scrollContentBackground(.hidden).barScreen().navigationTitle(kind == .restock ? "Restock List" : "Stock Order").navigationBarTitleDisplayMode(.inline)
+    }
+}
+
 private struct QuantityControl: View {
     var name: String
     var quantity: Int
@@ -180,6 +214,9 @@ private enum ProductBrowseGroup: String, CaseIterable, Identifiable {
     var id: String { rawValue }
     static let priorityGroups: [ProductBrowseGroup] = [.beer, .wine, .spirits, .mixers, .milk, .juices, .fruit]
     static let operationalGroups: [ProductBrowseGroup] = [.beer, .wine, .spirits, .mixers, .milk, .juices, .fruit, .syrups, .other]
+    var shortTitle: String {
+        switch self { case .beer: "Beer"; case .juices: "Juice"; case .fruit: "Fruit"; case .syrups: "Syrups"; default: rawValue }
+    }
     var categories: Set<String> {
         switch self {
         case .beer: return ["Beer / Cider"]
