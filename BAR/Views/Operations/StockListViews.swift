@@ -627,29 +627,30 @@ struct ProductThumbnail: View {
     private var monogram: String {
         String(product?.name.trimmingCharacters(in: .whitespacesAndNewlines).prefix(1) ?? "P").uppercased()
     }
-    private var bundledFallbackName: String? {
-        guard (product?.brand.isEmpty ?? true) else { return nil }
-        switch product?.category {
-        case "Fresh Fruit": return "fresh-fruit"
-        case "Fresh Herbs", "Garnishes": return "fresh-herbs"
-        case "Juices", "Syrups / Cordials", "Purees", "Mixers", "Prep": return "bar-staples"
-        default: return nil
-        }
-    }
     var body: some View {
         Group {
-            if let data = product?.imageData, let image = UIImage(data: data) { Image(uiImage: image).resizable().scaledToFit() }
-            else if let name = product?.imageName, !name.isEmpty, let image = UIImage(named: name) { Image(uiImage: image).resizable().scaledToFit() }
-            else if let name = bundledFallbackName, let image = UIImage(named: name) { Image(uiImage: image).resizable().scaledToFill() }
-            else {
+            switch product.map(ProductImageResolver.source(for:)) ?? .none {
+            case .custom:
+                if let data = product?.imageData, let image = UIImage(data: data) { Image(uiImage: image).resizable().scaledToFit() }
+                else { fallbackArt }
+            case .bundled(let name):
+                if let image = UIImage(named: name) { Image(uiImage: image).resizable().scaledToFit() }
+                else { fallbackArt }
+            case .genericFallback(let name):
+                if let image = UIImage(named: name) { Image(uiImage: image).resizable().scaledToFill() }
+                else { fallbackArt }
+            case .none:
+                fallbackArt
+            }
+        }.clipShape(RoundedRectangle(cornerRadius: 10)).accessibilityHidden(true)
+    }
+    private var fallbackArt: some View {
                 ZStack {
                     LinearGradient(colors: [BarTheme.sage.opacity(0.7), BarTheme.cream], startPoint: .topLeading, endPoint: .bottomTrailing)
                     Circle().fill(.white.opacity(0.52)).frame(width: 52, height: 52)
                     Image(systemName: symbol).font(.system(size: 23, weight: .medium)).foregroundStyle(BarTheme.olive)
                     Text(monogram).font(.caption2.bold()).foregroundStyle(BarTheme.olive.opacity(0.6)).offset(x: 18, y: 22)
                 }
-            }
-        }.clipShape(RoundedRectangle(cornerRadius: 10)).accessibilityHidden(true)
     }
 }
 
@@ -660,14 +661,14 @@ struct ProductCatalogueView: View {
     @State private var missingOnly = false
     private var products: [Product] {
         StockListService.search(store.products, venueID: store.preferences.venueID, query: query)
-            .filter { !missingOnly || ($0.imageData == nil && $0.imageName.isEmpty) }
+            .filter { !missingOnly || !ProductImageResolver.hasRelevantImage(for: $0) }
     }
-    private var missingCount: Int { store.products.filter { $0.imageData == nil && $0.imageName.isEmpty }.count }
+    private var missingCount: Int { store.products.filter { !ProductImageResolver.hasRelevantImage(for: $0) }.count }
     var body: some View {
         List {
             Section {
                 Text("One catalogue for Restock, Stock Order, Search and Stocktake. Tap a product to edit its details or photo.").font(.caption).foregroundStyle(.secondary)
-                Toggle("Missing Images · \(missingCount)", isOn: $missingOnly).tint(BarTheme.olive)
+                Toggle("Missing Images · \(missingCount)", isOn: $missingOnly).tint(BarTheme.olive).accessibilityIdentifier("missing-images-filter")
             }
             ForEach(products) { product in
                 NavigationLink { ProductDetailView(productID: product.id) } label: {

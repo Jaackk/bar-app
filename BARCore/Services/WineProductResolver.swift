@@ -27,8 +27,11 @@ public enum WineProductResolver {
 
     public static func imageSource(for wine: Wine, products: [Product]) -> ImageSource {
         if let product = product(for: wine, in: products) {
-            if product.imageData != nil { return .customProductImage(product) }
-            if !product.imageName.isEmpty { return .bundledProductImage(product) }
+            switch ProductImageResolver.source(for: product) {
+            case .custom: return .customProductImage(product)
+            case .bundled: return .bundledProductImage(product)
+            case .genericFallback, .none: break
+            }
         }
         if !wine.imageName.isEmpty { return .wineImage(wine.imageName) }
         return .fallback

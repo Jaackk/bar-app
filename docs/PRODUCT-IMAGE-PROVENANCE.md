@@ -8,7 +8,19 @@ The product catalogue remains offline-first. User-supplied photographs are resiz
 | `fresh-herbs` | Generic fresh herb and garnish entries with no product-specific photograph | Original AI-generated stock illustration created for this app on 15 September 2026. It contains unbranded mint, basil, rosemary, thyme, olives and cocktail cherries. |
 | `bar-staples` | Generic juices, syrups, purees, mixers and prep entries with no brand | Original AI-generated stock illustration created for this app on 15 September 2026. It contains unbranded soda, tonic, citrus and pineapple juice, syrup and ice. |
 
-The generic assets are explicitly associated only with generic stock and service ingredients. Branded and named-wine records are assigned only a product-specific, locally bundled image. The app does not hotlink third-party images, so it remains usable offline.
+The generic assets are presentation fallbacks only. `ProductImageResolver` deliberately reports them as **missing** so Products & photos never treats a generic fruit/herb/staples illustration as a completed product image. The app does not hotlink third-party images, so it remains usable offline.
+
+## Image integrity correction — 16 September 2026
+
+The first completion mapping mistakenly reused unrelated bottle assets for several named wines and products. Those mappings have been removed rather than presenting the wrong bottle as a match. The affected canonical records are now intentionally listed by **Missing Images** until an exact asset is acquired:
+
+| Product IDs | Reason |
+| --- | --- |
+| `menu-real-blush-sparkling`, `menu-picpoul-de-pinet-tournee-du-sud`, `menu-grenache-chardonnay-cote-est-domaine-lafage`, `menu-cotes-de-provence-maia`, `menu-cotes-de-provence-maia-magnum`, `menu-raboso-il-casone`, `menu-saumur-champigny-vieilles-vignes-domaine-lavigne`, `menu-cotes-du-rhone-villages-plan-de-dieu-saint-damien`, `menu-cabernet-sauvignon-paso-doro`, `menu-lbv-quinta-do-vallado`, `menu-tawny-20yr-quinta-do-vallado` | A different wine/cuvée had been used. |
+| `menu-cornish-orchards-fruit-cider-4` | Raspberry & Elderflower cider had been used for Fruit Cider. |
+| `menu-antica-rosso` | Martini Rosso had been used for Antica Rosso. |
+
+Existing installations receive the corrected bundled-default table through menu migration version 24. Local manager photos (`imageData`) are preserved and continue to take priority.
 
 ## Completion pass — 16 September 2026
 

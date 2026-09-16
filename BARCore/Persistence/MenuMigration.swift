@@ -2,7 +2,10 @@ import Foundation
 
 /// One-time content update: personal state, old stocktake and saved lists are preserved.
 public enum MenuMigration {
-    public static let version = 23
+    // Version 24 reapplies the verified local image defaults to persisted
+    // catalogues written by version 23. The previous image batch changed only
+    // the seed corrections, leaving existing installations untouched.
+    public static let version = 24
     public static let sourceURL = "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf"
     public static func apply(to old: AppSnapshot) throws -> AppSnapshot {
         guard old.catalogueVersion < version, old.venues.contains(where: { $0.id == "rockwater-hove" }) else { return old }

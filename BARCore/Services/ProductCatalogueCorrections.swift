@@ -131,49 +131,40 @@ public enum ProductCatalogueCorrections {
         "menu-cinsault-rose-leeuwenkuil-family-vineyards": "leeuwenkuil-cinsault-rose",
         "menu-apres-provence-chateau-des-bertrands": "apres-provence",
         "menu-rioja-alavesa-las-parcelas-bideona": "bideona-las-parcelas",
-        "menu-real-blush-sparkling": "real-dry-sparkling",
-        "menu-picpoul-de-pinet-tournee-du-sud": "lafage-les-sardines-chardonnay",
-        "menu-grenache-chardonnay-cote-est-domaine-lafage": "lafage-les-sardines-chardonnay",
-        "menu-cotes-de-provence-maia": "minuty-prestige",
-        "menu-cotes-de-provence-maia-magnum": "minuty-prestige",
         "menu-touriga-nacional-santo-isidro-de-pegoes": "santo-isidro-pegoes-touriga",
         "menu-syrah-tumbleweed-big-sky-bruce-jack-wines": "bruce-jack-tumbleweed-syrah",
-        "menu-raboso-il-casone": "san-marzano-talo",
         "menu-montepulciano-blend-anima-osca-tenimenti-grieco": "anima-osca-rosso",
         "menu-agiorgitiko-mavroudi-voltes-monemvasia-winery": "monemvasia-voltes-red",
-        "menu-saumur-champigny-vieilles-vignes-domaine-lavigne": "bruce-jack-tumbleweed-syrah",
-        "menu-cotes-du-rhone-villages-plan-de-dieu-saint-damien": "bruce-jack-tumbleweed-syrah",
-        "menu-cabernet-sauvignon-paso-doro": "bruce-jack-tumbleweed-syrah",
         "menu-rivesaltes-tuile-dom-brial": "dom-brial-rivesaltes-tuile",
-        "menu-lbv-quinta-do-vallado": "castelnau-de-suduiraut",
-        "menu-tawny-20yr-quinta-do-vallado": "castelnau-de-suduiraut",
-        "menu-rockwater-lager-3-4": "bar-staples",
-        "menu-rockwater-ipa-4-7": "bar-staples",
-        "menu-cornish-orchards-fruit-cider-4": "cornish-orchards-raspberry-elderflower",
-        "menu-antica-rosso": "martini-rosso",
-        "spec-spicy-tincture": "bar-staples",
-        "spec-soda-top": "bar-staples",
-        "spec-coconut-milk": "bar-staples",
-        "spec-oggs": "oggs-aquafaba",
-        "spec-lychee-juice": "bar-staples",
-        "spec-espresso": "bar-staples",
-        "spec-vanilla": "bar-staples",
-        "spec-dd-lime-juice": "bar-staples",
-        "spec-dd-lemon-juice": "bar-staples",
-        "spec-worchester": "bar-staples",
-        "spec-tabasco-3-standard": "bar-staples",
-        "spec-salt": "bar-staples",
-        "spec-pepper": "bar-staples",
-        "spec-whole-milk": "bar-staples",
-        "spec-double-cream": "bar-staples",
-        "spec-ms-betters-bitters": "bar-staples",
-        "spec-tabasco": "bar-staples",
-        "spec-saline": "bar-staples",
-        "spec-coconut-cream": "bar-staples",
-        "spec-brown-sugar": "bar-staples",
-        "service-ice-cubes": "bar-staples",
-        "service-crushed-ice": "bar-staples"
+        "spec-oggs": "oggs-aquafaba"
     ]
+
+    /// Earlier imports contained a small number of unrelated bottle names.
+    /// Treating those as defaults made the app appear complete while showing
+    /// the wrong product. They are deliberately cleared until their own image
+    /// is acquired.
+    private static let invalidBundledImageProductIDs: Set<String> = [
+        "menu-real-blush-sparkling",
+        "menu-picpoul-de-pinet-tournee-du-sud",
+        "menu-grenache-chardonnay-cote-est-domaine-lafage",
+        "menu-cotes-de-provence-maia",
+        "menu-cotes-de-provence-maia-magnum",
+        "menu-raboso-il-casone",
+        "menu-saumur-champigny-vieilles-vignes-domaine-lavigne",
+        "menu-cotes-du-rhone-villages-plan-de-dieu-saint-damien",
+        "menu-cabernet-sauvignon-paso-doro",
+        "menu-lbv-quinta-do-vallado",
+        "menu-tawny-20yr-quinta-do-vallado",
+        "menu-cornish-orchards-fruit-cider-4",
+        "menu-antica-rosso"
+    ]
+
+    /// Returns the verified bundled image name for a canonical product. It
+    /// intentionally returns an empty string for known-invalid legacy matches.
+    public static func defaultImageName(for product: Product) -> String {
+        if invalidBundledImageProductIDs.contains(product.id) { return "" }
+        return individualImageNames[product.id] ?? product.imageName
+    }
 
     public static func corrected(_ imported: [Product]) -> [Product] {
         var products = imported.filter { replacements[$0.id] == nil && !replacements.keys.contains($0.id) }
@@ -189,8 +180,8 @@ public enum ProductCatalogueCorrections {
             if let category = edit.category { products[index].category = category }
             products[index].aliases = Array(Set(products[index].aliases + edit.aliases)).sorted()
         }
-        for index in products.indices where individualImageNames[products[index].id] != nil {
-            products[index].imageName = individualImageNames[products[index].id]!
+        for index in products.indices {
+            products[index].imageName = defaultImageName(for: products[index])
         }
         // Regularly ordered milk variants are genuine operational items even
         // where the menu import did not carry a brand.  They intentionally use

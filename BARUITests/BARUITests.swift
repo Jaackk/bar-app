@@ -262,6 +262,15 @@ final class BARUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Added to Stock Order"].exists)
         capture("Shared product detail")
     }
+    func testProductCatalogueMissingImagesUsesTheSharedImageResolver() throws {
+        tab("Stock")
+        tapText("Products & photos")
+        let filter = app.switches["missing-images-filter"]
+        XCTAssertTrue(filter.waitForExistence(timeout: 5))
+        XCTAssertTrue(filter.label.hasPrefix("Missing Images · "))
+        filter.tap()
+        XCTAssertTrue(filter.exists)
+    }
     func testHouseSpecsAndFoodSearch() throws {
         tapText("Cocktails"); tapText("Sea Glass")
         XCTAssertTrue(app.buttons["favourite-cocktail"].waitForExistence(timeout: 5))

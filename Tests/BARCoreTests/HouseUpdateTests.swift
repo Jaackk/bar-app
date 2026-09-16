@@ -150,12 +150,48 @@ final class HouseUpdateTests: XCTestCase {
         XCTAssertEqual(reopened.stockLists, state.stockLists)
         XCTAssertEqual(reopened.products.first { $0.id == product.id }?.imageData, product.imageData)
         XCTAssertEqual(reopened.products.first { $0.id == deletedID }?.isActive, false)
-        XCTAssertEqual(reopened.catalogueVersion, 23)
+        XCTAssertEqual(reopened.catalogueVersion, MenuMigration.version)
         var list = reopened.stockLists
         StockListService.setQuantity(-1, id: list[0].id, venueID: product.venueID, in: &list)
         XCTAssertEqual(list.count, 2)
         StockListService.clear(.restock, venueID: product.venueID, in: &list)
         XCTAssertEqual(StockListService.text(list, kind: .order, venueID: product.venueID), "STOCK ORDER\n\nTest product x1")
+    }
+
+    func testImageDefaultMigrationRefreshesPersistedCatalogueWithoutLosingLocalState() throws {
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        defer { try? FileManager.default.removeItem(at: directory) }
+        var state = try SeedLoader.load()
+        state.catalogueVersion = 23
+        state.preferences.employeeName = "Saved bartender"
+        state.stockLists.append(StockListItem(venueID: "rockwater-hove", kind: .restock, productID: "menu-grey-goose-essences", name: "Grey Goose Essences", quantity: 3))
+
+        let mappedIndex = try XCTUnwrap(state.products.firstIndex { $0.id == "menu-grey-goose-essences" })
+        state.products[mappedIndex].imageName = ""
+        state.products[mappedIndex].imageData = Data([9, 8, 7])
+
+        let invalidIndex = try XCTUnwrap(state.products.firstIndex { $0.id == "menu-picpoul-de-pinet-tournee-du-sud" })
+        state.products[invalidIndex].imageName = "lafage-les-sardines-chardonnay"
+
+        let repository = LocalAppRepository(directory: directory, seed: { state })
+        try repository.save(state)
+        let reopened = try repository.load()
+
+        let mapped = try XCTUnwrap(reopened.products.first { $0.id == "menu-grey-goose-essences" })
+        XCTAssertEqual(mapped.imageName, "grey-goose-essences")
+        XCTAssertEqual(mapped.imageData, Data([9, 8, 7]))
+        XCTAssertTrue(ProductImageResolver.hasRelevantImage(for: mapped))
+        XCTAssertEqual(reopened.stockLists, state.stockLists)
+        XCTAssertEqual(reopened.preferences.employeeName, "Saved bartender")
+        XCTAssertEqual(reopened.catalogueVersion, MenuMigration.version)
+
+        let invalid = try XCTUnwrap(reopened.products.first { $0.id == "menu-picpoul-de-pinet-tournee-du-sud" })
+        XCTAssertTrue(invalid.imageName.isEmpty)
+        XCTAssertFalse(ProductImageResolver.hasRelevantImage(for: invalid))
+
+        let generic = try XCTUnwrap(reopened.products.first { $0.id == "menu-mint" })
+        XCTAssertEqual(ProductImageResolver.source(for: generic), .genericFallback("fresh-herbs"))
+        XCTAssertFalse(ProductImageResolver.hasRelevantImage(for: generic))
     }
 
     func testCatalogueCorrectionMigratesOperationalReferencesWithoutChangingRecipeLanguage() throws {
