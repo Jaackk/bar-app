@@ -57,9 +57,10 @@ final class HouseUpdateTests: XCTestCase {
         let absolut = try XCTUnwrap(state.products.first { $0.name == "Absolut Vodka" })
         XCTAssertEqual(absolut.category, "Vodka")
         XCTAssertTrue(StockListService.search(state.products, venueID: "rockwater-hove", query: "absolut vodka").contains { $0.id == absolut.id })
-        for name in ["Lemons", "Limes", "Mint", "Basil", "Cocktail Cherries", "Ice Cubes", "Pineapple Foam"] {
+        for name in ["Lemons", "Limes", "Mint", "Basil", "Cocktail Cherries", "Ice Cubes", "Triple Sec", "Agave Syrup", "Daily Dose Lime Juice"] {
             XCTAssertNotNil(state.products.first { $0.name == name }, name)
         }
+        XCTAssertFalse(state.products.contains { $0.name == "Pineapple Foam" })
         let passion = StockListService.search(state.products, venueID: "rockwater-hove", query: "passionfruit")
         XCTAssertTrue(passion.contains { $0.name.localizedCaseInsensitiveContains("Passion Fruit") })
     }
@@ -149,11 +150,44 @@ final class HouseUpdateTests: XCTestCase {
         XCTAssertEqual(reopened.stockLists, state.stockLists)
         XCTAssertEqual(reopened.products.first { $0.id == product.id }?.imageData, product.imageData)
         XCTAssertEqual(reopened.products.first { $0.id == deletedID }?.isActive, false)
-        XCTAssertEqual(reopened.catalogueVersion, 22)
+        XCTAssertEqual(reopened.catalogueVersion, 23)
         var list = reopened.stockLists
         StockListService.setQuantity(-1, id: list[0].id, venueID: product.venueID, in: &list)
         XCTAssertEqual(list.count, 2)
         StockListService.clear(.restock, venueID: product.venueID, in: &list)
         XCTAssertEqual(StockListService.text(list, kind: .order, venueID: product.venueID), "STOCK ORDER\n\nTest product x1")
+    }
+
+    func testCatalogueCorrectionMigratesOperationalReferencesWithoutChangingRecipeLanguage() throws {
+        var state = try SeedLoader.load()
+        state.catalogueVersion = 22
+        let venueID = "rockwater-hove"
+        var legacy = Product(id: "spec-orange-jucie", venueID: venueID, name: "Orange Jucie", category: "Juices")
+        legacy.imageData = Data([4, 5, 6])
+        state.products.append(legacy)
+        state.stockLists.append(StockListItem(venueID: venueID, kind: .restock, productID: legacy.id, name: legacy.name, quantity: 2))
+        state.preferences.productUsage[legacy.id] = 3
+        state.preferences.recentProductIDs = [legacy.id]
+
+        let migrated = try MenuMigration.apply(to: state)
+        let orangeJuice = try XCTUnwrap(migrated.products.first { $0.id == "menu-orange-juice" })
+        XCTAssertFalse(migrated.products.contains { $0.id == legacy.id })
+        XCTAssertEqual(migrated.stockLists.first { $0.productID == orangeJuice.id }?.quantity, 2)
+        XCTAssertEqual(migrated.preferences.productUsage[orangeJuice.id], 3)
+        XCTAssertEqual(migrated.preferences.recentProductIDs.first, orangeJuice.id)
+        XCTAssertEqual(orangeJuice.imageData, Data([4, 5, 6]))
+        XCTAssertEqual(try XCTUnwrap(migrated.cocktails.first { $0.name == "Sex On The Beach" }).ingredients.first { $0.name == "Orange Jucie" }?.stockProductID, orangeJuice.id)
+        XCTAssertEqual(try XCTUnwrap(migrated.cocktails.first { $0.name == "Golden Sangria" }).ingredients.first { $0.name == "White Wine" }?.name, "White Wine")
+    }
+
+    func testCanonicalStockCatalogueHasNoConfirmedRecipeOnlyProducts() throws {
+        let state = try SeedLoader.load()
+        XCTAssertEqual(state.products.count, 249)
+        XCTAssertFalse(state.products.contains { ["Pineapple Foam", "Fruit", "Desired Fruits", "White Wine", "Cremant", "Hot Water"].contains($0.name) })
+        XCTAssertEqual(state.products.first { $0.name == "Agave Syrup" }?.category, "Syrups / Cordials")
+        XCTAssertEqual(state.products.first { $0.name == "Triple Sec" }?.category, "Liqueurs / Aperitifs")
+        XCTAssertTrue(StockListService.search(state.products, venueID: "rockwater-hove", query: "Daily Dose Lime").contains { $0.name == "Daily Dose Lime Juice" })
+        XCTAssertTrue(StockListService.search(state.products, venueID: "rockwater-hove", query: "muddled lime").contains { $0.name == "Limes" })
+        XCTAssertFalse(StockListService.search(state.products, venueID: "rockwater-hove", query: "alcohol free lager").contains { $0.name == "Alcohol Free Lager" })
     }
 }

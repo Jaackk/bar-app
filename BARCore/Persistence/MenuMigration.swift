@@ -2,7 +2,7 @@ import Foundation
 
 /// One-time content update: personal state, old stocktake and saved lists are preserved.
 public enum MenuMigration {
-    public static let version = 22
+    public static let version = 23
     public static let sourceURL = "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf"
     public static func apply(to old: AppSnapshot) throws -> AppSnapshot {
         guard old.catalogueVersion < version, old.venues.contains(where: { $0.id == "rockwater-hove" }) else { return old }
@@ -11,18 +11,24 @@ public enum MenuMigration {
             guard let url = Bundle.module.url(forResource: name, withExtension: "json") else { throw DataValidationError.invalid("Missing menu content: \(name)") }
             return try SeedLoader.makeDecoder().decode(T.self, from: Data(contentsOf: url))
         }
-        let cocktails = try read("hove-cocktails", as: [Cocktail].self) + read("house-classics", as: [Cocktail].self)
+        var cocktails = try read("hove-cocktails", as: [Cocktail].self) + read("house-classics", as: [Cocktail].self)
         let wines = try read("hove-wines", as: [Wine].self)
-        let products = try read("hove-products", as: [Product].self)
-        let productReplacements = [
+        let products = ProductCatalogueCorrections.corrected(try read("hove-products", as: [Product].self))
+        let productReplacements = ProductCatalogueCorrections.replacements.compactMapValues { $0 }.merging([
             "spec-tanqueray-no10": "menu-tanqueray-n-ten",
             "spec-casamigos-blanca": "menu-casamigos-blanco",
             "spec-jameson": "menu-jameson-irish-whiskey"
-        ]
-        let duplicateImages: [String: Data] = Dictionary(uniqueKeysWithValues: updated.products.compactMap { product -> (String, Data)? in
-            guard let canonicalID = productReplacements[product.id], let image = product.imageData else { return nil }
-            return (canonicalID, image)
-        })
+        ], uniquingKeysWith: { _, new in new })
+        for cocktailIndex in cocktails.indices {
+            for ingredientIndex in cocktails[cocktailIndex].ingredients.indices {
+                cocktails[cocktailIndex].ingredients[ingredientIndex].stockProductID = ProductCatalogueCorrections.canonicalID(forIngredientName: cocktails[cocktailIndex].ingredients[ingredientIndex].name, products: products)
+            }
+        }
+        var duplicateImages: [String: Data] = [:]
+        for product in updated.products {
+            guard let canonicalID = productReplacements[product.id], let image = product.imageData, duplicateImages[canonicalID] == nil else { continue }
+            duplicateImages[canonicalID] = image
+        }
         // Replace only bundled sample venue content; manager-approved custom records remain.
         updated.cocktails.removeAll { $0.venueID == "rockwater-hove" && $0.isSample }
         updated.wines.removeAll { $0.venueID == "rockwater-hove" && $0.isSample }
@@ -32,7 +38,7 @@ public enum MenuMigration {
         let retiredDrinkTypes: Set<String> = ["Coastal Cocktails", "Frozen Coastals", "Zero Proof Coastals", "Classic cocktail"]
         updated.products.removeAll {
             $0.venueID == "rockwater-hove" &&
-            (retiredDrinkTypes.contains($0.productType) || productReplacements[$0.id] != nil || ($0.id.hasPrefix("spec-") && !bundledProductIDs.contains($0.id)))
+            (retiredDrinkTypes.contains($0.productType) || ProductCatalogueCorrections.replacements.keys.contains($0.id) || productReplacements[$0.id] != nil || ($0.id.hasPrefix("spec-") && !bundledProductIDs.contains($0.id)))
         }
         for drink in cocktails {
             if let i = updated.cocktails.firstIndex(where: { $0.id == drink.id }) { updated.cocktails[i] = drink }
@@ -59,8 +65,9 @@ public enum MenuMigration {
             if let index = updated.wines.firstIndex(where: { $0.id == linkedWine.id }) { updated.wines[index] = linkedWine }
             else { updated.wines.append(linkedWine) }
         }
-        // Bring old stocktake-only products into the shared catalogue, preserving counts.
-        for item in updated.stock where !updated.products.contains(where: { $0.venueID == item.venueID && SearchNormalizer.normalize($0.name) == SearchNormalizer.normalize(item.name) }) {
+        // Bring manager-created stocktake-only products into the shared catalogue.
+        // Bundled sample stock counts are reference data, not additional purchase SKUs.
+        for item in updated.stock where !item.isSample && !updated.products.contains(where: { $0.venueID == item.venueID && SearchNormalizer.normalize($0.name) == SearchNormalizer.normalize(item.name) }) {
             updated.products.append(Product(id: "stock-" + item.id, venueID: item.venueID, name: item.name, category: StockListService.categories.contains(item.category) ? item.category : "Other", unit: item.unit, defaultOrderUnit: item.unit))
         }
         let canonicalProducts = Dictionary(uniqueKeysWithValues: updated.products.map { ($0.id, $0) })
@@ -84,6 +91,16 @@ public enum MenuMigration {
             else { consolidatedLists[key] = migratedLists.count; migratedLists.append(item) }
         }
         updated.stockLists = migratedLists
+        var migratedUsage: [String: Int] = [:]
+        for (oldID, count) in updated.preferences.productUsage {
+            guard let canonicalID = productReplacements[oldID] ?? ProductCatalogueCorrections.canonicalID(for: oldID), canonicalProducts[canonicalID] != nil else { continue }
+            migratedUsage[canonicalID, default: 0] = min(100_000, migratedUsage[canonicalID, default: 0] + count)
+        }
+        updated.preferences.productUsage = migratedUsage
+        updated.preferences.recentProductIDs = updated.preferences.recentProductIDs.compactMap { oldID in
+            guard let canonicalID = productReplacements[oldID] ?? ProductCatalogueCorrections.canonicalID(for: oldID), canonicalProducts[canonicalID] != nil else { return nil }
+            return canonicalID
+        }
         let replacements = Dictionary(cocktails.flatMap { c in (c.supersededCocktailIDs + (c.overridesCocktailID.map { [$0] } ?? [])).map { ($0, c.id) } }, uniquingKeysWith: { first, _ in first })
         updated.preferences.favouriteCocktailIDs = Set(updated.preferences.favouriteCocktailIDs.map { replacements[$0] ?? $0 })
         for i in updated.batches.indices { if let id = replacements[updated.batches[i].cocktailID] { updated.batches[i].cocktailID = id } }

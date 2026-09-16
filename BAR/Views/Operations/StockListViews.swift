@@ -35,8 +35,9 @@ struct StockListView: View {
     @Environment(AppStore.self) private var store
     @Environment(\.dismiss) private var dismiss
     let kind: StockListKind
-    @State private var adding = false
-    @State private var browsing = false
+    @State private var browserPresented = false
+    @State private var browseGroup: ProductBrowseGroup?
+    @State private var productSearch = ""
     @State private var custom = false
     @State private var editing: StockListItem?
     @State private var clear = false
@@ -44,8 +45,12 @@ struct StockListView: View {
     private var items: [StockListItem] { store.listItems(kind) }
     private var frequentProducts: [Product] { store.products.filter { store.preferences.productUsage[$0.id, default: 0] > 0 }.sorted { store.preferences.productUsage[$0.id, default: 0] == store.preferences.productUsage[$1.id, default: 0] ? ($0.name < $1.name) : (store.preferences.productUsage[$0.id, default: 0] > store.preferences.productUsage[$1.id, default: 0]) }.prefix(10).map { $0 } }
     private var essentials: [Product] {
-        let names = ["Ice Cubes", "Limes", "Lemons", "Soda Water", "Tonic Water", "Coca-Cola", "Pineapple Juice", "Mint", "Basil", "Cocktail Cherries"]
-        return names.compactMap { name in store.products.first { $0.name.localizedCaseInsensitiveCompare(name) == .orderedSame } }
+        let ids = ["spec-absolut-vodka", "menu-casamigos-blanco", "menu-chardonnay-les-sardine-domaine-lafage", "menu-chenin-blanc-wild-garden", "menu-double-dutch-indian-tonic-water", "menu-double-dutch-skinny-tonic", "spec-whole-milk", "service-skimmed-milk", "service-oat-milk", "menu-orange-juice", "menu-pineapple-juice", "menu-limes"]
+        return ids.compactMap { id in store.products.first { $0.id == id } }
+    }
+    private var quickMatches: [Product] {
+        guard !productSearch.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return [] }
+        return StockListService.search(store.products, venueID: store.preferences.venueID, query: productSearch).prefix(8).map { $0 }
     }
     var body: some View {
         List {
@@ -55,10 +60,22 @@ struct StockListView: View {
                     Text(items.isEmpty ? "Add products as you go." : "\(items.count) products · \(items.reduce(0) { $0 + $1.quantity }) units").font(.subheadline).foregroundStyle(.secondary)
                 }.padding(.vertical, 10)
                 HStack(spacing: 10) {
-                    Button { browsing = true } label: { Label("Browse products", systemImage: "square.grid.2x2").font(.headline).frame(maxWidth: .infinity, minHeight: 48).foregroundStyle(.white).background(BarTheme.olive, in: RoundedRectangle(cornerRadius: 13)) }.accessibilityIdentifier("browse-products")
-                    Button { adding = true } label: { Image(systemName: "magnifyingglass").frame(width: 48, height: 48).background(BarTheme.stone.opacity(0.65), in: RoundedRectangle(cornerRadius: 13)) }.accessibilityLabel("Search products").accessibilityIdentifier("add-products")
+                    Image(systemName: "magnifyingglass").foregroundStyle(BarTheme.muted)
+                    TextField("Search products…", text: $productSearch).textInputAutocapitalization(.never).accessibilityIdentifier("restock-search")
+                    if !productSearch.isEmpty { Button { productSearch = "" } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(BarTheme.muted) }.buttonStyle(.plain) }
+                }.padding(.horizontal, 14).frame(minHeight: 52).background(BarTheme.cream, in: RoundedRectangle(cornerRadius: 15))
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        ForEach(ProductBrowseGroup.priorityGroups) { group in
+                            Button { browseGroup = group; browserPresented = true } label: { TagChip(title: group.rawValue, selected: false) }.accessibilityIdentifier("restock-category-\(group.id)")
+                        }
+                    }.padding(.vertical, 3)
                 }.buttonStyle(.plain)
+                Button { browseGroup = nil; browserPresented = true } label: { Label("Browse all products", systemImage: "square.grid.2x2").font(.subheadline.weight(.semibold)).frame(maxWidth: .infinity, minHeight: 40) }.buttonStyle(.plain)
             }.listRowBackground(BarTheme.card)
+            if !quickMatches.isEmpty { Section("Search results") {
+                ForEach(quickMatches) { product in QuickAddProductRow(product: product, kind: kind) }
+            }.listRowBackground(BarTheme.card) }
             if !frequentProducts.isEmpty { Section("Frequently added") {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
@@ -74,7 +91,7 @@ struct StockListView: View {
                     }.padding(.vertical, 5)
                 }
             }.listRowBackground(BarTheme.card) }
-            Section("After-service essentials") {
+            Section("House essentials") {
                 ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 10) { ForEach(essentials) { product in
                     Button { store.addProduct(product, to: kind) } label: { VStack(alignment: .leading, spacing: 7) { ProductThumbnail(product: product).frame(width: 62, height: 62); Text(product.name).font(.caption.weight(.medium)).lineLimit(2).frame(width: 82, alignment: .leading); Text("Add").font(.caption2.weight(.semibold)).foregroundStyle(BarTheme.olive) }.frame(width: 82, alignment: .leading) }.buttonStyle(.plain)
                 } }.padding(.vertical, 5) }
@@ -121,16 +138,12 @@ struct StockListView: View {
                 Button(kind == .restock ? "Clear Restock List" : "Clear Order", systemImage: "trash", role: .destructive) { clear = true }
             } label: { Image(systemName: "ellipsis.circle") }.accessibilityLabel("List actions").disabled(items.isEmpty) }
         }
-        .safeAreaInset(edge: .bottom) {
-            PrimaryButton(title: "Add products", systemImage: "plus") { adding = true }.padding(.horizontal, 20).padding(.vertical, 10).background(BarTheme.cream)
-        }
         .confirmationDialog("Clear this list?", isPresented: $clear, titleVisibility: .visible) {
             Button(kind == .restock ? "Clear Restock List" : "Clear Order", role: .destructive) {
                 Task { @MainActor in store.clearList(kind) }
             }
         }
-        .sheet(isPresented: $adding) { ProductPicker(kind: kind) { adding = false } }
-        .sheet(isPresented: $browsing) { ProductBrowser(kind: kind) }
+        .sheet(isPresented: $browserPresented, onDismiss: { browseGroup = nil }) { ProductBrowser(kind: kind, initialGroup: browseGroup) }
         .sheet(isPresented: $custom) { ListItemEditor { name, quantity in store.addCustomItem(name: name, quantity: quantity, kind: kind) } }
         .sheet(item: $editing) { item in ListItemEditor(item: item) { _, quantity in store.setListQuantity(id: item.id, quantity: quantity) } }
         .onChange(of: items) { _, _ in copied = false }
@@ -152,9 +165,32 @@ private struct QuantityControl: View {
     }
 }
 
+private struct QuickAddProductRow: View {
+    @Environment(AppStore.self) private var store
+    let product: Product
+    let kind: StockListKind
+    private var item: StockListItem? { store.listItems(kind).first { $0.productID == product.id } }
+    var body: some View {
+        HStack(spacing: 12) {
+            ProductThumbnail(product: product).frame(width: 42, height: 54)
+            VStack(alignment: .leading, spacing: 3) {
+                Text(product.name).font(.subheadline.weight(.semibold))
+                Text(product.category).font(.caption).foregroundStyle(.secondary)
+            }
+            Spacer(minLength: 0)
+            if let item {
+                QuantityControl(name: product.name, quantity: item.quantity, decrement: { store.setListQuantity(id: item.id, quantity: item.quantity - 1) }, increment: { store.addProduct(product, to: kind) })
+            } else {
+                Button { store.addProduct(product, to: kind) } label: { Image(systemName: "plus").frame(width: 42, height: 42).foregroundStyle(.white).background(BarTheme.olive, in: Circle()) }.buttonStyle(.borderless).accessibilityLabel("Add \(product.name)")
+            }
+        }.padding(.vertical, 4)
+    }
+}
+
 private enum ProductBrowseGroup: String, CaseIterable, Identifiable {
-    case beer = "Beer & Cider", wine = "Wine", sparkling = "Sparkling", spirits = "Spirits", mixers = "Mixers", softDrinks = "Soft Drinks", juices = "Juices", syrups = "Syrups & Cordials", fruit = "Fruit", garnish = "Garnish", herbs = "Herbs", prep = "Prep", other = "Other"
+    case beer = "Beer & Cider", wine = "Wine", sparkling = "Sparkling", spirits = "Spirits", mixers = "Mixers", milk = "Milk", softDrinks = "Soft Drinks", juices = "Juice", syrups = "Syrups & Cordials", fruit = "Fruit / Garnish", herbs = "Herbs", prep = "Prep", other = "Other"
     var id: String { rawValue }
+    static let priorityGroups: [ProductBrowseGroup] = [.beer, .wine, .spirits, .mixers, .milk, .juices, .fruit]
     var categories: Set<String> {
         switch self {
         case .beer: return ["Beer / Cider"]
@@ -165,11 +201,20 @@ private enum ProductBrowseGroup: String, CaseIterable, Identifiable {
         case .softDrinks: return ["Soft Drinks", "Non-Alcoholic"]
         case .juices: return ["Juices"]
         case .syrups: return ["Syrups / Cordials", "Purees", "Bitters"]
-        case .fruit: return ["Fresh Fruit"]
-        case .garnish: return ["Garnishes"]
+        case .fruit: return ["Fresh Fruit", "Garnishes"]
         case .herbs: return ["Fresh Herbs"]
         case .prep: return ["Prep"]
+        case .milk: return ["Other"]
         case .other: return ["Other"]
+        }
+    }
+    func includes(_ product: Product) -> Bool {
+        switch self {
+        case .milk:
+            return product.name.localizedCaseInsensitiveContains("milk") || product.name.localizedCaseInsensitiveContains("cream")
+        case .other:
+            return categories.contains(product.category) && !product.name.localizedCaseInsensitiveContains("milk") && !product.name.localizedCaseInsensitiveContains("cream")
+        default: return categories.contains(product.category)
         }
     }
     var symbol: String {
@@ -178,9 +223,10 @@ private enum ProductBrowseGroup: String, CaseIterable, Identifiable {
         case .wine, .sparkling: return "wineglass"
         case .spirits: return "waterbottle"
         case .mixers, .softDrinks: return "bubbles.and.sparkles"
+        case .milk: return "cup.and.saucer"
         case .juices, .syrups: return "drop"
         case .fruit: return "apple.logo"
-        case .garnish, .herbs: return "leaf"
+        case .herbs: return "leaf"
         case .prep: return "flask"
         case .other: return "shippingbox"
         }
@@ -193,19 +239,22 @@ private struct ProductBrowser: View {
     let kind: StockListKind
     @State private var group: ProductBrowseGroup?
     @State private var search = ""
-    private var groups: [ProductBrowseGroup] { ProductBrowseGroup.allCases.filter { value in store.products.contains { value.categories.contains($0.category) } } }
+    init(kind: StockListKind, initialGroup: ProductBrowseGroup? = nil) {
+        self.kind = kind
+        _group = State(initialValue: initialGroup)
+    }
+    private var groups: [ProductBrowseGroup] { ProductBrowseGroup.allCases.filter { value in store.products.contains { value.includes($0) } } }
     private var matches: [Product] {
         guard let group else { return [] }
-        return StockListService.search(store.products, venueID: store.preferences.venueID, query: search).filter { group.categories.contains($0.category) }
+        return StockListService.search(store.products, venueID: store.preferences.venueID, query: search).filter { group.includes($0) }
     }
     var body: some View {
         NavigationStack {
             Group {
                 if let group {
-                    ScrollView {
-                        LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
-                            ForEach(matches) { product in ProductGridCell(product: product, kind: kind) }
-                        }.padding(20)
+                    VStack(spacing: 0) {
+                        ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 8) { ForEach(ProductBrowseGroup.priorityGroups) { value in Button { self.group = value; search = "" } label: { TagChip(title: value.rawValue, selected: group == value) } } }.padding(.horizontal, 20).padding(.vertical, 10) }.buttonStyle(.plain)
+                        ScrollView { LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) { ForEach(matches) { product in ProductGridCell(product: product, kind: kind) } }.padding(20) }
                     }
                     .searchable(text: $search, prompt: "Filter (group.rawValue)…")
                     .toolbar { ToolbarItem(placement: .topBarLeading) { Button("Categories") { self.group = nil; search = "" } } }
@@ -236,6 +285,7 @@ private struct ProductGridCell: View {
     let product: Product
     let kind: StockListKind
     @State private var editing = false
+    @State private var repeatTask: Task<Void, Never>?
     private var item: StockListItem? { store.listItems(kind).first { $0.productID == product.id } }
     private var quantity: Int { item?.quantity ?? 0 }
     var body: some View {
@@ -243,13 +293,37 @@ private struct ProductGridCell: View {
             ProductThumbnail(product: product).frame(maxWidth: .infinity).frame(height: 112)
             Text(product.name).font(.subheadline.weight(.semibold)).lineLimit(2).frame(maxWidth: .infinity, alignment: .leading)
             HStack(spacing: 2) {
-                Button { store.setProductQuantity(product, kind: kind, quantity: max(0, quantity - 1)) } label: { Image(systemName: "minus").frame(width: 38, height: 42) }.accessibilityLabel("Decrease \(product.name)")
+                Button { change(by: -1) } label: { Image(systemName: "minus").frame(width: 38, height: 42) }
+                    .onLongPressGesture(minimumDuration: 0.35, maximumDistance: 20, pressing: { if !$0 { stopRepeating() } }, perform: { startRepeating(-1) })
+                    .accessibilityLabel("Decrease \(product.name)")
                 Button { editing = true } label: { Text("\(quantity)").font(.headline.monospacedDigit()).frame(maxWidth: .infinity, minHeight: 42).background(BarTheme.stone.opacity(0.55), in: RoundedRectangle(cornerRadius: 10)) }.accessibilityLabel("Set \(product.name) quantity")
-                Button { store.setProductQuantity(product, kind: kind, quantity: quantity + 1) } label: { Image(systemName: "plus").frame(width: 38, height: 42) }.accessibilityLabel("Increase \(product.name)")
+                Button { change(by: 1) } label: { Image(systemName: "plus").frame(width: 38, height: 42) }
+                    .onLongPressGesture(minimumDuration: 0.35, maximumDistance: 20, pressing: { if !$0 { stopRepeating() } }, perform: { startRepeating(1) })
+                    .accessibilityLabel("Increase \(product.name)")
             }.foregroundStyle(BarTheme.olive).buttonStyle(.plain)
         }.padding(12).background(BarTheme.card, in: RoundedRectangle(cornerRadius: 16))
         .sheet(isPresented: $editing) { ProductQuantityEditor(product: product, kind: kind, current: quantity) }
+        .onDisappear { stopRepeating() }
     }
+
+    private func change(by amount: Int) {
+        store.setProductQuantity(product, kind: kind, quantity: max(0, quantity + amount))
+    }
+    private func startRepeating(_ amount: Int) {
+        guard repeatTask == nil else { return }
+        repeatTask = Task { @MainActor in
+            // Button's normal tap supplies the first unit.  Holding begins a
+            // deliberate stream after the standard long-press threshold.
+            var step = 0
+            while !Task.isCancelled {
+                change(by: amount)
+                step += 1
+                let delay: UInt64 = step < 6 ? 110_000_000 : step < 18 ? 55_000_000 : 25_000_000
+                try? await Task.sleep(nanoseconds: delay)
+            }
+        }
+    }
+    private func stopRepeating() { repeatTask?.cancel(); repeatTask = nil }
 }
 
 private struct ProductQuantityEditor: View {

@@ -13,11 +13,13 @@ struct SearchView: View {
             SectionHeader(title: "Find it. Make it.", subtitle: "Every spec, ingredient and pairing.")
             SearchBar(text: $store.searchQuery, focus: $searchFocused)
             ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 8) { ForEach(["All", "Cocktail", "Wine", "Prep", "Product"], id: \.self) { kind in Button { selectedKind = kind } label: { TagChip(title: kind, selected: selectedKind == kind) }.frame(minHeight: 44) } } }
-            if store.searchQuery.isEmpty {
+            if store.searchQuery.isEmpty && selectedKind == "All" {
                 Text("QUICK SEARCH").font(.caption.weight(.semibold)).tracking(2).foregroundStyle(BarTheme.muted)
                 ForEach(["gin citrus", "passionfruit", "no egg", "dry white", "steak"], id: \.self) { query in Button { store.searchQuery = query } label: { HStack { Image(systemName: "magnifyingglass"); Text(query); Spacer(); Image(systemName: "arrow.up.left").font(.caption) }.padding(.vertical, 10) }.buttonStyle(.plain) }
                 SectionHeader(title: "Popular tonight")
                 DrinkShelf(cocktails: store.cocktails.filter(\.isPopular))
+            } else if store.searchQuery.isEmpty {
+                browseSelection
             } else if results.isEmpty { EmptyStateView(title: "No matches yet", message: "Try a drink, ingredient, flavour or food pairing. Fewer words can help.", systemImage: "magnifyingglass") }
             else {
                 Text("\(results.count) RESULTS").font(.caption.weight(.medium)).tracking(2).foregroundStyle(BarTheme.muted)
@@ -32,6 +34,36 @@ struct SearchView: View {
         }.barScreen().navigationTitle("Search").navigationBarTitleDisplayMode(.inline).scrollDismissesKeyboard(.interactively)
         .onAppear { focusFromHomeIfRequested() }
         .onChange(of: store.shouldFocusSearch) { _, requested in if requested { focusFromHomeIfRequested() } }
+    }
+
+    @ViewBuilder private var browseSelection: some View {
+        switch selectedKind {
+        case "Cocktail":
+            Text("COCKTAILS").font(.caption.weight(.semibold)).tracking(2).foregroundStyle(BarTheme.muted)
+            ForEach(store.cocktails.filter(\.isActive).sorted { $0.isPopular == $1.isPopular ? $0.name < $1.name : $0.isPopular }) { cocktail in
+                NavigationLink { CocktailDetailView(cocktailID: cocktail.id) } label: { CocktailListRow(cocktail: cocktail) }
+            }
+        case "Wine":
+            Text("WINES").font(.caption.weight(.semibold)).tracking(2).foregroundStyle(BarTheme.muted)
+            ForEach(store.wines.filter(\.isActive).sorted { $0.name < $1.name }) { wine in
+                NavigationLink { WineDetailView(wineID: wine.id) } label: { WineCard(wine: wine) }
+            }
+        case "Prep":
+            Text("PREP").font(.caption.weight(.semibold)).tracking(2).foregroundStyle(BarTheme.muted)
+            ForEach(store.prep.filter { $0.venueID == store.preferences.venueID }.sorted { $0.name < $1.name }) { item in
+                NavigationLink { PrepDetailView(prepID: item.id) } label: { HStack { Image(systemName: "leaf").font(.title); VStack(alignment: .leading) { Text(item.name).font(BarTheme.title(19)); Text(item.category).font(.caption) }; Spacer(); Image(systemName: "chevron.right").font(.caption) }.barCard() }
+            }
+        case "Product":
+            Text("PRODUCTS").font(.caption.weight(.semibold)).tracking(2).foregroundStyle(BarTheme.muted)
+            ForEach(store.products.sorted { lhs, rhs in
+                let left = store.preferences.productUsage[lhs.id, default: 0]
+                let right = store.preferences.productUsage[rhs.id, default: 0]
+                return left == right ? lhs.name < rhs.name : left > right
+            }) { product in
+                NavigationLink { ProductDetailView(productID: product.id) } label: { ProductSearchRow(product: product) }
+            }
+        default: EmptyView()
+        }
     }
 
     private func focusFromHomeIfRequested() {

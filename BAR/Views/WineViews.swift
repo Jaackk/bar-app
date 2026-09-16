@@ -56,17 +56,30 @@ private func wineTags(_ wine: Wine) -> [String] { [wine.sweetness <= 2 ? "Dry" :
 struct WineBottleArt: View {
     @Environment(AppStore.self) private var store
     let wine: Wine
+    /// Several supplier packshots include markedly different amounts of baked-in
+    /// white/transparent canvas.  These conservative, per-asset adjustments
+    /// consume that empty canvas without stretching or cutting the bottle.
+    private var presentationScale: CGFloat {
+        switch wine.productID {
+        case "menu-chardonnay-les-sardine-domaine-lafage": return 1.19
+        case "menu-chenin-blanc-wild-garden": return 1.16
+        case "menu-syrah-grenache-rose-chateau-de-campuget", "menu-primitivo-rose-tramari-san-marzano": return 1.12
+        case "menu-prosecco-collezione-96-brut-masottina", "menu-prosecco-collezione-96-rose-masottina": return 1.10
+        case "menu-veuve-clicquot-brut-yellow-label", "menu-veuve-clicquot-rose": return 1.08
+        default: return 1
+        }
+    }
     private var colour: Color { switch wine.colour { case .red: Color(red: 0.29, green: 0.13, blue: 0.19); case .rose: BarTheme.coral; case .white: Color(red: 0.62, green: 0.66, blue: 0.33); case .sparkling: BarTheme.olive; case .orange: Color.orange; case .dessert: Color(red: 0.65, green: 0.43, blue: 0.18) } }
     var body: some View { GeometryReader { proxy in
         switch WineProductResolver.imageSource(for: wine, products: store.products) {
         case .customProductImage(let product), .bundledProductImage(let product):
-            ProductThumbnail(product: product)
+            ProductThumbnail(product: product).scaleEffect(presentationScale)
         case .wineImage(let imageName) where UIImage(named: imageName) != nil:
-            Image(imageName).resizable().scaledToFit()
+            Image(imageName).resizable().scaledToFit().scaleEffect(presentationScale)
         case .wineImage, .fallback:
             VStack(spacing: 0) { RoundedRectangle(cornerRadius: 3).fill(colour.opacity(0.95)).frame(width: proxy.size.width * 0.27, height: proxy.size.height * 0.3); ZStack { UnevenRoundedRectangle(topLeadingRadius: 12, bottomLeadingRadius: 5, bottomTrailingRadius: 5, topTrailingRadius: 12).fill(colour); RoundedRectangle(cornerRadius: 2).fill(BarTheme.cream).frame(width: proxy.size.width * 0.64, height: proxy.size.height * 0.27).overlay(Text(wine.grape.prefix(1)).font(BarTheme.title(15)).foregroundStyle(BarTheme.ink)) }.frame(height: proxy.size.height * 0.65) }.frame(maxWidth: .infinity).shadow(color: BarTheme.ink.opacity(0.08), radius: 3, y: 4)
         }
-    }.accessibilityHidden(true) }
+    }.clipped().accessibilityHidden(true) }
 }
 struct WineDetailView: View {
     @Environment(AppStore.self) var store

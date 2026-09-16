@@ -1,6 +1,8 @@
 import Foundation
 
 public struct Ingredient: Codable, Hashable, Sendable, Identifiable {
+    /// Stock resolution is separate from the wording shown to bartenders in a recipe.
+    public var stockProductID: String? = nil
     public var quantityDisplay: String? = nil
     public var id: String
     public var name: String
@@ -12,22 +14,24 @@ public struct Ingredient: Codable, Hashable, Sendable, Identifiable {
     public var notes: String
     public var prepComponent: String?
 
-    public init(id: String = UUID().uuidString, name: String, amount: Double = 0, unit: MeasurementUnit = .ml, batchable: Bool = true, batchBehaviour: BatchBehaviour = .normal, bottleSize: Double? = nil, notes: String = "", prepComponent: String? = nil) {
+    public init(id: String = UUID().uuidString, name: String, amount: Double = 0, unit: MeasurementUnit = .ml, batchable: Bool = true, batchBehaviour: BatchBehaviour = .normal, bottleSize: Double? = nil, notes: String = "", prepComponent: String? = nil, stockProductID: String? = nil) {
         self.id = id
         self.name = name
         self.amount = amount
         self.unit = unit
         self.batchable = batchable
+        self.stockProductID = stockProductID
         self.batchBehaviour = batchBehaviour
         self.bottleSize = bottleSize
         self.notes = notes
         self.prepComponent = prepComponent
     }
 
-    enum CodingKeys: String, CodingKey { case quantityDisplay, id, name, amount, unit, batchable, batchBehaviour, bottleSize, notes, prepComponent }
+    enum CodingKeys: String, CodingKey { case quantityDisplay, stockProductID, id, name, amount, unit, batchable, batchBehaviour, bottleSize, notes, prepComponent }
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         quantityDisplay = try c.decodeIfPresent(String.self, forKey: .quantityDisplay)
+        stockProductID = try c.decodeIfPresent(String.self, forKey: .stockProductID)
         id = try c.value(String.self, for: .id, default: UUID().uuidString)
         name = try c.decode(String.self, forKey: .name)
         amount = try c.value(Double.self, for: .amount, default: 0)
