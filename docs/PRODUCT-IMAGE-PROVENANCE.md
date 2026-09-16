@@ -10,6 +10,24 @@ The product catalogue remains offline-first. User-supplied photographs are resiz
 
 The generic assets are explicitly associated only with generic stock and service ingredients. Branded and named-wine records are assigned only a product-specific, locally bundled image. The app does not hotlink third-party images, so it remains usable offline.
 
+## Completion pass — 16 September 2026
+
+The following mappings were bundled in the final image-completion pass. LWC assets are clean catalogue packshots, stored locally after resizing to a maximum 900 px edge. Entries that are unbranded recipe/service components use a representative local photograph rather than asserting a supplier.
+
+| Product IDs | Local assets | Source | Retrieved |
+| --- | --- | --- | --- |
+| `menu-trip-lemon-basil`, `menu-still-water-75cl`, `menu-drip-still-water-500ml`, `menu-apple-juice`, `menu-orange-juice`, `menu-pineapple-juice`, `menu-cranberry-juice`, `menu-tomato-juice`, `menu-ginger-x-hot-shot`, `menu-grey-goose-essences` | matching lower-case asset names | LWC Drinks catalogue | 2026-09-16 |
+| `menu-limoncello`, `menu-sambuca`, `menu-sugar-syrup`, `menu-orgeat`, `spec-apricot-liq`, `spec-blue-curacao`, `spec-ginger-syrup`, `spec-cachaca`, `spec-guava-puree`, `spec-teichene-peach` | matching lower-case asset names | LWC Drinks catalogue | 2026-09-16 |
+| `spec-lime-juice`, `spec-jasmine-syrup`, `spec-lemon-juice`, `spec-passion-fruit-puree`, `spec-blood-orange-syrup`, `spec-orange-bitters`, `spec-watermelon-syrup`, `spec-grapefruit-soda`, `spec-pisco`, `spec-elderflower-cordial` | matching lower-case asset names | LWC Drinks catalogue | 2026-09-16 |
+| `spec-strawberry-syrup`, `spec-cherry-syrup`, `spec-simple-syrup`, `spec-blend-triple-sec`, `spec-ginger-beer`, `spec-peach-liqueur`, `spec-creme-de-mure`, `spec-maraschino`, `spec-grenadine`, `spec-agave`, `spec-gomme-syrup`, `spec-angostura-bitters`, `spec-peach-puree`, `spec-creme-de-cassis`, `spec-lemonade` | matching lower-case asset names | LWC Drinks catalogue | 2026-09-16 |
+| `menu-sparkling-water-75cl`, `menu-drip-sparkling-water-500ml`, `menu-glorious-greens`, `menu-ginger-zinger`, `spec-sweet-vermouth`, `spec-coconut-water`, `spec-nll-fl`, `spec-nll-ms` | matching lower-case asset names | Wikimedia Commons representative photography | 2026-09-16 |
+| `menu-cinsault-rose-leeuwenkuil-family-vineyards` | `leeuwenkuil-cinsault-rose` | https://www.wine-republic.co.uk/products/2024-cinsault-rose-leeuwenkuil-family-vineyards | 2026-09-16 |
+| `menu-apres-provence-chateau-des-bertrands` | `apres-provence` | https://apresprovence.com/our-wine | 2026-09-16 |
+| `menu-rioja-alavesa-las-parcelas-bideona` | `bideona-las-parcelas` | https://www.winnysklad.com/sklep/rioja-las-parcelas-bideona/ | 2026-09-16 |
+| `menu-agiorgitiko-mavroudi-voltes-monemvasia-winery` | `monemvasia-voltes-red` | https://www.monemvasiawinery.gr/en/wine/voltes-red/ | 2026-09-16 |
+| `menu-montepulciano-blend-anima-osca-tenimenti-grieco` | `anima-osca-rosso` | https://www.tenimentigrieco.it/en/anima-osca/ | 2026-09-16 |
+| `menu-rivesaltes-tuile-dom-brial` | `dom-brial-rivesaltes-tuile` | https://www.dom-brial.com/boutique/rivesaltes-tuile-hors-dage/ | 2026-09-16 |
+
 ## Product assets
 
 | Product ID | Product | Local asset | Source URL | Retrieved |
