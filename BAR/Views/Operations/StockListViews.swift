@@ -41,25 +41,26 @@ struct StockListView: View {
     @State private var sessionOrderIDs: [String] = []
     @State private var productSearch = ""
     @State private var custom = false
-    @State private var editing: StockListItem?
     @State private var clear = false
     @State private var copied = false
+    private static let essentialProductIDs: Set<String> = [
+        "spec-absolut-vodka", "menu-casamigos-blanco", "menu-chardonnay-les-sardine-domaine-lafage",
+        "menu-chenin-blanc-wild-garden", "menu-double-dutch-indian-tonic-water", "menu-double-dutch-skinny-tonic",
+        "spec-whole-milk", "service-skimmed-milk", "service-oat-milk", "menu-orange-juice",
+        "menu-pineapple-juice", "menu-limes"
+    ]
     private var items: [StockListItem] { store.listItems(kind) }
-    private var frequentProducts: [Product] { store.products.filter { store.preferences.productUsage[$0.id, default: 0] > 0 }.sorted { store.preferences.productUsage[$0.id, default: 0] == store.preferences.productUsage[$1.id, default: 0] ? ($0.name < $1.name) : (store.preferences.productUsage[$0.id, default: 0] > store.preferences.productUsage[$1.id, default: 0]) }.prefix(10).map { $0 } }
-    private var essentials: [Product] {
-        let ids = ["spec-absolut-vodka", "menu-casamigos-blanco", "menu-chardonnay-les-sardine-domaine-lafage", "menu-chenin-blanc-wild-garden", "menu-double-dutch-indian-tonic-water", "menu-double-dutch-skinny-tonic", "spec-whole-milk", "service-skimmed-milk", "service-oat-milk", "menu-orange-juice", "menu-pineapple-juice", "menu-limes"]
-        return ids.compactMap { id in store.products.first { $0.id == id } }
-    }
     private var displayedProducts: [Product] {
         let query = productSearch.trimmingCharacters(in: .whitespacesAndNewlines)
         let catalogue = store.products
         let byID = Dictionary(uniqueKeysWithValues: catalogue.map { ($0.id, $0) })
-        let ranked = sessionOrderIDs.isEmpty ? rankedSessionProducts() : sessionOrderIDs.compactMap { byID[$0] }
+        let ranked = sessionOrderIDs.isEmpty ? rankedSessionProducts(catalogue: catalogue) : sessionOrderIDs.compactMap { byID[$0] }
         let matchingIDs = query.isEmpty ? Set(ranked.map(\.id)) : Set(StockListService.search(catalogue, venueID: store.preferences.venueID, query: query).map(\.id))
         let base = query.isEmpty ? ranked : ranked.filter { matchingIDs.contains($0.id) }
         let filtered = selectedGroup.map { group in base.filter { group.includes($0) } } ?? base
         if query.isEmpty, selectedGroup == nil {
-            let preferred = ranked.filter { product in essentials.contains(where: { $0.id == product.id }) || frequentProducts.contains(where: { $0.id == product.id }) }
+            let preferredIDs = Self.essentialProductIDs.union(frequentProductIDs(in: catalogue))
+            let preferred = ranked.filter { preferredIDs.contains($0.id) }
             let ids = Set(preferred.map(\.id))
             return Array((preferred + filtered.filter { !ids.contains($0.id) }.sorted { lhs, rhs in
                 let left = store.preferences.productUsage[lhs.id, default: 0] + ProductBrowseGroup.servicePriority(lhs, in: .other)
@@ -85,12 +86,27 @@ struct StockListView: View {
             }
         }
     }
-    private func rankedSessionProducts() -> [Product] {
+    private func frequentProductIDs(in catalogue: [Product]) -> Set<String> {
+        let usage = store.preferences.productUsage
+        let frequent = catalogue.filter { usage[$0.id, default: 0] > 0 }.sorted { lhs, rhs in
+            let left = usage[lhs.id, default: 0]
+            let right = usage[rhs.id, default: 0]
+            return left == right ? lhs.name < rhs.name : left > right
+        }.prefix(10)
+        return Set(frequent.map(\.id))
+    }
+    private func rankedSessionProducts(catalogue: [Product]? = nil) -> [Product] {
+        let catalogue = catalogue ?? store.products
+        let usage = store.preferences.productUsage
+        let byID = Dictionary(uniqueKeysWithValues: catalogue.map { ($0.id, $0) })
         var seen = Set<String>()
-        let preferred = (essentials + frequentProducts).filter { seen.insert($0.id).inserted }
-        let remaining = store.products.filter { seen.insert($0.id).inserted }.sorted { lhs, rhs in
-            let left = store.preferences.productUsage[lhs.id, default: 0] + ProductBrowseGroup.servicePriority(lhs, in: .other)
-            let right = store.preferences.productUsage[rhs.id, default: 0] + ProductBrowseGroup.servicePriority(rhs, in: .other)
+        let essential = Self.essentialProductIDs.compactMap { byID[$0] }.sorted { $0.name < $1.name }
+        let frequentIDs = frequentProductIDs(in: catalogue)
+        let frequent = catalogue.filter { frequentIDs.contains($0.id) }
+        let preferred = (essential + frequent).filter { seen.insert($0.id).inserted }
+        let remaining = catalogue.filter { seen.insert($0.id).inserted }.sorted { lhs, rhs in
+            let left = usage[lhs.id, default: 0] + ProductBrowseGroup.servicePriority(lhs, in: .other)
+            let right = usage[rhs.id, default: 0] + ProductBrowseGroup.servicePriority(rhs, in: .other)
             return left == right ? lhs.name < rhs.name : left > right
         }
         return preferred + remaining
@@ -140,35 +156,6 @@ struct StockListView: View {
                     ForEach(displayedProducts) { product in ProductGridCell(product: product, kind: kind) }
                 }.padding(.vertical, 2)
             }.listRowBackground(Color.clear)
-            if !items.isEmpty {
-                Section(kind == .restock ? "Current restock" : "Current order") {
-                    ForEach(items) { item in
-                        let product = store.products.first { $0.id == item.productID }
-                        HStack(spacing: 12) {
-                            ProductThumbnail(product: product).frame(width: 44, height: 58)
-                            VStack(alignment: .leading, spacing: 3) {
-                                Text(item.name).font(.subheadline.weight(.medium)).fixedSize(horizontal: false, vertical: true)
-                                Text(item.productID == nil ? "Custom item" : item.unit.capitalized).font(.caption).foregroundStyle(.secondary)
-                            }
-                            Spacer(minLength: 0)
-                            QuantityControl(name: item.name, quantity: item.quantity, decrement: { store.setListQuantity(id: item.id, quantity: item.quantity - 1) }, increment: { store.setListQuantity(id: item.id, quantity: item.quantity + 1) }, edit: { editing = item })
-                        }.padding(.vertical, 5)
-                        .swipeActions {
-                            Button("Remove", role: .destructive) {
-                                let id = item.id
-                                Task { @MainActor in store.setListQuantity(id: id, quantity: 0) }
-                            }
-                        }
-                        .contextMenu {
-                            Button("Edit quantity") { editing = item }
-                            Button("Remove", role: .destructive) {
-                                let id = item.id
-                                Task { @MainActor in store.setListQuantity(id: id, quantity: 0) }
-                            }
-                        }
-                    }
-                }.listRowBackground(BarTheme.card)
-            }
             Section { Button { custom = true } label: { Label("Add custom item", systemImage: "pencil.line").frame(minHeight: 40) } }.listRowBackground(BarTheme.card)
         }.listStyle(.plain).listSectionSpacing(5).contentMargins(.top, 0, for: .scrollContent).scrollContentBackground(.hidden).barScreen().navigationTitle(kind.title).navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -184,8 +171,7 @@ struct StockListView: View {
             }
         }
         .sheet(isPresented: $custom) { ListItemEditor { name, quantity in store.addCustomItem(name: name, quantity: quantity, kind: kind) } }
-        .sheet(item: $editing) { item in ListItemEditor(item: item) { _, quantity in store.setListQuantity(id: item.id, quantity: quantity) } }
-        .onAppear { if sessionOrderIDs.isEmpty { sessionOrderIDs = rankedSessionProducts().map(\.id) } }
+        .onAppear { if sessionOrderIDs.isEmpty { sessionOrderIDs = rankedSessionProducts(catalogue: store.products).map(\.id) } }
         .onChange(of: items) { _, _ in copied = false }
     }
 }
