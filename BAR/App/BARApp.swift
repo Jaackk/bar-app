@@ -30,7 +30,7 @@ struct RootView: View {
             NavigationStack { SearchView() }.tabItem { Label("Search", systemImage: "magnifyingglass") }.tag(1)
             NavigationStack { PrepView() }.tabItem { Label("Prep", systemImage: "list.clipboard") }.tag(2)
             NavigationStack { StockView() }.tabItem { Label("Stock", systemImage: "shippingbox") }.tag(3)
-            NavigationStack { ProfileView() }.tabItem { Label("Profile", systemImage: "person.crop.circle") }.tag(4)
+            NavigationStack { WastageView() }.tabItem { Label("Wastage", systemImage: "drop.triangle") }.tag(4)
         }.font(.body).alert("Local data", isPresented: Binding(get: { store.errorMessage != nil }, set: { if !$0 { store.errorMessage = nil } })) { Button("OK") { store.errorMessage = nil } } message: { Text(store.errorMessage ?? "") }
     }
 }

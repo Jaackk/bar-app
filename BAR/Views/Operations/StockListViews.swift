@@ -37,6 +37,7 @@ struct StockListView: View {
     let kind: StockListKind
     @State private var selectedGroup: ProductBrowseGroup?
     @State private var wineFilter = "All"
+    @State private var spiritFilter = "All"
     @State private var sessionOrderIDs: [String] = []
     @State private var productSearch = ""
     @State private var custom = false
@@ -51,8 +52,11 @@ struct StockListView: View {
     }
     private var displayedProducts: [Product] {
         let query = productSearch.trimmingCharacters(in: .whitespacesAndNewlines)
-        let ranked = sessionOrderIDs.isEmpty ? rankedSessionProducts() : sessionOrderIDs.compactMap { id in store.products.first { $0.id == id } }
-        let base = query.isEmpty ? ranked : ranked.filter { product in StockListService.search(store.products, venueID: store.preferences.venueID, query: query).contains(where: { $0.id == product.id }) }
+        let catalogue = store.products
+        let byID = Dictionary(uniqueKeysWithValues: catalogue.map { ($0.id, $0) })
+        let ranked = sessionOrderIDs.isEmpty ? rankedSessionProducts() : sessionOrderIDs.compactMap { byID[$0] }
+        let matchingIDs = query.isEmpty ? Set(ranked.map(\.id)) : Set(StockListService.search(catalogue, venueID: store.preferences.venueID, query: query).map(\.id))
+        let base = query.isEmpty ? ranked : ranked.filter { matchingIDs.contains($0.id) }
         let filtered = selectedGroup.map { group in base.filter { group.includes($0) } } ?? base
         if query.isEmpty, selectedGroup == nil {
             let preferred = ranked.filter { product in essentials.contains(where: { $0.id == product.id }) || frequentProducts.contains(where: { $0.id == product.id }) }
@@ -68,7 +72,18 @@ struct StockListView: View {
             guard let wine = store.wines.first(where: { $0.productID == product.id }) else { return false }
             switch wineFilter { case "White": return wine.colour == .white; case "Red": return wine.colour == .red; case "Rosé": return wine.colour == .rose; default: return true }
         }
-        return wineFiltered
+        guard selectedGroup == .spirits, spiritFilter != "All" else { return wineFiltered }
+        return wineFiltered.filter { product in
+            switch spiritFilter {
+            case "Vodka": return product.category == "Vodka"
+            case "Gin": return product.category == "Gin"
+            case "Tequila / Mezcal": return product.category == "Tequila / Mezcal"
+            case "Rum": return product.category == "Rum"
+            case "Whisky": return product.category == "Whisky / Whiskey"
+            case "Other": return ["Brandy / Cognac", "Liqueurs / Aperitifs"].contains(product.category)
+            default: return true
+            }
+        }
     }
     private func rankedSessionProducts() -> [Product] {
         var seen = Set<String>()
@@ -83,17 +98,24 @@ struct StockListView: View {
     var body: some View {
         List {
             Section {
-                HStack(spacing: 10) {
-                    Image(systemName: "magnifyingglass").foregroundStyle(BarTheme.muted)
-                    TextField(kind == .restock ? "What does the bar need?" : "What do we need to order?", text: $productSearch).textInputAutocapitalization(.never).accessibilityIdentifier("restock-search")
-                    if !productSearch.isEmpty { Button { productSearch = "" } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(BarTheme.muted) }.buttonStyle(.plain) }
-                }.padding(.horizontal, 12).frame(minHeight: 44).background(BarTheme.cream, in: RoundedRectangle(cornerRadius: 13))
+                NavigationLink { StockListReviewView(kind: kind) } label: {
+                    HStack(spacing: 9) {
+                        Image(systemName: kind == .restock ? "tray.full" : "cart").symbolRenderingMode(.monochrome).foregroundStyle(BarTheme.olive).frame(width: 18)
+                        Text(kind == .restock ? "View Restock List" : "View Order").font(.caption.weight(.semibold))
+                        Spacer()
+                        Text("\(items.count) · \(items.reduce(0) { $0 + $1.quantity }) units").font(.caption2).foregroundStyle(BarTheme.muted)
+                        Image(systemName: "chevron.right").font(.caption2)
+                    }.frame(minHeight: 32)
+                }.buttonStyle(.plain)
+            }.listRowBackground(BarTheme.card).listRowInsets(EdgeInsets(top: 2, leading: 16, bottom: 2, trailing: 16))
+            Section {
+                SearchBar(text: $productSearch, placeholder: kind == .restock ? "What does the bar need?" : "What do we need to order?", accessibilityIdentifier: "restock-search")
             }.listRowBackground(Color.clear)
             Section {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 6), count: 5), spacing: 6) {
-                    CategoryFilterButton(title: "All", symbol: "square.grid.2x2", selected: selectedGroup == nil) { selectedGroup = nil }
+                    CategoryFilterButton(title: "All", symbol: "square.grid.2x2", selected: selectedGroup == nil) { selectedGroup = nil; wineFilter = "All"; spiritFilter = "All" }
                     ForEach(ProductBrowseGroup.operationalGroups) { group in
-                        CategoryFilterButton(title: group.shortTitle, symbol: group.symbol, selected: selectedGroup == group) { selectedGroup = selectedGroup == group ? nil : group; wineFilter = "All" }
+                        CategoryFilterButton(title: group.shortTitle, symbol: group.symbol, selected: selectedGroup == group) { selectedGroup = selectedGroup == group ? nil : group; wineFilter = "All"; spiritFilter = "All" }
                     }
                 }.padding(.vertical, 1)
             }.listRowBackground(Color.clear)
@@ -102,9 +124,17 @@ struct StockListView: View {
                     Button { wineFilter = wineFilter == value ? "All" : value } label: { TagChip(title: value, selected: wineFilter == value) }.buttonStyle(.plain)
                 } } }.listRowBackground(Color.clear)
             }
-            Section {
-                NavigationLink { StockListReviewView(kind: kind) } label: { HStack { Image(systemName: kind == .restock ? "tray.full" : "cart"); Text(kind == .restock ? "View Restock List" : "View Order").font(.subheadline.weight(.semibold)); Spacer(); Text("\(items.count) · \(items.reduce(0) { $0 + $1.quantity }) units").font(.caption).foregroundStyle(BarTheme.muted); Image(systemName: "chevron.right").font(.caption) }.frame(minHeight: 40) }.buttonStyle(.plain)
-            }.listRowBackground(BarTheme.card)
+            if selectedGroup == .spirits {
+                Section {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 7) {
+                            ForEach(["All", "Vodka", "Gin", "Tequila / Mezcal", "Rum", "Whisky", "Other"], id: \.self) { value in
+                                Button { spiritFilter = spiritFilter == value ? "All" : value } label: { TagChip(title: value, selected: spiritFilter == value) }.buttonStyle(.plain)
+                            }
+                        }.padding(.horizontal, 1)
+                    }
+                }.listRowBackground(Color.clear)
+            }
             Section(productSearch.isEmpty ? (selectedGroup?.rawValue ?? "House & frequent") : "Results") {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 3), spacing: 8) {
                     ForEach(displayedProducts) { product in ProductGridCell(product: product, kind: kind) }
@@ -469,10 +499,10 @@ private struct ProductGridCell: View {
             ProductThumbnail(product: product).frame(maxWidth: .infinity).frame(height: 76)
             Text(product.name).font(.caption.weight(.semibold)).lineLimit(2).frame(maxWidth: .infinity, alignment: .leading).frame(height: 32, alignment: .topLeading)
             HStack(spacing: 2) {
-                RepeatQuantityButton(symbol: "minus", name: product.name, tap: { change(by: -1) }, repeatChange: { change(by: -1, persistImmediately: false) }, finished: { store.flushStockWorkspaceChanges() })
+                RepeatQuantityButton(symbol: "minus", name: product.name, tap: { change(by: -1) }, repeatChange: { change(by: -1, feedback: false, persistImmediately: false) }, finished: { store.flushStockWorkspaceChanges() })
                     .frame(width: 28, height: 34)
                 Button { editing = true } label: { Text("\(quantity)").font(.subheadline.weight(.semibold).monospacedDigit()).frame(maxWidth: .infinity, minHeight: 34).background(BarTheme.stone.opacity(0.55), in: RoundedRectangle(cornerRadius: 9)) }.accessibilityLabel("Set \(product.name) quantity")
-                RepeatQuantityButton(symbol: "plus", name: product.name, tap: { change(by: 1) }, repeatChange: { change(by: 1, persistImmediately: false) }, finished: { store.flushStockWorkspaceChanges() })
+                RepeatQuantityButton(symbol: "plus", name: product.name, tap: { change(by: 1) }, repeatChange: { change(by: 1, feedback: false, persistImmediately: false) }, finished: { store.flushStockWorkspaceChanges() })
                     .frame(width: 28, height: 34)
             }.foregroundStyle(BarTheme.olive).buttonStyle(.plain)
         }.padding(9).background(BarTheme.card, in: RoundedRectangle(cornerRadius: 14))

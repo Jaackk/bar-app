@@ -48,6 +48,7 @@ final class PersistenceAndDataTests: XCTestCase {
         state.stock[0].currentStock = 2.25
         state.prep[0].markComplete()
         state.batches.append(SavedBatch(cocktailID: "g", name: "Classic × 25", serves: 25))
+        state.wastage.append(WastageEntry(venueID: "v", itemName: "Broken wine glass", quantity: 1, unit: "glass", reason: "Breakage"))
         try repository.save(state)
         let reloaded = try LocalAppRepository(directory: directory, seed: { throw DataValidationError.invalid("Should not seed twice") }).load()
         XCTAssertEqual(seeds, 1)
@@ -58,6 +59,7 @@ final class PersistenceAndDataTests: XCTestCase {
         XCTAssertEqual(reloaded.stock[0].currentStock, 2.25)
         XCTAssertTrue(reloaded.prep[0].completed)
         XCTAssertEqual(reloaded.batches.count, 1)
+        XCTAssertEqual(reloaded.wastage.first?.itemName, "Broken wine glass")
     }
     func testCorruptSavedDataPreservedOnLoadAndSaveUntilExplicitReset() throws {
         let repo = LocalAppRepository(directory: directory, seed: fixture)

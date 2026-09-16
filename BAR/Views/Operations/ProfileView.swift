@@ -95,7 +95,7 @@ struct ProfileView: View {
                 Button("Reset local data", role: .destructive) { store.resetLocalData() }
                 Button("Cancel", role: .cancel) { }
             } message: {
-                Text("This removes your name, preferences, favourites, history, training progress, saved batches, prep and stock changes, restock and order lists, then restores the bundled menu and reference content.")
+                Text("This removes your name, preferences, favourites, history, training progress, saved batches, prep, wastage and stock changes, restock and order lists, then restores the bundled menu and reference content.")
             }
             .fileImporter(isPresented: $importing, allowedContentTypes: [.json]) { result in
                 switch result {
@@ -129,7 +129,7 @@ struct ProfileView: View {
     }
 }
 
-private struct AboutBARView: View {
+struct AboutBARView: View {
     private var version: String { Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0" }
     private var build: String { Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1" }
 

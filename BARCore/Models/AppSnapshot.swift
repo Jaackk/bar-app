@@ -13,9 +13,10 @@ public struct AppSnapshot: Codable, Hashable, Sendable {
     public var preferences: UserPreferences
     public var training: TrainingProgress
     public var batches: [SavedBatch]
+    public var wastage: [WastageEntry]
     public var user: User
 
-    public init(schemaVersion: Int = 1, venues: [Venue] = [], cocktails: [Cocktail] = [], wines: [Wine] = [], prep: [PrepItem] = [], stock: [StockItem] = [], preferences: UserPreferences = UserPreferences(), training: TrainingProgress = TrainingProgress(), batches: [SavedBatch] = [], user: User = User()) {
+    public init(schemaVersion: Int = 1, venues: [Venue] = [], cocktails: [Cocktail] = [], wines: [Wine] = [], prep: [PrepItem] = [], stock: [StockItem] = [], preferences: UserPreferences = UserPreferences(), training: TrainingProgress = TrainingProgress(), batches: [SavedBatch] = [], wastage: [WastageEntry] = [], user: User = User()) {
         self.schemaVersion = schemaVersion
         self.venues = venues
         self.cocktails = cocktails
@@ -25,10 +26,11 @@ public struct AppSnapshot: Codable, Hashable, Sendable {
         self.preferences = preferences
         self.training = training
         self.batches = batches
+        self.wastage = wastage
         self.user = user
     }
 
-    enum CodingKeys: String, CodingKey { case catalogueVersion, products, stockLists, schemaVersion, venues, cocktails, wines, prep, stock, preferences, training, batches, user }
+    enum CodingKeys: String, CodingKey { case catalogueVersion, products, stockLists, schemaVersion, venues, cocktails, wines, prep, stock, preferences, training, batches, wastage, user }
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         catalogueVersion = try c.value(Int.self, for: .catalogueVersion, default: 0)
@@ -43,6 +45,7 @@ public struct AppSnapshot: Codable, Hashable, Sendable {
         preferences = try c.value(UserPreferences.self, for: .preferences, default: UserPreferences())
         training = try c.value(TrainingProgress.self, for: .training, default: TrainingProgress())
         batches = try c.value([SavedBatch].self, for: .batches, default: [])
+        wastage = try c.value([WastageEntry].self, for: .wastage, default: [])
         user = try c.value(User.self, for: .user, default: User())
     }
 }

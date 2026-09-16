@@ -38,6 +38,7 @@ import BARCore
     var training: TrainingProgress { snapshot.training }
     var user: User { snapshot.user }
     var batches: [SavedBatch] { snapshot.batches.filter { batch in cocktails.contains { $0.id == batch.cocktailID } } }
+    var wastage: [WastageEntry] { snapshot.wastage.filter { $0.venueID == preferences.venueID }.sorted { $0.createdAt > $1.createdAt } }
     var role: UserRole {
         #if DEBUG
         snapshot.user.role
@@ -82,7 +83,9 @@ import BARCore
         stockSaveTask?.cancel()
         let repository = repository
         stockSaveTask = Task { @MainActor [weak self] in
-            try? await Task.sleep(nanoseconds: 180_000_000)
+            // Wait until a short burst of taps has finished before asking the
+            // repository to read, validate and rewrite the full local snapshot.
+            try? await Task.sleep(nanoseconds: 700_000_000)
             guard !Task.isCancelled else { return }
             let failure = await Task.detached { () -> String? in
                 do { try repository.save(candidate); return nil }
@@ -157,9 +160,12 @@ import BARCore
     func listText(_ kind: StockListKind) -> String { StockListService.text(snapshot.stockLists, kind: kind, venueID: preferences.venueID) }
     func addProduct(_ product: Product, to kind: StockListKind) {
         guard products.contains(where: { $0.id == product.id }) else { return }
-        StockListService.add(product, kind: kind, to: &snapshot.stockLists)
-        snapshot.preferences.recordProductUse(product.id)
-        save(); Haptics.selection()
+        var candidate = snapshot
+        StockListService.add(product, kind: kind, to: &candidate.stockLists)
+        candidate.preferences.recordProductUse(product.id)
+        snapshot = candidate
+        scheduleStockSave()
+        Haptics.selection()
     }
     func setProductQuantity(_ product: Product, kind: StockListKind, quantity: Int, feedback: Bool = true, persistImmediately: Bool = true) {
         guard products.contains(where: { $0.id == product.id }) else { return }
@@ -171,7 +177,7 @@ import BARCore
         }
         if quantity > 0 { candidate.preferences.recordProductUse(product.id) }
         snapshot = candidate
-        scheduleStockSave()
+        if persistImmediately { scheduleStockSave() }
         if feedback { Haptics.selection() }
     }
     /// Used by accelerated steppers: values render immediately while a single final
@@ -192,7 +198,10 @@ import BARCore
     func addCustomItem(name: String, quantity: Int, kind: StockListKind) {
         let clean = name.components(separatedBy: .newlines).joined(separator: " ").trimmingCharacters(in: .whitespacesAndNewlines)
         guard !clean.isEmpty, clean.count <= 200, (1...100_000).contains(quantity) else { return }
-        snapshot.stockLists.append(StockListItem(venueID: preferences.venueID, kind: kind, name: clean, quantity: quantity)); save()
+        var candidate = snapshot
+        candidate.stockLists.append(StockListItem(venueID: preferences.venueID, kind: kind, name: clean, quantity: quantity))
+        snapshot = candidate
+        scheduleStockSave()
     }
     func saveProduct(_ product: Product) {
         guard product.venueID == preferences.venueID, !product.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
@@ -238,6 +247,21 @@ import BARCore
         guard serves > 0, let drink = cocktail(cocktailID), drink.recipeVerified else { return }
         snapshot.batches.insert(SavedBatch(id: UUID().uuidString, cocktailID: cocktailID, name: drink.name, serves: serves, wastagePercent: wastage), at: 0)
         snapshot.batches = Array(snapshot.batches.prefix(30)); save(); Haptics.success()
+    }
+    func addWastage(itemName: String, quantity: Double, unit: String, reason: String) {
+        let cleanName = itemName.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanUnit = unit.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !cleanName.isEmpty, cleanName.count <= 120, quantity.isFinite, (0...100_000).contains(quantity), quantity > 0, !cleanUnit.isEmpty else { return }
+        var candidate = snapshot
+        candidate.wastage.insert(WastageEntry(venueID: preferences.venueID, itemName: cleanName, quantity: quantity, unit: cleanUnit, reason: reason), at: 0)
+        if commit(candidate) { Haptics.success() }
+    }
+    func deleteWastage(id: String) {
+        let venueID = preferences.venueID
+        guard snapshot.wastage.contains(where: { $0.id == id && $0.venueID == venueID }) else { return }
+        var candidate = snapshot
+        candidate.wastage.removeAll { $0.id == id && $0.venueID == venueID }
+        if commit(candidate) { Haptics.selection() }
     }
     func startPrep(cocktailID: String, serves: Int, wastage: Double) {
         guard let drink = cocktail(cocktailID), drink.recipeVerified, serves > 0 else { return }

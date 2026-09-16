@@ -26,6 +26,7 @@
 		EBD306BB9FE7540F169C0EC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0A4A33C7990DDA1BCBE3B0 /* Assets.xcassets */; };
 		F959B2061B8C61DAC244A997 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C65C68F3F8B52111A051746 /* ProfileView.swift */; };
 		FF086F2C2977AC3EC0CE19C8 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D0EB325FF51D3BA3C9A9B /* DesignSystem.swift */; };
+		A1B2C3D4E5F60123456789AB /* WastageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60123456789AC /* WastageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		D21D0EB325FF51D3BA3C9A9B /* DesignSystem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignSystem.swift; path = Components/DesignSystem.swift; sourceTree = "<group>"; };
 		D3DEEF0F9A5C6C0EDB1AA62B /* SearchView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchView.swift; path = Views/SearchView.swift; sourceTree = "<group>"; };
 		EADE6C0D237950348A153C1C /* StockListViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StockListViews.swift; path = BAR/Views/Operations/StockListViews.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60123456789AC /* WastageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WastageView.swift; path = Views/Operations/WastageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				8ED15C93616C1CC9A08849C2 /* StockViews.swift */,
 				D3DEEF0F9A5C6C0EDB1AA62B /* SearchView.swift */,
 				99745FFD182C683C2812A695 /* WineViews.swift */,
+				A1B2C3D4E5F60123456789AC /* WastageView.swift */,
 				1D0A4A33C7990DDA1BCBE3B0 /* Assets.xcassets */,
 				4C6F86C38D9AE141F1CEBFDE /* PrivacyInfo.xcprivacy */,
 			);
@@ -263,6 +266,7 @@
 				B96734AE48BCFCD43D5329E0 /* SearchView.swift in Sources */,
 				08769A0A0BE349ED91713617 /* WineViews.swift in Sources */,
 				BB7BD19C87554F7FEDC36B35 /* StockListViews.swift in Sources */,
+				A1B2C3D4E5F60123456789AB /* WastageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

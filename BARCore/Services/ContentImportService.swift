@@ -8,6 +8,7 @@ public enum ContentImportService {
         imported.training = local.training
         imported.user = local.user
         imported.batches = local.batches
+        imported.wastage = local.wastage
         imported.stockLists = local.stockLists
         if imported.catalogueVersion == 0 { imported.products = local.products }
         imported.catalogueVersion = max(imported.catalogueVersion, local.catalogueVersion)

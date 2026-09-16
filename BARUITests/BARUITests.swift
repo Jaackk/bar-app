@@ -24,6 +24,14 @@ final class BARUITests: XCTestCase {
         Thread.sleep(forTimeInterval: 0.5)
     }
     private func tab(_ name: String) { app.tabBars.buttons[name].tap() }
+    private func openProfile() {
+        tab("Home")
+        app.buttons["Open menu"].tap()
+        let profile = app.buttons["Profile"].firstMatch
+        XCTAssertTrue(profile.waitForExistence(timeout: 3))
+        profile.tap()
+        XCTAssertTrue(app.navigationBars["Profile"].waitForExistence(timeout: 5))
+    }
 
     func testCocktailBatchFavouritesAndRelaunch() throws {
         capture("01 Home")
@@ -49,7 +57,7 @@ final class BARUITests: XCTestCase {
         reveal(prep); prep.tap()
         XCTAssertTrue(app.buttons["Added to today’s prep"].exists)
         app.terminate(); app.launchArguments = ["--uitesting", "--keep-state"]; app.launch()
-        tab("Profile")
+        openProfile()
         tapText("Favourites")
         XCTAssertTrue(app.staticTexts["Sea Glass"].waitForExistence(timeout: 5))
         capture("05 Persisted favourites")
@@ -121,7 +129,7 @@ final class BARUITests: XCTestCase {
         app.buttons["open-order"].tap()
         capture("13 Suggested order")
         XCTAssertTrue(app.buttons["add-products"].exists)
-        tab("Profile"); capture("14 Profile")
+        openProfile(); capture("14 Profile")
         XCTAssertTrue(app.navigationBars["Profile"].exists)
     }
     func testPrepSwipeDeletePersists() throws {
@@ -140,6 +148,26 @@ final class BARUITests: XCTestCase {
         app.launch()
         tab("Prep")
         XCTAssertFalse(app.buttons[rowIdentifier].exists)
+    }
+    func testWastageEntryPersistsAndCanBeDeleted() throws {
+        tab("Wastage")
+        let item = app.textFields["wastage-item"]
+        XCTAssertTrue(item.waitForExistence(timeout: 5))
+        item.tap(); item.typeText("Broken tonic")
+        app.buttons["add-wastage"].tap()
+        let entry = app.staticTexts["Broken tonic"]
+        XCTAssertTrue(entry.waitForExistence(timeout: 5))
+
+        app.terminate()
+        app.launchArguments = ["--uitesting", "--keep-state"]
+        app.launch()
+        tab("Wastage")
+        XCTAssertTrue(entry.waitForExistence(timeout: 5))
+        entry.swipeLeft()
+        let delete = app.buttons["Delete"]
+        XCTAssertTrue(delete.waitForExistence(timeout: 3))
+        delete.tap()
+        XCTAssertFalse(entry.exists)
     }
     func testLearnFlashcardsAndQuiz() throws {
         tapText("Learn"); capture("15 Learn")
@@ -166,8 +194,7 @@ final class BARUITests: XCTestCase {
         reveal(quarter); quarter.tap()
         XCTAssertTrue(app.buttons["Edit Tanqueray current count, 1.25 bottle"].exists)
         capture("18 Fractional stock count")
-        tab("Profile")
-        XCTAssertTrue(app.navigationBars["Profile"].waitForExistence(timeout: 5))
+        openProfile()
         let name = app.textFields["employee-name"]
         name.tap()
         if let current = name.value as? String { name.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: current.count)) }
@@ -196,7 +223,7 @@ final class BARUITests: XCTestCase {
     }
 
     private func openStocktake() {
-        tab("Profile")
+        openProfile()
         reveal(app.buttons["Manager"]); app.buttons["Manager"].tap()
         tapText("Stocktake")
     }

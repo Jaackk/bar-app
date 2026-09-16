@@ -76,6 +76,7 @@ public enum SeedLoader {
         try unique(snapshot.prep.map(\.id), label: "prep")
         try unique(snapshot.stock.map(\.id), label: "stock")
         try unique(snapshot.batches.map(\.id), label: "saved batch")
+        try unique(snapshot.wastage.map(\.id), label: "wastage entry")
         let venueIDs = Set(snapshot.venues.map(\.id))
         func venue(_ id: String) throws {
             guard venueIDs.contains(id) else { throw DataValidationError.invalid("Record references unknown venue: \(id)") }
@@ -117,6 +118,13 @@ public enum SeedLoader {
             try identity(batch.id, batch.name)
             guard (0...100_000).contains(batch.serves) else { throw DataValidationError.invalid("Saved batch serves must be between 0 and 100,000.") }
             try number(batch.wastagePercent, label: "Batch wastage", upper: 100)
+        }
+        for entry in snapshot.wastage {
+            try identity(entry.id, entry.itemName)
+            try venue(entry.venueID)
+            try number(entry.quantity, label: "Wastage quantity", upper: 100_000)
+            guard entry.quantity > 0 else { throw DataValidationError.invalid("Wastage quantity must be greater than zero.") }
+            guard !entry.unit.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { throw DataValidationError.invalid("Wastage unit is required.") }
         }
     }
     static func unique(_ values: [String], label: String) throws {

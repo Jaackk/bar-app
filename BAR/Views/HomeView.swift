@@ -11,7 +11,7 @@ struct HomeView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 HStack(alignment: .top) {
-                    Menu { NavigationLink("Favourites", destination: FavouritesView()); NavigationLink("Saved batches", destination: SavedBatchesView()); NavigationLink("About your venue", destination: ProfileView()) } label: { Image(systemName: "line.3.horizontal").font(.title2).frame(width: 44, height: 44) }.accessibilityLabel("Open menu")
+                    Menu { NavigationLink("Favourites", destination: FavouritesView()); NavigationLink("Saved batches", destination: SavedBatchesView()); NavigationLink("Profile", destination: ProfileView()); NavigationLink("About your venue", destination: AboutBARView()) } label: { Image(systemName: "line.3.horizontal").font(.title2).frame(width: 44, height: 44) }.accessibilityLabel("Open menu")
                     Spacer()
                     VStack(spacing: 1) { Text(store.venue.branding.displayName.isEmpty ? store.venue.name.uppercased() : store.venue.branding.displayName).font(.system(size: 21, weight: .regular, design: .serif)).tracking(4); Text(store.venue.branding.subtitle.isEmpty ? "Bar" : store.venue.branding.subtitle).font(.custom("SnellRoundhand", size: 32)) }
                     Spacer(); Color.clear.frame(width: 44, height: 1)
