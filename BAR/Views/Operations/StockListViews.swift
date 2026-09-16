@@ -53,7 +53,8 @@ struct StockListView: View {
         let base = query.isEmpty ? store.products : StockListService.search(store.products, venueID: store.preferences.venueID, query: query)
         let filtered = selectedGroup.map { group in base.filter { group.includes($0) } } ?? base
         if query.isEmpty, selectedGroup == nil {
-            let preferred = essentials + frequentProducts
+            var seen = Set<String>()
+            let preferred = (essentials + frequentProducts).filter { seen.insert($0.id).inserted }
             let ids = Set(preferred.map(\.id))
             return Array((preferred + filtered.filter { !ids.contains($0.id) }.sorted { lhs, rhs in
                 let left = store.preferences.productUsage[lhs.id, default: 0] + ProductBrowseGroup.servicePriority(lhs, in: .other)
@@ -132,7 +133,7 @@ struct StockListView: View {
                 }.listRowBackground(BarTheme.card)
             }
             Section { Button { custom = true } label: { Label("Add custom item", systemImage: "pencil.line").frame(minHeight: 40) } }.listRowBackground(BarTheme.card)
-        }.listStyle(.insetGrouped).listSectionSpacing(8).scrollContentBackground(.hidden).barScreen().navigationTitle(kind.title).navigationBarTitleDisplayMode(.inline)
+        }.listStyle(.insetGrouped).listSectionSpacing(8).contentMargins(.top, 0, for: .scrollContent).scrollContentBackground(.hidden).barScreen().navigationTitle(kind.title).navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) { Menu {
                 Button(copied ? "Copied" : "Copy List", systemImage: "doc.on.doc") { UIPasteboard.general.string = store.listText(kind); copied = true }
@@ -154,6 +155,7 @@ struct StockListView: View {
 private struct StockListReviewView: View {
     @Environment(AppStore.self) private var store
     let kind: StockListKind
+    @State private var clear = false
     private var items: [StockListItem] { store.listItems(kind) }
     var body: some View {
         List {
@@ -169,6 +171,13 @@ private struct StockListReviewView: View {
                 }
             }
         }.listStyle(.insetGrouped).scrollContentBackground(.hidden).barScreen().navigationTitle(kind == .restock ? "Restock List" : "Stock Order").navigationBarTitleDisplayMode(.inline)
+            .toolbar { ToolbarItemGroup(placement: .topBarTrailing) {
+                ShareLink(item: store.listText(kind)) { Image(systemName: "square.and.arrow.up") }.accessibilityLabel(kind == .restock ? "Share Restock" : "Share Order")
+                Button(role: .destructive) { clear = true } label: { Image(systemName: "trash") }.accessibilityLabel(kind == .restock ? "Clear Restock List" : "Clear Order")
+            } }
+            .confirmationDialog(kind == .restock ? "Clear Restock List?" : "Clear Stock Order?", isPresented: $clear, titleVisibility: .visible) {
+                Button("Clear List", role: .destructive) { store.clearList(kind) }
+            } message: { Text("This removes all products from this list, not from the catalogue.") }
     }
 }
 
@@ -220,7 +229,7 @@ private enum ProductBrowseGroup: String, CaseIterable, Identifiable {
     var categories: Set<String> {
         switch self {
         case .beer: return ["Beer / Cider"]
-        case .wine: return ["Wine"]
+        case .wine: return ["Wine", "Sparkling / Champagne"]
         case .sparkling: return ["Sparkling / Champagne"]
         case .spirits: return ["Vodka", "Gin", "Rum", "Tequila / Mezcal", "Whisky / Whiskey", "Brandy / Cognac", "Liqueurs / Aperitifs"]
         case .mixers: return ["Mixers"]
@@ -247,11 +256,11 @@ private enum ProductBrowseGroup: String, CaseIterable, Identifiable {
         switch self {
         case .beer: return "mug"
         case .wine, .sparkling: return "wineglass"
-        case .spirits: return "waterbottle"
+        case .spirits: return "flask"
         case .mixers, .softDrinks: return "bubbles.and.sparkles"
         case .milk: return "cup.and.saucer"
         case .juices, .syrups: return "drop"
-        case .fruit: return "apple.logo"
+        case .fruit: return "carrot"
         case .herbs: return "leaf"
         case .prep: return "flask"
         case .other: return "shippingbox"
