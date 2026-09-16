@@ -41,7 +41,7 @@ struct WineCard: View {
     var reason: String? = nil
     var body: some View { HStack(alignment: .top, spacing: 12) {
         WineBottleArt(wine: wine)
-            .frame(width: 74, height: 148)
+            .frame(width: 90, height: 144)
             .padding(.vertical, 2)
         VStack(alignment: .leading, spacing: 7) {
             Text(wine.name).font(BarTheme.title(20)).foregroundStyle(BarTheme.ink)
@@ -56,26 +56,13 @@ private func wineTags(_ wine: Wine) -> [String] { [wine.sweetness <= 2 ? "Dry" :
 struct WineBottleArt: View {
     @Environment(AppStore.self) private var store
     let wine: Wine
-    /// Several supplier packshots include markedly different amounts of baked-in
-    /// white/transparent canvas.  These conservative, per-asset adjustments
-    /// consume that empty canvas without stretching or cutting the bottle.
-    private var presentationScale: CGFloat {
-        switch wine.productID {
-        case "menu-chardonnay-les-sardine-domaine-lafage": return 1.19
-        case "menu-chenin-blanc-wild-garden": return 1.16
-        case "menu-syrah-grenache-rose-chateau-de-campuget", "menu-primitivo-rose-tramari-san-marzano": return 1.12
-        case "menu-prosecco-collezione-96-brut-masottina", "menu-prosecco-collezione-96-rose-masottina": return 1.10
-        case "menu-veuve-clicquot-brut-yellow-label", "menu-veuve-clicquot-rose": return 1.08
-        default: return 1
-        }
-    }
     private var colour: Color { switch wine.colour { case .red: Color(red: 0.29, green: 0.13, blue: 0.19); case .rose: BarTheme.coral; case .white: Color(red: 0.62, green: 0.66, blue: 0.33); case .sparkling: BarTheme.olive; case .orange: Color.orange; case .dessert: Color(red: 0.65, green: 0.43, blue: 0.18) } }
     var body: some View { GeometryReader { proxy in
         switch WineProductResolver.imageSource(for: wine, products: store.products) {
         case .customProductImage(let product), .bundledProductImage(let product):
-            ProductThumbnail(product: product).scaleEffect(presentationScale)
+            ProductThumbnail(product: product)
         case .wineImage(let imageName) where UIImage(named: imageName) != nil:
-            Image(imageName).resizable().scaledToFit().scaleEffect(presentationScale)
+            Image(imageName).resizable().scaledToFit()
         case .wineImage, .fallback:
             VStack(spacing: 0) { RoundedRectangle(cornerRadius: 3).fill(colour.opacity(0.95)).frame(width: proxy.size.width * 0.27, height: proxy.size.height * 0.3); ZStack { UnevenRoundedRectangle(topLeadingRadius: 12, bottomLeadingRadius: 5, bottomTrailingRadius: 5, topTrailingRadius: 12).fill(colour); RoundedRectangle(cornerRadius: 2).fill(BarTheme.cream).frame(width: proxy.size.width * 0.64, height: proxy.size.height * 0.27).overlay(Text(wine.grape.prefix(1)).font(BarTheme.title(15)).foregroundStyle(BarTheme.ink)) }.frame(height: proxy.size.height * 0.65) }.frame(maxWidth: .infinity).shadow(color: BarTheme.ink.opacity(0.08), radius: 3, y: 4)
         }
@@ -85,7 +72,9 @@ struct WineDetailView: View {
     @Environment(AppStore.self) var store
     var wineID: String
     var body: some View { Group { if let wine = store.wine(wineID) { ScrollView { VStack(alignment: .leading, spacing: 22) {
-        HStack { Spacer(); WineBottleArt(wine: wine).frame(width: 112, height: 270); Spacer() }.padding(20).frame(maxWidth: .infinity).background(BarTheme.stone.opacity(0.6), in: RoundedRectangle(cornerRadius: 20))
+        HStack { Spacer(); WineBottleArt(wine: wine).frame(width: 156, height: 300); Spacer() }
+            .padding(.vertical, 12).padding(.horizontal, 20)
+            .frame(maxWidth: .infinity).background(BarTheme.stone.opacity(0.6), in: RoundedRectangle(cornerRadius: 20))
         VStack(alignment: .leading, spacing: 10) { if wine.isSample { SampleLabel() }; Text(wine.name).font(BarTheme.title(32)); Text([wine.producer, wine.region, wine.country].filter { !$0.isEmpty }.joined(separator: " · ")).font(.subheadline).foregroundStyle(BarTheme.muted); Text(wine.description).font(.body); HStack { ForEach(wineTags(wine), id: \.self) { TagChip(title: $0) } } }
         VStack(alignment: .leading, spacing: 12) { Label("How to describe it to a guest", systemImage: "quote.opening").font(.headline); Text("“\(wine.guestDescription)”").font(BarTheme.title(23)) }.barCard()
         VStack(alignment: .leading, spacing: 10) { SectionHeader(title: "At a glance", subtitle: wine.id.hasPrefix("hove-wine-") ? "Taste scales are approximate style guidance" : nil); LabeledContent("Grape", value: wine.grape.isEmpty ? "Not listed on menu" : wine.grape); LabeledContent("Style", value: wine.style); LabeledContent("Body", value: "\(wine.body) / 5"); LabeledContent("Acidity", value: "\(wine.acidity) / 5"); LabeledContent("Tannin", value: "\(wine.tannin) / 5") }.font(.subheadline).barCard()

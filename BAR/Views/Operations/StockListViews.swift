@@ -56,7 +56,7 @@ struct StockListView: View {
         List {
             Section {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(kind == .restock ? "What does the bar need?" : "Build the order list.").font(BarTheme.title(29))
+                    Text(kind == .restock ? "What does the bar need right now?" : "What do we need to buy next?").font(BarTheme.title(29))
                     Text(items.isEmpty ? "Add products as you go." : "\(items.count) products · \(items.reduce(0) { $0 + $1.quantity }) units").font(.subheadline).foregroundStyle(.secondary)
                 }.padding(.vertical, 10)
                 HStack(spacing: 10) {
@@ -64,19 +64,22 @@ struct StockListView: View {
                     TextField("Search products…", text: $productSearch).textInputAutocapitalization(.never).accessibilityIdentifier("restock-search")
                     if !productSearch.isEmpty { Button { productSearch = "" } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(BarTheme.muted) }.buttonStyle(.plain) }
                 }.padding(.horizontal, 14).frame(minHeight: 52).background(BarTheme.cream, in: RoundedRectangle(cornerRadius: 15))
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 8) {
-                        ForEach(ProductBrowseGroup.priorityGroups) { group in
-                            Button { browseGroup = group; browserPresented = true } label: { TagChip(title: group.rawValue, selected: false) }.accessibilityIdentifier("restock-category-\(group.id)")
-                        }
-                    }.padding(.vertical, 3)
-                }.buttonStyle(.plain)
-                Button { browseGroup = nil; browserPresented = true } label: { Label("Browse all products", systemImage: "square.grid.2x2").font(.subheadline.weight(.semibold)).frame(maxWidth: .infinity, minHeight: 40) }.buttonStyle(.plain)
             }.listRowBackground(BarTheme.card)
             if !quickMatches.isEmpty { Section("Search results") {
                 ForEach(quickMatches) { product in QuickAddProductRow(product: product, kind: kind) }
             }.listRowBackground(BarTheme.card) }
-            if !frequentProducts.isEmpty { Section("Frequently added") {
+            Section("Quick categories") {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 9), count: 3), spacing: 9) {
+                    ForEach(ProductBrowseGroup.operationalGroups) { group in
+                        RestockCategoryCard(group: group) { browseGroup = group; browserPresented = true }
+                    }
+                }.padding(.vertical, 4)
+                Button { browseGroup = nil; browserPresented = true } label: {
+                    Label("Browse complete catalogue", systemImage: "square.grid.2x2")
+                        .font(.caption.weight(.semibold)).frame(maxWidth: .infinity, minHeight: 40)
+                }.buttonStyle(.plain)
+            }.listRowBackground(BarTheme.card)
+            if !frequentProducts.isEmpty { Section(kind == .restock ? "Frequently added" : "Frequently ordered") {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
                         ForEach(frequentProducts) { product in
@@ -101,7 +104,7 @@ struct StockListView: View {
                     EmptyStateView(title: kind == .restock ? "Nothing needed yet." : "No products added.", message: kind == .restock ? "Search for a product to start a restock list." : "Search or add an item to build the order.", systemImage: kind == .restock ? "tray" : "cart")
                 }.listRowBackground(Color.clear)
             } else {
-                Section(kind.heading) {
+                Section(kind == .restock ? "Current restock" : "Current order") {
                     ForEach(items) { item in
                         let product = store.products.first { $0.id == item.productID }
                         HStack(spacing: 12) {
@@ -191,6 +194,7 @@ private enum ProductBrowseGroup: String, CaseIterable, Identifiable {
     case beer = "Beer & Cider", wine = "Wine", sparkling = "Sparkling", spirits = "Spirits", mixers = "Mixers", milk = "Milk", softDrinks = "Soft Drinks", juices = "Juice", syrups = "Syrups & Cordials", fruit = "Fruit / Garnish", herbs = "Herbs", prep = "Prep", other = "Other"
     var id: String { rawValue }
     static let priorityGroups: [ProductBrowseGroup] = [.beer, .wine, .spirits, .mixers, .milk, .juices, .fruit]
+    static let operationalGroups: [ProductBrowseGroup] = [.beer, .wine, .spirits, .mixers, .milk, .juices, .fruit, .syrups, .other]
     var categories: Set<String> {
         switch self {
         case .beer: return ["Beer / Cider"]
@@ -231,6 +235,56 @@ private enum ProductBrowseGroup: String, CaseIterable, Identifiable {
         case .other: return "shippingbox"
         }
     }
+    static func servicePriority(_ product: Product, in group: ProductBrowseGroup) -> Int {
+        let preferred: [String: Int] = [
+            "menu-peroni-nastro-azzurro-5": 10_000,
+            "menu-chenin-blanc-wild-garden": 10_000,
+            "menu-chardonnay-les-sardine-domaine-lafage": 9_500,
+            "spec-absolut-vodka": 10_000,
+            "menu-casamigos-blanco": 9_500,
+            "menu-double-dutch-indian-tonic-water": 10_000,
+            "menu-double-dutch-skinny-tonic": 9_500,
+            "spec-whole-milk": 10_000,
+            "service-skimmed-milk": 9_500,
+            "service-oat-milk": 9_000,
+            "menu-orange-juice": 10_000,
+            "menu-pineapple-juice": 9_500,
+            "menu-limes": 10_000
+        ]
+        return preferred[product.id, default: 0]
+    }
+}
+
+private struct RestockCategoryCard: View {
+    @Environment(AppStore.self) private var store
+    let group: ProductBrowseGroup
+    let action: () -> Void
+    private var products: [Product] { store.products.filter { group.includes($0) } }
+    private var representative: Product? {
+        let ids: [String] = switch group {
+        case .beer: ["menu-peroni-nastro-azzurro-5"]
+        case .wine: ["menu-chenin-blanc-wild-garden", "menu-chardonnay-les-sardine-domaine-lafage"]
+        case .spirits: ["spec-absolut-vodka", "menu-casamigos-blanco"]
+        case .mixers: ["menu-double-dutch-indian-tonic-water"]
+        case .milk: ["spec-whole-milk"]
+        case .juices: ["menu-orange-juice", "menu-pineapple-juice"]
+        case .fruit: ["menu-limes"]
+        case .syrups: ["menu-orgeat", "spec-gomme-syrup"]
+        default: []
+        }
+        return ids.compactMap { id in products.first { $0.id == id } }.first ?? products.first
+    }
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: 5) {
+                ProductThumbnail(product: representative).frame(maxWidth: .infinity).frame(height: 68)
+                Text(group == .fruit ? "Fruit & Garnish" : group.rawValue).font(.caption.weight(.semibold)).foregroundStyle(BarTheme.ink).lineLimit(2).multilineTextAlignment(.center)
+                Text("\(products.count) products").font(.system(size: 9, weight: .medium)).foregroundStyle(BarTheme.muted)
+            }.frame(maxWidth: .infinity, minHeight: 122, alignment: .top).padding(8)
+                .background(BarTheme.cream.opacity(0.78), in: RoundedRectangle(cornerRadius: 14))
+                .contentShape(RoundedRectangle(cornerRadius: 14))
+        }.buttonStyle(.plain).accessibilityIdentifier("restock-category-\(group.id)").accessibilityLabel("Browse \(group.rawValue)")
+    }
 }
 
 private struct ProductBrowser: View {
@@ -246,14 +300,20 @@ private struct ProductBrowser: View {
     private var groups: [ProductBrowseGroup] { ProductBrowseGroup.allCases.filter { value in store.products.contains { value.includes($0) } } }
     private var matches: [Product] {
         guard let group else { return [] }
-        return StockListService.search(store.products, venueID: store.preferences.venueID, query: search).filter { group.includes($0) }
+        return StockListService.search(store.products, venueID: store.preferences.venueID, query: search)
+            .filter { group.includes($0) }
+            .sorted { lhs, rhs in
+                let left = store.preferences.productUsage[lhs.id, default: 0] + ProductBrowseGroup.servicePriority(lhs, in: group)
+                let right = store.preferences.productUsage[rhs.id, default: 0] + ProductBrowseGroup.servicePriority(rhs, in: group)
+                return left == right ? lhs.name < rhs.name : left > right
+            }
     }
     var body: some View {
         NavigationStack {
             Group {
                 if let group {
                     VStack(spacing: 0) {
-                        ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 8) { ForEach(ProductBrowseGroup.priorityGroups) { value in Button { self.group = value; search = "" } label: { TagChip(title: value.rawValue, selected: group == value) } } }.padding(.horizontal, 20).padding(.vertical, 10) }.buttonStyle(.plain)
+                        ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 10) { ForEach(ProductBrowseGroup.operationalGroups) { value in Button { self.group = value; search = "" } label: { TagChip(title: value == .fruit ? "Fruit" : value.rawValue, selected: group == value) }.frame(minHeight: 46) } }.padding(.horizontal, 16).padding(.vertical, 10) }.buttonStyle(.plain)
                         ScrollView { LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) { ForEach(matches) { product in ProductGridCell(product: product, kind: kind) } }.padding(20) }
                     }
                     .searchable(text: $search, prompt: "Filter (group.rawValue)…")
@@ -306,8 +366,8 @@ private struct ProductGridCell: View {
         .onDisappear { stopRepeating() }
     }
 
-    private func change(by amount: Int) {
-        store.setProductQuantity(product, kind: kind, quantity: max(0, quantity + amount))
+    private func change(by amount: Int, feedback: Bool = true) {
+        store.setProductQuantity(product, kind: kind, quantity: max(0, quantity + amount), feedback: feedback)
     }
     private func startRepeating(_ amount: Int) {
         guard repeatTask == nil else { return }
@@ -316,9 +376,9 @@ private struct ProductGridCell: View {
             // deliberate stream after the standard long-press threshold.
             var step = 0
             while !Task.isCancelled {
-                change(by: amount)
+                change(by: amount, feedback: step == 0)
                 step += 1
-                let delay: UInt64 = step < 6 ? 110_000_000 : step < 18 ? 55_000_000 : 25_000_000
+                let delay: UInt64 = step < 6 ? 110_000_000 : step < 18 ? 55_000_000 : 32_000_000
                 try? await Task.sleep(nanoseconds: delay)
             }
         }

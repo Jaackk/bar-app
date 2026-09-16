@@ -12,7 +12,7 @@ struct SearchView: View {
         ScrollView { LazyVStack(alignment: .leading, spacing: 18) {
             SectionHeader(title: "Find it. Make it.", subtitle: "Every spec, ingredient and pairing.")
             SearchBar(text: $store.searchQuery, focus: $searchFocused)
-            ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 8) { ForEach(["All", "Cocktail", "Wine", "Prep", "Product"], id: \.self) { kind in Button { selectedKind = kind } label: { TagChip(title: kind, selected: selectedKind == kind) }.frame(minHeight: 44) } } }
+            ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 8) { ForEach(["All", "Cocktail", "Wine", "Prep", "Product"], id: \.self) { kind in Button { selectedKind = kind } label: { TagChip(title: kind, selected: selectedKind == kind) }.frame(minHeight: 44).accessibilityIdentifier("search-filter-\(kind.lowercased())") } } }
             if store.searchQuery.isEmpty && selectedKind == "All" {
                 Text("QUICK SEARCH").font(.caption.weight(.semibold)).tracking(2).foregroundStyle(BarTheme.muted)
                 ForEach(["gin citrus", "passionfruit", "no egg", "dry white", "steak"], id: \.self) { query in Button { store.searchQuery = query } label: { HStack { Image(systemName: "magnifyingglass"); Text(query); Spacer(); Image(systemName: "arrow.up.left").font(.caption) }.padding(.vertical, 10) }.buttonStyle(.plain) }

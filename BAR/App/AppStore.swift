@@ -136,7 +136,7 @@ import BARCore
         snapshot.preferences.recordProductUse(product.id)
         save(); Haptics.selection()
     }
-    func setProductQuantity(_ product: Product, kind: StockListKind, quantity: Int) {
+    func setProductQuantity(_ product: Product, kind: StockListKind, quantity: Int, feedback: Bool = true) {
         guard products.contains(where: { $0.id == product.id }) else { return }
         var candidate = snapshot
         if let item = candidate.stockLists.first(where: { $0.venueID == product.venueID && $0.kind == kind && $0.productID == product.id }) {
@@ -145,7 +145,7 @@ import BARCore
             candidate.stockLists.append(StockListItem(venueID: product.venueID, kind: kind, productID: product.id, name: product.name, quantity: min(quantity, 100_000), unit: kind == .order ? product.defaultOrderUnit : product.unit))
         }
         if quantity > 0 { candidate.preferences.recordProductUse(product.id) }
-        if commit(candidate) { Haptics.selection() }
+        if commit(candidate), feedback { Haptics.selection() }
     }
     func setListQuantity(id: String, quantity: Int) {
         var candidate = snapshot

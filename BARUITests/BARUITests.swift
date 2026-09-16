@@ -203,9 +203,9 @@ final class BARUITests: XCTestCase {
     func testNewStockListsAndSharedCatalogue() throws {
         tab("Stock"); capture("Stock landing")
         app.buttons["open-restock"].tap()
-        XCTAssertTrue(app.staticTexts["Nothing needed yet."].exists)
+        XCTAssertTrue(app.textFields["restock-search"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["restock-category-Beer & Cider"].exists)
         let search = app.textFields["restock-search"]
-        XCTAssertTrue(search.waitForExistence(timeout: 5))
         search.tap(); search.typeText("Aperol")
         let add = app.buttons["Add Aperol"]
         XCTAssertTrue(add.waitForExistence(timeout: 5)); add.tap()
