@@ -118,9 +118,9 @@ final class BARUITests: XCTestCase {
         XCTAssertFalse(app.staticTexts["Tanquary N10"].exists)
     }
     func testPrepStockAndProfile() throws {
+        createServicePrep()
         tab("Prep"); capture("10 Prep")
-        let firstPrep = app.scrollViews.buttons.matching(NSPredicate(format: "label CONTAINS[c] %@", "Citrus")).firstMatch
-        if firstPrep.exists { firstPrep.tap() } else { tapText("Citrus cordial") }
+        tapText("Sea Glass · 1 serve")
         capture("11 Prep recipe")
         let complete = app.buttons["Mark prepared to target"]
         reveal(complete); complete.tap()
@@ -133,6 +133,7 @@ final class BARUITests: XCTestCase {
         XCTAssertTrue(app.navigationBars["Profile"].exists)
     }
     func testPrepSwipeDeletePersists() throws {
+        createServicePrep()
         tab("Prep")
         let row = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "prep-row-")).firstMatch
         XCTAssertTrue(row.waitForExistence(timeout: 5))
@@ -192,7 +193,7 @@ final class BARUITests: XCTestCase {
         app.swipeUp()
         let quarter = app.buttons["Set open bottle to ¼"]
         reveal(quarter); quarter.tap()
-        XCTAssertTrue(app.buttons["Edit Tanqueray current count, 1.25 bottle"].exists)
+        XCTAssertTrue(app.buttons["Edit Tanqueray current count, 0.25 bottle"].exists)
         capture("18 Fractional stock count")
         openProfile()
         let name = app.textFields["employee-name"]
@@ -204,8 +205,8 @@ final class BARUITests: XCTestCase {
         openStocktake()
         app.textFields["universal-search"].tap(); app.textFields["universal-search"].typeText("Tanqueray\n")
         app.swipeUp()
-        XCTAssertTrue(app.buttons["Edit Tanqueray current count, 1.25 bottle"].exists)
-        app.buttons["Edit Tanqueray current count, 1.25 bottle"].tap()
+        XCTAssertTrue(app.buttons["Edit Tanqueray current count, 0.25 bottle"].exists)
+        app.buttons["Edit Tanqueray current count, 0.25 bottle"].tap()
         let amount = app.textFields["Amount"]
         XCTAssertTrue(amount.waitForExistence(timeout: 5))
         amount.tap()
@@ -222,12 +223,49 @@ final class BARUITests: XCTestCase {
         XCTAssertTrue(largeCount.waitForExistence(timeout: 5))
     }
 
+    private func createServicePrep() {
+        tab("Home"); tapText("Cocktails"); tapText("Sea Glass")
+        let add = app.buttons["Add to prep"]; reveal(add); add.tap()
+        XCTAssertTrue(app.buttons["Added to prep"].exists)
+    }
+    func testSidecarSpecificationAndOverrideSurviveRelaunch() throws {
+        tab("Search")
+        let field = app.textFields["universal-search"]
+        field.tap(); field.typeText("Sidecar\n"); tapText("Sidecar")
+        XCTAssertTrue(app.staticTexts["active-specification"].label.contains("Custom"))
+        XCTAssertTrue(app.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] %@", "Shake")).firstMatch.exists)
+        let picker = app.buttons["classic-specification"]
+        XCTAssertTrue(picker.exists); picker.tap(); app.buttons["Recommended"].tap()
+        XCTAssertTrue(app.staticTexts["active-specification"].label.contains("Recommended"))
+        capture("Classic Recommended Sidecar")
+        app.terminate(); app.launchArguments = ["--uitesting", "--keep-state"]; app.launch()
+        tab("Search"); field.tap(); field.typeText("Sidecar\n"); tapText("Sidecar")
+        XCTAssertTrue(app.staticTexts["active-specification"].label.contains("Recommended"))
+        picker.tap()
+        app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Use global")).firstMatch.tap()
+        XCTAssertTrue(app.staticTexts["active-specification"].label.contains("Custom"))
+        capture("Classic Custom Sidecar")
+    }
+    func testRapidRestockEditsPersistAfterBackgroundAndRelaunch() throws {
+        tab("Stock"); app.buttons["open-restock"].tap()
+        let field = app.textFields["restock-search"]; field.tap(); field.typeText("Aperol")
+        let add = app.buttons["Add Aperol"]; XCTAssertTrue(add.waitForExistence(timeout: 5)); add.tap()
+        let plus = app.buttons.matching(identifier: "Increase Aperol").allElementsBoundByIndex.first { $0.isHittable }
+        let increment = try XCTUnwrap(plus)
+        for _ in 0..<12 { increment.tap() }
+        XCUIDevice.shared.press(.home); app.activate()
+        capture("Rapid restock after background")
+        app.terminate(); app.launchArguments = ["--uitesting", "--keep-state"]; app.launch()
+        tab("Stock"); app.buttons["open-restock"].tap()
+        XCTAssertTrue(app.staticTexts["13"].waitForExistence(timeout: 5))
+    }
     private func openStocktake() {
         openProfile()
         reveal(app.buttons["Manager"]); app.buttons["Manager"].tap()
         tapText("Stocktake")
     }
     func testNewStockListsAndSharedCatalogue() throws {
+        openProfile(); reveal(app.buttons["Manager"]); app.buttons["Manager"].tap()
         tab("Stock"); capture("Stock landing")
         app.buttons["open-restock"].tap()
         XCTAssertTrue(app.textFields["restock-search"].waitForExistence(timeout: 5))

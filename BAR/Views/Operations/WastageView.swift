@@ -46,14 +46,14 @@ struct WastageView: View {
                 Button {
                     let value = Double(quantity.replacingOccurrences(of: ",", with: ".")) ?? 0
                     store.addWastage(itemName: itemName, quantity: value, unit: unit, reason: reason)
-                    if value > 0 && !itemName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                    if store.errorMessage == nil && value > 0 && !itemName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                         itemName = ""
                         quantity = "1"
                         reason = "Spillage"
                         focusedField = nil
                     }
                 } label: {
-                    Label("Add wastage", systemImage: "plus").font(.headline).frame(maxWidth: .infinity, minHeight: 42)
+                    Label("Add wastage", systemImage: "plus").font(.headline).frame(maxWidth: .infinity, minHeight: 44)
                 }
                 .buttonStyle(.plain)
                 .foregroundStyle(.white)

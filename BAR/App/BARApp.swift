@@ -34,7 +34,15 @@ struct RootView: View {
             NavigationStack { WastageView() }.tabItem { Label("Wastage", systemImage: "drop.triangle") }.tag(4)
         }.font(.body).alert("Local data", isPresented: Binding(get: { store.errorMessage != nil }, set: { if !$0 { store.errorMessage = nil } })) { Button("OK") { store.errorMessage = nil } } message: { Text(store.errorMessage ?? "") }
             .onChange(of: scenePhase) { _, phase in
+                if phase == .active { store.serviceDate = Date() }
                 if phase != .active { store.flushPendingStockChanges() }
+                if phase == .background { store.lockOwner() }
+            }
+            .task {
+                while !Task.isCancelled {
+                    store.serviceDate = Date()
+                    try? await Task.sleep(for: .seconds(60))
+                }
             }
     }
 }

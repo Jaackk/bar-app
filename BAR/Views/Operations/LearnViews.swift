@@ -4,14 +4,14 @@ import BARCore
 struct LearnView: View {
     @Environment(AppStore.self) private var store
     @State private var learningSet = "Classics"
-    private var classics: [Cocktail] { store.cocktails.filter { $0.recipeVerified }.filter { !$0.venueSpecific || $0.isHouseClassic } }
-    private var masteredCount: Int { studyCocktails.filter { store.training.masteredCocktailIDs.contains($0.id) }.count }
+    private var classics: [Cocktail] { store.cocktails.filter { $0.recipeVerified && $0.trainingEligible }.filter { !$0.venueSpecific || $0.isHouseClassic } }
+    private var masteredCount: Int { studyCocktails.filter { store.training.isMastered($0) }.count }
     private var mastery: Double { studyCocktails.isEmpty ? 0 : Double(masteredCount) / Double(studyCocktails.count) }
     private var progressTitle: String { learningSet == "Venue" ? "Venue drinks mastered" : (learningSet == "All drinks" ? "Drinks mastered" : "Classics mastered") }
     private var studyCocktails: [Cocktail] {
         switch learningSet {
-        case "Venue": return store.cocktails.filter { $0.recipeVerified }.filter { $0.venueSpecific && !$0.isHouseClassic }
-        case "All drinks": return store.cocktails.filter { $0.recipeVerified }
+        case "Venue": return store.cocktails.filter { $0.recipeVerified && $0.trainingEligible }.filter { $0.venueSpecific && !$0.isHouseClassic }
+        case "All drinks": return store.cocktails.filter { $0.recipeVerified && $0.trainingEligible }
         default: return classics
         }
     }
@@ -60,7 +60,7 @@ struct LearnView: View {
                         }
                     }.buttonStyle(.plain)
                 }
-                Text("Questions use the recipes currently loaded for your venue. Sample venue recipes are for practice until your verified menu is imported.")
+                Text("Each question names its specification. Classics use your global choice and individual overrides. Changed recipes need revisiting; your previous answers remain in your history.")
                     .font(.caption).foregroundStyle(.secondary).lineSpacing(3)
             }.padding(20)
         }.barScreen().navigationTitle("Learn").navigationBarTitleDisplayMode(.inline)
@@ -108,7 +108,7 @@ private struct FlashcardSessionView: View {
                         DrinkArtwork(name: drink.imageName, spirit: drink.baseSpirit, height: 220).clipShape(RoundedRectangle(cornerRadius: 14))
                         VStack(alignment: .leading, spacing: 8) {
                             Text(drink.name).font(BarTheme.title(30))
-                            Text(drink.baseSpirit + " · " + drink.category).font(.subheadline).foregroundStyle(.secondary)
+                            Text(store.specificationLabel(drink)).font(.subheadline).foregroundStyle(.secondary)
                             if drink.isSample { SampleLabel() }
                         }
                         if revealed {
@@ -151,7 +151,7 @@ private struct FlashcardSessionView: View {
 
     private func answer(correctly: Bool) {
         guard cards.indices.contains(index) else { return }
-        store.recordTraining(cocktailID: cards[index].id, correct: correctly)
+        store.recordTraining(cocktailID: cards[index].id, correct: correctly, specification: cards[index])
         if correctly { correct += 1 }
         index += 1
         revealed = false
@@ -250,7 +250,7 @@ private struct QuizSessionView: View {
         selected = option
         let isCorrect = question.isCorrect(option)
         if isCorrect { correct += 1 }
-        store.recordTraining(cocktailID: question.cocktailID, correct: isCorrect)
+        store.recordTraining(cocktailID: question.cocktailID, correct: isCorrect, specification: cocktails.first { $0.id == question.cocktailID })
     }
 
     private func restart() {

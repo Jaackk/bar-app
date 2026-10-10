@@ -5,7 +5,7 @@ struct SearchView: View {
     @Environment(AppStore.self) var store
     @State private var selectedKind = "All"
     @FocusState private var searchFocused: Bool
-    private var results: [SearchResult] { SearchService.search(query: store.searchQuery, cocktails: store.cocktails, wines: store.wines, prep: store.prep, products: store.products, venueID: store.preferences.venueID).filter { selectedKind == "All" || $0.kind.rawValue.lowercased() == selectedKind.lowercased() } }
+    private var results: [SearchResult] { SearchService.search(query: store.searchQuery, cocktails: store.cocktails, wines: store.wines, prep: store.prep, products: store.products, venueID: store.preferences.venueID, alternativeIngredients: store.alternativeClassicSearchTerms).filter { selectedKind == "All" || $0.kind.rawValue.lowercased() == selectedKind.lowercased() } }
     private var resultGroups: [(SearchKind, [SearchResult])] { let kinds: [SearchKind] = [.cocktail, .product, .wine, .prep]; return kinds.compactMap { kind in let matches = results.filter { $0.kind == kind }; return matches.isEmpty ? nil : (kind, matches) } }
     var body: some View {
         @Bindable var store = store
@@ -15,7 +15,7 @@ struct SearchView: View {
             ScrollView(.horizontal, showsIndicators: false) { HStack(spacing: 8) { ForEach(["All", "Cocktail", "Wine", "Prep", "Product"], id: \.self) { kind in Button { selectedKind = kind } label: { TagChip(title: kind, selected: selectedKind == kind) }.frame(minHeight: 44).accessibilityIdentifier("search-filter-\(kind.lowercased())") } } }
             if store.searchQuery.isEmpty && selectedKind == "All" {
                 Text("QUICK SEARCH").font(.caption.weight(.semibold)).tracking(2).foregroundStyle(BarTheme.muted)
-                ForEach(["gin citrus", "passionfruit", "no egg", "dry white", "steak"], id: \.self) { query in Button { store.searchQuery = query } label: { HStack { Image(systemName: "magnifyingglass"); Text(query); Spacer(); Image(systemName: "arrow.up.left").font(.caption) }.padding(.vertical, 10) }.buttonStyle(.plain) }
+                ForEach(["gin citrus", "passionfruit", "citrus", "dry white", "steak"], id: \.self) { query in Button { store.searchQuery = query } label: { HStack { Image(systemName: "magnifyingglass"); Text(query); Spacer(); Image(systemName: "arrow.up.left").font(.caption) }.padding(.vertical, 10) }.buttonStyle(.plain) }
                 SectionHeader(title: "Popular tonight")
                 DrinkShelf(cocktails: store.cocktails.filter(\.isPopular))
             } else if store.searchQuery.isEmpty {

@@ -10,10 +10,10 @@ struct PrepView: View {
 
     private var categories: [String] { ["All"] + Set(store.prep.map(\.category)).sorted() }
     private var items: [PrepItem] {
-        store.prep.filter { (category == "All" || $0.category == category) && (showCompleted || !$0.completed) }
+        store.prep.filter { (category == "All" || $0.category == category) && (showCompleted || !$0.isComplete(on: store.serviceDate)) }
             .sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
     }
-    private var completedCount: Int { store.prep.filter(\.completed).count }
+    private var completedCount: Int { store.prep.filter { $0.isComplete(on: store.serviceDate) }.count }
 
     var body: some View {
         List {
@@ -49,7 +49,7 @@ struct PrepView: View {
             .listRowBackground(Color.clear)
             if items.isEmpty {
                 Section {
-                    EmptyStateView(title: "Prep is in good shape", message: "No outstanding recipes here. Show completed items to review quantities or start another batch.", systemImage: "checkmark.seal")
+                    EmptyStateView(title: store.prep.isEmpty ? "Plan today’s prep" : "No outstanding prep here", message: store.prep.isEmpty ? "Add your venue’s prep using the menu above, or send a cocktail calculation here from Batch. Nothing has been marked prepared yet." : "Show completed items to review today’s work, or choose another category.", systemImage: store.prep.isEmpty ? "list.bullet.clipboard" : "checkmark.seal")
                 }.listRowBackground(Color.clear)
             } else {
                 Section {
@@ -97,6 +97,7 @@ struct PrepView: View {
 }
 
 private struct PrepProgressCard: View {
+    @Environment(AppStore.self) private var store
     let item: PrepItem
 
     var body: some View {
@@ -107,8 +108,8 @@ private struct PrepProgressCard: View {
                     HStack(spacing: 7) { Text(item.name).font(BarTheme.title(22)).foregroundStyle(BarTheme.ink); if item.isSample { Text("EXAMPLE").font(.caption2.weight(.bold)).tracking(1).foregroundStyle(BarTheme.olive).padding(.horizontal, 7).padding(.vertical, 4).background(BarTheme.sage.opacity(0.35), in: Capsule()) } }
                 }
                 Spacer()
-                Image(systemName: item.completed ? "checkmark.circle.fill" : "chevron.right")
-                    .foregroundStyle(item.completed ? BarTheme.olive : BarTheme.ink.opacity(0.4))
+                Image(systemName: item.isComplete(on: store.serviceDate) ? "checkmark.circle.fill" : "chevron.right")
+                    .foregroundStyle(item.isComplete(on: store.serviceDate) ? BarTheme.olive : BarTheme.ink.opacity(0.4))
             }
             ProgressView(value: item.progress).tint(BarTheme.olive)
             HStack(alignment: .bottom) {
@@ -118,7 +119,7 @@ private struct PrepProgressCard: View {
                 }
                 Spacer()
                 VStack(alignment: .trailing, spacing: 2) {
-                    Text(item.completed ? "READY" : "TO PREP").font(.caption2.weight(.semibold)).tracking(1)
+                    Text(item.isComplete(on: store.serviceDate) ? "READY" : "TO PREP").font(.caption2.weight(.semibold)).tracking(1)
                     Text(MeasurementFormatter.string(item.requiredAmount, unit: item.unit)).font(.title2.weight(.semibold).monospacedDigit())
                 }.foregroundStyle(BarTheme.olive)
             }
@@ -184,7 +185,7 @@ struct PrepDetailView: View {
                                             if ingredient.batchBehaviour != .normal { Text(ingredient.batchBehaviour.label).font(.caption2).foregroundStyle(BarTheme.olive) }
                                         }
                                         Spacer(minLength: 12)
-                                        Text(MeasurementFormatter.string(ingredient.batchBehaviour == .garnishCount ? ceil(ingredient.amount * scale) : ingredient.amount * scale, unit: ingredient.unit))
+                                        Text(ingredient.amount == 0 ? (ingredient.quantityDisplay.map { $0 + " per serve" } ?? ingredient.measurement) : MeasurementFormatter.string(ingredient.batchBehaviour == .garnishCount ? ceil(ingredient.amount * scale) : ingredient.amount * scale, unit: ingredient.unit))
                                             .font(.subheadline.weight(.semibold).monospacedDigit()).multilineTextAlignment(.trailing)
                                     }.padding(.vertical, 12)
                                     if index < item.recipe.count - 1 { Divider() }
@@ -212,14 +213,14 @@ struct PrepDetailView: View {
                         if !item.notes.isEmpty {
                             VStack(alignment: .leading, spacing: 8) { SectionHeader(title: "Prep notes"); Text(item.notes).font(.subheadline).lineSpacing(4) }
                         }
-                        if item.completed {
+                        if item.isComplete(on: store.serviceDate) {
                             Label("Ready for service", systemImage: "checkmark.circle.fill").font(.headline).foregroundStyle(BarTheme.olive)
                                 .frame(maxWidth: .infinity, minHeight: 54).background(BarTheme.sage.opacity(0.3), in: RoundedRectangle(cornerRadius: 14))
                         } else {
                             PrimaryButton(title: "Mark prepared to target", systemImage: "checkmark") {
                                 store.completePrep(id: item.id)
                             }
-                            Text("Sets current amount to \(MeasurementFormatter.string(item.targetAmount, unit: item.unit)). For a smaller batch, update the current amount above.").font(.caption).foregroundStyle(.secondary)
+                            Text("Marks today’s preparation complete and raises the recorded amount to at least \(MeasurementFormatter.string(item.targetAmount, unit: item.unit)). For a smaller batch, update the current amount above.").font(.caption).foregroundStyle(.secondary)
                         }
                     }.padding(20)
                 }
@@ -235,7 +236,7 @@ struct PrepDetailView: View {
                     }
                 }
                 .toolbar { ToolbarItem(placement: .topBarTrailing) { Menu {
-                    if item.completed { Button("Reopen") { store.reopenPrep(id: item.id) } }
+                    if item.isComplete(on: store.serviceDate) { Button("Reopen") { store.reopenPrep(id: item.id) } }
                     Button("Delete prep", role: .destructive) {
                         let id = item.id
                         dismiss()

@@ -61,7 +61,7 @@ struct FavouritesView: View {
     @Environment(AppStore.self) var store
     var body: some View { ScrollView { LazyVStack(spacing: 12) {
         if store.preferences.favouriteCocktailIDs.isEmpty && store.preferences.favouriteWineIDs.isEmpty { EmptyStateView(title: "Keep the good ones close", message: "Tap the heart on a cocktail or wine to save it here.", systemImage: "heart") }
-        ForEach(store.cocktails.filter { store.preferences.favouriteCocktailIDs.contains($0.id) }) { c in NavigationLink { CocktailDetailView(cocktailID: c.id) } label: { CocktailListRow(cocktail: c) } }
+        ForEach(store.cocktails.filter { store.isCocktailFavourite($0.id) }) { c in NavigationLink { CocktailDetailView(cocktailID: c.id) } label: { CocktailListRow(cocktail: c) } }
         ForEach(store.wines.filter { store.preferences.favouriteWineIDs.contains($0.id) }) { w in NavigationLink { WineDetailView(wineID: w.id) } label: { WineCard(wine: w) } }
     }.padding(20).buttonStyle(.plain) }.barScreen().navigationTitle("Favourites").navigationBarTitleDisplayMode(.inline) }
 }

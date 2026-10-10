@@ -6,6 +6,8 @@ struct BatchCalculatorView: View {
     var cocktailID: String
     var initialServes: Int = 25
     var initialWastage: Double? = nil
+    var initialSpecification: Cocktail? = nil
+    var legacySavedCalculation = false
     @State private var serves = 25
     @State private var wastage = 3.0
     @State private var includeWastage = true
@@ -13,12 +15,16 @@ struct BatchCalculatorView: View {
     @State private var prepAdded = false
     @State private var didLoad = false
     @FocusState private var editing: Bool
-    private var result: BatchResult? { guard let drink = store.cocktail(cocktailID) else { return nil }; return BatchCalculator.calculate(cocktail: drink, serves: serves, wastagePercent: includeWastage ? wastage : 0) }
+    private var drink: Cocktail? { initialSpecification ?? store.cocktail(cocktailID) }
+    private var result: BatchResult? { guard let drink else { return nil }; return BatchCalculator.calculate(cocktail: drink, serves: serves, wastagePercent: includeWastage ? wastage : 0) }
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 22) {
-                if let drink = store.cocktail(cocktailID), let batch = result {
+                if let drink, let batch = result {
                     HStack(spacing: 16) { DrinkArtwork(name: drink.imageName, spirit: drink.baseSpirit, height: 100).frame(width: 82).clipShape(RoundedRectangle(cornerRadius: 13)); VStack(alignment: .leading, spacing: 7) { Text(drink.name).font(BarTheme.title(27)); Text(drink.subtitle).font(.caption).foregroundStyle(BarTheme.muted); if drink.isSample { SampleLabel() } } }
+                    Text(store.specificationLabel(drink)).font(.subheadline.weight(.semibold)).foregroundStyle(BarTheme.olive)
+                    Text("Calculation only. Saving does not deduct ingredients from stock.").font(.caption).foregroundStyle(.secondary)
+                    if legacySavedCalculation { Text("This older saved calculation did not record its recipe. Check the displayed specification before using these quantities.").font(.subheadline).foregroundStyle(BarTheme.olive) }
                     VStack(alignment: .leading, spacing: 12) {
                         SectionHeader(title: "Number of serves")
                         HStack {
@@ -30,11 +36,16 @@ struct BatchCalculatorView: View {
                         Toggle("Include wastage", isOn: $includeWastage).font(.subheadline).tint(BarTheme.olive)
                         if includeWastage { HStack { Text("Wastage allowance").font(.caption).foregroundStyle(BarTheme.muted); Spacer(); Stepper("\(MeasurementFormatter.number(wastage))%", value: $wastage, in: 0...30, step: 1).font(.subheadline).fixedSize() } }
                     }
-                    if serves == 0 { EmptyStateView(title: "How many are we making?", message: "Choose at least one serve to calculate your batch.", systemImage: "flask") }
+                    if !drink.recipeVerified { EmptyStateView(title: "Measures awaiting approval", message: "Ask the owner for an approved recipe before batching.", systemImage: "flask") }
+                    else if serves == 0 { EmptyStateView(title: "How many are we making?", message: "Choose at least one serve to calculate your batch.", systemImage: "flask") }
                     else {
                         VStack(alignment: .leading, spacing: 12) {
-                            SectionHeader(title: "Total ingredients", subtitle: includeWastage ? "Including \(MeasurementFormatter.number(wastage))% wastage on batch ingredients" : "No wastage allowance")
-                            VStack(spacing: 0) { ForEach(batch.lines) { line in BatchIngredientRow(line: line); if line.id != batch.lines.last?.id { Divider() } } }.barCard()
+                            SectionHeader(title: "Into the batch", subtitle: includeWastage ? "Including \(MeasurementFormatter.number(wastage))% wastage" : "No wastage allowance")
+                            VStack(spacing: 0) { ForEach(batch.lines.filter { $0.behaviour == .normal }) { line in BatchIngredientRow(line: line); Divider() } }.barCard()
+                            if batch.lines.contains(where: { $0.behaviour != .normal }) {
+                                SectionHeader(title: "Keep separate", subtitle: "Service additions, fresh preparations and garnishes")
+                                VStack(spacing: 0) { ForEach(batch.lines.filter { $0.behaviour != .normal }) { line in BatchIngredientRow(line: line); Divider() } }.barCard()
+                            }
                             HStack { Text("Combined batch volume").font(.caption); Spacer(); Text("\(MeasurementFormatter.number(batch.totalVolumeML / 1000))L").font(.headline).monospacedDigit() }
                             Text("Excludes separate preparations, garnishes and additions at service.").font(.caption2).foregroundStyle(BarTheme.muted)
                         }
@@ -42,8 +53,8 @@ struct BatchCalculatorView: View {
                             VStack(alignment: .leading, spacing: 12) { SectionHeader(title: "Bottles needed", subtitle: "Whole bottles, rounded up"); VStack(spacing: 0) { ForEach(batch.lines.filter { $0.bottles != nil }) { line in HStack(alignment: .firstTextBaseline) { VStack(alignment: .leading, spacing: 3) { Text(line.ingredient.name).font(.subheadline); if let size = line.ingredient.bottleSize { Text("\(MeasurementFormatter.number(size / 10))cl bottle").font(.caption2).foregroundStyle(BarTheme.muted) } }; Spacer(); Text("\(line.bottles ?? 0) \((line.bottles ?? 0) == 1 ? "bottle" : "bottles")").font(.subheadline.weight(.semibold)).monospacedDigit() }.padding(.vertical, 9) } }.barCard() }
                         }
                         VStack(alignment: .leading, spacing: 10) { SectionHeader(title: "Batch notes"); ForEach(batch.notes, id: \.self) { note in Label { Text(note) } icon: { Image(systemName: "checkmark").font(.caption) }.font(.subheadline).foregroundStyle(BarTheme.muted) } }.barCard()
-                        Button { store.saveBatch(cocktailID: cocktailID, serves: serves, wastage: includeWastage ? wastage : 0); saved = true } label: { Label(saved ? "Batch saved" : "Save batch", systemImage: saved ? "checkmark" : "bookmark").frame(maxWidth: .infinity, minHeight: 52).overlay(RoundedRectangle(cornerRadius: 13).stroke(BarTheme.olive)) }.disabled(saved).buttonStyle(.plain)
-                        PrimaryButton(title: prepAdded ? "Added to today’s prep" : "Start prep", systemImage: prepAdded ? "checkmark" : "play") { store.startPrep(cocktailID: cocktailID, serves: serves, wastage: includeWastage ? wastage : 0); prepAdded = true }.disabled(prepAdded)
+                        Button { store.saveBatch(cocktailID: cocktailID, serves: serves, wastage: includeWastage ? wastage : 0, specification: drink); saved = store.errorMessage == nil } label: { Label(saved ? "Batch saved" : "Save batch", systemImage: saved ? "checkmark" : "bookmark").frame(maxWidth: .infinity, minHeight: 52).overlay(RoundedRectangle(cornerRadius: 13).stroke(BarTheme.olive)) }.disabled(saved).buttonStyle(.plain)
+                        PrimaryButton(title: prepAdded ? "Added to today’s prep" : "Start prep", systemImage: prepAdded ? "checkmark" : "play") { store.startPrep(cocktailID: cocktailID, serves: serves, wastage: includeWastage ? wastage : 0, specification: drink); prepAdded = store.errorMessage == nil }.disabled(prepAdded)
                         if prepAdded { NavigationLink("Open today’s prep") { PrepView() }.frame(maxWidth: .infinity, minHeight: 44) }
                     }
                 } else { EmptyStateView(title: "Recipe unavailable", message: "Return to the cocktail library to select a recipe.", systemImage: "flask") }
@@ -64,5 +75,5 @@ struct BatchIngredientRow: View {
 }
 struct SavedBatchesView: View {
     @Environment(AppStore.self) var store
-    var body: some View { ScrollView { LazyVStack(spacing: 12) { if store.batches.isEmpty { EmptyStateView(title: "Ready for your next batch", message: "Save a calculation to keep the serves and wastage allowance here.", systemImage: "bookmark") }; ForEach(store.batches) { batch in NavigationLink { BatchCalculatorView(cocktailID: batch.cocktailID, initialServes: batch.serves, initialWastage: batch.wastagePercent) } label: { HStack { VStack(alignment: .leading, spacing: 6) { Text(batch.name).font(BarTheme.title(22)); Text("\(batch.serves) serves · \(MeasurementFormatter.number(batch.wastagePercent))% wastage").font(.caption).foregroundStyle(BarTheme.muted) }; Spacer(); Image(systemName: "chevron.right") }.barCard() }.buttonStyle(.plain) } }.padding(20) }.barScreen().navigationTitle("Saved batches").navigationBarTitleDisplayMode(.inline) }
+    var body: some View { ScrollView { LazyVStack(spacing: 12) { if store.batches.isEmpty { EmptyStateView(title: "Ready for your next batch", message: "Save a calculation to keep the serves and wastage allowance here.", systemImage: "bookmark") }; ForEach(store.batches) { batch in NavigationLink { BatchCalculatorView(cocktailID: batch.cocktailID, initialServes: batch.serves, initialWastage: batch.wastagePercent, initialSpecification: batch.specification, legacySavedCalculation: batch.specification == nil) } label: { HStack { VStack(alignment: .leading, spacing: 6) { Text(batch.name).font(BarTheme.title(22)); Text("\(batch.serves) serves · \(MeasurementFormatter.number(batch.wastagePercent))% wastage").font(.caption).foregroundStyle(BarTheme.muted) }; Spacer(); Image(systemName: "chevron.right") }.barCard() }.buttonStyle(.plain) } }.padding(20) }.barScreen().navigationTitle("Saved batches").navigationBarTitleDisplayMode(.inline) }
 }

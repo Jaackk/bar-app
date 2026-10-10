@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 import BARCore
 
 enum BarTheme {
@@ -12,7 +13,7 @@ enum BarTheme {
     static let card = Color(red: 0.988, green: 0.980, blue: 0.960)
     static let spacing: CGFloat = 16
     static let radius: CGFloat = 18
-    static func title(_ size: CGFloat = 28) -> Font { .system(size: size, weight: .medium, design: .serif) }
+    static func title(_ size: CGFloat = 28) -> Font { .custom("Georgia", size: size, relativeTo: .title2) }
 }
 struct BarCardModifier: ViewModifier {
     func body(content: Content) -> some View { content.padding(16).background(BarTheme.card, in: RoundedRectangle(cornerRadius: BarTheme.radius)).overlay(RoundedRectangle(cornerRadius: BarTheme.radius).stroke(BarTheme.stone.opacity(0.6), lineWidth: 0.6)) }
@@ -35,7 +36,7 @@ struct SectionHeader: View {
 struct TagChip: View {
     var title: String
     var selected = false
-    var body: some View { Text(title).font(.system(.caption, design: .rounded).weight(.medium)).padding(.horizontal, 13).padding(.vertical, 9).foregroundStyle(selected ? .white : BarTheme.ink).background(selected ? BarTheme.olive : BarTheme.stone.opacity(0.6), in: Capsule()).accessibilityAddTraits(selected ? .isSelected : []) }
+    var body: some View { Text(title).font(.system(.caption, design: .rounded).weight(.medium)).padding(.horizontal, 13).padding(.vertical, 9).frame(minHeight: 44).foregroundStyle(selected ? .white : BarTheme.ink).background(selected ? BarTheme.olive : BarTheme.stone.opacity(0.6), in: Capsule()).accessibilityAddTraits(selected ? .isSelected : []) }
 }
 struct EmptyStateView: View {
     var title: String
@@ -60,7 +61,7 @@ struct DrinkArtwork: View {
     var height: CGFloat = 190
     var body: some View {
         Group {
-            if !name.isEmpty, UIImage(named: name) != nil { Image(name).resizable().scaledToFill() }
+            if !name.isEmpty, name != "cocktail-daiquiri", UIImage(named: name) != nil { Image(name).resizable().scaledToFill() }
             else {
                 ZStack {
                     LinearGradient(colors: [BarTheme.stone, BarTheme.sage.opacity(0.6)], startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -73,7 +74,7 @@ struct DrinkArtwork: View {
 }
 struct DrinkCard: View {
     var cocktail: Cocktail
-    var body: some View { VStack(alignment: .leading, spacing: 8) { DrinkArtwork(name: cocktail.imageName, spirit: cocktail.baseSpirit, height: 184).clipShape(RoundedRectangle(cornerRadius: 13)); Text(cocktail.name).font(BarTheme.title(17)).foregroundStyle(BarTheme.ink).lineLimit(1); Text(cocktail.flavourTags.prefix(3).joined(separator: " · ")).font(.system(size: 10)).foregroundStyle(BarTheme.muted).lineLimit(1) }.frame(width: 145).accessibilityElement(children: .combine) }
+    var body: some View { VStack(alignment: .leading, spacing: 8) { DrinkArtwork(name: cocktail.imageName, spirit: cocktail.baseSpirit, height: 184).clipShape(RoundedRectangle(cornerRadius: 13)); Text(cocktail.name).font(BarTheme.title(17)).foregroundStyle(BarTheme.ink).fixedSize(horizontal: false, vertical: true); Text(cocktail.flavourTags.prefix(3).joined(separator: " · ")).font(.system(size: 10)).foregroundStyle(BarTheme.muted).lineLimit(1) }.frame(width: 145).accessibilityElement(children: .combine) }
 }
 struct IngredientRow: View {
     var ingredient: Ingredient
@@ -82,7 +83,7 @@ struct IngredientRow: View {
         if let source = ingredient.quantityDisplay { return source }; if units == "cl", let ml = ingredient.volumeML { return MeasurementFormatter.string(ml / 10, unit: .cl) }
         return ingredient.measurement
     }
-    var body: some View { HStack(alignment: .firstTextBaseline) { Text(ingredient.name).font(.subheadline); Spacer(minLength: 8); Text(measurement).font(.system(.body, design: .rounded).weight(.semibold)).monospacedDigit() }.padding(.vertical, 10).accessibilityElement(children: .combine) }
+    var body: some View { HStack(alignment: .firstTextBaseline) { Text(ingredient.name).font(.subheadline).fixedSize(horizontal: false, vertical: true); Spacer(minLength: 8); Text(measurement).font(.system(.body, design: .rounded).weight(.semibold)).monospacedDigit().fixedSize(horizontal: false, vertical: true).layoutPriority(1) }.padding(.vertical, 10).accessibilityElement(children: .combine) }
 }
 struct InfoCard: View {
     var title: String

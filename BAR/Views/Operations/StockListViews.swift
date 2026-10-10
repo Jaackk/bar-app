@@ -1,4 +1,6 @@
 import SwiftUI
+import ImageIO
+import CryptoKit
 import PhotosUI
 import Foundation
 import BARCore
@@ -10,6 +12,9 @@ struct StockView: View {
             VStack(alignment: .leading, spacing: 20) {
                 Text("Ready for service.").font(BarTheme.title(32))
                 Text("A place for everything the bar needs.").foregroundStyle(.secondary)
+                NavigationLink { StocktakeView() } label: {
+                    Label("Count stock", systemImage: "checklist").font(.headline).frame(maxWidth: .infinity, minHeight: 54).barCard()
+                }.buttonStyle(.plain)
                 ForEach(StockListKind.allCases, id: \.self) { kind in
                     NavigationLink { StockListView(kind: kind) } label: {
                         VStack(alignment: .leading, spacing: 18) {
@@ -152,7 +157,7 @@ struct StockListView: View {
                 }.listRowBackground(Color.clear)
             }
             Section(productSearch.isEmpty ? (selectedGroup?.rawValue ?? "House & frequent") : "Results") {
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 3), spacing: 8) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 155), spacing: 8)], spacing: 8) {
                     ForEach(displayedProducts) { product in ProductGridCell(product: product, kind: kind) }
                 }.padding(.vertical, 2)
             }.listRowBackground(Color.clear)
@@ -170,7 +175,7 @@ struct StockListView: View {
                 Task { @MainActor in store.clearList(kind) }
             }
         }
-        .sheet(isPresented: $custom) { ListItemEditor { name, quantity in store.addCustomItem(name: name, quantity: quantity, kind: kind) } }
+        .sheet(isPresented: $custom) { ListItemEditor { name, quantity, unit in store.addCustomItem(name: name, quantity: quantity, unit: unit, kind: kind) } }
         .onAppear { if sessionOrderIDs.isEmpty { sessionOrderIDs = rankedSessionProducts(catalogue: store.products).map(\.id) } }
         .onChange(of: items) { _, _ in copied = false }
     }
@@ -439,7 +444,7 @@ private struct ProductWorkspace: View {
                         }
                     }.padding(.horizontal, 16).padding(.vertical, 4)
                 }
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 3), spacing: 8) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 155), spacing: 8)], spacing: 8) {
                     ForEach(products) { product in ProductGridCell(product: product, kind: kind) }
                 }.padding(.horizontal, 16).padding(.bottom, 12)
             }
@@ -483,13 +488,13 @@ private struct ProductGridCell: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             ProductThumbnail(product: product).frame(maxWidth: .infinity).frame(height: 76)
-            Text(product.name).font(.caption.weight(.semibold)).lineLimit(2).frame(maxWidth: .infinity, alignment: .leading).frame(height: 32, alignment: .topLeading)
+            Text(product.name).font(.subheadline.weight(.semibold)).fixedSize(horizontal: false, vertical: true).frame(maxWidth: .infinity, alignment: .leading)
             HStack(spacing: 2) {
                 RepeatQuantityButton(symbol: "minus", name: product.name, tap: { change(by: -1) }, repeatChange: { change(by: -1, feedback: false, persistImmediately: false) }, finished: { store.flushStockWorkspaceChanges() })
-                    .frame(width: 28, height: 34)
-                Button { editing = true } label: { Text("\(quantity)").font(.subheadline.weight(.semibold).monospacedDigit()).frame(maxWidth: .infinity, minHeight: 34).background(BarTheme.stone.opacity(0.55), in: RoundedRectangle(cornerRadius: 9)) }.accessibilityLabel("Set \(product.name) quantity")
+                    .frame(minWidth: 44, minHeight: 44)
+                Button { editing = true } label: { Text("\(quantity)").font(.subheadline.weight(.semibold).monospacedDigit()).frame(maxWidth: .infinity, minHeight: 44).background(BarTheme.stone.opacity(0.55), in: RoundedRectangle(cornerRadius: 9)) }.accessibilityLabel("Set \(product.name) quantity")
                 RepeatQuantityButton(symbol: "plus", name: product.name, tap: { change(by: 1) }, repeatChange: { change(by: 1, feedback: false, persistImmediately: false) }, finished: { store.flushStockWorkspaceChanges() })
-                    .frame(width: 28, height: 34)
+                    .frame(minWidth: 44, minHeight: 44)
             }.foregroundStyle(BarTheme.olive).buttonStyle(.plain)
         }.padding(9).background(BarTheme.card, in: RoundedRectangle(cornerRadius: 14))
         .sheet(isPresented: $editing) { ProductQuantityEditor(product: product, kind: kind, current: quantity) }
@@ -559,7 +564,7 @@ private struct ProductQuantityEditor: View {
             ProductThumbnail(product: product).frame(width: 96, height: 124)
             Text(product.name).font(BarTheme.title(28)).multilineTextAlignment(.center)
             TextField("Quantity", text: $text).keyboardType(.numberPad).focused($focused).multilineTextAlignment(.center).font(.system(size: 42, weight: .medium, design: .rounded)).frame(maxWidth: .infinity).padding(18).background(BarTheme.card, in: RoundedRectangle(cornerRadius: 16))
-            Text("Enter 0 to remove this item from the \(kind.title.lowercased()) list.").font(.caption).foregroundStyle(BarTheme.muted).multilineTextAlignment(.center)
+            Text("Unit: \(kind == .order ? product.defaultOrderUnit : product.unit). Enter 0 to remove this item from the \(kind.title.lowercased()) list.").font(.caption).foregroundStyle(BarTheme.muted).multilineTextAlignment(.center)
             Spacer()
         }.padding(24).barScreen().navigationTitle("Set quantity").navigationBarTitleDisplayMode(.inline)
         .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }; ToolbarItem(placement: .confirmationAction) { Button("Done") { store.setProductQuantity(product, kind: kind, quantity: Int(text) ?? 0); dismiss() }.accessibilityIdentifier("quantity-done") }; ToolbarItemGroup(placement: .keyboard) { Spacer(); Button("Done") { focused = false } } }
@@ -599,12 +604,12 @@ private struct ProductPicker: View {
                             }
                         }.padding(.vertical, 4).listRowBackground(BarTheme.card)
                     }
-                    Section { Button { creating = true } label: { Label("Create new product", systemImage: "plus.square").frame(minHeight: 44) } }.listRowBackground(BarTheme.card)
+                    if store.role.canEditContent { Section { Button { creating = true } label: { Label("Create new product", systemImage: "plus.square").frame(minHeight: 44) } }.listRowBackground(BarTheme.card) }
                 }.listStyle(.plain).scrollContentBackground(.hidden)
                 Button(action: done) { Text("Done · \(store.listItems(kind).count) items in list").font(.headline).frame(maxWidth: .infinity, minHeight: 52).foregroundStyle(.white).background(BarTheme.olive, in: RoundedRectangle(cornerRadius: 14)) }.padding(16).accessibilityIdentifier("picker-done")
             }.barScreen().navigationTitle("Add to \(kind.title)").navigationBarTitleDisplayMode(.inline)
             .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search products…")
-            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button { creating = true } label: { Label("New product", systemImage: "plus") } } }
+            .toolbar { ToolbarItem(placement: .topBarTrailing) { if store.role.canEditContent { Button { creating = true } label: { Label("New product", systemImage: "plus") } } } }
             .sheet(isPresented: $creating) { ProductEditor(product: Product(venueID: store.preferences.venueID, name: query)) }
         }
     }
@@ -631,7 +636,7 @@ struct ProductThumbnail: View {
         Group {
             switch product.map(ProductImageResolver.source(for:)) ?? .none {
             case .custom:
-                if let data = product?.imageData, let image = UIImage(data: data) { Image(uiImage: image).resizable().scaledToFit() }
+                if let data = product?.imageData, let image = LocalPhotoCache.image(data) { Image(uiImage: image).resizable().scaledToFit() }
                 else { fallbackArt }
             case .bundled(let name):
                 if let image = UIImage(named: name) { Image(uiImage: image).resizable().scaledToFit() }
@@ -659,8 +664,9 @@ struct ProductCatalogueView: View {
     @State private var query = ""
     @State private var creating = false
     @State private var missingOnly = false
+    @State private var showHidden = false
     private var products: [Product] {
-        StockListService.search(store.products, venueID: store.preferences.venueID, query: query)
+        StockListService.search(store.catalogueProducts, venueID: store.preferences.venueID, query: query, includeInactive: showHidden && store.role.canEditContent)
             .filter { !missingOnly || !hasRenderableImage($0) }
     }
     private var missingCount: Int { store.products.filter { !hasRenderableImage($0) }.count }
@@ -676,19 +682,20 @@ struct ProductCatalogueView: View {
             Section {
                 Text("One catalogue for Restock, Stock Order, Search and Stocktake. Tap a product to edit its details or photo.").font(.caption).foregroundStyle(.secondary)
                 Toggle("Missing Images · \(missingCount)", isOn: $missingOnly).tint(BarTheme.olive).accessibilityIdentifier("missing-images-filter")
+                if store.role.canEditContent { Toggle("Include hidden products", isOn: $showHidden).tint(BarTheme.olive) }
             }
             ForEach(products) { product in
                 NavigationLink { ProductDetailView(productID: product.id) } label: {
                     HStack(spacing: 14) { ProductThumbnail(product: product).frame(width: 44, height: 58); VStack(alignment: .leading, spacing: 5) { Text(product.name); Text(product.category).font(.caption).foregroundStyle(.secondary) } }
                 }.listRowBackground(BarTheme.card).swipeActions {
-                    Button("Delete", role: .destructive) {
+                    if store.role.canEditContent { Button("Hide", role: .destructive) {
                         let product = product
                         Task { @MainActor in store.deleteProduct(product) }
-                    }
+                    } }
                 }
             }
         }.scrollContentBackground(.hidden).barScreen().searchable(text: $query, prompt: "Search products…").navigationTitle("Products & photos").navigationBarTitleDisplayMode(.inline)
-        .toolbar { ToolbarItem(placement: .topBarTrailing) { Button { creating = true } label: { Label("Add Product", systemImage: "plus") } } }
+        .toolbar { ToolbarItem(placement: .topBarTrailing) { if store.role.canEditContent { Button { creating = true } label: { Label("Add Product", systemImage: "plus") } } } }
         .sheet(isPresented: $creating) { ProductEditor(product: Product(venueID: store.preferences.venueID, name: "")) }
     }
 }
@@ -699,14 +706,23 @@ struct ProductDetailView: View {
     @State private var added: StockListKind?
     var body: some View {
         Group {
-            if let product = store.products.first(where: { $0.id == productID }) {
+            if let product = store.catalogueProducts.first(where: { $0.id == productID }) {
                 ScrollView { VStack(alignment: .leading, spacing: 22) {
                     ProductThumbnail(product: product).frame(height: 220).frame(maxWidth: .infinity)
                     Text(product.name).font(BarTheme.title(30))
+                    if !product.isActive { Text("Hidden from the service catalogue").font(.subheadline).foregroundStyle(.secondary) }
                     Text([product.brand, product.category, product.productType].filter { !$0.isEmpty }.joined(separator: " · ")).font(.subheadline).foregroundStyle(.secondary)
                     if !product.menuDetails.isEmpty { Text(product.menuDetails).font(.subheadline) }
-                    ForEach(StockListKind.allCases, id: \.self) { kind in PrimaryButton(title: added == kind ? "Added to \(kind.title)" : "Add to \(kind.title)", systemImage: added == kind ? "checkmark" : "plus") { store.addProduct(product, to: kind); added = kind } }
-                    Button("Edit details & photo") { editing = true }.frame(minHeight: 44)
+                    if product.isActive {
+                        ForEach(StockListKind.allCases, id: \.self) { kind in
+                            PrimaryButton(title: added == kind ? "Added to \(kind.title)" : "Add to \(kind.title)", systemImage: added == kind ? "checkmark" : "plus") {
+                                store.addProduct(product, to: kind)
+                                if store.errorMessage == nil { added = kind }
+                            }
+                        }
+                    }
+                    if store.role.canEditContent { Button("Edit details & photo") { editing = true }.frame(minHeight: 44) }
+                    Text("Catalogue information does not confirm physical stock.").font(.caption).foregroundStyle(.secondary)
                 }.padding(20) }
                 .sheet(isPresented: $editing) { ProductEditor(product: product) }
             } else { EmptyStateView(title: "Product removed", message: "Saved list entries are still available.", systemImage: "shippingbox") }
@@ -721,6 +737,8 @@ struct ProductEditor: View {
     @State private var loading = false
     @State private var photoError: String?
     @State private var imageURL = ""
+    @State private var downloadTask: Task<Void, Never>?
+    @State private var confirmDelete = false
     private var valid: Bool { !product.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !product.unit.isEmpty && !product.defaultOrderUnit.isEmpty && !loading }
     var body: some View {
         NavigationStack {
@@ -736,11 +754,12 @@ struct ProductEditor: View {
                     if let photoError { Text(photoError).font(.caption).foregroundStyle(.red) }
                     HStack {
                         TextField("Image URL", text: $imageURL).textInputAutocapitalization(.never).keyboardType(.URL).autocorrectionDisabled()
-                        Button("Load") { Task { await loadImageURL() } }.disabled(imageURL.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || loading)
+                        Button("Load") { downloadTask?.cancel(); downloadTask = Task { await loadImageURL() } }.disabled(imageURL.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || loading)
                     }
-                    Text("Downloads once and stores a local replacement for offline use.").font(.caption).foregroundStyle(.secondary)
+                    Text("Downloads once over HTTPS for offline use. The image host receives your IP address. Only use photos you have permission to store and share.").font(.caption).foregroundStyle(.secondary)
                 }
                 Section("Product") {
+                    Toggle("Show in service catalogue", isOn: $product.isActive)
                     TextField("Name", text: $product.name).accessibilityIdentifier("product-name")
                     TextField("Brand", text: $product.brand)
                     Picker("Category", selection: $product.category) { ForEach(StockListService.categories, id: \.self) { Text($0).tag($0) } }
@@ -750,24 +769,28 @@ struct ProductEditor: View {
                         set: { product.aliases = $0.split(separator: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty } }
                     ))
                 }
-                Section("List units") { TextField("Restock unit", text: $product.unit); TextField("Order unit", text: $product.defaultOrderUnit) }
+                Section("List units") { TextField("Restock unit", text: $product.unit); TextField("Order unit", text: $product.defaultOrderUnit); Text("Existing counts and list rows keep their original units. Changing this field does not convert bottles to cases.").font(.caption).foregroundStyle(.secondary) }
                 if !product.menuDetails.isEmpty { Section("Reference") { Text(product.menuDetails).font(.caption) } }
                 if store.products.contains(where: { $0.id == product.id }) {
-                    Button("Delete Product", role: .destructive) {
-                        dismiss()
-                        Task { @MainActor in store.deleteProduct(product) }
+                    Button("Hide product", role: .destructive) {
+                        confirmDelete = true
                     }
                 }
             }.scrollContentBackground(.hidden).barScreen().navigationTitle(product.name.isEmpty ? "New product" : "Edit product").navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
-                ToolbarItem(placement: .confirmationAction) { Button("Save") { product.name = product.name.trimmingCharacters(in: .whitespacesAndNewlines); store.saveProduct(product); dismiss() }.disabled(!valid) }
+                ToolbarItem(placement: .confirmationAction) { Button("Save") { product.name = product.name.trimmingCharacters(in: .whitespacesAndNewlines); store.saveProduct(product); if store.errorMessage == nil { dismiss() } }.disabled(!valid || !store.role.canEditContent) }
             }
+            .confirmationDialog("Hide this product from the catalogue?", isPresented: $confirmDelete, titleVisibility: .visible) {
+                Button("Hide product", role: .destructive) { store.deleteProduct(product); dismiss() }
+                Button("Cancel", role: .cancel) { }
+            } message: { Text("Saved counts, list entries and photos are preserved.") }
+            .onDisappear { downloadTask?.cancel() }
             .task(id: photo) {
                 guard let photo else { return }; loading = true; photoError = nil
                 defer { loading = false }
                 do {
-                    guard let data = try await photo.loadTransferable(type: Data.self), let image = UIImage(data: data) else { photoError = "This image could not be opened. Try another photo."; return }
+                    guard let data = try await photo.loadTransferable(type: Data.self), data.count <= 30_000_000, let image = LocalPhotoCache.image(data) else { photoError = "This image could not be opened. Try another photo."; return }
                     try Task.checkCancellation()
                     let scale = min(1, 800 / max(image.size.width, image.size.height))
                     let size = CGSize(width: image.size.width * scale, height: image.size.height * scale)
@@ -779,41 +802,91 @@ struct ProductEditor: View {
     }
     @MainActor private func loadImageURL() async {
         let text = imageURL.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard let url = URL(string: text), ["https", "http"].contains(url.scheme?.lowercased() ?? "") else { photoError = "Enter a valid image URL."; return }
+        guard let url = URL(string: text), url.scheme?.lowercased() == "https", url.host != nil,
+              url.user == nil, url.password == nil else { photoError = "Enter an HTTPS image URL without sign-in details."; return }
         loading = true; photoError = nil
         defer { loading = false }
         do {
-            let (data, response) = try await URLSession.shared.data(from: url)
-            guard let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode), data.count <= 12_000_000, let image = UIImage(data: data) else { photoError = "That URL did not return a usable image."; return }
-            let scale = min(1, 800 / max(image.size.width, image.size.height))
-            let size = CGSize(width: image.size.width * scale, height: image.size.height * scale)
-            let format = UIGraphicsImageRendererFormat(); format.scale = 1
-            product.imageData = UIGraphicsImageRenderer(size: size, format: format).image { _ in image.draw(in: CGRect(origin: .zero, size: size)) }.jpegData(compressionQuality: 0.75)
-        } catch { photoError = "Image download failed. Check the URL and try again." }
+            let data = try await BoundedImageDownload.data(from: url)
+            try Task.checkCancellation()
+            guard let image = LocalPhotoCache.image(data), let jpeg = image.jpegData(compressionQuality: 0.8) else {
+                photoError = "This image format could not be opened."; return
+            }
+            product.imageData = jpeg
+        } catch is CancellationError { }
+        catch { if !Task.isCancelled { photoError = "Image download failed. Your previous photo is unchanged." } }
     }
 }
 private struct ListItemEditor: View {
     @Environment(\.dismiss) private var dismiss
     let item: StockListItem?
-    let save: (String, Int) -> Void
+    let save: (String, Int, String) -> Void
     @State private var name: String
     @State private var quantity: String
-    init(item: StockListItem? = nil, save: @escaping (String, Int) -> Void) {
+    @State private var unit = "bottle"
+    init(item: StockListItem? = nil, save: @escaping (String, Int, String) -> Void) {
         self.item = item; self.save = save
         _name = State(initialValue: item?.name ?? ""); _quantity = State(initialValue: String(item?.quantity ?? 1))
+        _unit = State(initialValue: item?.unit ?? "bottle")
     }
     private var valid: Bool { !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && name.count <= 200 && (1...100_000).contains(Int(quantity) ?? 0) }
     var body: some View {
         NavigationStack {
             Form {
                 Section("Item") { TextField("Item name", text: $name).disabled(item != nil).accessibilityIdentifier("custom-name") }
-                Section("Quantity") { TextField("Quantity", text: $quantity).keyboardType(.numberPad).accessibilityIdentifier("list-quantity") }
+                Section("Quantity") { TextField("Quantity", text: $quantity).keyboardType(.numberPad).accessibilityIdentifier("list-quantity"); Picker("Unit", selection: $unit) { ForEach(["bottle", "case", "keg", "pack", "can", "each"], id: \.self) { Text($0).tag($0) } } }
                 Text("Enter a whole quantity from 1 to 100,000.").font(.caption).foregroundStyle(.secondary)
             }.scrollContentBackground(.hidden).barScreen().navigationTitle(item == nil ? "Custom item" : "Edit quantity").navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
-                ToolbarItem(placement: .confirmationAction) { Button("Save") { guard valid, let value = Int(quantity) else { return }; save(name, value); dismiss() }.disabled(!valid) }
+                ToolbarItem(placement: .confirmationAction) { Button("Save") { guard valid, let value = Int(quantity) else { return }; save(name, value, unit); dismiss() }.disabled(!valid) }
             }
         }
+    }
+}
+
+/// Downsample before decompression; retain a bounded cache rather than decoding on every row update.
+@MainActor private enum LocalPhotoCache {
+    private static let cache: NSCache<NSString, UIImage> = {
+        let value = NSCache<NSString, UIImage>(); value.totalCostLimit = 32 * 1024 * 1024; value.countLimit = 40; return value
+    }()
+    static func image(_ data: Data) -> UIImage? {
+        guard data.count <= 30_000_000 else { return nil }
+        let key = SHA256.hash(data: data).map { String(format: "%02x", $0) }.joined() as NSString
+        if let cached = cache.object(forKey: key) { return cached }
+        guard let source = CGImageSourceCreateWithData(data as CFData, [kCGImageSourceShouldCache: false] as CFDictionary),
+              let image = CGImageSourceCreateThumbnailAtIndex(source, 0, [
+                kCGImageSourceCreateThumbnailFromImageAlways: true,
+                kCGImageSourceCreateThumbnailWithTransform: true,
+                kCGImageSourceThumbnailMaxPixelSize: 800,
+                kCGImageSourceShouldCacheImmediately: true
+              ] as CFDictionary) else { return nil }
+        let result = UIImage(cgImage: image)
+        cache.setObject(result, forKey: key, cost: image.bytesPerRow * image.height)
+        return result
+    }
+}
+
+// No main-actor isolation: streaming and size enforcement do not occupy the UI executor.
+private enum BoundedImageDownload {
+    static func data(from url: URL) async throws -> Data {
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.timeoutIntervalForRequest = 20
+        configuration.timeoutIntervalForResource = 30
+        let session = URLSession(configuration: configuration)
+        defer { session.invalidateAndCancel() }
+        let (bytes, response) = try await session.bytes(from: url)
+        guard let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode),
+              response.url?.scheme == "https", response.expectedContentLength <= 12_000_000,
+              response.mimeType?.hasPrefix("image/") == true else {
+            throw DataValidationError.invalid("Choose a usable HTTPS image under 12 MB.")
+        }
+        var data = Data()
+        for try await byte in bytes {
+            try Task.checkCancellation()
+            guard data.count < 12_000_000 else { throw DataValidationError.invalid("Choose an image under 12 MB.") }
+            data.append(byte)
+        }
+        return data
     }
 }

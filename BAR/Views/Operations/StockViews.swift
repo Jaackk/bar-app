@@ -36,7 +36,7 @@ struct StocktakeView: View {
                         Image(systemName: "shippingbox").font(.title2)
                         VStack(alignment: .leading, spacing: 4) {
                             Text("Suggested order").font(.headline)
-                            Text(belowParCount == 0 ? "Everything is at par" : "\(belowParCount) products below par").font(.subheadline).foregroundStyle(.secondary)
+                            Text(belowParCount == 0 ? "No recorded shortfalls" : "\(belowParCount) products below par").font(.subheadline).foregroundStyle(.secondary)
                         }
                         Spacer()
                         Image(systemName: "chevron.right").font(.caption.weight(.semibold))
@@ -52,7 +52,7 @@ struct StocktakeView: View {
                 }
                 Toggle("Only below par", isOn: $belowParOnly).font(.subheadline).tint(BarTheme.olive)
                 if items.isEmpty {
-                    EmptyStateView(title: belowParOnly ? "The bar is stocked" : "No products found", message: belowParOnly ? "Every matching product has reached its par level." : "Try another product name or category.", systemImage: belowParOnly ? "checkmark.seal" : "shippingbox")
+                    EmptyStateView(title: belowParOnly ? "No recorded shortfalls" : "No products found", message: belowParOnly ? "Check uncounted products and unset pars before ordering." : "Try another product name or category.", systemImage: belowParOnly ? "checkmark.seal" : "shippingbox")
                 } else {
                     Text("Count full bottles, then set the open bottle fraction. Tap the current count for exact entry.")
                         .font(.caption).foregroundStyle(.secondary)
@@ -86,6 +86,7 @@ private struct StockRow: View {
                 ProductThumbnail(product: store.products.first { $0.id == item.id }).frame(width: 38, height: 46)
                 VStack(alignment: .leading, spacing: 4) {
                     Text(item.name).font(BarTheme.title(21))
+                    if item.isSample { Text("Legacy example count — verify before use").font(.caption).foregroundStyle(.secondary) }
                     Text(item.category + (item.bottleSize.map { " · \(MeasurementFormatter.number($0 / 10))cl" } ?? ""))
                         .font(.caption).foregroundStyle(.secondary)
                 }
@@ -96,7 +97,7 @@ private struct StockRow: View {
                     VStack(alignment: .leading, spacing: 3) {
                         Text("CURRENT").font(.caption2.weight(.medium)).tracking(1).foregroundStyle(.secondary)
                         HStack(spacing: 6) {
-                            Text(MeasurementFormatter.number(item.currentStock)).font(.title.weight(.medium).monospacedDigit())
+                            Text(item.hasRecordedCount ? MeasurementFormatter.number(item.currentStock) : "Not counted").font(.title.weight(.medium).monospacedDigit())
                             Image(systemName: "pencil").font(.caption)
                         }
                     }.frame(maxWidth: .infinity, alignment: .leading)
@@ -104,11 +105,11 @@ private struct StockRow: View {
                 VStack(alignment: .trailing, spacing: 5) {
                     Button { if store.role.canEditContent { editingPar = true } } label: {
                         HStack(spacing: 4) {
-                            Text("Par \(MeasurementFormatter.number(item.parLevel))")
+                            Text("Par \(MeasurementFormatter.number(item.parLevel)) \(item.unit)")
                             if store.role.canEditContent { Image(systemName: "pencil").font(.caption2) }
-                        }.frame(minHeight: 24)
+                        }.frame(minHeight: 44)
                     }.buttonStyle(.plain).disabled(!store.role.canEditContent)
-                    Text(item.requiredStock > 0 ? "Short \(MeasurementFormatter.number(item.requiredStock))" : "At par")
+                    Text(!item.hasRecordedCount ? "Count needed" : item.parLevel == 0 ? "Par not set" : item.requiredStock > 0 ? "Short \(MeasurementFormatter.number(item.requiredStock)) \(item.unit)" : "At par")
                         .fontWeight(.semibold).foregroundStyle(BarTheme.olive)
                 }.font(.subheadline)
             }
@@ -166,17 +167,17 @@ struct SuggestedOrderView: View {
                 Text("Ready to restock.").font(BarTheme.title(30))
                 Text("Based on your latest counts and venue par levels. Quantities round up so the bar reaches par.").font(.subheadline).foregroundStyle(.secondary).lineSpacing(3)
                 if lines.isEmpty {
-                    EmptyStateView(title: "Everything is at par", message: "There’s nothing to order. Your list updates automatically when stock counts change.", systemImage: "checkmark.seal")
+                    EmptyStateView(title: "No recorded shortfalls", message: "Uncounted items and unset pars cannot produce a suggestion. Check those before ordering.", systemImage: "checkmark.seal")
                 } else {
                     VStack(spacing: 0) {
                         ForEach(Array(lines.enumerated()), id: \.element.id) { index, line in
                             HStack(alignment: .firstTextBaseline) {
                                 VStack(alignment: .leading, spacing: 5) {
                                     Text(line.name).font(BarTheme.title(20))
-                                    Text("Shortfall \(MeasurementFormatter.number(line.shortfall))").font(.caption).foregroundStyle(.secondary)
+                                    Text("Shortfall \(MeasurementFormatter.number(line.shortfall)) \(line.unit)").font(.caption).foregroundStyle(.secondary)
                                 }
                                 Spacer()
-                                Text("× \(line.quantity)").font(.title3.weight(.semibold).monospacedDigit())
+                                Text("× \(line.quantity) \(line.unit)").font(.title3.weight(.semibold).monospacedDigit())
                             }.padding(.vertical, 14)
                             if index < lines.count - 1 { Divider() }
                         }
