@@ -10,7 +10,8 @@ public struct BatchLine: Identifiable, Hashable, Sendable {
     public var behaviour: BatchBehaviour { ingredient.batchBehaviour }
     public var litres: Double? { volumeML.map { $0 / 1_000 } }
     public var measurement: String {
-        unit == .top ? "At service / to taste" : MeasurementFormatter.string(quantity, unit: unit)
+        if let display = ingredient.quantityDisplay, ingredient.amount == 0 { return "\(display) per serve" }
+        return unit == .top ? "At service / to taste" : MeasurementFormatter.string(quantity, unit: unit)
     }
 }
 public struct BatchResult: Hashable, Sendable {
@@ -54,7 +55,7 @@ public enum BatchCalculator {
             }
             let citrus = ["lemon", "lime", "grapefruit", "orange juice"]
             if citrus.contains(where: { ingredient.name.lowercased().contains($0) }) {
-                notes.append("Keep fresh citrus chilled and separate until needed; prepare for the current service.")
+                notes.append("Fresh citrus is included where marked Batch together; use your approved service-day storage and discard procedure.")
             }
             return BatchLine(ingredient: ingredient, quantity: quantity, unit: ingredient.unit, volumeML: volume, bottles: bottles)
         }

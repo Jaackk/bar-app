@@ -1,6 +1,8 @@
 import Foundation
 
 public struct AppSnapshot: Codable, Hashable, Sendable {
+    public var contentBaselines: [String: Data] = [:]
+    public var contentConflicts: [ContentConflict] = []
     public var catalogueVersion: Int = 0
     public var products: [Product] = []
     public var stockLists: [StockListItem] = []
@@ -30,9 +32,11 @@ public struct AppSnapshot: Codable, Hashable, Sendable {
         self.user = user
     }
 
-    enum CodingKeys: String, CodingKey { case catalogueVersion, products, stockLists, schemaVersion, venues, cocktails, wines, prep, stock, preferences, training, batches, wastage, user }
+    enum CodingKeys: String, CodingKey { case contentBaselines, contentConflicts, catalogueVersion, products, stockLists, schemaVersion, venues, cocktails, wines, prep, stock, preferences, training, batches, wastage, user }
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
+        contentBaselines = try c.value([String: Data].self, for: .contentBaselines, default: [:])
+        contentConflicts = try c.value([ContentConflict].self, for: .contentConflicts, default: [])
         catalogueVersion = try c.value(Int.self, for: .catalogueVersion, default: 0)
         products = try c.value([Product].self, for: .products, default: [])
         stockLists = try c.value([StockListItem].self, for: .stockLists, default: [])

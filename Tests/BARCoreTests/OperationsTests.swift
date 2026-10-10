@@ -6,7 +6,7 @@ final class OperationsTests: XCTestCase {
         let stock = StockItem(id: "gin", name: "Gin", currentStock: 1.5, parLevel: 6)
         XCTAssertEqual(stock.requiredStock, 4.5)
         XCTAssertEqual(stock.orderQuantity, 5)
-        XCTAssertEqual(StockCalculator.orderText(items: [stock]), "Suggested order\nGin × 5")
+        XCTAssertEqual(StockCalculator.orderText(items: [stock]), "Suggested order\nGin × 5 bottles")
     }
     func testStockAtOrAboveParNeedsNoOrder() {
         XCTAssertEqual(StockCalculator.required(current: 7, par: 6), 0)

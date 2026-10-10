@@ -28,12 +28,12 @@ struct ParsedQuery {
 }
 
 public enum SearchService {
-    public static func search(query: String, cocktails: [Cocktail], wines: [Wine], prep: [PrepItem] = [], products: [Product] = [], venueID: String) -> [SearchResult] {
+    public static func search(query: String, cocktails: [Cocktail], wines: [Wine], prep: [PrepItem] = [], products: [Product] = [], venueID: String, alternativeIngredients: [String: [String]] = [:]) -> [SearchResult] {
         let parsed = ParsedQuery(query)
         let resolved = VenueResolver.cocktails(cocktails, venueID: venueID)
         var result: [SearchResult] = resolved.compactMap { cocktail in
             let primary = ([cocktail.baseSpirit, cocktail.category, cocktail.garnish, cocktail.glass, cocktail.method] + cocktail.flavourTags + cocktail.ingredients.map(\.name)).joined(separator: " ")
-            let secondary = ([cocktail.description, cocktail.subtitle, cocktail.serviceNotes] + cocktail.prepInstructions).joined(separator: " ")
+            let secondary = ([cocktail.description, cocktail.subtitle, cocktail.serviceNotes] + cocktail.prepInstructions + (alternativeIngredients[cocktail.id] ?? [])).joined(separator: " ")
             // Negations use factual ingredient / allergen metadata rather than prose such as "no egg".
             let exclusions = (cocktail.ingredients.map(\.name) + cocktail.allergens).joined(separator: " ")
             guard let score = rank(name: cocktail.name, primary: primary, secondary: secondary, exclusions: exclusions, query: parsed) else { return nil }

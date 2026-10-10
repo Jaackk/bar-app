@@ -4,6 +4,14 @@ public protocol AppRepository {
     func load() throws -> AppSnapshot
     func save(_ snapshot: AppSnapshot) throws
     func reset() throws -> AppSnapshot
+    func restore(_ snapshot: AppSnapshot) throws
+    func recoveryData() throws -> Data?
+    func safetyBackupData() throws -> Data?
+}
+public extension AppRepository {
+    func restore(_ snapshot: AppSnapshot) throws { throw DataValidationError.invalid("This storage adapter does not support safe restore.") }
+    func recoveryData() throws -> Data? { nil }
+    func safetyBackupData() throws -> Data? { nil }
 }
 
 public enum PersistenceError: LocalizedError {
@@ -33,7 +41,7 @@ public final class LocalAppRepository: AppRepository {
         if FileManager.default.fileExists(atPath: stateURL.path) {
             let previous = try readExisting()
             let migrated = try MenuMigration.apply(to: previous)
-            if migrated != previous { try write(migrated) }
+            if migrated != previous { try preserveCurrent(named: "state-before-update.json"); try write(migrated) }
             return migrated
         }
         let snapshot = try seed()
@@ -51,17 +59,47 @@ public final class LocalAppRepository: AppRepository {
         let fresh = try seed()
         try SeedLoader.validate(snapshot: fresh)
         // Keep one recoverable pre-reset backup, including a corrupt original when present.
-        if FileManager.default.fileExists(atPath: stateURL.path) {
-            let backup = directory.appendingPathComponent("state-before-reset.json")
-            let original = try Data(contentsOf: stateURL)
-            try original.write(to: backup, options: .atomic)
-        }
+        try preserveCurrent(named: "state-before-reset.json")
         try write(fresh)
         return fresh
     }
+    public func restore(_ snapshot: AppSnapshot) throws {
+        lock.lock(); defer { lock.unlock() }
+        try SeedLoader.validate(snapshot: snapshot)
+        try preserveCurrent(named: "state-before-restore.json")
+        try write(snapshot)
+    }
+    public func recoveryData() throws -> Data? {
+        lock.lock(); defer { lock.unlock() }
+        guard FileManager.default.fileExists(atPath: stateURL.path) else { return nil }
+        return try BackupService.readFile(stateURL)
+    }
+    public func safetyBackupData() throws -> Data? {
+        lock.lock(); defer { lock.unlock() }
+        let url = directory.appendingPathComponent("state-before-change.json")
+        guard FileManager.default.fileExists(atPath: url.path) else { return nil }
+        let snapshot = try SeedLoader.makeDecoder().decode(AppSnapshot.self, from: BackupService.readFile(url))
+        return try BackupService.export(snapshot)
+    }
+    private func preserveCurrent(named name: String) throws {
+        guard FileManager.default.fileExists(atPath: stateURL.path) else { return }
+        let data = try BackupService.readFile(stateURL)
+        let backup = directory.appendingPathComponent(name)
+        #if os(iOS)
+        try data.write(to: backup, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+        #else
+        try data.write(to: backup, options: .atomic)
+        #endif
+        let latest = directory.appendingPathComponent("state-before-change.json")
+        #if os(iOS)
+        try data.write(to: latest, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+        #else
+        try data.write(to: latest, options: .atomic)
+        #endif
+    }
     private func readExisting() throws -> AppSnapshot {
         do {
-            let snapshot = try SeedLoader.makeDecoder().decode(AppSnapshot.self, from: Data(contentsOf: stateURL))
+            let snapshot = try SeedLoader.makeDecoder().decode(AppSnapshot.self, from: BackupService.readFile(stateURL))
             try SeedLoader.validate(snapshot: snapshot)
             return snapshot
         } catch { throw PersistenceError.unreadableSavedData(stateURL, error.localizedDescription) }

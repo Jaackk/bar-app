@@ -1,6 +1,8 @@
 import Foundation
 
 public struct UserPreferences: Codable, Hashable, Sendable {
+    public var classicDefault: ClassicSpecification = .custom
+    public var classicOverrides: [String: ClassicSpecification] = [:]
     public var employeeName: String
     public var venueID: String
     public var units: String
@@ -24,9 +26,11 @@ public struct UserPreferences: Codable, Hashable, Sendable {
         self.recentProductIDs = recentProductIDs
     }
 
-    enum CodingKeys: String, CodingKey { case employeeName, venueID, units, defaultWastage, favouriteCocktailIDs, favouriteWineIDs, recentItems, productUsage, recentProductIDs }
+    enum CodingKeys: String, CodingKey { case classicDefault, classicOverrides, employeeName, venueID, units, defaultWastage, favouriteCocktailIDs, favouriteWineIDs, recentItems, productUsage, recentProductIDs }
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
+        classicDefault = try c.value(ClassicSpecification.self, for: .classicDefault, default: .custom)
+        classicOverrides = try c.value([String: ClassicSpecification].self, for: .classicOverrides, default: [:])
         employeeName = try c.value(String.self, for: .employeeName, default: "Bartender")
         venueID = try c.value(String.self, for: .venueID, default: "")
         units = try c.value(String.self, for: .units, default: "ml")

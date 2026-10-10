@@ -46,7 +46,7 @@ public final class LocalContentRepository: CocktailRepository, WineRepository, P
         var snapshot = try appRepository.load(); snapshot.preferences = preferences; try appRepository.save(snapshot)
     }
     public func saveCocktail(_ cocktail: Cocktail, role: UserRole) throws {
-        guard role.canEditContent else { throw RepositoryError.permissionDenied }
+        guard role.canEditContent, cocktail.displaySpecification == nil else { throw RepositoryError.permissionDenied }
         var snapshot = try appRepository.load()
         if let index = snapshot.cocktails.firstIndex(where: { $0.id == cocktail.id }) { snapshot.cocktails[index] = cocktail }
         else { snapshot.cocktails.append(cocktail) }
@@ -69,7 +69,7 @@ public final class LocalContentRepository: CocktailRepository, WineRepository, P
         guard let index = snapshot.stock.firstIndex(where: { $0.id == item.id }) else { throw RepositoryError.unknownRecord(item.id) }
         var old = snapshot.stock[index]
         if role.canEditContent { old = item }
-        else { old.currentStock = item.currentStock }
+        else { old.currentStock = item.currentStock; old.hasRecordedCount = true }
         snapshot.stock[index] = old; try appRepository.save(snapshot)
     }
 }

@@ -50,7 +50,12 @@ public enum SeedLoader {
         let stock = try records("stock", as: StockItem.self, validate: validateStock)
         var snapshot = AppSnapshot(venues: venues, cocktails: cocktails, wines: wines, prep: prep, stock: stock,
                                    preferences: UserPreferences(venueID: venue.id), user: User(venueID: venue.id))
-        if directory == nil { snapshot = try MenuMigration.apply(to: snapshot) }
+        if directory == nil {
+            snapshot.cocktails.removeAll { $0.venueID != nil && $0.isSample }
+            snapshot.wines.removeAll { $0.isSample }
+            snapshot.prep = []; snapshot.stock = []
+            snapshot = try MenuMigration.apply(to: snapshot)
+        }
         try validate(snapshot: snapshot)
         return SeedLoadReport(snapshot: snapshot, warnings: warnings)
     }
@@ -84,6 +89,7 @@ public enum SeedLoader {
         try snapshot.venues.forEach(validateVenue)
         for cocktail in snapshot.cocktails {
             try validateCocktail(cocktail)
+            guard cocktail.displaySpecification == nil else { throw DataValidationError.invalid("Store venue source recipes separately from displayed reference specifications.") }
             if let id = cocktail.venueID { try venue(id) }
             else if cocktail.venueSpecific { throw DataValidationError.invalid("Venue cocktail \(cocktail.name) is missing venueID.") }
             if let override = cocktail.overridesCocktailID {
@@ -101,6 +107,12 @@ public enum SeedLoader {
         for item in snapshot.stock { try validateStock(item); try venue(item.venueID) }
         try unique(snapshot.products.map(\.id), label: "product")
         try unique(snapshot.stockLists.map(\.id), label: "list item")
+        try unique(snapshot.contentConflicts.map(\.id), label: "content review")
+        for conflict in snapshot.contentConflicts {
+            guard ["cocktail", "wine", "product"].contains(conflict.kind), conflict.proposed.count < 20_000_000 else {
+                throw DataValidationError.invalid("A content review item is not supported.")
+            }
+        }
         for product in snapshot.products { try identity(product.id, product.name); try venue(product.venueID) }
         for item in snapshot.stockLists {
             try identity(item.id, item.name); try venue(item.venueID)
@@ -118,6 +130,10 @@ public enum SeedLoader {
             try identity(batch.id, batch.name)
             guard (0...100_000).contains(batch.serves) else { throw DataValidationError.invalid("Saved batch serves must be between 0 and 100,000.") }
             try number(batch.wastagePercent, label: "Batch wastage", upper: 100)
+            if let specification = batch.specification {
+                try validateCocktail(specification)
+                guard specification.id == batch.cocktailID else { throw DataValidationError.invalid("A saved batch references a different recipe.") }
+            }
         }
         for entry in snapshot.wastage {
             try identity(entry.id, entry.itemName)

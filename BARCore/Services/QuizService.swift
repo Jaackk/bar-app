@@ -11,7 +11,7 @@ public struct QuizQuestion: Identifiable, Hashable, Sendable {
 public enum QuizService {
     /// Questions and plausible distractors come from the loaded recipe database.
     public static func questions(cocktails: [Cocktail], kind: QuizKind = .recipe, limit: Int = 10) -> [QuizQuestion] {
-        let drinks = cocktails.filter { $0.isActive && !$0.ingredients.isEmpty }
+        let drinks = cocktails.filter { $0.isActive && $0.recipeVerified && $0.trainingEligible && !$0.ingredients.isEmpty }
         let allIngredients = Array(Set(drinks.flatMap { $0.ingredients.map(\.name) })).sorted()
         return Array(drinks.compactMap { drink -> QuizQuestion? in
             let answer: String
@@ -30,11 +30,13 @@ public enum QuizService {
                 prompt = "Which ingredient belongs in a \(drink.name)?"
             }
             guard !wrong.isEmpty else { return nil }
+            let context = drink.displaySpecification == .recommended ? "Recommended classic" : (drink.venueID == nil ? "Classic reference" : "Venue / Custom")
+            let contextualPrompt = "\(context) — \(prompt)"
             // Stable ordering makes persisted training and automated regression checks reproducible.
             var options = Array(wrong.prefix(3))
             let index = drink.id.utf8.reduce(0) { ($0 + Int($1)) % (options.count + 1) }
             options.insert(answer, at: index)
-            return QuizQuestion(id: "\(kind.rawValue)-\(drink.id)", cocktailID: drink.id, prompt: prompt, options: options, correctAnswer: answer)
+            return QuizQuestion(id: "\(kind.rawValue)-\(drink.id)-\(drink.displaySpecification?.rawValue ?? "custom")-\(drink.referenceVersion ?? 0)", cocktailID: drink.id, prompt: contextualPrompt, options: options, correctAnswer: answer)
         }.prefix(max(limit, 0)))
     }
 }

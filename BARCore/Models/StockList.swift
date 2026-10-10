@@ -61,11 +61,11 @@ public struct StockListItem: Codable, Hashable, Sendable, Identifiable {
 }
 public enum StockListService {
     public static let categories = ["Vodka", "Gin", "Rum", "Tequila / Mezcal", "Whisky / Whiskey", "Brandy / Cognac", "Liqueurs / Aperitifs", "Wine", "Sparkling / Champagne", "Beer / Cider", "Non-Alcoholic", "Soft Drinks", "Mixers", "Juices", "Syrups / Cordials", "Purees", "Bitters", "Garnishes", "Fresh Fruit", "Fresh Herbs", "Prep", "Other"]
-    public static func search(_ products: [Product], venueID: String, query: String, category: String? = nil) -> [Product] {
+    public static func search(_ products: [Product], venueID: String, query: String, category: String? = nil, includeInactive: Bool = false) -> [Product] {
         let terms = normalized(query).split(separator: " ")
         return products.filter { p in
             let haystack = normalized(([p.name, p.brand, p.category, p.productType] + p.aliases).joined(separator: " "))
-            return p.isActive && p.venueID == venueID && (category == nil || category == p.category) && terms.allSatisfy { SearchService.matches(String($0), in: haystack) }
+            return (p.isActive || includeInactive) && p.venueID == venueID && (category == nil || category == p.category) && terms.allSatisfy { SearchService.matches(String($0), in: haystack) }
         }.sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
     }
     private static func normalized(_ text: String) -> String { text.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: Locale(identifier: "en_GB")) }
@@ -83,7 +83,7 @@ public enum StockListService {
     }
     public static func clear(_ kind: StockListKind, venueID: String, in items: inout [StockListItem]) { items.removeAll { $0.kind == kind && $0.venueID == venueID } }
     public static func text(_ items: [StockListItem], kind: StockListKind, venueID: String) -> String {
-        let lines = items.filter { $0.kind == kind && $0.venueID == venueID }.map { "\($0.name) x\($0.quantity)" }
-        return (kind == .restock ? "RESTOCK" : "STOCK ORDER") + "\n\n" + lines.joined(separator: "\n")
+        let lines = items.filter { $0.kind == kind && $0.venueID == venueID }.map { "\($0.name) × \($0.quantity) \($0.unit)" }
+        return (kind == .restock ? "RESTOCK" : "ORDER LIST — not submitted to a supplier") + "\n\n" + lines.joined(separator: "\n")
     }
 }

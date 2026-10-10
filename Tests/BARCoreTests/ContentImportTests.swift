@@ -9,9 +9,9 @@ final class ContentImportTests: XCTestCase {
         var original = local()
         original.preferences.favouriteCocktailIDs.insert("drink")
         original.training.record(correct: true, cocktailID: "drink")
-        let data = Data(#"{"venues":[{"id":"v","name":"Updated venue"}],"cocktails":[{"id":"drink","name":"Updated recipe"}],"user":{"id":"attacker","role":"admin"}}"#.utf8)
+        let data = Data(#"{"venues":[{"id":"v","name":"Updated venue"}],"cocktails":[{"id":"drink","name":"Updated recipe","venueID":"v"}],"user":{"id":"attacker","role":"admin"}}"#.utf8)
         let merged = try ContentImportService.merge(data: data, preserving: original)
-        XCTAssertEqual(merged.venues[0].name, "Updated venue")
+        XCTAssertEqual(merged.venues, original.venues)
         XCTAssertEqual(merged.cocktails[0].name, "Updated recipe")
         XCTAssertEqual(merged.user, original.user)
         XCTAssertEqual(merged.preferences, original.preferences)
@@ -29,5 +29,13 @@ final class ContentImportTests: XCTestCase {
     }
     func testImportRejectsMalformedJSON() {
         XCTAssertThrowsError(try ContentImportService.merge(data: Data("not-json".utf8), preserving: local()))
+    }
+
+    func testImportCannotSuppressFutureBundledMigrations() throws {
+        var original = local()
+        original.catalogueVersion = 25
+        let data = Data(#"{"catalogueVersion":999999,"venues":[{"id":"v","name":"Venue"}]}"#.utf8)
+        let merged = try ContentImportService.merge(data: data, preserving: original)
+        XCTAssertEqual(merged.catalogueVersion, original.catalogueVersion)
     }
 }

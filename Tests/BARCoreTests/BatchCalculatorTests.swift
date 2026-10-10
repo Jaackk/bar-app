@@ -64,4 +64,21 @@ final class BatchCalculatorTests: XCTestCase {
         XCTAssertEqual(BatchCalculator.calculate(cocktail: cocktail, serves: 10, wastagePercent: .nan).totalVolumeML, 600)
         XCTAssertEqual(BatchCalculator.calculate(cocktail: cocktail, serves: 10, wastagePercent: -3).wastagePercent, 0)
     }
+    func testFractionalBottleAndDashDropMeasuresRemainExact() throws {
+        let drink = Cocktail(id: "t", name: "Measured", ingredients: [Ingredient(name: "Gin", amount: 25, bottleSize: 700), Ingredient(name: "Bitters", amount: 1.5, unit: .dash), Ingredient(name: "Foamer", amount: 3, unit: .drop, batchBehaviour: .serviceOnly)])
+        let batch = BatchCalculator.calculate(cocktail: drink, serves: 35, wastagePercent: 0)
+        XCTAssertEqual(try XCTUnwrap(batch.lines[0].volumeML) / 700, 1.25)
+        XCTAssertEqual(batch.lines[0].bottles, 2)
+        XCTAssertEqual(batch.lines[1].measurement, "52.5 dash")
+        XCTAssertEqual(batch.lines[2].measurement, "105 drop")
+        XCTAssertEqual(batch.totalVolumeML, 875)
+    }
+    func testVariableQuantityDoesNotBecomeZeroMillilitres() {
+        var espresso = Ingredient(name: "Espresso", amount: 0, unit: .ml, batchBehaviour: .serviceOnly)
+        espresso.quantityDisplay = "One freshly pulled espresso"
+        let drink = Cocktail(id: "t", name: "Espresso", ingredients: [espresso])
+        let batch = BatchCalculator.calculate(cocktail: drink, serves: 35)
+        XCTAssertEqual(batch.lines[0].measurement, "One freshly pulled espresso per serve")
+        XCTAssertEqual(batch.totalVolumeML, 0)
+    }
 }

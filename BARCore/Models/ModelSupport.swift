@@ -1,7 +1,7 @@
 import Foundation
 
 public enum MeasurementUnit: String, Codable, CaseIterable, Hashable, Sendable {
-    case ml, cl, litre, drop, dash, barspoon, top, piece, sprig, gram
+    case ml, cl, litre, drop, dash, barspoon, top, piece, sprig, gram, teaspoon, pinch
     public var label: String { self == .litre ? "L" : (self == .gram ? "g" : rawValue) }
     public var isVolume: Bool { [.ml, .cl, .litre].contains(self) }
 }

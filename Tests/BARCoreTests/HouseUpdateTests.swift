@@ -7,7 +7,8 @@ final class HouseUpdateTests: XCTestCase {
         defer { try? FileManager.default.removeItem(at: directory) }
         let repository = LocalAppRepository(directory: directory)
         var state = try repository.load()
-        let example = try XCTUnwrap(state.prep.first)
+        let example = PrepItem(id: "previous-example", name: "Old example", venueID: "rockwater-hove", isSample: true)
+        state.prep.append(example)
         let userPrep = PrepItem(id: "user-prep", name: "Fresh lime juice", venueID: "rockwater-hove", targetAmount: 1, recipeYieldAmount: 1, isSample: false)
         state.prep.append(userPrep)
         try repository.save(state)
@@ -101,7 +102,7 @@ final class HouseUpdateTests: XCTestCase {
         let differentCuvée = Wine(id: "other", name: "Assyrtiko Terre Grec Reserve", imageName: "")
         XCTAssertNil(WineProductResolver.product(for: differentCuvée, in: [product]))
     }
-    func testDuplicateProductMigrationRepointsListsAndPreservesAliases() throws {
+    func testLegacyDuplicateMigrationPreservesIndependentCountsPhotosAndListUnits() throws {
         var state = try SeedLoader.load()
         state.catalogueVersion = 15
         let venueID = "rockwater-hove"
@@ -113,11 +114,12 @@ final class HouseUpdateTests: XCTestCase {
         state.stockLists.append(StockListItem(venueID: venueID, kind: .restock, productID: "menu-jameson-irish-whiskey", name: "Jameson Irish Whiskey", quantity: 1))
 
         let migrated = try MenuMigration.apply(to: state)
-        XCTAssertFalse(migrated.products.contains { $0.id == duplicate.id })
-        XCTAssertEqual(migrated.stock.first { $0.id == "menu-jameson-irish-whiskey" }?.name, "Jameson Irish Whiskey")
-        XCTAssertEqual(migrated.products.first { $0.id == "menu-jameson-irish-whiskey" }?.imageData, Data([7, 8, 9]))
+        XCTAssertTrue(migrated.products.contains { $0.id == duplicate.id })
+        XCTAssertEqual(migrated.stock, state.stock)
+        XCTAssertEqual(migrated.stockLists, state.stockLists)
+        XCTAssertEqual(migrated.products.first { $0.id == duplicate.id }?.imageData, Data([7, 8, 9]))
         let list = try XCTUnwrap(migrated.stockLists.first { $0.kind == .restock && $0.productID == "menu-jameson-irish-whiskey" })
-        XCTAssertEqual(list.quantity, 3)
+        XCTAssertEqual(list.quantity, 1)
         XCTAssertEqual(migrated.stockLists.filter { $0.kind == .restock && $0.productID == "menu-jameson-irish-whiskey" }.count, 1)
         let results = SearchService.search(query: "Jamesons", cocktails: [], wines: [], products: migrated.products, venueID: venueID)
         XCTAssertEqual(results.filter { $0.kind == .product && $0.id == "menu-jameson-irish-whiskey" }.count, 1)
@@ -155,7 +157,7 @@ final class HouseUpdateTests: XCTestCase {
         StockListService.setQuantity(-1, id: list[0].id, venueID: product.venueID, in: &list)
         XCTAssertEqual(list.count, 2)
         StockListService.clear(.restock, venueID: product.venueID, in: &list)
-        XCTAssertEqual(StockListService.text(list, kind: .order, venueID: product.venueID), "STOCK ORDER\n\nTest product x1")
+        XCTAssertEqual(StockListService.text(list, kind: .order, venueID: product.venueID), "ORDER LIST — not submitted to a supplier\n\nTest product × 1 item")
     }
 
     func testImageDefaultMigrationRefreshesPersistedCatalogueWithoutLosingLocalState() throws {
@@ -178,7 +180,8 @@ final class HouseUpdateTests: XCTestCase {
         let reopened = try repository.load()
 
         let mapped = try XCTUnwrap(reopened.products.first { $0.id == "menu-grey-goose-essences" })
-        XCTAssertEqual(mapped.imageName, "grey-goose-essences")
+        XCTAssertEqual(mapped.imageName, "", "An unknown local image mapping must be preserved for review.")
+        XCTAssertTrue(reopened.contentConflicts.contains { $0.recordID == mapped.id })
         XCTAssertEqual(mapped.imageData, Data([9, 8, 7]))
         XCTAssertEqual(ProductImageResolver.source(for: mapped), .custom)
         XCTAssertEqual(reopened.stockLists, state.stockLists)
@@ -186,7 +189,8 @@ final class HouseUpdateTests: XCTestCase {
         XCTAssertEqual(reopened.catalogueVersion, MenuMigration.version)
 
         let invalid = try XCTUnwrap(reopened.products.first { $0.id == "menu-picpoul-de-pinet-tournee-du-sud" })
-        XCTAssertTrue(invalid.imageName.isEmpty)
+        XCTAssertEqual(invalid.imageName, "lafage-les-sardines-chardonnay", "Preserve raw local evidence; rendering suppresses the known mismatch.")
+        XCTAssertTrue(reopened.contentConflicts.contains { $0.recordID == invalid.id })
         XCTAssertFalse(ProductImageResolver.hasRelevantImage(for: invalid, canRenderBundledImage: { _ in true }, canRenderCustomImage: { _ in true }))
 
         let generic = try XCTUnwrap(reopened.products.first { $0.id == "menu-mint" })
@@ -194,7 +198,7 @@ final class HouseUpdateTests: XCTestCase {
         XCTAssertFalse(ProductImageResolver.hasRelevantImage(for: generic, canRenderBundledImage: { _ in true }, canRenderCustomImage: { _ in true }))
     }
 
-    func testCatalogueCorrectionMigratesOperationalReferencesWithoutChangingRecipeLanguage() throws {
+    func testCatalogueRevisionPreservesLegacyIdentityAndOperationalState() throws {
         var state = try SeedLoader.load()
         state.catalogueVersion = 22
         let venueID = "rockwater-hove"
@@ -207,18 +211,17 @@ final class HouseUpdateTests: XCTestCase {
 
         let migrated = try MenuMigration.apply(to: state)
         let orangeJuice = try XCTUnwrap(migrated.products.first { $0.id == "menu-orange-juice" })
-        XCTAssertFalse(migrated.products.contains { $0.id == legacy.id })
-        XCTAssertEqual(migrated.stockLists.first { $0.productID == orangeJuice.id }?.quantity, 2)
-        XCTAssertEqual(migrated.preferences.productUsage[orangeJuice.id], 3)
-        XCTAssertEqual(migrated.preferences.recentProductIDs.first, orangeJuice.id)
-        XCTAssertEqual(orangeJuice.imageData, Data([4, 5, 6]))
+        XCTAssertTrue(migrated.products.contains { $0.id == legacy.id })
+        XCTAssertEqual(migrated.stockLists, state.stockLists)
+        XCTAssertEqual(migrated.preferences, state.preferences)
+        XCTAssertEqual(migrated.products.first { $0.id == legacy.id }?.imageData, Data([4, 5, 6]))
         XCTAssertEqual(try XCTUnwrap(migrated.cocktails.first { $0.name == "Sex On The Beach" }).ingredients.first { $0.name == "Orange Jucie" }?.stockProductID, orangeJuice.id)
         XCTAssertEqual(try XCTUnwrap(migrated.cocktails.first { $0.name == "Golden Sangria" }).ingredients.first { $0.name == "White Wine" }?.name, "White Wine")
     }
 
     func testCanonicalStockCatalogueHasNoConfirmedRecipeOnlyProducts() throws {
         let state = try SeedLoader.load()
-        XCTAssertEqual(state.products.count, 249)
+        XCTAssertEqual(state.products.count, 251)
         XCTAssertFalse(state.products.contains { ["Pineapple Foam", "Fruit", "Desired Fruits", "White Wine", "Cremant", "Hot Water"].contains($0.name) })
         XCTAssertEqual(state.products.first { $0.name == "Agave Syrup" }?.category, "Syrups / Cordials")
         XCTAssertEqual(state.products.first { $0.name == "Triple Sec" }?.category, "Liqueurs / Aperitifs")

@@ -9,7 +9,6 @@ public enum ProductCatalogueCorrections {
     public static let replacements: [String: String?] = [
         "spec-lime": "menu-limes",
         "spec-orange-slice": "spec-orange",
-        "spec-blend-passionfruit": "spec-passion-fruit-puree",
         "spec-blackberry": "service-blackberries",
         "spec-pineapple-foam-top": nil,
         "menu-oj": "menu-orange-juice",
@@ -21,7 +20,6 @@ public enum ProductCatalogueCorrections {
         "spec-hot-water": nil,
         "spec-peach-liq": "spec-teichene-peach",
         "spec-peroni": "menu-peroni-nastro-azzurro-5",
-        "spec-blend-coffee": "spec-espresso",
         "spec-coffee-espresso-shots": "spec-espresso",
         "spec-soda": "spec-soda-top",
         "spec-angostura": "spec-angostura-bitters",
@@ -44,6 +42,9 @@ public enum ProductCatalogueCorrections {
     /// The source menu uses a handful of abbreviated labels.  They remain
     /// searchable aliases, while the visible catalogue uses a clear stock name.
     private static let edits: [String: (name: String?, category: String?, aliases: [String])] = [
+        "spec-blend-coffee": ("Blend Coffee Liqueur", "Liqueurs / Aperitifs", ["Blend Coffee"]),
+        "spec-blend-passionfruit": ("Blend Passionfruit Liqueur", "Liqueurs / Aperitifs", ["Blend Passionfruit"]),
+        "menu-old-forrester-bourbon": ("Old Forester Bourbon", nil, ["Old Forrester", "Old Forestor"]),
         "menu-limes": (nil, nil, ["Lime", "Lime wedge", "Lime wedges", "Lime wheel", "Muddled lime", "Pressed lime", "Fresh squeeze lime wedge"]),
         "menu-lemons": (nil, nil, ["Lemon", "Lemon wedge", "Lemon wedges"]),
         "spec-cucumber-slices-muddled": ("Cucumber", "Fresh Fruit", ["Cucumber slices", "Muddled cucumber"]),
@@ -144,6 +145,9 @@ public enum ProductCatalogueCorrections {
     /// the wrong product. They are deliberately cleared until their own image
     /// is acquired.
     private static let invalidBundledImageProductIDs: Set<String> = [
+        "spec-blend-coffee", "spec-blend-passionfruit",
+        "menu-patron-silver", "menu-patron-reposado",
+        "menu-montepulciano-blend-anima-osca-tenimenti-grieco",
         "menu-real-blush-sparkling",
         "menu-picpoul-de-pinet-tournee-du-sud",
         "menu-grenache-chardonnay-cote-est-domaine-lafage",
@@ -216,6 +220,10 @@ public enum ProductCatalogueCorrections {
 
     public static func canonicalID(forIngredientName name: String, products: [Product]) -> String? {
         let key = SearchNormalizer.normalize(name)
+        // Older installations may still carry the historically conflated aliases.
+        // Exact liqueur concepts must win over those aliases without moving stock.
+        let specific = ["blend coffee": "spec-blend-coffee", "blend passionfruit": "spec-blend-passionfruit"]
+        if let id = specific[key], products.contains(where: { $0.id == id }) { return id }
         return products.first { product in
             SearchNormalizer.normalize(product.name) == key || product.aliases.contains { SearchNormalizer.normalize($0) == key }
         }?.id

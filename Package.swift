@@ -5,6 +5,6 @@ let package = Package(
     products: [.library(name: "BARCore", targets: ["BARCore"])],
     targets: [
         .target(name: "BARCore", path: "BARCore", resources: [.process("Data")]),
-        .testTarget(name: "BARCoreTests", dependencies: ["BARCore"], path: "Tests/BARCoreTests")
+        .testTarget(name: "BARCoreTests", dependencies: ["BARCore"], path: "Tests/BARCoreTests", exclude: ["Fixtures"])
     ]
 )

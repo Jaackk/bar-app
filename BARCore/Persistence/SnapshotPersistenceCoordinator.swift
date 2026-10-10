@@ -48,6 +48,20 @@ public final class SnapshotPersistenceCoordinator: @unchecked Sendable {
 
     /// The UI owner calls this synchronously, preventing a new edit until reset
     /// completes. Invalidate first so older queued workers cannot restore data.
+    public func restore(_ snapshot: AppSnapshot) throws {
+        reserveWrite()
+        writeLock.lock(); defer { writeLock.unlock() }
+        try repository.restore(snapshot)
+        stateLock.lock(); confirmedSnapshot = snapshot; stateLock.unlock()
+    }
+    public func recoveryData() throws -> Data? {
+        writeLock.lock(); defer { writeLock.unlock() }
+        return try repository.recoveryData()
+    }
+    public func safetyBackupData() throws -> Data? {
+        writeLock.lock(); defer { writeLock.unlock() }
+        return try repository.safetyBackupData()
+    }
     public func reset() throws -> AppSnapshot {
         reserveWrite()
         writeLock.lock(); defer { writeLock.unlock() }

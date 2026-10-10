@@ -58,6 +58,10 @@ public struct PrepItem: Codable, Hashable, Sendable, Identifiable {
         isSample = try c.value(Bool.self, for: .isSample, default: false)
     }
 
+    public func isComplete(on date: Date = Date(), calendar: Calendar = .current) -> Bool {
+        guard completed, let prepared = lastPreparedDate else { return false }
+        return calendar.isDate(prepared, inSameDayAs: date)
+    }
     public var requiredAmount: Double { max(targetAmount - currentAmount, 0) }
     public var progress: Double { targetAmount > 0 ? min(max(currentAmount / targetAmount, 0), 1) : 1 }
     public mutating func markComplete(at date: Date = Date()) { currentAmount = max(currentAmount, targetAmount); completed = true; lastPreparedDate = date }

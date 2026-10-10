@@ -1,6 +1,8 @@
 import Foundation
 
 public struct SavedBatch: Codable, Hashable, Sendable, Identifiable {
+    /// Frozen service recipe, including selected spec. Older batches remain readable.
+    public var specification: Cocktail? = nil
     public var id: String
     public var cocktailID: String
     public var name: String
@@ -17,9 +19,10 @@ public struct SavedBatch: Codable, Hashable, Sendable, Identifiable {
         self.createdAt = createdAt
     }
 
-    enum CodingKeys: String, CodingKey { case id, cocktailID, name, serves, wastagePercent, createdAt }
+    enum CodingKeys: String, CodingKey { case specification, id, cocktailID, name, serves, wastagePercent, createdAt }
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
+        specification = try c.decodeIfPresent(Cocktail.self, forKey: .specification)
         id = try c.value(String.self, for: .id, default: UUID().uuidString)
         cocktailID = try c.decode(String.self, forKey: .cocktailID)
         name = try c.decode(String.self, forKey: .name)

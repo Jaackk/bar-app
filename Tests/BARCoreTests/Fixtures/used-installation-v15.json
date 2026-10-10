@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "catalogueVersion": 15,
+  "venues": [
+    {
+      "id": "rockwater-hove",
+      "name": "Rockwater Hove"
+    }
+  ],
+  "cocktails": [],
+  "products": [
+    {
+      "id": "spec-jameson",
+      "name": "Jameson \u2014 own label",
+      "venueID": "rockwater-hove",
+      "unit": "bottle",
+      "defaultOrderUnit": "case",
+      "imageData": "cHJlc2VydmVkLXVzZXItcGhvdG8tYnl0ZXM=",
+      "isActive": false
+    },
+    {
+      "id": "menu-jameson-irish-whiskey",
+      "name": "Jameson Irish Whiskey",
+      "venueID": "rockwater-hove",
+      "unit": "bottle"
+    }
+  ],
+  "stock": [
+    {
+      "id": "spec-jameson",
+      "name": "Jameson",
+      "venueID": "rockwater-hove",
+      "currentStock": 2.75,
+      "parLevel": 6,
+      "unit": "bottle"
+    },
+    {
+      "id": "menu-jameson-irish-whiskey",
+      "name": "Jameson",
+      "venueID": "rockwater-hove",
+      "currentStock": 1,
+      "parLevel": 3,
+      "unit": "case"
+    }
+  ],
+  "stockLists": [
+    {
+      "id": "old-list-a",
+      "kind": "order",
+      "venueID": "rockwater-hove",
+      "name": "Jameson",
+      "productID": "spec-jameson",
+      "quantity": 3,
+      "unit": "case"
+    },
+    {
+      "id": "old-list-b",
+      "kind": "restock",
+      "venueID": "rockwater-hove",
+      "name": "Jameson",
+      "productID": "menu-jameson-irish-whiskey",
+      "quantity": 2,
+      "unit": "bottle"
+    }
+  ],
+  "preferences": {
+    "venueID": "rockwater-hove",
+    "employeeName": "Pilot fixture",
+    "favouriteCocktailIDs": [
+      "classic-sidecar"
+    ],
+    "favouriteWineIDs": [
+      "hove-wine-test"
+    ],
+    "recentProductIDs": [
+      "spec-jameson"
+    ],
+    "productUsage": {
+      "spec-jameson": 14
+    }
+  },
+  "training": {
+    "answered": 21,
+    "correct": 18,
+    "masteredCocktailIDs": [
+      "classic-sidecar"
+    ]
+  },
+  "batches": [
+    {
+      "id": "old-batch",
+      "cocktailID": "classic-sidecar",
+      "name": "Sidecar old calculation",
+      "serves": 35,
+      "wastagePercent": 3,
+      "createdAt": "2026-09-15T12:00:00Z"
+    }
+  ],
+  "prep": [
+    {
+      "id": "old-prep",
+      "name": "Approved syrup",
+      "venueID": "rockwater-hove",
+      "currentAmount": 2,
+      "targetAmount": 3,
+      "completed": true,
+      "lastPreparedDate": "2026-09-15T12:00:00Z"
+    }
+  ],
+  "user": {
+    "id": "local-user",
+    "name": "Pilot fixture",
+    "venueID": "rockwater-hove",
+    "role": "manager"
+  }
+}

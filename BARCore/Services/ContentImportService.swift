@@ -1,21 +1,26 @@
 import Foundation
 
 public enum ContentImportService {
-    /// Imports content only. Local identity and personal state cannot be replaced by a file.
     public static func merge(data: Data, preserving local: AppSnapshot) throws -> AppSnapshot {
+        guard data.count <= BackupService.maximumBytes else { throw DataValidationError.invalid("The content file is too large.") }
         var imported = try SeedLoader.makeDecoder().decode(AppSnapshot.self, from: data)
+        // Personal fields are not required in a content pack and never imported.
         imported.preferences = local.preferences
-        imported.training = local.training
         imported.user = local.user
-        imported.batches = local.batches
-        imported.wastage = local.wastage
-        imported.stockLists = local.stockLists
-        if imported.catalogueVersion == 0 { imported.products = local.products }
-        imported.catalogueVersion = max(imported.catalogueVersion, local.catalogueVersion)
-        guard imported.venues.contains(where: { $0.id == local.preferences.venueID }) else {
-            throw DataValidationError.invalid("Import must include your current venue.")
-        }
         try SeedLoader.validate(snapshot: imported)
-        return imported
+        guard imported.cocktails.allSatisfy({ $0.displaySpecification == nil }) else {
+            throw DataValidationError.invalid("Import venue source recipes, not a displayed Recommended specification or saved batch.")
+        }
+        guard Set(imported.venues.map(\.id)).isSubset(of: Set(local.venues.map(\.id))) else { throw DataValidationError.invalid("This content belongs to a different venue.") }
+        var pack = AppSnapshot()
+        // Only bundled migrations advance this marker. A content import must not
+        // prevent future application upgrades by supplying an arbitrary version.
+        pack.catalogueVersion = local.catalogueVersion
+        pack.cocktails = imported.cocktails.filter { $0.venueID == local.preferences.venueID }
+        pack.wines = imported.wines.filter { $0.venueID == local.preferences.venueID }
+        pack.products = imported.products.filter { $0.venueID == local.preferences.venueID }
+        let result = try ContentUpdateService.merge(pack, into: local)
+        try SeedLoader.validate(snapshot: result)
+        return result
     }
 }

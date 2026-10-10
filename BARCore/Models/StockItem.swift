@@ -1,6 +1,7 @@
 import Foundation
 
 public struct StockItem: Codable, Hashable, Sendable, Identifiable {
+    public var hasRecordedCount: Bool = true
     public var id: String
     public var name: String
     public var venueID: String
@@ -25,9 +26,10 @@ public struct StockItem: Codable, Hashable, Sendable, Identifiable {
         self.isSample = isSample
     }
 
-    enum CodingKeys: String, CodingKey { case id, name, venueID, category, bottleSize, currentStock, parLevel, unit, notes, isSample }
+    enum CodingKeys: String, CodingKey { case hasRecordedCount, id, name, venueID, category, bottleSize, currentStock, parLevel, unit, notes, isSample }
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
+        hasRecordedCount = try c.value(Bool.self, for: .hasRecordedCount, default: true)
         id = try c.decode(String.self, forKey: .id)
         name = try c.decode(String.self, forKey: .name)
         venueID = try c.value(String.self, for: .venueID, default: "")
@@ -40,6 +42,6 @@ public struct StockItem: Codable, Hashable, Sendable, Identifiable {
         isSample = try c.value(Bool.self, for: .isSample, default: false)
     }
 
-    public var requiredStock: Double { StockCalculator.required(current: currentStock, par: parLevel) }
+    public var requiredStock: Double { hasRecordedCount ? StockCalculator.required(current: currentStock, par: parLevel) : 0 }
     public var orderQuantity: Int { StockCalculator.wholeQuantity(requiredStock) }
 }

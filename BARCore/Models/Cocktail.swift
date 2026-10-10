@@ -1,6 +1,10 @@
 import Foundation
 
 public struct Cocktail: Codable, Hashable, Sendable, Identifiable {
+    /// Display metadata is set on a resolved value copy, never on the venue record.
+    public var trainingEligible: Bool = true
+    public var displaySpecification: ClassicSpecification? = nil
+    public var referenceVersion: Int? = nil
     public var supersededCocktailIDs: [String] = []
     public var sourceReference: String? = nil
     public var isHouseClassic: Bool = false
@@ -60,9 +64,12 @@ public struct Cocktail: Codable, Hashable, Sendable, Identifiable {
         self.updatedAt = updatedAt
     }
 
-    enum CodingKeys: String, CodingKey { case supersededCocktailIDs, sourceReference, isHouseClassic, recipeVerified, sourceURL, id, name, venueID, subtitle, description, venueSpecific, category, baseSpirit, flavourTags, ingredients, method, glass, ice, garnish, prepInstructions, serviceNotes, allergens, imageName, isPopular, isActive, isSample, variations, overridesCocktailID, createdAt, updatedAt }
+    enum CodingKeys: String, CodingKey { case trainingEligible, displaySpecification, referenceVersion, supersededCocktailIDs, sourceReference, isHouseClassic, recipeVerified, sourceURL, id, name, venueID, subtitle, description, venueSpecific, category, baseSpirit, flavourTags, ingredients, method, glass, ice, garnish, prepInstructions, serviceNotes, allergens, imageName, isPopular, isActive, isSample, variations, overridesCocktailID, createdAt, updatedAt }
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
+        trainingEligible = try c.value(Bool.self, for: .trainingEligible, default: true)
+        displaySpecification = try c.decodeIfPresent(ClassicSpecification.self, forKey: .displaySpecification)
+        referenceVersion = try c.decodeIfPresent(Int.self, forKey: .referenceVersion)
         supersededCocktailIDs = try c.value([String].self, for: .supersededCocktailIDs, default: [])
         sourceReference = try c.decodeIfPresent(String.self, forKey: .sourceReference)
         isHouseClassic = try c.value(Bool.self, for: .isHouseClassic, default: false)
