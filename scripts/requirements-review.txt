@@ -1,0 +1,5 @@
+# Optional source grammar/media/PDF review tools; not native app dependencies.
+tree-sitter==0.26.0
+tree-sitter-swift==0.7.4
+Pillow>=11,<13
+PyMuPDF>=1.26,<2

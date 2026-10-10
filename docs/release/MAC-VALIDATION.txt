@@ -1,0 +1,117 @@
+BAR — MAC VALIDATION PROCEDURE
+Source inspection on Windows is not a signed/native release validation.
+Do not submit publicly before physical-device and real-service TestFlight testing.
+
+1. CHECK OUT THE CANDIDATE
+   Preserve any Mac changes first; do not reset them.
+   git fetch origin
+   git switch codex/bar-app-readiness-review
+   git pull --ff-only
+   git status --short
+   git rev-parse HEAD
+   Compare the full commit with the final implementation handoff. If different,
+   inspect the intervening commits; don't claim the older validation applies.
+
+2. AUTOMATED CHECKS
+   Use full Xcode 26 or newer, selected in Xcode > Settings > Locations.
+   Install an iOS simulator runtime and both a normal Pro-sized iPhone and a
+   smaller supported iPhone (SE 3 / 13 mini where the runtime supports it, or 16e).
+   Python 3 is needed for the two dependency-free content/monitor test suites.
+   From the repository root:
+     bash scripts/validate-mac.sh FULL_COMMIT_FROM_HANDOFF
+   Optional explicit destinations:
+     xcrun simctl list devices available
+     bash scripts/validate-mac.sh FULL_COMMIT PRO_UDID SMALL_UDID
+
+   The script checks the exact clean commit, runs BARCore XCTest in Debug and
+   Release, builds the native app/tests, runs BARUITests on BOTH simulators,
+   and builds/analyzes Release without signing. It stops at the first failure.
+   Logs, current native screenshot attachments and .xcresult bundles go into
+   build/validation-TIMESTAMP (ignored by git). Keep these with the tested SHA.
+   BARCoreTests is the native Swift unit suite; there is no separate BAR app
+   unit-test target. App integration coverage lives in BARUITests. Do not report
+   a nonexistent test target as passed. Release UI is a separate manual gate;
+   Debug UI tests intentionally retain their isolated fixture/debug-role path.
+
+   If compilation fails, fix the actual Swift/Xcode problem on this branch and
+   rerun validation at the NEW commit. Don't weaken assertions to get green.
+
+3. CURRENT NATIVE VISUAL / ACCESSIBILITY CHECK
+   open BAR.xcodeproj
+   Inspect both device sizes at default text size and largest accessibility size.
+   Capture CURRENT screenshots of:
+   Home/search keyboard and empty results; cocktail library; Sidecar Custom and
+   Recommended; an individual override and global setting; house recipe; source
+   disclosure and reference-image disclosure; batch premix/service additions;
+   saved batch; empty and populated prep; prep edit/completion; stock count with
+   uncounted and fractional values; restock and order lists/custom unit; wine
+   search/detail; flashcard/quiz; wastage; Profile; owner unlock/content review;
+   product edit/photo/fallback/hidden product; backup export/restore confirmation;
+   save/import failure. Use landscape only to confirm portrait lock is deliberate.
+   Verify 44pt controls, text wrapping, keyboard dismissal, sheet scrolling,
+   VoiceOver reading order/labels, contrast, Reduce Motion and one-handed reach.
+   Check coloured taste filters and all cream/olive text with Accessibility
+   Inspector. No accessibility conformance is certified by Windows source checks.
+
+4. PHYSICAL IPHONE — EXISTING DATA FIRST
+   Back up the existing BAR installation BEFORE installing the candidate.
+   If the old build has no export, use Xcode Devices and Simulators > Download
+   Container and retain it outside the project. DO NOT uninstall the old app.
+   Team XJP79XFMEJ and bundle com.barapp.mobile were deliberately preserved.
+   Install the candidate over it using the same signing identity and bundle ID.
+   Compare counts, pars, both lists, photos, inactive products, favourites,
+   training totals, batches and preferences. Old independent IDs must not be
+   silently merged, and a bottle count must not become a case count.
+   Core fixture Tests/BARCoreTests/Fixtures/used-installation-v15.json covers
+   these domains automatically, but is not a substitute for your real install.
+
+5. PHYSICAL IPHONE — RELEASE, OFFLINE AND RECOVERY
+   Edit Scheme > Run > Build Configuration: Release for this test, without
+   committing personal scheme changes. Select your iPhone and run.
+   Confirm no Debug role switch. Profile > Unlock owner tools must use device
+   authentication; cancelling stays locked; backgrounding locks maintenance.
+   Confirm a passcode-enabled device can edit Custom, product units/photos/pars,
+   import a venue pack and review conflicts. Confirm hidden products can return.
+   A device without a passcode cannot unlock owner tools; no backdoor exists.
+
+   Complete this mini-shift with airplane mode on:
+   - Cold launch; search a misspelling, brand, accented ingredient and wine.
+   - Open house drink; open Sidecar; confirm SHAKE/STRAIN and Custom 50/25/10.
+   - Global Recommended; individual Custom; Use global; reverse combinations.
+   - Favourite once, switch specs; no duplicate favourite/search identity.
+   - Calculate 35 serves from Recommended; save; change global preference;
+     reopen saved batch and confirm its frozen spec and service additions.
+   - Prep complete today; change date in a TEST device/session only and verify
+     yesterday's completion no longer looks ready while quantity stays intact.
+   - Enter fractional count, set par as owner; create separate restock/order
+     rows with bottle/case units; custom pack row; share and verify units.
+   - Tap quantity controls rapidly, long-press, immediately background, relaunch;
+     compare exact final counts. Repeat during photo/save and preference edits.
+   - Log waste and confirm it did not silently deduct stock; learn both contexts.
+   - User photo stays after content revision; offline fallback and broken HTTPS
+     image URL are usable. Cancel download/navigate away during a slow request.
+   - Export full backup to Files, retain off-device; change a count; restore the
+     backup; confirm all domains. Export previous safety copy and restore it to
+     recover the count from before the restore. Use only expendable data for
+     reset/import/corrupt-file cases; reject malformed/future-version files.
+   - Reboot/cold launch/relaunch. Check failure alerts preserve the prior file.
+
+   Watch launch time, memory while rapidly browsing photos, keyboard lag and
+   background behaviour in Instruments. Historical screenshots are not evidence.
+
+6. ARCHIVE / TESTFLIGHT — ONLY AFTER ABOVE PASSES
+   Resolve the short venue/content/rights queue in HUMAN-REVIEW.txt.
+   Provide working support and privacy-policy URLs and verify the support inbox.
+   Check next unused build number in App Store Connect (source remains 1.0.0/1).
+   Use Product > Archive with the existing team; Validate App in Organizer.
+   Inspect the archive privacy report, entitlements, signing and app icon. This
+   pass creates/revokes no certificates and performs no upload or submission.
+   With your approval on the Mac, upload to TestFlight; install the actual build
+   and complete a real service shift. Track recipe questions, unclear quantities,
+   wrong imagery, missing saves, crashes and awkward interactions before features.
+   Only then decide public vs venue-focused distribution and App Store submission.
+
+RELEASE LABELS
+Windows/source checks complete -> Mac Validation Candidate.
+Xcode + automated native tests + both simulator layouts + physical iPhone pass
+-> TestFlight Release Candidate. Successful TestFlight/real use -> public decision.

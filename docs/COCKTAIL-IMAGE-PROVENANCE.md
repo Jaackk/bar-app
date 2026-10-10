@@ -1,6 +1,8 @@
 # Cocktail image provenance
 
-BAR's existing cocktail specifications remain authoritative. The following locally bundled photographs were acquired only as representative imagery for existing conventional cocktails. No recipe data was imported from Social & Cocktail.
+These are historical acquisition notes, not recipe authority or evidence of redistribution permission. Venue specifications and the researched Recommended library are separate; see `release/classic-audit.txt`. The photographs below are representative references, not verified Rockwater presentations. No recipe data was imported from Social & Cocktail. Exact-match claims below describe the original acquisition assessment, not current release sign-off.
+
+Current review: `release/image-inventory.json`. The plain Daiquiri mapping is now suppressed because its photograph depicts a strawberry drink. Confirm licences/permission before external distribution, including for images acquired from recipe sites. User-supplied photos remain intact and take precedence.
 
 | Cocktail ID | BAR cocktail | Local asset | Recipe page | Original image | Source | Retrieved | Match |
 | --- | --- | --- | --- | --- | --- | --- | --- |

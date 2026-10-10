@@ -1,0 +1,671 @@
+BAR CLASSIC ACCURACY AUDIT — 10 October 2026
+77 original records (31 generic + 46 house), organised into 49 reference identities.
+48 researched Recommended specifications; 1 explicitly house-only variation.
+No stored Rockwater measures were rewritten. Reference choices are not claims of one universally correct ratio.
+Three exact imported house technique errors are corrected in resolved service views: Sidecar, Mai Tai, Pimm’s.
+The original methods remain in raw source and owner-editable Custom records for evidence.
+Verification means professional source review, not Rockwater management approval or allergen certification.
+
+SIDECAR
+reference-sidecar
+Recommended: 50 ml Cognac; 20 ml Triple sec; 20 ml Fresh lemon juice
+Technique: Shake · strain
+Glass: Chilled coupe | Ice: Cubed ice to shake; no serving ice | Garnish: None
+  Shake with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison: House measures 50/25/10 are preserved. Imported muddle/build text is unrelated to these ingredients.
+Previous house-sidecar: 50 ml Hennessy V.S; 25 ml Blend Triple Sec; 10 ml Dd Lemon | Muddle limes/sugar + build
+Previous classic-sidecar: 50 ml Cognac; 20 ml Triple sec; 20 ml Lemon juice | Shake
+Technique correction: Muddle limes/sugar + build → Shake · strain
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/sidecar/
+Verified: 2026-10-10 | Content version: 1
+
+OLD FASHIONED
+reference-old-fashioned
+Recommended: 45 ml Bourbon or rye whiskey; 1 piece Sugar cube; A few dashes Angostura bitters; A few dashes Water
+Technique: Dissolve sugar · build · stir
+Glass: Rocks | Ice: Cubed ice | Garnish: Orange peel or slice; cocktail cherry
+  Dissolve the sugar with bitters and a little water in the glass.
+  Add ice and whiskey; stir to chill and dilute.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison: Brown sugar pieces/cubes and brand differ; quantity interpretation needs venue confirmation.
+Previous house-old-fashioned: 50 ml Old Forestor; 2 SUGAR CUBES Brown Sugar; 2 dash Angostura Bitters | Muddle sugar + stir + strain
+Previous classic-old-fashioned: 45 ml Bourbon or rye whiskey; 1 piece Sugar cube; 3 dash Angostura bitters; 3 dash Water | Stir
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/old-fashioned/
+Verified: 2026-10-10 | Content version: 1
+
+NEGRONI
+reference-negroni
+Recommended: 30 ml Gin; 30 ml Campari; 30 ml Sweet red vermouth
+Technique: Build · stir
+Glass: Rocks | Ice: Cubed ice | Garnish: Half an orange slice
+  Add ingredients to an ice-filled glass.
+  Stir gently to chill and combine.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison:
+Previous house-negroni: 25 ml Salcombe Rose; 25 ml Campari; 25 ml Martini Rosso | Stir + strain
+Previous classic-negroni: 30 ml Gin; 30 ml Campari; 30 ml Sweet red vermouth | Build & stir
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/negroni/
+Verified: 2026-10-10 | Content version: 1
+
+MARGARITA
+reference-margarita
+Recommended: 50 ml 100% agave tequila; 20 ml Triple sec; 15 ml Fresh lime juice
+Technique: Shake · strain
+Glass: Chilled cocktail glass | Ice: Cubed ice to shake; no serving ice | Garnish: Optional half salt rim
+  Shake with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: IBA straight-up version. Rocks service and sweeter UK bar ratios are also common. Custom retains its agave syrup and house proportions.
+House comparison:
+Previous house-margarita: 35 ml El Jimador Blanca; 25 ml Blend Triple Sec; 15 ml Dd Lime; 10 ml Agave | Shake + double strain
+Previous classic-margarita: 50 ml Blanco tequila; 20 ml Triple sec; 15 ml Lime juice | Shake
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/margarita/
+Verified: 2026-10-10 | Content version: 1
+
+TOMMY’S MARGARITA
+reference-tommys-margarita
+Recommended: 60 ml 100% agave tequila; 30 ml Fresh lime juice; 30 ml Agave nectar
+Technique: Shake · strain
+Glass: Rocks | Ice: Fresh cubed ice | Garnish: Lime slice
+  Shake with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: Current IBA uses 30 ml agave nectar. Syrup concentration and acidity vary; many professional versions use less. Keep the venue’s 10 ml Custom separate.
+House comparison:
+Previous house-tommys-margarita: 50 ml Casamigos Blanca; 25 ml Dd Lime; 10 ml Agave | Shake, double strain
+Previous classic-tommy-s-margarita: 60 ml 100% agave tequila; 30 ml Lime juice; 30 ml Agave nectar | Shake
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/tommys-margarita/
+Verified: 2026-10-10 | Content version: 1
+
+DAIQUIRI
+reference-daiquiri
+Recommended: 60 ml White rum; 20 ml Fresh lime juice; 2 barspoon Fine white sugar
+Technique: Dissolve sugar · shake · strain
+Glass: Chilled coupe | Ice: Cubed ice to shake; no serving ice | Garnish: None
+  Dissolve the sugar in the liquids before adding ice.
+  Shake with ice; strain into the chilled glass.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison: House specifies one fresh lime, not a measured yield. Do not convert it into invented ml in batching.
+Previous house-daiquiri: 50 ml Havana 3; 1 LIME Fresh Lime; 15 ml Gomme; 1 dash Saline | Shake + double strain
+Previous classic-daiquiri: 60 ml White Cuban rum; 20 ml Lime juice; 2 barspoon Superfine sugar | Shake
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/daiquiri/
+Verified: 2026-10-10 | Content version: 1
+
+MOJITO
+reference-mojito
+Recommended: 45 ml White Cuban rum; 20 ml Fresh lime juice; 6 sprig Mint sprigs; 2 teaspoon White cane sugar; 0 top Soda water
+Technique: Gently press · build · top
+Glass: Highball | Ice: Cubed ice | Garnish: Mint sprig and lime slice
+  Gently press mint with lime and sugar; avoid shredding the mint.
+  Add a little soda and ice, then rum.
+  Top with soda and stir gently.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison: House ingredient list omits soda. Confirm whether that omission is intentional; no house amount invented.
+Previous house-mojito: 50 ml Havana 3; 20 ml Dd Lime Juice; 8.0 Mint; 3.0 Lime Wedges; 15 ml Gomme | Muddle lime + build
+Previous classic-mojito: 45 ml White Cuban rum; 20 ml Lime juice; 6 piece Mint leaves; 2 barspoon White cane sugar; 0 top Soda water; 1 sprig Mint sprig | Build
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/mojito/
+Verified: 2026-10-10 | Content version: 1
+
+COSMOPOLITAN
+reference-cosmopolitan
+Recommended: 40 ml Citron vodka; 15 ml Cointreau; 15 ml Fresh lime juice; 30 ml Cranberry juice
+Technique: Shake · strain
+Glass: Chilled cocktail glass | Ice: Cubed ice to shake; no serving ice | Garnish: Lemon twist
+  Shake with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison:
+Previous house-cosmopolitan: 35 ml Absolut Vodka; 15 ml Blend Triple Sec; 20 ml Dd Lime Juice; 50 ml Cranberry Juice | Shake + double strain
+Previous classic-cosmopolitan: 40 ml Citron vodka; 15 ml Cointreau; 15 ml Lime juice; 30 ml Cranberry juice | Shake
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/cosmopolitan/
+Verified: 2026-10-10 | Content version: 1
+
+ESPRESSO MARTINI
+reference-espresso-martini
+Recommended: 50 ml Vodka; 30 ml Kahlúa coffee liqueur; 10 ml Sugar syrup; 1 espresso Strong espresso
+Technique: Shake hard · strain
+Glass: Chilled cocktail glass | Ice: Cubed ice to shake; no serving ice | Garnish: Three coffee beans
+  Shake the liquids hard with ice to develop a foam.
+  Strain into a chilled glass; garnish.
+Choice / variation: IBA does not give espresso volume: retain one espresso rather than inventing a ml yield. Custom coffee liqueur is not espresso.
+House comparison: Pub menu names Absolut Vanilla; house sheet names Absolut Vodka. Blend Coffee must remain a liqueur concept.
+Previous house-espresso-martini: 35 ml Absolut Vodka; 35 ml Blend Coffee; 50 ml Espresso; 15 ml Vanilla | Shake + double strain
+Previous classic-espresso-martini: 50 ml Vodka; 30 ml Coffee liqueur; 10 ml Sugar syrup; 30 ml Fresh espresso; 3 piece Coffee beans | Shake
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/espresso-martini/
+Verified: 2026-10-10 | Content version: 1
+
+WHISKEY SOUR
+reference-whiskey-sour
+Recommended: 45 ml Bourbon whiskey; 25 ml Fresh lemon juice; 20 ml Sugar syrup; A few drops (optional) Egg white (optional)
+Technique: Shake · strain
+Glass: Rocks or chilled sour glass | Ice: Fresh cubed ice if on the rocks | Garnish: Orange slice and cherry, or orange zest
+  If using egg white, shake vigorously to aerate; a separate dry shake may be used.
+  Shake with ice to chill and dilute; strain into the prepared glass.
+Choice / variation: IBA optional egg white is not a fixed ml measure. Dry-then-wet or wet-then-dry shaking are accepted foam techniques. Custom uses its own foamer.
+House comparison:
+Previous house-whisky-sour: 50 ml Old Forestor; 25 ml Dd Lemon Juice; 15 ml Gomme; 2 dash Angostura Bitters; 2 dash Ms Betters Bitters | Wet/dry shake + strain
+Previous classic-whiskey-sour: 45 ml Bourbon whiskey; 25 ml Lemon juice; 20 ml Sugar syrup; 15 ml Pasteurised egg white (optional) | Shake
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/whiskey-sour/
+Verified: 2026-10-10 | Content version: 1
+
+MAI TAI
+reference-mai-tai
+Recommended: 30 ml Amber Jamaican rum; 30 ml Martinique molasses rum; 15 ml Orange curaçao; 15 ml Orgeat; 30 ml Fresh lime juice; 7.5 ml Sugar syrup
+Technique: Shake · pour
+Glass: Double rocks or highball | Ice: Shaking ice retained | Garnish: Pineapple, mint and lime peel
+  Shake the ingredients with ice.
+  Pour into the serving glass and garnish.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison: House uses a split white/aged rum build with a float. Preserve the float and proportions, but shake the still sour base rather than merely build it.
+Previous house-mai-tai: 20 ml Havana 3 Yr; 15 ml Blend Triple Sec; 10 ml Gomme Syrup; 20 ml Lime Juice; 10 ml Orgeat; 20 ml Havana 7 | Build + garnish
+Previous classic-mai-tai: 30 ml Amber Jamaican rum; 30 ml Martinique molasses rum; 15 ml Orange curaçao; 15 ml Orgeat syrup; 30 ml Lime juice; 7.5 ml Sugar syrup; 1 sprig Mint sprig | Shake
+Technique correction: Build + garnish → Shake base · strain · float
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/mai-tai/
+Verified: 2026-10-10 | Content version: 1
+
+GIN MARTINI
+reference-dry-martini
+Recommended: 60 ml Gin; 10 ml Dry vermouth
+Technique: Stir · strain
+Glass: Chilled Martini glass | Ice: Cubed ice to stir; no serving ice | Garnish: Lemon oil or olive
+  Stir the ingredients with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: IBA 6:1 selected. Ask about gin/vodka, dryness and garnish; other ratios and a guest-requested shake are legitimate.
+House comparison:
+Previous house-gin-martini: 50 ml Tanqueray No10; 10ml dry / 20ml wet Martini Extra Dry; 10ml if dirty Olive Brine (If Dirty) | Stir + strain
+Previous classic-martini: 40 ml Gin; 20 ml Dry vermouth | Stir
+Previous classic-dry-martini: 60 ml Gin; 10 ml Dry vermouth | Stir
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/dry-martini/
+Verified: 2026-10-10 | Content version: 1
+
+DIRTY MARTINI
+reference-dirty-martini
+Recommended: 60 ml Gin; 22.5 ml Dry vermouth; 15 ml Green olive brine
+Technique: Stir · strain
+Glass: Chilled Martini glass | Ice: Cubed ice to stir; no serving ice | Garnish: Green olives
+  Stir the ingredients with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: Difford’s stirred version, without optional bitters. Brine intensity varies. House gin/vodka Martinis offer a separate optional dirty addition.
+House comparison:
+Previous classic-dirty-martini: 60 ml Vodka; 12 ml Dry vermouth; 12 ml Olive brine; 3 piece Green olives | Stir
+Sources: Difford’s Guide https://www.diffordsguide.com/cocktails/recipe/650/dirty-martini
+Verified: 2026-10-10 | Content version: 1
+
+FRENCH MARTINI
+reference-french-martini
+Recommended: 45 ml Vodka; 15 ml Raspberry liqueur; 15 ml Pineapple juice
+Technique: Shake · strain
+Glass: Chilled cocktail glass | Ice: Cubed ice to shake; no serving ice | Garnish: Expressed lemon oil
+  Shake with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison:
+Previous house-french-martini: 35 ml Absolut Vanilla; 25 ml Chambord; 75 ml Pineapple Juice; 10 ml Gomme | Shake + double strain
+Previous classic-french-martini: 45 ml Vodka; 15 ml Raspberry liqueur; 15 ml Pineapple juice | Shake
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/french-martini/
+Verified: 2026-10-10 | Content version: 1
+
+MANHATTAN
+reference-manhattan
+Recommended: 50 ml Rye whiskey; 20 ml Sweet red vermouth; 1 dash Angostura bitters
+Technique: Stir · strain
+Glass: Chilled cocktail glass | Ice: Cubed ice to stir; no serving ice | Garnish: Cocktail cherry
+  Stir the ingredients with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: IBA rye baseline. Bourbon is an accepted variation; Custom retains its bourbon and 50/25 proportions.
+House comparison:
+Previous house-manhattan: 50 ml Old Forestor; 25 ml Martini Rosso; 2 dash Angostura Bitters | Stir + strain
+Previous classic-manhattan: 50 ml Rye whiskey; 20 ml Sweet red vermouth; 1 dash Angostura bitters | Stir
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/manhattan/
+Verified: 2026-10-10 | Content version: 1
+
+BOULEVARDIER
+reference-boulevardier
+Recommended: 45 ml Bourbon or rye whiskey; 30 ml Campari; 30 ml Sweet red vermouth
+Technique: Stir · strain
+Glass: Chilled cocktail glass | Ice: Cubed ice to stir; no serving ice | Garnish: Orange zest (lemon also accepted)
+  Stir the ingredients with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison:
+Previous classic-boulevardier: 45 ml Bourbon or rye whiskey; 30 ml Campari; 30 ml Sweet red vermouth | Stir
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/boulevardier/
+Verified: 2026-10-10 | Content version: 1
+
+PALOMA
+reference-paloma
+Recommended: 50 ml 100% agave tequila; 5 ml Fresh lime juice; 1 pinch Salt; 100 ml Pink grapefruit soda
+Technique: Build · top · stir
+Glass: Highball | Ice: Cubed ice | Garnish: Lime slice
+  Add tequila, lime and salt to the glass with ice.
+  Add grapefruit soda and stir gently. Never shake carbonated ingredients.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison: House DD Pink Grapefruit identity needs confirmation: juice versus soda. Its top remains a service addition, never premixed or shaken.
+Previous house-paloma: 50 ml El Jimador Reposado; 15 ml Dd Lime; 10 ml Agave; 0 top Dd Pink Grapefruit | Shake, double strain
+Previous classic-paloma: 50 ml Blanco tequila; 5 ml Lime juice; 0 top Fine salt; 100 ml Pink grapefruit soda | Build
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/paloma/
+Verified: 2026-10-10 | Content version: 1
+
+AVIATION
+reference-aviation
+Recommended: 45 ml Gin; 15 ml Maraschino liqueur; 15 ml Fresh lemon juice; 1 barspoon Crème de violette
+Technique: Shake · strain
+Glass: Chilled cocktail glass | Ice: Cubed ice to shake; no serving ice | Garnish: Optional maraschino cherry
+  Shake with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison:
+Previous classic-aviation: 45 ml Gin; 15 ml Maraschino liqueur; 15 ml Lemon juice; 1 barspoon Crème de violette | Shake
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/aviation/
+Verified: 2026-10-10 | Content version: 1
+
+BRAMBLE
+reference-bramble
+Recommended: 50 ml Gin; 25 ml Fresh lemon juice; 12.5 ml Sugar syrup; 15 ml Crème de mûre
+Technique: Shake base · strain · drizzle
+Glass: Rocks | Ice: Crushed ice | Garnish: Optional blackberry and lemon slice
+  Shake gin, lemon and syrup with ice.
+  Strain over crushed ice, then drizzle the mûre over the surface.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison: House has vanilla/blackberry additions and includes mûre in base. Preserve as a house variation, not the IBA layered method.
+Previous house-bramble: 50 ml Tanqueray; 25 ml Dd Lemon; 5 ml Vanilla; 10 ml Blackberry; 15 ml Crème De Mure | Shake + strain
+Previous classic-bramble: 50 ml Gin; 25 ml Lemon juice; 12.5 ml Sugar syrup; 15 ml Crème de mûre | Shake
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/bramble/
+Verified: 2026-10-10 | Content version: 1
+
+TOM COLLINS
+reference-john-collins
+Recommended: 45 ml Old Tom gin; 30 ml Fresh lemon juice; 15 ml Sugar syrup; 60 ml Soda water
+Technique: Build · stir · top
+Glass: Highball | Ice: Cubed ice | Garnish: Lemon slice and cocktail cherry
+  Combine still ingredients over ice.
+  Add soda and stir gently.
+Choice / variation: IBA John Collins recipe explicitly identifies Old Tom gin for a Tom Collins. London dry is a common house variation.
+House comparison:
+Previous house-tom-collins: 50 ml Tanqueray; 15 ml Dd Lemon Juice; 15 ml Gomme; 0 top Soda | Build + stir
+Previous classic-tom-collins: 45 ml Old Tom gin; 30 ml Lemon juice; 15 ml Sugar syrup; 60 ml Soda water | Build
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/john-collins/
+Verified: 2026-10-10 | Content version: 1
+
+FRENCH 75
+reference-french-75
+Recommended: 30 ml Gin; 15 ml Fresh lemon juice; 15 ml Sugar syrup; 60 ml Champagne
+Technique: Shake base · strain · top
+Glass: Chilled flute | Ice: Cubed ice to shake; no serving ice | Garnish: None
+  Shake gin, lemon and syrup with ice.
+  Strain into the flute. Gently add Champagne; never shake it.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison:
+Previous house-french-75: 25 ml Tanqueray; 15 ml Dd Lemon; 10 ml Gomme; 0 top Veuve Cliquot Brut | Shake stills + top
+Previous classic-french-75: 30 ml Gin; 15 ml Lemon juice; 15 ml Sugar syrup; 60 ml Champagne | Shake & top
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/french-75/
+Verified: 2026-10-10 | Content version: 1
+
+CAIPIRINHA
+reference-caipirinha
+Recommended: 60 ml Cachaça; 1 piece Lime (whole, cut into wedges); 4 teaspoon White cane sugar
+Technique: Muddle · build · stir
+Glass: Rocks | Ice: Cracked ice | Garnish: Lime in the drink
+  Gently muddle lime wedges and sugar in the glass.
+  Add cachaça and ice; stir to combine.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison: House quantity is four pieces/wedges, not four whole limes. Keep its raw measure; confirm wedge/cube size before mass prep.
+Previous house-caipirinha: 50 ml Cachaca; 4 WEDGES Lime; 2 CUBES Brown Sugar | Muddle limes/sugar + build
+Previous classic-caipirinha: 60 ml Cachaça; 1 piece Lime, cut into wedges; 4 barspoon White cane sugar | Muddle & build
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/caipirinha/
+Verified: 2026-10-10 | Content version: 1
+
+PIÑA COLADA
+reference-pina-colada
+Recommended: 50 ml White rum; 30 ml Coconut cream; 50 ml Fresh pineapple juice
+Technique: Blend with ice
+Glass: Large goblet or hurricane | Ice: Blended ice | Garnish: Pineapple slice and cocktail cherry
+  Blend the ingredients with ice until smooth.
+  Pour into the serving glass and garnish.
+Choice / variation: IBA blended reference. A shaken Piña Colada is also established practice; the house shaken split-rum recipe is retained.
+House comparison:
+Previous house-pina-colada: 25 ml Havana 3; 25 ml Havana Spiced; 20 ml Dd Lime Juice; 75 ml Pineapple Juice; 25 ml Coconut Cream | Shake + strain
+Previous classic-pina-colada: 50 ml White rum; 30 ml Coconut cream; 50 ml Pineapple juice; 150 gram Ice | Blend
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/pina-colada/
+Verified: 2026-10-10 | Content version: 1
+
+DARK ’N’ STORMY
+reference-dark-n-stormy
+Recommended: 60 ml Goslings rum; 100 ml Ginger beer
+Technique: Build · float
+Glass: Highball | Ice: Cubed ice | Garnish: Lime wedge
+  Pour ginger beer into the ice-filled glass.
+  Float rum over it. Do not shake the ginger beer.
+Choice / variation: IBA names Goslings. House uses Havana 7 and lime: retained as a house variation, not represented as the branded original.
+House comparison:
+Previous house-dark-stormy: 50 ml Havana 7; 4.0 Lime Wedges; 10 ml Dd Lime; 0 top Ginger Beer | Muddle lime + build
+Previous classic-dark-n-stormy: 60 ml Goslings Black Seal rum; 100 ml Ginger beer | Build
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/dark-n-stormy/
+Verified: 2026-10-10 | Content version: 1
+
+MOSCOW MULE
+reference-moscow-mule
+Recommended: 45 ml Vodka; 120 ml Ginger beer; 10 ml Fresh lime juice
+Technique: Build · stir
+Glass: Mule cup or rocks | Ice: Cubed ice | Garnish: Lime slice
+  Build over ice and gently stir.
+  Keep ginger beer out of any premix or shaker.
+Choice / variation: IBA names Smirnoff; BAR uses the generic vodka concept. House ginger syrup and muddled wedges are retained.
+House comparison:
+Previous house-moscow-mule: 50 ml Absolut Vodka; 10 ml Dd Lime; 15 ml Ginger Syrup; 0 top Ginger Beer; 4.0 Lime Wedges | Muddle lime + build
+Previous classic-moscow-mule: 45 ml Vodka; 120 ml Ginger beer; 10 ml Lime juice | Build
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/moscow-mule/
+Verified: 2026-10-10 | Content version: 1
+
+BLOODY MARY
+reference-bloody-mary
+Recommended: 45 ml Vodka; 90 ml Tomato juice; 15 ml Fresh lemon juice; 2 dash Worcestershire sauce; To taste Tabasco, celery salt and pepper
+Technique: Stir gently
+Glass: Rocks or highball | Ice: Cubed ice | Garnish: Optional celery and lemon
+  Combine over ice and stir gently.
+  Season and garnish to order.
+Choice / variation: IBA gentle stir selected. Rolling/throwing is an accepted alternative; avoid unnecessary frothing.
+House comparison: House lists 25 ml Worcestershire, unusually high. Preserve pending venue confirmation; exclude unresolved recipe from training.
+Previous house-bloody-mary: 35 ml Absolut Vodka; 25 ml Dd Lemon Juice; 100 ml Tomato; 25 ml Worchester; 3 dashes, adjust to taste Tabasco (3 Standard); 3 grinds Salt; 3 grinds Pepper | Throw + strain
+Previous classic-bloody-mary: 45 ml Vodka; 90 ml Tomato juice; 15 ml Lemon juice; 2 dash Worcestershire sauce; 2 dash Hot sauce; 0 top Celery salt and black pepper; 1 piece Celery stick | Roll or stir
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/bloody-mary/
+Verified: 2026-10-10 | Content version: 1
+
+LONG ISLAND ICED TEA
+reference-long-island-iced-tea
+Recommended: 15 ml Vodka; 15 ml Tequila; 15 ml White rum; 15 ml Gin; 15 ml Cointreau; 25 ml Fresh lemon juice; 30 ml Sugar syrup; 0 top Cola
+Technique: Build · top · stir
+Glass: Highball | Ice: Cubed ice | Garnish: Optional lemon slice
+  Build the still ingredients over ice.
+  Add cola and gently stir. Never shake cola.
+Choice / variation: IBA build selected. Shaking only the still base then adding cola is valid; house layering is retained.
+House comparison:
+Previous house-long-island-iced-tea: 12.5 ml Absolut Vodka; 12.5 ml Tanqueray; 12.5 ml El Jimador Blanco; 12.5 ml Havana 3; 12.5 ml Blend Triple Sec; 15 ml Dd Lemon; ½ glass Coca-Cola | Shake + layer over coke
+Previous classic-long-island-iced-tea: 15 ml Vodka; 15 ml Blanco tequila; 15 ml White rum; 15 ml Gin; 15 ml Cointreau; 25 ml Lemon juice; 30 ml Sugar syrup; 0 top Cola | Build
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/long-island-iced-tea/
+Verified: 2026-10-10 | Content version: 1
+
+APEROL SPRITZ
+reference-spritz
+Recommended: 90 ml Prosecco; 60 ml Aperol; Splash Soda water
+Technique: Build · stir
+Glass: Wine glass | Ice: Cubed ice | Garnish: Orange slice
+  Add ingredients over ice in the glass.
+  Stir gently to combine without losing the bubbles.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison:
+Previous house-aperol-spritz: 50 ml Aperol; 125 ml Cremant; 0 top Soda | Build in glass
+Previous classic-aperol-spritz: 90 ml Prosecco; 60 ml Aperol; 30 ml Soda water | Build
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/spritz/
+Verified: 2026-10-10 | Content version: 1
+
+WHITE LADY
+reference-white-lady
+Recommended: 40 ml Gin; 30 ml Triple sec; 20 ml Fresh lemon juice
+Technique: Shake · strain
+Glass: Chilled cocktail glass | Ice: Cubed ice to shake; no serving ice | Garnish: None
+  Shake with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: IBA recipe without egg white. Foamed White Lady variants are established; Custom retains its foamer.
+House comparison:
+Previous house-white-lady: 35 ml Tanqueray; 25 ml Belnd Triple Sec; 15 ml Dd Lemon Juice; 10 ml Gomme; 3 drop Ms Betters Bitters | Shake + strain
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/white-lady/
+Verified: 2026-10-10 | Content version: 1
+
+SEX ON THE BEACH
+reference-sex-on-the-beach
+Recommended: 40 ml Vodka; 20 ml Peach schnapps; 40 ml Fresh orange juice; 40 ml Cranberry juice
+Technique: Build
+Glass: Highball | Ice: Cubed ice | Garnish: Half orange slice
+  Build the ingredients over fresh ice and garnish.
+Choice / variation: IBA built version. House shaken orange base with a cranberry layer is retained as a presentation variation.
+House comparison:
+Previous house-sex-on-the-beach: 35 ml Absolut Vodka; 25 ml Peach Liqueur; 50 ml Orange Jucie; 50 ml Cranberry Juice | Shake + strain + layer cranberry
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/sex-on-the-beach/
+Verified: 2026-10-10 | Content version: 1
+
+SINGAPORE SLING
+reference-singapore-sling
+Recommended: 30 ml Gin; 15 ml Cherry Sangue Morlacco; 7.5 ml Cointreau; 7.5 ml Bénédictine; 120 ml Fresh pineapple juice; 15 ml Fresh lime juice; 10 ml Grenadine; 1 dash Angostura bitters
+Technique: Shake · strain
+Glass: Hurricane | Ice: Fresh cubed ice | Garnish: Pineapple and maraschino cherry
+  Shake with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison: House uses maraschino rather than cherry brandy and different proportions; do not substitute one liqueur automatically.
+Previous house-singapore-sling: 25 ml Tanqueray; 15 ml Maraschino; 15 ml Benedictine; 15 ml Dd Lime; 65 ml Pineapple; 5 ml Grenadine; 3 dash Angostura; 2 dash Orange | Shake + strain
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/singapore-sling/
+Verified: 2026-10-10 | Content version: 1
+
+IRISH COFFEE
+reference-irish-coffee
+Recommended: 50 ml Irish whiskey; 120 ml Hot coffee; 50 ml Fresh cream; 1 teaspoon Sugar
+Technique: Dissolve · stir · float cream
+Glass: Warmed Irish coffee glass | Ice: None | Garnish: Cream float
+  Dissolve sugar in hot coffee in the warmed glass, then add whiskey.
+  Pour lightly aerated cream carefully over the back of a spoon to form a float.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison: House method requires cream but its ingredient list omits the measure. Keep unresolved; do not invent a venue cream quantity.
+Previous house-irish-coffee: 50 ml Jameson; Double espresso Coffee (espresso shots); 2 SUGAR CUBES Brown Sugar; 0 top Hot Water | Muddle sugar + stir, float double cream
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/irish-coffee/
+Verified: 2026-10-10 | Content version: 1
+
+MIMOSA
+reference-mimosa
+Recommended: 75 ml Fresh orange juice; 75 ml Prosecco
+Technique: Build · stir gently
+Glass: Chilled flute | Ice: None | Garnish: Optional orange twist
+  Pour orange juice into the flute, then slowly add prosecco.
+  Gently combine.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison:
+Previous house-mimosa: 0 top Cremant; 25 ml Orange Juice | Build in glass
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/mimosa/
+Verified: 2026-10-10 | Content version: 1
+
+BELLINI
+reference-bellini
+Recommended: 50 ml White peach purée; 100 ml Prosecco
+Technique: Combine gently
+Glass: Chilled flute | Ice: Mix over ice; no serving ice | Garnish: None
+  Gently combine purée and prosecco over ice without shaking.
+  Pour into a chilled flute.
+Choice / variation: IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.
+House comparison:
+Previous house-bellini: 0 top Cremant; 25 ml Peach Puree | Build in glass
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/bellini/
+Verified: 2026-10-10 | Content version: 1
+
+KIR ROYALE
+reference-kir
+Recommended: 10 ml Crème de cassis; 90 ml Champagne
+Technique: Build
+Glass: Chilled flute | Ice: None | Garnish: None
+  Pour cassis into the flute, then carefully add Champagne.
+Choice / variation: Champagne substitution explicitly described by IBA for Kir Royale; the base Kir uses white wine. House Crémant/25 ml cassis is separate.
+House comparison:
+Previous house-kir-royale: 0 top Cremant; 25 ml Crème De Cassis | Build in glass
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/kir/
+Verified: 2026-10-10 | Content version: 1
+
+PISCO SOUR
+reference-pisco-sour
+Recommended: 60 ml Pisco; 30 ml Fresh lemon juice; 20 ml Sugar syrup; 1 piece Egg white; A few dashes on foam Amargo bitters
+Technique: Shake · strain · bitters
+Glass: Chilled goblet | Ice: Cubed ice to shake; no serving ice | Garnish: Amargo bitters on foam
+  Shake the liquids and egg white with ice until aerated.
+  Strain into a chilled glass; finish the foam with bitters.
+Choice / variation: IBA lemon version. Lime and dry-shake variants exist. House foamer and Angostura differ and remain separate.
+House comparison:
+Previous house-pisco-sour: 50 ml Pisco; 25 ml Dd Lemon Juice; 10 ml Gomme; 2 dash Angostura Bitters; 2 dash Ms Betters Bitters | Wet/dry shake + strain
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/pisco-sour/
+Verified: 2026-10-10 | Content version: 1
+
+PORNSTAR MARTINI
+reference-pornstar-martini
+Recommended: 1.5 piece Fresh passionfruit pulp; 60 ml Vanilla vodka; 15 ml Passionfruit liqueur; 15 ml Vanilla syrup; 15 ml Fresh lime juice; 60 ml Champagne (optional side serve)
+Technique: Shake · fine strain
+Glass: Chilled coupe | Ice: Cubed ice to shake; no serving ice | Garnish: Half a passionfruit
+  Scoop pulp from three fruit halves into the shaker.
+  Add vodka, liqueur, syrup and lime; shake with ice and fine strain.
+  Serve optional Champagne separately; never shake it.
+Choice / variation: Difford’s contemporary version includes lime. Ankrah’s earlier published version does not; neither is the sole correct version.
+House comparison: Blend Passionfruit is a liqueur, not the separately listed fruit purée. Verify exact house brand.
+Previous house-pornstar-martini: 35 ml Absolut Vanilla; 25 ml Blend Passionfruit; 35 ml Passionfruit Purée; 15 ml Dd Lime; 15 ml Pineapple Juice; 15 ml Vanilla | Shake + double strain
+Previous classic-pornstar-martini: 50 ml Vanilla vodka; 20 ml Passionfruit liqueur; 50 ml Passionfruit purée; 2 barspoon Vanilla sugar; 50 ml Champagne; 1 piece Passionfruit half | Shake
+Sources: Difford’s Guide https://www.diffordsguide.com/cocktails/recipe/2883/porn-star-martini
+Verified: 2026-10-10 | Content version: 1
+
+AMARETTO SOUR
+reference-amaretto-sour
+Recommended: 60 ml Amaretto; 30 ml Fresh lemon juice; 1 dash Angostura bitters; 15 ml Pasteurised egg white
+Technique: Wet shake · dry shake · fine strain
+Glass: Rocks | Ice: Fresh cubed ice | Garnish: Lemon and cocktail cherry; bitters on foam
+  Shake with ice, then strain back into an empty shaker.
+  Shake without ice to aerate and fine strain over fresh ice.
+Choice / variation: Difford’s amaretto-only version. Morgenthaler’s bourbon-strengthened variation is also respected. A dry-then-wet shake is a valid alternative; house foamer is separate.
+House comparison:
+Previous house-amaretto-sour: 50 ml Disarrono; 25 ml Dd Lemon Juice; 10 ml Gomme; 2 dash Angostura Bitters; 2 dash Ms Betters Bitters | Wet/dry shake + strain
+Previous classic-amaretto-sour: 45 ml Amaretto; 22.5 ml Cask-proof bourbon; 30 ml Lemon juice; 5 ml Rich sugar syrup; 15 ml Pasteurised egg white | Shake
+Sources: Difford’s Guide https://www.diffordsguide.com/cocktails/recipe/53/amaretto-sour
+Verified: 2026-10-10 | Content version: 1
+
+WHITE RUSSIAN
+reference-white-russian
+Recommended: 60 ml Vodka; 30 ml Coffee liqueur; 30 ml Whipping cream
+Technique: Stir base · float cream
+Glass: Rocks | Ice: Fresh cubed ice | Garnish: Freshly grated nutmeg
+  Stir vodka and coffee liqueur with ice, then strain over fresh ice.
+  Lightly aerate cream and pour gently to form a float.
+Choice / variation: Difford’s layered version; mixed or shaken versions also exist. House milk plus cream are retained.
+House comparison:
+Previous house-white-russian: 50 ml Absolut; 25 ml Blend Coffee; 25 ml Whole Milk; 35 ml Double Cream | Stir the two parts separate then float cream
+Sources: Difford’s Guide https://www.diffordsguide.com/cocktails/recipe/2093/white-russian-cocktail
+Verified: 2026-10-10 | Content version: 1
+
+HUGO SPRITZ
+reference-hugo-spritz
+Recommended: 8 piece Mint leaves; 40 ml Elderflower liqueur; 60 ml Soda water; 60 ml Prosecco
+Technique: Build · stir gently
+Glass: Wine glass | Ice: Cubed ice | Garnish: Lime wedge and mint
+  Add mint and ice to the glass, followed by the liquids.
+  Stir briefly and gently.
+Choice / variation: Difford’s liqueur version. Original syrup-based Hugo and a 3:2:1 spritz ratio also exist; do not interchange syrup and liqueur unnoticed.
+House comparison:
+Previous house-hugo-spritz: 50 ml St Germain; 125 ml Cremant; 15 ml Dd Lime; 0 top Soda | Build in glass
+Sources: Difford’s Guide https://www.diffordsguide.com/cocktails/recipe/5039/hugo-spritz
+Verified: 2026-10-10 | Content version: 1
+
+LIMONCELLO SPRITZ
+reference-limoncello-spritz
+Recommended: 75 ml Prosecco; 50 ml Limoncello; 30 ml Soda water
+Technique: Build · stir gently
+Glass: Wine glass | Ice: Cubed ice | Garnish: Orange slice
+  Pour over ice and stir gently.
+Choice / variation: Difford’s ratio selected. Spritz ratios vary; this does not correct the venue’s amounts.
+House comparison: House lists 125 ml soda with Crémant top; possible swapped measures. Needs confirmation; preserved verbatim.
+Previous house-limoncello-spritz: 50 ml Limoncello; 0 top Cremant; 125 ml Soda | Build in glass
+Sources: Difford’s Guide https://www.diffordsguide.com/cocktails/recipe/4242/limoncello-spritz
+Verified: 2026-10-10 | Content version: 1
+
+PIMM’S CUP
+reference-pimms
+Recommended: 50 ml Pimm’s No. 1; 150 ml Lemonade
+Technique: Build · stir gently
+Glass: Highball | Ice: Cubed ice | Garnish: Strawberries, orange, cucumber and mint
+  Build over ice, distributing the fruit through the glass.
+  Stir gently. Never shake the lemonade.
+Choice / variation: Producer’s 1:3 recipe selected. Garnish quantities vary; carbonated lemonade is always added at service.
+House comparison: Imported shake instruction is inappropriate for the listed lemonade drink.
+Previous house-pimms: 50 ml Pimms; 0 top Lemonade | Shake + double strain
+Technique correction: Shake + double strain → Build · stir gently
+Sources: Diageo Bar Academy https://www.diageobaracademy.com/es-es/home/explora-todas-las-recetas/pimms-cup
+Verified: 2026-10-10 | Content version: 1
+
+VODKA MARTINI
+reference-vodka-martini
+Recommended: 60 ml Vodka; 10 ml Dry vermouth
+Technique: Stir · strain
+Glass: Chilled Martini glass | Ice: Cubed ice to stir; no serving ice | Garnish: Lemon twist or olive
+  Stir the ingredients with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: BAR applies the IBA 6:1 ratio to the established vodka substitution. Confirm the guest’s preferred dryness and garnish.
+House comparison:
+Previous house-vodka-martini: 50 ml Belvedere; 10ml dry / 20ml wet Martini Extra Dry; 10ml if dirty Olive Brine (If Dirty) | Stir + strain
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/dry-martini/; Difford’s Guide — Martini ratios https://www.diffordsguide.com/g/1121/martini/how-to-make-a-dry-martini
+Verified: 2026-10-10 | Content version: 1
+
+GIN MARTINI — WET
+reference-gin-martini-wet
+Recommended: 45 ml Gin; 45 ml Dry vermouth
+Technique: Stir · strain
+Glass: Chilled Martini glass | Ice: Cubed ice to stir; no serving ice | Garnish: Lemon twist or olive
+  Stir the ingredients with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: BAR selects an equal-parts wet variation within the professional range described by Difford. Wet has no single mandatory ratio; Custom retains 50/20.
+House comparison:
+Previous house-gin-martini-wet: 50 ml Tanqueray No10; 20ml wet Martini Extra Dry; 10ml if dirty Olive Brine (If Dirty) | Stir + strain
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/dry-martini/; Difford’s Guide — Martini ratios https://www.diffordsguide.com/g/1121/martini/how-to-make-a-dry-martini
+Verified: 2026-10-10 | Content version: 1
+
+VODKA MARTINI — WET
+reference-vodka-martini-wet
+Recommended: 45 ml Vodka; 45 ml Dry vermouth
+Technique: Stir · strain
+Glass: Chilled Martini glass | Ice: Cubed ice to stir; no serving ice | Garnish: Lemon twist or olive
+  Stir the ingredients with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: BAR selects an equal-parts wet variation within the professional range described by Difford. Wet has no single mandatory ratio; Custom retains 50/20.
+House comparison:
+Previous house-vodka-martini-wet: 50 ml Belvedere; 20ml wet Martini Extra Dry; 10ml if dirty Olive Brine (If Dirty) | Stir + strain
+Sources: International Bartenders Association https://iba-world.com/iba-cocktail/dry-martini/; Difford’s Guide — Martini ratios https://www.diffordsguide.com/g/1121/martini/how-to-make-a-dry-martini
+Verified: 2026-10-10 | Content version: 1
+
+SPICY MARGARITA
+reference-spicy-margarita
+Recommended: 45 ml Blanco tequila; 22.5 ml Triple sec; 22.5 ml Fresh lime juice; 5 ml Agave syrup; 1 piece Deseeded chilli slice
+Technique: Muddle chilli · shake · fine strain
+Glass: Rocks | Ice: Fresh cubed ice | Garnish: Lime wedge; Tajín rim
+  Lightly muddle the chilli in a shaker.
+  Add liquids and ice, shake and fine strain into the prepared glass.
+Choice / variation: Difford’s base version, omitting its optional coriander, saline and bitters. Chilli heat varies: agree the desired heat before making it.
+House comparison: Public Pub menu names chilli Casamigos while house sheet names infused El Jimador. Do not change the approved mapping without confirmation.
+Previous house-spicy-margarita: 35 ml Chilli Infused El Jimador Blanca; 25 ml Blend Triple Sec; 25 ml Dd Lime; 10 ml Agave | Shake, double strain
+Sources: Difford’s Guide https://www.diffordsguide.com/cocktails/recipe/27664/spicy-margarita
+Verified: 2026-10-10 | Content version: 1
+
+BLOOD ORANGE MARGARITA
+reference-blood-orange-margarita
+Recommended: 60 ml Tequila; 30 ml Cointreau; 30 ml Blood orange juice; 30 ml Fresh lime juice
+Technique: Shake · strain
+Glass: Rocks | Ice: Fresh cubed ice | Garnish: Dried orange slice
+  Shake with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: Producer’s fresh blood-orange version selected. House uses syrup, orange juice and falernum: a separate intentional variation.
+House comparison:
+Previous house-blood-orange-margarita: 25 ml El Jimador Blanca; 25 ml Blend Triple Sec; 15 ml Taylors Velvet Falernum; 25 ml Orange Juice; 15 ml Dd Lime; 10 ml Blood Orange Syrup | Shake + double strain
+Sources: Cointreau — official recipe https://www.cointreau.com/int/en/cocktails/blood-orange-margarita
+Verified: 2026-10-10 | Content version: 1
+
+MEZCAL MARGARITA
+reference-mezcal-margarita
+Recommended: 45 ml Mezcal; 22.5 ml Triple sec; 22.5 ml Fresh lime juice; 5 ml Agave syrup; 2 drop Saline (20% salt by weight)
+Technique: Shake · fine strain
+Glass: Rocks | Ice: Fresh cubed ice | Garnish: Lime wedge
+  Shake with cubed ice until cold and diluted.
+  Strain into the prepared glass.
+Choice / variation: Difford’s mezcal version without optional bitters. Sweetness is adjustable; Custom keeps its tequila/mezcal split base.
+House comparison:
+Previous house-mezcal-margarita: 25 ml El Jimador Blanca; 15 ml Del Maguey Puebla; 15 ml Blend Triple Sec; 15 ml Dd Lime; 10 ml Agave | Shake + double strain
+Sources: Difford’s Guide https://www.diffordsguide.com/cocktails/recipe/2497/mezcal-margarita
+Verified: 2026-10-10 | Content version: 1
+
+CHILLI PINEAPPLE MARGARITA
+reference-chilli-pineapple-margarita
+Recommended: Not supplied: house-only variation
+Technique: Shake + strain
+Choice / variation: House variation, not a uniquely established classic. Related recipes support shaking its citrus/pineapple base, but do not substantiate its exact maraschino/Tabasco measures. No Recommended measures invented.
+House comparison: House-only variation. Recommended unavailable for this exact recipe. References are technique comparisons, not authority for its house amounts.
+Previous house-chilli-pineapple-margarita: 35 ml El Jimador Blanco; 15 ml Blend Triple Sec; 15 ml Maraschino; 50 ml Pineapple Juice; 25 ml Dd Lime; 10 ml Agave; 2 dash Tabasco | Shake + strain
+Sources: IBA — parent Margarita technique https://iba-world.com/iba-cocktail/margarita/; Cointreau — related pineapple sour https://www.cointreau.com/uk/en/cocktails/cointreau-tropical
+Verified: 2026-10-10 | Content version: 1

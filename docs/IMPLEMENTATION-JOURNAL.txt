@@ -1,0 +1,77 @@
+BAR v1 implementation - started 10 October 2026
+
+BASELINE
+Branch: codex/bar-app-readiness-review
+Starting HEAD: 57331f0a9b53830f85667936ff6c0deb83af9855 (same as origin/main)
+Pre-existing changes: persistence coordinator/lifecycle flush, image integrity
+fixes and tests, review document and menu fingerprint checker. Inspected and
+checkpointed in ef063c8 before new work. No CI workflow or remote Apple build
+configuration found. Windows has no Xcode/iOS Simulator or Swift toolchain.
+
+RELEASE BOUNDARY
+No Apple submission/account/signing changes. v1 is a local device-owner tool,
+not authenticated shared venue management. Rockwater Custom remains default.
+New work must preserve operational records and curated/reference isolation.
+
+PHASE A FINDINGS
+The original generic Sidecar is shaken, but the house Sidecar overrides it with
+an unrelated muddle/build instruction. 31 generic + 46 house classic records
+need identity-linked reference coverage, not just changing one text paragraph.
+Existing menu migration overwrites custom records and can merge old IDs unsafely.
+The earlier save-race fix is present but still needs native lifecycle tests.
+
+IMPLEMENTED — RELIABILITY
+Replaced destructive migration with stable-ID, baseline-aware content merging.
+Unknown legacy edits are retained and proposed changes queued for owner review;
+independent counts/units are never summed. Added realistic used-installation fixture.
+Extended revision-ordered persistence to restores and safety copies; pending edits
+are flushed before replacement. Malformed/future backups cannot replace valid state.
+Release maintenance now uses device-owner authentication and relocks in background.
+This is a local-device boundary, not employee authentication.
+
+IMPLEMENTED — COCKTAILS
+Researched all 77 source records as 49 classic identities. Added 48 separate curated
+Recommended specifications; one house-only variation deliberately has no invented
+canonical recipe. Global Custom default plus optional identity-keyed overrides.
+Returned service recipes are copies; source records reject display specifications.
+Sidecar, Mai Tai and Pimm's exact legacy technique errors corrected at presentation;
+original house measures/raw evidence preserved. Owner-edited methods are retained.
+Training excludes unresolved Custom sources and labels specification context.
+Saved batches freeze the selected recipe; favourite/search identity stays singular.
+Sources, versions, actions and alternative decisions included in the full audit.
+
+IMPLEMENTED — SERVICE
+Measurements/technique precede optional artwork; source detail stays collapsible.
+44pt controls, text wrapping and Dynamic Type adjustments retain BAR's identity.
+Stock placeholders mean uncounted, not zero; quantities/exports carry units.
+Prep completion is date-specific without resetting prepared amounts/inventory.
+No fake stock or example prep on clean install; existing installations preserved.
+Blank allergens are unverified; shared lists are not supplier orders; calculations
+do not deduct stock. Hidden products remain recoverable through owner catalogue.
+Custom input validates before dismissing, and actual save failures remain visible.
+Image downloads are HTTPS, bounded, cancellable and cached/downsampled for display.
+
+IMPLEMENTED — CONTENT
+Current four official menu PDF fingerprints unchanged. Checker distinguishes
+outlets, links and same-URL content changes; no automatic baseline promotion.
+Blend Coffee/Passionfruit kept distinct from espresso/puree. Old Forester display
+spelling corrected without changing its persisted ID. House discrepancies queued.
+All 245 decodable image sets screened; wrong group/variant defaults suppressed,
+including strawberry photo for plain Daiquiri. User photos retain precedence.
+All 59 wine records/mappings inventoried; tasting prose is editorial and catalogue
+availability never claims a physical count. Rights remain an external release gate.
+
+FINAL ADVERSARIAL FINDINGS
+An imported catalogueVersion could suppress future bundled migrations. Imports now
+retain the local migration marker; regression added. New-install empty prep copy
+no longer says service is ready. Hidden-product detail no longer offers ineffective
+add actions. Distinct Dirty Martini identity is no longer hidden behind Dry Martini.
+Late user photo/inactive state survives accepting a previously queued content update.
+
+EVIDENCE / BOUNDARY
+26 Windows Python tests pass: 15 content/export + 11 menu-monitor tests.
+60 Swift files parse with zero grammar errors; this is not compilation.
+Mac shell script passes bash -n. 104 BARCore and 13 native UI XCTest methods await
+macOS/Xcode execution; no native passing result or new screenshot is claimed.
+See release/HANDOFF.txt and MAC-VALIDATION.txt. No Apple submission/signing change,
+no new cloud infrastructure and no portfolio website edits.

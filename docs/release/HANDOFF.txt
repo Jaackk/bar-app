@@ -1,0 +1,85 @@
+BAR — MAC VALIDATION CANDIDATE — 10 OCTOBER 2026
+
+BASELINE
+Branch: codex/bar-app-readiness-review
+Starting commit: 57331f0a9b53830f85667936ff6c0deb83af9855
+Pre-existing uncommitted persistence/image/checker fixes were inspected, retained
+and checkpointed in ef063c8. They were not mistaken for new implementation.
+Only the actual native BAR repository is changed. Portfolio is untouched.
+
+DELIVERED SOURCE
+Reliability: revision-ordered saves, lifecycle flush, validated atomic writes,
+recoverable migration/reset/restore copies, full Files backup and validated restore.
+Data: stable-ID content merge with explicit conflicts; no count summing or blind
+replacement of local recipes, photos, inactive products, favourites or lists.
+Classics: Custom default/global preference/per-cocktail override; immutable bundled
+Recommended references; owner editing touches Custom only. Batching freezes the
+selected spec; search/favourites retain one identity; training labels context and
+revisits mastery when a recipe changes. Unresolved recipes excluded from quizzes.
+Service: recipe hierarchy, legible measures, 44pt controls, Dynamic Type adjustments,
+daily prep, meaningful stock units/uncounted state, clearer empty/error states,
+owner catalogue/recipe tools, hidden-product recovery, bounded photo handling.
+Content: safe Blend liqueur identities, Old Forester spelling, misleading image
+defaults suppressed, wine/image inventories, outlet-aware independent menu checker.
+Release: device-owner authentication in Release, privacy/account review, App Store
+draft, exact-commit Mac validation script and detailed physical-device checklist.
+No SaaS, cloud accounts, EPOS, supplier ordering, Apple submission or signing changes.
+
+CLASSIC AUDIT
+77 source records (31 generic + 46 house) represent 49 researched identities.
+48 Recommended specifications added; Chilli Pineapple Margarita stays house-only.
+IBA, Difford's Guide, Cointreau and Diageo professional references researched.
+All 49 have decisions/sources/provenance in classic-audit.json and classic-audit.txt.
+3 exact legacy preparation errors corrected: Sidecar, Mai Tai and Pimm's.
+Sidecar now shakes and strains. Rockwater 50/25/10 remains intact; Recommended
+50/20/20 is separate. Zero raw venue measures rewritten by preference selection.
+Other recipe/spec differences and accepted variants are recorded per drink rather
+than presenting one historic formula as the only truth. 8 source-ambiguous Custom
+classic identities plus source-check recipes are excluded from training.
+
+CURRENT MENU
+Checked 2026-10-10 against official Hove page: main drinks, Pub, linked Bar Shack,
+linked Coffee Shack. All four fingerprints unchanged; no baseline auto-acceptance.
+See menu-status.json for precise UTC time, URLs, fingerprints and extraction state.
+Image-only main PDF is explicitly not treated as empty text. Older Shack links do
+not establish today's availability. No inventory/count changes inferred.
+Venue questions (vodka, tequila, Blend labels and house measures) are in
+HUMAN-REVIEW.txt. They are not guessed from public menu descriptions.
+
+COUNTS / MEDIA
+16 Hove cocktails, 46 house records, 31 generic references, 59 venue wines,
+251 canonical products. 246 image sets: 245 decodable, 1 unused zero-byte legacy
+asset rejected by rendering checks. All decodable images contact-sheet screened.
+178 product defaults and 46 wine mappings have specific renderable assets; this
+does not establish exact vintage/pack size or redistribution permission.
+See image-inventory.json and wine-review.json. Existing provenance docs retained.
+
+VERIFICATION
+Executed/passed: 15 content/export tests + 11 menu-monitor tests = 26.
+Executed/failed: 0 in the final run.
+Static: 60 Swift files parsed, 0 grammar errors; Mac script passes bash -n.
+NOT executed: 104 BARCore XCTest methods (60 at original baseline), 13 BARUITests.
+No Xcode compiler, Simulator, device, signing or Instruments run on Windows.
+No current native screenshots or accessibility/runtime performance sign-off.
+Do not describe this as App-Store-ready or TestFlight validated.
+
+REMAINING GATES
+Windows: no known unresolved source-only blocker identified by this pass; Swift
+grammar is weaker than typechecking. Fix any genuine compiler/test issue on Mac.
+Mac/Xcode: Debug/Release compilation and core tests, two simulator UI runs, current
+screenshots, Release device-owner flow, migration/backup, background/rapid edits,
+offline/image failures, Dynamic Type/VoiceOver, memory and cold-launch inspection.
+Venue: confirm HUMAN-REVIEW.txt specifications, count/order units, prep/allergens,
+legacy duplicate reconciliation, branding/internal-spec and photography rights.
+Apple/account: support/privacy URLs, actual App Store privacy/age answers, unused
+build number, device signing and distribution decision. Team/bundle ID preserved.
+
+SHORTEST MAC PATH
+Preserve existing Mac work; fetch and switch codex/bar-app-readiness-review, pull
+--ff-only, compare HEAD with the exact final commit in the implementation handoff.
+Run: bash scripts/validate-mac.sh EXACT_COMMIT
+Then follow MAC-VALIDATION.txt for Release on the physical iPhone and a real shift.
+Open BAR.xcodeproj, scheme BAR. No separate native unit-test target exists;
+BARCore tests run through Swift Package Manager, UI tests through Xcode.
+Only after native checks and physical testing: archive and TestFlight pilot.
+Only after successful real-service pilot: consider public App Store submission.

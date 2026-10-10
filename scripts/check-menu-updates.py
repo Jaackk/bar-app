@@ -82,13 +82,46 @@ def menu_links(html):
     return sorted(result.values(), key=lambda x: (x["label"].casefold(), x["url"]))
 
 
+def outlet(row):
+    label = row.get("label", "").casefold()
+    if "coffee shack" in label:
+        return "hove-coffee-shack-linked"
+    if "bar shack" in label:
+        return "hove-bar-shack-linked"
+    if "pub" in label:
+        return "hove-pub"
+    return "hove-main"
+
+
+def document_text(data):
+    try:
+        import fitz
+    except ImportError:
+        return {"textStatus": "extractor-unavailable; compare retained PDF visually"}
+    with fitz.open(stream=data, filetype="pdf") as pdf:
+        lines = [" ".join(line.split()) for page in pdf for line in page.get_text().splitlines() if line.strip()]
+        return {"textStatus": "extracted" if lines else "image-only; visual review required", "textLines": lines,
+                "textSHA256": hashlib.sha256("\n".join(lines).encode()).hexdigest(), "pages": len(pdf)}
+
+
 def differences(baseline, current):
-    old = {r["url"]: r for r in baseline["menus"]}
-    new = {r["url"]: r for r in current["menus"]}
+    # One PDF can legitimately be linked by two outlets; don't collapse them by URL.
+    old = {(outlet(r), r["url"]): r for r in baseline["menus"]}
+    new = {(outlet(r), r["url"]): r for r in current["menus"]}
+    changed = []
+    for key in sorted(old.keys() & new.keys()):
+        if old[key]["sha256"] != new[key]["sha256"]:
+            before, after = old[key], new[key]
+            entry = {"before": before, "after": after}
+            if "textLines" in before and "textLines" in after:
+                entry["addedTextCandidates"] = sorted(set(after["textLines"]) - set(before["textLines"]))
+                entry["removedTextCandidates"] = sorted(set(before["textLines"]) - set(after["textLines"]))
+                entry["reviewNote"] = "Text differences may be additions, removals, renames or layout changes. Review the actual outlet PDF; no recipe or stock update is approved."
+            changed.append(entry)
     return {
         "added": [new[u] for u in sorted(new.keys() - old.keys())],
         "removed": [old[u] for u in sorted(old.keys() - new.keys())],
-        "changed": [{"before": old[u], "after": new[u]} for u in sorted(old.keys() & new.keys()) if old[u]["sha256"] != new[u]["sha256"]],
+        "changed": changed,
     }
 
 
@@ -119,7 +152,7 @@ def check(destination, accept=False):
                 if not target.exists():
                     target.write_bytes(data)
                 lower_headers = {k.lower(): v for k, v in headers.items()}
-                report["menus"].append({**link, "resolvedURL": final_url, "sha256": digest,
+                report["menus"].append({**link, "outlet": outlet(link), **document_text(data), "resolvedURL": final_url, "sha256": digest,
                                          "bytes": len(data), "lastModified": lower_headers.get("last-modified"),
                                          "document": f"documents/{digest}.pdf"})
             except Exception as exc:

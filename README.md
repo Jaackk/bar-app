@@ -6,11 +6,11 @@ The cream, stone, olive, sage and coral design follows the supplied Rockwater mo
 
 ## Screenshots
 
-Actual iPhone Simulator captures are included in [docs/screenshots](docs/screenshots). See [Home](docs/screenshots/iphone-15-pro/home.png), [cocktail detail](docs/screenshots/iphone-15-pro/cocktail-detail.png), [batch calculator](docs/screenshots/iphone-15-pro/batch.png) and [Wine Finder](docs/screenshots/iphone-15-pro/wine-finder.png).
+The captures in [docs/screenshots](docs/screenshots) are historical, not validation of the current source. Start with the [current handoff](docs/release/HANDOFF.txt) and [Mac validation procedure](docs/release/MAC-VALIDATION.txt). This Windows-reviewed source is a **Mac Validation Candidate**, not a signed or TestFlight-tested release.
 
 ## What works
 
-- Venue cocktail browsing and a 31-drink classics library, with spirit/style filters and venue overrides.
+- Venue cocktail browsing: 16 Hove drinks and 46 house-classic records, with 49 researched classic identities spanning the 31 generic and 46 house records. 48 have separate Recommended specifications; one house-only variation remains Custom.
 - Ranked universal search across names, ingredients, flavours, methods, glassware, wines and prep; exclusions such as `no egg`.
 - Cocktail specifications, allergens, service instructions, favourites and bounded recent history.
 - Batch calculations with custom serves, quick quantities, adjustable wastage, litres and whole-bottle requirements. Service additions, separate preparations, garnish counts and non-batchable items retain their meaning.
@@ -19,10 +19,10 @@ Actual iPhone Simulator captures are included in [docs/screenshots](docs/screens
 - Prep recipes with yield-aware scaling, current/target amounts, progress, completion and storage notes.
 - Separate persistent Restock and Stock Order lists, compact rows, swipe removal, a searchable product picker, native copy/share and editable product photos. The shared catalogue feeds universal Search and manager Stocktake.
 - Flashcards, recipe and ingredient quizzes generated from the actual database, with persistent local progress.
-- Employee name, ml/cl recipe preference, default wastage, local reset and development-only role preview.
-- Validated local content import in development manager mode; manager par editing through the repository-backed app model.
+- Employee name, ml/cl recipe preference, default wastage, global/per-classic specification selection and full backup/restore with safety copies.
+- Device-owner-authenticated maintenance in Release: Custom recipe edits, catalogue/photos, pars, content imports and conflict review. The role preview remains Debug-only.
 
-There is no production account system, cloud sync, EPOS integration or published App Store build. The content editing foundation is a validated JSON importer; a full form-based manager recipe editor is a future feature.
+There is no organisation account system, cloud sync, supplier ordering or EPOS integration. Local device-owner access is not shared-venue authentication. Custom measurements remain separate from researched Recommended content; favourites use cocktail identity and saved batches retain the selected specification. Public distribution also requires content/image permission review.
 
 ## Run in Xcode
 

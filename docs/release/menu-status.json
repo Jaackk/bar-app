@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-10-10T05:36:23.471754+00:00",
+  "source": "https://www.rockwater.uk/hove/",
+  "scope": "Published Hove drinks, Pub and Shack menu documents; not physical inventory.",
+  "status": "unchanged",
+  "errors": [],
+  "differences": {
+    "added": [],
+    "removed": [],
+    "changed": []
+  },
+  "menus": [
+    {
+      "label": "Drinks Menu",
+      "url": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+      "outlet": "hove-main",
+      "textStatus": "image-only; visual review required",
+      "textSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "pages": 9,
+      "resolvedURL": "https://www.rockwater.uk/wp-content/uploads/2026/05/Drinks-menu-May-1.pdf",
+      "sha256": "646403749612bcd479a72e169325ce64905d9f751885959a75b7a9554182538a",
+      "bytes": 1154809,
+      "lastModified": "Fri, 01 May 2026 01:52:32 GMT"
+    },
+    {
+      "label": "The Bar Shack",
+      "url": "https://rockwater.uk/wp-content/uploads/2025/03/SPRING-25-HOVE-BAR-SHACK-2.pdf",
+      "outlet": "hove-bar-shack-linked",
+      "textStatus": "extracted",
+      "textSHA256": "35759a4a31b4301c2983eaafbff18b078c8aa04dc8b984bd88e31575ee5019b5",
+      "pages": 1,
+      "resolvedURL": "https://www.rockwater.uk/wp-content/uploads/2025/03/SPRING-25-HOVE-BAR-SHACK-2.pdf",
+      "sha256": "00279b60d7601e75cc63d4c326e12a2d8d32778fc04e5c2e00b661515cc00a07",
+      "bytes": 73996,
+      "lastModified": "Mon, 24 Mar 2025 23:40:56 GMT"
+    },
+    {
+      "label": "The Coffee Shack",
+      "url": "https://rockwater.uk/wp-content/uploads/2025/03/SPRING-25-HOVE-COFFEE-SHACK-2.pdf",
+      "outlet": "hove-coffee-shack-linked",
+      "textStatus": "extracted",
+      "textSHA256": "8d484ca260efc4506c87ba8019aa4b1e3b10381666ca5fbbf8f5c984f612eab6",
+      "pages": 1,
+      "resolvedURL": "https://www.rockwater.uk/wp-content/uploads/2025/03/SPRING-25-HOVE-COFFEE-SHACK-2.pdf",
+      "sha256": "f6eea0178afb372924895ce7179494f003d78c30d06cc37210da82fb58e6919d",
+      "bytes": 88353,
+      "lastModified": "Mon, 24 Mar 2025 23:41:38 GMT"
+    },
+    {
+      "label": "The Pub Menu",
+      "url": "https://www.rockwater.uk/wp-content/uploads/2026/09/RW_THE_PUB_AUTUMN_2026-WEB.pdf",
+      "outlet": "hove-pub",
+      "textStatus": "extracted",
+      "textSHA256": "a9f624034dab67ac0a2d4371338809e8b1f4c37a6fabe3f48f4742d581197880",
+      "pages": 6,
+      "resolvedURL": "https://www.rockwater.uk/wp-content/uploads/2026/09/RW_THE_PUB_AUTUMN_2026-WEB.pdf",
+      "sha256": "131918be747f3dca7ca1c21cd7b79fd02c73aa9ecd310fdfbfa17d7f0b918575",
+      "bytes": 2224176,
+      "lastModified": "Tue, 29 Sep 2026 10:22:13 GMT"
+    }
+  ],
+  "baselineAccepted": false,
+  "decision": "No changed fingerprint: no public-menu content update manufactured. Linked older Shack material remains separate and is not current stock evidence."
+}

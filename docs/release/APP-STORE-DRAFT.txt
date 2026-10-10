@@ -1,0 +1,88 @@
+BAR — DRAFT RELEASE MATERIAL (NOT SUBMITTED)
+
+Name: BAR
+Subtitle option: Recipes and tools for service
+Alternative: Your offline bar companion
+
+Description draft:
+BAR keeps useful bar knowledge and service tools close at hand. Find a cocktail,
+check its measures and method, explore wines, plan a batch and keep preparation,
+restock and stock-count notes on your iPhone—even without a connection.
+
+Compare your venue's Custom classic specifications with researched Recommended
+references. Choose a default, override it for a particular drink and see which
+specification you are using. Save batch calculations with their selected recipe.
+
+Keep favourites, practise with flashcards and quizzes, maintain product photos,
+record wastage and export your data for backup. Owner maintenance uses the device's
+authentication. BAR v1 includes a Hove-focused catalogue; general venue onboarding,
+cloud collaboration and supplier ordering are not included.
+
+Do not publish this draft until venue-content and image permissions are resolved.
+Do not claim live stock, allergen safety, real-time menu sync or automatic orders.
+
+REVIEW NOTES DRAFT
+No app login or subscription. Core service content works offline. Owner tools:
+Home menu > Profile > Unlock owner tools, using the reviewing device's configured
+passcode/biometrics. Local owner authentication is not a shared-venue account.
+Cancelled authentication leaves maintenance locked. A passcode-enabled device is
+required to test owner editing, content imports and restore. Device authentication
+uses NSFaceIDUsageDescription; no biometric data is read or stored by BAR.
+PhotosPicker grants access only to a selected photo; no broad photo-library or
+camera permission is requested. Optional HTTPS image download is user initiated.
+No purchases, ads, analytics SDK, account backend or runtime menu monitor.
+
+PRIVACY POLICY DRAFT — PUBLISH AT A WORKING URL BEFORE SUBMISSION
+BAR stores your name/preferences, favourites, training history, product photos,
+recipes, prep, batches, counts and lists in the app's local storage. It does not
+send this operational data to a BAR server. It has no account system, analytics
+service or cloud collaboration. Your iPhone's normal backup services may include
+app data according to your device settings. Protect exported backups: they include
+your photos and operational data and are not separately password-encrypted.
+
+Choosing a photo stores a resized local copy. Loading an external image contacts
+the HTTPS host you enter (and its redirects); that host can see your network
+address and request details under its own policy. BAR uses an ephemeral session,
+limits downloads and stores the resulting image locally. External source links
+open websites governed by their own privacy policies. Exports go only to the
+destinations you choose in the system Files/share interface.
+
+You can reset local data from authenticated owner tools. A local safety copy is
+retained for recovery. Deleting the app removes its local container; copies you
+exported or made through device backups remain under your control. BAR never
+receives or stores your device passcode or biometric template.
+
+Fill in the actual responsible developer contact and working support URL before
+publication. hello@raskyjack.com is a proposed contact, not verified by this pass.
+No portfolio/privacy website was created or changed here.
+
+PRIVACY LABEL / MANIFEST REVIEW
+Source has no developer-operated data collection/tracking SDK. 'Data Not Collected'
+is a plausible label only after archive/dependency/network review confirms it and
+the optional image request behaviour is described correctly. Do not submit based
+on this draft alone. The existing privacy manifest remains no tracking/no collected
+data/no declared required-reason APIs; source uses no UserDefaults, file timestamps,
+disk-capacity or system-uptime APIs. Check the final Xcode privacy report for actual
+SDK/runtime usage rather than adding arbitrary required-reason declarations.
+
+Age-rating questionnaire: accurately disclose alcohol references/content; the app
+is professional reference software, not alcohol ordering. Apple determines the
+rating from the completed questionnaire; no numeric rating is guessed here.
+
+CURRENT APPLE SOURCES CHECKED 10 OCTOBER 2026
+Xcode 26 / iOS 26 SDK minimum for uploads since 28 April 2026:
+https://developer.apple.com/news/upcoming-requirements/?id=04282026a
+Support and privacy links:
+https://developer.apple.com/app-store/review/
+Privacy policy URL and privacy answers:
+https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-privacy
+Age rating:
+https://developer.apple.com/help/app-store-connect/manage-app-information/set-an-app-age-rating/
+
+SCREENSHOT STORY
+1. Fast service: actual Home/search on a current build.
+2. Sidecar Custom/Recommended, legible measures and technique.
+3. Batch premix separated from per-glass additions.
+4. Wine guidance and product imagery with approved rights.
+5. Restock list with clear quantities/units.
+6. Local tools: prep/training/backup. Avoid claims absent from the shipping app.

@@ -1,0 +1,4820 @@
+[
+  {
+    "id": "reference-sidecar",
+    "aliases": [
+      "house-sidecar",
+      "classic-sidecar"
+    ],
+    "actions": [
+      "shake",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/sidecar/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "House measures 50/25/10 are preserved. Imported muddle/build text is unrelated to these ingredients.",
+    "recommended": {
+      "id": "reference-sidecar",
+      "name": "Sidecar",
+      "ingredients": [
+        {
+          "id": "reference-sidecar-1",
+          "name": "Cognac",
+          "amount": 50.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-sidecar-2",
+          "name": "Triple sec",
+          "amount": 20.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-sidecar-3",
+          "name": "Fresh lemon juice",
+          "amount": 20.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Shake · strain",
+      "glass": "Chilled coupe",
+      "ice": "Cubed ice to shake; no serving ice",
+      "garnish": "None",
+      "prepInstructions": [
+        "Shake with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Cognac",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "correctedLegacyMethod": "Muddle limes/sugar + build",
+    "customMethod": "Shake · strain",
+    "customSteps": [
+      "Shake the listed cognac, orange liqueur and lemon with ice.",
+      "Strain into the house glass; use the house garnish."
+    ],
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-sidecar",
+        "name": "Sidecar",
+        "specification": "50 ml Hennessy V.S; 25 ml Blend Triple Sec; 10 ml Dd Lemon",
+        "method": "Muddle limes/sugar + build",
+        "steps": [
+          "Muddle limes/sugar + build"
+        ],
+        "source": "MISC · H18:I29"
+      },
+      {
+        "id": "classic-sidecar",
+        "name": "Sidecar",
+        "specification": "50 ml Cognac; 20 ml Triple sec; 20 ml Lemon juice",
+        "method": "Shake",
+        "steps": [
+          "If requested, prepare a sugar half rim.",
+          "Shake all measured liquids with ice.",
+          "Fine strain into a chilled coupe."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact.",
+      "Corrected exact imported technique in the service view: Muddle limes/sugar + build → Shake · strain"
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-old-fashioned",
+    "aliases": [
+      "house-old-fashioned",
+      "classic-old-fashioned"
+    ],
+    "actions": [
+      "muddle",
+      "build",
+      "stir"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/old-fashioned/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "Brown sugar pieces/cubes and brand differ; quantity interpretation needs venue confirmation.",
+    "recommended": {
+      "id": "reference-old-fashioned",
+      "name": "Old Fashioned",
+      "ingredients": [
+        {
+          "id": "reference-old-fashioned-1",
+          "name": "Bourbon or rye whiskey",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-old-fashioned-2",
+          "name": "Sugar cube",
+          "amount": 1.0,
+          "unit": "piece",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-old-fashioned-3",
+          "name": "Angostura bitters",
+          "amount": 0.0,
+          "unit": "dash",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": "",
+          "quantityDisplay": "A few dashes"
+        },
+        {
+          "id": "reference-old-fashioned-4",
+          "name": "Water",
+          "amount": 0.0,
+          "unit": "dash",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": "",
+          "quantityDisplay": "A few dashes"
+        }
+      ],
+      "method": "Dissolve sugar · build · stir",
+      "glass": "Rocks",
+      "ice": "Cubed ice",
+      "garnish": "Orange peel or slice; cocktail cherry",
+      "prepInstructions": [
+        "Dissolve the sugar with bitters and a little water in the glass.",
+        "Add ice and whiskey; stir to chill and dilute."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Bourbon or rye whiskey",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-old-fashioned",
+        "name": "Old Fashioned",
+        "specification": "50 ml Old Forestor; 2 SUGAR CUBES Brown Sugar; 2 dash Angostura Bitters",
+        "method": "Muddle sugar + stir + strain",
+        "steps": [
+          "Muddle sugar + stir + strain"
+        ],
+        "source": "WHISKEY · B6:C23"
+      },
+      {
+        "id": "classic-old-fashioned",
+        "name": "Old Fashioned",
+        "specification": "45 ml Bourbon or rye whiskey; 1 piece Sugar cube; 3 dash Angostura bitters; 3 dash Water",
+        "method": "Stir",
+        "steps": [
+          "Dissolve the sugar with bitters and water in the glass.",
+          "Add whiskey and ice, then stir until cold with balanced dilution.",
+          "Express the orange zest and garnish."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-negroni",
+    "aliases": [
+      "house-negroni",
+      "classic-negroni"
+    ],
+    "actions": [
+      "build",
+      "stir"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/negroni/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-negroni",
+      "name": "Negroni",
+      "ingredients": [
+        {
+          "id": "reference-negroni-1",
+          "name": "Gin",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-negroni-2",
+          "name": "Campari",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-negroni-3",
+          "name": "Sweet red vermouth",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Build · stir",
+      "glass": "Rocks",
+      "ice": "Cubed ice",
+      "garnish": "Half an orange slice",
+      "prepInstructions": [
+        "Add ingredients to an ice-filled glass.",
+        "Stir gently to chill and combine."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Gin",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-negroni",
+        "name": "Negroni",
+        "specification": "25 ml Salcombe Rose; 25 ml Campari; 25 ml Martini Rosso",
+        "method": "Stir + strain",
+        "steps": [
+          "Stir + strain"
+        ],
+        "source": "GIN · E18:F50"
+      },
+      {
+        "id": "classic-negroni",
+        "name": "Negroni",
+        "specification": "30 ml Gin; 30 ml Campari; 30 ml Sweet red vermouth",
+        "method": "Build & stir",
+        "steps": [
+          "Add all three measured ingredients to an ice-filled rocks glass.",
+          "Stir to chill and dilute, then garnish."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-margarita",
+    "aliases": [
+      "house-margarita",
+      "classic-margarita"
+    ],
+    "actions": [
+      "shake",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/margarita/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA straight-up version. Rocks service and sweeter UK bar ratios are also common. Custom retains its agave syrup and house proportions.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-margarita",
+      "name": "Margarita",
+      "ingredients": [
+        {
+          "id": "reference-margarita-1",
+          "name": "100% agave tequila",
+          "amount": 50.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-margarita-2",
+          "name": "Triple sec",
+          "amount": 20.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-margarita-3",
+          "name": "Fresh lime juice",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Shake · strain",
+      "glass": "Chilled cocktail glass",
+      "ice": "Cubed ice to shake; no serving ice",
+      "garnish": "Optional half salt rim",
+      "prepInstructions": [
+        "Shake with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "IBA straight-up version. Rocks service and sweeter UK bar ratios are also common. Custom retains its agave syrup and house proportions.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "100% agave tequila",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-margarita",
+        "name": "Margarita",
+        "specification": "35 ml El Jimador Blanca; 25 ml Blend Triple Sec; 15 ml Dd Lime; 10 ml Agave",
+        "method": "Shake + double strain",
+        "steps": [
+          "Shake + double strain"
+        ],
+        "source": "TEQUILA · B6:C18"
+      },
+      {
+        "id": "classic-margarita",
+        "name": "Margarita",
+        "specification": "50 ml Blanco tequila; 20 ml Triple sec; 15 ml Lime juice",
+        "method": "Shake",
+        "steps": [
+          "If requested, salt half the rim before building the drink.",
+          "Shake the measured liquids with ice.",
+          "Fine strain into a chilled coupe."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-tommys-margarita",
+    "aliases": [
+      "house-tommys-margarita",
+      "classic-tommy-s-margarita"
+    ],
+    "actions": [
+      "shake",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/tommys-margarita/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "Current IBA uses 30 ml agave nectar. Syrup concentration and acidity vary; many professional versions use less. Keep the venue’s 10 ml Custom separate.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-tommys-margarita",
+      "name": "Tommy’s Margarita",
+      "ingredients": [
+        {
+          "id": "reference-tommys-margarita-1",
+          "name": "100% agave tequila",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-tommys-margarita-2",
+          "name": "Fresh lime juice",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-tommys-margarita-3",
+          "name": "Agave nectar",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Shake · strain",
+      "glass": "Rocks",
+      "ice": "Fresh cubed ice",
+      "garnish": "Lime slice",
+      "prepInstructions": [
+        "Shake with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "Current IBA uses 30 ml agave nectar. Syrup concentration and acidity vary; many professional versions use less. Keep the venue’s 10 ml Custom separate.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "100% agave tequila",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-tommys-margarita",
+        "name": "Tommy’s Margarita",
+        "specification": "50 ml Casamigos Blanca; 25 ml Dd Lime; 10 ml Agave",
+        "method": "Shake, double strain",
+        "steps": [
+          "Shake, double strain"
+        ],
+        "source": "TEQUILA · B19:C30"
+      },
+      {
+        "id": "classic-tommy-s-margarita",
+        "name": "Tommy's Margarita",
+        "specification": "60 ml 100% agave tequila; 30 ml Lime juice; 30 ml Agave nectar",
+        "method": "Shake",
+        "steps": [
+          "Shake the tequila, lime and agave nectar with ice.",
+          "Strain over fresh cubed ice and garnish."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-daiquiri",
+    "aliases": [
+      "house-daiquiri",
+      "classic-daiquiri"
+    ],
+    "actions": [
+      "stir",
+      "shake",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/daiquiri/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "House specifies one fresh lime, not a measured yield. Do not convert it into invented ml in batching.",
+    "recommended": {
+      "id": "reference-daiquiri",
+      "name": "Daiquiri",
+      "ingredients": [
+        {
+          "id": "reference-daiquiri-1",
+          "name": "White rum",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-daiquiri-2",
+          "name": "Fresh lime juice",
+          "amount": 20.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-daiquiri-3",
+          "name": "Fine white sugar",
+          "amount": 2.0,
+          "unit": "barspoon",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Dissolve sugar · shake · strain",
+      "glass": "Chilled coupe",
+      "ice": "Cubed ice to shake; no serving ice",
+      "garnish": "None",
+      "prepInstructions": [
+        "Dissolve the sugar in the liquids before adding ice.",
+        "Shake with ice; strain into the chilled glass."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "White rum",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-daiquiri",
+        "name": "Daiquiri",
+        "specification": "50 ml Havana 3; 1 LIME Fresh Lime; 15 ml Gomme; 1 dash Saline",
+        "method": "Shake + double strain",
+        "steps": [
+          "Shake + double strain",
+          "IF FLAVOURED: SWAP GOMME FOR STRAWB SYRUP",
+          "OR ADD 10ML PASSIONFRUIT"
+        ],
+        "source": "RUM · B6:C21"
+      },
+      {
+        "id": "classic-daiquiri",
+        "name": "Daiquiri",
+        "specification": "60 ml White Cuban rum; 20 ml Lime juice; 2 barspoon Superfine sugar",
+        "method": "Shake",
+        "steps": [
+          "Stir rum, lime and sugar in a shaker until the sugar dissolves.",
+          "Add ice and shake until chilled.",
+          "Fine strain into a chilled coupe."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-mojito",
+    "aliases": [
+      "house-mojito",
+      "classic-mojito"
+    ],
+    "actions": [
+      "muddle",
+      "build",
+      "top",
+      "stir"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/mojito/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "House ingredient list omits soda. Confirm whether that omission is intentional; no house amount invented.",
+    "recommended": {
+      "id": "reference-mojito",
+      "name": "Mojito",
+      "ingredients": [
+        {
+          "id": "reference-mojito-1",
+          "name": "White Cuban rum",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-mojito-2",
+          "name": "Fresh lime juice",
+          "amount": 20.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-mojito-3",
+          "name": "Mint sprigs",
+          "amount": 6.0,
+          "unit": "sprig",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-mojito-4",
+          "name": "White cane sugar",
+          "amount": 2.0,
+          "unit": "teaspoon",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-mojito-5",
+          "name": "Soda water",
+          "amount": 0.0,
+          "unit": "top",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Gently press · build · top",
+      "glass": "Highball",
+      "ice": "Cubed ice",
+      "garnish": "Mint sprig and lime slice",
+      "prepInstructions": [
+        "Gently press mint with lime and sugar; avoid shredding the mint.",
+        "Add a little soda and ice, then rum.",
+        "Top with soda and stir gently."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "White Cuban rum",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": false,
+    "previousRecords": [
+      {
+        "id": "house-mojito",
+        "name": "Mojito",
+        "specification": "50 ml Havana 3; 20 ml Dd Lime Juice; 8.0 Mint; 3.0 Lime Wedges; 15 ml Gomme",
+        "method": "Muddle lime + build",
+        "steps": [
+          "Muddle lime + build"
+        ],
+        "source": "RUM · E19:F37"
+      },
+      {
+        "id": "classic-mojito",
+        "name": "Mojito",
+        "specification": "45 ml White Cuban rum; 20 ml Lime juice; 6 piece Mint leaves; 2 barspoon White cane sugar; 0 top Soda water; 1 sprig Mint sprig",
+        "method": "Build",
+        "steps": [
+          "Gently press mint with sugar and lime in the glass.",
+          "Add a little soda to dissolve the sugar.",
+          "Fill with ice, add rum and top with chilled soda.",
+          "Lift gently with a spoon, then garnish."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-cosmopolitan",
+    "aliases": [
+      "house-cosmopolitan",
+      "classic-cosmopolitan"
+    ],
+    "actions": [
+      "shake",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/cosmopolitan/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-cosmopolitan",
+      "name": "Cosmopolitan",
+      "ingredients": [
+        {
+          "id": "reference-cosmopolitan-1",
+          "name": "Citron vodka",
+          "amount": 40.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-cosmopolitan-2",
+          "name": "Cointreau",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-cosmopolitan-3",
+          "name": "Fresh lime juice",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-cosmopolitan-4",
+          "name": "Cranberry juice",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Shake · strain",
+      "glass": "Chilled cocktail glass",
+      "ice": "Cubed ice to shake; no serving ice",
+      "garnish": "Lemon twist",
+      "prepInstructions": [
+        "Shake with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Citron vodka",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-cosmopolitan",
+        "name": "Cosmopolitan",
+        "specification": "35 ml Absolut Vodka; 15 ml Blend Triple Sec; 20 ml Dd Lime Juice; 50 ml Cranberry Juice",
+        "method": "Shake + double strain",
+        "steps": [
+          "Shake + double strain"
+        ],
+        "source": "VODKA · E6:F18"
+      },
+      {
+        "id": "classic-cosmopolitan",
+        "name": "Cosmopolitan",
+        "specification": "40 ml Citron vodka; 15 ml Cointreau; 15 ml Lime juice; 30 ml Cranberry juice",
+        "method": "Shake",
+        "steps": [
+          "Shake all liquids with ice until very cold.",
+          "Fine strain into a chilled coupe and express the twist."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-espresso-martini",
+    "aliases": [
+      "house-espresso-martini",
+      "classic-espresso-martini"
+    ],
+    "actions": [
+      "shake",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/espresso-martini/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA does not give espresso volume: retain one espresso rather than inventing a ml yield. Custom coffee liqueur is not espresso.",
+    "customReview": "Pub menu names Absolut Vanilla; house sheet names Absolut Vodka. Blend Coffee must remain a liqueur concept.",
+    "recommended": {
+      "id": "reference-espresso-martini",
+      "name": "Espresso Martini",
+      "ingredients": [
+        {
+          "id": "reference-espresso-martini-1",
+          "name": "Vodka",
+          "amount": 50.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-espresso-martini-2",
+          "name": "Kahlúa coffee liqueur",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-espresso-martini-3",
+          "name": "Sugar syrup",
+          "amount": 10.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-espresso-martini-4",
+          "name": "Strong espresso",
+          "amount": 1.0,
+          "unit": "piece",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": "",
+          "quantityDisplay": "1 espresso"
+        }
+      ],
+      "method": "Shake hard · strain",
+      "glass": "Chilled cocktail glass",
+      "ice": "Cubed ice to shake; no serving ice",
+      "garnish": "Three coffee beans",
+      "prepInstructions": [
+        "Shake the liquids hard with ice to develop a foam.",
+        "Strain into a chilled glass; garnish."
+      ],
+      "serviceNotes": "IBA does not give espresso volume: retain one espresso rather than inventing a ml yield. Custom coffee liqueur is not espresso.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Vodka",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": false,
+    "previousRecords": [
+      {
+        "id": "house-espresso-martini",
+        "name": "Espresso Martini",
+        "specification": "35 ml Absolut Vodka; 35 ml Blend Coffee; 50 ml Espresso; 15 ml Vanilla",
+        "method": "Shake + double strain",
+        "steps": [
+          "Shake + double strain"
+        ],
+        "source": "VODKA · B6:C18"
+      },
+      {
+        "id": "classic-espresso-martini",
+        "name": "Espresso Martini",
+        "specification": "50 ml Vodka; 30 ml Coffee liqueur; 10 ml Sugar syrup; 30 ml Fresh espresso; 3 piece Coffee beans",
+        "method": "Shake",
+        "steps": [
+          "Prepare a fresh espresso and measure it.",
+          "Shake all liquids firmly with ice to create a fine crema.",
+          "Fine strain into a chilled coupe and place three beans on top."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-whiskey-sour",
+    "aliases": [
+      "house-whisky-sour",
+      "classic-whiskey-sour"
+    ],
+    "actions": [
+      "shake",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/whiskey-sour/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA optional egg white is not a fixed ml measure. Dry-then-wet or wet-then-dry shaking are accepted foam techniques. Custom uses its own foamer.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-whiskey-sour",
+      "name": "Whiskey Sour",
+      "ingredients": [
+        {
+          "id": "reference-whiskey-sour-1",
+          "name": "Bourbon whiskey",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-whiskey-sour-2",
+          "name": "Fresh lemon juice",
+          "amount": 25.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-whiskey-sour-3",
+          "name": "Sugar syrup",
+          "amount": 20.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-whiskey-sour-4",
+          "name": "Egg white (optional)",
+          "amount": 0.0,
+          "unit": "drop",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": "",
+          "quantityDisplay": "A few drops (optional)"
+        }
+      ],
+      "method": "Shake · strain",
+      "glass": "Rocks or chilled sour glass",
+      "ice": "Fresh cubed ice if on the rocks",
+      "garnish": "Orange slice and cherry, or orange zest",
+      "prepInstructions": [
+        "If using egg white, shake vigorously to aerate; a separate dry shake may be used.",
+        "Shake with ice to chill and dilute; strain into the prepared glass."
+      ],
+      "serviceNotes": "IBA optional egg white is not a fixed ml measure. Dry-then-wet or wet-then-dry shaking are accepted foam techniques. Custom uses its own foamer.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Bourbon whiskey",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-whisky-sour",
+        "name": "Whisky Sour",
+        "specification": "50 ml Old Forestor; 25 ml Dd Lemon Juice; 15 ml Gomme; 2 dash Angostura Bitters; 2 dash Ms Betters Bitters",
+        "method": "Wet/dry shake + strain",
+        "steps": [
+          "Wet/dry shake + strain"
+        ],
+        "source": "WHISKEY · E6:F34"
+      },
+      {
+        "id": "classic-whiskey-sour",
+        "name": "Whiskey Sour",
+        "specification": "45 ml Bourbon whiskey; 25 ml Lemon juice; 20 ml Sugar syrup; 15 ml Pasteurised egg white (optional)",
+        "method": "Shake",
+        "steps": [
+          "If using egg white, combine ingredients and shake without ice.",
+          "Add ice and shake until well chilled.",
+          "Fine strain over fresh ice and garnish."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-mai-tai",
+    "aliases": [
+      "house-mai-tai",
+      "classic-mai-tai"
+    ],
+    "actions": [
+      "shake"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/mai-tai/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "House uses a split white/aged rum build with a float. Preserve the float and proportions, but shake the still sour base rather than merely build it.",
+    "recommended": {
+      "id": "reference-mai-tai",
+      "name": "Mai Tai",
+      "ingredients": [
+        {
+          "id": "reference-mai-tai-1",
+          "name": "Amber Jamaican rum",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-mai-tai-2",
+          "name": "Martinique molasses rum",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-mai-tai-3",
+          "name": "Orange curaçao",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-mai-tai-4",
+          "name": "Orgeat",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-mai-tai-5",
+          "name": "Fresh lime juice",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-mai-tai-6",
+          "name": "Sugar syrup",
+          "amount": 7.5,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Shake · pour",
+      "glass": "Double rocks or highball",
+      "ice": "Shaking ice retained",
+      "garnish": "Pineapple, mint and lime peel",
+      "prepInstructions": [
+        "Shake the ingredients with ice.",
+        "Pour into the serving glass and garnish."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Amber Jamaican rum",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "correctedLegacyMethod": "Build + garnish",
+    "customMethod": "Shake base · strain · float",
+    "customSteps": [
+      "Shake the listed base ingredients with ice, keeping the house aged-rum float separate.",
+      "Strain over fresh ice; add the specified rum float and garnish."
+    ],
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-mai-tai",
+        "name": "Mai Tai",
+        "specification": "20 ml Havana 3 Yr; 15 ml Blend Triple Sec; 10 ml Gomme Syrup; 20 ml Lime Juice; 10 ml Orgeat; 20 ml Havana 7",
+        "method": "Build + garnish",
+        "steps": [
+          "Build + garnish"
+        ],
+        "source": "RUM · B22:C37"
+      },
+      {
+        "id": "classic-mai-tai",
+        "name": "Mai Tai",
+        "specification": "30 ml Amber Jamaican rum; 30 ml Martinique molasses rum; 15 ml Orange curaçao; 15 ml Orgeat syrup; 30 ml Lime juice; 7.5 ml Sugar syrup; 1 sprig Mint sprig",
+        "method": "Shake",
+        "steps": [
+          "Shake the liquids with ice.",
+          "Pour into a double rocks glass and add fresh crushed ice as needed.",
+          "Set the mint, pineapple and lime garnish."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact.",
+      "Corrected exact imported technique in the service view: Build + garnish → Shake base · strain · float"
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-dry-martini",
+    "aliases": [
+      "house-gin-martini",
+      "classic-martini",
+      "classic-dry-martini"
+    ],
+    "actions": [
+      "stir",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/dry-martini/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA 6:1 selected. Ask about gin/vodka, dryness and garnish; other ratios and a guest-requested shake are legitimate.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-dry-martini",
+      "name": "Gin Martini",
+      "ingredients": [
+        {
+          "id": "reference-dry-martini-1",
+          "name": "Gin",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-dry-martini-2",
+          "name": "Dry vermouth",
+          "amount": 10.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Stir · strain",
+      "glass": "Chilled Martini glass",
+      "ice": "Cubed ice to stir; no serving ice",
+      "garnish": "Lemon oil or olive",
+      "prepInstructions": [
+        "Stir the ingredients with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "IBA 6:1 selected. Ask about gin/vodka, dryness and garnish; other ratios and a guest-requested shake are legitimate.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Gin",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-gin-martini",
+        "name": "Gin Martini",
+        "specification": "50 ml Tanqueray No10; 10ml dry / 20ml wet Martini Extra Dry; 10ml if dirty Olive Brine (If Dirty)",
+        "method": "Stir + strain",
+        "steps": [
+          "Stir + strain"
+        ],
+        "source": "GIN · E6:F17"
+      },
+      {
+        "id": "classic-martini",
+        "name": "Martini",
+        "specification": "40 ml Gin; 20 ml Dry vermouth",
+        "method": "Stir",
+        "steps": [
+          "Stir gin and vermouth with ice until cold and diluted.",
+          "Strain into a chilled Martini glass.",
+          "Express citrus oils over the surface."
+        ],
+        "source": null
+      },
+      {
+        "id": "classic-dry-martini",
+        "name": "Dry Martini",
+        "specification": "60 ml Gin; 10 ml Dry vermouth",
+        "method": "Stir",
+        "steps": [
+          "Stir gin and vermouth with plenty of ice until cold.",
+          "Strain into a deeply chilled Martini glass.",
+          "Express lemon oils or add the requested olive."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-dirty-martini",
+    "aliases": [
+      "classic-dirty-martini"
+    ],
+    "actions": [
+      "stir",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "Difford’s Guide",
+        "url": "https://www.diffordsguide.com/cocktails/recipe/650/dirty-martini"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "Difford’s stirred version, without optional bitters. Brine intensity varies. House gin/vodka Martinis offer a separate optional dirty addition.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-dirty-martini",
+      "name": "Dirty Martini",
+      "ingredients": [
+        {
+          "id": "reference-dirty-martini-1",
+          "name": "Gin",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-dirty-martini-2",
+          "name": "Dry vermouth",
+          "amount": 22.5,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-dirty-martini-3",
+          "name": "Green olive brine",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Stir · strain",
+      "glass": "Chilled Martini glass",
+      "ice": "Cubed ice to stir; no serving ice",
+      "garnish": "Green olives",
+      "prepInstructions": [
+        "Stir the ingredients with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "Difford’s stirred version, without optional bitters. Brine intensity varies. House gin/vodka Martinis offer a separate optional dirty addition.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Gin",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "classic-dirty-martini",
+        "name": "Dirty Martini",
+        "specification": "60 ml Vodka; 12 ml Dry vermouth; 12 ml Olive brine; 3 piece Green olives",
+        "method": "Stir",
+        "steps": [
+          "Measure vodka, vermouth and strained olive brine.",
+          "Stir with ice until chilled and diluted.",
+          "Strain into a chilled glass and add an olive pick."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-french-martini",
+    "aliases": [
+      "house-french-martini",
+      "classic-french-martini"
+    ],
+    "actions": [
+      "shake",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/french-martini/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-french-martini",
+      "name": "French Martini",
+      "ingredients": [
+        {
+          "id": "reference-french-martini-1",
+          "name": "Vodka",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-french-martini-2",
+          "name": "Raspberry liqueur",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-french-martini-3",
+          "name": "Pineapple juice",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Shake · strain",
+      "glass": "Chilled cocktail glass",
+      "ice": "Cubed ice to shake; no serving ice",
+      "garnish": "Expressed lemon oil",
+      "prepInstructions": [
+        "Shake with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Vodka",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-french-martini",
+        "name": "French Martini",
+        "specification": "35 ml Absolut Vanilla; 25 ml Chambord; 75 ml Pineapple Juice; 10 ml Gomme",
+        "method": "Shake + double strain",
+        "steps": [
+          "Shake + double strain"
+        ],
+        "source": "VODKA · H19:I31"
+      },
+      {
+        "id": "classic-french-martini",
+        "name": "French Martini",
+        "specification": "45 ml Vodka; 15 ml Raspberry liqueur; 15 ml Pineapple juice",
+        "method": "Shake",
+        "steps": [
+          "Shake all liquids with ice until a fine pineapple foam forms.",
+          "Fine strain into a chilled coupe.",
+          "Express lemon oils over the surface."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-manhattan",
+    "aliases": [
+      "house-manhattan",
+      "classic-manhattan"
+    ],
+    "actions": [
+      "stir",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/manhattan/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA rye baseline. Bourbon is an accepted variation; Custom retains its bourbon and 50/25 proportions.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-manhattan",
+      "name": "Manhattan",
+      "ingredients": [
+        {
+          "id": "reference-manhattan-1",
+          "name": "Rye whiskey",
+          "amount": 50.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-manhattan-2",
+          "name": "Sweet red vermouth",
+          "amount": 20.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-manhattan-3",
+          "name": "Angostura bitters",
+          "amount": 1.0,
+          "unit": "dash",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Stir · strain",
+      "glass": "Chilled cocktail glass",
+      "ice": "Cubed ice to stir; no serving ice",
+      "garnish": "Cocktail cherry",
+      "prepInstructions": [
+        "Stir the ingredients with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "IBA rye baseline. Bourbon is an accepted variation; Custom retains its bourbon and 50/25 proportions.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Rye whiskey",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-manhattan",
+        "name": "Manhattan",
+        "specification": "50 ml Old Forestor; 25 ml Martini Rosso; 2 dash Angostura Bitters",
+        "method": "Stir + strain",
+        "steps": [
+          "Stir + strain"
+        ],
+        "source": "WHISKEY · H6:I34"
+      },
+      {
+        "id": "classic-manhattan",
+        "name": "Manhattan",
+        "specification": "50 ml Rye whiskey; 20 ml Sweet red vermouth; 1 dash Angostura bitters",
+        "method": "Stir",
+        "steps": [
+          "Stir all liquids with ice to chill and dilute.",
+          "Strain into a chilled coupe and garnish with a cherry."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-boulevardier",
+    "aliases": [
+      "classic-boulevardier"
+    ],
+    "actions": [
+      "stir",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/boulevardier/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-boulevardier",
+      "name": "Boulevardier",
+      "ingredients": [
+        {
+          "id": "reference-boulevardier-1",
+          "name": "Bourbon or rye whiskey",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-boulevardier-2",
+          "name": "Campari",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-boulevardier-3",
+          "name": "Sweet red vermouth",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Stir · strain",
+      "glass": "Chilled cocktail glass",
+      "ice": "Cubed ice to stir; no serving ice",
+      "garnish": "Orange zest (lemon also accepted)",
+      "prepInstructions": [
+        "Stir the ingredients with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Bourbon or rye whiskey",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "classic-boulevardier",
+        "name": "Boulevardier",
+        "specification": "45 ml Bourbon or rye whiskey; 30 ml Campari; 30 ml Sweet red vermouth",
+        "method": "Stir",
+        "steps": [
+          "Stir the measured liquids with ice.",
+          "Strain into a chilled coupe and express the orange zest."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-paloma",
+    "aliases": [
+      "house-paloma",
+      "classic-paloma"
+    ],
+    "actions": [
+      "build",
+      "top",
+      "stir"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/paloma/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "House DD Pink Grapefruit identity needs confirmation: juice versus soda. Its top remains a service addition, never premixed or shaken.",
+    "recommended": {
+      "id": "reference-paloma",
+      "name": "Paloma",
+      "ingredients": [
+        {
+          "id": "reference-paloma-1",
+          "name": "100% agave tequila",
+          "amount": 50.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-paloma-2",
+          "name": "Fresh lime juice",
+          "amount": 5.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-paloma-3",
+          "name": "Salt",
+          "amount": 1.0,
+          "unit": "pinch",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-paloma-4",
+          "name": "Pink grapefruit soda",
+          "amount": 100.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Build · top · stir",
+      "glass": "Highball",
+      "ice": "Cubed ice",
+      "garnish": "Lime slice",
+      "prepInstructions": [
+        "Add tequila, lime and salt to the glass with ice.",
+        "Add grapefruit soda and stir gently. Never shake carbonated ingredients."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "100% agave tequila",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": false,
+    "previousRecords": [
+      {
+        "id": "house-paloma",
+        "name": "Paloma",
+        "specification": "50 ml El Jimador Reposado; 15 ml Dd Lime; 10 ml Agave; 0 top Dd Pink Grapefruit",
+        "method": "Shake, double strain",
+        "steps": [
+          "Shake, double strain",
+          "TEQUILA"
+        ],
+        "source": "TEQUILA · E21:F41"
+      },
+      {
+        "id": "classic-paloma",
+        "name": "Paloma",
+        "specification": "50 ml Blanco tequila; 5 ml Lime juice; 0 top Fine salt; 100 ml Pink grapefruit soda",
+        "method": "Build",
+        "steps": [
+          "Add tequila, lime and a small pinch of salt to an ice-filled highball.",
+          "Add chilled grapefruit soda.",
+          "Stir gently and garnish."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-aviation",
+    "aliases": [
+      "classic-aviation"
+    ],
+    "actions": [
+      "shake",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/aviation/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-aviation",
+      "name": "Aviation",
+      "ingredients": [
+        {
+          "id": "reference-aviation-1",
+          "name": "Gin",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-aviation-2",
+          "name": "Maraschino liqueur",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-aviation-3",
+          "name": "Fresh lemon juice",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-aviation-4",
+          "name": "Crème de violette",
+          "amount": 1.0,
+          "unit": "barspoon",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Shake · strain",
+      "glass": "Chilled cocktail glass",
+      "ice": "Cubed ice to shake; no serving ice",
+      "garnish": "Optional maraschino cherry",
+      "prepInstructions": [
+        "Shake with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Gin",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "classic-aviation",
+        "name": "Aviation",
+        "specification": "45 ml Gin; 15 ml Maraschino liqueur; 15 ml Lemon juice; 1 barspoon Crème de violette",
+        "method": "Shake",
+        "steps": [
+          "Shake all measured ingredients with ice.",
+          "Fine strain into a chilled coupe.",
+          "Add a cherry if desired."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-bramble",
+    "aliases": [
+      "house-bramble",
+      "classic-bramble"
+    ],
+    "actions": [
+      "shake",
+      "strain",
+      "layer"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/bramble/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "House has vanilla/blackberry additions and includes mûre in base. Preserve as a house variation, not the IBA layered method.",
+    "recommended": {
+      "id": "reference-bramble",
+      "name": "Bramble",
+      "ingredients": [
+        {
+          "id": "reference-bramble-1",
+          "name": "Gin",
+          "amount": 50.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-bramble-2",
+          "name": "Fresh lemon juice",
+          "amount": 25.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-bramble-3",
+          "name": "Sugar syrup",
+          "amount": 12.5,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-bramble-4",
+          "name": "Crème de mûre",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Shake base · strain · drizzle",
+      "glass": "Rocks",
+      "ice": "Crushed ice",
+      "garnish": "Optional blackberry and lemon slice",
+      "prepInstructions": [
+        "Shake gin, lemon and syrup with ice.",
+        "Strain over crushed ice, then drizzle the mûre over the surface."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Gin",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-bramble",
+        "name": "Bramble",
+        "specification": "50 ml Tanqueray; 25 ml Dd Lemon; 5 ml Vanilla; 10 ml Blackberry; 15 ml Crème De Mure",
+        "method": "Shake + strain",
+        "steps": [
+          "Shake + strain"
+        ],
+        "source": "GIN · B19:C32"
+      },
+      {
+        "id": "classic-bramble",
+        "name": "Bramble",
+        "specification": "50 ml Gin; 25 ml Lemon juice; 12.5 ml Sugar syrup; 15 ml Crème de mûre",
+        "method": "Shake",
+        "steps": [
+          "Shake gin, lemon and syrup with ice.",
+          "Strain over fresh crushed ice.",
+          "Drizzle the blackberry liqueur over the top and garnish."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-john-collins",
+    "aliases": [
+      "house-tom-collins",
+      "classic-tom-collins"
+    ],
+    "actions": [
+      "build",
+      "stir",
+      "top"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/john-collins/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA John Collins recipe explicitly identifies Old Tom gin for a Tom Collins. London dry is a common house variation.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-john-collins",
+      "name": "Tom Collins",
+      "ingredients": [
+        {
+          "id": "reference-john-collins-1",
+          "name": "Old Tom gin",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-john-collins-2",
+          "name": "Fresh lemon juice",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-john-collins-3",
+          "name": "Sugar syrup",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-john-collins-4",
+          "name": "Soda water",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Build · stir · top",
+      "glass": "Highball",
+      "ice": "Cubed ice",
+      "garnish": "Lemon slice and cocktail cherry",
+      "prepInstructions": [
+        "Combine still ingredients over ice.",
+        "Add soda and stir gently."
+      ],
+      "serviceNotes": "IBA John Collins recipe explicitly identifies Old Tom gin for a Tom Collins. London dry is a common house variation.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Old Tom gin",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-tom-collins",
+        "name": "Tom Collins",
+        "specification": "50 ml Tanqueray; 15 ml Dd Lemon Juice; 15 ml Gomme; 0 top Soda",
+        "method": "Build + stir",
+        "steps": [
+          "Build + stir"
+        ],
+        "source": "GIN · B6:C18"
+      },
+      {
+        "id": "classic-tom-collins",
+        "name": "Tom Collins",
+        "specification": "45 ml Old Tom gin; 30 ml Lemon juice; 15 ml Sugar syrup; 60 ml Soda water",
+        "method": "Build",
+        "steps": [
+          "Build gin, lemon and syrup in an ice-filled highball.",
+          "Add chilled soda and stir gently.",
+          "Garnish with lemon and a cherry."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-french-75",
+    "aliases": [
+      "house-french-75",
+      "classic-french-75"
+    ],
+    "actions": [
+      "shake",
+      "strain",
+      "top"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/french-75/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-french-75",
+      "name": "French 75",
+      "ingredients": [
+        {
+          "id": "reference-french-75-1",
+          "name": "Gin",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-french-75-2",
+          "name": "Fresh lemon juice",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-french-75-3",
+          "name": "Sugar syrup",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-french-75-4",
+          "name": "Champagne",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Shake base · strain · top",
+      "glass": "Chilled flute",
+      "ice": "Cubed ice to shake; no serving ice",
+      "garnish": "None",
+      "prepInstructions": [
+        "Shake gin, lemon and syrup with ice.",
+        "Strain into the flute. Gently add Champagne; never shake it."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Gin",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-french-75",
+        "name": "French 75",
+        "specification": "25 ml Tanqueray; 15 ml Dd Lemon; 10 ml Gomme; 0 top Veuve Cliquot Brut",
+        "method": "Shake stills + top",
+        "steps": [
+          "Shake stills + top"
+        ],
+        "source": "GIN · H23:I50"
+      },
+      {
+        "id": "classic-french-75",
+        "name": "French 75",
+        "specification": "30 ml Gin; 15 ml Lemon juice; 15 ml Sugar syrup; 60 ml Champagne",
+        "method": "Shake & top",
+        "steps": [
+          "Shake gin, lemon and syrup with ice.",
+          "Fine strain into a chilled flute.",
+          "Add chilled Champagne and gently combine."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-caipirinha",
+    "aliases": [
+      "house-caipirinha",
+      "classic-caipirinha"
+    ],
+    "actions": [
+      "muddle",
+      "build",
+      "stir"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/caipirinha/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "House quantity is four pieces/wedges, not four whole limes. Keep its raw measure; confirm wedge/cube size before mass prep.",
+    "recommended": {
+      "id": "reference-caipirinha",
+      "name": "Caipirinha",
+      "ingredients": [
+        {
+          "id": "reference-caipirinha-1",
+          "name": "Cachaça",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-caipirinha-2",
+          "name": "Lime (whole, cut into wedges)",
+          "amount": 1.0,
+          "unit": "piece",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-caipirinha-3",
+          "name": "White cane sugar",
+          "amount": 4.0,
+          "unit": "teaspoon",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Muddle · build · stir",
+      "glass": "Rocks",
+      "ice": "Cracked ice",
+      "garnish": "Lime in the drink",
+      "prepInstructions": [
+        "Gently muddle lime wedges and sugar in the glass.",
+        "Add cachaça and ice; stir to combine."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Cachaça",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-caipirinha",
+        "name": "Caipirinha",
+        "specification": "50 ml Cachaca; 4 WEDGES Lime; 2 CUBES Brown Sugar",
+        "method": "Muddle limes/sugar + build",
+        "steps": [
+          "Muddle limes/sugar + build"
+        ],
+        "source": "MISC · H6:I17"
+      },
+      {
+        "id": "classic-caipirinha",
+        "name": "Caipirinha",
+        "specification": "60 ml Cachaça; 1 piece Lime, cut into wedges; 4 barspoon White cane sugar",
+        "method": "Muddle & build",
+        "steps": [
+          "Gently muddle the lime wedges and sugar in the glass.",
+          "Add cracked ice and cachaça.",
+          "Stir until chilled and combined."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-pina-colada",
+    "aliases": [
+      "house-pina-colada",
+      "classic-pina-colada"
+    ],
+    "actions": [
+      "blend"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/pina-colada/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA blended reference. A shaken Piña Colada is also established practice; the house shaken split-rum recipe is retained.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-pina-colada",
+      "name": "Piña Colada",
+      "ingredients": [
+        {
+          "id": "reference-pina-colada-1",
+          "name": "White rum",
+          "amount": 50.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-pina-colada-2",
+          "name": "Coconut cream",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-pina-colada-3",
+          "name": "Fresh pineapple juice",
+          "amount": 50.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Blend with ice",
+      "glass": "Large goblet or hurricane",
+      "ice": "Blended ice",
+      "garnish": "Pineapple slice and cocktail cherry",
+      "prepInstructions": [
+        "Blend the ingredients with ice until smooth.",
+        "Pour into the serving glass and garnish."
+      ],
+      "serviceNotes": "IBA blended reference. A shaken Piña Colada is also established practice; the house shaken split-rum recipe is retained.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "White rum",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-pina-colada",
+        "name": "Piña Colada",
+        "specification": "25 ml Havana 3; 25 ml Havana Spiced; 20 ml Dd Lime Juice; 75 ml Pineapple Juice; 25 ml Coconut Cream",
+        "method": "Shake + strain",
+        "steps": [
+          "Shake + strain"
+        ],
+        "source": "RUM · H6:I37"
+      },
+      {
+        "id": "classic-pina-colada",
+        "name": "Piña Colada",
+        "specification": "50 ml White rum; 30 ml Coconut cream; 50 ml Pineapple juice; 150 gram Ice",
+        "method": "Blend",
+        "steps": [
+          "Measure rum, coconut cream and pineapple juice into the blender.",
+          "Add the approved ice load and blend until smooth.",
+          "Pour into a chilled hurricane glass and garnish."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-dark-n-stormy",
+    "aliases": [
+      "house-dark-stormy",
+      "classic-dark-n-stormy"
+    ],
+    "actions": [
+      "build",
+      "layer"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/dark-n-stormy/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA names Goslings. House uses Havana 7 and lime: retained as a house variation, not represented as the branded original.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-dark-n-stormy",
+      "name": "Dark ’n’ Stormy",
+      "ingredients": [
+        {
+          "id": "reference-dark-n-stormy-1",
+          "name": "Goslings rum",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-dark-n-stormy-2",
+          "name": "Ginger beer",
+          "amount": 100.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Build · float",
+      "glass": "Highball",
+      "ice": "Cubed ice",
+      "garnish": "Lime wedge",
+      "prepInstructions": [
+        "Pour ginger beer into the ice-filled glass.",
+        "Float rum over it. Do not shake the ginger beer."
+      ],
+      "serviceNotes": "IBA names Goslings. House uses Havana 7 and lime: retained as a house variation, not represented as the branded original.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Goslings rum",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-dark-stormy",
+        "name": "Dark & Stormy",
+        "specification": "50 ml Havana 7; 4.0 Lime Wedges; 10 ml Dd Lime; 0 top Ginger Beer",
+        "method": "Muddle lime + build",
+        "steps": [
+          "Muddle lime + build"
+        ],
+        "source": "RUM · E6:F18"
+      },
+      {
+        "id": "classic-dark-n-stormy",
+        "name": "Dark 'n' Stormy",
+        "specification": "60 ml Goslings Black Seal rum; 100 ml Ginger beer",
+        "method": "Build",
+        "steps": [
+          "Add chilled ginger beer to an ice-filled highball.",
+          "Float the rum over the ginger beer.",
+          "Garnish with lime."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-moscow-mule",
+    "aliases": [
+      "house-moscow-mule",
+      "classic-moscow-mule"
+    ],
+    "actions": [
+      "build",
+      "stir"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/moscow-mule/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA names Smirnoff; BAR uses the generic vodka concept. House ginger syrup and muddled wedges are retained.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-moscow-mule",
+      "name": "Moscow Mule",
+      "ingredients": [
+        {
+          "id": "reference-moscow-mule-1",
+          "name": "Vodka",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-moscow-mule-2",
+          "name": "Ginger beer",
+          "amount": 120.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-moscow-mule-3",
+          "name": "Fresh lime juice",
+          "amount": 10.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Build · stir",
+      "glass": "Mule cup or rocks",
+      "ice": "Cubed ice",
+      "garnish": "Lime slice",
+      "prepInstructions": [
+        "Build over ice and gently stir.",
+        "Keep ginger beer out of any premix or shaker."
+      ],
+      "serviceNotes": "IBA names Smirnoff; BAR uses the generic vodka concept. House ginger syrup and muddled wedges are retained.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Vodka",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-moscow-mule",
+        "name": "Moscow Mule",
+        "specification": "50 ml Absolut Vodka; 10 ml Dd Lime; 15 ml Ginger Syrup; 0 top Ginger Beer; 4.0 Lime Wedges",
+        "method": "Muddle lime + build",
+        "steps": [
+          "Muddle lime + build"
+        ],
+        "source": "VODKA · H6:I18"
+      },
+      {
+        "id": "classic-moscow-mule",
+        "name": "Moscow Mule",
+        "specification": "45 ml Vodka; 120 ml Ginger beer; 10 ml Lime juice",
+        "method": "Build",
+        "steps": [
+          "Fill a food-safe lined mule mug or highball with ice.",
+          "Add vodka, lime and chilled ginger beer.",
+          "Stir gently and garnish."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-bloody-mary",
+    "aliases": [
+      "house-bloody-mary",
+      "classic-bloody-mary"
+    ],
+    "actions": [
+      "stir"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/bloody-mary/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA gentle stir selected. Rolling/throwing is an accepted alternative; avoid unnecessary frothing.",
+    "customReview": "House lists 25 ml Worcestershire, unusually high. Preserve pending venue confirmation; exclude unresolved recipe from training.",
+    "recommended": {
+      "id": "reference-bloody-mary",
+      "name": "Bloody Mary",
+      "ingredients": [
+        {
+          "id": "reference-bloody-mary-1",
+          "name": "Vodka",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-bloody-mary-2",
+          "name": "Tomato juice",
+          "amount": 90.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-bloody-mary-3",
+          "name": "Fresh lemon juice",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-bloody-mary-4",
+          "name": "Worcestershire sauce",
+          "amount": 2.0,
+          "unit": "dash",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-bloody-mary-5",
+          "name": "Tabasco, celery salt and pepper",
+          "amount": 0.0,
+          "unit": "piece",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": "",
+          "quantityDisplay": "To taste"
+        }
+      ],
+      "method": "Stir gently",
+      "glass": "Rocks or highball",
+      "ice": "Cubed ice",
+      "garnish": "Optional celery and lemon",
+      "prepInstructions": [
+        "Combine over ice and stir gently.",
+        "Season and garnish to order."
+      ],
+      "serviceNotes": "IBA gentle stir selected. Rolling/throwing is an accepted alternative; avoid unnecessary frothing.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Vodka",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": false,
+    "previousRecords": [
+      {
+        "id": "house-bloody-mary",
+        "name": "Bloody Mary",
+        "specification": "35 ml Absolut Vodka; 25 ml Dd Lemon Juice; 100 ml Tomato; 25 ml Worchester; 3 dashes, adjust to taste Tabasco (3 Standard); 3 grinds Salt; 3 grinds Pepper",
+        "method": "Throw + strain",
+        "steps": [
+          "Throw + strain"
+        ],
+        "source": "VODKA · E19:F33"
+      },
+      {
+        "id": "classic-bloody-mary",
+        "name": "Bloody Mary",
+        "specification": "45 ml Vodka; 90 ml Tomato juice; 15 ml Lemon juice; 2 dash Worcestershire sauce; 2 dash Hot sauce; 0 top Celery salt and black pepper; 1 piece Celery stick",
+        "method": "Roll or stir",
+        "steps": [
+          "Combine vodka, tomato, lemon and Worcestershire sauce with ice.",
+          "Roll gently between tins or stir; avoid aerating heavily.",
+          "Season to the guest’s taste and serve over fresh ice."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-long-island-iced-tea",
+    "aliases": [
+      "house-long-island-iced-tea",
+      "classic-long-island-iced-tea"
+    ],
+    "actions": [
+      "build",
+      "stir",
+      "top"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/long-island-iced-tea/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA build selected. Shaking only the still base then adding cola is valid; house layering is retained.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-long-island-iced-tea",
+      "name": "Long Island Iced Tea",
+      "ingredients": [
+        {
+          "id": "reference-long-island-iced-tea-1",
+          "name": "Vodka",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-long-island-iced-tea-2",
+          "name": "Tequila",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-long-island-iced-tea-3",
+          "name": "White rum",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-long-island-iced-tea-4",
+          "name": "Gin",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-long-island-iced-tea-5",
+          "name": "Cointreau",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-long-island-iced-tea-6",
+          "name": "Fresh lemon juice",
+          "amount": 25.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-long-island-iced-tea-7",
+          "name": "Sugar syrup",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-long-island-iced-tea-8",
+          "name": "Cola",
+          "amount": 0.0,
+          "unit": "top",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Build · top · stir",
+      "glass": "Highball",
+      "ice": "Cubed ice",
+      "garnish": "Optional lemon slice",
+      "prepInstructions": [
+        "Build the still ingredients over ice.",
+        "Add cola and gently stir. Never shake cola."
+      ],
+      "serviceNotes": "IBA build selected. Shaking only the still base then adding cola is valid; house layering is retained.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Vodka",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-long-island-iced-tea",
+        "name": "Long Island Iced Tea",
+        "specification": "12.5 ml Absolut Vodka; 12.5 ml Tanqueray; 12.5 ml El Jimador Blanco; 12.5 ml Havana 3; 12.5 ml Blend Triple Sec; 15 ml Dd Lemon; ½ glass Coca-Cola",
+        "method": "Shake + layer over coke",
+        "steps": [
+          "Shake + layer over coke"
+        ],
+        "source": "MISC · K6:L21"
+      },
+      {
+        "id": "classic-long-island-iced-tea",
+        "name": "Long Island Iced Tea",
+        "specification": "15 ml Vodka; 15 ml Blanco tequila; 15 ml White rum; 15 ml Gin; 15 ml Cointreau; 25 ml Lemon juice; 30 ml Sugar syrup; 0 top Cola",
+        "method": "Build",
+        "steps": [
+          "Measure the spirits, lemon and syrup into an ice-filled highball.",
+          "Top with chilled cola.",
+          "Stir gently and garnish."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-spritz",
+    "aliases": [
+      "house-aperol-spritz",
+      "classic-aperol-spritz"
+    ],
+    "actions": [
+      "build",
+      "stir"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/spritz/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-spritz",
+      "name": "Aperol Spritz",
+      "ingredients": [
+        {
+          "id": "reference-spritz-1",
+          "name": "Prosecco",
+          "amount": 90.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-spritz-2",
+          "name": "Aperol",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-spritz-3",
+          "name": "Soda water",
+          "amount": 0.0,
+          "unit": "top",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": "",
+          "quantityDisplay": "Splash"
+        }
+      ],
+      "method": "Build · stir",
+      "glass": "Wine glass",
+      "ice": "Cubed ice",
+      "garnish": "Orange slice",
+      "prepInstructions": [
+        "Add ingredients over ice in the glass.",
+        "Stir gently to combine without losing the bubbles."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Prosecco",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-aperol-spritz",
+        "name": "Aperol Spritz",
+        "specification": "50 ml Aperol; 125 ml Cremant; 0 top Soda",
+        "method": "Build in glass",
+        "steps": [
+          "Build in glass"
+        ],
+        "source": "MISC · E6:F17"
+      },
+      {
+        "id": "classic-aperol-spritz",
+        "name": "Aperol Spritz",
+        "specification": "90 ml Prosecco; 60 ml Aperol; 30 ml Soda water",
+        "method": "Build",
+        "steps": [
+          "Fill a wine glass with plenty of cubed ice.",
+          "Add chilled Prosecco, Aperol and soda.",
+          "Lift gently with a spoon and garnish."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-white-lady",
+    "aliases": [
+      "house-white-lady"
+    ],
+    "actions": [
+      "shake",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/white-lady/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA recipe without egg white. Foamed White Lady variants are established; Custom retains its foamer.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-white-lady",
+      "name": "White Lady",
+      "ingredients": [
+        {
+          "id": "reference-white-lady-1",
+          "name": "Gin",
+          "amount": 40.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-white-lady-2",
+          "name": "Triple sec",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-white-lady-3",
+          "name": "Fresh lemon juice",
+          "amount": 20.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Shake · strain",
+      "glass": "Chilled cocktail glass",
+      "ice": "Cubed ice to shake; no serving ice",
+      "garnish": "None",
+      "prepInstructions": [
+        "Shake with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "IBA recipe without egg white. Foamed White Lady variants are established; Custom retains its foamer.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Gin",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-white-lady",
+        "name": "White Lady",
+        "specification": "35 ml Tanqueray; 25 ml Belnd Triple Sec; 15 ml Dd Lemon Juice; 10 ml Gomme; 3 drop Ms Betters Bitters",
+        "method": "Shake + strain",
+        "steps": [
+          "Shake + strain"
+        ],
+        "source": "GIN · B33:C50"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-sex-on-the-beach",
+    "aliases": [
+      "house-sex-on-the-beach"
+    ],
+    "actions": [
+      "build"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/sex-on-the-beach/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA built version. House shaken orange base with a cranberry layer is retained as a presentation variation.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-sex-on-the-beach",
+      "name": "Sex on the Beach",
+      "ingredients": [
+        {
+          "id": "reference-sex-on-the-beach-1",
+          "name": "Vodka",
+          "amount": 40.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-sex-on-the-beach-2",
+          "name": "Peach schnapps",
+          "amount": 20.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-sex-on-the-beach-3",
+          "name": "Fresh orange juice",
+          "amount": 40.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-sex-on-the-beach-4",
+          "name": "Cranberry juice",
+          "amount": 40.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Build",
+      "glass": "Highball",
+      "ice": "Cubed ice",
+      "garnish": "Half orange slice",
+      "prepInstructions": [
+        "Build the ingredients over fresh ice and garnish."
+      ],
+      "serviceNotes": "IBA built version. House shaken orange base with a cranberry layer is retained as a presentation variation.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Vodka",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-sex-on-the-beach",
+        "name": "Sex On The Beach",
+        "specification": "35 ml Absolut Vodka; 25 ml Peach Liqueur; 50 ml Orange Jucie; 50 ml Cranberry Juice",
+        "method": "Shake + strain + layer cranberry",
+        "steps": [
+          "Shake + strain + layer cranberry"
+        ],
+        "source": "VODKA · H32:I50"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-singapore-sling",
+    "aliases": [
+      "house-singapore-sling"
+    ],
+    "actions": [
+      "shake",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/singapore-sling/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "House uses maraschino rather than cherry brandy and different proportions; do not substitute one liqueur automatically.",
+    "recommended": {
+      "id": "reference-singapore-sling",
+      "name": "Singapore Sling",
+      "ingredients": [
+        {
+          "id": "reference-singapore-sling-1",
+          "name": "Gin",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-singapore-sling-2",
+          "name": "Cherry Sangue Morlacco",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-singapore-sling-3",
+          "name": "Cointreau",
+          "amount": 7.5,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-singapore-sling-4",
+          "name": "Bénédictine",
+          "amount": 7.5,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-singapore-sling-5",
+          "name": "Fresh pineapple juice",
+          "amount": 120.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-singapore-sling-6",
+          "name": "Fresh lime juice",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-singapore-sling-7",
+          "name": "Grenadine",
+          "amount": 10.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-singapore-sling-8",
+          "name": "Angostura bitters",
+          "amount": 1.0,
+          "unit": "dash",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Shake · strain",
+      "glass": "Hurricane",
+      "ice": "Fresh cubed ice",
+      "garnish": "Pineapple and maraschino cherry",
+      "prepInstructions": [
+        "Shake with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Gin",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-singapore-sling",
+        "name": "Singapore Sling",
+        "specification": "25 ml Tanqueray; 15 ml Maraschino; 15 ml Benedictine; 15 ml Dd Lime; 65 ml Pineapple; 5 ml Grenadine; 3 dash Angostura; 2 dash Orange",
+        "method": "Shake + strain",
+        "steps": [
+          "Shake + strain"
+        ],
+        "source": "GIN · H6:I22"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-irish-coffee",
+    "aliases": [
+      "house-irish-coffee"
+    ],
+    "actions": [
+      "build",
+      "stir",
+      "layer"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/irish-coffee/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "House method requires cream but its ingredient list omits the measure. Keep unresolved; do not invent a venue cream quantity.",
+    "recommended": {
+      "id": "reference-irish-coffee",
+      "name": "Irish Coffee",
+      "ingredients": [
+        {
+          "id": "reference-irish-coffee-1",
+          "name": "Irish whiskey",
+          "amount": 50.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-irish-coffee-2",
+          "name": "Hot coffee",
+          "amount": 120.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-irish-coffee-3",
+          "name": "Fresh cream",
+          "amount": 50.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-irish-coffee-4",
+          "name": "Sugar",
+          "amount": 1.0,
+          "unit": "teaspoon",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Dissolve · stir · float cream",
+      "glass": "Warmed Irish coffee glass",
+      "ice": "None",
+      "garnish": "Cream float",
+      "prepInstructions": [
+        "Dissolve sugar in hot coffee in the warmed glass, then add whiskey.",
+        "Pour lightly aerated cream carefully over the back of a spoon to form a float."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Irish whiskey",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": false,
+    "previousRecords": [
+      {
+        "id": "house-irish-coffee",
+        "name": "Irish Coffee",
+        "specification": "50 ml Jameson; Double espresso Coffee (espresso shots); 2 SUGAR CUBES Brown Sugar; 0 top Hot Water",
+        "method": "Muddle sugar + stir, float double cream",
+        "steps": [
+          "Muddle sugar + stir, float double cream"
+        ],
+        "source": "WHISKEY · B24:C34"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-mimosa",
+    "aliases": [
+      "house-mimosa"
+    ],
+    "actions": [
+      "build",
+      "stir"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/mimosa/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-mimosa",
+      "name": "Mimosa",
+      "ingredients": [
+        {
+          "id": "reference-mimosa-1",
+          "name": "Fresh orange juice",
+          "amount": 75.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-mimosa-2",
+          "name": "Prosecco",
+          "amount": 75.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Build · stir gently",
+      "glass": "Chilled flute",
+      "ice": "None",
+      "garnish": "Optional orange twist",
+      "prepInstructions": [
+        "Pour orange juice into the flute, then slowly add prosecco.",
+        "Gently combine."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Fresh orange juice",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-mimosa",
+        "name": "Mimosa",
+        "specification": "0 top Cremant; 25 ml Orange Juice",
+        "method": "Build in glass",
+        "steps": [
+          "Build in glass"
+        ],
+        "source": "MISC · B6:C16"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-bellini",
+    "aliases": [
+      "house-bellini"
+    ],
+    "actions": [
+      "build",
+      "stir"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/bellini/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA baseline selected. Other professional ratios may be valid; this does not replace venue measures.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-bellini",
+      "name": "Bellini",
+      "ingredients": [
+        {
+          "id": "reference-bellini-1",
+          "name": "White peach purée",
+          "amount": 50.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-bellini-2",
+          "name": "Prosecco",
+          "amount": 100.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Combine gently",
+      "glass": "Chilled flute",
+      "ice": "Mix over ice; no serving ice",
+      "garnish": "None",
+      "prepInstructions": [
+        "Gently combine purée and prosecco over ice without shaking.",
+        "Pour into a chilled flute."
+      ],
+      "serviceNotes": "",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "White peach purée",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-bellini",
+        "name": "Bellini",
+        "specification": "0 top Cremant; 25 ml Peach Puree",
+        "method": "Build in glass",
+        "steps": [
+          "Build in glass"
+        ],
+        "source": "MISC · B17:C27"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-kir",
+    "aliases": [
+      "house-kir-royale"
+    ],
+    "actions": [
+      "build"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/kir/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "Champagne substitution explicitly described by IBA for Kir Royale; the base Kir uses white wine. House Crémant/25 ml cassis is separate.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-kir",
+      "name": "Kir Royale",
+      "ingredients": [
+        {
+          "id": "reference-kir-1",
+          "name": "Crème de cassis",
+          "amount": 10.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-kir-2",
+          "name": "Champagne",
+          "amount": 90.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Build",
+      "glass": "Chilled flute",
+      "ice": "None",
+      "garnish": "None",
+      "prepInstructions": [
+        "Pour cassis into the flute, then carefully add Champagne."
+      ],
+      "serviceNotes": "Champagne substitution explicitly described by IBA for Kir Royale; the base Kir uses white wine. House Crémant/25 ml cassis is separate.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Crème de cassis",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-kir-royale",
+        "name": "Kir Royale",
+        "specification": "0 top Cremant; 25 ml Crème De Cassis",
+        "method": "Build in glass",
+        "steps": [
+          "Build in glass"
+        ],
+        "source": "MISC · B28:C51"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-pisco-sour",
+    "aliases": [
+      "house-pisco-sour"
+    ],
+    "actions": [
+      "shake",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/pisco-sour/"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "IBA lemon version. Lime and dry-shake variants exist. House foamer and Angostura differ and remain separate.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-pisco-sour",
+      "name": "Pisco Sour",
+      "ingredients": [
+        {
+          "id": "reference-pisco-sour-1",
+          "name": "Pisco",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-pisco-sour-2",
+          "name": "Fresh lemon juice",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-pisco-sour-3",
+          "name": "Sugar syrup",
+          "amount": 20.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-pisco-sour-4",
+          "name": "Egg white",
+          "amount": 1.0,
+          "unit": "piece",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-pisco-sour-5",
+          "name": "Amargo bitters",
+          "amount": 0.0,
+          "unit": "dash",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": "",
+          "quantityDisplay": "A few dashes on foam"
+        }
+      ],
+      "method": "Shake · strain · bitters",
+      "glass": "Chilled goblet",
+      "ice": "Cubed ice to shake; no serving ice",
+      "garnish": "Amargo bitters on foam",
+      "prepInstructions": [
+        "Shake the liquids and egg white with ice until aerated.",
+        "Strain into a chilled glass; finish the foam with bitters."
+      ],
+      "serviceNotes": "IBA lemon version. Lime and dry-shake variants exist. House foamer and Angostura differ and remain separate.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Pisco",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-pisco-sour",
+        "name": "Pisco Sour",
+        "specification": "50 ml Pisco; 25 ml Dd Lemon Juice; 10 ml Gomme; 2 dash Angostura Bitters; 2 dash Ms Betters Bitters",
+        "method": "Wet/dry shake + strain",
+        "steps": [
+          "Wet/dry shake + strain"
+        ],
+        "source": "MISC · K22:L51"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-pornstar-martini",
+    "aliases": [
+      "house-pornstar-martini",
+      "classic-pornstar-martini"
+    ],
+    "actions": [
+      "shake",
+      "fineStrain"
+    ],
+    "sources": [
+      {
+        "name": "Difford’s Guide",
+        "url": "https://www.diffordsguide.com/cocktails/recipe/2883/porn-star-martini"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "Difford’s contemporary version includes lime. Ankrah’s earlier published version does not; neither is the sole correct version.",
+    "customReview": "Blend Passionfruit is a liqueur, not the separately listed fruit purée. Verify exact house brand.",
+    "recommended": {
+      "id": "reference-pornstar-martini",
+      "name": "Pornstar Martini",
+      "ingredients": [
+        {
+          "id": "reference-pornstar-martini-1",
+          "name": "Fresh passionfruit pulp",
+          "amount": 1.5,
+          "unit": "piece",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-pornstar-martini-2",
+          "name": "Vanilla vodka",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-pornstar-martini-3",
+          "name": "Passionfruit liqueur",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-pornstar-martini-4",
+          "name": "Vanilla syrup",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-pornstar-martini-5",
+          "name": "Fresh lime juice",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-pornstar-martini-6",
+          "name": "Champagne (optional side serve)",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Shake · fine strain",
+      "glass": "Chilled coupe",
+      "ice": "Cubed ice to shake; no serving ice",
+      "garnish": "Half a passionfruit",
+      "prepInstructions": [
+        "Scoop pulp from three fruit halves into the shaker.",
+        "Add vodka, liqueur, syrup and lime; shake with ice and fine strain.",
+        "Serve optional Champagne separately; never shake it."
+      ],
+      "serviceNotes": "Difford’s contemporary version includes lime. Ankrah’s earlier published version does not; neither is the sole correct version.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Fresh passionfruit pulp",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": false,
+    "previousRecords": [
+      {
+        "id": "house-pornstar-martini",
+        "name": "Pornstar Martini",
+        "specification": "35 ml Absolut Vanilla; 25 ml Blend Passionfruit; 35 ml Passionfruit Purée; 15 ml Dd Lime; 15 ml Pineapple Juice; 15 ml Vanilla",
+        "method": "Shake + double strain",
+        "steps": [
+          "Shake + double strain"
+        ],
+        "source": "VODKA · B19:C33"
+      },
+      {
+        "id": "classic-pornstar-martini",
+        "name": "Pornstar Martini",
+        "specification": "50 ml Vanilla vodka; 20 ml Passionfruit liqueur; 50 ml Passionfruit purée; 2 barspoon Vanilla sugar; 50 ml Champagne; 1 piece Passionfruit half",
+        "method": "Shake",
+        "steps": [
+          "Dissolve the vanilla sugar into the non-sparkling ingredients.",
+          "Shake those ingredients with ice and fine strain into a chilled coupe.",
+          "Garnish and serve Champagne alongside."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-amaretto-sour",
+    "aliases": [
+      "house-amaretto-sour",
+      "classic-amaretto-sour"
+    ],
+    "actions": [
+      "shake",
+      "reverseDryShake",
+      "fineStrain"
+    ],
+    "sources": [
+      {
+        "name": "Difford’s Guide",
+        "url": "https://www.diffordsguide.com/cocktails/recipe/53/amaretto-sour"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "Difford’s amaretto-only version. Morgenthaler’s bourbon-strengthened variation is also respected. A dry-then-wet shake is a valid alternative; house foamer is separate.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-amaretto-sour",
+      "name": "Amaretto Sour",
+      "ingredients": [
+        {
+          "id": "reference-amaretto-sour-1",
+          "name": "Amaretto",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-amaretto-sour-2",
+          "name": "Fresh lemon juice",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-amaretto-sour-3",
+          "name": "Angostura bitters",
+          "amount": 1.0,
+          "unit": "dash",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-amaretto-sour-4",
+          "name": "Pasteurised egg white",
+          "amount": 15.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Wet shake · dry shake · fine strain",
+      "glass": "Rocks",
+      "ice": "Fresh cubed ice",
+      "garnish": "Lemon and cocktail cherry; bitters on foam",
+      "prepInstructions": [
+        "Shake with ice, then strain back into an empty shaker.",
+        "Shake without ice to aerate and fine strain over fresh ice."
+      ],
+      "serviceNotes": "Difford’s amaretto-only version. Morgenthaler’s bourbon-strengthened variation is also respected. A dry-then-wet shake is a valid alternative; house foamer is separate.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Amaretto",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-amaretto-sour",
+        "name": "Amaretto Sour",
+        "specification": "50 ml Disarrono; 25 ml Dd Lemon Juice; 10 ml Gomme; 2 dash Angostura Bitters; 2 dash Ms Betters Bitters",
+        "method": "Wet/dry shake + strain",
+        "steps": [
+          "Wet/dry shake + strain"
+        ],
+        "source": "MISC · H30:I51"
+      },
+      {
+        "id": "classic-amaretto-sour",
+        "name": "Amaretto Sour",
+        "specification": "45 ml Amaretto; 22.5 ml Cask-proof bourbon; 30 ml Lemon juice; 5 ml Rich sugar syrup; 15 ml Pasteurised egg white",
+        "method": "Shake",
+        "steps": [
+          "Combine the liquids and shake without ice to emulsify.",
+          "Shake again with ice.",
+          "Fine strain over fresh ice and garnish."
+        ],
+        "source": null
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-white-russian",
+    "aliases": [
+      "house-white-russian"
+    ],
+    "actions": [
+      "stir",
+      "strain",
+      "layer"
+    ],
+    "sources": [
+      {
+        "name": "Difford’s Guide",
+        "url": "https://www.diffordsguide.com/cocktails/recipe/2093/white-russian-cocktail"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "Difford’s layered version; mixed or shaken versions also exist. House milk plus cream are retained.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-white-russian",
+      "name": "White Russian",
+      "ingredients": [
+        {
+          "id": "reference-white-russian-1",
+          "name": "Vodka",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-white-russian-2",
+          "name": "Coffee liqueur",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-white-russian-3",
+          "name": "Whipping cream",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Stir base · float cream",
+      "glass": "Rocks",
+      "ice": "Fresh cubed ice",
+      "garnish": "Freshly grated nutmeg",
+      "prepInstructions": [
+        "Stir vodka and coffee liqueur with ice, then strain over fresh ice.",
+        "Lightly aerate cream and pour gently to form a float."
+      ],
+      "serviceNotes": "Difford’s layered version; mixed or shaken versions also exist. House milk plus cream are retained.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Vodka",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-white-russian",
+        "name": "White Russian",
+        "specification": "50 ml Absolut; 25 ml Blend Coffee; 25 ml Whole Milk; 35 ml Double Cream",
+        "method": "Stir the two parts separate then float cream",
+        "steps": [
+          "Stir the two parts separate then float cream"
+        ],
+        "source": "VODKA · E34:F50"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-hugo-spritz",
+    "aliases": [
+      "house-hugo-spritz"
+    ],
+    "actions": [
+      "build",
+      "stir"
+    ],
+    "sources": [
+      {
+        "name": "Difford’s Guide",
+        "url": "https://www.diffordsguide.com/cocktails/recipe/5039/hugo-spritz"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "Difford’s liqueur version. Original syrup-based Hugo and a 3:2:1 spritz ratio also exist; do not interchange syrup and liqueur unnoticed.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-hugo-spritz",
+      "name": "Hugo Spritz",
+      "ingredients": [
+        {
+          "id": "reference-hugo-spritz-1",
+          "name": "Mint leaves",
+          "amount": 8.0,
+          "unit": "piece",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-hugo-spritz-2",
+          "name": "Elderflower liqueur",
+          "amount": 40.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-hugo-spritz-3",
+          "name": "Soda water",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-hugo-spritz-4",
+          "name": "Prosecco",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Build · stir gently",
+      "glass": "Wine glass",
+      "ice": "Cubed ice",
+      "garnish": "Lime wedge and mint",
+      "prepInstructions": [
+        "Add mint and ice to the glass, followed by the liquids.",
+        "Stir briefly and gently."
+      ],
+      "serviceNotes": "Difford’s liqueur version. Original syrup-based Hugo and a 3:2:1 spritz ratio also exist; do not interchange syrup and liqueur unnoticed.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Mint leaves",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-hugo-spritz",
+        "name": "Hugo Spritz",
+        "specification": "50 ml St Germain; 125 ml Cremant; 15 ml Dd Lime; 0 top Soda",
+        "method": "Build in glass",
+        "steps": [
+          "Build in glass"
+        ],
+        "source": "MISC · E18:F30"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-limoncello-spritz",
+    "aliases": [
+      "house-limoncello-spritz"
+    ],
+    "actions": [
+      "build",
+      "stir"
+    ],
+    "sources": [
+      {
+        "name": "Difford’s Guide",
+        "url": "https://www.diffordsguide.com/cocktails/recipe/4242/limoncello-spritz"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "Difford’s ratio selected. Spritz ratios vary; this does not correct the venue’s amounts.",
+    "customReview": "House lists 125 ml soda with Crémant top; possible swapped measures. Needs confirmation; preserved verbatim.",
+    "recommended": {
+      "id": "reference-limoncello-spritz",
+      "name": "Limoncello Spritz",
+      "ingredients": [
+        {
+          "id": "reference-limoncello-spritz-1",
+          "name": "Prosecco",
+          "amount": 75.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        },
+        {
+          "id": "reference-limoncello-spritz-2",
+          "name": "Limoncello",
+          "amount": 50.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-limoncello-spritz-3",
+          "name": "Soda water",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Build · stir gently",
+      "glass": "Wine glass",
+      "ice": "Cubed ice",
+      "garnish": "Orange slice",
+      "prepInstructions": [
+        "Pour over ice and stir gently."
+      ],
+      "serviceNotes": "Difford’s ratio selected. Spritz ratios vary; this does not correct the venue’s amounts.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Prosecco",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": false,
+    "previousRecords": [
+      {
+        "id": "house-limoncello-spritz",
+        "name": "Limoncello Spritz",
+        "specification": "50 ml Limoncello; 0 top Cremant; 125 ml Soda",
+        "method": "Build in glass",
+        "steps": [
+          "Build in glass"
+        ],
+        "source": "MISC · E31:F42"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-pimms",
+    "aliases": [
+      "house-pimms"
+    ],
+    "actions": [
+      "build",
+      "stir"
+    ],
+    "sources": [
+      {
+        "name": "Diageo Bar Academy",
+        "url": "https://www.diageobaracademy.com/es-es/home/explora-todas-las-recetas/pimms-cup"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "Producer’s 1:3 recipe selected. Garnish quantities vary; carbonated lemonade is always added at service.",
+    "customReview": "Imported shake instruction is inappropriate for the listed lemonade drink.",
+    "recommended": {
+      "id": "reference-pimms",
+      "name": "Pimm’s Cup",
+      "ingredients": [
+        {
+          "id": "reference-pimms-1",
+          "name": "Pimm’s No. 1",
+          "amount": 50.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-pimms-2",
+          "name": "Lemonade",
+          "amount": 150.0,
+          "unit": "ml",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Build · stir gently",
+      "glass": "Highball",
+      "ice": "Cubed ice",
+      "garnish": "Strawberries, orange, cucumber and mint",
+      "prepInstructions": [
+        "Build over ice, distributing the fruit through the glass.",
+        "Stir gently. Never shake the lemonade."
+      ],
+      "serviceNotes": "Producer’s 1:3 recipe selected. Garnish quantities vary; carbonated lemonade is always added at service.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Pimm’s No. 1",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "correctedLegacyMethod": "Shake + double strain",
+    "customMethod": "Build · stir gently",
+    "customSteps": [
+      "Build Pimm’s and lemonade over fresh ice.",
+      "Stir gently and add the house garnish. Never shake the lemonade."
+    ],
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-pimms",
+        "name": "Pimm’s",
+        "specification": "50 ml Pimms; 0 top Lemonade",
+        "method": "Shake + double strain",
+        "steps": [
+          "Shake + double strain"
+        ],
+        "source": "MISC · E43:F51"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact.",
+      "Corrected exact imported technique in the service view: Shake + double strain → Build · stir gently"
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-vodka-martini",
+    "aliases": [
+      "house-vodka-martini"
+    ],
+    "actions": [
+      "stir",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/dry-martini/"
+      },
+      {
+        "name": "Difford’s Guide — Martini ratios",
+        "url": "https://www.diffordsguide.com/g/1121/martini/how-to-make-a-dry-martini"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "BAR applies the IBA 6:1 ratio to the established vodka substitution. Confirm the guest’s preferred dryness and garnish.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-vodka-martini",
+      "name": "Vodka Martini",
+      "ingredients": [
+        {
+          "id": "reference-vodka-martini-1",
+          "name": "Vodka",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-vodka-martini-2",
+          "name": "Dry vermouth",
+          "amount": 10.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Stir · strain",
+      "glass": "Chilled Martini glass",
+      "ice": "Cubed ice to stir; no serving ice",
+      "garnish": "Lemon twist or olive",
+      "prepInstructions": [
+        "Stir the ingredients with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "BAR applies the IBA 6:1 ratio to the established vodka substitution. Confirm the guest’s preferred dryness and garnish.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Vodka",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-vodka-martini",
+        "name": "Vodka Martini",
+        "specification": "50 ml Belvedere; 10ml dry / 20ml wet Martini Extra Dry; 10ml if dirty Olive Brine (If Dirty)",
+        "method": "Stir + strain",
+        "steps": [
+          "Stir + strain"
+        ],
+        "source": "VODKA · B34:C50"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-gin-martini-wet",
+    "aliases": [
+      "house-gin-martini-wet"
+    ],
+    "actions": [
+      "stir",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/dry-martini/"
+      },
+      {
+        "name": "Difford’s Guide — Martini ratios",
+        "url": "https://www.diffordsguide.com/g/1121/martini/how-to-make-a-dry-martini"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "BAR selects an equal-parts wet variation within the professional range described by Difford. Wet has no single mandatory ratio; Custom retains 50/20.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-gin-martini-wet",
+      "name": "Gin Martini — Wet",
+      "ingredients": [
+        {
+          "id": "reference-gin-martini-wet-1",
+          "name": "Gin",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-gin-martini-wet-2",
+          "name": "Dry vermouth",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Stir · strain",
+      "glass": "Chilled Martini glass",
+      "ice": "Cubed ice to stir; no serving ice",
+      "garnish": "Lemon twist or olive",
+      "prepInstructions": [
+        "Stir the ingredients with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "BAR selects an equal-parts wet variation within the professional range described by Difford. Wet has no single mandatory ratio; Custom retains 50/20.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Gin",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-gin-martini-wet",
+        "name": "Gin Martini (Wet)",
+        "specification": "50 ml Tanqueray No10; 20ml wet Martini Extra Dry; 10ml if dirty Olive Brine (If Dirty)",
+        "method": "Stir + strain",
+        "steps": [
+          "Stir + strain"
+        ],
+        "source": "GIN · E6:F17"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-vodka-martini-wet",
+    "aliases": [
+      "house-vodka-martini-wet"
+    ],
+    "actions": [
+      "stir",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "International Bartenders Association",
+        "url": "https://iba-world.com/iba-cocktail/dry-martini/"
+      },
+      {
+        "name": "Difford’s Guide — Martini ratios",
+        "url": "https://www.diffordsguide.com/g/1121/martini/how-to-make-a-dry-martini"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "BAR selects an equal-parts wet variation within the professional range described by Difford. Wet has no single mandatory ratio; Custom retains 50/20.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-vodka-martini-wet",
+      "name": "Vodka Martini — Wet",
+      "ingredients": [
+        {
+          "id": "reference-vodka-martini-wet-1",
+          "name": "Vodka",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-vodka-martini-wet-2",
+          "name": "Dry vermouth",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Stir · strain",
+      "glass": "Chilled Martini glass",
+      "ice": "Cubed ice to stir; no serving ice",
+      "garnish": "Lemon twist or olive",
+      "prepInstructions": [
+        "Stir the ingredients with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "BAR selects an equal-parts wet variation within the professional range described by Difford. Wet has no single mandatory ratio; Custom retains 50/20.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Vodka",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-vodka-martini-wet",
+        "name": "Vodka Martini (Wet)",
+        "specification": "50 ml Belvedere; 20ml wet Martini Extra Dry; 10ml if dirty Olive Brine (If Dirty)",
+        "method": "Stir + strain",
+        "steps": [
+          "Stir + strain"
+        ],
+        "source": "VODKA · B34:C50"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-spicy-margarita",
+    "aliases": [
+      "house-spicy-margarita"
+    ],
+    "actions": [
+      "muddle",
+      "shake",
+      "fineStrain"
+    ],
+    "sources": [
+      {
+        "name": "Difford’s Guide",
+        "url": "https://www.diffordsguide.com/cocktails/recipe/27664/spicy-margarita"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "Difford’s base version, omitting its optional coriander, saline and bitters. Chilli heat varies: agree the desired heat before making it.",
+    "customReview": "Public Pub menu names chilli Casamigos while house sheet names infused El Jimador. Do not change the approved mapping without confirmation.",
+    "recommended": {
+      "id": "reference-spicy-margarita",
+      "name": "Spicy Margarita",
+      "ingredients": [
+        {
+          "id": "reference-spicy-margarita-1",
+          "name": "Blanco tequila",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-spicy-margarita-2",
+          "name": "Triple sec",
+          "amount": 22.5,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-spicy-margarita-3",
+          "name": "Fresh lime juice",
+          "amount": 22.5,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-spicy-margarita-4",
+          "name": "Agave syrup",
+          "amount": 5.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-spicy-margarita-5",
+          "name": "Deseeded chilli slice",
+          "amount": 1.0,
+          "unit": "piece",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Muddle chilli · shake · fine strain",
+      "glass": "Rocks",
+      "ice": "Fresh cubed ice",
+      "garnish": "Lime wedge; Tajín rim",
+      "prepInstructions": [
+        "Lightly muddle the chilli in a shaker.",
+        "Add liquids and ice, shake and fine strain into the prepared glass."
+      ],
+      "serviceNotes": "Difford’s base version, omitting its optional coriander, saline and bitters. Chilli heat varies: agree the desired heat before making it.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Blanco tequila",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": false,
+    "previousRecords": [
+      {
+        "id": "house-spicy-margarita",
+        "name": "Spicy Margarita",
+        "specification": "35 ml Chilli Infused El Jimador Blanca; 25 ml Blend Triple Sec; 25 ml Dd Lime; 10 ml Agave",
+        "method": "Shake, double strain",
+        "steps": [
+          "Shake, double strain"
+        ],
+        "source": "TEQUILA · B31:C41"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-blood-orange-margarita",
+    "aliases": [
+      "house-blood-orange-margarita"
+    ],
+    "actions": [
+      "shake",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "Cointreau — official recipe",
+        "url": "https://www.cointreau.com/int/en/cocktails/blood-orange-margarita"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "Producer’s fresh blood-orange version selected. House uses syrup, orange juice and falernum: a separate intentional variation.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-blood-orange-margarita",
+      "name": "Blood Orange Margarita",
+      "ingredients": [
+        {
+          "id": "reference-blood-orange-margarita-1",
+          "name": "Tequila",
+          "amount": 60.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-blood-orange-margarita-2",
+          "name": "Cointreau",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-blood-orange-margarita-3",
+          "name": "Blood orange juice",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-blood-orange-margarita-4",
+          "name": "Fresh lime juice",
+          "amount": 30.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        }
+      ],
+      "method": "Shake · strain",
+      "glass": "Rocks",
+      "ice": "Fresh cubed ice",
+      "garnish": "Dried orange slice",
+      "prepInstructions": [
+        "Shake with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "Producer’s fresh blood-orange version selected. House uses syrup, orange juice and falernum: a separate intentional variation.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Tequila",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-blood-orange-margarita",
+        "name": "Blood Orange Margarita",
+        "specification": "25 ml El Jimador Blanca; 25 ml Blend Triple Sec; 15 ml Taylors Velvet Falernum; 25 ml Orange Juice; 15 ml Dd Lime; 10 ml Blood Orange Syrup",
+        "method": "Shake + double strain",
+        "steps": [
+          "Shake + double strain"
+        ],
+        "source": "TEQUILA · E6:F20"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-mezcal-margarita",
+    "aliases": [
+      "house-mezcal-margarita"
+    ],
+    "actions": [
+      "shake",
+      "fineStrain"
+    ],
+    "sources": [
+      {
+        "name": "Difford’s Guide",
+        "url": "https://www.diffordsguide.com/cocktails/recipe/2497/mezcal-margarita"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "Difford’s mezcal version without optional bitters. Sweetness is adjustable; Custom keeps its tequila/mezcal split base.",
+    "customReview": "",
+    "recommended": {
+      "id": "reference-mezcal-margarita",
+      "name": "Mezcal Margarita",
+      "ingredients": [
+        {
+          "id": "reference-mezcal-margarita-1",
+          "name": "Mezcal",
+          "amount": 45.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-mezcal-margarita-2",
+          "name": "Triple sec",
+          "amount": 22.5,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-mezcal-margarita-3",
+          "name": "Fresh lime juice",
+          "amount": 22.5,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-mezcal-margarita-4",
+          "name": "Agave syrup",
+          "amount": 5.0,
+          "unit": "ml",
+          "batchBehaviour": "normal",
+          "batchable": true,
+          "notes": ""
+        },
+        {
+          "id": "reference-mezcal-margarita-5",
+          "name": "Saline (20% salt by weight)",
+          "amount": 2.0,
+          "unit": "drop",
+          "batchBehaviour": "serviceOnly",
+          "batchable": false,
+          "notes": ""
+        }
+      ],
+      "method": "Shake · fine strain",
+      "glass": "Rocks",
+      "ice": "Fresh cubed ice",
+      "garnish": "Lime wedge",
+      "prepInstructions": [
+        "Shake with cubed ice until cold and diluted.",
+        "Strain into the prepared glass."
+      ],
+      "serviceNotes": "Difford’s mezcal version without optional bitters. Sweetness is adjustable; Custom keeps its tequila/mezcal split base.",
+      "recipeVerified": true,
+      "isSample": false,
+      "category": "Classic",
+      "baseSpirit": "Mezcal",
+      "flavourTags": [],
+      "allergens": []
+    },
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-mezcal-margarita",
+        "name": "Mezcal Margarita",
+        "specification": "25 ml El Jimador Blanca; 15 ml Del Maguey Puebla; 15 ml Blend Triple Sec; 15 ml Dd Lime; 10 ml Agave",
+        "method": "Shake + double strain",
+        "steps": [
+          "Shake + double strain"
+        ],
+        "source": "TEQUILA · H21:I41"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "Source-backed selected professional variant; alternatives documented"
+  },
+  {
+    "id": "reference-chilli-pineapple-margarita",
+    "aliases": [
+      "house-chilli-pineapple-margarita"
+    ],
+    "recommended": null,
+    "actions": [
+      "shake",
+      "strain"
+    ],
+    "sources": [
+      {
+        "name": "IBA — parent Margarita technique",
+        "url": "https://iba-world.com/iba-cocktail/margarita/"
+      },
+      {
+        "name": "Cointreau — related pineapple sour",
+        "url": "https://www.cointreau.com/uk/en/cocktails/cointreau-tropical"
+      }
+    ],
+    "verifiedOn": "2026-10-10",
+    "version": 1,
+    "decision": "House variation, not a uniquely established classic. Related recipes support shaking its citrus/pineapple base, but do not substantiate its exact maraschino/Tabasco measures. No Recommended measures invented.",
+    "customReview": "House-only variation. Recommended unavailable for this exact recipe. References are technique comparisons, not authority for its house amounts.",
+    "customTrainingEligible": true,
+    "previousRecords": [
+      {
+        "id": "house-chilli-pineapple-margarita",
+        "name": "Chilli Pineapple Margarita",
+        "specification": "35 ml El Jimador Blanco; 15 ml Blend Triple Sec; 15 ml Maraschino; 50 ml Pineapple Juice; 25 ml Dd Lime; 10 ml Agave; 2 dash Tabasco",
+        "method": "Shake + strain",
+        "steps": [
+          "Shake + strain"
+        ],
+        "source": "TEQUILA · H6:I20"
+      }
+    ],
+    "changesMade": [
+      "Added separate curated reference and persistent specification selection; stored Custom remains intact."
+    ],
+    "confidence": "House variation only; no invented Recommended measurements"
+  }
+]

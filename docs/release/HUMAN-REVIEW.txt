@@ -1,0 +1,60 @@
+BAR — SHORT VENUE / RIGHTS REVIEW QUEUE
+No item below authorises changing physical stock or silently rewriting Custom.
+
+VENUE SPECIFICATIONS (owner/approved source required)
+1. Espresso Martini: house source uses Absolut Vodka + Blend Coffee; Pub menu
+   names Absolut Vanilla. Confirm which outlet/spec applies. Coffee liqueur is
+   now distinct from espresso in the catalogue; no quantities were invented.
+2. Spicy Margarita: house source uses chilli-infused El Jimador; Pub lists
+   chilli Casamigos. Confirm house/outlet policy, not a blanket substitution.
+3. Blend Coffee and Blend Passionfruit: confirm actual bottles/brand wording.
+   Liqueurs now have distinct identities, no coffee/purée stock conflation.
+   Existing installed stock/count IDs remain; review proposed recipe stock links.
+4. Bloody Mary: the house sheet specifies 25 ml Worcestershire. Retained but
+   flagged; confirm this before teaching the Custom recipe.
+5. Irish Coffee: house method refers to cream but ingredients omit its measure.
+6. Limoncello Spritz: confirm 125 ml soda plus Crémant top, rather than swapped
+   sparkling-wine/soda entries. Paloma: confirm grapefruit juice vs soda and top.
+7. Mojito: confirm soda omission. Daiquiri: confirm fresh lime yield; not inferred.
+8. Pimm’s, Sidecar, Mai Tai: approve corrected technique; original raw sheet
+   wording remains retained. Measures, brands and deliberate house finishes remain.
+9. Singapore Sling maraschino vs cherry liqueur; White Russian milk/cream;
+   Bramble blackberry/vanilla, wet Martini ratio and Dark & Stormy rum are house
+   variations, not silently replaced by the researched reference. Confirm if needed.
+10. Legacy duplicate product IDs remain visible, because summing independent
+    counts or converting cases/bottles would be unsafe. Reconcile deliberately.
+11. Verify supplier order units and pack sizes, especially raw 'item'/'each'
+    entries. No case-size conversion or actual supplier ordering is implemented.
+12. Confirm venue prep storage/discard rules and allergen records separately.
+    Blank allergens mean unverified. Sample prep is not seeded on new installs;
+    old user/prep records remain. No invented shelf-life or allergen guarantee.
+
+OUTLETS
+Current main Hove, Pub, linked Bar Shack and linked Coffee Shack documents remain
+separate evidence. Older Shack links do not establish current stock or availability
+everywhere. The app's shipped venue pack is Hove-focused; other-outlet candidates
+are not automatically added. New source text is a review queue, not master data.
+
+IMAGERY / PUBLIC DISTRIBUTION
+245 decodable image sets visually screened at contact-sheet scale, with existing
+provenance documents cross-referenced. This is not exact vintage/licence approval.
+24 known-wrong/ambiguous product defaults are suppressed; user photos still win.
+178/251 product defaults can render as specific assets; 73 use missing/fallback
+handling. 46/59 wines have renderable mapped assets. Counts are source/media checks,
+not iPhone render tests. Missing/fallback is preferable to an incorrect bottle.
+Additional group images (Patrón Silver/Reposado and Anima Osca) are suppressed.
+Plain Daiquiri no longer shows the strawberry Daiquiri picture. Asahi Zero/Kraken
+logo-only pictures, supplier badges, pack-size/vintage differences and other small
+labels need approved replacement photography where they hinder recognition.
+Existing cocktail pictures include generated concepts and third-party representative
+photos; none is asserted to document the venue serve. Take actual approved house
+photos before public promotion. Don't confuse source URL with redistribution rights.
+Obtain permission for Rockwater branding/internal specs and third-party bottle/menu/
+cocktail photography before public distribution; otherwise use approved photos or
+the existing fallback artwork. No new third-party photographs were downloaded.
+
+APPLE / ACCOUNT
+Support/privacy URL and distribution choice, rights approval, next build number,
+device signing and TestFlight upload remain yours. No account changes or Apple
+submission happened. Device-owner authentication protects local maintenance; it
+does not establish Rockwater employment or organisation membership.
