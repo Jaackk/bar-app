@@ -30,7 +30,10 @@ public enum WineProductResolver {
             switch ProductImageResolver.source(for: product) {
             case .custom: return .customProductImage(product)
             case .bundled: return .bundledProductImage(product)
-            case .genericFallback, .none: break
+            case .genericFallback, .none:
+                // A rejected product default must not return through an older
+                // wine record's imageName. Custom product photos still win above.
+                if ProductCatalogueCorrections.rejectsBundledImage(forProductID: product.id) { return .fallback }
             }
         }
         if !wine.imageName.isEmpty { return .wineImage(wine.imageName) }

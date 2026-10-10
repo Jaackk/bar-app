@@ -180,18 +180,18 @@ final class HouseUpdateTests: XCTestCase {
         let mapped = try XCTUnwrap(reopened.products.first { $0.id == "menu-grey-goose-essences" })
         XCTAssertEqual(mapped.imageName, "grey-goose-essences")
         XCTAssertEqual(mapped.imageData, Data([9, 8, 7]))
-        XCTAssertTrue(ProductImageResolver.hasRelevantImage(for: mapped))
+        XCTAssertEqual(ProductImageResolver.source(for: mapped), .custom)
         XCTAssertEqual(reopened.stockLists, state.stockLists)
         XCTAssertEqual(reopened.preferences.employeeName, "Saved bartender")
         XCTAssertEqual(reopened.catalogueVersion, MenuMigration.version)
 
         let invalid = try XCTUnwrap(reopened.products.first { $0.id == "menu-picpoul-de-pinet-tournee-du-sud" })
         XCTAssertTrue(invalid.imageName.isEmpty)
-        XCTAssertFalse(ProductImageResolver.hasRelevantImage(for: invalid))
+        XCTAssertFalse(ProductImageResolver.hasRelevantImage(for: invalid, canRenderBundledImage: { _ in true }, canRenderCustomImage: { _ in true }))
 
         let generic = try XCTUnwrap(reopened.products.first { $0.id == "menu-mint" })
         XCTAssertEqual(ProductImageResolver.source(for: generic), .genericFallback("fresh-herbs"))
-        XCTAssertFalse(ProductImageResolver.hasRelevantImage(for: generic))
+        XCTAssertFalse(ProductImageResolver.hasRelevantImage(for: generic, canRenderBundledImage: { _ in true }, canRenderCustomImage: { _ in true }))
     }
 
     func testCatalogueCorrectionMigratesOperationalReferencesWithoutChangingRecipeLanguage() throws {

@@ -1,8 +1,8 @@
 import Foundation
 
-/// The single source of truth for whether a product has a real, locally
-/// available image. Generic category art remains useful presentation fallback,
-/// but deliberately does not satisfy the catalogue's image-completeness check.
+/// Resolves the intended image source and checks renderability through the host.
+/// Generic category art is presentation fallback, not a completed product image.
+/// BARCore stays independent of UIKit and does not assume a named asset exists.
 public enum ProductImageResolver {
     public enum Source: Equatable, Sendable {
         case custom
@@ -24,11 +24,18 @@ public enum ProductImageResolver {
         return .none
     }
 
-    /// User-selected photos and verified bundled defaults are complete images.
-    /// The category artwork used for blank/generic records is intentionally not.
-    public static func hasRelevantImage(for product: Product) -> Bool {
+    /// Use the same decoders as the view rendering the thumbnail. A stale asset
+    /// name or undecodable local photo must remain visible in Missing Images.
+    public static func hasRelevantImage(
+        for product: Product,
+        canRenderBundledImage: (String) -> Bool,
+        canRenderCustomImage: (Data) -> Bool
+    ) -> Bool {
         switch source(for: product) {
-        case .custom, .bundled: return true
+        case .custom:
+            guard let data = product.imageData else { return false }
+            return canRenderCustomImage(data)
+        case .bundled(let name): return canRenderBundledImage(name)
         case .genericFallback, .none: return false
         }
     }

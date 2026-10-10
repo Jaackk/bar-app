@@ -661,9 +661,16 @@ struct ProductCatalogueView: View {
     @State private var missingOnly = false
     private var products: [Product] {
         StockListService.search(store.products, venueID: store.preferences.venueID, query: query)
-            .filter { !missingOnly || !ProductImageResolver.hasRelevantImage(for: $0) }
+            .filter { !missingOnly || !hasRenderableImage($0) }
     }
-    private var missingCount: Int { store.products.filter { !ProductImageResolver.hasRelevantImage(for: $0) }.count }
+    private var missingCount: Int { store.products.filter { !hasRenderableImage($0) }.count }
+    private func hasRenderableImage(_ product: Product) -> Bool {
+        ProductImageResolver.hasRelevantImage(
+            for: product,
+            canRenderBundledImage: { UIImage(named: $0) != nil },
+            canRenderCustomImage: { UIImage(data: $0) != nil }
+        )
+    }
     var body: some View {
         List {
             Section {

@@ -2,11 +2,10 @@ import SwiftUI
 import BARCore
 
 @MainActor @Observable final class AppStore {
-    private let repository: any AppRepository
+    private let persistence: SnapshotPersistenceCoordinator
     private var snapshot: AppSnapshot
-    private var lastSavedSnapshot: AppSnapshot?
     private var stockSaveTask: Task<Void, Never>?
-    private var stockSaveGeneration = 0
+    private var hasPendingStockChanges = false
     var errorMessage: String?
     var persistenceBlocked = false
     var selectedTab = 0
@@ -14,14 +13,17 @@ import BARCore
     var shouldFocusSearch = false
 
     init(repository: any AppRepository = LocalAppRepository()) {
-        self.repository = repository
-        do { snapshot = try repository.load(); lastSavedSnapshot = snapshot }
+        let initialSnapshot: AppSnapshot
+        var initialError: String?
+        do { initialSnapshot = try repository.load() }
         catch {
-            snapshot = (try? SeedLoader.load()) ?? AppSnapshot()
-            errorMessage = "Your saved data could not be opened. BAR is showing its bundled reference content and your existing data has not been changed. Reset local data in Profile only if recovery is needed."
-            persistenceBlocked = true
-            lastSavedSnapshot = snapshot
+            initialSnapshot = (try? SeedLoader.load()) ?? AppSnapshot()
+            initialError = "Your saved data could not be opened. BAR is showing its bundled reference content and your existing data has not been changed. Reset local data in Profile only if recovery is needed."
         }
+        snapshot = initialSnapshot
+        persistence = SnapshotPersistenceCoordinator(repository: repository, initialSnapshot: initialSnapshot)
+        errorMessage = initialError
+        persistenceBlocked = initialError != nil
     }
     var venue: Venue { snapshot.venues.first(where: { $0.id == preferences.venueID }) ?? snapshot.venues.first ?? Venue(id: "unconfigured", name: "BAR") }
     var cocktails: [Cocktail] { VenueResolver.cocktails(snapshot.cocktails, venueID: preferences.venueID) }
@@ -48,25 +50,31 @@ import BARCore
     }
     func cocktail(_ id: String) -> Cocktail? { cocktails.first { $0.id == id } }
     func wine(_ id: String) -> Wine? { wines.first { $0.id == id } }
+    private func cancelStockSave() {
+        stockSaveTask?.cancel()
+        stockSaveTask = nil
+    }
     private func save() {
-        guard !persistenceBlocked else { if let lastSavedSnapshot { snapshot = lastSavedSnapshot }; errorMessage = "BAR could not save this change because local data needs recovery. Your existing data has not been changed."; return }
-        do { try repository.save(snapshot); lastSavedSnapshot = snapshot }
-        catch { if let lastSavedSnapshot { snapshot = lastSavedSnapshot }; errorMessage = "This change could not be saved: \(error.localizedDescription)" }
+        _ = commit(snapshot)
     }
     /// Writes a complete candidate first, then publishes it.  Deletion is invoked from
     /// List swipe actions, where changing the observed source collection before a write
     /// succeeds can otherwise leave UIKit holding a stale row identity.
     private func commit(_ candidate: AppSnapshot) -> Bool {
+        cancelStockSave()
+        let revision = persistence.reserveWrite()
+        hasPendingStockChanges = false
         guard !persistenceBlocked else {
+            snapshot = persistence.lastConfirmedSnapshot
             errorMessage = "BAR could not save this change because local data needs recovery. Your existing data has not been changed."
             return false
         }
         do {
-            try repository.save(candidate)
+            guard try persistence.save(candidate, revision: revision) else { return false }
             snapshot = candidate
-            lastSavedSnapshot = candidate
             return true
         } catch {
+            snapshot = persistence.lastConfirmedSnapshot
             errorMessage = "This change could not be saved: \(error.localizedDescription)"
             return false
         }
@@ -74,26 +82,36 @@ import BARCore
     /// Stock is edited at service speed. Publishing the small in-memory list change
     /// first avoids blocking the main actor on the repository's defensive full-file
     /// read/decode/validate/encode cycle. The repository lock serialises the final
-    /// coalesced write and later edits supersede older candidates.
-    private func scheduleStockSave() {
-        guard !persistenceBlocked else { return }
-        stockSaveGeneration += 1
-        let generation = stockSaveGeneration
+    /// coalesced write. Revisions also cover ordinary saves, imports and resets.
+    private func scheduleStockSave(persistAfterDelay: Bool = true) {
+        cancelStockSave()
+        let revision = persistence.reserveWrite()
+        guard !persistenceBlocked else {
+            snapshot = persistence.lastConfirmedSnapshot
+            hasPendingStockChanges = false
+            errorMessage = "BAR could not save this change because local data needs recovery. Your existing data has not been changed."
+            return
+        }
+        hasPendingStockChanges = true
+        guard persistAfterDelay else { return }
         let candidate = snapshot
-        stockSaveTask?.cancel()
-        let repository = repository
+        let persistence = persistence
         stockSaveTask = Task { @MainActor [weak self] in
             // Wait until a short burst of taps has finished before asking the
             // repository to read, validate and rewrite the full local snapshot.
             try? await Task.sleep(nanoseconds: 700_000_000)
             guard !Task.isCancelled else { return }
             let failure = await Task.detached { () -> String? in
-                do { try repository.save(candidate); return nil }
+                do { try persistence.save(candidate, revision: revision); return nil }
                 catch { return error.localizedDescription }
             }.value
-            guard let self, generation == self.stockSaveGeneration else { return }
-            if let failure { self.errorMessage = "This change could not be saved: \(failure)" }
-            else { self.lastSavedSnapshot = candidate }
+            guard let self, persistence.isCurrent(revision) else { return }
+            self.stockSaveTask = nil
+            self.hasPendingStockChanges = false
+            if let failure {
+                self.snapshot = persistence.lastConfirmedSnapshot
+                self.errorMessage = "This change could not be saved: \(failure)"
+            }
         }
     }
     func toggleCocktailFavourite(_ id: String) {
@@ -177,12 +195,18 @@ import BARCore
         }
         if quantity > 0 { candidate.preferences.recordProductUse(product.id) }
         snapshot = candidate
-        if persistImmediately { scheduleStockSave() }
+        scheduleStockSave(persistAfterDelay: persistImmediately)
         if feedback { Haptics.selection() }
     }
     /// Used by accelerated steppers: values render immediately while a single final
     /// save is made when the finger lifts, avoiding disk work on every repeat tick.
     func flushStockWorkspaceChanges() { scheduleStockSave() }
+    /// Finish a pending burst before iOS can suspend the app. Ordinary taps still
+    /// use the debounced background path; only lifecycle transitions flush here.
+    func flushPendingStockChanges() {
+        guard hasPendingStockChanges else { return }
+        save()
+    }
     func setListQuantity(id: String, quantity: Int) {
         var candidate = snapshot
         StockListService.setQuantity(quantity, id: id, venueID: preferences.venueID, in: &candidate.stockLists)
@@ -240,8 +264,10 @@ import BARCore
     }
     func recordTraining(cocktailID: String, correct: Bool) { snapshot.training.record(correct: correct, cocktailID: cocktailID); save() }
     func resetLocalData() {
-        do { snapshot = try repository.reset(); lastSavedSnapshot = snapshot; errorMessage = nil; persistenceBlocked = false; selectedTab = 0 }
-        catch { errorMessage = "Reset failed: \(error.localizedDescription)" }
+        cancelStockSave()
+        hasPendingStockChanges = false
+        do { snapshot = try persistence.reset(); errorMessage = nil; persistenceBlocked = false; selectedTab = 0 }
+        catch { snapshot = persistence.lastConfirmedSnapshot; errorMessage = "Reset failed: \(error.localizedDescription)" }
     }
     func saveBatch(cocktailID: String, serves: Int, wastage: Double) {
         guard serves > 0, let drink = cocktail(cocktailID), drink.recipeVerified else { return }
@@ -284,7 +310,7 @@ import BARCore
         guard role.canEditContent else { return }
         do {
             let merged = try ContentImportService.merge(data: Data(contentsOf: url), preserving: snapshot)
-            try repository.save(merged); snapshot = merged; lastSavedSnapshot = merged; Haptics.success()
+            if commit(merged) { Haptics.success() }
         } catch { errorMessage = "Import was not applied: \(error.localizedDescription)" }
     }
 }

@@ -23,6 +23,7 @@ import BARCore
 }
 struct RootView: View {
     @Environment(AppStore.self) private var store
+    @Environment(\.scenePhase) private var scenePhase
     var body: some View {
         @Bindable var store = store
         TabView(selection: $store.selectedTab) {
@@ -32,5 +33,8 @@ struct RootView: View {
             NavigationStack { StockView() }.tabItem { Label("Stock", systemImage: "shippingbox") }.tag(3)
             NavigationStack { WastageView() }.tabItem { Label("Wastage", systemImage: "drop.triangle") }.tag(4)
         }.font(.body).alert("Local data", isPresented: Binding(get: { store.errorMessage != nil }, set: { if !$0 { store.errorMessage = nil } })) { Button("OK") { store.errorMessage = nil } } message: { Text(store.errorMessage ?? "") }
+            .onChange(of: scenePhase) { _, phase in
+                if phase != .active { store.flushPendingStockChanges() }
+            }
     }
 }

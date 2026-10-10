@@ -156,13 +156,27 @@ public enum ProductCatalogueCorrections {
         "menu-lbv-quinta-do-vallado",
         "menu-tawny-20yr-quinta-do-vallado",
         "menu-cornish-orchards-fruit-cider-4",
-        "menu-antica-rosso"
+        "menu-antica-rosso",
+        // Visually verified 10 October 2026: the alleged juice/water/non-alcoholic
+        // photos show unrelated branded products. Keep original files for audit,
+        // but never present them as these stock items, including on old snapshots.
+        "menu-glorious-greens",
+        "menu-ginger-zinger",
+        "menu-drip-sparkling-water-500ml",
+        "menu-sparkling-water-75cl",
+        "spec-nll-fl",
+        "spec-nll-ms"
     ]
 
-    /// Returns the verified bundled image name for a canonical product. It
-    /// intentionally returns an empty string for known-invalid legacy matches.
+    /// Suppresses confirmed incorrect defaults, including in persisted records.
+    public static func rejectsBundledImage(forProductID id: String) -> Bool {
+        invalidBundledImageProductIDs.contains(id)
+    }
+
+    /// Returns the configured name; renderability is checked by the host UI.
+    /// Known-invalid legacy matches intentionally return an empty string.
     public static func defaultImageName(for product: Product) -> String {
-        if invalidBundledImageProductIDs.contains(product.id) { return "" }
+        if rejectsBundledImage(forProductID: product.id) { return "" }
         return individualImageNames[product.id] ?? product.imageName
     }
 

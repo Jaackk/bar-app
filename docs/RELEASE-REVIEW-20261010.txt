@@ -1,0 +1,77 @@
+BAR - release readiness review, 10 October 2026
+Source baseline: 57331f0a9b53830f85667936ff6c0deb83af9855
+
+Prepared locally on branch codex/bar-app-readiness-review. No release, remote
+push, signing, TestFlight submission or App Store approval occurred.
+
+FOCUSED CHANGES
+- Revision-aware local snapshot persistence: stale deferred stock writes cannot
+  overwrite newer immediate saves/reset. Background/inactive transitions flush
+  pending stock edits. Six concurrency/regression tests added.
+- Missing-image filtering checks actual decoders rather than a nonempty name.
+  Six unrelated bundled product-image defaults suppressed; original files and
+  user photos retained. Six image-resolution regression tests added.
+- Official Hove menu fingerprint checker and six Python tests added. This tool
+  is review-only and never rewrites stock counts, recipes or the app catalogue.
+
+VALIDATION
+- Python menu-monitor suite: six tests passed on Windows.
+- All four official currently linked drinks/Pub/Shack PDF sources retrieved.
+- Static media audit: 249 canonical products; 181 configured renderable product
+  image mappings; 68 need appropriate images. Availability does not certify
+  identity, licensing or native asset compilation. 47/59 wine images resolve.
+- Native tests/build NOT run: Swift/Xcode unavailable on this Windows machine.
+- Existing docs/VALIDATION.md and screenshots describe an older September build.
+
+OPEN RELEASE BLOCKERS / PRIORITIES
+1. MenuMigration can create duplicate stock IDs when both old alias and canonical
+   counts exist, causing validation failure. It also skips genuinely new menu-*
+   products on used installs and overwrites local name/category/unit edits.
+2. Release role is bartender only; manager stocktake/par/import UI is inaccessible.
+   Decide local-owner release vs authenticated venue membership; do not expose
+   the debug role toggle as production authorization.
+3. Stock-list exports omit units; prep's "Today" state persists across days.
+4. Review Blend Coffee->espresso and Blend Passionfruit->puree mappings. The Pub
+   menu identifies liqueurs. Preserve supplied measures pending venue confirmation.
+5. Replace sample prep/storage/counts/pars with approved operational data.
+6. Complete exact product imagery, verify distribution rights and capture current
+   screens. User-entered image downloads need bounded streaming/cancellation.
+7. Add tested backup/restore, fresh Release/device/accessibility/upgrade tests,
+   support and privacy URLs, accurate store information, signing and TestFlight.
+
+MENU SOURCE RESULT
+Official Hove page still links the May main menu. The audit represents all 16
+menu cocktails, 59 wine identities and 153 menu-derived products. No confirmed
+main-menu removals. Old Forrester should be Old Forester (keep its stable ID).
+The newer Pub menu has brand/spec conflicts; older linked Shack menus have
+outlet-specific gaps. They are review candidates, not verified current inventory.
+No structured price fields exist in the audited app records; a separate 169-row
+menu price baseline was prepared, not an in-app price synchronization feature.
+
+MENU MONITOR
+From repository root:
+  python scripts/test-menu-monitor.py
+  python scripts/check-menu-updates.py --state-dir <local-evidence-directory>
+After inspecting all changed documents and resolving catalogue proposals:
+  python scripts/check-menu-updates.py --state-dir <local-evidence-directory> --accept-baseline
+
+The tool tracks both URL changes and PDF byte changes at an unchanged URL. Source
+errors are failures, never empty menus. The reviewed baseline survives failures.
+Its baseline is a document fingerprint record, not approval of recipes/counts.
+Public documents must never reset local counts, photos, lists or house specs.
+The installed app has no automatic content sync. Safe publishing/cache merging
+is required before a website change can be delivered to staff phones.
+
+ANY-VENUE PATH
+Stage 1: neutral app identity, create/select venue, approved content packs,
+form-based local editing, photo ownership and backup/restore.
+Stage 2: memberships/roles enforced on server, published menu revisions, offline
+cache/outbox, conflicts, audit trail and two-device tests.
+Stage 3: venue isolation, onboarding/support, account/venue lifecycle, commercial
+billing and recovery. Rockwater's monitor belongs only to its venue content pack.
+
+LOCAL VISUAL REVIEW
+C:/Users/Jacko/Documents/Codex/bar-app-review/index.html
+Includes all 20 historical screenshots, an asset gallery and product coverage.
+Detailed source/PDF comparison: bar-app-review/menu-evidence/menu-audit.html
+Machine-readable inventory: bar-app-review/media-audit.json
