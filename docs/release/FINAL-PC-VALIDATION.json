@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-11",
+  "environment": "Windows PowerShell; Python with Pillow and tree-sitter; no Xcode or iOS runtime",
+  "baseline": "28a95d7d94bee209a415e24f893d1c438d185326",
+  "executed": [
+    {"command": "python -X utf8 scripts/test-content-integrity.py", "passed": 15, "failed": 0},
+    {"command": "python -X utf8 scripts/test-menu-monitor.py", "passed": 11, "failed": 0},
+    {"command": "python -X utf8 scripts/test-bundled-media.py", "passed": 8, "failed": 0},
+    {"command": "python -X utf8 scripts/check-swift-syntax.py", "files": 60, "grammarErrors": 0, "nativeCompilation": false},
+    {"command": "scripts/check-menu-updates.py against existing external monitor state", "unchangedDocuments": 4, "errors": 0, "baselineAccepted": false},
+    {"check": "git diff --check", "exitCode": 0},
+    {"check": "baseline product JSON comparison", "stableIDsPreserved": 277, "brandOnlyEdits": 19, "allOtherFieldsUnchanged": true},
+    {"check": "store metadata lengths", "name": 3, "subtitle": 29, "keywords": 83, "promotionalText": 155}
+  ],
+  "notExecuted": {
+    "BARCoreXCTestMethods": 107,
+    "BARUITestMethods": 13,
+    "newNativeRegressionMethods": 3,
+    "gates": ["Swift type checking and compilation", "Release build and analysis", "native screenshots", "physical iPhone", "accessibility", "archive and TestFlight"]
+  },
+  "visualEvidence": "Original 245-image contact-sheet screening, individual new-source inspection and four PNG/JPEG comparison pairs; not current native UI evidence",
+  "protected": ["persistence", "migrations", "backup/restore", "owner authentication", "specification selection", "core navigation", "Apple project/signing configuration", "scripts/validate-mac.sh", "public portfolio"]
+}

@@ -2,6 +2,45 @@ import XCTest
 @testable import BARCore
 
 final class ProductImageResolverTests: XCTestCase {
+    func testOfficialReplacementAssetsReplaceLegacyGroupImagesWithoutEditingProduct() {
+        let replacements = [
+            "menu-patron-silver": "bar-patron-silver",
+            "menu-patron-reposado": "bar-patron-reposado",
+            "menu-cotes-du-rhone-villages-plan-de-dieu-saint-damien": "bar-saint-damien",
+            "menu-cabernet-sauvignon-paso-doro": "bar-paso-doro"
+        ]
+        for (id, image) in replacements {
+            var product = Product(id: id, venueID: "rockwater-hove", name: id, imageName: "legacy-group")
+            XCTAssertEqual(ProductImageResolver.source(for: product), .bundled(image))
+            XCTAssertEqual(product.imageName, "legacy-group")
+            product.imageData = Data([4, 5, 6])
+            XCTAssertEqual(ProductImageResolver.source(for: product), .custom)
+            XCTAssertEqual(product.imageData, Data([4, 5, 6]))
+        }
+    }
+
+    func testLogosAmbiguousExpressionsAndWrongMagnumPacksUseFallback() {
+        for id in ["menu-asahi-0-0", "menu-orange-juice", "menu-kraken", "spec-sweet-vermouth",
+                   "menu-grey-goose-essences", "menu-veuve-clicquot-brut-yellow-label-magnum",
+                   "menu-minuty-prestige-chateau-minuty-magnum"] {
+            var product = Product(id: id, venueID: "rockwater-hove", name: id, imageName: "legacy-photo")
+            XCTAssertNil(ProductImageResolver.bundledImageName(for: product), id)
+            XCTAssertFalse(ProductImageResolver.hasRelevantImage(for: product,
+                canRenderBundledImage: { _ in true }, canRenderCustomImage: { _ in true }), id)
+            product.imageData = Data([7])
+            XCTAssertEqual(ProductImageResolver.source(for: product), .custom, id)
+        }
+    }
+
+    func testNoillyPratSpellingPreservesIdentityAndLegacySearchAlias() throws {
+        let old = Product(id: "menu-noilly-pratt", venueID: "rockwater-hove", name: "Noilly Pratt")
+        let corrected = try XCTUnwrap(ProductCatalogueCorrections.corrected([old]).first { $0.id == old.id })
+        XCTAssertEqual(corrected.name, "Noilly Prat")
+        XCTAssertTrue(corrected.aliases.contains("Noilly Pratt"))
+        XCTAssertEqual(corrected.venueID, old.venueID)
+        XCTAssertEqual(old.name, "Noilly Pratt")
+    }
+
     func testUnavailableNamedAssetIsMissingEvenWhenCorrectionProvidesItsName() {
         let product = Product(id: "menu-trip-lemon-basil", venueID: "rockwater-hove", name: "TRIP Lemon & Basil")
         var checkedName: String?

@@ -1,14 +1,7 @@
 {
-  "checkedAt": "2026-10-10T05:36:23.471754+00:00",
+  "checkedAt": "2026-10-11T21:18:39.292433+00:00",
   "source": "https://www.rockwater.uk/hove/",
   "scope": "Published Hove drinks, Pub and Shack menu documents; not physical inventory.",
-  "status": "unchanged",
-  "errors": [],
-  "differences": {
-    "added": [],
-    "removed": [],
-    "changed": []
-  },
   "menus": [
     {
       "label": "Drinks Menu",
@@ -59,6 +52,12 @@
       "lastModified": "Tue, 29 Sep 2026 10:22:13 GMT"
     }
   ],
-  "baselineAccepted": false,
-  "decision": "No changed fingerprint: no public-menu content update manufactured. Linked older Shack material remains separate and is not current stock evidence."
+  "errors": [],
+  "status": "unchanged",
+  "differences": {
+    "added": [],
+    "removed": [],
+    "changed": []
+  },
+  "decision": "No changed fingerprint: no public-menu content update. Linked older Shack material remains separate; no inference of stock or recipe measures."
 }

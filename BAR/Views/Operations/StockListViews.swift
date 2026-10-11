@@ -617,21 +617,6 @@ private struct ProductPicker: View {
 
 struct ProductThumbnail: View {
     var product: Product?
-    private var symbol: String {
-        switch product?.category {
-        case "Wine", "Sparkling / Champagne": "wineglass"
-        case "Beer / Cider": "mug"
-        case "Fresh Fruit": "apple.logo"
-        case "Fresh Herbs", "Garnishes": "leaf"
-        case "Juices", "Syrups / Cordials", "Purees", "Bitters": "drop"
-        case "Mixers", "Soft Drinks": "bubbles.and.sparkles"
-        case "Prep": "flask"
-        default: "waterbottle"
-        }
-    }
-    private var monogram: String {
-        String(product?.name.trimmingCharacters(in: .whitespacesAndNewlines).prefix(1) ?? "P").uppercased()
-    }
     var body: some View {
         Group {
             switch product.map(ProductImageResolver.source(for:)) ?? .none {
@@ -641,21 +626,15 @@ struct ProductThumbnail: View {
             case .bundled(let name):
                 if let image = UIImage(named: name) { Image(uiImage: image).resizable().scaledToFit() }
                 else { fallbackArt }
-            case .genericFallback(let name):
-                if let image = UIImage(named: name) { Image(uiImage: image).resizable().scaledToFill() }
-                else { fallbackArt }
+            case .genericFallback:
+                fallbackArt
             case .none:
                 fallbackArt
             }
         }.clipShape(RoundedRectangle(cornerRadius: 10)).accessibilityHidden(true)
     }
     private var fallbackArt: some View {
-                ZStack {
-                    LinearGradient(colors: [BarTheme.sage.opacity(0.7), BarTheme.cream], startPoint: .topLeading, endPoint: .bottomTrailing)
-                    Circle().fill(.white.opacity(0.52)).frame(width: 52, height: 52)
-                    Image(systemName: symbol).font(.system(size: 23, weight: .medium)).foregroundStyle(BarTheme.olive)
-                    Text(monogram).font(.caption2.bold()).foregroundStyle(BarTheme.olive.opacity(0.6)).offset(x: 18, y: 22)
-                }
+        BarCategoryArtwork(category: product?.category ?? "Ingredient")
     }
 }
 

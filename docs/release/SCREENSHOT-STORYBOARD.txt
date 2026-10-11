@@ -1,0 +1,65 @@
+BAR — APP STORE SCREENSHOT STORYBOARD — 11 OCTOBER 2026
+Capture actual native candidate builds on Mac/iPhone. No HTML mock-ups or historical
+screenshots count as current evidence. This file is the shot plan, not finished art.
+
+VISUAL DIRECTION
+BAR cream background, olive text, existing editorial type. One short headline above
+each real screen, consistent margins and device scale. Measures remain readable.
+Show whole screens without fake controls, decorative feature promises or distorted
+bottle crops. Use approved photos or category art; do not make generated concepts
+look like photographed venue serves. No private employee names, stock levels or
+guest data. A clearly isolated screenshot fixture is fine; do not alter service data.
+
+01  FIND THE DRINK. GET ON WITH SERVICE.
+    Home/search, query Sidecar, genuine ranked result. Show enough actual Home
+    context to establish BAR, then the next screenshot answers the query.
+    Check: keyboard placement and first result visible on smaller iPhone.
+
+02  MEASURES AND METHOD, AT A GLANCE.
+    Sidecar Recommended detail: measures plus Shake/strain and glass/garnish.
+    The active specification label must be visible. Do not use an unresolved
+    Custom recipe or crop out an important review note to imply verification.
+
+03  YOUR HOUSE SPEC. A CLASSIC REFERENCE.
+    Same classic, Custom selected, with genuine per-drink selector and global
+    default option. Preserve actual source values; do not edit them for marketing.
+    Suggested companion annotation: "Separate specifications. Clear choices."
+
+04  SCALE THE BATCH. KEEP THE FINISHING TOUCHES.
+    An approved recipe at 35 serves in Batch. Show a meaningful calculated premix
+    and separate service additions. No implied automatic inventory deduction.
+    Avoid a screen where the ingredient list/units are off the visible viewport.
+
+05  HELP A GUEST FIND THEIR WINE.
+    Wine Finder filtered to an appropriate style, then a real wine detail if needed.
+    Approved full bottle fits in frame. Pairing text is guidance; no "in stock"
+    banner or vintage claim unsupported by venue information.
+
+06  A CLEAR LIST FOR THE NEXT RUN.
+    Restock/order list with two or three fixture rows and obvious quantity + unit.
+    Caption may say "Keep and share lists." Never say orders are sent to suppliers.
+
+07  KEEP LEARNING BETWEEN SERVICES.
+    Real quiz/flashcard with Recommended/Custom context visible. Use a verified,
+    eligible recipe. Don't imply certification or allergen expertise.
+
+08  OFFLINE TOOLS. YOUR DATA, BACKED UP.
+    Actual Profile backup controls or saved batch view. No fake cloud-sync icon.
+    Optional annotation: "Export a copy to Files." This is local-first storage,
+    not an automatic cloud backup promise.
+
+CAPTURE PROCEDURE
+Run scripts/validate-mac.sh at the NEW final commit, then use the screenshot route
+in docs/release/MAC-VALIDATION.txt. Capture a supported Pro and smaller iPhone for
+layout QA. Keep original PNGs plus device/iOS/build/SHA in the capture folder.
+For simulator captures: xcrun simctl io DEVICE_UDID screenshot OUTPUT.png
+Use the actual App Store Connect size slots for the supported devices. Confirm the
+current upload dimensions before designing final caption canvases:
+https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/
+On a physical iPhone, also verify the images at real reading size and accessibility
+text sizes. Do not crop or erase defects to produce a clean marketing screenshot.
+
+FINAL CHECK
+Rights cleared; real shipping UI; no hidden review caveats; no false stock/allergen/
+supplier/cloud claims; correct specification label; whole bottle; useful first three
+images; support/privacy URL working. Final store graphics wait for native validation.

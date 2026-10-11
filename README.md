@@ -6,7 +6,7 @@ The cream, stone, olive, sage and coral design follows the supplied Rockwater mo
 
 ## Screenshots
 
-The captures in [docs/screenshots](docs/screenshots) are historical, not validation of the current source. Start with the [current handoff](docs/release/HANDOFF.txt) and [Mac validation procedure](docs/release/MAC-VALIDATION.txt). This Windows-reviewed source is a **Mac Validation Candidate**, not a signed or TestFlight-tested release.
+The captures in [docs/screenshots](docs/screenshots) are historical, not validation of the current source. Start with the [final PC content/media handoff](docs/release/FINAL-PC-HANDOFF.txt) and [Mac validation procedure](docs/release/MAC-VALIDATION.txt). The [earlier implementation handoff](docs/release/HANDOFF.txt) records the reliability/specification pass. This Windows-reviewed source is a **Mac Validation Candidate**, not a signed or TestFlight-tested release.
 
 ## What works
 

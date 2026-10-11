@@ -1,0 +1,132 @@
+BAR — FINAL PC CONTENT / MEDIA HANDOFF — 11 OCTOBER 2026
+Status: Mac Validation Candidate. Not built/signed/TestFlight validated on Windows.
+
+BASELINE
+codex/bar-app-readiness-review
+28a95d7d94bee209a415e24f893d1c438d185326
+Repository and remote inspected; starting tree clean. Previous reliability/spec/
+release work retained. This pass is a new commit; no old commit rewritten.
+Use the NEW final commit supplied in the chat, not 28a95d7, for Mac validation.
+
+CHANGED
+- Four official-source images: individual Patron Silver/Reposado; Saint Damien
+  Plan de Dieu and Paso d'Oro. Source URLs, hashes and rights caveats retained.
+- Seven extra inaccurate/ambiguous product defaults suppressed: logo/badge images,
+  unspecified Grey Goose flavour, a vermouth group image and two wrong-size magnums.
+- Unsuitable Mai Tai and shared Guava Soda/Lychee Lagoon references suppressed;
+  prior plain Daiquiri suppression retained. Reference illustration disclosure stays.
+- Original BAR-native category drawings in cream/olive replace weak fallback
+  symbols/montages. Wine artwork fits full bottles. User photographs still win.
+- Noilly Prat spelling with stable ID and alias; 19 truncated brand fields completed.
+- 60 opaque PNGs optimised once; image bytes down net 34.8 MB (43.2%).
+- Complete product/wine/cocktail source-record media inventory, rights review,
+  prioritised practical photography list, store copy, privacy/support drafts and
+  current native screenshot storyboard. Icon retained: opaque 1024 square, no
+  objective source defect found. Native home-screen appearance still needs checking.
+
+FILES / SCOPE
+Implementation: BAR/Components/DesignSystem.swift,
+BAR/Views/Operations/StockListViews.swift,
+BARCore/Services/ProductCatalogueCorrections.swift,
+BARCore/Data/hove-products.json, Tests/BARCoreTests/ProductImageResolverTests.swift.
+Assets: 60 PNG-to-JPEG replacements with Contents.json updates, four new imagesets,
+one unused empty imageset removed. All file details: IMAGE-OPTIMISATION.json and git.
+Tools: audit-bundled-media.py, build-media-review.py, optimise-bundled-images.py,
+test-bundled-media.py. Review evidence and release drafts are under docs/release.
+Persistence, migration, backups, authentication, spec selection, core navigation,
+project signing/configuration and scripts/validate-mac.sh were not modified.
+Portfolio and BAR review website were not changed.
+
+HONEST COVERAGE
+                                        Before       After
+Canonical products                      251          251
+Image sets                              246          249
+Decodable image sets                    245          249
+Specific renderable product defaults    178          175
+Products using category fallback         73           76
+Wine Finder specific images              46/59        48/59
+Verified actual house-cocktail photos      0/16         0/16
+Image-file bytes including icon         80,631,420   45,828,700
+
+The specific-product total decreased deliberately: four correct assets added,
+seven misleading defaults removed. No blank failure placeholder is intended; the
+76 remaining gaps use native category art, subject to iPhone visual validation.
+175 is NOT exact/licensed photography coverage. Its disjoint identity breakdown:
+  2 exact expressions confirmed from official media (older packaging)
+  76 likely exact, visually screened
+  48 likely exact wine references, vintage/current pack unverified
+  45 representative product types, supplier/pack not established
+  4 generated ingredient illustrations
+Plus 76 category fallbacks = 251. All products remain user-photo capable.
+
+House cocktail presentation: 14 references (3 generated, 11 third-party), 2 category
+fallbacks. None is certified to show Rockwater's actual serve. All 16 are listed in
+PHOTO-SHOT-LIST.txt. The 46 house-classic and 31 generic source records are also
+individually classified in PRODUCT-IMAGE-AUDIT.json; recommended identities do not
+require a duplicate stock identity or duplicate product image.
+
+MENU / VENUE
+Four official fingerprints unchanged at 2026-10-11T21:18:39Z; no errors, no approved
+baseline rewrite. Current main Hove drinks, Pub and the two older linked Shack
+documents remain distinct. No physical stock, recipe measures or menu additions
+were inferred. Evidence: menu-status.json and CATALOGUE-REVIEW.txt.
+HUMAN-REVIEW.txt classifies all prior questions. Main unresolved items: outlet
+vodka/tequila differences, Blend and NLL bottle identities, questionable house
+measures/omissions, actual packs/units, allergen/prep approval. These need venue
+knowledge or physical labels, not more speculative internet research.
+
+TESTS ACTUALLY EXECUTED
+python -X utf8 scripts/test-content-integrity.py   15 passed, 0 failed
+python -X utf8 scripts/test-menu-monitor.py        11 passed, 0 failed
+python -X utf8 scripts/test-bundled-media.py        8 passed, 0 failed
+Total: 34 Python tests passed. Menu monitor live run: 4 unchanged, 0 errors.
+python -X utf8 scripts/check-swift-syntax.py       60 files, 0 grammar errors
+Grammar parsing is not Swift compilation, type checking or native execution.
+
+WRITTEN / NOT EXECUTED HERE
+Three new XCTest methods cover official replacement mapping without mutation,
+rejected logo/expression/pack defaults plus user-photo precedence, and Noilly Prat
+stable identity/alias. Total native methods now: 107 BARCore + 13 BARUITests.
+All require macOS/Xcode in this environment. No Xcode, simulator, physical iPhone,
+archive, accessibility certification or App Store upload was performed.
+
+RIGHTS / RELEASE GATES
+235 existing third-party/reference assets lack an established redistribution grant;
+four new official-source assets have explicit permission-scope caveats. Ten generated
+illustrations/concepts need their original generation/terms record retained. The BAR
+icon/native drawing are separately identified. Suppressed assets still in the bundle
+also need rights clearance or removal before distribution. See MEDIA-RIGHTS-REVIEW.txt.
+Obtain venue permission for branding/internal content, plus approved actual photos.
+Publish support/privacy pages with a working contact; drafts are ready, not published.
+Resolve account/distribution/build number and Apple questionnaires after native review.
+
+SHORTEST MAC NEXT STEP
+Preserve any Mac changes, then in the actual bar-app repository:
+  git fetch origin
+  git switch codex/bar-app-readiness-review
+  git pull --ff-only
+  git status --short
+  git rev-parse HEAD
+  bash scripts/validate-mac.sh NEW_FINAL_SHA_FROM_HANDOFF
+Use the SHA in the final chat reply; verify it matches your checkout. The script
+checks a clean exact commit, runs Debug/Release core tests, native UI tests on Pro
+and smaller simulators, then Release build/analyze. See MAC-VALIDATION.txt for
+installed simulator requirements, physical iPhone, upgrade/restore/offline/rapid-edit
+tests and real-shift pilot. Open BAR.xcodeproj, scheme BAR. Keep existing Apple team
+and bundle identity unless an actual signing problem requires an owner decision.
+
+New media suite is optional on Mac after installing the review dependencies:
+  python3 -m venv build/review-venv
+  source build/review-venv/bin/activate
+  python3 -m pip install -r scripts/requirements-review.txt
+  python3 scripts/test-bundled-media.py
+Current screenshots must come from that actual candidate build. Specifically inspect
+new fallback art at small/large sizes, whole wine bottles, custom-photo precedence,
+all four new assets and sharpness of compressed labels on the physical iPhone.
+
+IS MORE WINDOWS-ONLY WORK WORTH DELAYING THE MAC?
+No further implementation pass is justified before native validation. Move to the
+Mac now. Venue answers, rights permission and photography can progress alongside it;
+they are real release dependencies, not reasons for another architecture rewrite.
+Fix genuine native compile/runtime issues there, validate iPhone use, clear content
+rights, then proceed to the TestFlight pilot. Do not jump to public submission.

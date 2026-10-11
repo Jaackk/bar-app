@@ -1,0 +1,119 @@
+{
+  "reason": "Complete truncated brand labels from the existing full product names and visually screened bottle labels. IDs, quantities and units unchanged. Seed content only; no user data migration.",
+  "changes": [
+    {
+      "id": "menu-whitley-neill-rhubarb-ginger",
+      "name": "Whitley Neill Rhubarb & Ginger",
+      "before": "Whitley",
+      "after": "Whitley Neill"
+    },
+    {
+      "id": "menu-brighton-gin",
+      "name": "Brighton Gin",
+      "before": "Brighton",
+      "after": "Brighton Gin"
+    },
+    {
+      "id": "menu-monkey-47",
+      "name": "Monkey 47",
+      "before": "Monkey",
+      "after": "Monkey 47"
+    },
+    {
+      "id": "menu-gin-mare",
+      "name": "Gin Mare",
+      "before": "Gin",
+      "after": "Gin Mare"
+    },
+    {
+      "id": "menu-gin-mare-capri",
+      "name": "Gin Mare Capri",
+      "before": "Gin",
+      "after": "Gin Mare"
+    },
+    {
+      "id": "menu-ketel-one",
+      "name": "Ketel One",
+      "before": "Ketel",
+      "after": "Ketel One"
+    },
+    {
+      "id": "menu-grey-goose",
+      "name": "Grey Goose",
+      "before": "Grey",
+      "after": "Grey Goose"
+    },
+    {
+      "id": "menu-grey-goose-essences",
+      "name": "Grey Goose Essences",
+      "before": "Grey",
+      "after": "Grey Goose"
+    },
+    {
+      "id": "menu-el-jimador-blanco",
+      "name": "El Jimador Blanco",
+      "before": "El",
+      "after": "El Jimador"
+    },
+    {
+      "id": "menu-el-jimador-reposado",
+      "name": "El Jimador Reposado",
+      "before": "El",
+      "after": "El Jimador"
+    },
+    {
+      "id": "menu-havana-club-3",
+      "name": "Havana Club 3",
+      "before": "Havana",
+      "after": "Havana Club"
+    },
+    {
+      "id": "menu-havana-spiced",
+      "name": "Havana Spiced",
+      "before": "Havana",
+      "after": "Havana Club"
+    },
+    {
+      "id": "menu-havana-club-7",
+      "name": "Havana Club 7",
+      "before": "Havana",
+      "after": "Havana Club"
+    },
+    {
+      "id": "menu-old-forrester-bourbon",
+      "name": "Old Forrester Bourbon",
+      "before": "Old",
+      "after": "Old Forester"
+    },
+    {
+      "id": "menu-johnnie-walker-black-label-12yo-scotch",
+      "name": "Johnnie Walker Black Label 12YO Scotch",
+      "before": "Johnnie",
+      "after": "Johnnie Walker"
+    },
+    {
+      "id": "menu-woodford-reserve-bourbon",
+      "name": "Woodford Reserve Bourbon",
+      "before": "Woodford",
+      "after": "Woodford Reserve"
+    },
+    {
+      "id": "menu-elijah-craig-bourbon",
+      "name": "Elijah Craig Bourbon",
+      "before": "Elijah",
+      "after": "Elijah Craig"
+    },
+    {
+      "id": "menu-woodford-reserve-rye",
+      "name": "Woodford Reserve Rye",
+      "before": "Woodford",
+      "after": "Woodford Reserve"
+    },
+    {
+      "id": "menu-woodford-reserve-double-oaked",
+      "name": "Woodford Reserve Double Oaked",
+      "before": "Woodford",
+      "after": "Woodford Reserve"
+    }
+  ]
+}

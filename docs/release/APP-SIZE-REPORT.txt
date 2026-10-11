@@ -1,0 +1,32 @@
+BAR — BUNDLED MEDIA SIZE — 11 OCTOBER 2026
+
+Baseline 28a95d7: 80,631,420 bytes of image files including icon.
+Final PC pass:   45,828,700 bytes of image files including icon.
+Net reduction:  34,802,720 bytes (34.80 MB / 43.2%).
+
+60 opaque photographic PNGs converted once to JPEG quality 94, 4:4:4, with
+unchanged dimensions: 35,479,285 bytes saved. Four new official-source images add
+676,565 bytes. The unused zero-byte Johnnie Walker file/empty set was removed;
+the working Johnnie Walker asset is unchanged.
+
+Existing JPEGs, genuinely transparent PNGs, icon and user photos were untouched.
+Only declared files in the repository's asset catalogue are eligible. The script
+refuses a repeat pass when its report exists, preventing repeated lossy conversion.
+Every conversion records before/after hashes, dimensions and sizes in
+IMAGE-OPTIMISATION.json. Originals remain recoverable through git.
+
+Visual comparison: Angostura label, lemon detail, Masottina rose bottle and Sea
+Glass concept retained useful detail at the inspected display sizes. All declared
+images decode successfully with Pillow. Final colour/sharpness/scrolling checks
+must use the native app on both iPhone sizes; no simulator was run on Windows.
+
+These are source image-file bytes, NOT an App Store download/archive size. Asset
+compilation, slicing and compression change the shipped result. Existing PNG-to-
+JPEG conversions save disk/bundle bytes, not decoded pixel memory: dimensions are
+unchanged. Newly acquired large Patron press photos were resized once to a maximum
+1280-pixel edge. Native memory/scrolling profiling remains a Mac/iPhone check.
+The final dimension inventory contains no image with an edge over 2048 pixels;
+the largest pixel-area images are 1440 x 1440. Further resizing is not justified
+before checking native detail presentation on the iPhone.
+
+Do not rerun the optimiser on already processed photos to chase a percentage.

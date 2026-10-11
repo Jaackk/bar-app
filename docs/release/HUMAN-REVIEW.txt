@@ -35,26 +35,42 @@ separate evidence. Older Shack links do not establish current stock or availabil
 everywhere. The app's shipped venue pack is Hove-focused; other-outlet candidates
 are not automatically added. New source text is a review queue, not master data.
 
-IMAGERY / PUBLIC DISTRIBUTION
-245 decodable image sets visually screened at contact-sheet scale, with existing
-provenance documents cross-referenced. This is not exact vintage/licence approval.
-24 known-wrong/ambiguous product defaults are suppressed; user photos still win.
-178/251 product defaults can render as specific assets; 73 use missing/fallback
-handling. 46/59 wines have renderable mapped assets. Counts are source/media checks,
-not iPhone render tests. Missing/fallback is preferable to an incorrect bottle.
-Additional group images (Patrón Silver/Reposado and Anima Osca) are suppressed.
-Plain Daiquiri no longer shows the strawberry Daiquiri picture. Asahi Zero/Kraken
-logo-only pictures, supplier badges, pack-size/vintage differences and other small
-labels need approved replacement photography where they hinder recognition.
-Existing cocktail pictures include generated concepts and third-party representative
-photos; none is asserted to document the venue serve. Take actual approved house
-photos before public promotion. Don't confuse source URL with redistribution rights.
-Obtain permission for Rockwater branding/internal specs and third-party bottle/menu/
-cocktail photography before public distribution; otherwise use approved photos or
-the existing fallback artwork. No new third-party photographs were downloaded.
+IMAGERY / PUBLIC DISTRIBUTION — UPDATED 11 OCTOBER 2026
+249/249 image sets decode. 175/251 products have specific renderable defaults;
+76 use deliberate BAR-native category artwork. This is not 175 exact/licensed
+bottle photographs. 48/59 Wine Finder entries have specific images. Four official
+source assets added; seven extra inaccurate/ambiguous product defaults suppressed.
+27 product defaults are now explicitly suppressed overall. Four cocktail reference
+assets are blocked (plain Daiquiri, Mai Tai and two shared rum-promotion images).
+User photos still take priority. Full counts/identity judgements and source records:
+PRODUCT-IMAGE-AUDIT.json. Rights: MEDIA-RIGHTS-REVIEW.txt. Actual venue photos:
+PHOTO-SHOT-LIST.txt. No house-cocktail image is certified as real venue photography.
 
 APPLE / ACCOUNT
 Support/privacy URL and distribution choice, rights approval, next build number,
 device signing and TestFlight upload remain yours. No account changes or Apple
 submission happened. Device-owner authentication protects local maintenance; it
 does not establish Rockwater employment or organisation membership.
+CLASSIFICATION OF EVERY OUTSTANDING ITEM — FINAL PC PASS
+Items 1-7: require Rockwater knowledge/approved source. Public menus do not resolve
+  outlet brand/measure, omitted ingredient, cream amount or production procedure.
+Item 8: general technique research was resolved by the previous classics pass;
+  Sidecar shaking remains corrected. Intentional venue procedure approval still
+  needs the venue. This pass does not reopen the researched classic architecture.
+Item 9: legitimate house variations require venue confirmation, not internet votes.
+Item 10: physical/local record reconciliation. Never sum old duplicate counts blindly.
+Item 11: physical pack/unit observation plus supplier ordering practice. Photograph
+  actual pack; a catalogue label is not a case conversion instruction.
+Item 12: approved venue food-safety/allergen knowledge plus actual labels. Not solved
+  by a generic web recipe or guessed shelf life.
+Outlets: current official website research completed, four fingerprints unchanged.
+  Whether older Shack documents still apply operationally requires venue knowledge.
+Images: researchable identity corrections completed where evidence sufficed. Exact
+  expression/pack gaps need physical bottle observations/photos. Redistribution is
+  a permission decision, not an identity check. All rows classified in media audit.
+Apple: account/distribution/name availability and contact/URL publishing are owner
+  actions; native build, image cropping, Dynamic Type and release behaviour require
+  Mac/iPhone. No additional architectural work is requested before that validation.
+Research resolved this pass: Noilly Prat spelling, 19 truncated brand labels,
+  individual Patron expression images, two producer wine references, unchanged menu
+  state, rejection of inappropriate range/pack images. See CATALOGUE-REVIEW.txt.

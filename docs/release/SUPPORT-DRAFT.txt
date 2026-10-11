@@ -1,0 +1,36 @@
+BAR SUPPORT — DRAFT WEB COPY, NOT PUBLISHED
+
+BAR is a local-first iPhone companion for cocktail knowledge and bar service tools.
+
+Need help?
+Contact: hello@raskyjack.com (proposed; verify delivery before publishing).
+Include your iPhone model, iOS version, BAR version/build, what you were doing and
+what happened. A screenshot can help; remove employee/guest details and private
+venue data first. Do not email a full backup unless specifically needed and agreed.
+
+Before an update or device change
+Use Profile > backup export to save a copy to Files outside the app. The backup
+contains your photos and operational data; keep it somewhere you control. Sharing
+a stock/order list is not a complete backup.
+
+Missing or incorrect drink information
+Check whether you are viewing Custom or Recommended. Tell us the drink, active
+specification and disputed ingredient/method. Venue changes need an approved venue
+source. Never rely on an unverified allergen record as an allergen-free claim.
+
+An image is missing
+BAR may deliberately show category artwork when a correct product photo is not
+available. Owner tools can add a product photo. Check the exact expression and pack.
+
+Lost changes or a save error
+Stop making further changes and record the message. Keep existing backup files;
+do not reset or delete/reinstall the app as the first troubleshooting step. Contact
+support before replacing data with a restore. Do not promise recovery of every loss.
+
+Connectivity
+Core recipes and local service tools work offline. Downloading an optional external
+image or opening a reference website needs a connection. Lists are not supplier
+orders, and BAR does not synchronise live stock between staff devices.
+
+Before publishing: confirm contact delivery, add the responsible developer name,
+link the final privacy policy, and test this page from an iPhone without login.

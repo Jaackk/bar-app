@@ -1,0 +1,63 @@
+BAR — MEDIA RIGHTS REVIEW — 11 OCTOBER 2026
+This is an evidence register and release checklist, not a legal clearance.
+
+All 249 image sets plus the app icon are indexed in PRODUCT-IMAGE-AUDIT.json.
+The assetRights entries retain existing source references. A URL is not a licence.
+
+EXISTING THIRD-PARTY / REFERENCE MEDIA: 235 assets
+Bottle, ingredient and cocktail pictures came from mixed producer, supplier,
+retailer/reference sources recorded in docs/PRODUCT-IMAGE-PROVENANCE.md and
+docs/COCKTAIL-IMAGE-PROVENANCE.md. No blanket redistribution grant is established.
+Permission, replacement with approved owned photography, or removal from the
+shipping catalogue is required before external distribution where rights cannot
+be established. Do not assume supplier images are free because they sell a bottle.
+Even an image suppressed by UI code is still bundled unless removed from the
+asset catalogue. Suppression fixes accuracy; it does NOT clear distribution rights.
+
+NEW OFFICIAL SOURCE MEDIA: 4 assets
+bar-patron-silver / bar-patron-reposado:
+  Bacardi's official media hub describes its assets as rights-free. The selected
+  individual bottles match Silver and Reposado, in older packaging. Confirm that
+  its media-use grant covers permanent inclusion in a distributed app, not merely
+  reporting/press use. Keep a copy of that grant. Full source URLs and hashes are
+  in NEW-IMAGE-PROVENANCE.json. No watermark or label was removed.
+bar-saint-damien / bar-paso-doro:
+  Official producer images, verified wine identity with vintage caveat. No explicit
+  redistribution permission located. Ask the producer/distributor for permission
+  or replace with Jack's approved bottle photos before external distribution.
+  Manufacturer source authority establishes identity, not copyright permission.
+
+GENERATED / REFERENCE ARTWORK: 10 assets
+sea-glass, peach-bloom, coral-tide: generated cocktail concepts, not venue photos.
+fresh-fruit, fresh-herbs, bar-staples: previous generated category montages, retained
+in the catalogue but product fallbacks now use native drawing instead.
+lime-photo, lemon-photo, orange-photo, strawberry-photo: ingredient illustrations.
+Retain generation/source records and confirm applicable provider terms. Do not
+claim these are photographs of Rockwater's stock, produce or finished drinks.
+
+BAR-CREATED ART
+AppIcon: existing vector-generated BAR artwork, retained. No new brand redesign.
+New category drawing in DesignSystem.swift: original code-native glass, bottle,
+fruit, leaf and container motifs, with BAR typography/cream/olive palette. These
+do not depict third-party packaging. No downloaded/generated bottle substitute.
+
+VENUE MATERIAL
+Jack working at Rockwater does not itself establish permission to redistribute
+its branding, internal specifications, menu graphics or private operational data.
+Obtain venue approval for the chosen distribution model and use of its content.
+Research/menu PDFs stay as review evidence; public menu access is not an app licence.
+
+PRACTICAL CLEARANCE RECORD
+For each permission retain: owner/contact; exact filenames or catalogue scope;
+permission text/licence URL; date; permitted app/TestFlight/store-marketing use;
+attribution requirements; territories/duration; alterations allowed; any revocation.
+For Jack's photographs retain originals and venue permission; avoid people,
+personal information and artwork in the background. Photograph actual labels,
+expressions and packs. User-imported photos remain under the user's control and
+must not be replaced by this content pass.
+
+DECISION
+Suitable to continue local Mac/native validation. Public App Store media clearance
+is NOT complete. Resolve permission/replacement before external TestFlight/store
+distribution; a TestFlight build is still distribution. No permission requests
+were sent on Jack's behalf and nothing was submitted to Apple.

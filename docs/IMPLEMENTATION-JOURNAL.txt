@@ -75,3 +75,17 @@ Mac shell script passes bash -n. 104 BARCore and 13 native UI XCTest methods awa
 macOS/Xcode execution; no native passing result or new screenshot is claimed.
 See release/HANDOFF.txt and MAC-VALIDATION.txt. No Apple submission/signing change,
 no new cloud infrastructure and no portfolio website edits.
+
+11 OCTOBER 2026 — FINAL PC CONTENT / MEDIA PASS
+Baseline 28a95d7, clean branch. Kept persistence, migrations, auth, backup, spec
+selection, navigation and Mac validation script unchanged. Contact-sheet review
+found logos, range images and incorrect pack sizes masquerading as bottle photos;
+suppressed seven more defaults, added four official-source assets with provenance.
+Native BAR category drawings replace weak fallback thumbnails; wine art fits the
+whole bottle. Three extra native tests protect mapping/photo/identity behaviour.
+Completed 19 truncated seed brands and retained Noilly Prat legacy ID/alias.
+Converted 60 opaque PNG photographs once, same dimensions, with recorded hashes:
+net asset reduction 34.8 MB after new images. Current menu fingerprints unchanged.
+34 Python tests passed; 60 Swift grammar parses passed. Native tests not executed.
+Rights and actual house photography remain owner/venue work; store/privacy/support
+copy and capture storyboard prepared. See FINAL-PC-HANDOFF.txt for the new gate.

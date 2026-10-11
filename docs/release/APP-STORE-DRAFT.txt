@@ -1,3 +1,7 @@
+FINAL PC UPDATE: APP-STORE-METADATA.txt and SCREENSHOT-STORYBOARD.txt contain the
+11 October copy/capture plan. Standalone privacy/support drafts are beside them.
+The implementation-specific review notes below remain applicable.
+
 BAR — DRAFT RELEASE MATERIAL (NOT SUBMITTED)
 
 Name: BAR

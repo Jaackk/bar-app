@@ -1,0 +1,54 @@
+[
+  {
+    "productID": "menu-patron-silver",
+    "asset": "bar-patron-silver",
+    "owner": "Bacardi / Patron",
+    "page": "https://news.bacardilimited.com/en/p/4413/new-destination-for-patron-tequila-announcements-and-assets",
+    "sourceURL": "https://news.bacardilimited.com/company-files/10/original/27715azc64778f8a84a86945fede7c88.jpg",
+    "retrievedOn": "2026-10-11",
+    "sourceSHA256": "a9557043c64ac1f452da56441e71c0a0f3a8cb5fc1b0de56337fddbe696a06ea",
+    "imageSHA256": "26ab25cacda32d6a582ede63cb54c8176c1321e73368dcf27393f5e9deb5a1a3",
+    "identity": "exact expression; older packaging",
+    "rightsStatus": "Official media hub describes rights-free assets; confirm scope for bundled commercial app use before public release.",
+    "transformation": "Downscaled once, no label alteration; whole original image retained."
+  },
+  {
+    "productID": "menu-patron-reposado",
+    "asset": "bar-patron-reposado",
+    "owner": "Bacardi / Patron",
+    "page": "https://news.bacardilimited.com/en/p/4413/new-destination-for-patron-tequila-announcements-and-assets",
+    "sourceURL": "https://news.bacardilimited.com/company-files/10/original/27716azddaded486e16776c9bdf61b7e.jpg",
+    "retrievedOn": "2026-10-11",
+    "sourceSHA256": "218eaf7508d7857972c128a8f0536a2e40d5655f23cc4dc269e2f88e04af805e",
+    "imageSHA256": "65b41bfc79b8c9b64087eb11b989aa3aca73ee4b6c15256e86b8c473215bda4a",
+    "identity": "exact expression; older packaging",
+    "rightsStatus": "Official media hub describes rights-free assets; confirm scope for bundled commercial app use before public release.",
+    "transformation": "Downscaled once, no label alteration; whole original image retained."
+  },
+  {
+    "productID": "menu-cotes-du-rhone-villages-plan-de-dieu-saint-damien",
+    "asset": "bar-saint-damien",
+    "owner": "Domaine Saint Damien",
+    "page": "https://www.domainesaintdamien.com/vins/756/",
+    "sourceURL": "https://www.domainesaintdamien.com/wp-content/uploads/plan_de_dieu_vieilles_vignes.png",
+    "retrievedOn": "2026-10-11",
+    "sourceSHA256": "e039cf8b7c0d4aeabaf614174ee0d8ce89e8d5a352c4acb14e7f5b476ac43910",
+    "imageSHA256": "78a2d872ec10994b6a3bf34eb6a335931c646d12f31d7a22bde212ead04bdf1f",
+    "identity": "producer-confirmed wine; menu vintage not specified",
+    "rightsStatus": "Official producer product image; no redistribution grant found. Approval/replacement required before public distribution.",
+    "transformation": "Downscaled once, no label alteration; whole original image retained."
+  },
+  {
+    "productID": "menu-cabernet-sauvignon-paso-doro",
+    "asset": "bar-paso-doro",
+    "owner": "Paso d’Oro / Terlato",
+    "page": "https://pasodoro.com/node/2",
+    "sourceURL": "https://pasodoro.com/themes/custom/orbit/resources/images/PasoDoro_NV%201.png",
+    "retrievedOn": "2026-10-11",
+    "sourceSHA256": "f72144463ea994232ea0716f2c57b581aa0cb0f738ae3533cb917648be190131",
+    "imageSHA256": "4135b6cafc24b9839b88d347ebd6634d2f59ab33e3649c3e4e81d0ff4004d3d5",
+    "identity": "producer-confirmed wine; menu vintage not specified",
+    "rightsStatus": "Official producer product image; no redistribution grant found. Approval/replacement required before public distribution.",
+    "transformation": "Downscaled once, no label alteration; whole original image retained."
+  }
+]

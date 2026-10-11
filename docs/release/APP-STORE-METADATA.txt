@@ -1,0 +1,68 @@
+BAR — READY-TO-REVIEW STORE COPY — 11 OCTOBER 2026
+Draft only. Nothing has been entered in App Store Connect or submitted.
+
+Name: BAR
+Subtitle: Recipes and tools for service
+Alternative subtitle: Your offline bar companion
+Primary category proposal: Food & Drink
+Secondary category: omit unless the final distribution warrants one.
+Keywords: cocktail,bartender,recipes,wine,batching,prep,stocktake,restock,hospitality,offline
+
+Promotional text:
+Find a recipe, check the method and get on with service. Cocktail references, wine
+guidance, batch calculations and practical bar tools, available offline.
+
+DESCRIPTION
+Made for the moments when you need an answer behind the bar.
+
+BAR brings cocktail knowledge and everyday service tools together on your iPhone.
+Search drinks and ingredients, check clear measurements and methods, explore wines,
+calculate batches and keep preparation, stock-count and restock notes close at hand.
+Core service tools work offline.
+
+HOUSE SPECIFICATIONS AND CLASSIC REFERENCES
+See your venue's Custom classic specification alongside a researched Recommended
+reference. Choose a default or a preference for one drink. Measures, method, glass,
+ice and garnish stay easy to find, with source details available when you need them.
+
+PRACTICAL TOOLS FOR SERVICE
+Scale a batch and distinguish the premix from additions made in the glass. Save
+favourites, revisit recent drinks, practise with flashcards and quizzes, record waste
+and share lists with clear quantities and units. Maintain product photos and export
+a complete backup to Files.
+
+BAR v1 includes a Hove-focused venue catalogue. It is a local bar companion: it does
+not provide shared live inventory, cloud collaboration or automatic supplier orders.
+Menu information does not confirm physical stock. Follow your venue's approved
+specifications and allergen procedures.
+
+FIRST RELEASE NOTES
+Cocktail specifications, wine guidance and offline service tools in one native
+iPhone app, with batch calculations, preparation, stock lists, training and backups.
+Use this as first-release copy only; do not invent a previous public release.
+
+ACCOUNT FIELDS TO COMPLETE
+Support URL: publish the approved SUPPORT-DRAFT.txt content at an owned HTTPS page.
+Privacy URL: publish PRIVACY-POLICY-DRAFT.txt after confirming developer/contact.
+Marketing URL: optional; use a page that accurately represents the shipping app.
+Copyright: actual rights holder and year; not an invented company.
+Review contact: Jack's real monitored email/telephone in the private review form.
+Age rating: complete Apple's questionnaire honestly for alcohol-related reference
+content. No numerical rating is assumed. No alcohol purchasing feature is claimed.
+Availability/pricing/distribution: owner decision after native validation and pilot.
+BAR name availability must be checked in App Store Connect; not checked here.
+
+REVIEW NOTES
+Use the factual review notes already in APP-STORE-DRAFT.txt: no app login, purchases
+or subscription; owner tools use device authentication. A passcode-enabled device
+is needed for owner editing/restore. Core workflows work offline. Optional external
+image URLs contact third-party hosts only when the user requests an image.
+Supply the exact tested version/build and content-permission evidence. Do not claim
+these Windows source checks prove iOS compilation, accessibility or runtime behaviour.
+
+Apple metadata/privacy guidance checked 11 October 2026:
+https://developer.apple.com/help/app-store-connect/reference/app-information/platform-version-information/
+https://developer.apple.com/app-store/app-privacy-details/
+The copy above fits 30-character title/subtitle, 170-character promotional text and
+100-character keyword limits. Recheck the final edited values before submission.
+Use SCREENSHOT-STORYBOARD.txt after native validation; no fabricated screens.

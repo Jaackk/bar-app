@@ -1,1 +1,12 @@
-{"images": [{"filename": "coral-tide.png", "idiom": "universal"}], "info": {"author": "xcode", "version": 1}}
+{
+  "images": [
+    {
+      "filename": "coral-tide.jpg",
+      "idiom": "universal"
+    }
+  ],
+  "info": {
+    "author": "xcode",
+    "version": 1
+  }
+}

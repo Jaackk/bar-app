@@ -1,0 +1,64 @@
+BAR — FINAL PC CATALOGUE REVIEW — 11 OCTOBER 2026
+
+277 raw products; 251 canonical products after the existing correction rules.
+59 Wine Finder entries; 16 Hove menu cocktail records; 46 house/classic source
+records; 49 curated classic identities. Counts were recalculated from source.
+
+Safe changes:
+- Noilly Pratt -> Noilly Prat in canonical seed correction, with the original
+  stable ID and spelling alias retained. Official brand: https://www.noillyprat.com/
+- Completed 19 truncated brand fields (e.g. Grey -> Grey Goose, Ketel -> Ketel One,
+  El -> El Jimador). Names and visible bottle labels already establish these.
+  BRAND-CORRECTIONS.json records each row. No new product identity was created.
+- Four official image mappings; seven newly suppressed inaccurate/ambiguous
+  defaults. Source raw recipe records, user photos and operational units untouched.
+
+No migration/content version bump: these are safe seed/default presentation edits.
+Installed user-edited names/brands are not overwritten. Existing installations
+receive image lookup corrections without changing their local photo precedence.
+An owner-approved content import can apply desired name/brand changes later.
+
+Current official menu monitor: unchanged at 2026-10-11T21:18:39Z. Main Hove drinks,
+Pub, linked Bar Shack and Coffee Shack fingerprints all equal the approved prior
+baseline. See menu-status.json. Main menu is image-only (9 pages); an empty extracted
+text array is not an empty menu. No baseline acceptance or inventory update occurred.
+Old Shack links remain evidence for that outlet, not current all-venue availability.
+
+No safe basis for changing quantities, packaging units, house measures or availability
+was found. Similar entries (sugar/simple/gomme syrup; generic/brand peach liqueur;
+Tabasco and sheet notation) are not automatically merged. Existing installations
+may contain independent operational state. No recipe or stock IDs were changed.
+
+Wine identity/style/producer/grapes/region were reviewed as menu/reference records,
+not stock assertions. All 59 are indexed with original fields in PRODUCT-IMAGE-
+AUDIT.json. 48 have usable specific images; 11 need exact bottle photography.
+The three separate magnum product SKUs are not extra Wine Finder entries. Removing
+two misleading magnum images therefore does not subtract from the 59-wine count.
+Vintage is not established by a photograph or an undated menu listing. REAL Dry/
+Blush remain explicitly Non-Alcoholic Sparkling in Wine Finder; their catalogue
+group is Sparkling / Champagne, not a statement that they contain alcohol.
+
+Research decisions (no speculative catalogue edits):
+Saint Damien Plan de Dieu and Paso d'Oro: correct producer references added.
+  https://www.domainesaintdamien.com/vins/756/
+  https://pasodoro.com/node/2
+Maia: producer confirms Provence blend, but exact pack still needs photo.
+  https://maia-provence.com/
+Pegoes: Vinhas Touriga is not sufficient proof of Santo Isidro cuvee identity.
+  https://cooppegoes.pt/vinhas-de-pegoes-touriga-nacional/
+Anima Osca: the producer's Bianco sheet is not evidence for this red blend.
+  https://www.tenimentigrieco.it/wp-content/uploads/2023/04/SCHEDE-EN-2023_02.pdf
+Vallado: 20-year tawny is an age-indicated blend; LBV vintage remains a venue check.
+  https://www.quintadovallado.com/pt/vinhos/vinhos/Porto-Tawny-20-anos/119/
+REAL: current Blush can must not replace the menu bottle photograph.
+  https://realalcoholfree.com/products/peony-blush-can-copy
+Cornish Orchards: fruit flavour cannot be inferred from generic menu wording.
+  https://www.cornishorchards.co.uk/our-ingredients
+OGGS: manufacturer shows multiple packs; choose the actual venue pack, not a group.
+  https://www.loveoggs.com/product/product-oggs-aquafaba-egg-alternative/
+Lafage: producer brochure/range does not establish a reusable exact current image.
+  https://domaine-lafage.com/
+Tumbleweed, Raboso, Lavigne and TRIP Lemon & Basil: no verified reusable exact
+primary-source image obtained in this pass. Supplier/venue photo remains preferable
+to a retailer scrape or a different expression. Each unresolved product is recorded
+with its reason in PRODUCT-IMAGE-AUDIT.json.

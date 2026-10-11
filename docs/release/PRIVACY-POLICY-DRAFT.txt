@@ -1,0 +1,27 @@
+BAR PRIVACY POLICY — DRAFT, NOT PUBLISHED
+Prepared 11 October 2026. Responsible developer/contact must be confirmed.
+
+BAR stores your name/preferences, favourites, training history, product photos,
+recipes, prep, batches, counts and lists in the app's local storage. It does not
+send this operational data to a BAR server. It has no account system, analytics
+service or cloud collaboration. Your iPhone's normal backup services may include
+app data according to your device settings. Protect exported backups: they include
+your photos and operational data and are not separately password-encrypted.
+
+Choosing a photo stores a resized local copy. Loading an external image contacts
+the HTTPS host you enter (and its redirects); that host can see your network
+address and request details under its own policy. BAR uses an ephemeral session,
+limits downloads and stores the resulting image locally. External source links
+open websites governed by their own privacy policies. Exports go only to the
+destinations you choose in the system Files/share interface.
+
+You can reset local data from authenticated owner tools. A local safety copy is
+retained for recovery. Deleting the app removes its local container; copies you
+exported or made through device backups remain under your control. BAR never
+receives or stores your device passcode or biometric template.
+
+Fill in the actual responsible developer contact and working support URL before
+publication. hello@raskyjack.com is a proposed contact, not verified by this pass.
+No portfolio/privacy website was created or changed here.
+
+Final review: confirm the archive/dependencies/network behaviour before submitting privacy answers. No new network or analytics behaviour was introduced by this media pass.

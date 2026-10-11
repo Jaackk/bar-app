@@ -42,6 +42,7 @@ public enum ProductCatalogueCorrections {
     /// The source menu uses a handful of abbreviated labels.  They remain
     /// searchable aliases, while the visible catalogue uses a clear stock name.
     private static let edits: [String: (name: String?, category: String?, aliases: [String])] = [
+        "menu-noilly-pratt": ("Noilly Prat", nil, ["Noilly Pratt"]),
         "spec-blend-coffee": ("Blend Coffee Liqueur", "Liqueurs / Aperitifs", ["Blend Coffee"]),
         "spec-blend-passionfruit": ("Blend Passionfruit Liqueur", "Liqueurs / Aperitifs", ["Blend Passionfruit"]),
         "menu-old-forrester-bourbon": ("Old Forester Bourbon", nil, ["Old Forrester", "Old Forestor"]),
@@ -72,6 +73,10 @@ public enum ProductCatalogueCorrections {
     ]
 
     private static let individualImageNames: [String: String] = [
+        "menu-patron-silver": "bar-patron-silver",
+        "menu-patron-reposado": "bar-patron-reposado",
+        "menu-cotes-du-rhone-villages-plan-de-dieu-saint-damien": "bar-saint-damien",
+        "menu-cabernet-sauvignon-paso-doro": "bar-paso-doro",
         "menu-limes": "lime-photo",
         "menu-lemons": "lemon-photo",
         "spec-orange": "orange-photo",
@@ -145,8 +150,13 @@ public enum ProductCatalogueCorrections {
     /// the wrong product. They are deliberately cleared until their own image
     /// is acquired.
     private static let invalidBundledImageProductIDs: Set<String> = [
+        // Final PC screening: logos are not product photos; generic ingredient
+        // names do not establish the particular brand/expression pictured.
+        "menu-asahi-0-0", "menu-orange-juice", "menu-kraken",
+        "spec-sweet-vermouth", "menu-grey-goose-essences",
+        "menu-veuve-clicquot-brut-yellow-label-magnum",
+        "menu-minuty-prestige-chateau-minuty-magnum",
         "spec-blend-coffee", "spec-blend-passionfruit",
-        "menu-patron-silver", "menu-patron-reposado",
         "menu-montepulciano-blend-anima-osca-tenimenti-grieco",
         "menu-real-blush-sparkling",
         "menu-picpoul-de-pinet-tournee-du-sud",
@@ -155,8 +165,6 @@ public enum ProductCatalogueCorrections {
         "menu-cotes-de-provence-maia-magnum",
         "menu-raboso-il-casone",
         "menu-saumur-champigny-vieilles-vignes-domaine-lavigne",
-        "menu-cotes-du-rhone-villages-plan-de-dieu-saint-damien",
-        "menu-cabernet-sauvignon-paso-doro",
         "menu-lbv-quinta-do-vallado",
         "menu-tawny-20yr-quinta-do-vallado",
         "menu-cornish-orchards-fruit-cider-4",

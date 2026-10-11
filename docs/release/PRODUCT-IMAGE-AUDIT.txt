@@ -1,0 +1,783 @@
+BAR PRODUCT IMAGE AUDIT — 11 OCTOBER 2026
+All original 245 images visually screened on labelled contact sheets; new images inspected individually. Exact means expression, not current stock/pack/licence. Static mapping proxy, not native runtime validation.
+
+{
+  "products": 251,
+  "productSpecificRenderable": 175,
+  "productFallbacks": 76,
+  "identityStatuses": {
+    "Likely exact wine; vintage/pack unverified": 48,
+    "BAR category fallback": 76,
+    "Representative; supplier/pack not established": 45,
+    "Likely exact; visually screened": 76,
+    "Exact expression verified; older pack": 2,
+    "Representative generated ingredient illustration": 4
+  },
+  "wines": 59,
+  "wineSpecificRenderable": 48,
+  "houseCocktails": 16,
+  "verifiedHousePhotographs": 0,
+  "assets": 249,
+  "assetRightsStatuses": {
+    "Existing third-party/reference asset; redistribution grant not established": 235,
+    "BAR icon; existing vector-generated artwork": 1,
+    "New official source; app usage permission scope unresolved": 4,
+    "Generated/reference illustration; not venue photography": 10
+  },
+  "assetFileBytesIncludingIcon": 45828700
+}
+
+EVERY CANONICAL PRODUCT
+Veuve Clicquot Brut Yellow Label [menu-veuve-clicquot-brut-yellow-label]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: veuve-clicquot-yellow-label; user photo supported. Rights: Existing source/rights require review
+Veuve Clicquot Rosé [menu-veuve-clicquot-rose]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: veuve-clicquot-rose; user photo supported. Rights: Existing source/rights require review
+Ruinart Blanc de Blancs [menu-ruinart-blanc-de-blancs]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: ruinart-blanc-de-blancs; user photo supported. Rights: Existing source/rights require review
+Veuve Clicquot La Grande Dame [menu-veuve-clicquot-la-grande-dame]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: veuve-clicquot-la-grande-dame; user photo supported. Rights: Existing source/rights require review
+Dom Perignon [menu-dom-perignon]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: dom-perignon; user photo supported. Rights: Existing source/rights require review
+Dom Perignon Rosé [menu-dom-perignon-rose]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: dom-perignon-rose; user photo supported. Rights: Existing source/rights require review
+Wiston Estate Brut [menu-wiston-estate-brut]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: wiston-estate-brut; user photo supported. Rights: Existing source/rights require review
+Wiston Estate Rosé [menu-wiston-estate-rose]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: wiston-estate-rose; user photo supported. Rights: Existing source/rights require review
+Prosecco Collezione 96 Brut, Masottina [menu-prosecco-collezione-96-brut-masottina]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: masottina-collezione-96-brut; user photo supported. Rights: Existing source/rights require review
+Prosecco Collezione 96 Rosé, Masottina [menu-prosecco-collezione-96-rose-masottina]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: masottina-collezione-96-rose; user photo supported. Rights: Existing source/rights require review
+Chandon Brut [menu-chandon-brut]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: chandon-extra-brut; user photo supported. Rights: Existing source/rights require review
+Chandon Rosé [menu-chandon-rose]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: chandon-rose; user photo supported. Rights: Existing source/rights require review
+REAL Dry Sparkling [menu-real-dry-sparkling]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: real-dry-sparkling; user photo supported. Rights: Existing source/rights require review
+REAL Blush Sparkling [menu-real-blush-sparkling]
+  BAR category fallback. Current official Blush can is not the menu bottle. Do not substitute packaging.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Chardonnay Les Sardine, Domaine Lafage [menu-chardonnay-les-sardine-domaine-lafage]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: lafage-les-sardines-chardonnay; user photo supported. Rights: Existing source/rights require review
+Assyrtiko Terre Grec, Theopetra Estate [menu-assyrtiko-terre-grec-theopetra-estate]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: theopetra-terre-grec-assyrtiko; user photo supported. Rights: Existing source/rights require review
+Picpoul de Pinet Tournée du Sud [menu-picpoul-de-pinet-tournee-du-sud]
+  BAR category fallback. Unrelated Lafage Chardonnay removed previously. Exact approved primary asset not obtained.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Sauvignon Blanc Romans Bay, Lomond Wines [menu-sauvignon-blanc-romans-bay-lomond-wines]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: lomond-romans-bay-sauvignon; user photo supported. Rights: Existing source/rights require review
+Pecorino Offida Belato, Carminucci [menu-pecorino-offida-belato-carminucci]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: carminucci-belato-pecorino; user photo supported. Rights: Existing source/rights require review
+Sancerre Magie des Caillottes, Renaissance Fleuriet Frères [menu-sancerre-magie-des-caillottes-renaissance-fleuriet-freres]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: renaissance-magie-des-caillottes; user photo supported. Rights: Existing source/rights require review
+Macabeo / Moscatel El Renegado, Bodegas Nodus [menu-macabeo-moscatel-el-renegado-bodegas-nodus]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: el-renegado-blanco; user photo supported. Rights: Existing source/rights require review
+Vermentino Timo, San Marzano [menu-vermentino-timo-san-marzano]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: san-marzano-timo; user photo supported. Rights: Existing source/rights require review
+Godello Finca Os Cobatos [menu-godello-finca-os-cobatos]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: finca-os-cobatos-godello; user photo supported. Rights: Existing source/rights require review
+Sauvignon Blanc Awatere, Spoke [menu-sauvignon-blanc-awatere-spoke]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: spoke-awatere-sauvignon; user photo supported. Rights: Existing source/rights require review
+Malagouzia A.Muse, Muses Estate [menu-malagouzia-a-muse-muses-estate]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: muses-estate-a-muse; user photo supported. Rights: Existing source/rights require review
+Chenin Blanc Wild Garden [menu-chenin-blanc-wild-garden]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: wild-garden-chenin; user photo supported. Rights: Existing source/rights require review
+Grenache / Chardonnay Côté Est, Domaine Lafage [menu-grenache-chardonnay-cote-est-domaine-lafage]
+  BAR category fallback. Producer brochure establishes range, not a licensed exact current bottle image.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Viognier Inmácula, Tandem [menu-viognier-inmacula-tandem]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: tandem-inmacula-viognier; user photo supported. Rights: Existing source/rights require review
+Misto Mare, Alois Lageder [menu-misto-mare-alois-lageder]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: alois-lageder-misto-mare; user photo supported. Rights: Existing source/rights require review
+Saint-Véran Plaisance, Thierry Drouin [menu-saint-veran-plaisance-thierry-drouin]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: thierry-drouin-plaisance; user photo supported. Rights: Existing source/rights require review
+No Es Pituko, Viña Echeverría [menu-no-es-pituko-vina-echeverria]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: echeverria-no-es-pituko; user photo supported. Rights: Existing source/rights require review
+Syrah / Grenache Rosé, Château de Campuget [menu-syrah-grenache-rose-chateau-de-campuget]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: campuget-syrah-grenache-rose; user photo supported. Rights: Existing source/rights require review
+Primitivo Rosé Tramari, San Marzano [menu-primitivo-rose-tramari-san-marzano]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: san-marzano-tramari-rose; user photo supported. Rights: Existing source/rights require review
+Cinsault Rosé, Leeuwenkuil Family Vineyards [menu-cinsault-rose-leeuwenkuil-family-vineyards]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: leeuwenkuil-cinsault-rose; user photo supported. Rights: Existing source/rights require review
+Agiorgitiko Rosé 4-6H, Gaia Wines [menu-agiorgitiko-rose-4-6h-gaia-wines]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: gaia-4-6h-rose; user photo supported. Rights: Existing source/rights require review
+Côtes de Provence Maïa [menu-cotes-de-provence-maia]
+  BAR category fallback. Producer confirms wine/grapes; lifestyle photography does not establish current bottle pack.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Après Provence, Château des Bertrands [menu-apres-provence-chateau-des-bertrands]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: apres-provence; user photo supported. Rights: Existing source/rights require review
+Minuty Prestige, Château Minuty [menu-minuty-prestige-chateau-minuty]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: minuty-prestige; user photo supported. Rights: Existing source/rights require review
+Touriga Nacional, Santo Isidro de Pegões [menu-touriga-nacional-santo-isidro-de-pegoes]
+  BAR category fallback. Producer has Vinhas de Pegoes Touriga; exact Santo Isidro cuvee/label not established.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Syrah Tumbleweed Big Sky, Bruce Jack Wines [menu-syrah-tumbleweed-big-sky-bruce-jack-wines]
+  BAR category fallback. No verified primary image for exact Tumbleweed Big Sky found. Supplier/venue photo needed.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Monastrell Time Waits for No One, Finca Bacara [menu-monastrell-time-waits-for-no-one-finca-bacara]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: finca-bacara-time-waits; user photo supported. Rights: Existing source/rights require review
+Malbec Terroir Unico, Zorzal [menu-malbec-terroir-unico-zorzal]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: zorzal-malbec-terroir-unico; user photo supported. Rights: Existing source/rights require review
+Rioja Alavesa Las Parcelas, Bideona [menu-rioja-alavesa-las-parcelas-bideona]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: bideona-las-parcelas; user photo supported. Rights: Existing source/rights require review
+Raboso Il Casone [menu-raboso-il-casone]
+  BAR category fallback. Retail images are not permission. Obtain current supplier/venue label photograph.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Montepulciano Blend Anima Osca, Tenimenti Grieco [menu-montepulciano-blend-anima-osca-tenimenti-grieco]
+  BAR category fallback. Producer Anima Osca Bianco sheet is not this red blend; old group shot remains suppressed.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Agiorgitiko / Mavroudi Voltes, Monemvasia Winery [menu-agiorgitiko-mavroudi-voltes-monemvasia-winery]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: monemvasia-voltes-red; user photo supported. Rights: Existing source/rights require review
+Pinot Noir Gran Reserva Sibaris, Undurraga [menu-pinot-noir-gran-reserva-sibaris-undurraga]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: undurraga-sibaris-pinot-noir; user photo supported. Rights: Existing source/rights require review
+Saumur-Champigny Vieilles Vignes, Domaine Lavigne [menu-saumur-champigny-vieilles-vignes-domaine-lavigne]
+  BAR category fallback. Cuvee/label/vintage relationship needs confirmation; do not substitute Traditionnelle.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Pinot Noir Yering Station [menu-pinot-noir-yering-station]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: yering-station-pinot-noir; user photo supported. Rights: Existing source/rights require review
+Bobal El Renegado, Bodegas Nodus [menu-bobal-el-renegado-bodegas-nodus]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: el-renegado-bobal; user photo supported. Rights: Existing source/rights require review
+Primitivo di Manduria Talò, San Marzano [menu-primitivo-di-manduria-talo-san-marzano]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: san-marzano-talo; user photo supported. Rights: Existing source/rights require review
+Côtes du Rhône Villages Plan de Dieu, Saint-Damien [menu-cotes-du-rhone-villages-plan-de-dieu-saint-damien]
+  Likely exact wine; vintage/pack unverified. producer-confirmed wine; menu vintage not specified. Official producer source; redistribution permission still required.
+  Asset: bar-saint-damien; user photo supported. Rights: Official producer product image; no redistribution grant found. Approval/replacement required before public distribution.
+Malbec Terrazas de los Andes [menu-malbec-terrazas-de-los-andes]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: terrazas-malbec; user photo supported. Rights: Existing source/rights require review
+Cabernet Sauvignon Paso d’Oro [menu-cabernet-sauvignon-paso-doro]
+  Likely exact wine; vintage/pack unverified. producer-confirmed wine; menu vintage not specified. Official producer source; redistribution permission still required.
+  Asset: bar-paso-doro; user photo supported. Rights: Official producer product image; no redistribution grant found. Approval/replacement required before public distribution.
+Rivesaltes Tuilé, Dom Brial [menu-rivesaltes-tuile-dom-brial]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: dom-brial-rivesaltes-tuile; user photo supported. Rights: Existing source/rights require review
+Black Muscat Elysium, Quady [menu-black-muscat-elysium-quady]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: elysium-black-muscat; user photo supported. Rights: Existing source/rights require review
+Sauternes Castelnau de Suduiraut [menu-sauternes-castelnau-de-suduiraut]
+  Likely exact wine; vintage/pack unverified. Label/producer/style visually screened against catalogue. Menu does not fix current vintage; not a stock or vintage certification.
+  Asset: castelnau-de-suduiraut; user photo supported. Rights: Existing source/rights require review
+LBV Quinta do Vallado [menu-lbv-quinta-do-vallado]
+  BAR category fallback. LBV vintage required before exact label selection. Producer website is not a redistribution licence.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Tawny 20YR Quinta do Vallado [menu-tawny-20yr-quinta-do-vallado]
+  BAR category fallback. Producer confirms 20-year tawny blend, not a harvest vintage; approved bottle image still needed.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Veuve Clicquot Brut Yellow Label — Magnum [menu-veuve-clicquot-brut-yellow-label-magnum]
+  BAR category fallback. 750 ml reference is not the magnum pack. Correct-size photo required.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Côtes de Provence Maïa — Magnum [menu-cotes-de-provence-maia-magnum]
+  BAR category fallback. Photograph actual magnum; standard bottle/lifestyle shot is insufficient.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Minuty Prestige, Château Minuty — Magnum [menu-minuty-prestige-chateau-minuty-magnum]
+  BAR category fallback. 750 ml reference is not the magnum pack. Correct-size photo required.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Rockwater Lager 3.4% [menu-rockwater-lager-3-4]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Rockwater IPA 4.7% [menu-rockwater-ipa-4-7]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Asahi Super Dry 5% [menu-asahi-super-dry-5]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: asahi-super-dry-5; user photo supported. Rights: Existing source/rights require review
+Peroni Nastro Azzurro 5% [menu-peroni-nastro-azzurro-5]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: peroni-nastro-azzurro; user photo supported. Rights: Existing source/rights require review
+Guinness 4.1% [menu-guinness-4-1]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: guinness-draught; user photo supported. Rights: Existing source/rights require review
+Cornish Orchards Gold 4.5% [menu-cornish-orchards-gold-4-5]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: cornish-orchards-gold; user photo supported. Rights: Existing source/rights require review
+Cornish Orchards Fruit Cider 4% [menu-cornish-orchards-fruit-cider-4]
+  BAR category fallback. Generic fruit cider menu wording does not establish Cherry/Blackberry vs Raspberry/Elderflower.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Peroni Nastro Azzurro GF 5.1% [menu-peroni-nastro-azzurro-gf-5-1]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: peroni-nastro-azzurro-gf; user photo supported. Rights: Existing source/rights require review
+Peroni Nastro Azzurro 0.0% [menu-peroni-nastro-azzurro-0-0]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: peroni-nastro-azzurro-zero; user photo supported. Rights: Existing source/rights require review
+Asahi 0.0% [menu-asahi-0-0]
+  BAR category fallback. Generic Asahi logo did not establish alcohol-free expression. Suppressed.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Cornish Orchards Raspberry & Elderflower 4% [menu-cornish-orchards-raspberry-elderflower-4]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: cornish-orchards-raspberry-elderflower; user photo supported. Rights: Existing source/rights require review
+TRIP Elderflower & Mint [menu-trip-elderflower-mint]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: trip-elderflower-mint; user photo supported. Rights: Existing source/rights require review
+TRIP Peach & Ginger [menu-trip-peach-ginger]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: trip-peach-ginger; user photo supported. Rights: Existing source/rights require review
+TRIP Lemon & Basil [menu-trip-lemon-basil]
+  BAR category fallback. Exact current manufacturer product/asset not confirmed; never substitute Elderflower & Mint.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Still Water 75cl [menu-still-water-75cl]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: still-water-75cl; user photo supported. Rights: Existing source/rights require review
+Sparkling Water 75cl [menu-sparkling-water-75cl]
+  BAR category fallback. Do not substitute a flavoured/small-bottle water. Confirm brand and 75 cl pack.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+DRIP Still Water 500ml [menu-drip-still-water-500ml]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: drip-still-water-500ml; user photo supported. Rights: Existing source/rights require review
+DRIP Sparkling Water 500ml [menu-drip-sparkling-water-500ml]
+  BAR category fallback. Still/unrelated water image suppressed. Capture DRIP sparkling 500 ml specifically.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Apple Juice [menu-apple-juice]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: apple-juice; user photo supported. Rights: Existing source/rights require review
+Orange Juice [menu-orange-juice]
+  BAR category fallback. Supplier badge was not an orange juice product photo. Suppressed.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Pineapple Juice [menu-pineapple-juice]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: pineapple-juice; user photo supported. Rights: Existing source/rights require review
+Cranberry Juice [menu-cranberry-juice]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: cranberry-juice; user photo supported. Rights: Existing source/rights require review
+Tomato Juice [menu-tomato-juice]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: tomato-juice; user photo supported. Rights: Existing source/rights require review
+Glorious Greens [menu-glorious-greens]
+  BAR category fallback. Existing picture is unrelated. Approved Daily Dose/venue pack needed.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Ginger Zinger [menu-ginger-zinger]
+  BAR category fallback. Existing picture is unrelated. Approved Daily Dose/venue pack needed.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Ginger X-Hot Shot [menu-ginger-x-hot-shot]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: ginger-x-hot-shot; user photo supported. Rights: Existing source/rights require review
+Tanqueray [menu-tanqueray]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: tanqueray; user photo supported. Rights: Existing source/rights require review
+Tanqueray Flor de Sevilla [menu-tanqueray-flor-de-sevilla]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: tanqueray-flor-de-sevilla; user photo supported. Rights: Existing source/rights require review
+Whitley Neill Rhubarb & Ginger [menu-whitley-neill-rhubarb-ginger]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: whitley-neill-rhubarb-ginger; user photo supported. Rights: Existing source/rights require review
+Malfy Limone [menu-malfy-limone]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: malfy-limone; user photo supported. Rights: Existing source/rights require review
+Malfy Grapefruit [menu-malfy-grapefruit]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: malfy-rosa; user photo supported. Rights: Existing source/rights require review
+Malfy Blood Orange [menu-malfy-blood-orange]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: malfy-blood-orange; user photo supported. Rights: Existing source/rights require review
+Hendricks [menu-hendricks]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: hendricks; user photo supported. Rights: Existing source/rights require review
+Tanqueray No. Ten [menu-tanqueray-n-ten]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: tanqueray-no-ten; user photo supported. Rights: Existing source/rights require review
+Brighton Gin [menu-brighton-gin]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: brighton-gin; user photo supported. Rights: Existing source/rights require review
+Monkey 47 [menu-monkey-47]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: monkey-47; user photo supported. Rights: Existing source/rights require review
+Salcombe Start Point [menu-salcombe-start-point]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: salcombe-start-point; user photo supported. Rights: Existing source/rights require review
+Salcombe Rosé Sainte Marie [menu-salcombe-rose-sainte-marie]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: salcombe-rose-sainte-marie; user photo supported. Rights: Existing source/rights require review
+Gin Mare [menu-gin-mare]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: gin-mare; user photo supported. Rights: Existing source/rights require review
+Gin Mare Capri [menu-gin-mare-capri]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: gin-mare-capri; user photo supported. Rights: Existing source/rights require review
+Ketel One [menu-ketel-one]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: ketel-one; user photo supported. Rights: Existing source/rights require review
+Belvedere Pure [menu-belvedere-pure]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: belvedere-pure; user photo supported. Rights: Existing source/rights require review
+Grey Goose [menu-grey-goose]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: grey-goose; user photo supported. Rights: Existing source/rights require review
+Grey Goose Essences [menu-grey-goose-essences]
+  BAR category fallback. Menu names a range, photograph/confirm the flavour. One pictured flavour is insufficient.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+El Jimador Blanco [menu-el-jimador-blanco]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: el-jimador-blanco; user photo supported. Rights: Existing source/rights require review
+El Jimador Reposado [menu-el-jimador-reposado]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: el-jimador-reposado; user photo supported. Rights: Existing source/rights require review
+Casamigos Reposado [menu-casamigos-reposado]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: casamigos-reposado; user photo supported. Rights: Existing source/rights require review
+Casamigos Blanco [menu-casamigos-blanco]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: casamigos-blanco; user photo supported. Rights: Existing source/rights require review
+Casamigos Mezcal [menu-casamigos-mezcal]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: casamigos-mezcal; user photo supported. Rights: Existing source/rights require review
+Herradura Reposado [menu-herradura-reposado]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: herradura-reposado; user photo supported. Rights: Existing source/rights require review
+Patrón Silver [menu-patron-silver]
+  Exact expression verified; older pack. Individual manufacturer press bottle verified; not a group/Roca image. Current physical pack not inspected.
+  Asset: bar-patron-silver; user photo supported. Rights: Official media hub describes rights-free assets; confirm scope for bundled commercial app use before public release.
+Patrón Reposado [menu-patron-reposado]
+  Exact expression verified; older pack. Individual manufacturer press bottle verified; not a group/Roca image. Current physical pack not inspected.
+  Asset: bar-patron-reposado; user photo supported. Rights: Official media hub describes rights-free assets; confirm scope for bundled commercial app use before public release.
+Patrón Añejo [menu-patron-anejo]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: patron-anejo; user photo supported. Rights: Existing source/rights require review
+Hennessy VS [menu-hennessy-vs]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: hennessy-vs; user photo supported. Rights: Existing source/rights require review
+Hennessy VSOP [menu-hennessy-vsop]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: hennessy-vsop; user photo supported. Rights: Existing source/rights require review
+Hennessy XO [menu-hennessy-xo]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: hennessy-xo; user photo supported. Rights: Existing source/rights require review
+Havana Club 3 [menu-havana-club-3]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: havana-club-3; user photo supported. Rights: Existing source/rights require review
+Havana Spiced [menu-havana-spiced]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: havana-club-cuban-spiced; user photo supported. Rights: Existing source/rights require review
+Havana Club 7 [menu-havana-club-7]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: havana-club-7; user photo supported. Rights: Existing source/rights require review
+Bacardi Coconut [menu-bacardi-coconut]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: bacardi-coconut; user photo supported. Rights: Existing source/rights require review
+Kraken [menu-kraken]
+  BAR category fallback. Logo fragment removed; photograph the actual expression before selecting a bottle.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Diplomatico [menu-diplomatico]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: diplomatico-reserva-exclusiva; user photo supported. Rights: Existing source/rights require review
+Eminente Reserva [menu-eminente-reserva]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: eminente-reserva; user photo supported. Rights: Existing source/rights require review
+Old Forester Bourbon [menu-old-forrester-bourbon]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: old-forester-bourbon; user photo supported. Rights: Existing source/rights require review
+Jameson Irish Whiskey [menu-jameson-irish-whiskey]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: jameson; user photo supported. Rights: Existing source/rights require review
+Johnnie Walker Black Label 12YO Scotch [menu-johnnie-walker-black-label-12yo-scotch]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: johnnie-walker-black-label; user photo supported. Rights: Existing source/rights require review
+Woodford Reserve Bourbon [menu-woodford-reserve-bourbon]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: woodford-reserve-bourbon; user photo supported. Rights: Existing source/rights require review
+Glenmorangie [menu-glenmorangie]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: glenmorangie; user photo supported. Rights: Existing source/rights require review
+Glenmorangie 12YR Lasanta [menu-glenmorangie-12yr-lasanta]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: glenmorangie-lasanta-12; user photo supported. Rights: Existing source/rights require review
+Glenmorangie 14YR Quinta Ruban [menu-glenmorangie-14yr-quinta-ruban]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: glenmorangie-quinta-ruban; user photo supported. Rights: Existing source/rights require review
+Elijah Craig Bourbon [menu-elijah-craig-bourbon]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: elijah-craig-bourbon; user photo supported. Rights: Existing source/rights require review
+Woodford Reserve Rye [menu-woodford-reserve-rye]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: woodford-reserve-rye; user photo supported. Rights: Existing source/rights require review
+Woodford Reserve Double Oaked [menu-woodford-reserve-double-oaked]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: woodford-reserve-double-oaked; user photo supported. Rights: Existing source/rights require review
+Limoncello [menu-limoncello]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: limoncello; user photo supported. Rights: Existing source/rights require review
+Chambord [menu-chambord]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: chambord; user photo supported. Rights: Existing source/rights require review
+Frangelico [menu-frangelico]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: frangelico; user photo supported. Rights: Existing source/rights require review
+Bailey’s [menu-baileys]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: baileys; user photo supported. Rights: Existing source/rights require review
+Cointreau [menu-cointreau]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: cointreau; user photo supported. Rights: Existing source/rights require review
+Disaronno [menu-disaronno]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: disaronno; user photo supported. Rights: Existing source/rights require review
+Grand Marnier [menu-grand-marnier]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: grand-marnier; user photo supported. Rights: Existing source/rights require review
+Sambuca [menu-sambuca]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: sambuca; user photo supported. Rights: Existing source/rights require review
+Lillet Rosé [menu-lillet-rose]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: lillet-rose; user photo supported. Rights: Existing source/rights require review
+Antica Rosso [menu-antica-rosso]
+  BAR category fallback. Product identity remains ambiguous; confirm actual bottle rather than infer a vermouth.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Noilly Prat [menu-noilly-pratt]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: noilly-pratt; user photo supported. Rights: Existing source/rights require review
+Double Dutch Indian Tonic Water [menu-double-dutch-indian-tonic-water]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: double-dutch-indian-tonic; user photo supported. Rights: Existing source/rights require review
+Double Dutch Skinny Tonic [menu-double-dutch-skinny-tonic]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: double-dutch-skinny-tonic; user photo supported. Rights: Existing source/rights require review
+Double Dutch Elderflower Tonic [menu-double-dutch-elderflower-tonic]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: double-dutch-elderflower-tonic; user photo supported. Rights: Existing source/rights require review
+Double Dutch Pink Grapefruit Soda [menu-double-dutch-pink-grapefruit-soda]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: double-dutch-pink-grapefruit; user photo supported. Rights: Existing source/rights require review
+Double Dutch Ginger Ale [menu-double-dutch-ginger-ale]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: double-dutch-ginger-ale; user photo supported. Rights: Existing source/rights require review
+Double Dutch Ginger Beer [menu-double-dutch-ginger-beer]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: double-dutch-ginger-beer; user photo supported. Rights: Existing source/rights require review
+Aperol [menu-aperol]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: aperol; user photo supported. Rights: Existing source/rights require review
+Sugar Syrup [menu-sugar-syrup]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: sugar-syrup; user photo supported. Rights: Existing source/rights require review
+Orgeat [menu-orgeat]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: orgeat; user photo supported. Rights: Existing source/rights require review
+Limes [menu-limes]
+  Representative generated ingredient illustration. Recognisable ingredient artwork, not photography or evidence of venue produce.
+  Asset: lime-photo; user photo supported. Rights: Existing source/rights require review
+Lemons [menu-lemons]
+  Representative generated ingredient illustration. Recognisable ingredient artwork, not photography or evidence of venue produce.
+  Asset: lemon-photo; user photo supported. Rights: Existing source/rights require review
+Mint [menu-mint]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Campari [menu-campari]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: campari; user photo supported. Rights: Existing source/rights require review
+St-Germain [menu-st-germain]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: st-germain; user photo supported. Rights: Existing source/rights require review
+Apricot Liqueur [spec-apricot-liq]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: apricot-liq; user photo supported. Rights: Existing source/rights require review
+Blue Curacao [spec-blue-curacao]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: blue-curacao; user photo supported. Rights: Existing source/rights require review
+Ginger Syrup [spec-ginger-syrup]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: ginger-syrup; user photo supported. Rights: Existing source/rights require review
+Cachaça [spec-cachaca]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: cachaca; user photo supported. Rights: Existing source/rights require review
+Spicy Tincture [spec-spicy-tincture]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Guava Puree [spec-guava-puree]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: guava-puree; user photo supported. Rights: Existing source/rights require review
+Sweet Vermouth [spec-sweet-vermouth]
+  BAR category fallback. Two different aperitif/vermouth bottles in one image did not identify a generic ingredient.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Teichenne Peach Liqueur [spec-teichene-peach]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: teichene-peach; user photo supported. Rights: Existing source/rights require review
+Lime Juice [spec-lime-juice]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: lime-juice; user photo supported. Rights: Existing source/rights require review
+Coconut Water [spec-coconut-water]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: coconut-water; user photo supported. Rights: Existing source/rights require review
+Lychee [spec-lychee]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Jasmine Syrup [spec-jasmine-syrup]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: jasmine-syrup; user photo supported. Rights: Existing source/rights require review
+Soda Water [spec-soda-top]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Lemon Juice [spec-lemon-juice]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: lemon-juice; user photo supported. Rights: Existing source/rights require review
+Passion Fruit Puree [spec-passion-fruit-puree]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: passion-fruit-puree; user photo supported. Rights: Existing source/rights require review
+Basil [spec-basil-leaf]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Blood Orange Syrup [spec-blood-orange-syrup]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: blood-orange-syrup; user photo supported. Rights: Existing source/rights require review
+Orange Bitters [spec-orange-bitters]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: orange-bitters; user photo supported. Rights: Existing source/rights require review
+Watermelon Liqueur [spec-watermelon-liq]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Watermelon Syrup [spec-watermelon-syrup]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: watermelon-syrup; user photo supported. Rights: Existing source/rights require review
+Grapefruit Soda [spec-grapefruit-soda]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: grapefruit-soda; user photo supported. Rights: Existing source/rights require review
+Pisco [spec-pisco]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: pisco; user photo supported. Rights: Existing source/rights require review
+Coconut Milk [spec-coconut-milk]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+NLL FL [spec-nll-fl]
+  BAR category fallback. Unresolved venue abbreviation; existing unrelated image remains suppressed.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Elderflower Cordial [spec-elderflower-cordial]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: elderflower-cordial; user photo supported. Rights: Existing source/rights require review
+Cucumber [spec-cucumber-slices-muddled]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+NLL MS [spec-nll-ms]
+  BAR category fallback. Unresolved venue abbreviation; existing unrelated image remains suppressed.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Strawberry Syrup [spec-strawberry-syrup]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: strawberry-syrup; user photo supported. Rights: Existing source/rights require review
+Oggs [spec-oggs]
+  BAR category fallback. Manufacturer confirms aquafaba in multiple packs; group image rejected. Confirm actual pack, then photograph it.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Cherry Syrup [spec-cherry-syrup]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: cherry-syrup; user photo supported. Rights: Existing source/rights require review
+Lychee Juice [spec-lychee-juice]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Simple Syrup [spec-simple-syrup]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: simple-syrup; user photo supported. Rights: Existing source/rights require review
+Absolut Vodka [spec-absolut-vodka]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: absolut-vodka; user photo supported. Rights: Existing source/rights require review
+Blend Coffee Liqueur [spec-blend-coffee]
+  BAR category fallback. Venue bottle/brand unresolved; menu wording cannot identify exact liqueur.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Espresso [spec-espresso]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Vanilla Syrup [spec-vanilla]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Absolut Vanilla [spec-absolut-vanilla]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: absolut-vanilla; user photo supported. Rights: Existing source/rights require review
+Blend Passionfruit Liqueur [spec-blend-passionfruit]
+  BAR category fallback. Venue bottle/brand unresolved; do not use puree or juice as liqueur image.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Martini Extra Dry [spec-martini-extra-dry]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: martini-extra-dry; user photo supported. Rights: Existing source/rights require review
+Olive Brine [spec-olive-brine-if-dirty]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Triple Sec [spec-blend-triple-sec]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: blend-triple-sec; user photo supported. Rights: Existing source/rights require review
+Daily Dose Lime Juice [spec-dd-lime-juice]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Daily Dose Lemon Juice [spec-dd-lemon-juice]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Worcestershire Sauce [spec-worchester]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Tabasco (3 Standard) [spec-tabasco-3-standard]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Salt [spec-salt]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Pepper [spec-pepper]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Whole Milk [spec-whole-milk]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Double Cream [spec-double-cream]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Ginger Beer [spec-ginger-beer]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: ginger-beer; user photo supported. Rights: Existing source/rights require review
+Peach Liqueur [spec-peach-liqueur]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: peach-liqueur; user photo supported. Rights: Existing source/rights require review
+Crème de Mûre [spec-creme-de-mure]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: creme-de-mure; user photo supported. Rights: Existing source/rights require review
+Ms Betters Bitters [spec-ms-betters-bitters]
+  BAR category fallback. Brand alone does not establish which expression/formulation is used.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Martini Rosso [spec-martini-rosso]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: martini-rosso; user photo supported. Rights: Existing source/rights require review
+Maraschino [spec-maraschino]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: maraschino; user photo supported. Rights: Existing source/rights require review
+Benedictine [spec-benedictine]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: benedictine; user photo supported. Rights: Existing source/rights require review
+Grenadine [spec-grenadine]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: grenadine; user photo supported. Rights: Existing source/rights require review
+Orange [spec-orange]
+  Representative generated ingredient illustration. Recognisable ingredient artwork, not photography or evidence of venue produce.
+  Asset: orange-photo; user photo supported. Rights: Existing source/rights require review
+Agave Syrup [spec-agave]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: agave; user photo supported. Rights: Existing source/rights require review
+Taylors Velvet Falernum [spec-taylors-velvet-falernum]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: taylors-velvet-falernum; user photo supported. Rights: Existing source/rights require review
+Daily Dose Pink Grapefruit Juice [spec-dd-pink-grapefruit]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Tabasco [spec-tabasco]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Del Maguey Puebla [spec-del-maguey-puebla]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: del-maguey-vida-puebla; user photo supported. Rights: Existing source/rights require review
+Saline [spec-saline]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Gomme Syrup [spec-gomme-syrup]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: gomme-syrup; user photo supported. Rights: Existing source/rights require review
+Coconut Cream [spec-coconut-cream]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Brown Sugar [spec-brown-sugar]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Angostura Bitters [spec-angostura-bitters]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: angostura-bitters; user photo supported. Rights: Existing source/rights require review
+Peach Puree [spec-peach-puree]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: peach-puree; user photo supported. Rights: Existing source/rights require review
+Crème de Cassis [spec-creme-de-cassis]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: creme-de-cassis; user photo supported. Rights: Existing source/rights require review
+Pimm's [spec-pimms]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: pimms-no-1; user photo supported. Rights: Existing source/rights require review
+Lemonade [spec-lemonade]
+  Representative; supplier/pack not established. Appropriate product type, but generic catalogue wording or keg unit does not verify the pictured brand/expression/pack. Venue photo preferred.
+  Asset: lemonade; user photo supported. Rights: Existing source/rights require review
+Coca-Cola [spec-coca-cola]
+  Likely exact; visually screened. Visible brand/expression screened at contact-sheet resolution against item name. No fresh supplier pack or licence certification.
+  Asset: coca-cola; user photo supported. Rights: Existing source/rights require review
+Grapefruit [service-grapefruit]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Strawberries [service-strawberries]
+  Representative generated ingredient illustration. Recognisable ingredient artwork, not photography or evidence of venue produce.
+  Asset: strawberry-photo; user photo supported. Rights: Existing source/rights require review
+Raspberries [service-raspberries]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Blackberries [service-blackberries]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Passion Fruit [service-passion-fruit]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Thyme [service-thyme]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Rosemary [service-rosemary]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Cocktail Cherries [service-cocktail-cherries]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Olives [service-olives]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Dehydrated Citrus [service-dehydrated-citrus]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Pineapple Leaves [service-pineapple-leaves]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Ice Cubes [service-ice-cubes]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Crushed Ice [service-crushed-ice]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Coconut Flakes [service-coconut-flakes]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Skimmed Milk [service-skimmed-milk]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Oat Milk [service-oat-milk]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Almond Milk [service-almond-milk]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted
+Soy Milk [service-soy-milk]
+  BAR category fallback. No confirmed product-specific image. Deliberate category artwork; exact packaging/brand is not invented.
+  Asset: native category art; user photo supported. Rights: Native BAR category drawing; no third-party bottle depicted

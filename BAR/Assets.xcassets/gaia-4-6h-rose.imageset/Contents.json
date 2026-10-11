@@ -1,1 +1,13 @@
-{"images":[{"filename":"gaia-4-6h-rose.png","idiom":"universal","scale":"1x"}],"info":{"author":"xcode","version":1}}
+{
+  "images": [
+    {
+      "filename": "gaia-4-6h-rose.jpg",
+      "idiom": "universal",
+      "scale": "1x"
+    }
+  ],
+  "info": {
+    "author": "xcode",
+    "version": 1
+  }
+}

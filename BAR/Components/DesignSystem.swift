@@ -61,15 +61,92 @@ struct DrinkArtwork: View {
     var height: CGFloat = 190
     var body: some View {
         Group {
-            if !name.isEmpty, name != "cocktail-daiquiri", UIImage(named: name) != nil { Image(name).resizable().scaledToFill() }
+            if !name.isEmpty, !Self.unsuitableReferences.contains(name), UIImage(named: name) != nil {
+                if spirit == "Wine" { Image(name).resizable().scaledToFit().frame(maxWidth: .infinity).background(BarTheme.card) }
+                else { Image(name).resizable().scaledToFill() }
+            }
             else {
-                ZStack {
-                    LinearGradient(colors: [BarTheme.stone, BarTheme.sage.opacity(0.6)], startPoint: .topLeading, endPoint: .bottomTrailing)
-                    Circle().fill(BarTheme.card.opacity(0.45)).frame(width: height * 0.65).offset(x: height * 0.1, y: -height * 0.06)
-                    Image(systemName: spirit == "Wine" ? "wineglass" : "wineglass.fill").font(.system(size: height * 0.42, weight: .ultraLight)).foregroundStyle(BarTheme.olive.opacity(0.7)).shadow(color: BarTheme.olive.opacity(0.12), radius: 6, y: 10)
-                }
+                BarCategoryArtwork(category: spirit == "Wine" ? "Wine" : "Cocktail")
             }
         }.frame(height: height).clipped().accessibilityHidden(true)
+    }
+    // Strawberry Daiquiri, fruit-juice Mai Tai and identical rum promotions do
+    // not identify these recipes. Preserve files as evidence, not service art.
+    private static let unsuitableReferences: Set<String> = ["cocktail-daiquiri", "cocktail-mai-tai", "cocktail-guava-soda", "cocktail-lychee-lagoon"]
+}
+
+/// BAR-owned vector category art. It deliberately depicts no brand or packaging.
+/// Labels appear only when there is room; tiny list thumbnails stay uncluttered.
+struct BarCategoryArtwork: View {
+    let category: String
+    private var label: String { category.components(separatedBy: " / ").first ?? category }
+    private var motif: String {
+        switch category {
+        case "Wine", "Sparkling / Champagne", "Cocktail": "glass"
+        case "Fresh Herbs", "Garnishes": "leaf"
+        case "Fresh Fruit": "fruit"
+        case "Beer / Cider", "Non-Alcoholic", "Soft Drinks", "Mixers": "can"
+        case "Other", "Ingredient", "Prep", "Purees": "jar"
+        default: "bottle"
+        }
+    }
+    var body: some View {
+        GeometryReader { geometry in
+            let side = min(geometry.size.width, geometry.size.height)
+            let detailed = geometry.size.width >= 110 && geometry.size.height >= 120
+            ZStack {
+                BarTheme.card
+                Circle().fill(BarTheme.sage.opacity(0.24)).frame(width: side * 0.84, height: side * 0.84)
+                VStack(spacing: detailed ? 12 : 0) {
+                    CategoryLineDrawing(motif: motif)
+                        .stroke(BarTheme.olive, style: StrokeStyle(lineWidth: max(1.1, side * 0.009), lineCap: .round, lineJoin: .round))
+                        .frame(width: side * 0.56, height: side * (detailed ? 0.50 : 0.68))
+                    if detailed {
+                        Text(label.uppercased()).font(.system(size: 10, weight: .medium)).tracking(1.3)
+                            .foregroundStyle(BarTheme.olive).lineLimit(2).multilineTextAlignment(.center)
+                        Text("BAR").font(.custom("Georgia", size: 10)).tracking(2).foregroundStyle(BarTheme.muted)
+                    }
+                }.padding(.horizontal, 8)
+            }.frame(width: geometry.size.width, height: geometry.size.height)
+        }.accessibilityHidden(true)
+    }
+}
+
+private struct CategoryLineDrawing: Shape {
+    let motif: String
+    func path(in rect: CGRect) -> Path {
+        var p = Path()
+        func point(_ x: CGFloat, _ y: CGFloat) -> CGPoint { CGPoint(x: rect.minX + x * rect.width, y: rect.minY + y * rect.height) }
+        func move(_ x: CGFloat, _ y: CGFloat) { p.move(to: point(x, y)) }
+        func line(_ x: CGFloat, _ y: CGFloat) { p.addLine(to: point(x, y)) }
+        switch motif {
+        case "glass":
+            move(0.18, 0.12); line(0.82, 0.12)
+            p.addQuadCurve(to: point(0.5, 0.60), control: point(0.87, 0.57))
+            p.addQuadCurve(to: point(0.18, 0.12), control: point(0.13, 0.57))
+            move(0.5, 0.60); line(0.5, 0.90); move(0.29, 0.90); line(0.71, 0.90)
+            move(0.25, 0.32); line(0.75, 0.32)
+        case "leaf":
+            move(0.27, 0.90); line(0.72, 0.12)
+            p.addQuadCurve(to: point(0.31, 0.66), control: point(0.08, 0.15))
+            p.addQuadCurve(to: point(0.72, 0.12), control: point(0.92, 0.78))
+        case "fruit":
+            p.addEllipse(in: CGRect(x: rect.minX + rect.width * 0.18, y: rect.minY + rect.height * 0.28, width: rect.width * 0.64, height: rect.height * 0.59))
+            move(0.5, 0.28); p.addQuadCurve(to: point(0.72, 0.10), control: point(0.48, 0.07))
+            p.addQuadCurve(to: point(0.5, 0.28), control: point(0.77, 0.28))
+        case "can", "jar":
+            p.addRoundedRect(in: CGRect(x: rect.minX + rect.width * 0.24, y: rect.minY + rect.height * 0.14, width: rect.width * 0.52, height: rect.height * 0.75), cornerSize: CGSize(width: rect.width * 0.07, height: rect.height * 0.07))
+            move(0.26, 0.23); line(0.74, 0.23); move(0.26, 0.78); line(0.74, 0.78)
+            move(0.38, 0.44); line(0.62, 0.44); move(0.38, 0.55); line(0.56, 0.55)
+        default:
+            move(0.40, 0.09); line(0.60, 0.09); line(0.60, 0.29)
+            p.addQuadCurve(to: point(0.76, 0.48), control: point(0.76, 0.35))
+            line(0.76, 0.90); line(0.24, 0.90); line(0.24, 0.48)
+            p.addQuadCurve(to: point(0.40, 0.29), control: point(0.24, 0.35)); line(0.40, 0.09)
+            move(0.40, 0.19); line(0.60, 0.19)
+            move(0.34, 0.55); line(0.66, 0.55); line(0.66, 0.74); line(0.34, 0.74); line(0.34, 0.55)
+        }
+        return p
     }
 }
 struct DrinkCard: View {

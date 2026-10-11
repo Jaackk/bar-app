@@ -1,0 +1,105 @@
+BAR — PRACTICAL PHOTO SHOT LIST — 11 OCTOBER 2026
+
+Get venue permission. Use your own phone/camera; keep the original files. Avoid
+people, receipts, private screens and decorative artwork in the background.
+No filters, invented labels or watermarks. Clean glass/bottle and diffused daylight.
+Tap to expose for the label; avoid direct flash and bright reflections.
+
+PRIORITY 1 — ALL 16 CURRENT HOUSE COCKTAILS
+These currently have zero verified photos of the actual venue serve. Make the
+approved recipe in its actual glass with approved ice/garnish, then photograph it.
+For EVERY subject below: angle 30 degrees above rim; plain cream/neutral bar
+background; portrait 4:5; whole glass and garnish with 10-15% breathing room.
+Also take one straight-on shot. Do not replace the production spec for the photo.
+
+- Sea Glass [sample-sea-glass] — full approved serve, glass/ice/garnish visible.
+- Sun Ember [hove-sun-ember] — full approved serve, glass/ice/garnish visible.
+- Italian Bitter [hove-italian-bitter] — full approved serve, glass/ice/garnish visible.
+- Peach & Bloom [sample-peach-bloom] — full approved serve, glass/ice/garnish visible.
+- Lychee Lagoon [hove-lychee-lagoon] — full approved serve, glass/ice/garnish visible.
+- Island Smash [hove-island-smash] — full approved serve, glass/ice/garnish visible.
+- Pink Horizon [hove-pink-horizon] — full approved serve, glass/ice/garnish visible.
+- Coral Tide [sample-coral-tide] — full approved serve, glass/ice/garnish visible.
+- Golden Sangria [hove-golden-sangria] — full approved serve, glass/ice/garnish visible.
+- Frozen Daiquiri [hove-frozen-daiquiri] — full approved serve, glass/ice/garnish visible.
+- Frozen Margarita [hove-frozen-margarita] — full approved serve, glass/ice/garnish visible.
+- Frozen Piña Colada [hove-frozen-pina-colada] — full approved serve, glass/ice/garnish visible.
+- First Light [hove-first-light] — full approved serve, glass/ice/garnish visible.
+- Midnight Sun [hove-midnight-sun] — full approved serve, glass/ice/garnish visible.
+- Cherry Soda [hove-cherry-soda] — full approved serve, glass/ice/garnish visible.
+- Guava Soda [hove-guava-soda] — full approved serve, glass/ice/garnish visible.
+
+Capture Lychee Lagoon and Guava Soda first: misleading shared rum-promotion
+images are now suppressed. Then Sea Glass, Peach & Bloom and Coral Tide: existing
+art is generated concept imagery. Finish the remaining 11 approved serves.
+Use these IDs as filenames. House-cocktail photos need an approved bundled-content
+replacement later; do not assume the current product-photo picker edits cocktail art.
+
+PRIORITY 2A — THE 11 WINE FINDER PHOTO GAPS
+For EVERY bottle below: straight-on at label height; neutral matte background;
+portrait; whole bottle including cap/base, label sharp and square. Take a second
+close label/back-label photo to record producer, cuvee, vintage and bottle volume.
+Photograph the actual currently used bottle; do not substitute a nearby wine.
+
+- REAL Blush Sparkling [menu-real-blush-sparkling]
+- Picpoul de Pinet Tournée du Sud [menu-picpoul-de-pinet-tournee-du-sud]
+- Grenache / Chardonnay Côté Est, Domaine Lafage [menu-grenache-chardonnay-cote-est-domaine-lafage]
+- Côtes de Provence Maïa [menu-cotes-de-provence-maia]
+- Touriga Nacional, Santo Isidro de Pegões [menu-touriga-nacional-santo-isidro-de-pegoes]
+- Syrah Tumbleweed Big Sky, Bruce Jack Wines [menu-syrah-tumbleweed-big-sky-bruce-jack-wines]
+- Raboso Il Casone [menu-raboso-il-casone]
+- Montepulciano Blend Anima Osca, Tenimenti Grieco [menu-montepulciano-blend-anima-osca-tenimenti-grieco]
+- Saumur-Champigny Vieilles Vignes, Domaine Lavigne [menu-saumur-champigny-vieilles-vignes-domaine-lavigne]
+- LBV Quinta do Vallado [menu-lbv-quinta-do-vallado]
+- Tawny 20YR Quinta do Vallado [menu-tawny-20yr-quinta-do-vallado]
+
+PRIORITY 2B — HIGH-VALUE PRODUCT IDENTITY/PACK CHECKS
+Use the same bottle shot recipe above (straight-on, neutral background, portrait,
+whole pack plus a close label). For cans/cartons keep all pack edges visible.
+
+- Asahi 0.0% [menu-asahi-0-0] — record exact expression/brand and pack size.
+- Kraken [menu-kraken] — record exact expression/brand and pack size.
+- Grey Goose Essences [menu-grey-goose-essences] — record exact expression/brand and pack size.
+- Veuve Clicquot Brut Yellow Label — Magnum [menu-veuve-clicquot-brut-yellow-label-magnum] — record exact expression/brand and pack size.
+- Côtes de Provence Maïa — Magnum [menu-cotes-de-provence-maia-magnum] — record exact expression/brand and pack size.
+- Minuty Prestige, Château Minuty — Magnum [menu-minuty-prestige-chateau-minuty-magnum] — record exact expression/brand and pack size.
+- Blend Coffee Liqueur [spec-blend-coffee] — record exact expression/brand and pack size.
+- Blend Passionfruit Liqueur [spec-blend-passionfruit] — record exact expression/brand and pack size.
+- NLL FL [spec-nll-fl] — record exact expression/brand and pack size.
+- NLL MS [spec-nll-ms] — record exact expression/brand and pack size.
+- Antica Rosso [menu-antica-rosso] — record exact expression/brand and pack size.
+- Ms Betters Bitters [spec-ms-betters-bitters] — record exact expression/brand and pack size.
+- Oggs [spec-oggs] — record exact expression/brand and pack size.
+- TRIP Lemon & Basil [menu-trip-lemon-basil] — record exact expression/brand and pack size.
+- Orange Juice [menu-orange-juice] — record exact expression/brand and pack size.
+- Glorious Greens [menu-glorious-greens] — record exact expression/brand and pack size.
+- Ginger Zinger [menu-ginger-zinger] — record exact expression/brand and pack size.
+- DRIP Sparkling Water 500ml [menu-drip-sparkling-water-500ml] — record exact expression/brand and pack size.
+- Sparkling Water 75cl [menu-sparkling-water-75cl] — record exact expression/brand and pack size.
+- Daily Dose Lime Juice [spec-dd-lime-juice] — record exact expression/brand and pack size.
+- Daily Dose Lemon Juice [spec-dd-lemon-juice] — record exact expression/brand and pack size.
+- Daily Dose Pink Grapefruit Juice [spec-dd-pink-grapefruit] — record exact expression/brand and pack size.
+
+For house Lager/IPA and Cornish fruit cider: straight-on tap badge AND separate
+keg label, neutral background where practical; portrait, full badge/label. Confirm
+flavour and keg volume. A pint alone cannot identify the product or stock unit.
+
+PRIORITY 2C — REPLACE RIGHTS-UNCERTAIN REFERENCES IN SMALL GROUPS
+Start with the bottles most often searched during service, then all 59 wines.
+Use PRODUCT-IMAGE-AUDIT.txt as the checklist. If permission for new Saint Damien/
+Paso d'Oro references or Patron media cannot be confirmed, photograph those next.
+Do not photograph every salt/ice item just to improve a percentage: native artwork
+is sufficient for generic ingredients. User product photos already take priority.
+
+PRIORITY 3 — VENUE PREP/PRESENTATION
+- Approved garnish station: 45-degree angle, clean plain counter, landscape, whole
+  containers/tools; no names, dates or shelf-life claims invented for the picture.
+- Approved prep container: straight-on label plus 45-degree overview, neutral
+  counter, portrait, whole container. Photograph genuine labels; ask the manager
+  about storage/discard guidance separately. A photo does not verify food safety.
+
+IMPORT / HANDOFF
+Keep original files and names matching product/cocktail IDs. Product photos can be
+added using owner product editing/photo selection; test on the iPhone. Give approved
+house photographs to the next content pass for catalogue integration. Keep permission
+and photographer/date records beside originals. Export a backup before bulk editing.
